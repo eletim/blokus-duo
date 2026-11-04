@@ -1,0 +1,68 @@
+{
+  "agent": "random",
+  "checkpoint": null,
+  "seed": 42,
+  "results": [
+    {
+      "opponent": "random",
+      "wins": 1,
+      "losses": 1,
+      "draws": 0,
+      "mean_difference": 0.0,
+      "games": [
+        {
+          "seed": 42,
+          "seat": 0,
+          "scores": [
+            -41,
+            -45
+          ],
+          "difference": 4
+        },
+        {
+          "seed": 42,
+          "seat": 1,
+          "scores": [
+            -41,
+            -45
+          ],
+          "difference": -4
+        }
+      ]
+    },
+    {
+      "opponent": "heuristic",
+      "wins": 0,
+      "losses": 2,
+      "draws": 0,
+      "mean_difference": -13.0,
+      "games": [
+        {
+          "seed": 42,
+          "seat": 0,
+          "scores": [
+            -38,
+            -25
+          ],
+          "difference": -13
+        },
+        {
+          "seed": 42,
+          "seat": 1,
+          "scores": [
+            -16,
+            -29
+          ],
+          "difference": -13
+        }
+      ]
+    }
+  ],
+  "timing": {
+    "generation": 0.03393519400560763,
+    "features": 0.020642308994865743,
+    "network": 0.0,
+    "moves": 117,
+    "candidates": 26302
+  }
+}

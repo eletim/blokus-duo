@@ -1,0 +1,91 @@
+{
+  "selection_seed": 1000,
+  "criterion": "heuristic wins + 0.5*draws, then mean score difference",
+  "candidates": [
+    {
+      "name": "untrained",
+      "checkpoint": "artifacts/run/untrained.pt",
+      "wins": 10,
+      "losses": 10,
+      "draws": 0,
+      "difference": 2.35,
+      "key": [
+        10.0,
+        2.35
+      ]
+    },
+    {
+      "name": "imitation",
+      "checkpoint": "artifacts/run/imitation.pt",
+      "wins": 4,
+      "losses": 16,
+      "draws": 0,
+      "difference": -5.2,
+      "key": [
+        4.0,
+        -5.2
+      ]
+    },
+    {
+      "name": "selfplay",
+      "checkpoint": "artifacts/run/latest.pt",
+      "wins": 10,
+      "losses": 10,
+      "draws": 0,
+      "difference": -2.2,
+      "key": [
+        10.0,
+        -2.2
+      ]
+    },
+    {
+      "name": "improved_imitation",
+      "checkpoint": "artifacts/improved/imitation.pt",
+      "wins": 2,
+      "losses": 10,
+      "draws": 8,
+      "difference": -1.2,
+      "key": [
+        6.0,
+        -1.2
+      ]
+    },
+    {
+      "name": "improved_selfplay",
+      "checkpoint": "artifacts/improved/latest.pt",
+      "wins": 10,
+      "losses": 10,
+      "draws": 0,
+      "difference": -0.2,
+      "key": [
+        10.0,
+        -0.2
+      ]
+    }
+  ],
+  "best_trained": {
+    "name": "improved_selfplay",
+    "checkpoint": "artifacts/improved/latest.pt",
+    "wins": 10,
+    "losses": 10,
+    "draws": 0,
+    "difference": -0.2,
+    "key": [
+      10.0,
+      -0.2
+    ]
+  },
+  "best_overall": {
+    "name": "untrained",
+    "checkpoint": "artifacts/run/untrained.pt",
+    "wins": 10,
+    "losses": 10,
+    "draws": 0,
+    "difference": 2.35,
+    "key": [
+      10.0,
+      2.35
+    ]
+  },
+  "final_seed": 2000
+}

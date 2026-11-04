@@ -1,0 +1,392 @@
+{
+  "agent": "neural",
+  "checkpoint": "artifacts/improved/imitation.pt",
+  "seed": 1000,
+  "results": [
+    {
+      "opponent": "random",
+      "wins": 20,
+      "losses": 0,
+      "draws": 0,
+      "mean_difference": 25.5,
+      "games": [
+        {
+          "seed": 1000,
+          "seat": 0,
+          "scores": [
+            -13,
+            -47
+          ],
+          "difference": 34
+        },
+        {
+          "seed": 1000,
+          "seat": 1,
+          "scores": [
+            -48,
+            -18
+          ],
+          "difference": 30
+        },
+        {
+          "seed": 1001,
+          "seat": 0,
+          "scores": [
+            -19,
+            -59
+          ],
+          "difference": 40
+        },
+        {
+          "seed": 1001,
+          "seat": 1,
+          "scores": [
+            -30,
+            -9
+          ],
+          "difference": 21
+        },
+        {
+          "seed": 1002,
+          "seat": 0,
+          "scores": [
+            -16,
+            -38
+          ],
+          "difference": 22
+        },
+        {
+          "seed": 1002,
+          "seat": 1,
+          "scores": [
+            -29,
+            -21
+          ],
+          "difference": 8
+        },
+        {
+          "seed": 1003,
+          "seat": 0,
+          "scores": [
+            -8,
+            -57
+          ],
+          "difference": 49
+        },
+        {
+          "seed": 1003,
+          "seat": 1,
+          "scores": [
+            -36,
+            -13
+          ],
+          "difference": 23
+        },
+        {
+          "seed": 1004,
+          "seat": 0,
+          "scores": [
+            -13,
+            -42
+          ],
+          "difference": 29
+        },
+        {
+          "seed": 1004,
+          "seat": 1,
+          "scores": [
+            -40,
+            -12
+          ],
+          "difference": 28
+        },
+        {
+          "seed": 1005,
+          "seat": 0,
+          "scores": [
+            -18,
+            -40
+          ],
+          "difference": 22
+        },
+        {
+          "seed": 1005,
+          "seat": 1,
+          "scores": [
+            -26,
+            -16
+          ],
+          "difference": 10
+        },
+        {
+          "seed": 1006,
+          "seat": 0,
+          "scores": [
+            -17,
+            -32
+          ],
+          "difference": 15
+        },
+        {
+          "seed": 1006,
+          "seat": 1,
+          "scores": [
+            -53,
+            -12
+          ],
+          "difference": 41
+        },
+        {
+          "seed": 1007,
+          "seat": 0,
+          "scores": [
+            -11,
+            -44
+          ],
+          "difference": 33
+        },
+        {
+          "seed": 1007,
+          "seat": 1,
+          "scores": [
+            -29,
+            -15
+          ],
+          "difference": 14
+        },
+        {
+          "seed": 1008,
+          "seat": 0,
+          "scores": [
+            -13,
+            -60
+          ],
+          "difference": 47
+        },
+        {
+          "seed": 1008,
+          "seat": 1,
+          "scores": [
+            -39,
+            -17
+          ],
+          "difference": 22
+        },
+        {
+          "seed": 1009,
+          "seat": 0,
+          "scores": [
+            -16,
+            -29
+          ],
+          "difference": 13
+        },
+        {
+          "seed": 1009,
+          "seat": 1,
+          "scores": [
+            -20,
+            -11
+          ],
+          "difference": 9
+        }
+      ]
+    },
+    {
+      "opponent": "heuristic",
+      "wins": 2,
+      "losses": 10,
+      "draws": 8,
+      "mean_difference": -1.2,
+      "games": [
+        {
+          "seed": 1000,
+          "seat": 0,
+          "scores": [
+            -14,
+            -14
+          ],
+          "difference": 0
+        },
+        {
+          "seed": 1000,
+          "seat": 1,
+          "scores": [
+            -14,
+            -14
+          ],
+          "difference": 0
+        },
+        {
+          "seed": 1001,
+          "seat": 0,
+          "scores": [
+            -20,
+            -19
+          ],
+          "difference": -1
+        },
+        {
+          "seed": 1001,
+          "seat": 1,
+          "scores": [
+            -11,
+            -16
+          ],
+          "difference": -5
+        },
+        {
+          "seed": 1002,
+          "seat": 0,
+          "scores": [
+            -14,
+            -14
+          ],
+          "difference": 0
+        },
+        {
+          "seed": 1002,
+          "seat": 1,
+          "scores": [
+            -14,
+            -14
+          ],
+          "difference": 0
+        },
+        {
+          "seed": 1003,
+          "seat": 0,
+          "scores": [
+            -20,
+            -19
+          ],
+          "difference": -1
+        },
+        {
+          "seed": 1003,
+          "seat": 1,
+          "scores": [
+            -11,
+            -16
+          ],
+          "difference": -5
+        },
+        {
+          "seed": 1004,
+          "seat": 0,
+          "scores": [
+            -14,
+            -14
+          ],
+          "difference": 0
+        },
+        {
+          "seed": 1004,
+          "seat": 1,
+          "scores": [
+            -14,
+            -14
+          ],
+          "difference": 0
+        },
+        {
+          "seed": 1005,
+          "seat": 0,
+          "scores": [
+            -20,
+            -19
+          ],
+          "difference": -1
+        },
+        {
+          "seed": 1005,
+          "seat": 1,
+          "scores": [
+            -11,
+            -16
+          ],
+          "difference": -5
+        },
+        {
+          "seed": 1006,
+          "seat": 0,
+          "scores": [
+            -14,
+            -14
+          ],
+          "difference": 0
+        },
+        {
+          "seed": 1006,
+          "seat": 1,
+          "scores": [
+            -14,
+            -14
+          ],
+          "difference": 0
+        },
+        {
+          "seed": 1007,
+          "seat": 0,
+          "scores": [
+            -16,
+            -19
+          ],
+          "difference": 3
+        },
+        {
+          "seed": 1007,
+          "seat": 1,
+          "scores": [
+            -16,
+            -19
+          ],
+          "difference": -3
+        },
+        {
+          "seed": 1008,
+          "seat": 0,
+          "scores": [
+            -16,
+            -19
+          ],
+          "difference": 3
+        },
+        {
+          "seed": 1008,
+          "seat": 1,
+          "scores": [
+            -16,
+            -19
+          ],
+          "difference": -3
+        },
+        {
+          "seed": 1009,
+          "seat": 0,
+          "scores": [
+            -20,
+            -19
+          ],
+          "difference": -1
+        },
+        {
+          "seed": 1009,
+          "seat": 1,
+          "scores": [
+            -11,
+            -16
+          ],
+          "difference": -5
+        }
+      ]
+    }
+  ],
+  "timing": {
+    "generation": 0.4364427361069829,
+    "features": 0.6514058550201298,
+    "network": 0.34098847900531837,
+    "moves": 1442,
+    "candidates": 331350
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "recorded_after_launch": true,
+  "arguments": {
+    "command": "train",
+    "output": "artifacts/improved",
+    "games": 4000,
+    "seconds": 360,
+    "imitation_games": 2000,
+    "seed": 42,
+    "device": "cuda",
+    "lr": 0.001,
+    "selfplay_lr": 0.0001
+  },
+  "torch": "2.7.1+cu128",
+  "cuda": "12.8",
+  "python": "3.12.14 (main, Sep  1 2026, 14:16:52) [Clang 22.1.3 ]",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "algorithm": "teacher distribution CE + centered logits regression"
+}

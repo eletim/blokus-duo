@@ -1,0 +1,12 @@
+[project]
+name = "blokus-duo-ai"
+version = "0.1.0"
+description = "Blokus Duo rules engine and candidate policy/value selfplay prototype"
+requires-python = ">=3.12"
+dependencies = ["numpy", "torch==2.7.1"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

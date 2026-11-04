@@ -1,0 +1,19 @@
+{
+  "recorded_after_launch": true,
+  "arguments": {
+    "command": "train",
+    "output": "artifacts/run",
+    "games": 200,
+    "seconds": 180,
+    "imitation_games": 60,
+    "seed": 42,
+    "device": "cuda",
+    "lr": 0.001,
+    "selfplay_lr": 0.001
+  },
+  "torch": "2.7.1+cu128",
+  "cuda": "12.8",
+  "python": "3.12.14 (main, Sep  1 2026, 14:16:52) [Clang 22.1.3 ]",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "algorithm": "argmax CE"
+}
