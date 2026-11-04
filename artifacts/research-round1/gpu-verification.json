@@ -1,0 +1,43 @@
+{
+  "torch": "2.7.1+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "methods": {
+    "A": {
+      "finite_cuda_gradients": true,
+      "separate_process_resume": {
+        "model": true,
+        "optimizer": true,
+        "episode": true,
+        "python_rng": true,
+        "numpy_rng": true,
+        "torch_rng": true,
+        "cuda_rng": true
+      }
+    },
+    "B": {
+      "finite_cuda_gradients": true,
+      "separate_process_resume": {
+        "model": true,
+        "optimizer": true,
+        "episode": true,
+        "python_rng": true,
+        "numpy_rng": true,
+        "torch_rng": true,
+        "cuda_rng": true
+      }
+    },
+    "C": {
+      "finite_cuda_gradients": true,
+      "separate_process_resume": {
+        "model": true,
+        "optimizer": true,
+        "episode": true,
+        "python_rng": true,
+        "numpy_rng": true,
+        "torch_rng": true,
+        "cuda_rng": true
+      }
+    }
+  }
+}

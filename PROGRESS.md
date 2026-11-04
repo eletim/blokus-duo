@@ -89,3 +89,66 @@ CLI検証: AI対AI（heuristic vs random、seed7）完走 -19/-37。人間入力
 推奨する学習済みcheckpointは `/home/eletim/blokus-duo-ai/artifacts/best-trained.pt`（改良4000局、模倣2000＋自己対戦2000）。学習済みを使う用途ではこちらを指定してください。`best-evaluated.pt` は開発用基準相手で選択した未学習モデルで、名前だけで学習済みと誤認しないよう `selection.json` と合わせて参照してください。
 
 初版完了。最終pytest: 10 passed in 2.75s。推奨学習AI対heuristic CLI完走（-15/-12）。専用ディレクトリのみ変更。長時間学習プロセスなし。README、全checkpoint、JSON評価、環境lock、独立検証資料を保存。
+
+# 継続研究 round1: three-methods
+
+開始: 2026-11-05。基点 main 7db897e343089c8576fb04438cd91431778fb024。branch research/three-methods。新規Agentは使わず専用repoのみ変更。engine.pyは変更禁止としてhashを継続検証。GPU初期負荷0%、206MiB、他学習なし。
+
+## 設計・API（実装前記録）
+- 新規 `blokus/research.py`: `encode_board(State)`（手番基準の自石/相手石/自開始点/相手開始点の4x14x14）、`action_mask(State)`（全13729配置+pass）、A/CNNモデル、`Agent.act(state,rng)`、状態clone、終局・手番基準value、beam negamax探索。盤面と残駒46特徴を入力し、CNN候補は配置セルの空間特徴を集約。合法候補だけ採点、passは合法手なしのみ。
+- 新規 `blokus/experiment.py`: `python -m blokus.experiment {run,train,tournament,play,prefixes}`。学習/評価/CLIはv1から分離。
+- A: 軽量候補MLP、教師の順位分布を安定に蒸留し、heuristic/random/v1/自分の相手pool上の対局報酬による小さなactor-critic補助を併用。heuristic priorを明示し、未学習Aも同じpriorを使う。
+- B: 盤面CNN＋残駒＋候補特徴policy/value。Aと同じ教師/相手pool。初期モデルと学習後を比較。
+- C: Bと同構造だが独立seed/checkpoint。幅制限2ply negamaxの探索教師を蒸留。探索shortlistに更新student policyも使用するexpert iteration。C-search-offを主な学習済み比較、C-search-onを思考時間追加の別条件。探索は固定node予算であり時間同等とは主張しない。
+- 共通学習上限: 各180秒、ゲーム境界で最大1ゲーム超過。教師生成/対局/更新/保存を含む。同一GPU・逐次学習。各中間/最終checkpointをvalidationで選択。追加改良はvalidationだけで判断し別予算として記録。
+- prefix: 学習と別seedで合法ランダム2〜6plyを作成しJSON保存。validation seed41000、holdout seed51000、初回各12/24prefixを予定。全対戦で同じ集合、各prefix2局でAgentの色を交換。色盤面は固定し役割だけ交換。集合と各prefixにSHA256、重複なし/分割重複なしを検証。学習prefix seedは別系列。
+- selection: validationでheuristic/v1へのpaired平均得点差平均を最大化。各方式中間/最終から固定しselection.jsonに記録後、holdoutを一度だけ評価。holdout結果で再選択禁止。
+- holdout: A/B/C-offとheuristic/v1/random、A/B/C総当たり、各未学習vs学習後、B vs C-off、C-off vs C-on等。prefix単位のpaired平均をbootstrapし95%区間（得点差と勝+0.5分率）。2局を独立サンプルと数えない。24prefixは暫定。
+- config/seed/source hash/torch/CUDA/モデルmetadata/optimizer/RNG/対局数/更新数/学習秒/推論ms/探索nodesを保存。baseline v1ファイルとheuristic/random設定を凍結コピー。
+- テスト: board tensor、合法action mask/pass、相手手番value符号、終局utility、探索入力不変性/合法性、prefix再現/paired集計、保存再開。
+
+秘書向け: engine APIは変更しない。新規APIは上記2ファイル。成果物は `artifacts/research-round1/`。実装中に細部の変更・実測・選択基準の適用を追記する。
+
+設計補足: 秘書提供のfrontier高速化 e5717e1 をcherry-pick（当branch a4d5a0d）。ルール/API/列挙順序は不変、独立検証PASS報告あり。以後この版を共通使用し、エンジンのそれ以外は変更しない。
+研究stateを49次元へ拡張: 既存46特徴+手番側score/89+相手score/89+passes/2。全置き15/20点の差とpass履歴を保持。v1入力は46のまま互換維持。CNN全盤面flatten＋候補セルconv特徴を併用。
+参考確認: https://arxiv.org/abs/1705.08439 （探索とpolicy一般化を交互に改善する発想）、https://arxiv.org/abs/2108.13264 （点推定のみでなく区間を報告）。本実装は幅制限2plyの簡略探索で、論文のMCTS再現ではない。
+
+実装完了: research.py（モデル/search/agent/checkpoint）、research_train.py（共通予算学習）、tournament.py（prefix/paired bootstrap）、experiment.py（CLI/run orchestrator）。22テストPASS（3.17秒）。B/C実CUDA2局smoke成功。Cは352探索nodeを実際に生成し更新。
+本実験開始コマンド: `.venv/bin/python -m blokus.experiment run --seconds 180 --validation-prefixes 12 --holdout-prefixes 24 --output artifacts/research-round1`。各方式180秒、逐次。A教師はheuristic logits + 2×標準化v1 logits、Bも同じ。Cは探索評価×40を探索候補内softmax。A/Bのactor-critic係数0.15、value回帰0.5、entropy0.002。全方式heuristic prior+ゼロ初期残差を明示。
+
+A完了: 4104局/4104更新、180.046秒、57,302学習局面。validation平均（heuristic/v1）: 中間-1.125、最終+0.3125で最終を選択。これはholdout結果ではない。B学習へ移行。
+保存再開テストをA/B/Cすべてに拡張し24テストPASS（4.15秒）。独立監査 scripts/audit_research.py は秘書作成のまま保持し最終commitへ含める。
+
+負荷観測: B学習中CPU約100%（1コア）、GPU17%、GPUメモリ965MiB、約98W。GPUのみを飽和させる実装ではなく、逐次対局生成と小さな更新のCPU/GPU往復が多い。environment-gpu.txt / environment-cpu.txtを保存。
+
+秘書から次ラウンド提案: 現A/Bは同一教師蒸留が強く、教師を超える信号が弱い可能性。現runは変更せず完走。次の候補A2は候補特徴重みをpaired対局成績で直接最適化するCEM/進化戦略（CPU対戦ベース学習でGPU勾配学習とは区別）。実施時は学習prefix/validation/新holdoutを分離し、初回holdout後の設計変更に旧holdoutを再利用しない。
+
+B完了: 3325局/更新、180.028秒、46,597学習局面。validation criterionは中間+0.1042、最終+1.3333で最終を選択。最終対heuristic平均+2.6667（prefix bootstrap95%区間[0,5.25]）、対v1平均0（区間[-2.125,2.251]）。現時点では明確な強化成功とは言えない。C探索教師学習へ移行済み。
+
+C完了・3方式選択固定。C validation criterion: 中間-1.3333、最終-0.3333、最終を選択。selection.jsonを書き出した後holdout評価を開始。これ以降のモデル再選択はしない。
+学習時の全ソースをrun-config hashと一致確認して `artifacts/research-round1/source/blokus/` に凍結保存。学習後の運用修正は(1)CLI出力defaultをsubcommandごとに分離、(2)resume時rollout/update秒の累積表示を保持、の2点のみ。モデル/学習式/評価動作は変えず、実行中runは読み込み済みの凍結ソース版のまま継続。再現時に厳密なソースが必要ならsource snapshotを使用。
+
+Round1評価完了: train A4104/B3325/C2205局、各180秒、C教師探索457,156node。run全体582.76秒。selection固定後、24prefix×2局×21組=1,008holdout局。
+探索なしA/B/Cのbaselineへの得点差CIは0を含み、明確な勝者不明。総当たり観測point率はA>B>Cだが暫定。C-search対heuristic32/14/2、平均+3.00 [0.77,5.46]、対v1 31/16/1、+1.875 [0.083,3.708]。C-offとの差は+1.19 [-1.08,3.19]でまだ不明。C-search3.262ms/手 vs C-off0.963ms/手。思考時間同等とは主張しない。
+独立監査実行: `.venv/bin/python scripts/audit_research.py artifacts/research-round1/holdout-results.json artifacts/research-round1/holdout-prefixes.json` → PASS。report.mdに全表・区間・計測内訳を記録。全重み保持、holdout再選択なし。
+
+# 追加改善 A2 CEM（村長/秘書承認）
+第一ラウンドの21match完了・保存後に開始。秘書独立監査: 24unique開始状態/1008対局、selection、全A/B/Cの別processCUDA再開bit一致PASS。資料 artifacts/secretary-review/round1-audit.json と research-cuda-resume/result.json。
+A2計画: CPUで候補特徴の線形重みを対局成績から直接最適化。GPU勾配学習ではない。population10、各世代train prefix3個、heuristic/v1相手、各prefix先後交換。世代seed71000+generationで更新し、全候補で共有。10候補×3prefix×2色×2相手=120対局/世代。CEM上位3候補から平均/標準偏差を平滑更新、incumbentと中心候補を含める。
+追加学習目安240秒、世代を途中で切らない。最大100世代、次世代の見積時間（直前×1.25）が残予算を超える場合は開始しない。初回世代は必ず完走し実測、世代が240秒を超える場合はその1世代で停止。世代ごとの実時間・対局数・候補数・train prefix hash・重み・fitnessを記録。
+checkpointは初期/各10世代/最終を保存。既存validation41000の12prefix・heuristic/v1への平均得点差で選択。新holdout61000の24prefixを事前固定し、選択後はA2/heuristic/v1/B（元validation最良）/C-searchを総当たり。旧holdout51000は使用しない。時間不均等・CPU学習である点を明記。
+
+A2実装・開始: blokus/cem.py、Agentのformat3 JSON線形モデル対応、tests/test_cem.py。追加2テストPASS（2.27秒）、CEM連続2世代と1+保存再開1世代の重み/平均/標準偏差/RNG/対局数が一致。
+実測1世代約2.3秒、GPU0%/177MiB。学習はCPUのみ。係数の正スケール不定性を避けサイズ係数12固定、候補内で定数な2特徴を除いた9係数を最適化。実行: `.venv/bin/python -m blokus.cem run --seconds 240 --generations 100 --population 10 --train-prefixes 3 --output artifacts/research-a2`。
+
+A2新holdout開始前の追加比較宣言: A2-searchをA2-off/C-search/heuristic/v1と比較。runは起動済みのため別 `search-results.json` に4組保存する。`search-ablation-plan.json` 作成時holdout-results.jsonが未存在であることをassertし記録。同一A2-off validation選択checkpoint、幅4×3、depth2、holdout再調整なし。再現スクリプト scripts/evaluate_cem_search.py。
+
+最終追加テスト: A2 JSON+searchで合法手・入力State/重みファイル不変・node上限16を確認。全27テストPASS（5.70秒）。A2実験sourceもrun-config hash一致を確認してsource/blokus/へ保存。A2-search追加は新holdout閲覧前に宣言済み、同一重み固定。
+
+A2追加実験完了: CPU237.886秒、96世代、11,520対局、960候補評価。validation criterion+2.3125の90世代目を選択。selected.json SHA d7b5049aaa96ebbd2d73d8ba45d727cbac6ee5ed0dbba857c33fa078044fccdd。新holdout SHA a0f2237c966505bcb11ff9e753885ca08f49101f9b52a8068071ff4916964e06。
+新holdout通常11組+追加探索4組、計720局。A2 vs B 29/16/3、平均+2.9167 [1.2083,4.7292]。A2-search vs C-search 28/19/1、+1.7083 [-0.4583,4.0417]で優劣不明。A2-off0.545ms/手、A2-search2.967ms/手。両レポートを保存。
+監査: 学習prefix288個と評価prefix集合の重複0、全960候補のfitnessを各対局得点から再計算一致、validation最大値選択/重み一致、両source snapshotのhash一致。selection-training-audit.json保存。通常/探索両holdoutを秘書作成audit_research.pyで監査PASS。
+全27テストPASS、A2-searchの人間入力CLI終局(-59/-18)、実行プロセスなし・GPU0%。秘書のseed81000 heuristic-search追加対照は診断専用で選択に使わない。追加開発を広げず、この診断を受けてcommit/pushする。
+
+秘書探索対照診断を受領（seed81000、24unique prefix、192局、audit PASS）。C-search vs heuristic-search:27/19/2、+1.50 [-0.67,3.65]。A2-search vs heuristic-search:16/28/4、-0.54 [-2.75,1.58]。A2-search vs C-search:24/22/2、+1.27 [-0.65,3.10]。heuristic-search vs heuristic:30/15/3。学習なし探索も強く、探索あり方式の優劣・学習寄与は断定不能。診断でcheckpoint再選択はしない。
+成果物すべて保存、最終27テストPASS、CUDA各方式finite勾配/全optimizer・RNG再開一致、独立監査資料を含めてbranchへcommit/pushする。mainは変更しない。

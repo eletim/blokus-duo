@@ -1,0 +1,28 @@
+usage: experiment.py [-h] [--output OUTPUT] [--device DEVICE]
+                     [--method {A,B,C}] [--baseline BASELINE]
+                     [--seconds SECONDS] [--games GAMES] [--seed SEED]
+                     [--resume RESUME] [--lr LR]
+                     [--validation-prefixes VALIDATION_PREFIXES]
+                     [--holdout-prefixes HOLDOUT_PREFIXES]
+                     [--prefix-file PREFIX_FILE]
+                     [--agents AGENTS [AGENTS ...]]
+                     {run,train,tournament,play,prefixes}
+
+positional arguments:
+  {run,train,tournament,play,prefixes}
+
+options:
+  -h, --help            show this help message and exit
+  --output OUTPUT
+  --device DEVICE
+  --method {A,B,C}
+  --baseline BASELINE
+  --seconds SECONDS
+  --games GAMES
+  --seed SEED
+  --resume RESUME
+  --lr LR
+  --validation-prefixes VALIDATION_PREFIXES
+  --holdout-prefixes HOLDOUT_PREFIXES
+  --prefix-file PREFIX_FILE
+  --agents AGENTS [AGENTS ...]

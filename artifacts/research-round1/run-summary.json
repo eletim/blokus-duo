@@ -1,0 +1,150 @@
+{
+  "wall_seconds": 582.7641456799975,
+  "training": {
+    "A": {
+      "method": "A",
+      "completed_games": 4104,
+      "total_games": 4104,
+      "updates": 4104,
+      "invocation_seconds": 180.04698405899762,
+      "rollout_seconds": 117.98231210987433,
+      "update_seconds": 61.611814289935865,
+      "search_nodes": 0,
+      "learner_positions": 57302,
+      "training_seconds": 180.04566489599893,
+      "config": {
+        "method": "A",
+        "output": "artifacts/research-round1/A",
+        "baseline": "artifacts/research-round1/v1.pt",
+        "baseline_sha256": "15800d1adba818c9930859802f2be869efb7ca1738072287a518790ae988cee8",
+        "seconds": 180.0,
+        "games": 100000,
+        "seed": 101,
+        "device": "cuda",
+        "resume": null,
+        "lr": 0.0005,
+        "width": 4,
+        "reply_width": 3,
+        "torch": "2.7.1+cu128",
+        "cuda": "12.8",
+        "python": "3.12.14 (main, Sep  1 2026, 14:16:52) [Clang 22.1.3 ]",
+        "source_hashes": {
+          "/home/eletim/blokus-duo-ai/blokus/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "/home/eletim/blokus-duo-ai/blokus/__main__.py": "ea1bf3aa69bdb8bafa2f845569a3cd5ec09f832f7b4888db55c3ae05a239d9d0",
+          "/home/eletim/blokus-duo-ai/blokus/ai.py": "b0f452781d1d81b7ca1990b74948373886e27b50ab0e4c619b5cb22690c6b45c",
+          "/home/eletim/blokus-duo-ai/blokus/engine.py": "b7ee646d45cfeba355f60b37ec927accde4ad859b91567c4b0b8db3715a8827b",
+          "/home/eletim/blokus-duo-ai/blokus/experiment.py": "b23310e27298db00efaf278e333613dc2e6f7b0058fe5e9a6b065ac9d20588e3",
+          "/home/eletim/blokus-duo-ai/blokus/research.py": "94042b67f2b1cef442c1eceecbe2a1c50c249a7b2a51a62865779048e001b2c6",
+          "/home/eletim/blokus-duo-ai/blokus/research_train.py": "a3e4b243676c3039af61895436f67c794302fe5528389c38b54d6393816b0aff",
+          "/home/eletim/blokus-duo-ai/blokus/tournament.py": "ff55d36be085c9af407ffc5f2ed1a5ebfcdcc7f9730a9a0eb6a9231dd8baaba8"
+        },
+        "algorithm": "v1+heuristic ranking distillation with on-policy actor-critic auxiliary",
+        "pool": [
+          "random",
+          "heuristic",
+          "v1",
+          "current self"
+        ],
+        "prior": "fixed v1 heuristic logits + trainable residual"
+      }
+    },
+    "B": {
+      "method": "B",
+      "completed_games": 3325,
+      "total_games": 3325,
+      "updates": 3325,
+      "invocation_seconds": 180.03142952100097,
+      "rollout_seconds": 104.84675274998881,
+      "update_seconds": 74.50407062694649,
+      "search_nodes": 0,
+      "learner_positions": 46597,
+      "training_seconds": 180.02795516300102,
+      "config": {
+        "method": "B",
+        "output": "artifacts/research-round1/B",
+        "baseline": "artifacts/research-round1/v1.pt",
+        "baseline_sha256": "15800d1adba818c9930859802f2be869efb7ca1738072287a518790ae988cee8",
+        "seconds": 180.0,
+        "games": 100000,
+        "seed": 102,
+        "device": "cuda",
+        "resume": null,
+        "lr": 0.0005,
+        "width": 4,
+        "reply_width": 3,
+        "torch": "2.7.1+cu128",
+        "cuda": "12.8",
+        "python": "3.12.14 (main, Sep  1 2026, 14:16:52) [Clang 22.1.3 ]",
+        "source_hashes": {
+          "/home/eletim/blokus-duo-ai/blokus/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "/home/eletim/blokus-duo-ai/blokus/__main__.py": "ea1bf3aa69bdb8bafa2f845569a3cd5ec09f832f7b4888db55c3ae05a239d9d0",
+          "/home/eletim/blokus-duo-ai/blokus/ai.py": "b0f452781d1d81b7ca1990b74948373886e27b50ab0e4c619b5cb22690c6b45c",
+          "/home/eletim/blokus-duo-ai/blokus/engine.py": "b7ee646d45cfeba355f60b37ec927accde4ad859b91567c4b0b8db3715a8827b",
+          "/home/eletim/blokus-duo-ai/blokus/experiment.py": "b23310e27298db00efaf278e333613dc2e6f7b0058fe5e9a6b065ac9d20588e3",
+          "/home/eletim/blokus-duo-ai/blokus/research.py": "94042b67f2b1cef442c1eceecbe2a1c50c249a7b2a51a62865779048e001b2c6",
+          "/home/eletim/blokus-duo-ai/blokus/research_train.py": "a3e4b243676c3039af61895436f67c794302fe5528389c38b54d6393816b0aff",
+          "/home/eletim/blokus-duo-ai/blokus/tournament.py": "ff55d36be085c9af407ffc5f2ed1a5ebfcdcc7f9730a9a0eb6a9231dd8baaba8"
+        },
+        "algorithm": "v1+heuristic ranking distillation with on-policy actor-critic auxiliary",
+        "pool": [
+          "random",
+          "heuristic",
+          "v1",
+          "current self"
+        ],
+        "prior": "fixed v1 heuristic logits + trainable residual"
+      }
+    },
+    "C": {
+      "method": "C",
+      "completed_games": 2205,
+      "total_games": 2205,
+      "updates": 2205,
+      "invocation_seconds": 180.023873817001,
+      "rollout_seconds": 136.65430768107763,
+      "update_seconds": 42.8318001890766,
+      "search_nodes": 457156,
+      "learner_positions": 31112,
+      "training_seconds": 180.02090031100306,
+      "config": {
+        "method": "C",
+        "output": "artifacts/research-round1/C",
+        "baseline": "artifacts/research-round1/v1.pt",
+        "baseline_sha256": "15800d1adba818c9930859802f2be869efb7ca1738072287a518790ae988cee8",
+        "seconds": 180.0,
+        "games": 100000,
+        "seed": 103,
+        "device": "cuda",
+        "resume": null,
+        "lr": 0.0005,
+        "width": 4,
+        "reply_width": 3,
+        "torch": "2.7.1+cu128",
+        "cuda": "12.8",
+        "python": "3.12.14 (main, Sep  1 2026, 14:16:52) [Clang 22.1.3 ]",
+        "source_hashes": {
+          "/home/eletim/blokus-duo-ai/blokus/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "/home/eletim/blokus-duo-ai/blokus/__main__.py": "ea1bf3aa69bdb8bafa2f845569a3cd5ec09f832f7b4888db55c3ae05a239d9d0",
+          "/home/eletim/blokus-duo-ai/blokus/ai.py": "b0f452781d1d81b7ca1990b74948373886e27b50ab0e4c619b5cb22690c6b45c",
+          "/home/eletim/blokus-duo-ai/blokus/engine.py": "b7ee646d45cfeba355f60b37ec927accde4ad859b91567c4b0b8db3715a8827b",
+          "/home/eletim/blokus-duo-ai/blokus/experiment.py": "b23310e27298db00efaf278e333613dc2e6f7b0058fe5e9a6b065ac9d20588e3",
+          "/home/eletim/blokus-duo-ai/blokus/research.py": "94042b67f2b1cef442c1eceecbe2a1c50c249a7b2a51a62865779048e001b2c6",
+          "/home/eletim/blokus-duo-ai/blokus/research_train.py": "a3e4b243676c3039af61895436f67c794302fe5528389c38b54d6393816b0aff",
+          "/home/eletim/blokus-duo-ai/blokus/tournament.py": "ff55d36be085c9af407ffc5f2ed1a5ebfcdcc7f9730a9a0eb6a9231dd8baaba8"
+        },
+        "algorithm": "beam-search distillation, student-guided root shortlist",
+        "pool": [
+          "random",
+          "heuristic",
+          "v1",
+          "current self"
+        ],
+        "prior": "fixed v1 heuristic logits + trainable residual"
+      }
+    }
+  },
+  "selection_sha256": "7bc42bfc3034218916fdae4cb955f8b173fe4aa3a24892de93cb08f95a5e8f93",
+  "holdout_sha256": "acf142b86492d93a265b53fba5e32a46b08ba4d92f0977c4f1c0fd45ef829c21",
+  "matches": 21,
+  "completed": true
+}

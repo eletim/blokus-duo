@@ -1,0 +1,3698 @@
+[
+  {
+    "left": {
+      "spec": "artifacts/research-round1/A/midpoint.pt",
+      "checkpoint_sha256": "436d1ad087caecd6c711199602ea1653fcd8435adb0841b8cd7f88b001b9b247",
+      "stats": {
+        "calls": 383,
+        "legal_seconds": 0.12865064505240298,
+        "feature_seconds": 0.14599219798037666,
+        "network_seconds": 0.08160620897979243,
+        "search_seconds": 0.0,
+        "total_seconds": 0.35891688503761543,
+        "nodes": 0,
+        "candidates": 70909
+      },
+      "milliseconds_per_move": 0.9371198042757583
+    },
+    "right": {
+      "spec": "heuristic",
+      "checkpoint_sha256": null,
+      "stats": {
+        "calls": 384,
+        "legal_seconds": 0.1321237140109588,
+        "feature_seconds": 0.12683166596252704,
+        "network_seconds": 0.0022933660002308898,
+        "search_seconds": 0.0,
+        "total_seconds": 0.26294482497905847,
+        "nodes": 0,
+        "candidates": 70215
+      },
+      "milliseconds_per_move": 0.6847521483829647
+    },
+    "prefix_sha256": "2480e87c5124b02f6bfd4beff2e2ba3c6f03f32cef702dbdb57503fb386d3f12",
+    "prefix_seed": 41000,
+    "summary": {
+      "prefixes": 12,
+      "games": 24,
+      "wins": 11,
+      "losses": 13,
+      "draws": 0,
+      "mean_difference": -0.7083333333333334,
+      "difference_ci95": [
+        -2.9583333333333335,
+        1.4583333333333333
+      ],
+      "point_rate": 0.4583333333333333,
+      "point_rate_ci95": [
+        0.2916666666666667,
+        0.625
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "games": [
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 0,
+        "scores": [
+          -15,
+          -14
+        ],
+        "difference": -1,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 1,
+        "scores": [
+          -11,
+          -20
+        ],
+        "difference": -9,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 0,
+        "scores": [
+          -11,
+          -15
+        ],
+        "difference": 4,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 1,
+        "scores": [
+          -19,
+          -18
+        ],
+        "difference": 1,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 0,
+        "scores": [
+          -14,
+          -25
+        ],
+        "difference": 11,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 1,
+        "scores": [
+          -15,
+          -22
+        ],
+        "difference": -7,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 0,
+        "scores": [
+          -18,
+          -24
+        ],
+        "difference": 6,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 1,
+        "scores": [
+          -16,
+          -22
+        ],
+        "difference": -6,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 0,
+        "scores": [
+          -31,
+          -24
+        ],
+        "difference": -7,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 1,
+        "scores": [
+          -18,
+          -17
+        ],
+        "difference": 1,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 0,
+        "scores": [
+          -11,
+          -15
+        ],
+        "difference": 4,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 1,
+        "scores": [
+          -24,
+          -16
+        ],
+        "difference": 8,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 0,
+        "scores": [
+          -17,
+          -12
+        ],
+        "difference": -5,
+        "plies_after_prefix": 36
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 1,
+        "scores": [
+          -10,
+          -17
+        ],
+        "difference": -7,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 0,
+        "scores": [
+          -12,
+          -25
+        ],
+        "difference": 13,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 1,
+        "scores": [
+          -23,
+          -26
+        ],
+        "difference": -3,
+        "plies_after_prefix": 28
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 0,
+        "scores": [
+          -22,
+          -26
+        ],
+        "difference": 4,
+        "plies_after_prefix": 28
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 1,
+        "scores": [
+          -16,
+          -24
+        ],
+        "difference": -8,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 0,
+        "scores": [
+          -17,
+          -18
+        ],
+        "difference": 1,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 1,
+        "scores": [
+          -15,
+          -20
+        ],
+        "difference": -5,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 0,
+        "scores": [
+          -18,
+          -14
+        ],
+        "difference": -4,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 1,
+        "scores": [
+          -10,
+          -19
+        ],
+        "difference": -9,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 0,
+        "scores": [
+          -15,
+          -25
+        ],
+        "difference": 10,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 1,
+        "scores": [
+          -18,
+          -27
+        ],
+        "difference": -9,
+        "plies_after_prefix": 31
+      }
+    ],
+    "wall_seconds": 0.6525852720005787,
+    "search": {
+      "width": 4,
+      "reply_width": 3,
+      "depth": 2,
+      "equal_thinking_time": false
+    },
+    "method": "A",
+    "stage": "midpoint"
+  },
+  {
+    "left": {
+      "spec": "artifacts/research-round1/A/midpoint.pt",
+      "checkpoint_sha256": "436d1ad087caecd6c711199602ea1653fcd8435adb0841b8cd7f88b001b9b247",
+      "stats": {
+        "calls": 389,
+        "legal_seconds": 0.13170765000540996,
+        "feature_seconds": 0.1466455399458937,
+        "network_seconds": 0.07580441196114407,
+        "search_seconds": 0.0,
+        "total_seconds": 0.3566968880186323,
+        "nodes": 0,
+        "candidates": 73635
+      },
+      "milliseconds_per_move": 0.9169585810247617
+    },
+    "right": {
+      "spec": "artifacts/research-round1/v1.pt",
+      "checkpoint_sha256": "15800d1adba818c9930859802f2be869efb7ca1738072287a518790ae988cee8",
+      "stats": {
+        "calls": 395,
+        "legal_seconds": 0.12906053592814715,
+        "feature_seconds": 0.12750529704499058,
+        "network_seconds": 0.0694932780606905,
+        "search_seconds": 0.0,
+        "total_seconds": 0.3284787069496815,
+        "nodes": 0,
+        "candidates": 72268
+      },
+      "milliseconds_per_move": 0.8315916631637507
+    },
+    "prefix_sha256": "2480e87c5124b02f6bfd4beff2e2ba3c6f03f32cef702dbdb57503fb386d3f12",
+    "prefix_seed": 41000,
+    "summary": {
+      "prefixes": 12,
+      "games": 24,
+      "wins": 9,
+      "losses": 13,
+      "draws": 2,
+      "mean_difference": -1.5416666666666667,
+      "difference_ci95": [
+        -3.8333333333333335,
+        0.9166666666666666
+      ],
+      "point_rate": 0.4166666666666667,
+      "point_rate_ci95": [
+        0.20833333333333334,
+        0.625
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "games": [
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 0,
+        "scores": [
+          -16,
+          -12
+        ],
+        "difference": -4,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 1,
+        "scores": [
+          -11,
+          -15
+        ],
+        "difference": -4,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 0,
+        "scores": [
+          -15,
+          -15
+        ],
+        "difference": 0,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 1,
+        "scores": [
+          -13,
+          -24
+        ],
+        "difference": -11,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 0,
+        "scores": [
+          -12,
+          -14
+        ],
+        "difference": 2,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 1,
+        "scores": [
+          -16,
+          -29
+        ],
+        "difference": -13,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 0,
+        "scores": [
+          -14,
+          -14
+        ],
+        "difference": 0,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 1,
+        "scores": [
+          -18,
+          -13
+        ],
+        "difference": 5,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 0,
+        "scores": [
+          -21,
+          -17
+        ],
+        "difference": -4,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 1,
+        "scores": [
+          -9,
+          -19
+        ],
+        "difference": -10,
+        "plies_after_prefix": 37
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 0,
+        "scores": [
+          -17,
+          -14
+        ],
+        "difference": -3,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 1,
+        "scores": [
+          -16,
+          -24
+        ],
+        "difference": -8,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 0,
+        "scores": [
+          -16,
+          -12
+        ],
+        "difference": -4,
+        "plies_after_prefix": 36
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 1,
+        "scores": [
+          -20,
+          -17
+        ],
+        "difference": 3,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 0,
+        "scores": [
+          -12,
+          -25
+        ],
+        "difference": 13,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 1,
+        "scores": [
+          -12,
+          -25
+        ],
+        "difference": -13,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 0,
+        "scores": [
+          -14,
+          -16
+        ],
+        "difference": 2,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 1,
+        "scores": [
+          -29,
+          -18
+        ],
+        "difference": 11,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 0,
+        "scores": [
+          -15,
+          -17
+        ],
+        "difference": 2,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 1,
+        "scores": [
+          -15,
+          -16
+        ],
+        "difference": -1,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 0,
+        "scores": [
+          -22,
+          -26
+        ],
+        "difference": 4,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 1,
+        "scores": [
+          -23,
+          -19
+        ],
+        "difference": 4,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 0,
+        "scores": [
+          -21,
+          -18
+        ],
+        "difference": -3,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 1,
+        "scores": [
+          -11,
+          -16
+        ],
+        "difference": -5,
+        "plies_after_prefix": 35
+      }
+    ],
+    "wall_seconds": 0.7148079799990228,
+    "search": {
+      "width": 4,
+      "reply_width": 3,
+      "depth": 2,
+      "equal_thinking_time": false
+    },
+    "method": "A",
+    "stage": "midpoint"
+  },
+  {
+    "left": {
+      "spec": "artifacts/research-round1/A/latest.pt",
+      "checkpoint_sha256": "44fdaf4ff7822a25bb3fcb37542ecc3df5f5958d632fa5104dd973e1462e084c",
+      "stats": {
+        "calls": 383,
+        "legal_seconds": 0.12611241200283985,
+        "feature_seconds": 0.14426318402183824,
+        "network_seconds": 0.0794833470172307,
+        "search_seconds": 0.0,
+        "total_seconds": 0.3524472879944369,
+        "nodes": 0,
+        "candidates": 71521
+      },
+      "milliseconds_per_move": 0.9202279059906969
+    },
+    "right": {
+      "spec": "heuristic",
+      "checkpoint_sha256": null,
+      "stats": {
+        "calls": 383,
+        "legal_seconds": 0.12496806901253876,
+        "feature_seconds": 0.12155560302562662,
+        "network_seconds": 0.0021250149875413626,
+        "search_seconds": 0.0,
+        "total_seconds": 0.2502378119934292,
+        "nodes": 0,
+        "candidates": 68710
+      },
+      "milliseconds_per_move": 0.6533624334032094
+    },
+    "prefix_sha256": "2480e87c5124b02f6bfd4beff2e2ba3c6f03f32cef702dbdb57503fb386d3f12",
+    "prefix_seed": 41000,
+    "summary": {
+      "prefixes": 12,
+      "games": 24,
+      "wins": 14,
+      "losses": 10,
+      "draws": 0,
+      "mean_difference": 1.5416666666666667,
+      "difference_ci95": [
+        -1.4166666666666667,
+        4.416666666666667
+      ],
+      "point_rate": 0.5833333333333334,
+      "point_rate_ci95": [
+        0.375,
+        0.7916666666666666
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "games": [
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 0,
+        "scores": [
+          -15,
+          -14
+        ],
+        "difference": -1,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 1,
+        "scores": [
+          -11,
+          -20
+        ],
+        "difference": -9,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 0,
+        "scores": [
+          -17,
+          -36
+        ],
+        "difference": 19,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 1,
+        "scores": [
+          -19,
+          -18
+        ],
+        "difference": 1,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 0,
+        "scores": [
+          -14,
+          -25
+        ],
+        "difference": 11,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 1,
+        "scores": [
+          -15,
+          -22
+        ],
+        "difference": -7,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 0,
+        "scores": [
+          -18,
+          -24
+        ],
+        "difference": 6,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 1,
+        "scores": [
+          -16,
+          -12
+        ],
+        "difference": 4,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 0,
+        "scores": [
+          -27,
+          -28
+        ],
+        "difference": 1,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 1,
+        "scores": [
+          -18,
+          -17
+        ],
+        "difference": 1,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 0,
+        "scores": [
+          -12,
+          -19
+        ],
+        "difference": 7,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 1,
+        "scores": [
+          -17,
+          -21
+        ],
+        "difference": -4,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 0,
+        "scores": [
+          -20,
+          -15
+        ],
+        "difference": -5,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 1,
+        "scores": [
+          -19,
+          -13
+        ],
+        "difference": 6,
+        "plies_after_prefix": 36
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 0,
+        "scores": [
+          -12,
+          -25
+        ],
+        "difference": 13,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 1,
+        "scores": [
+          -23,
+          -26
+        ],
+        "difference": -3,
+        "plies_after_prefix": 28
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 0,
+        "scores": [
+          -24,
+          -26
+        ],
+        "difference": 2,
+        "plies_after_prefix": 27
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 1,
+        "scores": [
+          -16,
+          -24
+        ],
+        "difference": -8,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 0,
+        "scores": [
+          -17,
+          -18
+        ],
+        "difference": 1,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 1,
+        "scores": [
+          -15,
+          -20
+        ],
+        "difference": -5,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 0,
+        "scores": [
+          -18,
+          -14
+        ],
+        "difference": -4,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 1,
+        "scores": [
+          -10,
+          -19
+        ],
+        "difference": -9,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 0,
+        "scores": [
+          -15,
+          -25
+        ],
+        "difference": 10,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 1,
+        "scores": [
+          -25,
+          -15
+        ],
+        "difference": 10,
+        "plies_after_prefix": 34
+      }
+    ],
+    "wall_seconds": 0.6303170309984125,
+    "search": {
+      "width": 4,
+      "reply_width": 3,
+      "depth": 2,
+      "equal_thinking_time": false
+    },
+    "method": "A",
+    "stage": "latest"
+  },
+  {
+    "left": {
+      "spec": "artifacts/research-round1/A/latest.pt",
+      "checkpoint_sha256": "44fdaf4ff7822a25bb3fcb37542ecc3df5f5958d632fa5104dd973e1462e084c",
+      "stats": {
+        "calls": 386,
+        "legal_seconds": 0.12894836402483634,
+        "feature_seconds": 0.14639294602602604,
+        "network_seconds": 0.0749106649782334,
+        "search_seconds": 0.0,
+        "total_seconds": 0.35275982199891587,
+        "nodes": 0,
+        "candidates": 74217
+      },
+      "milliseconds_per_move": 0.9138855492199893
+    },
+    "right": {
+      "spec": "artifacts/research-round1/v1.pt",
+      "checkpoint_sha256": "15800d1adba818c9930859802f2be869efb7ca1738072287a518790ae988cee8",
+      "stats": {
+        "calls": 390,
+        "legal_seconds": 0.12558359299146105,
+        "feature_seconds": 0.12710787797914236,
+        "network_seconds": 0.06828500703340978,
+        "search_seconds": 0.0,
+        "total_seconds": 0.3233732349908678,
+        "nodes": 0,
+        "candidates": 72130
+      },
+      "milliseconds_per_move": 0.8291621410022251
+    },
+    "prefix_sha256": "2480e87c5124b02f6bfd4beff2e2ba3c6f03f32cef702dbdb57503fb386d3f12",
+    "prefix_seed": 41000,
+    "summary": {
+      "prefixes": 12,
+      "games": 24,
+      "wins": 10,
+      "losses": 13,
+      "draws": 1,
+      "mean_difference": -0.9166666666666666,
+      "difference_ci95": [
+        -3.2083333333333335,
+        1.375
+      ],
+      "point_rate": 0.4375,
+      "point_rate_ci95": [
+        0.22916666666666666,
+        0.6666666666666666
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "games": [
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 0,
+        "scores": [
+          -16,
+          -12
+        ],
+        "difference": -4,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 1,
+        "scores": [
+          -11,
+          -15
+        ],
+        "difference": -4,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 0,
+        "scores": [
+          -15,
+          -15
+        ],
+        "difference": 0,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 1,
+        "scores": [
+          -14,
+          -23
+        ],
+        "difference": -9,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 0,
+        "scores": [
+          -12,
+          -20
+        ],
+        "difference": 8,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 1,
+        "scores": [
+          -16,
+          -29
+        ],
+        "difference": -13,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 0,
+        "scores": [
+          -17,
+          -18
+        ],
+        "difference": 1,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 1,
+        "scores": [
+          -18,
+          -13
+        ],
+        "difference": 5,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 0,
+        "scores": [
+          -21,
+          -17
+        ],
+        "difference": -4,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 1,
+        "scores": [
+          -9,
+          -19
+        ],
+        "difference": -10,
+        "plies_after_prefix": 37
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 0,
+        "scores": [
+          -17,
+          -14
+        ],
+        "difference": -3,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 1,
+        "scores": [
+          -16,
+          -24
+        ],
+        "difference": -8,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 0,
+        "scores": [
+          -11,
+          -19
+        ],
+        "difference": 8,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 1,
+        "scores": [
+          -18,
+          -19
+        ],
+        "difference": -1,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 0,
+        "scores": [
+          -12,
+          -25
+        ],
+        "difference": 13,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 1,
+        "scores": [
+          -12,
+          -25
+        ],
+        "difference": -13,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 0,
+        "scores": [
+          -14,
+          -16
+        ],
+        "difference": 2,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 1,
+        "scores": [
+          -29,
+          -18
+        ],
+        "difference": 11,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 0,
+        "scores": [
+          -15,
+          -17
+        ],
+        "difference": 2,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 1,
+        "scores": [
+          -15,
+          -16
+        ],
+        "difference": -1,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 0,
+        "scores": [
+          -22,
+          -24
+        ],
+        "difference": 2,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 1,
+        "scores": [
+          -23,
+          -19
+        ],
+        "difference": 4,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 0,
+        "scores": [
+          -21,
+          -18
+        ],
+        "difference": -3,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 1,
+        "scores": [
+          -11,
+          -16
+        ],
+        "difference": -5,
+        "plies_after_prefix": 35
+      }
+    ],
+    "wall_seconds": 0.7049186780022865,
+    "search": {
+      "width": 4,
+      "reply_width": 3,
+      "depth": 2,
+      "equal_thinking_time": false
+    },
+    "method": "A",
+    "stage": "latest"
+  },
+  {
+    "left": {
+      "spec": "artifacts/research-round1/B/midpoint.pt",
+      "checkpoint_sha256": "df7b3e67670fa7d1b9fb7e3185d695cec074d4f9529aed096b08894770ba0e1d",
+      "stats": {
+        "calls": 385,
+        "legal_seconds": 0.12231511098798364,
+        "feature_seconds": 0.13713876896872534,
+        "network_seconds": 0.13004203898162814,
+        "search_seconds": 0.0,
+        "total_seconds": 0.39311135896787164,
+        "nodes": 0,
+        "candidates": 70492
+      },
+      "milliseconds_per_move": 1.0210684648516146
+    },
+    "right": {
+      "spec": "heuristic",
+      "checkpoint_sha256": null,
+      "stats": {
+        "calls": 383,
+        "legal_seconds": 0.12468049803283066,
+        "feature_seconds": 0.12238895297559793,
+        "network_seconds": 0.0024708840173843782,
+        "search_seconds": 0.0,
+        "total_seconds": 0.25129226505669067,
+        "nodes": 0,
+        "candidates": 69166
+      },
+      "milliseconds_per_move": 0.65611557456055
+    },
+    "prefix_sha256": "2480e87c5124b02f6bfd4beff2e2ba3c6f03f32cef702dbdb57503fb386d3f12",
+    "prefix_seed": 41000,
+    "summary": {
+      "prefixes": 12,
+      "games": 24,
+      "wins": 15,
+      "losses": 9,
+      "draws": 0,
+      "mean_difference": 1.25,
+      "difference_ci95": [
+        -1.375,
+        3.9166666666666665
+      ],
+      "point_rate": 0.625,
+      "point_rate_ci95": [
+        0.4166666666666667,
+        0.8333333333333334
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "games": [
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 0,
+        "scores": [
+          -13,
+          -16
+        ],
+        "difference": 3,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 1,
+        "scores": [
+          -11,
+          -20
+        ],
+        "difference": -9,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 0,
+        "scores": [
+          -20,
+          -15
+        ],
+        "difference": -5,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 1,
+        "scores": [
+          -20,
+          -21
+        ],
+        "difference": -1,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 0,
+        "scores": [
+          -14,
+          -26
+        ],
+        "difference": 12,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 1,
+        "scores": [
+          -14,
+          -15
+        ],
+        "difference": -1,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 0,
+        "scores": [
+          -14,
+          -24
+        ],
+        "difference": 10,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 1,
+        "scores": [
+          -16,
+          -12
+        ],
+        "difference": 4,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 0,
+        "scores": [
+          -30,
+          -31
+        ],
+        "difference": 1,
+        "plies_after_prefix": 28
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 1,
+        "scores": [
+          -18,
+          -17
+        ],
+        "difference": 1,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 0,
+        "scores": [
+          -15,
+          -17
+        ],
+        "difference": 2,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 1,
+        "scores": [
+          -24,
+          -16
+        ],
+        "difference": 8,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 0,
+        "scores": [
+          -15,
+          -16
+        ],
+        "difference": 1,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 1,
+        "scores": [
+          -19,
+          -13
+        ],
+        "difference": 6,
+        "plies_after_prefix": 36
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 0,
+        "scores": [
+          -12,
+          -15
+        ],
+        "difference": 3,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 1,
+        "scores": [
+          -23,
+          -26
+        ],
+        "difference": -3,
+        "plies_after_prefix": 28
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 0,
+        "scores": [
+          -22,
+          -26
+        ],
+        "difference": 4,
+        "plies_after_prefix": 28
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 1,
+        "scores": [
+          -16,
+          -24
+        ],
+        "difference": -8,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 0,
+        "scores": [
+          -21,
+          -16
+        ],
+        "difference": -5,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 1,
+        "scores": [
+          -15,
+          -20
+        ],
+        "difference": -5,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 0,
+        "scores": [
+          -18,
+          -19
+        ],
+        "difference": 1,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 1,
+        "scores": [
+          -10,
+          -19
+        ],
+        "difference": -9,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 0,
+        "scores": [
+          -15,
+          -25
+        ],
+        "difference": 10,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 1,
+        "scores": [
+          -25,
+          -15
+        ],
+        "difference": 10,
+        "plies_after_prefix": 34
+      }
+    ],
+    "wall_seconds": 0.6746560100000352,
+    "search": {
+      "width": 4,
+      "reply_width": 3,
+      "depth": 2,
+      "equal_thinking_time": false
+    },
+    "method": "B",
+    "stage": "midpoint"
+  },
+  {
+    "left": {
+      "spec": "artifacts/research-round1/B/midpoint.pt",
+      "checkpoint_sha256": "df7b3e67670fa7d1b9fb7e3185d695cec074d4f9529aed096b08894770ba0e1d",
+      "stats": {
+        "calls": 393,
+        "legal_seconds": 0.1282026340268203,
+        "feature_seconds": 0.140558919061732,
+        "network_seconds": 0.12472645996240317,
+        "search_seconds": 0.0,
+        "total_seconds": 0.3970580720124417,
+        "nodes": 0,
+        "candidates": 73706
+      },
+      "milliseconds_per_move": 1.0103258829833122
+    },
+    "right": {
+      "spec": "artifacts/research-round1/v1.pt",
+      "checkpoint_sha256": "15800d1adba818c9930859802f2be869efb7ca1738072287a518790ae988cee8",
+      "stats": {
+        "calls": 395,
+        "legal_seconds": 0.12743607004085789,
+        "feature_seconds": 0.12583250803436385,
+        "network_seconds": 0.0707753900278476,
+        "search_seconds": 0.0,
+        "total_seconds": 0.326686584019626,
+        "nodes": 0,
+        "candidates": 72886
+      },
+      "milliseconds_per_move": 0.8270546430876609
+    },
+    "prefix_sha256": "2480e87c5124b02f6bfd4beff2e2ba3c6f03f32cef702dbdb57503fb386d3f12",
+    "prefix_seed": 41000,
+    "summary": {
+      "prefixes": 12,
+      "games": 24,
+      "wins": 8,
+      "losses": 11,
+      "draws": 5,
+      "mean_difference": -1.0416666666666667,
+      "difference_ci95": [
+        -3.125,
+        0.8333333333333334
+      ],
+      "point_rate": 0.4375,
+      "point_rate_ci95": [
+        0.25,
+        0.6458333333333334
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "games": [
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 0,
+        "scores": [
+          -16,
+          -12
+        ],
+        "difference": -4,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 1,
+        "scores": [
+          -15,
+          -12
+        ],
+        "difference": 3,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 0,
+        "scores": [
+          -15,
+          -15
+        ],
+        "difference": 0,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 1,
+        "scores": [
+          -12,
+          -17
+        ],
+        "difference": -5,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 0,
+        "scores": [
+          -17,
+          -17
+        ],
+        "difference": 0,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 1,
+        "scores": [
+          -16,
+          -16
+        ],
+        "difference": 0,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 0,
+        "scores": [
+          -14,
+          -14
+        ],
+        "difference": 0,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 1,
+        "scores": [
+          -18,
+          -13
+        ],
+        "difference": 5,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 0,
+        "scores": [
+          -21,
+          -17
+        ],
+        "difference": -4,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 1,
+        "scores": [
+          -12,
+          -17
+        ],
+        "difference": -5,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 0,
+        "scores": [
+          -17,
+          -14
+        ],
+        "difference": -3,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 1,
+        "scores": [
+          -23,
+          -17
+        ],
+        "difference": 6,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 0,
+        "scores": [
+          -8,
+          -11
+        ],
+        "difference": 3,
+        "plies_after_prefix": 37
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 1,
+        "scores": [
+          -20,
+          -16
+        ],
+        "difference": 4,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 0,
+        "scores": [
+          -15,
+          -11
+        ],
+        "difference": -4,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 1,
+        "scores": [
+          -12,
+          -25
+        ],
+        "difference": -13,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 0,
+        "scores": [
+          -19,
+          -12
+        ],
+        "difference": -7,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 1,
+        "scores": [
+          -29,
+          -18
+        ],
+        "difference": 11,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 0,
+        "scores": [
+          -21,
+          -14
+        ],
+        "difference": -7,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 1,
+        "scores": [
+          -13,
+          -17
+        ],
+        "difference": -4,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 0,
+        "scores": [
+          -23,
+          -24
+        ],
+        "difference": 1,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 1,
+        "scores": [
+          -20,
+          -19
+        ],
+        "difference": 1,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 0,
+        "scores": [
+          -21,
+          -18
+        ],
+        "difference": -3,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 1,
+        "scores": [
+          -15,
+          -15
+        ],
+        "difference": 0,
+        "plies_after_prefix": 34
+      }
+    ],
+    "wall_seconds": 0.7547496389997832,
+    "search": {
+      "width": 4,
+      "reply_width": 3,
+      "depth": 2,
+      "equal_thinking_time": false
+    },
+    "method": "B",
+    "stage": "midpoint"
+  },
+  {
+    "left": {
+      "spec": "artifacts/research-round1/B/latest.pt",
+      "checkpoint_sha256": "cbe2a71b92523b1bd7366e0303299fc40694805f84e0b33f7f2f63e3c16ea944",
+      "stats": {
+        "calls": 388,
+        "legal_seconds": 0.12490405003336491,
+        "feature_seconds": 0.14418157898035133,
+        "network_seconds": 0.1347562920236669,
+        "search_seconds": 0.0,
+        "total_seconds": 0.4075787400106492,
+        "nodes": 0,
+        "candidates": 72324
+      },
+      "milliseconds_per_move": 1.0504606701305392
+    },
+    "right": {
+      "spec": "heuristic",
+      "checkpoint_sha256": null,
+      "stats": {
+        "calls": 385,
+        "legal_seconds": 0.12536668403845397,
+        "feature_seconds": 0.1235302060340473,
+        "network_seconds": 0.002582266984973103,
+        "search_seconds": 0.0,
+        "total_seconds": 0.2532623190090817,
+        "nodes": 0,
+        "candidates": 69296
+      },
+      "milliseconds_per_move": 0.657824205218394
+    },
+    "prefix_sha256": "2480e87c5124b02f6bfd4beff2e2ba3c6f03f32cef702dbdb57503fb386d3f12",
+    "prefix_seed": 41000,
+    "summary": {
+      "prefixes": 12,
+      "games": 24,
+      "wins": 16,
+      "losses": 8,
+      "draws": 0,
+      "mean_difference": 2.6666666666666665,
+      "difference_ci95": [
+        0.0,
+        5.25
+      ],
+      "point_rate": 0.6666666666666666,
+      "point_rate_ci95": [
+        0.5,
+        0.8333333333333334
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "games": [
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 0,
+        "scores": [
+          -15,
+          -14
+        ],
+        "difference": -1,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 1,
+        "scores": [
+          -11,
+          -20
+        ],
+        "difference": -9,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 0,
+        "scores": [
+          -11,
+          -15
+        ],
+        "difference": 4,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 1,
+        "scores": [
+          -19,
+          -18
+        ],
+        "difference": 1,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 0,
+        "scores": [
+          -14,
+          -25
+        ],
+        "difference": 11,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 1,
+        "scores": [
+          -15,
+          -22
+        ],
+        "difference": -7,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 0,
+        "scores": [
+          -18,
+          -24
+        ],
+        "difference": 6,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 1,
+        "scores": [
+          -16,
+          -12
+        ],
+        "difference": 4,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 0,
+        "scores": [
+          -15,
+          -32
+        ],
+        "difference": 17,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 1,
+        "scores": [
+          -18,
+          -17
+        ],
+        "difference": 1,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 0,
+        "scores": [
+          -12,
+          -19
+        ],
+        "difference": 7,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 1,
+        "scores": [
+          -24,
+          -16
+        ],
+        "difference": 8,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 0,
+        "scores": [
+          -20,
+          -15
+        ],
+        "difference": -5,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 1,
+        "scores": [
+          -19,
+          -13
+        ],
+        "difference": 6,
+        "plies_after_prefix": 36
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 0,
+        "scores": [
+          -12,
+          -25
+        ],
+        "difference": 13,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 1,
+        "scores": [
+          -23,
+          -26
+        ],
+        "difference": -3,
+        "plies_after_prefix": 28
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 0,
+        "scores": [
+          -24,
+          -26
+        ],
+        "difference": 2,
+        "plies_after_prefix": 27
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 1,
+        "scores": [
+          -16,
+          -24
+        ],
+        "difference": -8,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 0,
+        "scores": [
+          -17,
+          -18
+        ],
+        "difference": 1,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 1,
+        "scores": [
+          -15,
+          -20
+        ],
+        "difference": -5,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 0,
+        "scores": [
+          -15,
+          -14
+        ],
+        "difference": -1,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 1,
+        "scores": [
+          -14,
+          -12
+        ],
+        "difference": 2,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 0,
+        "scores": [
+          -15,
+          -25
+        ],
+        "difference": 10,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 1,
+        "scores": [
+          -25,
+          -15
+        ],
+        "difference": 10,
+        "plies_after_prefix": 34
+      }
+    ],
+    "wall_seconds": 0.6917219490023854,
+    "search": {
+      "width": 4,
+      "reply_width": 3,
+      "depth": 2,
+      "equal_thinking_time": false
+    },
+    "method": "B",
+    "stage": "latest"
+  },
+  {
+    "left": {
+      "spec": "artifacts/research-round1/B/latest.pt",
+      "checkpoint_sha256": "cbe2a71b92523b1bd7366e0303299fc40694805f84e0b33f7f2f63e3c16ea944",
+      "stats": {
+        "calls": 389,
+        "legal_seconds": 0.12828930099931313,
+        "feature_seconds": 0.14416710500518093,
+        "network_seconds": 0.1241684160195291,
+        "search_seconds": 0.0,
+        "total_seconds": 0.40020003397148685,
+        "nodes": 0,
+        "candidates": 74217
+      },
+      "milliseconds_per_move": 1.0287918611092206
+    },
+    "right": {
+      "spec": "artifacts/research-round1/v1.pt",
+      "checkpoint_sha256": "15800d1adba818c9930859802f2be869efb7ca1738072287a518790ae988cee8",
+      "stats": {
+        "calls": 391,
+        "legal_seconds": 0.12546568302059313,
+        "feature_seconds": 0.12668593698253972,
+        "network_seconds": 0.07025555502696079,
+        "search_seconds": 0.0,
+        "total_seconds": 0.3250378880620701,
+        "nodes": 0,
+        "candidates": 71899
+      },
+      "milliseconds_per_move": 0.8312989464503072
+    },
+    "prefix_sha256": "2480e87c5124b02f6bfd4beff2e2ba3c6f03f32cef702dbdb57503fb386d3f12",
+    "prefix_seed": 41000,
+    "summary": {
+      "prefixes": 12,
+      "games": 24,
+      "wins": 11,
+      "losses": 11,
+      "draws": 2,
+      "mean_difference": 0.0,
+      "difference_ci95": [
+        -2.125,
+        2.2510416666666706
+      ],
+      "point_rate": 0.5,
+      "point_rate_ci95": [
+        0.2916666666666667,
+        0.7083333333333334
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "games": [
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 0,
+        "scores": [
+          -12,
+          -12
+        ],
+        "difference": 0,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 1,
+        "scores": [
+          -11,
+          -15
+        ],
+        "difference": -4,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 0,
+        "scores": [
+          -15,
+          -15
+        ],
+        "difference": 0,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 1,
+        "scores": [
+          -18,
+          -17
+        ],
+        "difference": 1,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 0,
+        "scores": [
+          -12,
+          -20
+        ],
+        "difference": 8,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 1,
+        "scores": [
+          -16,
+          -29
+        ],
+        "difference": -13,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 0,
+        "scores": [
+          -17,
+          -18
+        ],
+        "difference": 1,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 1,
+        "scores": [
+          -18,
+          -13
+        ],
+        "difference": 5,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 0,
+        "scores": [
+          -21,
+          -17
+        ],
+        "difference": -4,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 1,
+        "scores": [
+          -9,
+          -19
+        ],
+        "difference": -10,
+        "plies_after_prefix": 37
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 0,
+        "scores": [
+          -17,
+          -14
+        ],
+        "difference": -3,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 1,
+        "scores": [
+          -23,
+          -17
+        ],
+        "difference": 6,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 0,
+        "scores": [
+          -15,
+          -12
+        ],
+        "difference": -3,
+        "plies_after_prefix": 36
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 1,
+        "scores": [
+          -18,
+          -19
+        ],
+        "difference": -1,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 0,
+        "scores": [
+          -12,
+          -25
+        ],
+        "difference": 13,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 1,
+        "scores": [
+          -12,
+          -25
+        ],
+        "difference": -13,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 0,
+        "scores": [
+          -11,
+          -16
+        ],
+        "difference": 5,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 1,
+        "scores": [
+          -29,
+          -18
+        ],
+        "difference": 11,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 0,
+        "scores": [
+          -15,
+          -17
+        ],
+        "difference": 2,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 1,
+        "scores": [
+          -15,
+          -16
+        ],
+        "difference": -1,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 0,
+        "scores": [
+          -22,
+          -26
+        ],
+        "difference": 4,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 1,
+        "scores": [
+          -23,
+          -19
+        ],
+        "difference": 4,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 0,
+        "scores": [
+          -21,
+          -18
+        ],
+        "difference": -3,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 1,
+        "scores": [
+          -11,
+          -16
+        ],
+        "difference": -5,
+        "plies_after_prefix": 35
+      }
+    ],
+    "wall_seconds": 0.7566846829977294,
+    "search": {
+      "width": 4,
+      "reply_width": 3,
+      "depth": 2,
+      "equal_thinking_time": false
+    },
+    "method": "B",
+    "stage": "latest"
+  },
+  {
+    "left": {
+      "spec": "artifacts/research-round1/C/midpoint.pt",
+      "checkpoint_sha256": "9f06eb21f200402881c29db17dc03b0ca399129881397b8e9311b16ef6d20bab",
+      "stats": {
+        "calls": 400,
+        "legal_seconds": 0.10177436999947531,
+        "feature_seconds": 0.12737383002968272,
+        "network_seconds": 0.1327341210162558,
+        "search_seconds": 0.0,
+        "total_seconds": 0.365531629009638,
+        "nodes": 0,
+        "candidates": 64549
+      },
+      "milliseconds_per_move": 0.913829072524095
+    },
+    "right": {
+      "spec": "heuristic",
+      "checkpoint_sha256": null,
+      "stats": {
+        "calls": 401,
+        "legal_seconds": 0.12070866299109184,
+        "feature_seconds": 0.1386743880029826,
+        "network_seconds": 0.002621146024466725,
+        "search_seconds": 0.0,
+        "total_seconds": 0.2638298929850862,
+        "nodes": 0,
+        "candidates": 78708
+      },
+      "milliseconds_per_move": 0.6579299076934818
+    },
+    "prefix_sha256": "2480e87c5124b02f6bfd4beff2e2ba3c6f03f32cef702dbdb57503fb386d3f12",
+    "prefix_seed": 41000,
+    "summary": {
+      "prefixes": 12,
+      "games": 24,
+      "wins": 10,
+      "losses": 12,
+      "draws": 2,
+      "mean_difference": -0.9166666666666666,
+      "difference_ci95": [
+        -2.7916666666666665,
+        1.25
+      ],
+      "point_rate": 0.4583333333333333,
+      "point_rate_ci95": [
+        0.2916666666666667,
+        0.625
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "games": [
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 0,
+        "scores": [
+          -14,
+          -9
+        ],
+        "difference": -5,
+        "plies_after_prefix": 36
+      },
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 1,
+        "scores": [
+          -11,
+          -13
+        ],
+        "difference": -2,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 0,
+        "scores": [
+          -16,
+          -17
+        ],
+        "difference": 1,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 1,
+        "scores": [
+          -12,
+          -15
+        ],
+        "difference": -3,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 0,
+        "scores": [
+          -19,
+          -7
+        ],
+        "difference": -12,
+        "plies_after_prefix": 36
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 1,
+        "scores": [
+          -18,
+          -20
+        ],
+        "difference": -2,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 0,
+        "scores": [
+          -22,
+          -15
+        ],
+        "difference": -7,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 1,
+        "scores": [
+          -12,
+          -12
+        ],
+        "difference": 0,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 0,
+        "scores": [
+          -18,
+          -18
+        ],
+        "difference": 0,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 1,
+        "scores": [
+          -16,
+          -23
+        ],
+        "difference": -7,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 0,
+        "scores": [
+          -13,
+          -9
+        ],
+        "difference": -4,
+        "plies_after_prefix": 38
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 1,
+        "scores": [
+          -15,
+          -11
+        ],
+        "difference": 4,
+        "plies_after_prefix": 36
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 0,
+        "scores": [
+          -15,
+          -19
+        ],
+        "difference": 4,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 1,
+        "scores": [
+          -16,
+          -20
+        ],
+        "difference": -4,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 0,
+        "scores": [
+          -11,
+          -16
+        ],
+        "difference": 5,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 1,
+        "scores": [
+          -8,
+          -18
+        ],
+        "difference": -10,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 0,
+        "scores": [
+          -12,
+          -24
+        ],
+        "difference": 12,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 1,
+        "scores": [
+          -8,
+          -18
+        ],
+        "difference": -10,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 0,
+        "scores": [
+          -13,
+          -25
+        ],
+        "difference": 12,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 1,
+        "scores": [
+          -21,
+          -17
+        ],
+        "difference": 4,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 0,
+        "scores": [
+          -8,
+          -14
+        ],
+        "difference": 6,
+        "plies_after_prefix": 36
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 1,
+        "scores": [
+          -16,
+          -24
+        ],
+        "difference": -8,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 0,
+        "scores": [
+          -19,
+          -20
+        ],
+        "difference": 1,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 1,
+        "scores": [
+          -15,
+          -12
+        ],
+        "difference": 3,
+        "plies_after_prefix": 36
+      }
+    ],
+    "wall_seconds": 0.6562780790009128,
+    "search": {
+      "width": 4,
+      "reply_width": 3,
+      "depth": 2,
+      "equal_thinking_time": false
+    },
+    "method": "C",
+    "stage": "midpoint"
+  },
+  {
+    "left": {
+      "spec": "artifacts/research-round1/C/midpoint.pt",
+      "checkpoint_sha256": "9f06eb21f200402881c29db17dc03b0ca399129881397b8e9311b16ef6d20bab",
+      "stats": {
+        "calls": 396,
+        "legal_seconds": 0.1095273689898022,
+        "feature_seconds": 0.1334022289593122,
+        "network_seconds": 0.12636274099349976,
+        "search_seconds": 0.0,
+        "total_seconds": 0.3728822159791889,
+        "nodes": 0,
+        "candidates": 66769
+      },
+      "milliseconds_per_move": 0.9416217575232043
+    },
+    "right": {
+      "spec": "artifacts/research-round1/v1.pt",
+      "checkpoint_sha256": "15800d1adba818c9930859802f2be869efb7ca1738072287a518790ae988cee8",
+      "stats": {
+        "calls": 399,
+        "legal_seconds": 0.12430399900404154,
+        "feature_seconds": 0.14607405200149515,
+        "network_seconds": 0.07406189200264635,
+        "search_seconds": 0.0,
+        "total_seconds": 0.34715065197087824,
+        "nodes": 0,
+        "candidates": 82521
+      },
+      "milliseconds_per_move": 0.8700517593255094
+    },
+    "prefix_sha256": "2480e87c5124b02f6bfd4beff2e2ba3c6f03f32cef702dbdb57503fb386d3f12",
+    "prefix_seed": 41000,
+    "summary": {
+      "prefixes": 12,
+      "games": 24,
+      "wins": 10,
+      "losses": 13,
+      "draws": 1,
+      "mean_difference": -1.75,
+      "difference_ci95": [
+        -3.376041666666666,
+        -0.375
+      ],
+      "point_rate": 0.4375,
+      "point_rate_ci95": [
+        0.3333333333333333,
+        0.5
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "games": [
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 0,
+        "scores": [
+          -12,
+          -15
+        ],
+        "difference": 3,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 1,
+        "scores": [
+          -8,
+          -11
+        ],
+        "difference": -3,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 0,
+        "scores": [
+          -15,
+          -17
+        ],
+        "difference": 2,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 1,
+        "scores": [
+          -12,
+          -16
+        ],
+        "difference": -4,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 0,
+        "scores": [
+          -11,
+          -19
+        ],
+        "difference": 8,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 1,
+        "scores": [
+          -18,
+          -24
+        ],
+        "difference": -6,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 0,
+        "scores": [
+          -12,
+          -20
+        ],
+        "difference": 8,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 1,
+        "scores": [
+          -10,
+          -17
+        ],
+        "difference": -7,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 0,
+        "scores": [
+          -20,
+          -9
+        ],
+        "difference": -11,
+        "plies_after_prefix": 38
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 1,
+        "scores": [
+          -11,
+          -16
+        ],
+        "difference": -5,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 0,
+        "scores": [
+          -14,
+          -17
+        ],
+        "difference": 3,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 1,
+        "scores": [
+          -12,
+          -18
+        ],
+        "difference": -6,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 0,
+        "scores": [
+          -18,
+          -18
+        ],
+        "difference": 0,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 1,
+        "scores": [
+          -16,
+          -23
+        ],
+        "difference": -7,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 0,
+        "scores": [
+          -15,
+          -24
+        ],
+        "difference": 9,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 1,
+        "scores": [
+          -11,
+          -21
+        ],
+        "difference": -10,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 0,
+        "scores": [
+          -11,
+          -14
+        ],
+        "difference": 3,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 1,
+        "scores": [
+          -12,
+          -13
+        ],
+        "difference": -1,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 0,
+        "scores": [
+          -15,
+          -20
+        ],
+        "difference": 5,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 1,
+        "scores": [
+          -9,
+          -24
+        ],
+        "difference": -15,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 0,
+        "scores": [
+          -7,
+          -12
+        ],
+        "difference": 5,
+        "plies_after_prefix": 36
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 1,
+        "scores": [
+          -11,
+          -16
+        ],
+        "difference": -5,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 0,
+        "scores": [
+          -14,
+          -15
+        ],
+        "difference": 1,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 1,
+        "scores": [
+          -16,
+          -25
+        ],
+        "difference": -9,
+        "plies_after_prefix": 33
+      }
+    ],
+    "wall_seconds": 0.7479240840002603,
+    "search": {
+      "width": 4,
+      "reply_width": 3,
+      "depth": 2,
+      "equal_thinking_time": false
+    },
+    "method": "C",
+    "stage": "midpoint"
+  },
+  {
+    "left": {
+      "spec": "artifacts/research-round1/C/latest.pt",
+      "checkpoint_sha256": "fa2e7ff5176449f3e2fb5e6b9e9cf1b54a8cc27f238352c9a8533416f205041e",
+      "stats": {
+        "calls": 385,
+        "legal_seconds": 0.10875549598858925,
+        "feature_seconds": 0.12571436505095335,
+        "network_seconds": 0.12452326797574642,
+        "search_seconds": 0.0,
+        "total_seconds": 0.362431237968849,
+        "nodes": 0,
+        "candidates": 64767
+      },
+      "milliseconds_per_move": 0.9413798388801273
+    },
+    "right": {
+      "spec": "heuristic",
+      "checkpoint_sha256": null,
+      "stats": {
+        "calls": 384,
+        "legal_seconds": 0.1135361129490775,
+        "feature_seconds": 0.11249953002334223,
+        "network_seconds": 0.0024422540482191835,
+        "search_seconds": 0.0,
+        "total_seconds": 0.23020066893150215,
+        "nodes": 0,
+        "candidates": 63461
+      },
+      "milliseconds_per_move": 0.5994809086757868
+    },
+    "prefix_sha256": "2480e87c5124b02f6bfd4beff2e2ba3c6f03f32cef702dbdb57503fb386d3f12",
+    "prefix_seed": 41000,
+    "summary": {
+      "prefixes": 12,
+      "games": 24,
+      "wins": 12,
+      "losses": 12,
+      "draws": 0,
+      "mean_difference": -0.875,
+      "difference_ci95": [
+        -2.125,
+        0.375
+      ],
+      "point_rate": 0.5,
+      "point_rate_ci95": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "games": [
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 0,
+        "scores": [
+          -18,
+          -9
+        ],
+        "difference": -9,
+        "plies_after_prefix": 36
+      },
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 1,
+        "scores": [
+          -19,
+          -16
+        ],
+        "difference": 3,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 0,
+        "scores": [
+          -30,
+          -32
+        ],
+        "difference": 2,
+        "plies_after_prefix": 24
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 1,
+        "scores": [
+          -12,
+          -22
+        ],
+        "difference": -10,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 0,
+        "scores": [
+          -21,
+          -13
+        ],
+        "difference": -8,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 1,
+        "scores": [
+          -20,
+          -17
+        ],
+        "difference": 3,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 0,
+        "scores": [
+          -16,
+          -20
+        ],
+        "difference": 4,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 1,
+        "scores": [
+          -15,
+          -19
+        ],
+        "difference": -4,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 0,
+        "scores": [
+          -25,
+          -34
+        ],
+        "difference": 9,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 1,
+        "scores": [
+          -16,
+          -23
+        ],
+        "difference": -7,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 0,
+        "scores": [
+          -17,
+          -16
+        ],
+        "difference": -1,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 1,
+        "scores": [
+          -11,
+          -17
+        ],
+        "difference": -6,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 0,
+        "scores": [
+          -18,
+          -19
+        ],
+        "difference": 1,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 1,
+        "scores": [
+          -20,
+          -17
+        ],
+        "difference": 3,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 0,
+        "scores": [
+          -14,
+          -20
+        ],
+        "difference": 6,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 1,
+        "scores": [
+          -8,
+          -20
+        ],
+        "difference": -12,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 0,
+        "scores": [
+          -20,
+          -16
+        ],
+        "difference": -4,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 1,
+        "scores": [
+          -26,
+          -17
+        ],
+        "difference": 9,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 0,
+        "scores": [
+          -21,
+          -20
+        ],
+        "difference": -1,
+        "plies_after_prefix": 28
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 1,
+        "scores": [
+          -20,
+          -21
+        ],
+        "difference": -1,
+        "plies_after_prefix": 28
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 0,
+        "scores": [
+          -18,
+          -13
+        ],
+        "difference": -5,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 1,
+        "scores": [
+          -16,
+          -12
+        ],
+        "difference": 4,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 0,
+        "scores": [
+          -18,
+          -20
+        ],
+        "difference": 2,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 1,
+        "scores": [
+          -20,
+          -19
+        ],
+        "difference": 1,
+        "plies_after_prefix": 32
+      }
+    ],
+    "wall_seconds": 0.6201719599994249,
+    "search": {
+      "width": 4,
+      "reply_width": 3,
+      "depth": 2,
+      "equal_thinking_time": false
+    },
+    "method": "C",
+    "stage": "latest"
+  },
+  {
+    "left": {
+      "spec": "artifacts/research-round1/C/latest.pt",
+      "checkpoint_sha256": "fa2e7ff5176449f3e2fb5e6b9e9cf1b54a8cc27f238352c9a8533416f205041e",
+      "stats": {
+        "calls": 390,
+        "legal_seconds": 0.1228889669982891,
+        "feature_seconds": 0.13961620998452418,
+        "network_seconds": 0.12486298605290358,
+        "search_seconds": 0.0,
+        "total_seconds": 0.39092034897839767,
+        "nodes": 0,
+        "candidates": 70604
+      },
+      "milliseconds_per_move": 1.0023598691753786
+    },
+    "right": {
+      "spec": "artifacts/research-round1/v1.pt",
+      "checkpoint_sha256": "15800d1adba818c9930859802f2be869efb7ca1738072287a518790ae988cee8",
+      "stats": {
+        "calls": 388,
+        "legal_seconds": 0.12481684199519805,
+        "feature_seconds": 0.11500693501511705,
+        "network_seconds": 0.06966469100734685,
+        "search_seconds": 0.0,
+        "total_seconds": 0.3120687529917632,
+        "nodes": 0,
+        "candidates": 64676
+      },
+      "milliseconds_per_move": 0.8043009097725855
+    },
+    "prefix_sha256": "2480e87c5124b02f6bfd4beff2e2ba3c6f03f32cef702dbdb57503fb386d3f12",
+    "prefix_seed": 41000,
+    "summary": {
+      "prefixes": 12,
+      "games": 24,
+      "wins": 11,
+      "losses": 11,
+      "draws": 2,
+      "mean_difference": 0.20833333333333334,
+      "difference_ci95": [
+        -3.2916666666666665,
+        3.5
+      ],
+      "point_rate": 0.5,
+      "point_rate_ci95": [
+        0.3125,
+        0.6875
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "games": [
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 0,
+        "scores": [
+          -16,
+          -21
+        ],
+        "difference": 5,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "d015ca5b41d66aa7a48527ba34c9c1adade34a945b99629687392339de90b4f2",
+        "seat": 1,
+        "scores": [
+          -16,
+          -20
+        ],
+        "difference": -4,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 0,
+        "scores": [
+          -24,
+          -17
+        ],
+        "difference": -7,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "87dea8c8840c803d259f7a3fcae367a1560ec74c34aaf7eec9021c7f84068a46",
+        "seat": 1,
+        "scores": [
+          -7,
+          -28
+        ],
+        "difference": -21,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 0,
+        "scores": [
+          -18,
+          -16
+        ],
+        "difference": -2,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0f57fcf892d0cd9578ccfff7197fe51ad72c4a9221572da4cd802a73daf6304f",
+        "seat": 1,
+        "scores": [
+          -23,
+          -21
+        ],
+        "difference": 2,
+        "plies_after_prefix": 30
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 0,
+        "scores": [
+          -20,
+          -15
+        ],
+        "difference": -5,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "837e9447b6f462f39f38ae0fe02340036e08d9005f4cf38538a7627799532311",
+        "seat": 1,
+        "scores": [
+          -17,
+          -18
+        ],
+        "difference": -1,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 0,
+        "scores": [
+          -7,
+          -28
+        ],
+        "difference": 21,
+        "plies_after_prefix": 37
+      },
+      {
+        "prefix_id": "6d65981fbab60c5bc1325a7d20212451e7332c740a352de51b0ec8a53de7f468",
+        "seat": 1,
+        "scores": [
+          -17,
+          -17
+        ],
+        "difference": 0,
+        "plies_after_prefix": 34
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 0,
+        "scores": [
+          -12,
+          -22
+        ],
+        "difference": 10,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "b58a9fc5cdd4ead1c8a7cc9b3e4bfeffd4bdfba7f59eaec8c44dc86fe0750575",
+        "seat": 1,
+        "scores": [
+          -22,
+          -28
+        ],
+        "difference": -6,
+        "plies_after_prefix": 29
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 0,
+        "scores": [
+          -17,
+          -18
+        ],
+        "difference": 1,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "642c70919ce05fd49a08e4bd1529ee4241f43c051838b04ed0acc4b18b976d86",
+        "seat": 1,
+        "scores": [
+          -19,
+          -19
+        ],
+        "difference": 0,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 0,
+        "scores": [
+          -14,
+          -21
+        ],
+        "difference": 7,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "1aff48b3c9e8ec6eede916333d52d78f39a99586768ef8f87a39fcc41285e53d",
+        "seat": 1,
+        "scores": [
+          -8,
+          -20
+        ],
+        "difference": -12,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 0,
+        "scores": [
+          -11,
+          -22
+        ],
+        "difference": 11,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "3b471ec66dc1d722a80b75d1487006ef69a6820afccac7a8d32d905b6cdeb601",
+        "seat": 1,
+        "scores": [
+          -20,
+          -12
+        ],
+        "difference": 8,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 0,
+        "scores": [
+          -14,
+          -20
+        ],
+        "difference": 6,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "0e866e5d657e368500ce8638cd49408be990f830276852da76de35b1771ea6a2",
+        "seat": 1,
+        "scores": [
+          -12,
+          -21
+        ],
+        "difference": -9,
+        "plies_after_prefix": 31
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 0,
+        "scores": [
+          -15,
+          -16
+        ],
+        "difference": 1,
+        "plies_after_prefix": 33
+      },
+      {
+        "prefix_id": "bc00adae8277663b0f6e04faafdf817a69ec787b12b9efc7d02a2c385890ff01",
+        "seat": 1,
+        "scores": [
+          -17,
+          -13
+        ],
+        "difference": 4,
+        "plies_after_prefix": 35
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 0,
+        "scores": [
+          -21,
+          -19
+        ],
+        "difference": -2,
+        "plies_after_prefix": 32
+      },
+      {
+        "prefix_id": "a7c59b33dbc92301da2c60255ad80bd575a28f0b8958ee1f01ae7fe562083db2",
+        "seat": 1,
+        "scores": [
+          -16,
+          -18
+        ],
+        "difference": -2,
+        "plies_after_prefix": 34
+      }
+    ],
+    "wall_seconds": 0.7349350140029856,
+    "search": {
+      "width": 4,
+      "reply_width": 3,
+      "depth": 2,
+      "equal_thinking_time": false
+    },
+    "method": "C",
+    "stage": "latest"
+  }
+]

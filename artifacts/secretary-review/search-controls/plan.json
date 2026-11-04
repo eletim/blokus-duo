@@ -1,0 +1,31 @@
+{
+  "purpose": "post-comparison diagnostic, no checkpoint reselection",
+  "prefix_seed": 81000,
+  "prefix_sha256": "1243379a636f35ce5e860e85d92d7795bf8133f41d51b5604e5bc36cf9278856",
+  "specs": {
+    "C_search": "artifacts/research-round1/C/selected.pt:search",
+    "A2_search": "artifacts/research-a2/selected.json:search",
+    "heuristic_search": "heuristic:search",
+    "heuristic": "heuristic"
+  },
+  "pairs": [
+    [
+      "C_search",
+      "heuristic_search"
+    ],
+    [
+      "A2_search",
+      "heuristic_search"
+    ],
+    [
+      "A2_search",
+      "C_search"
+    ],
+    [
+      "heuristic_search",
+      "heuristic"
+    ]
+  ],
+  "search_width": 4,
+  "reply_width": 3
+}

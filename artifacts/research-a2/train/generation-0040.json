@@ -1,0 +1,115 @@
+{
+  "format": 3,
+  "method": "A2",
+  "weights": [
+    12.0,
+    4.142098368166047,
+    2.2514438039859677,
+    0.6625568014982841,
+    0.14570926574681037,
+    0.0028080011376500087,
+    -0.5894798758246613,
+    -0.1461158268793227,
+    1.239058708904483,
+    0.0,
+    0.0,
+    -1.15072430461609
+  ],
+  "metadata": {
+    "config": {
+      "algorithm": "CPU CEM, paired score difference directly; no teacher/GPU gradients",
+      "seconds": 240.0,
+      "max_generations": 100,
+      "population": 10,
+      "train_prefix_count": 3,
+      "prefix_seed_base": 71000,
+      "seed": 991,
+      "baseline": "artifacts/research-round1/v1.pt",
+      "baseline_sha256": "15800d1adba818c9930859802f2be869efb7ca1738072287a518790ae988cee8",
+      "active": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        11
+      ],
+      "fixed_piece_size_weight": 12,
+      "opponents": [
+        "heuristic",
+        "v1"
+      ],
+      "elite": 3,
+      "mean_smoothing": 0.6,
+      "std_floor": 0.25,
+      "device": "cpu",
+      "source_hashes": {
+        "/home/eletim/blokus-duo-ai/blokus/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "/home/eletim/blokus-duo-ai/blokus/__main__.py": "ea1bf3aa69bdb8bafa2f845569a3cd5ec09f832f7b4888db55c3ae05a239d9d0",
+        "/home/eletim/blokus-duo-ai/blokus/ai.py": "b0f452781d1d81b7ca1990b74948373886e27b50ab0e4c619b5cb22690c6b45c",
+        "/home/eletim/blokus-duo-ai/blokus/cem.py": "6fc7c59bae5759bc56845266b70e25760c7112ae5112b0736ef1259402647266",
+        "/home/eletim/blokus-duo-ai/blokus/engine.py": "b7ee646d45cfeba355f60b37ec927accde4ad859b91567c4b0b8db3715a8827b",
+        "/home/eletim/blokus-duo-ai/blokus/experiment.py": "649cd59b1587f005b28d5c12be832ebb9d9e4c577e00c590da15c723644c2771",
+        "/home/eletim/blokus-duo-ai/blokus/research.py": "ebb9f20786882e6b408cb5655b5500ac0488992300e20e3689968b9d8dee85dc",
+        "/home/eletim/blokus-duo-ai/blokus/research_train.py": "d923d0e92f086b74e7675d5bd76464e4e49b7e951eb1a4ee2c712b13c186c3f6",
+        "/home/eletim/blokus-duo-ai/blokus/tournament.py": "ff55d36be085c9af407ffc5f2ed1a5ebfcdcc7f9730a9a0eb6a9231dd8baaba8"
+      },
+      "budget": "check 1.25*previous generation time before starting; no generation interrupted; first generation always completes"
+    },
+    "generation": 40,
+    "mean": [
+      12.0,
+      4.142098368166047,
+      2.2514438039859677,
+      0.6625568014982841,
+      0.14570926574681037,
+      0.0028080011376500087,
+      -0.5894798758246613,
+      -0.1461158268793227,
+      1.239058708904483,
+      0.0,
+      0.0,
+      -1.15072430461609
+    ],
+    "std": [
+      0.25,
+      0.25,
+      0.25731301475264823,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "incumbent": [
+      12.0,
+      4.174051528082213,
+      2.330207258222096,
+      1.1195950217952033,
+      -0.012798945980183024,
+      0.19885299768188816,
+      -0.24131953732498396,
+      -0.20501561825675327,
+      1.0605752097216765,
+      0.0,
+      0.0,
+      -1.4612799826391583
+    ],
+    "rng": {
+      "bit_generator": "PCG64",
+      "state": {
+        "state": 139368645271600678210594677061010091809,
+        "inc": 155294120264020348963486103318767497121
+      },
+      "has_uint32": 0,
+      "uinteger": 0
+    },
+    "training_seconds": 99.31068732700078,
+    "games": 4800,
+    "evaluations": 400
+  }
+}
