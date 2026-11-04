@@ -1,0 +1,150 @@
+{
+  "stage1": {
+    "audit": "PASS",
+    "matches": 7,
+    "unique_prefixes": 24,
+    "crossed_bootstrap": {
+      "static": {
+        "mean": -0.8958333333333334,
+        "ci95": [
+          -3.2432291666666666,
+          1.3543402777777784
+        ],
+        "seeds": [
+          "value-201",
+          "value-202",
+          "value-203"
+        ],
+        "prefixes": 24,
+        "method": "crossed seed and prefix resampling; paired colours averaged first; shared prefix draw across seeds",
+        "provisional": true
+      },
+      "C": {
+        "mean": -1.2638888888888888,
+        "ci95": [
+          -3.8890625,
+          1.3125
+        ],
+        "seeds": [
+          "value-201",
+          "value-202",
+          "value-203"
+        ],
+        "prefixes": 24,
+        "method": "crossed seed and prefix resampling; paired colours averaged first; shared prefix draw across seeds",
+        "provisional": true
+      }
+    }
+  },
+  "stage2": {
+    "audit": "PASS",
+    "matches": 7,
+    "unique_prefixes": 24,
+    "crossed_bootstrap": {
+      "static": {
+        "mean": -1.6458333333333333,
+        "ci95": [
+          -3.5625,
+          -0.020833333333333332
+        ],
+        "seeds": [
+          "value-201",
+          "value-202",
+          "value-203"
+        ],
+        "prefixes": 24,
+        "method": "crossed seed and prefix resampling; paired colours averaged first; shared prefix draw across seeds",
+        "provisional": true
+      },
+      "C": {
+        "mean": -1.9305555555555556,
+        "ci95": [
+          -4.361284722222222,
+          0.375
+        ],
+        "seeds": [
+          "value-201",
+          "value-202",
+          "value-203"
+        ],
+        "prefixes": 24,
+        "method": "crossed seed and prefix resampling; paired colours averaged first; shared prefix draw across seeds",
+        "provisional": true
+      }
+    }
+  },
+  "compact": {
+    "audit": "PASS",
+    "matches": 7,
+    "unique_prefixes": 24,
+    "crossed_bootstrap": {
+      "static": {
+        "mean": -0.8819444444444444,
+        "ci95": [
+          -3.1043402777777778,
+          1.2916666666666667
+        ],
+        "seeds": [
+          "value-201",
+          "value-202",
+          "value-203"
+        ],
+        "prefixes": 24,
+        "method": "crossed seed and prefix resampling; paired colours averaged first; shared prefix draw across seeds",
+        "provisional": true
+      },
+      "C": {
+        "mean": -0.9583333333333334,
+        "ci95": [
+          -3.8958333333333335,
+          1.4793402777777784
+        ],
+        "seeds": [
+          "value-201",
+          "value-202",
+          "value-203"
+        ],
+        "prefixes": 24,
+        "method": "crossed seed and prefix resampling; paired colours averaged first; shared prefix draw across seeds",
+        "provisional": true
+      }
+    }
+  },
+  "confirm": {
+    "audit": "PASS",
+    "matches": 7,
+    "unique_prefixes": 24,
+    "crossed_bootstrap": {
+      "static": {
+        "mean": 2.1458333333333335,
+        "ci95": [
+          0.29149305555555566,
+          3.875
+        ],
+        "seeds": [
+          "value-201",
+          "value-202",
+          "value-203"
+        ],
+        "prefixes": 24,
+        "method": "crossed seed and prefix resampling; paired colours averaged first; shared prefix draw across seeds",
+        "provisional": true
+      },
+      "C": {
+        "mean": 1.1944444444444444,
+        "ci95": [
+          -0.5,
+          2.9032986111111128
+        ],
+        "seeds": [
+          "value-201",
+          "value-202",
+          "value-203"
+        ],
+        "prefixes": 24,
+        "method": "crossed seed and prefix resampling; paired colours averaged first; shared prefix draw across seeds",
+        "provisional": true
+      }
+    }
+  }
+}

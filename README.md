@@ -289,3 +289,47 @@ A2-offは今回の新holdoutでheuristic/v1/Bへの平均得点差に改善が�
 # 学習なし・同じ幅4×3の探索対照も試せます
 .venv/bin/python -m blokus.experiment play --device cpu --agents human heuristic:search
 ```
+
+## 終局結果を学ぶ価値探索（追加研究）
+
+教師の候補順位ではなく、実際に終局まで進めた得点差を学ぶCNNを追加しました。結果と全比較は [価値探索レポート](artifacts/value-search/report.md)、計画・失敗と修正は [PROGRESS.md](PROGRESS.md) に保存しています。既存エンジンと既存モデルは変更していません。
+
+入力は手番基準の6面盤面tensorと残駒・得点・pass等49特徴。静的評価にCNNの補正を加え、2ply探索の葉を評価します。終局はネットの予測を使わず正確な得点を返します。学習ラベルはepsilon付きheuristic/非学習探索/A2探索の完走結果で、反実仮想の探索葉にも独立した完走ラベルを作ります。これは終局結果の教師あり回帰であり、最適対戦価値やオンライン自己対戦強化学習が完成したという意味ではありません。
+
+初回の過学習に対し、独立した探索葉の追加、終盤限定の価値使用、モデル小型化、盤面対称変換、6,000局の追加、複数rootのGPU一括推論まで3段階を実測しました。各段階3seed。validationはseed91000、段階ごとのfresh holdoutは92000/93000/94000です。holdoutからcheckpointを選び直しません。予測検証も同一対局のフレームをtrain側と混ぜません。
+
+時間比較は全方式に**合法手生成・順位付け・GPU同期込み6ms/手の共通予算**を与えています。C対照は既存Cの候補順位を共通探索器で使います。元の固定幅C-searchそのものと同一アルゴリズムではありません。OS/native演算を強制停止できないため厳密なリアルタイム上限ではなく、実時間・超過時間・node数を記録し、遅れて終了した子/バッチの評価を採用しません。実時間をpaddingで揃えた比較ではありません。時間による枝数変化があるため、対戦の完全bit再現は保証しません。学習の重み/optimizer/RNG再開は別途検証します。
+
+```bash
+# 全体の第1・第2段階（新しい出力先で実行）
+.venv/bin/python -m blokus.value_experiment run --output artifacts/my-value-run
+# 小型モデルの第3段階（既定の第1・第2段階データが必要。既存結果を上書きしない）
+.venv/bin/python scripts/run_value_compact.py
+# 任意の学習・再開。stepsは今回追加する更新数
+.venv/bin/python -m blokus.value_experiment train --data artifacts/value-search/compact/expanded.npz --output artifacts/my-value-model --arch pooled --augment --steps 4000 --seconds 120 --seed 201
+.venv/bin/python -m blokus.value_experiment train --data artifacts/value-search/compact/expanded.npz --output artifacts/my-value-model --arch pooled --augment --steps 1000 --seconds 120 --seed 201 --resume artifacts/my-value-model/latest.pt
+# 保存済みprefix/specsで対戦。specsは名前→BudgetAgent引数のJSON
+.venv/bin/python -m blokus.value_experiment tournament --prefix-file artifacts/value-search/compact/holdout-prefixes.json --specs artifacts/value-search/compact/play-specs.json --output artifacts/my-tournament.json --budget-ms 6
+# 結果の算術・時間・hash・prefix監査とseed×prefix CI再計算
+.venv/bin/python scripts/analyze_value.py artifacts/value-search
+.venv/bin/python scripts/check_value_resume.py
+.venv/bin/python -m pytest -q
+```
+
+`config.json`とcheckpointにseed/torch/source hash/データhash/更新数を保存します。`latest.pt`は再開用、`predictive-best.pt`は未使用対局の予測誤差による候補、`selected.pt`と`selection.json`は対戦validationで混合率を確定したものです。GPUデータ生成ではなくCPU6process生成＋GPU minibatch学習です。探索候補の分布、継続方策と真の対戦相手の違い、得点回帰誤差と候補間順位誤差の違いが残る課題です。
+
+### 最新の確認結果（第4段階）
+
+一括推論版は時間超過が多く推奨しません。小型モデルを逐次探索へ戻し、validationで混合率を固定してfresh holdout seed95000で再確認しました。3seed平均得点差は非学習探索に **+2.15 [95%区間 +0.29,+3.88]**、共通時間制御版Cに **+1.19 [-0.50,+2.90]**。学習による改善の兆候はありますが、安定した優越は未確定です。詳細は [結論・限界・次案](artifacts/value-search/conclusions.md)。最終モデルは実測4.58〜4.69ms/手、共通予算6ms、実時間の完全一致ではありません。
+
+試用にはvalidation最高criterionのseed201を使います（holdoutの最高seedを選んだものではありません）。
+
+```bash
+.venv/bin/python -m blokus.value_experiment play --checkpoint artifacts/value-search/compact/seed-201/predictive-best.pt --alpha .5 --gate 24 --scheduler incremental --budget-ms 6
+# 第4段階の再実験スクリプト（既存結果があれば保全して停止）
+.venv/bin/python scripts/run_value_confirm.py
+# 最終比較のspecs
+.venv/bin/python -m blokus.value_experiment tournament --prefix-file artifacts/value-search/confirm/holdout-prefixes.json --specs artifacts/value-search/confirm/play-specs.json --output artifacts/confirm-replay.json --budget-ms 6
+```
+
+GPU学習は9モデル計24,000更新・約30.67秒（smoke/再開検証別）。4段階のholdout計1,344局、validation計1,728局。全34テスト、別process CUDA再開、開始状態分離、結果算術監査とCLI終局確認はPASS。追加学習は稼働していません。

@@ -1,0 +1,173 @@
+{
+  "stage": 1,
+  "validation_sha256": "93a915dd602c7b7af493ef339f1c2fbb0f18dbd5cc9092d86accbb14970ae0c5",
+  "selected": {
+    "201": {
+      "spec": {
+        "kind": "value",
+        "checkpoint": "artifacts/value-search/run/stage1/seed-201/selected.pt",
+        "alpha": 0.5,
+        "gate": 42
+      },
+      "criterion": -2.125,
+      "checkpoint_sha256": "05009685876dd8dd66c61c94a6bee53798f4dfd86ec3a555030274a006fecaef",
+      "candidates": [
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/value-search/run/stage1/seed-201/predictive-best.pt",
+            "alpha": 0.25,
+            "gate": 42
+          },
+          "criterion": -2.8333333333333335
+        },
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/value-search/run/stage1/seed-201/selected.pt",
+            "alpha": 0.5,
+            "gate": 42
+          },
+          "criterion": -2.125
+        },
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/value-search/run/stage1/seed-201/predictive-best.pt",
+            "alpha": 1.0,
+            "gate": 42
+          },
+          "criterion": -3.770833333333333
+        }
+      ]
+    },
+    "202": {
+      "spec": {
+        "kind": "value",
+        "checkpoint": "artifacts/value-search/run/stage1/seed-202/selected.pt",
+        "alpha": 1.0,
+        "gate": 42
+      },
+      "criterion": -0.6875,
+      "checkpoint_sha256": "4716e3cc7eba7825e121cc87464a296623dcf5f7af47f6838958afde1b318447",
+      "candidates": [
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/value-search/run/stage1/seed-202/predictive-best.pt",
+            "alpha": 0.25,
+            "gate": 42
+          },
+          "criterion": -2.354166666666667
+        },
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/value-search/run/stage1/seed-202/predictive-best.pt",
+            "alpha": 0.5,
+            "gate": 42
+          },
+          "criterion": -0.8125
+        },
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/value-search/run/stage1/seed-202/selected.pt",
+            "alpha": 1.0,
+            "gate": 42
+          },
+          "criterion": -0.6875
+        }
+      ]
+    },
+    "203": {
+      "spec": {
+        "kind": "value",
+        "checkpoint": "artifacts/value-search/run/stage1/seed-203/selected.pt",
+        "alpha": 0.5,
+        "gate": 42
+      },
+      "criterion": 1.625,
+      "checkpoint_sha256": "b2a0f8e6967ea9b5f54165dcac81063b87dbfdbf86cb6f67f64bfe750cd0cdb6",
+      "candidates": [
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/value-search/run/stage1/seed-203/predictive-best.pt",
+            "alpha": 0.25,
+            "gate": 42
+          },
+          "criterion": -0.02083333333333337
+        },
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/value-search/run/stage1/seed-203/selected.pt",
+            "alpha": 0.5,
+            "gate": 42
+          },
+          "criterion": 1.625
+        },
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/value-search/run/stage1/seed-203/predictive-best.pt",
+            "alpha": 1.0,
+            "gate": 42
+          },
+          "criterion": -0.35416666666666663
+        }
+      ]
+    }
+  },
+  "training": [
+    {
+      "seed": 201,
+      "steps": 1600,
+      "invocation_steps": 1600,
+      "training_seconds": 2.1696271850014455,
+      "invocation_seconds": 2.1720203799995943,
+      "best_mse": 0.04215317219495773,
+      "final_metrics": {
+        "mse": 0.05483909696340561,
+        "static_mse": 0.039376478642225266,
+        "mae_points": 7.291371822357178,
+        "count": 5568
+      },
+      "training_positions": 49670,
+      "validation_positions": 5568
+    },
+    {
+      "seed": 202,
+      "steps": 1600,
+      "invocation_steps": 1600,
+      "training_seconds": 1.952749218999088,
+      "invocation_seconds": 1.9551577839993115,
+      "best_mse": 0.03901690989732742,
+      "final_metrics": {
+        "mse": 0.05001651123166084,
+        "static_mse": 0.039376478642225266,
+        "mae_points": 6.97303581237793,
+        "count": 5568
+      },
+      "training_positions": 49670,
+      "validation_positions": 5568
+    },
+    {
+      "seed": 203,
+      "steps": 1600,
+      "invocation_steps": 1600,
+      "training_seconds": 2.0078359300023294,
+      "invocation_seconds": 2.0101771850022487,
+      "best_mse": 0.03806385397911072,
+      "final_metrics": {
+        "mse": 0.04914319887757301,
+        "static_mse": 0.039376478642225266,
+        "mae_points": 6.902408599853516,
+        "count": 5568
+      },
+      "training_positions": 49670,
+      "validation_positions": 5568
+    }
+  ]
+}

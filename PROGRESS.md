@@ -152,3 +152,44 @@ A2追加実験完了: CPU237.886秒、96世代、11,520対局、960候補評価�
 
 秘書探索対照診断を受領（seed81000、24unique prefix、192局、audit PASS）。C-search vs heuristic-search:27/19/2、+1.50 [-0.67,3.65]。A2-search vs heuristic-search:16/28/4、-0.54 [-2.75,1.58]。A2-search vs C-search:24/22/2、+1.27 [-0.65,3.10]。heuristic-search vs heuristic:30/15/3。学習なし探索も強く、探索あり方式の優劣・学習寄与は断定不能。診断でcheckpoint再選択はしない。
 成果物すべて保存、最終27テストPASS、CUDA各方式finite勾配/全optimizer・RNG再開一致、独立監査資料を含めてbranchへcommit/pushする。mainは変更しない。
+
+# 再開: 終局価値学習と同一思考時間探索
+基点 main 69065fc、branch research/value-search。既存ルール・旧checkpointを保持。他Agent/村本体は変更しない。GPU初期負荷0%、177MiB。
+
+計画: (1)現行CPU手生成・特徴・静的探索/GPU推論を短く計測。(2)実ゲーム終局得点差を教師にするbatched value modelを実装。静的評価の残差を学習し、盤面・残駒・到達可能角等から将来の置き残しを予測。(3)同一wall-time予算のanytime探索を共通実装し、非学習static、旧C-policy+static、学習valueを比較。(4)最低3学習seed。validationで価値混合率/モデルを選び、選択固定後fresh holdout。prefix paired/bootstrap、実思考時間・超過・nodesを保存。(5)最初の結果が弱ければ分布ずれ/予測精度/時間配分を診断し、独立した修正実験を行う。
+GPU学習合計上限1800秒。まず小規模3seed、学習をバッチ化しCPU生成とGPU更新を計測。巨大な中間checkpointは保存せず各seed latest/selectedのみ。実装・プロファイル後に具体的予算と分割seedを固定する。
+
+実装: value_search.py（6plane盤面/49state、色交換反対称の終局価値残差CNN、共通6ms wall allowance探索）、value_data.py（spawn CPU6worker、実終局ラベル、枝局面は独立に終局まで継続）、value_train.py（batched CUDA回帰・game単位診断split・完全resume）、value_experiment.py（2段階run）。5追加テストPASS: antisymmetry、全置きbonus/pass/終局、探索不変性/合法性、遅延child棄却、optimizer/RNG再開一致。
+初期profile: heuristic0.620ms/手、固定幅static-search2.849ms/手、C-search3.717ms/手（初回GPUwarm-up影響あり）。6ms共通予算は生成/特徴/順位/GPU同期を含む。次child所要時間を推定して開始を控え、deadline後のchild結果は使用しない。ただしnative処理自体を強制中断できないため実超過を記録し、hard realtime保証とは呼ばない。
+分割: train110000〜、追加branch120000〜、validation91000(12prefix)、初回holdout92000、修正後fresh holdout93000(各24prefix)。seed201/202/203、stage1各1600更新/120秒上限、修正stage2各2400更新/120秒上限、GPU学習上限合計720秒＋smoke。選択はvalidation上のstatic/C両対照への平均得点差、alpha=.25/.5/1。stage2はbranch labels追加＋remaining合計24以下でvalueを使うgate。全seed両対照の得点差CI下限>0でなければ初回で止めず修正へ進む。
+
+価値学習stage1 seed201: 1600更新/2.17秒、validation criterion -2.125、alpha=0.5、gate=42。
+
+価値学習stage1 seed202: 1600更新/1.95秒、validation criterion -0.688、alpha=1.0、gate=42。
+
+価値学習stage1 seed203: 1600更新/2.01秒、validation criterion +1.625、alpha=0.5、gate=42。
+
+Stage1で全seed・両対照へのCI正を達成せず。診断JSONを保存し、探索leafを独立に終局まで継続した追加データと後半局面gateでstage2へ進む。旧holdout92000は再選択に使わず、新holdout93000を使用。
+
+価値学習stage2 seed201: 2400更新/2.95秒、validation criterion +0.354、alpha=1.0、gate=24。
+
+価値学習stage2 seed202: 2400更新/2.95秒、validation criterion -0.583、alpha=0.25、gate=24。
+
+価値学習stage2 seed203: 2400更新/2.95秒、validation criterion -0.562、alpha=0.25、gate=24。
+
+Stage1/2実験完了（run wall287.63秒、GPU学習合計14.99秒）。初回1,800対局55,238局面、収集23.38秒。flat CNNの学習lossは低下する一方、holdout-game MSEが悪化（static約.0394、各seed初期best約.038〜.042、最終約.049〜.055）。過学習と推論のrootごとの往復を疑う。Stage2のbranch追加＋late gateでも安定改善なし。旧ソースをrun/sourceにhash一致で保存し、ここで止めずstage3へ。
+Stage3計画: pooled CNN（全盤flattenを2x2 poolingへ縮小）、開始点集合を保つtranspose/180度回転の対称性拡張、CPU追加6,000終局対局、同じ3seedをscratch学習。複数rootの葉をまとめて1バッチ評価する共通探索schedulerをstatic/C/valueすべてに適用。追加GPU上限各120秒×3（累積上限1080秒＋smoke、30分以内）。validation91000で固定後、fresh holdout94000。旧92000/93000では選択しない。
+
+Compact stage3 seed201: 4000更新、5.17秒、best predictive MSE=0.03512、validation criterion=+1.083。
+
+第三修正: AdaptiveAvgPool2dのCUDA backwardはstrict deterministic非対応だったため、14→2の同等な固定AvgPool2d(7,7)へ修正。生成済み6000局のhashを検証して再使用し、失敗時run-configを保全。決定性を緩めず再学習中。
+
+Compact stage3 seed202: 4000更新、5.27秒、best predictive MSE=0.03493、validation criterion=+1.938。
+
+Compact stage3 seed203: 4000更新、5.24秒、best predictive MSE=0.03389、validation criterion=+2.083。
+
+第3段階の監査: pooled予測MSEは改善したがbatched schedulerのoverrun最大約20%、fallback多発を発見。推奨から除外し、固定重みを維持してincremental schedulerへ戻す第4段階を開始。validationのみでalpha選択、fresh holdout95000、全3seed。GPU再学習なし。全34テストPASS、flat/pooled各CUDA別process 4更新 vs 2+2再開でmodel/optimizer/Torch/CUDA RNG bit一致（augmentationあり）。
+
+原因分析（検証済み事実と仮説を区別）: flatはtrain loss低下に対し未使用対局MSE悪化、過学習を観測。pooled+追加データではMSE改善を観測したが対戦改善なし。終局回帰は継続方策の期待得点を学ぶため、候補間の微小な順位差・相手の最善応手の学習とは一致しない。batched版の時間超過/破棄も実測された。次案は同一局面の複数候補を同一継続乱数で完走し、差分/ランキング損失と局面単位検証を導入すること。現在の反対称制約は手番の先行利益も抑えてしまう可能性があり、手番の扱いを分離したablationが必要。これらはまだ実証していない仮説。
+
+最終第4段階完了: fresh95000/24prefix/3seed、非学習探索に平均+2.146 CI[+0.291,+3.875]、時間制御版Cに+1.194 CI[-0.500,+2.903]。学習側4.575〜4.690ms/手、6ms超過0〜0.80%。安定した優越は未確定。validation最高criterionのseed201/alpha0.5/gate24/incrementalを試用例としholdout再選択なし。全34テストとCUDA別process再開、全28match算術監査、train/eval開始状態非重複、CLI終局を確認。GPU主学習計30.672秒/24000更新、全run有限終了。詳細 artifacts/value-search/conclusions.md。research/value-searchへcommit/push準備。

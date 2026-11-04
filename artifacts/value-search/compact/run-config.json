@@ -1,0 +1,32 @@
+{
+  "source_hashes": {
+    "/home/eletim/blokus-duo-ai/blokus/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/eletim/blokus-duo-ai/blokus/__main__.py": "ea1bf3aa69bdb8bafa2f845569a3cd5ec09f832f7b4888db55c3ae05a239d9d0",
+    "/home/eletim/blokus-duo-ai/blokus/ai.py": "b0f452781d1d81b7ca1990b74948373886e27b50ab0e4c619b5cb22690c6b45c",
+    "/home/eletim/blokus-duo-ai/blokus/cem.py": "6fc7c59bae5759bc56845266b70e25760c7112ae5112b0736ef1259402647266",
+    "/home/eletim/blokus-duo-ai/blokus/engine.py": "b7ee646d45cfeba355f60b37ec927accde4ad859b91567c4b0b8db3715a8827b",
+    "/home/eletim/blokus-duo-ai/blokus/experiment.py": "649cd59b1587f005b28d5c12be832ebb9d9e4c577e00c590da15c723644c2771",
+    "/home/eletim/blokus-duo-ai/blokus/research.py": "ebb9f20786882e6b408cb5655b5500ac0488992300e20e3689968b9d8dee85dc",
+    "/home/eletim/blokus-duo-ai/blokus/research_train.py": "d923d0e92f086b74e7675d5bd76464e4e49b7e951eb1a4ee2c712b13c186c3f6",
+    "/home/eletim/blokus-duo-ai/blokus/tournament.py": "ff55d36be085c9af407ffc5f2ed1a5ebfcdcc7f9730a9a0eb6a9231dd8baaba8",
+    "/home/eletim/blokus-duo-ai/blokus/value_data.py": "c76dd07cd94d331bca433843b26768217a6a2474acfe0f93a556500673873617",
+    "/home/eletim/blokus-duo-ai/blokus/value_experiment.py": "e7410aeb757c2ae7767593b0907d79b704472b0f31c15358911124dbde61be12",
+    "/home/eletim/blokus-duo-ai/blokus/value_search.py": "34727e31fb2dcf7939a7d3ab22c70458ef899af692e4f4e4bffbdeccb66e9de9",
+    "/home/eletim/blokus-duo-ai/blokus/value_train.py": "d160482b43b978787b2b834311852220c41b49f797a08f754b855d071e0586e9"
+  },
+  "arch": "pooled",
+  "augment": "transpose and 180-degree rotation",
+  "train_seeds": [
+    201,
+    202,
+    203
+  ],
+  "expanded_games": 6000,
+  "expanded_seed": 130000,
+  "holdout_seed": 94000,
+  "budget_ms": 6,
+  "scheduler": "batched",
+  "steps": 4000,
+  "training_seconds_limit_per_seed": 120,
+  "selection": "mean score difference against static and original C under same new batched scheduler"
+}
