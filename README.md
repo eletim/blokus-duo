@@ -26,22 +26,15 @@ PyTorch公式の[Blackwell/CUDA12.8対応告知](https://pytorch.org/blog/pytorc
 
 ## 現在のモデルで対戦
 
-上の環境セットアップ後、clone先で実行してください。操作は表示される合法手の番号入力です。
+推奨は既存の終局価値モデル（pooled seed201、alpha0.5、gate24）です。表示される合法手の番号を入力します。
 
 ```bash
-# 軽量な学習済み評価重み＋2手先の探索（CPUで動作）
-.venv/bin/python -m blokus.experiment play --device cpu --agents human artifacts/research-a2/selected.json:search
-# 盤面CNN＋探索教師から学んだモデル＋2手先の探索
-.venv/bin/python -m blokus.experiment play --agents human artifacts/research-round1/C/selected.pt:search
-# 学習なし・同じ幅の探索を使う対照AI
-.venv/bin/python -m blokus.experiment play --device cpu --agents human heuristic:search
+.venv/bin/python -m blokus.value_experiment play --checkpoint artifacts/value-search/compact/seed-201/predictive-best.pt --alpha .5 --gate 24 --scheduler incremental --budget-ms 6
 ```
 
-探索は幅4×3の2手先までで、全合法手を最後まで読むものではありません。探索付きモデルは今回の基準AIとの対局で有望でしたが、学習なしの探索を安定して上回る証拠はまだなく、最強モデルは未確定です。
+共通6ms予算・fresh96prefixの実験では非学習探索への改善が観測されました。ただし実消費時間の完全一致ではなく、相手poolと開始局面を限定した結果です。最強モデルとの断定や任意の条件への保証はしません。
 
-[3方式の比較結果](artifacts/research-round1/report.md)、[追加改善A2の結果](artifacts/research-a2/report.md)、[学習なし探索との独立対照](artifacts/secretary-review/search-controls/results.json)に、モデル・開始局面・学習量・思考時間・区間推定を保存しています。27テストと独立監査を通過し、学習・評価は完了して停止しています。
-
-以下は初版（v1）の再現用手順と実測記録です。現在のモデルには上の `blokus.experiment` を使用してください。
+追加のpaired-rankingは現valueを上回る改善を示せず、実験用のまま保持しています。[最終比較と限界](artifacts/paired-ranking/conclusions.md)、[再現手順](artifacts/paired-ranking/METHOD.md)を参照してください。全38テストと工房側のCUDA保存再開・ラベル再生監査を通過しています。下記の旧版手順・過去の推奨は各実験時点の記録です。
 
 ## 初版（v1）の対局
 
