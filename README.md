@@ -1,6 +1,6 @@
-# Blokus Duo GPU AI 初版
+# Blokus Duo AI
 
-Blokus Duoのルールエンジン、CLI対戦、GPU学習・評価の初版です。開発・学習環境はE-frontierの `/home/eletim/blokus-duo-ai`。
+Blokus Duoのルールエンジン、CLI対戦、3系統のGPU学習・評価、およびCPUによる評価重み最適化を実装しています。開発・学習環境はE-frontierの `/home/eletim/blokus-duo-ai`。
 
 ```bash
 git clone https://github.com/eletim/blokus-duo.git
@@ -24,7 +24,26 @@ uv pip install --python .venv/bin/python numpy pytest
 実際の導入バージョンは `requirements.lock.txt`、GPU検証は `artifacts/gpu.json`。
 PyTorch公式の[Blackwell/CUDA12.8対応告知](https://pytorch.org/blog/pytorch-2-7/)と[導入手順](https://pytorch.org/get-started/locally/)を確認しています。
 
-## 対局
+## 現在のモデルで対戦
+
+上の環境セットアップ後、clone先で実行してください。操作は表示される合法手の番号入力です。
+
+```bash
+# 軽量な学習済み評価重み＋2手先の探索（CPUで動作）
+.venv/bin/python -m blokus.experiment play --device cpu --agents human artifacts/research-a2/selected.json:search
+# 盤面CNN＋探索教師から学んだモデル＋2手先の探索
+.venv/bin/python -m blokus.experiment play --agents human artifacts/research-round1/C/selected.pt:search
+# 学習なし・同じ幅の探索を使う対照AI
+.venv/bin/python -m blokus.experiment play --device cpu --agents human heuristic:search
+```
+
+探索は幅4×3の2手先までで、全合法手を最後まで読むものではありません。探索付きモデルは今回の基準AIとの対局で有望でしたが、学習なしの探索を安定して上回る証拠はまだなく、最強モデルは未確定です。
+
+[3方式の比較結果](artifacts/research-round1/report.md)、[追加改善A2の結果](artifacts/research-a2/report.md)、[学習なし探索との独立対照](artifacts/secretary-review/search-controls/results.json)に、モデル・開始局面・学習量・思考時間・区間推定を保存しています。27テストと独立監査を通過し、学習・評価は完了して停止しています。
+
+以下は初版（v1）の再現用手順と実測記録です。現在のモデルには上の `blokus.experiment` を使用してください。
+
+## 初版（v1）の対局
 
 ```bash
 # 人間が先手X、学習AIが後手O
@@ -37,7 +56,7 @@ PyTorch公式の[Blackwell/CUDA12.8対応告知](https://pytorch.org/blog/pytorc
 
 盤面は行・列とも0始まり。人間は表示される合法手一覧のindexを入力します。各手にはpiece/orientation/row/colと配置セルを表示。合法手なしなら自動pass。開始点はX=(4,4)、O=(9,9)。CLIは大量の合法手をテキスト表示するためGUIほど快適ではありません。終了はCtrl-C。
 
-## 学習と評価
+## 初版（v1）の学習と評価
 
 ```bash
 # 60ゲーム教師あり初期化→自己対戦。300秒または200ゲームで停止
@@ -54,7 +73,7 @@ PyTorch公式の[Blackwell/CUDA12.8対応告知](https://pytorch.org/blog/pytorc
 
 評価の既定出力は `artifacts/evaluation.json` で、親ディレクトリは自動作成します。評価gamesは正の偶数。連続する2局で同じseedを使い先後を交替。探索や温度samplingなしのpolicy argmax（同点のみseed付き抽選）。randomは全合法手から一様選択。学習の停止時刻はゲーム境界で判定するため最大1ゲーム分超過し得ます。模倣終了モデルは `imitation.pt` として別保存します。学習のデフォルトは200局/300秒（模倣60局）。初期モデルは `untrained.pt`、最新モデルはゲームごとにatomic保存の `latest.pt`、引数・seed・環境・ソースhashは `config.json`（実行履歴は `config-history.jsonl`）、損失・得点・時間は追記 `train.jsonl`。再開時はモデル・optimizer・RNG・累積episodeを復元します。phase境界は `--imitation-games` の累積episode数なので再開時も同じ値を指定してください。同じ出力先で新規学習を始めるとcheckpointを上書きするため別名を推奨します。checkpointは信頼するローカルファイルのみ読み込んでください。
 
-## ルールと設計
+## 共通ルールと初版（v1）の設計
 
 [Mattel公式ルール](https://service.mattel.com/instruction_sheets/FWG43-Eng.pdf)を確認。14×14、1〜5マスのfree polyomino全21種89マス。D4回転反転を正規化し91 orientation、全盤上配置を事前生成。初手は指定点を覆い、以後同色と角接触し同色の辺に接触禁止。相手との辺・角接触は自由。置けない場合のみpassし、連続2passで終了。残駒マス数を負点、全部置いたら15点、最後がmonominoなら20点。
 
@@ -64,9 +83,9 @@ PyTorch公式の[Blackwell/CUDA12.8対応告知](https://pytorch.org/blog/pytorc
 
 初期フェーズはheuristic全候補のsoftmax分布に対するcross entropy＋中心化logitの二乗誤差による**模倣学習**（90%教師手、10%ランダム）。後半は両者が現policyからsamplingする**自己対戦actor-critic**で、終局得点差/109を報酬、value回帰とentropy正則化を使用。ゲーム単位で勾配を平均しclip、Adamで更新。模倣lrは既定1e-3、自己対戦lrは既定1e-4（`--selfplay-lr`）。再開時もこれらCLI設定を適用します。自己対戦で改善できる経路がありますが、短時間の実行だけで改善や強さは保証しません。
 
-## 限界・検証
+## 初版（v1）の限界・検証
 
-CNNによる盤面理解・MCTS・多プロセス対局は未実装。特徴が盤面の全情報を持たず、長期的な閉塞や駒形状の理解に限界があります。CPUの手生成・特徴抽出が推論時の主な律速で、小規模MLPは5090の能力を使い切りません。短期学習・少数評価の成績を強さの証明とは扱いません。固定seedの同一環境での再現を意図し、異なるGPU/ライブラリ間のbit一致は保証しません。
+初版（v1）はCNN・探索を使わない構成です。現在の研究実装はCNNと幅制限2手探索に対応していますが、MCTS・多プロセス対局は未実装です。初版の特徴は盤面の全情報を持たず、長期的な閉塞や駒形状の理解に限界があります。CPUの手生成・特徴抽出が推論時の主な律速で、小規模MLPは5090の能力を使い切りません。短期学習・少数評価の成績を強さの証明とは扱いません。固定seedの同一環境での再現を意図し、異なるGPU/ライブラリ間のbit一致は保証しません。
 
 テストは種類数/全89マス/91 orientation、接触ルール、重複使用・盤外・重なり・初手点、pass/終局/得点、複数局面で全盤配置の独立checkerとの完全一致、ランダム対局保存則、勾配とcheckpoint/RNG復元を検証。実測結果・コマンドは `PROGRESS.md` と `artifacts/` を参照してください。
 
@@ -199,7 +218,7 @@ cd /home/eletim/blokus-duo-ai
 
 実験時のsource snapshotも `artifacts/research-round1/source/blokus/` に凍結しました。その後の変更はCLI出力defaultの分離と再開時の累積時間表示修正のみで、学習・評価アルゴリズムは同じです。CLIのtournament/prefixesはそれぞれ専用JSONの既定出力を持ちます。再開時のlearning rateは保存したoptimizer設定を引き継ぎます。
 
-次ラウンドでは、教師蒸留を超える信号としてA2 CEM/進化戦略を検討します。CPU対戦ベースの学習と明示し、新しい学習prefix・validation・holdoutを用意します。今回のholdoutを見て設計を変えた後に同じholdoutで選択・性能主張を続けません。
+以下の追加改善では、教師蒸留を超える信号としてA2 CEM/進化戦略を実施しました。CPU対戦ベースの学習と明示し、学習用の開始局面と新しいholdoutを用意し、validationは既存のセットを使いました。今回のholdoutを見て設計を変えた後に同じholdoutで選択・性能主張を続けません。
 
 # 追加改善 A2：CPU CEM
 
