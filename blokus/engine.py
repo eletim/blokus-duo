@@ -4,6 +4,9 @@ N = 14
 START = ((4, 4), (9, 9))
 ORTH = ((1,0),(-1,0),(0,1),(0,-1))
 DIAG = ((1,1),(1,-1),(-1,1),(-1,-1))
+BOARD_MASK = (1 << (N*N)) - 1
+FIRST_COL = sum(1 << (r*N) for r in range(N))
+LAST_COL = FIRST_COL << (N-1)
 def norm(cells):
     a,b = min(x for x,y in cells), min(y for x,y in cells)
     return tuple(sorted((x-a,y-b) for x,y in cells))
@@ -73,9 +76,11 @@ class State:
     def render(self):
         return '   '+''.join(str(i%10) for i in range(N))+'\n'+'\n'.join(f'{r:2} '+''.join('X' if self.boards[0]&bit((r,c)) else 'O' if self.boards[1]&bit((r,c)) else '*' if (r,c) in START else '.' for c in range(N)) for r in range(N))
 def frontier(s,p):
-    own=set(cells_of(s.boards[p])); occupied=s.boards[0]|s.boards[1]
-    edge=mask(neighbors(own,ORTH))
-    f=mask(neighbors(own,DIAG)) if own else bit(START[p])
+    own=s.boards[p]; occupied=s.boards[0]|s.boards[1]
+    # Mask before horizontal shifts to prevent wrapping across row boundaries.
+    horizontal=((own & ~FIRST_COL) >> 1) | ((own & ~LAST_COL) << 1)
+    edge=(horizontal | (own >> N) | (own << N)) & BOARD_MASK
+    f=(((horizontal >> N) | (horizontal << N)) & BOARD_MASK) if own else bit(START[p])
     return f & ~occupied & ~edge, edge
 
 def legal_moves(s):
