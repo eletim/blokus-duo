@@ -1,0 +1,29 @@
+{
+  "ranking-301": {
+    "kind": "value",
+    "checkpoint": "artifacts/paired-ranking/seed-301/selected.pt",
+    "alpha": 0.5,
+    "gate": 24
+  },
+  "ranking-302": {
+    "kind": "value",
+    "checkpoint": "artifacts/paired-ranking/seed-302/selected.pt",
+    "alpha": 1.0,
+    "gate": 24
+  },
+  "ranking-303": {
+    "kind": "value",
+    "checkpoint": "artifacts/paired-ranking/seed-303/selected.pt",
+    "alpha": 1.0,
+    "gate": 24
+  },
+  "static": {
+    "kind": "static"
+  },
+  "prior": {
+    "kind": "value",
+    "checkpoint": "artifacts/value-search/compact/seed-201/predictive-best.pt",
+    "alpha": 0.5,
+    "gate": 24
+  }
+}

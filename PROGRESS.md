@@ -193,3 +193,19 @@ Compact stage3 seed203: 4000更新、5.24秒、best predictive MSE=0.03389、val
 原因分析（検証済み事実と仮説を区別）: flatはtrain loss低下に対し未使用対局MSE悪化、過学習を観測。pooled+追加データではMSE改善を観測したが対戦改善なし。終局回帰は継続方策の期待得点を学ぶため、候補間の微小な順位差・相手の最善応手の学習とは一致しない。batched版の時間超過/破棄も実測された。次案は同一局面の複数候補を同一継続乱数で完走し、差分/ランキング損失と局面単位検証を導入すること。現在の反対称制約は手番の先行利益も抑えてしまう可能性があり、手番の扱いを分離したablationが必要。これらはまだ実証していない仮説。
 
 最終第4段階完了: fresh95000/24prefix/3seed、非学習探索に平均+2.146 CI[+0.291,+3.875]、時間制御版Cに+1.194 CI[-0.500,+2.903]。学習側4.575〜4.690ms/手、6ms超過0〜0.80%。安定した優越は未確定。validation最高criterionのseed201/alpha0.5/gate24/incrementalを試用例としholdout再選択なし。全34テストとCUDA別process再開、全28match算術監査、train/eval開始状態非重複、CLI終局を確認。GPU主学習計30.672秒/24000更新、全run有限終了。詳細 artifacts/value-search/conclusions.md。research/value-searchへcommit/push準備。
+
+## 正式子依頼: 同一局面候補の差分/ランキング学習
+基点1b5cf87、branch research/paired-ranking。requests getでwork/runのacceptedを確認。完了時は最新revisionを取得しrequests finishを登録する。
+設計: 新規seedの対局から終盤寄りの共通rootを抽出。各rootで4候補を2ply後の葉に変換し、各候補を同じ継続seed・同じ方策で複数回終局まで進め、最終得点差を取得。候補ごとの独立なラベルを使い、group内差分回帰＋soft ranking＋弱い絶対値回帰でpooled価値CNNを学習。共通seedは初期乱数を共有するが、合法手や乱数消費の分岐後まで同一とは主張しない。
+3seedは同じ既存value checkpointから初期化し更新乱数を変える。既存モデル/エンジンを保持。新validation seed210000/32prefixで混合率とcheckpointを固定してからfresh holdout220000/96prefixを生成。先後交換、非学習探索と既存value(seed201,alpha0.5,gate24)へ共通6ms incremental探索で比較。prefix内2局をまとめたCIとseed×prefix CI、全decision時間、超過/node数を記録。
+初回予定1200base対局×2root×4候補×2完走=19200候補継続、CPU6worker。GPU各seed最大180秒・合計540秒以内（上限30分）。失敗も保全して原因を記す。全体2時間以内に中間成果を確定し、無期限runは残さない。
+
+Ranking seed301: 9.27秒/6000更新、validation criterion=+1.977, alpha=0.5。
+
+Ranking seed302: 8.93秒/6000更新、validation criterion=+1.492, alpha=1.0。
+
+Ranking seed303: 8.95秒/6000更新、validation criterion=+1.867, alpha=1.0。
+
+時間制御の不具合を検出: seed303/priorの探索時間1.623ms/手。一度の大きな遅延でcost_estimateが予算より大きくなり、以後のchild試行が全拒否され推定値も更新されない。評価劣化を学習原因とは判断しない。旧結果/sourceを保全し、観測費用と推定値を予算基準で上限化。100ms擬似遅延の次手に探索が回復する回帰テストPASS。全モデル・alphaは固定し、全対照へ同じ修正を適用。再選択せず新holdout230000/96prefixで全7組再比較する。
+
+正式子依頼の最終結果: repaired共通6ms、fresh230000/96prefix、3seed平均で非学習探索+2.583 CI[1.773,3.325]、現value -0.066 CI[-0.688,0.578]。既存valueからの改善は示せず推奨を維持。主学習27.16秒/18000更新、CPU19200継続/52.38秒、初回+修正版実験run617.86秒、3840評価対局。全38テスト、CUDA別process4vs2+2 model/optimizer/全RNG bit一致、256終局ラベル再生、選択/時間/hash/開始状態非重複の監査PASS。CLI終局PASS。artifacts/paired-ranking/conclusions.mdに原因と次案。research/paired-rankingへcommit/pushし、正式requests finishで秘書へ引き継ぐ。

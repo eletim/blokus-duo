@@ -132,7 +132,11 @@ class BudgetAgent:
             # Two plies: leaf is in root player's perspective; opponent minimizes.
             value=float(self.evaluator.batch(leaves).min())
             self.sections['value']+=time.perf_counter()-t
-            cost=time.perf_counter()-step;self.cost_estimate=max(.00015,.75*self.cost_estimate+.25*cost)
+            cost=time.perf_counter()-step
+            # A rare OS/GPU stall must not make all future children unaffordable.
+            # Clip the observation and bound the estimate below one turn's budget.
+            cap=self.budget_ms/1000
+            self.cost_estimate=max(.00015,min(cap*.45,.75*self.cost_estimate+.25*min(cost,cap)))
             # Discard a child that finished after the deadline rather than using late work.
             if time.perf_counter()>deadline:break
             done.append(int(i));values.append(value);self.roots+=1

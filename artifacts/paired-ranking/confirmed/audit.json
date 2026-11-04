@@ -1,0 +1,33 @@
+{
+  "audit": "PASS",
+  "matches": 7,
+  "unique_prefixes": 96,
+  "crossed_bootstrap": {
+    "static": {
+      "mean": 2.5833333333333335,
+      "ci95": [
+        1.7725260416666666,
+        3.324696180555555
+      ],
+      "seeds": 3,
+      "prefixes": 96,
+      "method": "crossed seed/prefix bootstrap after averaging paired seats",
+      "provisional": true
+    },
+    "prior": {
+      "mean": -0.06597222222222222,
+      "ci95": [
+        -0.6875,
+        0.5781684027777771
+      ],
+      "seeds": 3,
+      "prefixes": 96,
+      "method": "crossed seed/prefix bootstrap after averaging paired seats",
+      "provisional": true
+    }
+  },
+  "timing_validity": "repaired scheduler; inspect measured times",
+  "selection": "PASS",
+  "data_label_replays": 256,
+  "train_eval_state_disjoint": true
+}

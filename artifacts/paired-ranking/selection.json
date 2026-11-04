@@ -1,0 +1,122 @@
+{
+  "selected": {
+    "301": {
+      "spec": {
+        "kind": "value",
+        "checkpoint": "artifacts/paired-ranking/seed-301/selected.pt",
+        "alpha": 0.5,
+        "gate": 24
+      },
+      "criterion": 1.9765625,
+      "checkpoint_sha256": "d08fb9d650476b5ba5d0d65c8dd96b2ce96c640fbdcefaa0f94d594eccfb9bf2",
+      "choices": [
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/paired-ranking/seed-301/predictive-best.pt",
+            "alpha": 0.25,
+            "gate": 24
+          },
+          "criterion": 0.625
+        },
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/paired-ranking/seed-301/selected.pt",
+            "alpha": 0.5,
+            "gate": 24
+          },
+          "criterion": 1.9765625
+        },
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/paired-ranking/seed-301/predictive-best.pt",
+            "alpha": 1.0,
+            "gate": 24
+          },
+          "criterion": 1.53125
+        }
+      ]
+    },
+    "302": {
+      "spec": {
+        "kind": "value",
+        "checkpoint": "artifacts/paired-ranking/seed-302/selected.pt",
+        "alpha": 1.0,
+        "gate": 24
+      },
+      "criterion": 1.4921875,
+      "checkpoint_sha256": "f47cbb3d19bcccf522e946983c715ddeeb5cb18e9f7c353c8bd0aa985063c6b9",
+      "choices": [
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/paired-ranking/seed-302/predictive-best.pt",
+            "alpha": 0.25,
+            "gate": 24
+          },
+          "criterion": 0.671875
+        },
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/paired-ranking/seed-302/predictive-best.pt",
+            "alpha": 0.5,
+            "gate": 24
+          },
+          "criterion": 1.375
+        },
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/paired-ranking/seed-302/selected.pt",
+            "alpha": 1.0,
+            "gate": 24
+          },
+          "criterion": 1.4921875
+        }
+      ]
+    },
+    "303": {
+      "spec": {
+        "kind": "value",
+        "checkpoint": "artifacts/paired-ranking/seed-303/selected.pt",
+        "alpha": 1.0,
+        "gate": 24
+      },
+      "criterion": 1.8671875,
+      "checkpoint_sha256": "01ab94515eae0466ceb4522161da664f385e607d0a2f10dc179bdac4248ddd64",
+      "choices": [
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/paired-ranking/seed-303/predictive-best.pt",
+            "alpha": 0.25,
+            "gate": 24
+          },
+          "criterion": -1.0625
+        },
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/paired-ranking/seed-303/predictive-best.pt",
+            "alpha": 0.5,
+            "gate": 24
+          },
+          "criterion": 1.328125
+        },
+        {
+          "spec": {
+            "kind": "value",
+            "checkpoint": "artifacts/paired-ranking/seed-303/selected.pt",
+            "alpha": 1.0,
+            "gate": 24
+          },
+          "criterion": 1.8671875
+        }
+      ]
+    }
+  },
+  "validation_sha256": "07d75f8c09e0669b225e42f4bc9c2eef74362ba5083311428a511c7f35160d06"
+}

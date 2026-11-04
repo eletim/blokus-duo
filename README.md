@@ -333,3 +333,20 @@ A2-offは今回の新holdoutでheuristic/v1/Bへの平均得点差に改善が�
 ```
 
 GPU学習は9モデル計24,000更新・約30.67秒（smoke/再開検証別）。4段階のholdout計1,344局、validation計1,728局。全34テスト、別process CUDA再開、開始状態分離、結果算術監査とCLI終局確認はPASS。追加学習は稼働していません。
+
+## 同一局面候補の差分・ランキング学習
+
+終局価値モデルから初期化し、同じrootの4候補それぞれを共通の継続seedで終局まで進めた得点差を学ぶ経路を追加しました。損失は候補間差分回帰＋soft順位＋弱い絶対値回帰です。CPU6workerで1,200対局から2,400局面を取り、19,200候補継続を生成。GPU学習seed301/302/303、新validation32prefixで選択し、fresh holdout96prefix×先後交換で非学習探索・現valueモデルを比較しています。
+
+初回の時間ログから、一度の大遅延により探索費用推定が高止まりして探索が再開しなくなる不具合を発見し修正しました。旧ログを保全し、モデル・混合率は変更せず新holdout230000/96prefixで全組を確認しています。最終結果は [確認版レポート](artifacts/paired-ranking/confirmed/report.md)、設計・完全な再現コマンドは [METHOD.md](artifacts/paired-ranking/METHOD.md) を参照してください。共通6ms予算であり、実消費時間をpaddingで一致させた比較ではありません。
+
+```bash
+# 新規出力先で生成・3seed学習・validation・初回holdoutまで
+.venv/bin/python -m blokus.ranking_experiment run --output artifacts/my-ranking
+# 固定モデル、時間制御修正後の最終prefixを使った再比較
+.venv/bin/python -m blokus.value_experiment tournament --prefix-file artifacts/paired-ranking/confirmed/holdout-prefixes.json --specs artifacts/paired-ranking/play-specs.json --output artifacts/ranking-replay.json --budget-ms 6
+# 差分モデルを試す（seed301はvalidation最大、holdoutでは選び直していない）
+.venv/bin/python -m blokus.value_experiment play --checkpoint artifacts/paired-ranking/seed-301/selected.pt --alpha .5 --gate 24 --budget-ms 6
+```
+
+最終96prefix確認では3seed平均得点差が非学習探索に **+2.58 [95%区間 +1.77,+3.32]**、現valueに **−0.07 [−0.69,+0.58]**。今回の追加学習による置換の根拠は得られなかったため、推奨は既存valueのままです。主学習18,000更新/27.16秒、全38テスト・CUDA別process再開・256終局ラベル再生監査PASS。[原因分析・次案・全計算量](artifacts/paired-ranking/conclusions.md)を保存しています。
