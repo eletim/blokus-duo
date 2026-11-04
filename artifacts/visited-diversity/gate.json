@@ -1,0 +1,33 @@
+{
+  "initial": {
+    "raw": {
+      "decision_regret_points": 0.98291015625,
+      "pair_mse": 0.006637588143348694,
+      "ordering_accuracy": 0.7065592408180237,
+      "optimal_choice_rate": 0.6171875,
+      "groups": 256
+    },
+    "live": {
+      "decision_regret_points": 1.02978515625,
+      "pair_mse": 0.006499292328953743,
+      "ordering_accuracy": 0.70540851354599,
+      "optimal_choice_rate": 0.59375,
+      "groups": 256
+    }
+  },
+  "gates": {
+    "wide": {
+      "dev_live_regret": 0.9210611780484518,
+      "relative_improvement": 0.10557928276755368,
+      "validation_vs_prior": 0.5625,
+      "expand": true
+    },
+    "dense": {
+      "dev_live_regret": 0.8118489782015482,
+      "relative_improvement": 0.2116326660233424,
+      "validation_vs_prior": 0.4479166666666667,
+      "expand": true
+    }
+  },
+  "expand": true
+}

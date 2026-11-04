@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "returncode": 0,
+      "seconds": 7.216845461000048,
+      "stdout": "............................................                             [100%]\n44 passed in 6.70s\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "scripts/check_visited_resume.py"
+      ],
+      "returncode": 0,
+      "seconds": 6.309475191003003,
+      "stdout": "{'absolute': 'PASS: model/optimizer/Python/NumPy/Torch/CUDA RNG bit equal'}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "scripts/audit_visited.py"
+      ],
+      "returncode": 0,
+      "seconds": 591.9917506030033,
+      "stdout": "{\n  \"pilot\": {\n    \"selection\": \"PASS\",\n    \"validation\": {\n      \"status\": \"PASS\",\n      \"matches\": 24,\n      \"prefixes\": 16\n    },\n    \"dense_first_four_labels_equal_wide\": true\n  },\n  \"full\": {\n    \"selection\": \"PASS\",\n    \"validation\": {\n      \"status\": \"PASS\",\n      \"matches\": 24,\n      \"prefixes\": 32\n    },\n    \"dense_first_four_labels_equal_wide\": true\n  },\n  \"holdout\": {\n    \"status\": \"PASS\",\n    \"matches\": 7,\n    \"prefixes\": 96\n  },\n  \"curve\": {\n    \"status\": \"PASS\",\n    \"matches\": 3,\n    \"prefixes\": 8\n  },\n  \"leakage\": \"PASS: semantic exact root/leaf and source-game middle/end hashes disjoint from dev/evaluation; full label-continuation interiors not audited\",\n  \"train_root_leaf_states\": 109619,\n  \"dev_root_leaf_states\": 2904,\n  \"source_middle_states\": 25623,\n  \"crossed_bootstrap\": {\n    \"static\": {\n      \"mean\": 2.3541666666666665,\n      \"ci95\": [\n        1.5416666666666667,\n        3.1962239583333325\n      ],\n      \"method\": \"paired-seat average, crossed seed/prefix bootstrap\"\n    },\n    \"prior\": {\n      \"mean\": -0.09895833333333333,\n      \"ci95\": [\n        -0.78125,\n        0.4774305555555556\n      ],\n      \"method\": \"paired-seat average, crossed seed/prefix bootstrap\"\n    }\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "scripts/diagnose_visited.py"
+      ],
+      "returncode": 0,
+      "seconds": 1.4492041140038054,
+      "stdout": "{\n  \"pilot\": {\n    \"4\": {\n      \"best_choice_agreement_with_16\": 0.890625,\n      \"regret_to_16_points\": 0.0585937462747097,\n      \"candidate_rmse_points\": 0.8852160573005676\n    },\n    \"8\": {\n      \"best_choice_agreement_with_16\": 0.9375,\n      \"regret_to_16_points\": 0.028320318087935448,\n      \"candidate_rmse_points\": 0.5220437049865723\n    },\n    \"disjoint_8_vs_8\": {\n      \"best_choice_agreement\": 0.8828125,\n      \"candidate_rmse_points\": 1.0363422632217407\n    }\n  },\n  \"full\": {\n    \"4\": {\n      \"best_choice_agreement_with_16\": 0.8742437337942955,\n      \"regret_to_16_points\": 0.07489736378192902,\n      \"candidate_rmse_points\": 0.8944480419158936\n    },\n    \"8\": {\n      \"best_choice_agreement_with_16\": 0.9127052722558341,\n      \"regret_to_16_points\": 0.030196629464626312,\n      \"candidate_rmse_points\": 0.5132585167884827\n    },\n    \"disjoint_8_vs_8\": {\n      \"best_choice_agreement\": 0.837942955920484,\n      \"candidate_rmse_points\": 1.0100936889648438\n    }\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "-m",
+        "blokus.value_experiment",
+        "play",
+        "--checkpoint",
+        "artifacts/visited-diversity/full/dense/seed-601/raw.pt",
+        "--alpha",
+        ".5",
+        "--gate",
+        "24",
+        "--budget-ms",
+        "6"
+      ],
+      "returncode": 0,
+      "seconds": 1.1853081950030173,
+      "stdout": "scores -40 -9\n{'calls': 20, 'milliseconds_per_move': 5.051401800301392, 'p50_ms': 5.594522997853346, 'p95_ms': 5.824209499769495, 'max_ms': 6.032363999111112, 'allowance_ms': 6.0, 'overruns': 1, 'overrun_ms': 0.03236399911111221, 'total_seconds': 0.10102803600602783, 'nodes': 638, 'completed_roots': 184, 'fallbacks': 0, 'sections': {'legal': 0.007568675995571539, 'rank': 0.01110395500290906, 'expand': 0.042922260996419936, 'value': 0.03876399195723934}}\n",
+      "stderr": ""
+    }
+  ],
+  "torch": "2.7.1+cu128",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "source_hashes": {
+    "blokus/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "blokus/__main__.py": "ea1bf3aa69bdb8bafa2f845569a3cd5ec09f832f7b4888db55c3ae05a239d9d0",
+    "blokus/ai.py": "b0f452781d1d81b7ca1990b74948373886e27b50ab0e4c619b5cb22690c6b45c",
+    "blokus/aligned_data.py": "331f0eb9611627148603920116a11c6612a0bc741a67d01eeb35a43da4902db3",
+    "blokus/aligned_experiment.py": "fff49bd442418b12252c675f381f6f49f82c6f717e08237d111e4f4a66f5e528",
+    "blokus/aligned_train.py": "c575ac1e98cfe5859c2de86451e1ec2093f2c84bedfd29f1cec97683aa449ec2",
+    "blokus/cem.py": "6fc7c59bae5759bc56845266b70e25760c7112ae5112b0736ef1259402647266",
+    "blokus/engine.py": "b7ee646d45cfeba355f60b37ec927accde4ad859b91567c4b0b8db3715a8827b",
+    "blokus/experiment.py": "649cd59b1587f005b28d5c12be832ebb9d9e4c577e00c590da15c723644c2771",
+    "blokus/ranking_data.py": "e519e8debcde5a763985b58519203a91d708cd561bacec9bf6ffbb654189c699",
+    "blokus/ranking_experiment.py": "2cd8fd048d34f7e90799820bb312dc4b7a4e15356be6fe61ad7d7941b6ff3458",
+    "blokus/ranking_train.py": "eca992222335c055112da2b526cb45b841b4b2a20955a1ca4176bf59fa76602c",
+    "blokus/research.py": "ebb9f20786882e6b408cb5655b5500ac0488992300e20e3689968b9d8dee85dc",
+    "blokus/research_train.py": "d923d0e92f086b74e7675d5bd76464e4e49b7e951eb1a4ee2c712b13c186c3f6",
+    "blokus/tournament.py": "ff55d36be085c9af407ffc5f2ed1a5ebfcdcc7f9730a9a0eb6a9231dd8baaba8",
+    "blokus/value_data.py": "c76dd07cd94d331bca433843b26768217a6a2474acfe0f93a556500673873617",
+    "blokus/value_experiment.py": "84e727553e9247517ca7fdc37fd455e13a952acd7f7dd13252872d936b2d7e30",
+    "blokus/value_search.py": "2f0d021f702d8776ae676a23e45d1f108f02b0afee0bdce4c346db8d208719ac",
+    "blokus/value_train.py": "d160482b43b978787b2b834311852220c41b49f797a08f754b855d071e0586e9",
+    "blokus/visited_data.py": "6cf3aa6665935d172b7c8b175f25fe0adb31cdfc56d22613173b728a67313342",
+    "blokus/visited_eval.py": "c082be0da0af6352cd835fea40dd62be906453df0aa8baeeb57bfd987f7d5f45",
+    "blokus/visited_experiment.py": "41ae29a2d629369c331beb91b886e6ac3a896d3bf9421d5bb64b2eec715a6061",
+    "blokus/visited_train.py": "7389543e3d480cc34015663e1bb353478d372f77d1a1cc4dd06295ac830170fc",
+    "scripts/analyze_value.py": "1f4e96367178bda036c310774f9528dc1813eaac81f46ff2e76244b58a24594c",
+    "scripts/audit_aligned.py": "3005b9fb9833a6f17a3f4e898bfb1e2861c20e2d7a64c52d1752252729f95299",
+    "scripts/audit_ranking.py": "d6b3e35d9b076328230b0930499546ac8c887ec74646707af6855aa6496d8b7f",
+    "scripts/audit_research.py": "e91479769b6b7750924efa72735766ea08e60dea48fdcd2f979a9a22c1c4ea2b",
+    "scripts/audit_visited.py": "fc98fa583ce02e3beae94778d9fd18949740e4c51d0c4098c03302079f3a6f13",
+    "scripts/check_aligned_data.py": "3a4ce81ab11bf639dc3e91192e68675bf2be02165557c0f3e82ff7eb40ecc6dd",
+    "scripts/check_aligned_resume.py": "afa934961663d01eae903cabec178ae0d5430c6f1454147cae99228950c1020b",
+    "scripts/check_ranking_resume.py": "b0df6776268aef15beb611515e47fdacdec0d121d3195c36194fbffb7c1eba8c",
+    "scripts/check_research_cuda.py": "8569fcd6b24c5214f5e61b374473ed8b1bb551b914cb7f565e61ec82afee4ed7",
+    "scripts/check_value_prefixes.py": "fd12faf5735560eaf781578fd3f804adca5364f94f6e6765110ba8b58c937d6f",
+    "scripts/check_value_resume.py": "2ed0fca2e65785342d9be2a849e6999562ad7c5684e6e1bc8743d211f9cb206e",
+    "scripts/check_visited_resume.py": "8136d24a87879a8c806876398626a4d82a0a45d07e7f18623982c3b8d5f30609",
+    "scripts/confirm_ranking_timing.py": "c2e957e5db3f42eef4acb84c142d1c5b70d458d63df0fd389c8c7b2390ea7a42",
+    "scripts/diagnose_aligned.py": "1311841613852017d1528a9a27771f2251ed4dcb988386ecf2916136b22f883c",
+    "scripts/diagnose_ranking.py": "009649831542fd1c309e8f83f8289f05629c3faaa2212a51e26a36260695d98f",
+    "scripts/diagnose_visited.py": "da01bbb54dda6499cb3b510cba0dd34dbddbf0c37e048afbc450fb2ee296727c",
+    "scripts/evaluate_cem_search.py": "86fc25e49a706b8d0385116418acc7709fd785be0258bdced8397157ce2c55e8",
+    "scripts/pilot_aligned.py": "521328230d43c252e088a583a6cb6f43a2028d83910e221f6aa70b27bb89e271",
+    "scripts/prepare_visited.py": "8b85a56b42c1a0b8785fa97f711fbcacb6b16989dae63e57cd61f57e1a2a5741",
+    "scripts/replay_visited.py": "4acb70a658e1c431d400c65f30b9246b61acd26c6b12c416d56d44c5da502003",
+    "scripts/report_cem.py": "7b49d8fbc64f18884d4bacb9a9c14348eef47d35e7f8836ecb85e86c89b85c7d",
+    "scripts/report_research.py": "d67780e95de63dcb1978aaad8e0709c279c2de86ac3efae4965ef5eee0a3e394",
+    "scripts/report_visited.py": "febf06af206b7979b99df7db1020946815f0b6851854fb28b547edebe923e218",
+    "scripts/run_value_compact.py": "ea8c2f9bd885d9ed7748115cedf8c02ee329ddf49bea06163d33a475c4715e75",
+    "scripts/run_value_confirm.py": "6c6a1f677e8911aca50e7c519fe3103c183f1c328a66c4e9335ffeab1bebe3b8",
+    "scripts/verify_visited.py": "efe015ddb8379be9ebe1ae1e38d36caa135dcf6fe2f72cb047fef78b9e4e2ade",
+    "tests/test_aligned.py": "204d387f42ebe56162f05ca47c4a0ae7c494ba6787468ba61ff6140b0d717da4",
+    "tests/test_cem.py": "f5ad3998b5b88225ad0665bd0f3bddfa27f6d4bd32aea28c050a895793bfec96",
+    "tests/test_engine.py": "4cae0b212ce013804c8db7cf3a48f947cecd0a083cd4dc6c3f35db07031575a8",
+    "tests/test_frontier.py": "96128dbfa5844c9d24b6f62bf35b62d4dbc57ed2cccbf2877ed47fce92bb76e6",
+    "tests/test_learning.py": "c94e4588867f79d3491596d5fc2053fbec4762125cba83d3a653bd30d8aa5151",
+    "tests/test_ranking.py": "ed1b668c09d11b7f9314fded3e191f1daaf862ec56f7f4bf59f68cd9945209b0",
+    "tests/test_research.py": "464d80d29361c4a1c2c5124b8168571ccfaf2f790fdd154aa620e64b9e2fc4ce",
+    "tests/test_resume.py": "22380760ca1f7c55c93c47e677f63245ea45b869f08163eb0801b61c5f56a272",
+    "tests/test_value_search.py": "d55d7985e88629663d99077d7629d5727af32be493ed68a4a33fe6e6f715ca34",
+    "tests/test_visited.py": "9185173f9ffe0d22c8d49aafefdd69eee91c97a8594d4305afc414d7d307254b"
+  }
+}

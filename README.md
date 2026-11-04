@@ -356,3 +356,24 @@ GPU学習は9モデル計24,000更新・約30.67秒（smoke/再開検証別）�
 # 実験モデルの試用例（代表seed。既存推奨の置換ではありません）
 .venv/bin/python -m blokus.value_experiment play --checkpoint artifacts/search-aligned/ranking/seed-501/selected.pt --alpha .5 --gate 24 --budget-ms 6
 ```
+
+## 実戦局面の多様性・checkpoint選択（実験）
+
+実6ms探索が訪れた局面から、**9,256root×4完走**と**2,314root×16完走**を生成しました。CPU生成は967秒対976秒、継続ply差は約0.49%。絶対値損失を固定して各3更新seedを学習し、raw診断と実戦alpha=.5・終局上書きを含む意思決定損失によるcheckpoint選択を比較しています。
+
+新validationでは少数root・16完走のraw選択を固定。fresh96prefix・先後交換の最終評価では、3seed総合で非学習探索に **+2.35 [95%区間 +1.54,+3.20]**、既存valueに **−0.10 [−0.78,+0.48]**。今回の追加改善は確認できず、**既存value推奨を維持**します。共通6ms予算ですが実消費時間の完全一致ではありません。3seedはデータ・初期重みを共有し、区間はseed/prefix交差bootstrapです。
+
+GPU主学習は54,000更新・87.47秒。全44テスト、別process CUDA保存再開、ラベル標本再生、全評価着手・得点・CI・時間・checkpoint選択監査はPASS。学習root/leafと収集ゲーム中終盤のhash重複も検査しました。全継続内部局面・類似局面の非重複を保証するものではありません。
+
+固定重みの6/25/100ms曲線は8開発prefixの小規模診断で、長時間側の得点差は正でしたが全CIが0を含みます。学習改善と探索時間増加を混同しません。root数4倍でも元ゲーム数は815対780で、独立展開の多様性が4倍になった比較ではない点も限界です。
+
+[詳細結果・原因・次案](artifacts/visited-diversity/conclusions.md)／[設計と再現手順](artifacts/visited-diversity/METHOD.md)。
+
+```bash
+# 固定した最終7対戦を再実行（再選択には使わない）
+.venv/bin/python scripts/replay_visited.py --output artifacts/visited-replay.json
+# 研究用モデルを試用。seed601は代表例でありholdoutによるseed再選択ではない
+.venv/bin/python -m blokus.value_experiment play --checkpoint artifacts/visited-diversity/full/dense/seed-601/raw.pt --alpha .5 --gate 24 --budget-ms 6
+# 検証一式。独立checkerの全手再生を含むため約10分
+.venv/bin/python scripts/verify_visited.py
+```

@@ -238,3 +238,55 @@ pilot完了: 24group/12継続、独立な追加4継続に対する意思決定�
 全9モデルのvalidation完了: absolute +1.2552、difference +1.0755、ranking +1.2760（3seed×2相手平均得点差）。rankingを固定。ただしabsoluteとの差0.0208点は小さく、方式の真の優越とは主張しない。選択後にfresh320000/96prefixを生成し、ranking3seedのみ最終評価中。
 
 search-aligned完了: fresh320000/96prefixで選択ranking3seedは非学習+3.113 CI[2.339,3.922]、既存value+0.276 CI[-0.314,0.884]。追加改善未確認、既存value推奨維持。実戦混合後診断はprior regret0.747点/順位76.78%、ranking平均0.779点/74.41%で改善なし。主学習9モデル54000更新/105.88秒、CPU103448継続/258.18秒、run全体725.06秒＋pilot15.26秒。2496評価局。全41テスト、3損失CUDA別process4vs2+2の重み/optimizer/全RNG bit一致、pilot64＋full64ラベル再生と選択/hash/時間/新旧prefix分離監査PASS。CLI終局PASS。main eb96a90通常push済み。新実験はresearch/search-alignedへcommit/pushしwork46f31dedのrequests finishで秘書へ返却する。
+
+## 訪問局面の多様性と実戦checkpoint選択（work730484b4）
+基点9e76141、branch research/visited-diversity。mainは変更しない。requests getで今回run activeを確認。
+事前比較条件: 損失はabsoluteのみ固定。各更新時点の同じ重みからraw基準と実戦基準(alpha0.5＋終局厳密上書き)の両checkpointを保存し、新validation410000で比較。3更新seed601/602/603、同一初期value、共通の独立診断root256/8継続。実測6ms探索の完了した子評価を捕捉し、実際のrootと最大4候補×3応手の葉を保存。時間打切りがあるので訪問集合のbit再現は保証せず、保存後のラベルは決定的な固定幅pool継続で再現する。
+pilot多様性条件: wide512root×4継続 vs dense128root×16継続、denseは残駒数で層化したwideの部分集合。4条件poolを完全に周回し方策比率を一致。公称葉完走数を同程度にし実継続数/ply/CPU時間も記録。pilot両条件×3seed、3000更新/90秒各。共通診断で実戦損失が初期値より平均10%以上低下し、validationで既存valueへの平均差が+0.25点以上の条件がある場合のみ拡大。これは拡大判断用の小規模gateで優越の証明ではない。信号なしなら全量を使わずpilot結果を確定する。
+拡大時は最大10000wide/2500dense root、4/16継続。pilot実速度から両条件のラベル生成合計35分以内に収まるroot数へ下方調整可。追加各6000更新/120秒、GPU主学習上限pilot540＋full720=1260秒。方式・selectorをvalidationで固定してからfresh holdout450000/96prefixで選択条件3seedのみ対既存value/非学習を先後交換・6ms比較。旧holdout不使用。
+別診断: 固定既存valueの6/25/100msを開発prefix400000/8組で役割交換の直接対戦。学習と混同せず非等時間診断として記録。root/評価葉/元対局の全中終盤state hashと評価対局のstate hashを監査。ラベル継続の全内部状態までは保存しない限界を明記。全体2時間を監視する。
+
+Visited pilot/wide/601: 3000更新/4.92秒、dev best raw/live={'raw': (0.9028320908546448, 0.006463458761572838), 'live': (0.9150390625, 0.006223971955478191)}。
+
+Visited pilot/wide/602: 3000更新/4.69秒、dev best raw/live={'raw': (0.8725586533546448, 0.006426596082746983), 'live': (0.8867186903953552, 0.0063035800121724606)}。
+
+Visited pilot/wide/603: 3000更新/4.86秒、dev best raw/live={'raw': (0.91357421875, 0.006367459427565336), 'live': (0.96142578125, 0.0062548937276005745)}。
+
+Visited pilot/dense/601: 3000更新/4.96秒、dev best raw/live={'raw': (0.8735352158546448, 0.0066450415179133415), 'live': (0.83056640625, 0.006326326169073582)}。
+
+Visited pilot/dense/602: 3000更新/4.96秒、dev best raw/live={'raw': (0.8266600966453552, 0.006585485301911831), 'live': (0.76904296875, 0.0063097476959228516)}。
+
+Visited pilot/dense/603: 3000更新/4.96秒、dev best raw/live={'raw': (0.82470703125, 0.006628886796534061), 'live': (0.8359375596046448, 0.006323458161205053)}。
+
+### Visited diversity pilot判定
+新devの初期live regret=1.0298点。wideの3seed best平均0.9211（10.56%減）、dense=0.8118（21.16%減）。新validationでlive対既存value平均はwide +0.5625、dense +0.4479点。事前gateを両条件が通過したためfullへ進行。生成見積り35分からwide9256 root×4、dense2314 root×16を固定（目安1万から計算予算内へ調整）。全量のvalidation seed411000と最終holdout450000はまだ選択に未使用。pilotだけで改善とは結論しない。
+
+### Full生成中
+実6msゲームから9,256unique rootの収集を完了。wide4完走を6CPU workerで生成中（約8,100rootで846秒、計画範囲内）。その後同じ収集集合の層化subset2,314rootを16完走する。GPU主学習の追加前であり、full validation/holdoutは未参照。検証用にscripts/verify_visited.pyを用意し、計測終了後に全テスト・別process CUDA再開・全評価着手再生・ラベル再生・CLI終局を一括実行する。source/root/leaf状態hashの監査は完全重複に限り、類似局面や全ラベル継続内部の非重複を保証しない。
+
+### Fullデータ完成・学習開始
+wide9256×4: 396,532継続、3,731,669ply、967.23秒。dense2314×16: 395,952継続、3,750,128ply、976.48秒。CPU6workerで生成時間差約0.96%、ply差約0.49%に収まり、概ね同計算量の比較になった。各条件3seed・6000更新・同一absolute損失で学習中。new validation411000/32prefixでraw/liveと条件を選択し、その後fresh450000/96prefixへ進む。
+
+Visited full/wide/601: 6000更新/9.95秒、dev best raw/live={'raw': (0.8076171875, 0.00652588065713644), 'live': (0.81787109375, 0.006239873822778463)}。
+
+Visited full/wide/602: 6000更新/9.89秒、dev best raw/live={'raw': (0.91845703125, 0.006492690183222294), 'live': (0.84716796875, 0.006262396462261677)}。
+
+Visited full/wide/603: 6000更新/9.53秒、dev best raw/live={'raw': (0.8305663466453552, 0.006538674235343933), 'live': (0.8427734375, 0.006292452570050955)}。
+
+Visited full/dense/601: 6000更新/9.84秒、dev best raw/live={'raw': (0.88427734375, 0.0066073015332221985), 'live': (0.9052734375, 0.006380051374435425)}。
+
+Visited full/dense/602: 6000更新/9.44秒、dev best raw/live={'raw': (0.8359375, 0.006659537088125944), 'live': (0.88330078125, 0.006325321272015572)}。
+
+Visited full/dense/603: 6000更新/9.45秒、dev best raw/live={'raw': (0.892578125, 0.006645632442086935), 'live': (0.90283203125, 0.006340876221656799)}。
+
+### 最終方式固定
+full validation411000/32prefixで、dense/raw（3seed×static/priorの平均criterion +2.02604点）を選択。全条件のvalidation結果とselection.jsonを保存し、final-selection.jsonを書いた後にのみfresh450000/96prefix評価を開始した。方式・checkpoint・alpha=.5・gate24・6ms予算は以後固定。live選択やwide条件を新holdoutの結果で再選択しない。
+
+### 完了・結論
+fresh96prefix/先後交換/共通6msの1344局を完走。3seed交差bootstrapで対非学習+2.354 [1.542,3.196]点、対既存value −0.099 [−0.781,0.477]点。追加改善は未確認、既存value推奨を維持。live選択はfull dev regretを低下させたが、新validationでraw選択を上回らなかった。wideの元ゲーム数815、dense780で、root4倍は独立展開4倍ではない。次は収集ゲーム単位の相手/展開多様化と候補外・終盤の教師精度を調べる。探索時間曲線は8prefixで全得点CIが0を含み、拡大確認後に深さ・終盤完全探索の予算配分を検討する。
+
+GPU主学習54,000更新/87.47秒、準備＋run3437.48秒。CPUラベル生成（dev除く）837,440継続/2059.84秒。全44テスト6.70秒、別process CUDA model/optimizer/Python/NumPy/Torch/CUDA RNG bit一致、CLI終局PASS。監査591.99秒で全評価着手・得点・CI・時間・checkpoint選択・ラベル標本再生PASS。109,619学習root/leaf状態、25,623収集中終盤状態をdev/evaluationとhash照合し完全重複なし（全継続内部と類似局面は未監査）。再実行時の監査上限は余裕を持って1200秒へ設定、初回の591.99秒監査は当初600秒上限内で完走した。
+
+README、artifacts/visited-diversity/{METHOD.md,conclusions.md,compute-summary.json,audit.json,verification.json,diagnostics.json}に結果・限界・コマンドを保存。研究branchのみcommit/pushし、mainの既存value推奨は変更しない。学習/評価の残存runなし。
+
+保存時に1MB超のJSONのみ空白を除去し、再decode値の完全一致を確認。元/保存後hashとサイズをartifact-storage.jsonに記録した。checkpoint/NPZのbytesは変更していない。成果全体は約90MB、checkpoint合計約4.2MB。監査後の差分はレポート生成・文書・この意味保存のJSON整形のみで、engine/学習/探索コードは検証時から不変。

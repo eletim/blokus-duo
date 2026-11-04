@@ -1,0 +1,83 @@
+['-m', 'pytest', '-q'] 0 ............................................                             [100%]
+44 passed in 6.70s
+
+['scripts/check_visited_resume.py'] 0 {'absolute': 'PASS: model/optimizer/Python/NumPy/Torch/CUDA RNG bit equal'}
+
+['scripts/audit_visited.py'] 0  "PASS",
+    "validation": {
+      "status": "PASS",
+      "matches": 24,
+      "prefixes": 32
+    },
+    "dense_first_four_labels_equal_wide": true
+  },
+  "holdout": {
+    "status": "PASS",
+    "matches": 7,
+    "prefixes": 96
+  },
+  "curve": {
+    "status": "PASS",
+    "matches": 3,
+    "prefixes": 8
+  },
+  "leakage": "PASS: semantic exact root/leaf and source-game middle/end hashes disjoint from dev/evaluation; full label-continuation interiors not audited",
+  "train_root_leaf_states": 109619,
+  "dev_root_leaf_states": 2904,
+  "source_middle_states": 25623,
+  "crossed_bootstrap": {
+    "static": {
+      "mean": 2.3541666666666665,
+      "ci95": [
+        1.5416666666666667,
+        3.1962239583333325
+      ],
+      "method": "paired-seat average, crossed seed/prefix bootstrap"
+    },
+    "prior": {
+      "mean": -0.09895833333333333,
+      "ci95": [
+        -0.78125,
+        0.4774305555555556
+      ],
+      "method": "paired-seat average, crossed seed/prefix bootstrap"
+    }
+  }
+}
+
+['scripts/diagnose_visited.py'] 0 {
+  "pilot": {
+    "4": {
+      "best_choice_agreement_with_16": 0.890625,
+      "regret_to_16_points": 0.0585937462747097,
+      "candidate_rmse_points": 0.8852160573005676
+    },
+    "8": {
+      "best_choice_agreement_with_16": 0.9375,
+      "regret_to_16_points": 0.028320318087935448,
+      "candidate_rmse_points": 0.5220437049865723
+    },
+    "disjoint_8_vs_8": {
+      "best_choice_agreement": 0.8828125,
+      "candidate_rmse_points": 1.0363422632217407
+    }
+  },
+  "full": {
+    "4": {
+      "best_choice_agreement_with_16": 0.8742437337942955,
+      "regret_to_16_points": 0.07489736378192902,
+      "candidate_rmse_points": 0.8944480419158936
+    },
+    "8": {
+      "best_choice_agreement_with_16": 0.9127052722558341,
+      "regret_to_16_points": 0.030196629464626312,
+      "candidate_rmse_points": 0.5132585167884827
+    },
+    "disjoint_8_vs_8": {
+      "best_choice_agreement": 0.837942955920484,
+      "candidate_rmse_points": 1.0100936889648438
+    }
+  }
+}
+
+VERIFIED
