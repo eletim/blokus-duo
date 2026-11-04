@@ -211,3 +211,30 @@ Ranking seed303: 8.95秒/6000更新、validation criterion=+1.867, alpha=1.0。
 正式子依頼の最終結果: repaired共通6ms、fresh230000/96prefix、3seed平均で非学習探索+2.583 CI[1.773,3.325]、現value -0.066 CI[-0.688,0.578]。既存valueからの改善は示せず推奨を維持。主学習27.16秒/18000更新、CPU19200継続/52.38秒、初回+修正版実験run617.86秒、3840評価対局。全38テスト、CUDA別process4vs2+2 model/optimizer/全RNG bit一致、256終局ラベル再生、選択/時間/hash/開始状態非重複の監査PASS。CLI終局PASS。artifacts/paired-ranking/conclusions.mdに原因と次案。research/paired-rankingへcommit/pushし、正式requests finishで秘書へ引き継ぐ。
 
 main統合レビュー: origin/main=69065fcに対する1b5cf87/3dc3eb6の差分を確認。既存engine/既存学習APIへの変更なし、新規value/ranking経路とテスト追加。終局価値符号、group分割、RNG再開、時間費用上限、旧結果保全を確認。全38テスト6.17秒PASS。origin/mainをfetchし他者更新なし、3dc3eb6までfast-forward。README冒頭を既存value推奨/paired-ranking改善未確認へ更新して通常pushする。
+
+## 実探索分布に合わせる新実験（正式子work46f31ded）
+branch research/search-aligned、基点3dc3eb6＋main README整備。上位4root候補×相手heuristic上位3応手を全て保持し、masked葉をgroup化。継続poolは非学習固定4×3探索と既存valueの固定4×3探索、双方同方策と交差対戦を4条件で循環。時間予算によるラベル非決定性を避け、継続生成はCPU固定幅とする（評価の6ms探索とは区別）。各plyで乱数を再seedし、候補/応手間で同じ継続条件と同じ相対ply乱数を共有。合法手が違うため同じ乱数が同じ行動を意味するわけではない。
+先に24group×12継続のpilotで2/4/8完走平均を別の4完走基準と比較し、候補順位/意思決定損失/ラベル差を確認。trainは新seed300000から共通groupデータ、repeatsをpilotで選定。3seed501/502/503、共通事前学習・データ・minibatch/augmentation乱数、損失だけabsolute/difference/rankingで比較。各6000更新/180秒上限、9学習最大1620秒でGPU30分内。新validation310000/32prefixで方式を3seed平均対戦成績から固定、alpha0.5/gate24共通。選択方式の3seedのみfresh holdout320000/96prefixで現valueと非学習探索に先後比較。旧holdout不使用。全体2時間を上限目安に記録する。
+
+Aligned absolute/501: 6000更新/10.88秒、best decision regret=0.686点、validation直近2相手mean=+1.211。
+
+Aligned absolute/502: 6000更新/10.72秒、best decision regret=0.587点、validation直近2相手mean=+0.922。
+
+Aligned absolute/503: 6000更新/10.62秒、best decision regret=0.634点、validation直近2相手mean=+1.633。
+
+Aligned difference/501: 6000更新/12.24秒、best decision regret=0.654点、validation直近2相手mean=+1.047。
+
+Aligned difference/502: 6000更新/12.27秒、best decision regret=0.647点、validation直近2相手mean=+1.297。
+
+Aligned difference/503: 6000更新/12.24秒、best decision regret=0.663点、validation直近2相手mean=+0.883。
+
+Aligned ranking/501: 6000更新/12.38秒、best decision regret=0.659点、validation直近2相手mean=+1.234。
+
+Aligned ranking/502: 6000更新/12.31秒、best decision regret=0.653点、validation直近2相手mean=+1.383。
+
+Aligned ranking/503: 6000更新/12.22秒、best decision regret=0.686点、validation直近2相手mean=+1.211。
+
+pilot完了: 24group/12継続、独立な追加4継続に対する意思決定損失は2/4/8完走で0.833/0.469/0.188点、候補MSEも減少。事前ルールで8完走を採用。64ラベル再生PASS、上位3応手/mask/保存再開の新規3テストPASS。main remote eb96a90を確認。
+全9モデルのvalidation完了: absolute +1.2552、difference +1.0755、ranking +1.2760（3seed×2相手平均得点差）。rankingを固定。ただしabsoluteとの差0.0208点は小さく、方式の真の優越とは主張しない。選択後にfresh320000/96prefixを生成し、ranking3seedのみ最終評価中。
+
+search-aligned完了: fresh320000/96prefixで選択ranking3seedは非学習+3.113 CI[2.339,3.922]、既存value+0.276 CI[-0.314,0.884]。追加改善未確認、既存value推奨維持。実戦混合後診断はprior regret0.747点/順位76.78%、ranking平均0.779点/74.41%で改善なし。主学習9モデル54000更新/105.88秒、CPU103448継続/258.18秒、run全体725.06秒＋pilot15.26秒。2496評価局。全41テスト、3損失CUDA別process4vs2+2の重み/optimizer/全RNG bit一致、pilot64＋full64ラベル再生と選択/hash/時間/新旧prefix分離監査PASS。CLI終局PASS。main eb96a90通常push済み。新実験はresearch/search-alignedへcommit/pushしwork46f31dedのrequests finishで秘書へ返却する。

@@ -1,0 +1,22 @@
+{
+  "samples": 24,
+  "against": "disjoint repeats 8..11; noisy reference, not ground truth",
+  "metrics": {
+    "2": {
+      "candidate_mse": 0.0019299316918477416,
+      "decision_regret_points": 0.8333333730697632,
+      "top_agreement": 0.5833333333333334
+    },
+    "4": {
+      "candidate_mse": 0.001657714950852096,
+      "decision_regret_points": 0.46875,
+      "top_agreement": 0.7916666666666666
+    },
+    "8": {
+      "candidate_mse": 0.001474304124712944,
+      "decision_regret_points": 0.1875000298023224,
+      "top_agreement": 0.7916666666666666
+    }
+  },
+  "selected_training_repeats": 8
+}

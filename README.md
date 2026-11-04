@@ -343,3 +343,16 @@ GPU学習は9モデル計24,000更新・約30.67秒（smoke/再開検証別）�
 ```
 
 最終96prefix確認では3seed平均得点差が非学習探索に **+2.58 [95%区間 +1.77,+3.32]**、現valueに **−0.07 [−0.69,+0.58]**。今回の追加学習による置換の根拠は得られなかったため、推奨は既存valueのままです。主学習18,000更新/27.16秒、全38テスト・CUDA別process再開・256終局ラベル再生監査PASS。[原因分析・次案・全計算量](artifacts/paired-ranking/conclusions.md)を保存しています。
+
+## 実探索に合わせたデータと損失比較（実験）
+
+相手上位3応手を持つgroupと、既存valueを含む継続poolを追加しました。pilotでラベルの安定性を調べて8完走を採用し、共通データ・初期checkpoint・各6000更新で絶対値のみ/差分併用/順位併用を各3seed比較。新validationで順位併用を固定し、その3seedだけをfresh96prefixで評価しました。
+
+非学習探索に平均 **+3.11 [95%区間 +2.34,+3.92]**、既存valueに **+0.28 [−0.31,+0.88]**。追加改善は未確認なので**推奨は既存valueのまま**です。共通6ms予算で、実消費時間の完全一致ではありません。
+
+[結果・計算量・原因と次案](artifacts/search-aligned/conclusions.md)／[再現手順と乱数共有の定義](artifacts/search-aligned/METHOD.md)。主学習9モデル54,000更新/105.88秒、全41テストと3損失の別process CUDA保存再開PASS。新実験はresearch/search-alignedで保持しています。
+
+```bash
+# 実験モデルの試用例（代表seed。既存推奨の置換ではありません）
+.venv/bin/python -m blokus.value_experiment play --checkpoint artifacts/search-aligned/ranking/seed-501/selected.pt --alpha .5 --gate 24 --budget-ms 6
+```

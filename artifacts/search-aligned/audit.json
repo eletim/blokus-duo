@@ -1,0 +1,33 @@
+{
+  "audit": "PASS",
+  "matches": 7,
+  "unique_prefixes": 96,
+  "crossed_bootstrap": {
+    "static": {
+      "mean": 3.1128472222222223,
+      "ci95": [
+        2.3385416666666665,
+        3.921918402777777
+      ],
+      "seeds": 3,
+      "prefixes": 96,
+      "method": "paired seats averaged; crossed training-seed/prefix bootstrap",
+      "provisional": true
+    },
+    "prior": {
+      "mean": 0.2760416666666667,
+      "ci95": [
+        -0.3142361111111111,
+        0.8837239583333327
+      ],
+      "seeds": 3,
+      "prefixes": 96,
+      "method": "paired seats averaged; crossed training-seed/prefix bootstrap",
+      "provisional": true
+    }
+  },
+  "selection": "PASS",
+  "shared_data_initial_checkpoint_updates": "PASS",
+  "train_eval_state_disjoint": true,
+  "selected_mode": "ranking"
+}

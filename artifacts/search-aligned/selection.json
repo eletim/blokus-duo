@@ -1,0 +1,106 @@
+{
+  "chosen": {
+    "mode": "ranking",
+    "criterion": 1.2760416666666667,
+    "specs": {
+      "501": {
+        "kind": "value",
+        "checkpoint": "artifacts/search-aligned/ranking/seed-501/selected.pt",
+        "alpha": 0.5,
+        "gate": 24
+      },
+      "502": {
+        "kind": "value",
+        "checkpoint": "artifacts/search-aligned/ranking/seed-502/selected.pt",
+        "alpha": 0.5,
+        "gate": 24
+      },
+      "503": {
+        "kind": "value",
+        "checkpoint": "artifacts/search-aligned/ranking/seed-503/selected.pt",
+        "alpha": 0.5,
+        "gate": 24
+      }
+    }
+  },
+  "choices": [
+    {
+      "mode": "absolute",
+      "criterion": 1.2552083333333333,
+      "specs": {
+        "501": {
+          "kind": "value",
+          "checkpoint": "artifacts/search-aligned/absolute/seed-501/selected.pt",
+          "alpha": 0.5,
+          "gate": 24
+        },
+        "502": {
+          "kind": "value",
+          "checkpoint": "artifacts/search-aligned/absolute/seed-502/selected.pt",
+          "alpha": 0.5,
+          "gate": 24
+        },
+        "503": {
+          "kind": "value",
+          "checkpoint": "artifacts/search-aligned/absolute/seed-503/selected.pt",
+          "alpha": 0.5,
+          "gate": 24
+        }
+      }
+    },
+    {
+      "mode": "difference",
+      "criterion": 1.0755208333333333,
+      "specs": {
+        "501": {
+          "kind": "value",
+          "checkpoint": "artifacts/search-aligned/difference/seed-501/selected.pt",
+          "alpha": 0.5,
+          "gate": 24
+        },
+        "502": {
+          "kind": "value",
+          "checkpoint": "artifacts/search-aligned/difference/seed-502/selected.pt",
+          "alpha": 0.5,
+          "gate": 24
+        },
+        "503": {
+          "kind": "value",
+          "checkpoint": "artifacts/search-aligned/difference/seed-503/selected.pt",
+          "alpha": 0.5,
+          "gate": 24
+        }
+      }
+    },
+    {
+      "mode": "ranking",
+      "criterion": 1.2760416666666667,
+      "specs": {
+        "501": {
+          "kind": "value",
+          "checkpoint": "artifacts/search-aligned/ranking/seed-501/selected.pt",
+          "alpha": 0.5,
+          "gate": 24
+        },
+        "502": {
+          "kind": "value",
+          "checkpoint": "artifacts/search-aligned/ranking/seed-502/selected.pt",
+          "alpha": 0.5,
+          "gate": 24
+        },
+        "503": {
+          "kind": "value",
+          "checkpoint": "artifacts/search-aligned/ranking/seed-503/selected.pt",
+          "alpha": 0.5,
+          "gate": 24
+        }
+      }
+    }
+  ],
+  "validation_sha256": "3397d9eb2e91bfe2d11a5e8bf703015c670fd49c3369b8404b6fd2594fa345c5",
+  "checkpoint_hashes": {
+    "501": "8985ad55f23d2014e766496ceb86749cbc3014a36fd3fd5e0cf9ab70343de131",
+    "502": "acfb4f78f2d6897ad0d31c06e21527dc3d460fe91921a91347e8917e278f1d9e",
+    "503": "bd8bd9e2e71ac2f534cbfcf742eb2904675a69bba7832ea6e88d55b42bd4f3a8"
+  }
+}
