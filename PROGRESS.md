@@ -461,3 +461,25 @@ fresh1480000/96prefix先後交換、3seed平均対heuristic点率.580729（CI[.5
 
 ## terminal-ppo 最終確定（seed1500000）
 分離済み96prefix/1728局の最終監査PASS。訓練prefix重複0、訓練訪問状態重複0、固定selection hash一致。対heuristic点率.605035（CI[.569444,.640625]）/得点差+1.600694（CI[1.006944,2.196181]）、対学習前点率.606771/得点差+1.633681。対旧value6ms点率.331597/得点差-3.684028。新holdoutでは3seedとも平均差が正だが、3seedと共有prefixに条件付けた結果。旧1480000結果は最終結論に使わない。分離チェックを評価CLIの実行前へ移し回帰テスト追加、最終94tests PASS。全処理終了、main・既存推奨維持。branch commit/pushへ進む。
+
+## PPO learning curve 着手
+# PPO学習量比較 事前計画
+基点34cd4e6。main変更なし。モデル・PPO損失・終局勝敗報酬・16ゲーム同期生成・相手割合・4iterationごとの過去policy交換を維持。seed1401/1402/1403の512から1024/2048へ継続。追加生成更新wall上限合計3600秒、各seed1200秒、iteration境界で停止。非有限値は即停止。
+前回selected (128/512/512) は固定。新validation seed1530000、32prefix、先後交換。各checkpointを前回同seed selected、heuristic、旧value6msと比較。選択はpointの重み付き平均(previous .5/heuristic .25/oldvalue .25)、同値なら同重み得点差、さらに早いiteration。旧selectedも候補に含めるため退行時には維持できる。
+新dev seed1520000、8prefixでgreedy/確率的方策を診断のみ。主評価greedy。選択固定後seed1540000、96prefixを訓練全訪問状態・過去評価開始状態/sequenceから除外して固定。成績によるprefix再選択なし。全訪問状態監査は空盤面等prefix以前と採用評価局面以降を区別。prefix単位bootstrap、seedは同prefix内で平均して集約。
+ネット単体と旧探索6msは実消費時間が異なる。学習量のみを変更し探索は付けない。GPU更新時間のみでなく生成・保存を含む追加wallを計測。履歴は外部gzip sidecarとして保存しcheckpoint肥大化を避ける。初期512履歴と継続履歴を監査する。
+
+PPO継続中: seed1401 1712iteration、1024保存済み。直近64iteration訓練内平均勝敗報酬 {'current': -0.0546875, 'past': 0.0078125, 'heuristic': 0.27734375}。強さ評価とは区別。非有限値なし。評価/再開監査は訓練後に直列実行。
+
+seed1401は2048iteration/累積32768games完走、追加998.509秒。seed1402を継続開始。保存形式以外のPPO本体は34cd4e6とbyte一致。
+
+seed1402も2048iteration/32768games完走、追加1019.046秒。2seed合計2017.555秒。seed1403開始、学習条件変更なし。
+
+3seedすべて2048完走。追加wall合計3022.566秒、追加73728games/累積98304games。学習停止しCUDA別process再開・全テスト・全訓練訪問状態監査へ移行。
+
+## PPO learning curve 完了結果
+3seedともvalidationで2048選択、以後固定。fresh seed1540000/96prefix/先後交換/1728対局。前回selected比 +7.203 [95%CI +6.562,+7.856]、heuristic比 +6.205 [+5.439,+7.005]、旧value/2ply6ms比 +2.104 [+1.272,+2.891]。seed内の2座席と3seedをprefix内で平均。
+訓練98304対局/3306730全訪問hashを再生監査。評価前開始状態・評価後実訪問の重複0、全3776評価対局算術PASS。98tests PASS、CUDA別process 512→518 vs 512→514+4、過去policy交換516を含みmodel/past/optimizer/RNG/履歴bit一致。
+追加生成・更新・保存3022.566秒、73728games、213158 minibatch updates。対旧探索の実平均ネット1.215ms/旧探索4.643ms。同時間比較とは呼ばない。main変更なし。
+補足devでseed1401 latest512を追加診断（前回selectedは128）。同dev8prefix point greedy .9375/stochastic .5。選択固定後の診断のみで再選択なし。seed1401のlatest512への96prefix直接比較は未実施と明記。
+検証・対戦・レポートまでの経過約65.0分。結果/全再現手順: artifacts/ppo-learning-curve/REPORT.md。残りcommit/pushと正式finish。

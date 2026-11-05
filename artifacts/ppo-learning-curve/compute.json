@@ -1,0 +1,68 @@
+{
+  "seeds": [
+    {
+      "seed": 1401,
+      "initial_iteration": 512,
+      "iteration": 2048,
+      "games": 32768,
+      "additional_seconds": 998.5092997500033,
+      "complete": true,
+      "generation_seconds": 768.5618050589255,
+      "cpu_generation_pack_seconds": 663.9752300393302,
+      "gpu_inference_sync_seconds": 85.98965009392123,
+      "update_seconds": 219.37517743640637,
+      "updates": 71316,
+      "new_games": 24576,
+      "last64": {
+        "entropy": 1.160043043802838,
+        "approx_kl": 0.004478869687436859,
+        "value_mse": 0.6823442971700866,
+        "clip_fraction": 0.05447596963965396
+      }
+    },
+    {
+      "seed": 1402,
+      "initial_iteration": 512,
+      "iteration": 2048,
+      "games": 32768,
+      "additional_seconds": 1019.0457026539952,
+      "complete": true,
+      "generation_seconds": 791.6904812178836,
+      "cpu_generation_pack_seconds": 686.6512673373509,
+      "gpu_inference_sync_seconds": 86.4320812789374,
+      "update_seconds": 216.73715408124554,
+      "updates": 71088,
+      "new_games": 24576,
+      "last64": {
+        "entropy": 1.2452764770324323,
+        "approx_kl": 0.004496889329207663,
+        "value_mse": 0.6003217584108781,
+        "clip_fraction": 0.05522872542413154
+      }
+    },
+    {
+      "seed": 1403,
+      "initial_iteration": 512,
+      "iteration": 2048,
+      "games": 32768,
+      "additional_seconds": 1005.0108280220011,
+      "complete": true,
+      "generation_seconds": 775.8109076999972,
+      "cpu_generation_pack_seconds": 671.3661603890796,
+      "gpu_inference_sync_seconds": 85.85477323865052,
+      "update_seconds": 218.67245531172375,
+      "updates": 70754,
+      "new_games": 24576,
+      "last64": {
+        "entropy": 1.1182732214096929,
+        "approx_kl": 0.004516554816901063,
+        "value_mse": 0.6658348756663126,
+        "clip_fraction": 0.05294846041438424
+      }
+    }
+  ],
+  "additional_wall_seconds": 3022.5658304259996,
+  "additional_games": 73728,
+  "additional_updates": 213158,
+  "scope": "generation + updates + loading/checkpoint IO; inference_sync includes packing/H2D/sync, not pure CUDA kernel"
+}

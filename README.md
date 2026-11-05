@@ -479,3 +479,20 @@ depth4−depth2を全盤面＋候補の小型CNNで学び、完了したrootの�
 .venv/bin/python -m blokus.terminal_play --model artifacts/terminal-ppo/extended/seed-1401/iteration-128.pt --opponent heuristic
 # --human-seat 1 で人間対AI。全seedの固定checkpointはextended/selection.json。
 ```
+
+### 終局PPOの学習量曲線（研究branch、main推奨は維持）
+
+[今回のレポート](artifacts/ppo-learning-curve/REPORT.md)では、同一モデル・終局勝敗報酬・PPO損失・相手割合のまま、3seedの最新512から1024/2048iterationへ継続した。追加生成＋更新＋保存wallは合計50.4分、追加73,728対局。全seedでvalidation選択は2048となった。
+
+分離済み新holdout96prefix・先後交換では、前回selectedに平均得点差 **+7.20 [95% CI +6.56,+7.86]**、heuristicに **+6.20 [+5.44,+7.01]**、旧value/2ply6msに **+2.10 [+1.27,+2.89]**。2座席と3seedをprefix内で平均してbootstrapし、576独立標本とは扱っていない。旧2ply戦のネット実平均1.21ms、相手4.64msで、同時間条件の比較ではない。seed1401の対旧2ply point区間は0.5を含み、seed差も残る。
+
+全訓練訪問状態3,306,730件を評価前の除外集合に使用し、評価後の実訪問状態重複も0。98tests、過去policy交換をまたぐCUDA別process再開、訓練/対局再生と算術監査PASS。mainの既存低予算AI・100ms教師は変更せず、今回のPPOは研究候補として保持する。教師を用いたroot補正ではなく、実終局勝敗による学習量の改善である。
+
+```bash
+.venv/bin/python -m blokus.terminal_play \
+  --model artifacts/ppo-learning-curve/seed-1401/iteration-2048.pt --opponent heuristic
+```
+
+全モデルの選択hash・学習曲線・greedy/確率的診断・再現手順はレポートと同ディレクトリのJSONに記録。追加学習はこの2048で終了し、次段階の予算とmain統合はレビュー後に判断する。
+
+なおseed1401の前回selectedは128で、再開元512とは異なる。512の補足dev8prefixは強く、小標本の非単調性が見える。今回の主結論は固定した前回selectedへの改善であり、seed1401についてlatest512とのfresh96prefix直接比較は未実施。seed1402/1403の前回selectedは512である。

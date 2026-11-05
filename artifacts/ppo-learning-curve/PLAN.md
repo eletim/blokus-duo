@@ -1,0 +1,7 @@
+# PPO学習量比較 事前計画
+基点34cd4e6。main変更なし。モデル・PPO損失・終局勝敗報酬・16ゲーム同期生成・相手割合・4iterationごとの過去policy交換を維持。seed1401/1402/1403の512から1024/2048へ継続。追加生成更新wall上限合計3600秒、各seed1200秒、iteration境界で停止。非有限値は即停止。
+前回selected (128/512/512) は固定。新validation seed1530000、32prefix、先後交換。各checkpointを前回同seed selected、heuristic、旧value6msと比較。選択はpointの重み付き平均(previous .5/heuristic .25/oldvalue .25)、同値なら同重み得点差、さらに早いiteration。旧selectedも候補に含めるため退行時には維持できる。
+新dev seed1520000、8prefixでgreedy/確率的方策を診断のみ。主評価greedy。選択固定後seed1540000、96prefixを訓練全訪問状態・過去評価開始状態/sequenceから除外して固定。成績によるprefix再選択なし。全訪問状態監査は空盤面等prefix以前と採用評価局面以降を区別。prefix単位bootstrap、seedは同prefix内で平均して集約。
+ネット単体と旧探索6msは実消費時間が異なる。学習量のみを変更し探索は付けない。GPU更新時間のみでなく生成・保存を含む追加wallを計測。履歴は外部gzip sidecarとして保存しcheckpoint肥大化を避ける。初期512履歴と継続履歴を監査する。
+
+共有範囲: 3seedは初期重みseed1400・アーキテクチャ・損失・相手割合・全評価prefixを共有。更新seedは訓練prefix、行動sample、minibatch順を分ける。前回512までの各seed履歴とoptimizer/past/RNGをそのまま継承。baseline-lock.jsonに固定hashを保存。各checkpointのdevはheuristic相手8prefixのgreedy/確率分布sample比較であり、設定選択には使わない。
