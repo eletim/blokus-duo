@@ -1,0 +1,426 @@
+{
+  "mid": {
+    "old_regret": {
+      "mean": 0.5915007196366786,
+      "ci95": [
+        0.31311023322399706,
+        0.9350081048347056
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "reply_omission_rate": {
+      "mean": 0.48177083333333337,
+      "ci95": [
+        0.3307291666666667,
+        0.6328125
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "reply_omission_gap": {
+      "mean": 0.34210062938703534,
+      "ci95": [
+        0.19138139955806158,
+        0.5194461733137725
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "leaf_mae": {
+      "mean": 1.1314683845161602,
+      "ci95": [
+        0.8570126095604509,
+        1.4557517119438652
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "root6_loss": {
+      "mean": 0.24964200966060165,
+      "ci95": [
+        0.040410878136754064,
+        0.5374306123703718
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "root6_omission_rate": {
+      "mean": 0.3125,
+      "ci95": [
+        0.0625,
+        0.5625
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "old_selected_reply_omission_rate": {
+      "mean": 0.5,
+      "ci95": [
+        0.25,
+        0.75
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "configs": [
+      {
+        "root_width": 6,
+        "reply_width": 3,
+        "depth": 2,
+        "regret": {
+          "mean": 0.6995717760175466,
+          "ci95": [
+            0.3740766468876974,
+            1.0644374983385205
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 24.0,
+        "mean_completed_roots": 6.0,
+        "interrupted": 0
+      },
+      {
+        "root_width": 6,
+        "reply_width": 3,
+        "depth": 4,
+        "regret": {
+          "mean": 0.5204711424186826,
+          "ci95": [
+            0.23541773214004943,
+            0.8344410949107262
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 780.0,
+        "mean_completed_roots": 6.0,
+        "interrupted": 0
+      },
+      {
+        "root_width": 6,
+        "reply_width": 12,
+        "depth": 2,
+        "regret": {
+          "mean": 0.7252481199800969,
+          "ci95": [
+            0.4021869707526639,
+            1.081211112975143
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 78.0,
+        "mean_completed_roots": 6.0,
+        "interrupted": 0
+      },
+      {
+        "root_width": 6,
+        "reply_width": 12,
+        "depth": 4,
+        "regret": {
+          "mean": 0.3399860082194209,
+          "ci95": [
+            0.12011649438180026,
+            0.6233736489294097
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 2048.0,
+        "mean_completed_roots": 3.0,
+        "interrupted": 16
+      },
+      {
+        "root_width": 24,
+        "reply_width": 3,
+        "depth": 2,
+        "regret": {
+          "mean": 0.5915007196366786,
+          "ci95": [
+            0.31311023322399706,
+            0.9350081048347056
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 96.0,
+        "mean_completed_roots": 24.0,
+        "interrupted": 0
+      },
+      {
+        "root_width": 24,
+        "reply_width": 3,
+        "depth": 4,
+        "regret": {
+          "mean": 0.3101593500003219,
+          "ci95": [
+            0.10669444091618063,
+            0.5374448669608682
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 2046.0,
+        "mean_completed_roots": 15.0,
+        "interrupted": 16
+      },
+      {
+        "root_width": 24,
+        "reply_width": 12,
+        "depth": 2,
+        "regret": {
+          "mean": 0.5811063725501299,
+          "ci95": [
+            0.29978888210374866,
+            0.9282089038612321
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 312.0,
+        "mean_completed_roots": 24.0,
+        "interrupted": 0
+      },
+      {
+        "root_width": 24,
+        "reply_width": 12,
+        "depth": 4,
+        "regret": {
+          "mean": 0.3399860082194209,
+          "ci95": [
+            0.12011649438180026,
+            0.6233736489294097
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 2048.0,
+        "mean_completed_roots": 3.0,
+        "interrupted": 16
+      }
+    ],
+    "widening_regret_change": {
+      "mean": -0.010394347086548822,
+      "ci95": [
+        -0.031183041259646466,
+        0.0
+      ],
+      "unit": "independent source game",
+      "games": 16
+    }
+  },
+  "end": {
+    "old_regret": {
+      "mean": 1.0,
+      "ci95": [
+        0.0,
+        2.5
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "reply_omission_rate": {
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "reply_omission_gap": {
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "leaf_mae": {
+      "mean": 0.7677322751842438,
+      "ci95": [
+        0.16815125569701184,
+        1.5020068968956668
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "root6_loss": {
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "root6_omission_rate": {
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "old_selected_reply_omission_rate": {
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "unit": "independent source game",
+      "games": 16
+    },
+    "configs": [
+      {
+        "root_width": 6,
+        "reply_width": 3,
+        "depth": 2,
+        "regret": {
+          "mean": 1.0,
+          "ci95": [
+            0.0,
+            2.5
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 7.25,
+        "mean_completed_roots": 3.6875,
+        "interrupted": 0
+      },
+      {
+        "root_width": 6,
+        "reply_width": 3,
+        "depth": 4,
+        "regret": {
+          "mean": 0.25,
+          "ci95": [
+            0.0,
+            0.75
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 10.625,
+        "mean_completed_roots": 3.6875,
+        "interrupted": 0
+      },
+      {
+        "root_width": 6,
+        "reply_width": 12,
+        "depth": 2,
+        "regret": {
+          "mean": 1.0,
+          "ci95": [
+            0.0,
+            2.5
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 7.25,
+        "mean_completed_roots": 3.6875,
+        "interrupted": 0
+      },
+      {
+        "root_width": 6,
+        "reply_width": 12,
+        "depth": 4,
+        "regret": {
+          "mean": 0.25,
+          "ci95": [
+            0.0,
+            0.75
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 10.625,
+        "mean_completed_roots": 3.6875,
+        "interrupted": 0
+      },
+      {
+        "root_width": 24,
+        "reply_width": 3,
+        "depth": 2,
+        "regret": {
+          "mean": 1.0,
+          "ci95": [
+            0.0,
+            2.5
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 7.75,
+        "mean_completed_roots": 3.9375,
+        "interrupted": 0
+      },
+      {
+        "root_width": 24,
+        "reply_width": 3,
+        "depth": 4,
+        "regret": {
+          "mean": 0.25,
+          "ci95": [
+            0.0,
+            0.75
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 11.375,
+        "mean_completed_roots": 3.9375,
+        "interrupted": 0
+      },
+      {
+        "root_width": 24,
+        "reply_width": 12,
+        "depth": 2,
+        "regret": {
+          "mean": 1.0,
+          "ci95": [
+            0.0,
+            2.5
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 7.75,
+        "mean_completed_roots": 3.9375,
+        "interrupted": 0
+      },
+      {
+        "root_width": 24,
+        "reply_width": 12,
+        "depth": 4,
+        "regret": {
+          "mean": 0.25,
+          "ci95": [
+            0.0,
+            0.75
+          ],
+          "unit": "independent source game",
+          "games": 16
+        },
+        "mean_nodes": 11.375,
+        "mean_completed_roots": 3.9375,
+        "interrupted": 0
+      }
+    ],
+    "widening_regret_change": {
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "unit": "independent source game",
+      "games": 16
+    }
+  }
+}

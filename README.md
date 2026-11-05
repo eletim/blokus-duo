@@ -394,3 +394,11 @@ GPU主学習は54,000更新・87.47秒。全44テスト、別process CUDA保存�
 ```bash
 .venv/bin/python -m blokus.deep_experiment play --spec artifacts/exact-hybrid/selection.json
 ```
+
+## 応手脱落の固定node診断（実験）
+
+独立16ゲームから各1中盤・1終盤を取り、root幅・応手幅・深さを共通2048node上限で切り分けました。中盤の選択4ply参照では、root平均48.2%で最悪応手がheuristic上位3の外にあります。ただし応手3→12だけの選択損失改善は0.010点に留まり、葉評価誤差と完了候補数のトレードオフが残りました。中盤参照は厳密解ではありません。
+
+変更を応手幅だけに限定し、新validationで幅6を固定。試合ごとcold・共通25ms・fresh96prefix先後交換では旧幅3に **89勝98敗5分、−0.240点 [95%CI −1.146,+0.615]**。実時間17.726/17.541ms、平均完了root20.53/21.68。**追加改善は未確認で、既存value/2ply推奨を維持**します。以前のwarm-cache結果は変更していません。
+
+全60テスト、全16終盤の独立全探索、固定node再現、評価再生・算術監査PASS。GPU追加学習なし。[詳細結果・原因と別系統への次案](artifacts/reply-diagnostics/conclusions.md)／[再現コマンドと指標定義](artifacts/reply-diagnostics/METHOD.md)。研究用CLIは `.venv/bin/python -m blokus.reply_experiment play`。
