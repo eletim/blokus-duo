@@ -417,3 +417,14 @@ c46a180から新branch。学習/実戦の偶然の最大値選択を止め、固
 2400条件まで54run/162000更新を完走、GPU主学習176.534秒。1000更新plainはMSE6.92786（zero7.30425）、regret0.522586（zero0.537114）。decayは6.90906/0.523928。平均改善傾向はあるが、両条件ともfold1はMSE/選択損失悪化、fold2も選択損失悪化、CIに0を含む。固定した対戦gate未達で、validation/holdoutを作らず終了。生成gate例外は記録済み、対戦gate変更なし。
 85 tests、2条件CUDA別process40 vs20+追加20=総40、3960源ゲーム全再生、7424root入力/候補/mask、入れ子配列・分割hash・CI/gate算術、教師75root+偏り診断36root再計算PASS。源ゲームは完全手順hashも3960unique。候補入力衝突は1037root、異なる教師値を持つ衝突群59件だが観測MSE下限0.000349で主因と断定しない。
 学習曲線PNG/SVG、日本語conclusions.md、再現METHOD.md保存。旧再開表記を正確に訂正。main変更なし、研究branchへcommit/pushする。
+
+## candidate-mask 着手
+# 候補配置入力の対照実験（事前固定）
+基点312e9dc。main変更なし。既存3600ゲームpoolのみ再利用し、各fold訓練は2400 nominal games。過去bank/holdoutを学習・選択に使わない。新bank360ゲームID200000–200359、seed1330000–1330359。pool/seat/fold層化、45/65%進行root、ゲーム/局面hash分離。教師depth4-depth2、固定value、width3、top4+random2ラベル、Huber、alpha .5は保持。教師値は真のゲーム価値ではない。
+2表現: summary=従来6ch盤面CNN+39候補要約、cells=候補の占有セルを7ch目に追加して候補ごとCNN。共通重みは同一初期値、追加channelのみ新規。両者1000更新、AdamW lr.001 weight_decay0、batch32 root、既知候補のみ損失。3fold×更新seed1101/1102/1103。ゲーム分割/データ/初期共通部分/ミニバッチ乱数は共有。追加正則化・サイズ・checkpoint探索なし。
+進行gate（前回と同じ、不変）: 各foldの3seed平均でraw MSEとalpha .5選択損失の双方がゼロ補正より5%以上改善、各seedのfold平均選択損失がゼロより改善、ゲーム単位でseed平均後bootstrap4000の両改善95%CI下限>0。1000更新のみ判定。失敗なら対戦なし。raw MSEにはalphaを掛けない。条件を途中変更しない。
+訓練GPU主計算合計1200秒以下、今回90分目安。通過時のみ新validation32prefix、その後96prefix先後交換25msへ進む（全体2h）。入力衝突回帰、勾配、CUDA別process40 vs20+20、教師再生、分割/算術監査、候補batchメモリ/遅延を記録する。
+
+
+## candidate-mask 診断完了
+候補配置の区別・勾配確認、18run/18000更新完走。新bank356ゲーム672roots。summary/cells raw MSE6.45957/6.45132、regret .520514/.537984、zero .540837。両gate未達、対戦を実施しない。89tests、CUDA別process40 vs20+20、教師75root再生、split/算術監査PASS。全履歴には共通状態あり、採用ラベルrootの重複は0（詳細REPORT）。GPU主学習19.82秒。main/推奨維持。root補正の微調整を区切る判断を推奨。

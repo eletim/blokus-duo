@@ -464,3 +464,7 @@ depth4−depth2を全盤面＋候補の小型CNNで学び、完了したrootの�
 [学習曲線と結論](artifacts/correction-game-scaling/conclusions.md) ／ [学習曲線PNG](artifacts/correction-game-scaling/learning-curves.png) ／ [設計・再現](artifacts/correction-game-scaling/METHOD.md)
 
 3,960ユニーク元ゲーム・7,424root、54run/162,000更新、GPU主学習176.53秒。85 tests、CUDA別process再開、ラベル再生・分割hash・CI監査PASS。追加生成gateだけはMSE改善を根拠に例外を記録して2400まで測定しましたが、対戦gateは変更していません。前回の再開表記は「40連続 vs20＋追加20＝通算40」が正確です。候補入力の情報欠落も診断しましたが、観測分だけで全体の失敗を説明できるとは主張していません。
+
+### 候補セルmask対照（研究限定）
+
+[実験レポート](artifacts/candidate-mask/REPORT.md): 従来要約と正確な配置maskを3ゲーム分割×3更新seedで比較。配置を入力・勾配で区別できるが、固定汎化gateは未達。対戦holdoutなし。mainの既存value/2ply推奨は変更しない。

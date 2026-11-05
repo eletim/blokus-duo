@@ -39,13 +39,15 @@ class CorrectionAgent(StudentAgent):
   self.model.eval()
   with torch.no_grad():self.model(torch.zeros(1,6,14,14,device=device),torch.zeros(1,49,device=device),torch.zeros(1,128,XDIM,device=device))
   if device.startswith('cuda'):torch.cuda.synchronize()
+ def candidate_inputs(self,s,qs,x,st):
+  return inputs(s,qs,x,st)[0]
  def act(self,s,rng):
   if s.done:raise ValueError('terminal')
   start=time.perf_counter();deadline=start+self.budget_ms/1000;qs=legal_moves(s);generation=time.perf_counter()-start
   if not qs:
    self.times.append(time.perf_counter()-start);self.decisions.append(dict(ms=self.times[-1]*1000,policy_ms=0.,completed_roots=0,candidates=0,fallback=False));return None
   rank_start=time.perf_counter();x,st=features(s,qs);members=np.argsort(-heuristic(x),kind='stable')[:128]
-  t=time.perf_counter();xx,_=inputs(s,[qs[int(i)] for i in members],x[members],st);board,state=encode(s)
+  t=time.perf_counter();xx=self.candidate_inputs(s,[qs[int(i)] for i in members],x[members],st);board,state=encode(s)
   with torch.no_grad():delta=self.model(torch.as_tensor(board[None],device=self.device),torch.as_tensor(state[None],device=self.device),torch.as_tensor(xx[None],device=self.device))[0].cpu().numpy()
   policy_ms=(time.perf_counter()-t)*1000;self.sections['legal']+=generation;self.sections['rank']+=time.perf_counter()-rank_start
   values=np.full(len(members),np.nan);known=np.zeros(len(members),bool);terminal=np.zeros(len(members),bool)

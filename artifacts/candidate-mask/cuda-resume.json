@@ -1,0 +1,41 @@
+{
+  "pass_": true,
+  "separate_process": true,
+  "reports": [
+    {
+      "condition": "summary",
+      "uninterrupted_updates": 40,
+      "first_segment_updates": 20,
+      "resumed_additional_updates": 20,
+      "resumed_total_updates": 40,
+      "checks": {
+        "model": true,
+        "optimizer": true,
+        "step": true,
+        "python_rng": true,
+        "numpy_rng": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "data_sha256": true
+      }
+    },
+    {
+      "condition": "cells",
+      "uninterrupted_updates": 40,
+      "first_segment_updates": 20,
+      "resumed_additional_updates": 20,
+      "resumed_total_updates": 40,
+      "checks": {
+        "model": true,
+        "optimizer": true,
+        "step": true,
+        "python_rng": true,
+        "numpy_rng": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "data_sha256": true
+      }
+    }
+  ],
+  "previous_report_correction": "40 continuous versus 20 + additional 20 = 40; --steps is total target, not additional updates"
+}
