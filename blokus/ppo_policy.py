@@ -10,6 +10,8 @@ from .engine import State,legal_moves
 from .ai import features
 from .value_search import encode
 EXTRA=27
+DEFAULT_GENERATION="gen2"
+GENERATIONS=("gen2","2048")
 def _candidate_inputs(s,qs,x=None,st=None):
     if x is None:x,st=features(s,qs)
     extra=np.zeros((len(qs),EXTRA),np.float32)
@@ -50,10 +52,12 @@ class TerminalNet(nn.Module):
 
 
 class PPOAgent:
- def __init__(self,model_seed=1401,device='auto',checkpoint=None):
+ def __init__(self,model_seed=1401,device='auto',checkpoint=None,generation=DEFAULT_GENERATION):
+  if generation not in GENERATIONS:raise ValueError('generation must be gen2 or 2048')
+  self.generation=generation
   if model_seed not in (1401,1402,1403):raise ValueError('model seed must be 1401,1402,1403')
   self.device=('cuda' if torch.cuda.is_available() else 'cpu') if device=='auto' else device
-  path=Path(checkpoint) if checkpoint else Path(__file__).resolve().parents[1]/f'artifacts/ppo-2048/seed-{model_seed}.pt'
+  path=Path(checkpoint) if checkpoint else Path(__file__).resolve().parents[1]/f'artifacts/ppo-{generation}/seed-{model_seed}.pt'
   ck=torch.load(path,map_location='cpu',weights_only=True)
   if ck.get('format')!='terminal-ppo-inference-v1':raise ValueError('not an exported PPO inference checkpoint')
   self.model=TerminalNet().to(self.device);self.model.load_state_dict(ck['model']);self.model.eval();self.metadata={k:v for k,v in ck.items() if k!='model'};self.times=[]
