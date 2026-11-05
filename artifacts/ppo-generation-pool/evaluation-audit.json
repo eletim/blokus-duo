@@ -1,0 +1,1668 @@
+{
+  "pass_": true,
+  "gate_recomputed": true,
+  "opponent_specs_verified": true,
+  "phases": {
+    "validation": {
+      "games": 1728,
+      "unique_actual_states": 49013,
+      "training_actual_overlap": 0,
+      "adopted_start_overlap": 0
+    },
+    "holdout": {
+      "games": 1728,
+      "unique_actual_states": 51664,
+      "training_actual_overlap": 0,
+      "adopted_start_overlap": 0
+    }
+  },
+  "individual": {
+    "A/seed-1401/validation-gen2.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 40,
+        "losses": 19,
+        "draws": 5,
+        "mean_difference": 4.625,
+        "difference_ci95": [
+          2.34375,
+          6.953125
+        ],
+        "point_rate": 0.6640625,
+        "point_rate_ci95": [
+          0.5703125,
+          0.7578125
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 1019,
+          "mean_ms": 1.3604648125599796,
+          "p95_ms": 2.6964091002810164,
+          "max_ms": 35.76198300015676
+        },
+        {
+          "calls": 1010,
+          "mean_ms": 1.2594242148783326,
+          "p95_ms": 2.6057625000248654,
+          "max_ms": 3.8107069995021448
+        }
+      ]
+    },
+    "A/seed-1401/validation-oldvalue.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 41,
+        "losses": 22,
+        "draws": 1,
+        "mean_difference": 5.109375,
+        "difference_ci95": [
+          3.171875,
+          6.9375
+        ],
+        "point_rate": 0.6484375,
+        "point_rate_ci95": [
+          0.53125,
+          0.765625
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 975,
+          "mean_ms": 1.2721285579522,
+          "p95_ms": 2.624399999785964,
+          "max_ms": 3.7463669996213866
+        },
+        {
+          "calls": 968,
+          "mean_ms": 4.466202286159597,
+          "p95_ms": 5.743176500527625,
+          "max_ms": 40.529251000407385
+        }
+      ]
+    },
+    "A/seed-1401/validation-previous.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 42,
+        "losses": 19,
+        "draws": 3,
+        "mean_difference": 3.78125,
+        "difference_ci95": [
+          1.171875,
+          6.390625
+        ],
+        "point_rate": 0.6796875,
+        "point_rate_ci95": [
+          0.5625,
+          0.7890625
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 988,
+          "mean_ms": 1.3819737257102978,
+          "p95_ms": 2.8719179997096944,
+          "max_ms": 3.6946669997632853
+        },
+        {
+          "calls": 978,
+          "mean_ms": 1.2528163087989197,
+          "p95_ms": 2.6020874998266663,
+          "max_ms": 3.9300970001932
+        }
+      ]
+    },
+    "A/seed-1401/validation-teacher100.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 37,
+        "losses": 27,
+        "draws": 0,
+        "mean_difference": 1.25,
+        "difference_ci95": [
+          -1.5628906249999999,
+          4.265625
+        ],
+        "point_rate": 0.578125,
+        "point_rate_ci95": [
+          0.46875,
+          0.6875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 995,
+          "mean_ms": 1.3366356392062109,
+          "p95_ms": 2.8716430004351414,
+          "max_ms": 4.1003480000654235
+        },
+        {
+          "calls": 990,
+          "mean_ms": 67.38900292929696,
+          "p95_ms": 94.29643549992761,
+          "max_ms": 94.65334700053063
+        }
+      ]
+    },
+    "A/seed-1402/validation-gen2.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 33,
+        "losses": 28,
+        "draws": 3,
+        "mean_difference": 1.4375,
+        "difference_ci95": [
+          -0.90625,
+          3.8441406250000014
+        ],
+        "point_rate": 0.5390625,
+        "point_rate_ci95": [
+          0.4375,
+          0.640625
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 989,
+          "mean_ms": 1.3247539555272756,
+          "p95_ms": 2.6946964000671865,
+          "max_ms": 3.824847000032605
+        },
+        {
+          "calls": 985,
+          "mean_ms": 1.28356304363654,
+          "p95_ms": 2.6585028002955364,
+          "max_ms": 3.9196170000650454
+        }
+      ]
+    },
+    "A/seed-1402/validation-oldvalue.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 41,
+        "losses": 20,
+        "draws": 3,
+        "mean_difference": 4.75,
+        "difference_ci95": [
+          2.015625,
+          7.3125
+        ],
+        "point_rate": 0.6640625,
+        "point_rate_ci95": [
+          0.5390625,
+          0.78125
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 982,
+          "mean_ms": 1.2584074398942762,
+          "p95_ms": 2.6324215003569402,
+          "max_ms": 3.7208860003374866
+        },
+        {
+          "calls": 971,
+          "mean_ms": 4.420626144176463,
+          "p95_ms": 5.718860000342829,
+          "max_ms": 6.174451000333647
+        }
+      ]
+    },
+    "A/seed-1402/validation-previous.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 38,
+        "losses": 21,
+        "draws": 5,
+        "mean_difference": 2.53125,
+        "difference_ci95": [
+          0.359375,
+          4.921875
+        ],
+        "point_rate": 0.6328125,
+        "point_rate_ci95": [
+          0.5234375,
+          0.7421875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 964,
+          "mean_ms": 1.3057117520658035,
+          "p95_ms": 2.639315000124043,
+          "max_ms": 3.8005070000508567
+        },
+        {
+          "calls": 958,
+          "mean_ms": 1.338017305848298,
+          "p95_ms": 2.699269849790653,
+          "max_ms": 3.8051159999668016
+        }
+      ]
+    },
+    "A/seed-1402/validation-teacher100.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 31,
+        "losses": 30,
+        "draws": 3,
+        "mean_difference": 1.078125,
+        "difference_ci95": [
+          -1.5625,
+          3.75
+        ],
+        "point_rate": 0.5078125,
+        "point_rate_ci95": [
+          0.3984375,
+          0.625
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 982,
+          "mean_ms": 1.3430920590534254,
+          "p95_ms": 2.859852999972645,
+          "max_ms": 4.186446999483451
+        },
+        {
+          "calls": 980,
+          "mean_ms": 67.22989363059575,
+          "p95_ms": 94.35732250058209,
+          "max_ms": 94.88713700011431
+        }
+      ]
+    },
+    "A/seed-1403/validation-gen2.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 32,
+        "losses": 27,
+        "draws": 5,
+        "mean_difference": 3.0625,
+        "difference_ci95": [
+          0.84375,
+          5.375
+        ],
+        "point_rate": 0.5390625,
+        "point_rate_ci95": [
+          0.4453125,
+          0.640625
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 977,
+          "mean_ms": 1.3635860829262787,
+          "p95_ms": 2.729908199580677,
+          "max_ms": 3.725006999957259
+        },
+        {
+          "calls": 974,
+          "mean_ms": 1.2526129435201074,
+          "p95_ms": 2.5599454994789985,
+          "max_ms": 3.7156959997446393
+        }
+      ]
+    },
+    "A/seed-1403/validation-oldvalue.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 40,
+        "losses": 23,
+        "draws": 1,
+        "mean_difference": 3.703125,
+        "difference_ci95": [
+          1.03125,
+          6.375
+        ],
+        "point_rate": 0.6328125,
+        "point_rate_ci95": [
+          0.5234375,
+          0.7421875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 983,
+          "mean_ms": 1.3049213265687456,
+          "p95_ms": 2.639080999961152,
+          "max_ms": 3.8063669999246486
+        },
+        {
+          "calls": 974,
+          "mean_ms": 4.401136335727231,
+          "p95_ms": 5.711276000147336,
+          "max_ms": 5.8663999998316285
+        }
+      ]
+    },
+    "A/seed-1403/validation-previous.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 27,
+        "losses": 34,
+        "draws": 3,
+        "mean_difference": 0.3125,
+        "difference_ci95": [
+          -2.546875,
+          3.25
+        ],
+        "point_rate": 0.4453125,
+        "point_rate_ci95": [
+          0.3359375,
+          0.5546875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 967,
+          "mean_ms": 1.3593849596914425,
+          "p95_ms": 2.7914119998058595,
+          "max_ms": 3.8711470006091986
+        },
+        {
+          "calls": 972,
+          "mean_ms": 1.2783937057836499,
+          "p95_ms": 2.561307999940254,
+          "max_ms": 3.676086999803374
+        }
+      ]
+    },
+    "A/seed-1403/validation-teacher100.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 38,
+        "losses": 25,
+        "draws": 1,
+        "mean_difference": 1.296875,
+        "difference_ci95": [
+          -1.3125,
+          4.1875
+        ],
+        "point_rate": 0.6015625,
+        "point_rate_ci95": [
+          0.4921875,
+          0.7109375
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 972,
+          "mean_ms": 1.4053458466957482,
+          "p95_ms": 2.882752999767034,
+          "max_ms": 4.196257999865338
+        },
+        {
+          "calls": 969,
+          "mean_ms": 69.14674864088208,
+          "p95_ms": 94.38710800022818,
+          "max_ms": 95.01015699970594
+        }
+      ]
+    },
+    "B/seed-1401/validation-A.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 33,
+        "losses": 30,
+        "draws": 1,
+        "mean_difference": 1.59375,
+        "difference_ci95": [
+          -0.43789062499999987,
+          3.71875
+        ],
+        "point_rate": 0.5234375,
+        "point_rate_ci95": [
+          0.4375,
+          0.609375
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 1010,
+          "mean_ms": 1.289370459404147,
+          "p95_ms": 2.64555800040398,
+          "max_ms": 3.866265999931784
+        },
+        {
+          "calls": 1008,
+          "mean_ms": 1.2903874633084775,
+          "p95_ms": 2.6574721499400766,
+          "max_ms": 3.6157470003672643
+        }
+      ]
+    },
+    "B/seed-1401/validation-gen2.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 37,
+        "losses": 26,
+        "draws": 1,
+        "mean_difference": 2.71875,
+        "difference_ci95": [
+          1.1089843750000001,
+          4.265625
+        ],
+        "point_rate": 0.5859375,
+        "point_rate_ci95": [
+          0.5,
+          0.671875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 1011,
+          "mean_ms": 1.3368653303519582,
+          "p95_ms": 2.6913899996543478,
+          "max_ms": 3.735577000043122
+        },
+        {
+          "calls": 1007,
+          "mean_ms": 1.266352581926326,
+          "p95_ms": 2.6350740002271773,
+          "max_ms": 4.362016999948537
+        }
+      ]
+    },
+    "B/seed-1401/validation-oldvalue.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 36,
+        "losses": 26,
+        "draws": 2,
+        "mean_difference": 3.328125,
+        "difference_ci95": [
+          1.0308593750000001,
+          5.5625
+        ],
+        "point_rate": 0.578125,
+        "point_rate_ci95": [
+          0.46875,
+          0.6796875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 1003,
+          "mean_ms": 1.238941390842145,
+          "p95_ms": 2.5465308996899694,
+          "max_ms": 3.6522360005619703
+        },
+        {
+          "calls": 998,
+          "mean_ms": 4.529031694413012,
+          "p95_ms": 5.7439210001120955,
+          "max_ms": 6.1061400001563015
+        }
+      ]
+    },
+    "B/seed-1401/validation-previous.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 36,
+        "losses": 27,
+        "draws": 1,
+        "mean_difference": 2.5625,
+        "difference_ci95": [
+          -0.171875,
+          5.422265625000001
+        ],
+        "point_rate": 0.5703125,
+        "point_rate_ci95": [
+          0.453125,
+          0.6796875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 992,
+          "mean_ms": 1.3802708629109548,
+          "p95_ms": 2.843520000033095,
+          "max_ms": 3.8135869999678107
+        },
+        {
+          "calls": 987,
+          "mean_ms": 1.26894791692587,
+          "p95_ms": 2.6854039996578636,
+          "max_ms": 3.7489659998755087
+        }
+      ]
+    },
+    "B/seed-1401/validation-teacher100.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 33,
+        "losses": 26,
+        "draws": 5,
+        "mean_difference": 2.328125,
+        "difference_ci95": [
+          -1.15625,
+          5.875
+        ],
+        "point_rate": 0.5546875,
+        "point_rate_ci95": [
+          0.4296875,
+          0.6796875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 1007,
+          "mean_ms": 1.3520490993014012,
+          "p95_ms": 2.863167999657889,
+          "max_ms": 4.396437999275804
+        },
+        {
+          "calls": 1004,
+          "mean_ms": 66.48751212948258,
+          "p95_ms": 94.3595341499531,
+          "max_ms": 94.98442699987208
+        }
+      ]
+    },
+    "B/seed-1402/validation-A.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 36,
+        "losses": 28,
+        "draws": 0,
+        "mean_difference": 0.90625,
+        "difference_ci95": [
+          -2.6878906249999996,
+          4.46875
+        ],
+        "point_rate": 0.5625,
+        "point_rate_ci95": [
+          0.4375,
+          0.671875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 1006,
+          "mean_ms": 1.3312485268476195,
+          "p95_ms": 2.7247275004356197,
+          "max_ms": 3.7612960004480556
+        },
+        {
+          "calls": 1003,
+          "mean_ms": 1.2622885563306387,
+          "p95_ms": 2.5963600000068254,
+          "max_ms": 3.8633960002698586
+        }
+      ]
+    },
+    "B/seed-1402/validation-gen2.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 28,
+        "losses": 32,
+        "draws": 4,
+        "mean_difference": -1.328125,
+        "difference_ci95": [
+          -3.4378906249999996,
+          0.671875
+        ],
+        "point_rate": 0.46875,
+        "point_rate_ci95": [
+          0.359375,
+          0.578125
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 998,
+          "mean_ms": 1.3731508056234323,
+          "p95_ms": 2.749112499896,
+          "max_ms": 3.6882969998259796
+        },
+        {
+          "calls": 1000,
+          "mean_ms": 1.2565323000117132,
+          "p95_ms": 2.6537654997810023,
+          "max_ms": 3.9404369999829214
+        }
+      ]
+    },
+    "B/seed-1402/validation-oldvalue.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 40,
+        "losses": 21,
+        "draws": 3,
+        "mean_difference": 3.796875,
+        "difference_ci95": [
+          1.859375,
+          5.671875
+        ],
+        "point_rate": 0.6484375,
+        "point_rate_ci95": [
+          0.5390625,
+          0.7578125
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 990,
+          "mean_ms": 1.3207640090798243,
+          "p95_ms": 2.625636499806205,
+          "max_ms": 3.8571270006286795
+        },
+        {
+          "calls": 981,
+          "mean_ms": 4.5306138603639114,
+          "p95_ms": 5.721429999539396,
+          "max_ms": 5.995281000650721
+        }
+      ]
+    },
+    "B/seed-1402/validation-previous.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 26,
+        "losses": 32,
+        "draws": 6,
+        "mean_difference": -0.8125,
+        "difference_ci95": [
+          -2.484375,
+          0.75
+        ],
+        "point_rate": 0.453125,
+        "point_rate_ci95": [
+          0.3515625,
+          0.5546875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 994,
+          "mean_ms": 1.3406820070297505,
+          "p95_ms": 2.688216849901435,
+          "max_ms": 3.7081469999975525
+        },
+        {
+          "calls": 991,
+          "mean_ms": 1.3194357557925982,
+          "p95_ms": 2.7514944995346013,
+          "max_ms": 3.6960359993827296
+        }
+      ]
+    },
+    "B/seed-1402/validation-teacher100.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 30,
+        "losses": 32,
+        "draws": 2,
+        "mean_difference": 0.34375,
+        "difference_ci95": [
+          -2.203125,
+          2.78125
+        ],
+        "point_rate": 0.484375,
+        "point_rate_ci95": [
+          0.3671875,
+          0.6015625
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 1001,
+          "mean_ms": 1.3794765224932004,
+          "p95_ms": 2.8691350007647998,
+          "max_ms": 4.033956999592192
+        },
+        {
+          "calls": 1002,
+          "mean_ms": 68.95453217164581,
+          "p95_ms": 94.35971599918958,
+          "max_ms": 94.72826599994733
+        }
+      ]
+    },
+    "B/seed-1403/validation-A.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 39,
+        "losses": 21,
+        "draws": 4,
+        "mean_difference": 0.59375,
+        "difference_ci95": [
+          -2.0941406249999996,
+          3.1410156250000014
+        ],
+        "point_rate": 0.640625,
+        "point_rate_ci95": [
+          0.5390625,
+          0.75
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 1007,
+          "mean_ms": 1.268792418065207,
+          "p95_ms": 2.5691479999295552,
+          "max_ms": 3.7214149997453205
+        },
+        {
+          "calls": 999,
+          "mean_ms": 1.308374635645468,
+          "p95_ms": 2.6381370005765348,
+          "max_ms": 3.6894340000799275
+        }
+      ]
+    },
+    "B/seed-1403/validation-gen2.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 35,
+        "losses": 27,
+        "draws": 2,
+        "mean_difference": 0.65625,
+        "difference_ci95": [
+          -2.046875,
+          3.171875
+        ],
+        "point_rate": 0.5625,
+        "point_rate_ci95": [
+          0.4453125,
+          0.6796875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 1011,
+          "mean_ms": 1.2976232047377452,
+          "p95_ms": 2.6608389998727944,
+          "max_ms": 3.753306999897177
+        },
+        {
+          "calls": 1008,
+          "mean_ms": 1.215640511896521,
+          "p95_ms": 2.5125281505097514,
+          "max_ms": 3.6413570005606744
+        }
+      ]
+    },
+    "B/seed-1403/validation-oldvalue.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 48,
+        "losses": 13,
+        "draws": 3,
+        "mean_difference": 7.6875,
+        "difference_ci95": [
+          5.125,
+          10.375390625000001
+        ],
+        "point_rate": 0.7734375,
+        "point_rate_ci95": [
+          0.6875,
+          0.859375
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 988,
+          "mean_ms": 1.2700821599410415,
+          "p95_ms": 2.5793438497657917,
+          "max_ms": 3.6805870004172903
+        },
+        {
+          "calls": 971,
+          "mean_ms": 4.347180230673287,
+          "p95_ms": 5.714845000511559,
+          "max_ms": 6.132251000053657
+        }
+      ]
+    },
+    "B/seed-1403/validation-previous.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 34,
+        "losses": 27,
+        "draws": 3,
+        "mean_difference": 0.09375,
+        "difference_ci95": [
+          -2.625,
+          2.8125
+        ],
+        "point_rate": 0.5546875,
+        "point_rate_ci95": [
+          0.4609375,
+          0.6484375
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 1002,
+          "mean_ms": 1.3023369800496816,
+          "p95_ms": 2.6420139999117964,
+          "max_ms": 3.963567000027979
+        },
+        {
+          "calls": 1002,
+          "mean_ms": 1.2668161317267954,
+          "p95_ms": 2.570917449929766,
+          "max_ms": 3.7773770000057993
+        }
+      ]
+    },
+    "B/seed-1403/validation-teacher100.json": {
+      "summary": {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 35,
+        "losses": 26,
+        "draws": 3,
+        "mean_difference": 3.265625,
+        "difference_ci95": [
+          1.25,
+          5.312890625000001
+        ],
+        "point_rate": 0.5703125,
+        "point_rate_ci95": [
+          0.453125,
+          0.6875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 984,
+          "mean_ms": 1.3843896890324967,
+          "p95_ms": 2.896295999471476,
+          "max_ms": 3.997535000053176
+        },
+        {
+          "calls": 977,
+          "mean_ms": 68.29544806246635,
+          "p95_ms": 94.3919757999538,
+          "max_ms": 94.96424799999659
+        }
+      ]
+    },
+    "B/seed-1401/holdout-A.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 94,
+        "losses": 90,
+        "draws": 8,
+        "mean_difference": 0.796875,
+        "difference_ci95": [
+          -0.5625,
+          2.1145833333333335
+        ],
+        "point_rate": 0.5104166666666666,
+        "point_rate_ci95": [
+          0.4348958333333333,
+          0.5807291666666666
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 3031,
+          "mean_ms": 1.3060878670289457,
+          "p95_ms": 2.735857999596192,
+          "max_ms": 3.9850550001574447
+        },
+        {
+          "calls": 3023,
+          "mean_ms": 1.3446361607704032,
+          "p95_ms": 2.7660339995236427,
+          "max_ms": 33.88570900006016
+        }
+      ]
+    },
+    "B/seed-1401/holdout-gen2.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 101,
+        "losses": 79,
+        "draws": 12,
+        "mean_difference": 1.484375,
+        "difference_ci95": [
+          0.2916666666666667,
+          2.614713541666667
+        ],
+        "point_rate": 0.5572916666666666,
+        "point_rate_ci95": [
+          0.4947916666666667,
+          0.6197916666666666
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 3028,
+          "mean_ms": 1.3470849851471909,
+          "p95_ms": 2.770081499738808,
+          "max_ms": 3.8469940000140923
+        },
+        {
+          "calls": 3012,
+          "mean_ms": 1.3209155381844764,
+          "p95_ms": 2.7754929505590553,
+          "max_ms": 3.8629439995929715
+        }
+      ]
+    },
+    "B/seed-1401/holdout-teacher100.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 109,
+        "losses": 74,
+        "draws": 9,
+        "mean_difference": 2.1770833333333335,
+        "difference_ci95": [
+          0.6145833333333334,
+          3.6979166666666665
+        ],
+        "point_rate": 0.5911458333333334,
+        "point_rate_ci95": [
+          0.5260416666666666,
+          0.65625
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 2987,
+          "mean_ms": 1.3723891690797492,
+          "p95_ms": 2.8863099998488897,
+          "max_ms": 4.492595000556321
+        },
+        {
+          "calls": 2975,
+          "mean_ms": 69.41541138253488,
+          "p95_ms": 94.35096770021119,
+          "max_ms": 94.93623799971829
+        }
+      ]
+    },
+    "B/seed-1402/holdout-A.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 69,
+        "losses": 114,
+        "draws": 9,
+        "mean_difference": -1.265625,
+        "difference_ci95": [
+          -2.4114583333333335,
+          -0.08333333333333333
+        ],
+        "point_rate": 0.3828125,
+        "point_rate_ci95": [
+          0.3203125,
+          0.4505208333333333
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 2995,
+          "mean_ms": 1.3832292717858592,
+          "p95_ms": 2.8367739999339388,
+          "max_ms": 4.24465399919427
+        },
+        {
+          "calls": 3010,
+          "mean_ms": 1.296673429577372,
+          "p95_ms": 2.677214000232197,
+          "max_ms": 4.0611349995742785
+        }
+      ]
+    },
+    "B/seed-1402/holdout-gen2.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 102,
+        "losses": 80,
+        "draws": 10,
+        "mean_difference": 1.5208333333333333,
+        "difference_ci95": [
+          0.17708333333333334,
+          2.8802083333333335
+        ],
+        "point_rate": 0.5572916666666666,
+        "point_rate_ci95": [
+          0.4895833333333333,
+          0.6276041666666666
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 3012,
+          "mean_ms": 1.4357858243742323,
+          "p95_ms": 2.8442094498132056,
+          "max_ms": 35.483351000038965
+        },
+        {
+          "calls": 3000,
+          "mean_ms": 1.245409221664583,
+          "p95_ms": 2.628831449374046,
+          "max_ms": 3.9012249999359483
+        }
+      ]
+    },
+    "B/seed-1402/holdout-teacher100.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 87,
+        "losses": 98,
+        "draws": 7,
+        "mean_difference": -0.5104166666666666,
+        "difference_ci95": [
+          -1.8125,
+          0.7916666666666666
+        ],
+        "point_rate": 0.4713541666666667,
+        "point_rate_ci95": [
+          0.3984375,
+          0.5416666666666666
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 2993,
+          "mean_ms": 1.4167259174735702,
+          "p95_ms": 2.9266674002428776,
+          "max_ms": 4.204175000268151
+        },
+        {
+          "calls": 3007,
+          "mean_ms": 70.66697547323231,
+          "p95_ms": 94.36147929955041,
+          "max_ms": 95.02996799983521
+        }
+      ]
+    },
+    "B/seed-1403/holdout-A.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 101,
+        "losses": 80,
+        "draws": 11,
+        "mean_difference": 0.7708333333333334,
+        "difference_ci95": [
+          -0.557421875,
+          2.1095052083333337
+        ],
+        "point_rate": 0.5546875,
+        "point_rate_ci95": [
+          0.4895833333333333,
+          0.6197916666666666
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 3009,
+          "mean_ms": 1.2961118441290749,
+          "p95_ms": 2.6476330000150483,
+          "max_ms": 3.79020499985927
+        },
+        {
+          "calls": 3000,
+          "mean_ms": 1.322006472331547,
+          "p95_ms": 2.7380729995002175,
+          "max_ms": 5.058226000073773
+        }
+      ]
+    },
+    "B/seed-1403/holdout-gen2.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 100,
+        "losses": 83,
+        "draws": 9,
+        "mean_difference": 1.859375,
+        "difference_ci95": [
+          0.5102864583333333,
+          3.2291666666666665
+        ],
+        "point_rate": 0.5442708333333334,
+        "point_rate_ci95": [
+          0.4791666666666667,
+          0.6067708333333334
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 2987,
+          "mean_ms": 1.369157159687736,
+          "p95_ms": 2.7785490002315782,
+          "max_ms": 3.9865750004537404
+        },
+        {
+          "calls": 2981,
+          "mean_ms": 1.279015948348412,
+          "p95_ms": 2.685143000235257,
+          "max_ms": 36.575711000295996
+        }
+      ]
+    },
+    "B/seed-1403/holdout-teacher100.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 123,
+        "losses": 65,
+        "draws": 4,
+        "mean_difference": 3.609375,
+        "difference_ci95": [
+          1.8169270833333335,
+          5.416796875000001
+        ],
+        "point_rate": 0.6510416666666666,
+        "point_rate_ci95": [
+          0.578125,
+          0.7161458333333334
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "timing": [
+        {
+          "calls": 2975,
+          "mean_ms": 1.3961105015092288,
+          "p95_ms": 2.9258589997880327,
+          "max_ms": 4.313625000577304
+        },
+        {
+          "calls": 2945,
+          "mean_ms": 67.87195946316602,
+          "p95_ms": 94.3555058000129,
+          "max_ms": 95.05523799998628
+        }
+      ]
+    }
+  },
+  "aggregate": {
+    "validation-A": {
+      "point": 0.5755208333333334,
+      "difference": 1.0312499999999998,
+      "point_ci95": [
+        0.5130208333333334,
+        0.6380208333333334
+      ],
+      "difference_ci95": [
+        -0.770963541666667,
+        2.8125
+      ],
+      "per_seed_mean": [
+        [
+          0.5234375,
+          1.59375
+        ],
+        [
+          0.5625,
+          0.90625
+        ],
+        [
+          0.640625,
+          0.59375
+        ]
+      ],
+      "timing": [
+        {
+          "mean_ms": 1.2964519176310147,
+          "p95_ms": 2.6547598003162425,
+          "max_ms": 3.866265999931784,
+          "over_100ms_rate": null
+        },
+        {
+          "mean_ms": 1.2869941016692354,
+          "p95_ms": 2.6442105499427258,
+          "max_ms": 3.8633960002698586,
+          "over_100ms_rate": null
+        }
+      ]
+    },
+    "validation-gen2": {
+      "point": 0.5390625,
+      "difference": 0.6822916666666666,
+      "point_ci95": [
+        0.48697916666666663,
+        0.5885416666666669
+      ],
+      "difference_ci95": [
+        -0.5156249999999999,
+        1.8489583333333333
+      ],
+      "per_seed_mean": [
+        [
+          0.5859375,
+          2.71875
+        ],
+        [
+          0.46875,
+          -1.328125
+        ],
+        [
+          0.5625,
+          0.65625
+        ]
+      ],
+      "timing": [
+        {
+          "mean_ms": 1.3357193420489655,
+          "p95_ms": 2.6915539495803382,
+          "max_ms": 3.753306999897177,
+          "over_100ms_rate": null
+        },
+        {
+          "mean_ms": 1.246140957214997,
+          "p95_ms": 2.6150690000577015,
+          "max_ms": 4.362016999948537,
+          "over_100ms_rate": null
+        }
+      ]
+    },
+    "validation-teacher100": {
+      "point": 0.5364583333333333,
+      "difference": 1.9791666666666667,
+      "point_ci95": [
+        0.4713541666666667,
+        0.6015625
+      ],
+      "difference_ci95": [
+        0.4009114583333334,
+        3.6458333333333326
+      ],
+      "per_seed_mean": [
+        [
+          0.5546875,
+          2.328125
+        ],
+        [
+          0.484375,
+          0.34375
+        ],
+        [
+          0.5703125,
+          3.265625
+        ]
+      ],
+      "timing": [
+        {
+          "mean_ms": 1.3718612620388306,
+          "p95_ms": 2.874263900594087,
+          "max_ms": 4.396437999275804,
+          "over_100ms_rate": null
+        },
+        {
+          "mean_ms": 67.90833260845432,
+          "p95_ms": 94.37223810009527,
+          "max_ms": 94.98442699987208,
+          "over_100ms_rate": 0.0
+        }
+      ]
+    },
+    "holdout-A": {
+      "point": 0.4826388888888889,
+      "difference": 0.10069444444444446,
+      "point_ci95": [
+        0.4383463541666665,
+        0.5269097222222222
+      ],
+      "difference_ci95": [
+        -0.7657986111111114,
+        0.9288628472222226
+      ],
+      "per_seed_mean": [
+        [
+          0.5104166666666666,
+          0.796875
+        ],
+        [
+          0.3828125,
+          -1.265625
+        ],
+        [
+          0.5546875,
+          0.7708333333333334
+        ]
+      ],
+      "timing": [
+        {
+          "mean_ms": 1.3283369709958792,
+          "p95_ms": 2.747565000026951,
+          "max_ms": 4.24465399919427,
+          "over_100ms_rate": null
+        },
+        {
+          "mean_ms": 1.321138221413867,
+          "p95_ms": 2.735260999907041,
+          "max_ms": 33.88570900006016,
+          "over_100ms_rate": null
+        }
+      ]
+    },
+    "holdout-gen2": {
+      "point": 0.552951388888889,
+      "difference": 1.6215277777777777,
+      "point_ci95": [
+        0.5164930555555555,
+        0.5885416666666665
+      ],
+      "difference_ci95": [
+        0.8818576388888887,
+        2.3871961805555557
+      ],
+      "per_seed_mean": [
+        [
+          0.5572916666666666,
+          1.484375
+        ],
+        [
+          0.5572916666666666,
+          1.5208333333333333
+        ],
+        [
+          0.5442708333333334,
+          1.859375
+        ]
+      ],
+      "timing": [
+        {
+          "mean_ms": 1.3839850087546417,
+          "p95_ms": 2.798077000170451,
+          "max_ms": 35.483351000038965,
+          "over_100ms_rate": null
+        },
+        {
+          "mean_ms": 1.2818382973459366,
+          "p95_ms": 2.708401599920762,
+          "max_ms": 36.575711000295996,
+          "over_100ms_rate": null
+        }
+      ]
+    },
+    "holdout-teacher100": {
+      "point": 0.5711805555555555,
+      "difference": 1.7586805555555556,
+      "point_ci95": [
+        0.5269097222222225,
+        0.613715277777778
+      ],
+      "difference_ci95": [
+        0.8089843750000001,
+        2.6407118055555565
+      ],
+      "per_seed_mean": [
+        [
+          0.5911458333333334,
+          2.1770833333333335
+        ],
+        [
+          0.4713541666666667,
+          -0.5104166666666666
+        ],
+        [
+          0.6510416666666666,
+          3.609375
+        ]
+      ],
+      "timing": [
+        {
+          "mean_ms": 1.3950883150228433,
+          "p95_ms": 2.9180169997744083,
+          "max_ms": 4.492595000556321,
+          "over_100ms_rate": null
+        },
+        {
+          "mean_ms": 69.3278105444242,
+          "p95_ms": 94.35555969985217,
+          "max_ms": 95.05523799998628,
+          "over_100ms_rate": 0.0
+        }
+      ]
+    }
+  },
+  "note": "Prefix-unit CI averages seats and fixed seeds inside prefix. Not seed-population CI."
+}

@@ -1,0 +1,28 @@
+{
+  "lock_sha256": "c18f13a2677532a4b47d9c6684f09b3440083f776a2145b207116c1c3de43de2",
+  "unused_legacy_fields": {
+    "latest": {
+      "1401": {
+        "path": "artifacts/ppo-4096/seed-1401/iteration-4096.pt",
+        "sha256": "687edb5172e24b83250f7416040c68d66caf7392f6dc0117cb61c21a63b8104e",
+        "iteration": 4096
+      },
+      "1402": {
+        "path": "artifacts/ppo-4096/seed-1402/iteration-4096.pt",
+        "sha256": "e4aa7476b74942343a12109424ee1f86f90235245af256ac795ed3ec086b40fe",
+        "iteration": 4096
+      },
+      "1403": {
+        "path": "artifacts/ppo-4096/seed-1403/iteration-4096.pt",
+        "sha256": "d0e68ca6cd0d32abf499f4c00a84fa4dd538232f0b185a6b4209ef1a8d9309e1",
+        "iteration": 4096
+      }
+    },
+    "criterion_weights": [
+      0.5,
+      0.25,
+      0.25
+    ]
+  },
+  "note": "The reused preparation helper left legacy 4096/latest and criterion_weights fields. Neither was used by this experiment. Actual parents are resume/6144; selection is common maximum iteration; gate is PLAN.md and decision.json. Frozen original lock is retained unchanged. Preparation helper now removes these unused fields for future runs."
+}

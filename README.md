@@ -518,3 +518,11 @@ main `a96d280` にgen2（1401=3072、1402/1403=4096）を追加しました。PP
 mainのgen2・既存低予算AI・100ms教師の提供と既定は維持します。
 seed1401のgen2は3072、再開元は4096であり、再開元への改善も未確定です。
 設定・seed別結果・計算量・復旧検証・再現CLIは [有限継続レポート](artifacts/ppo-6144/REPORT.md) を参照してください。
+
+### 複数世代相手pool対照（研究branchのみ）
+
+`research/ppo-generation-pool` は最新6144から、現行pool Aと過去25%枠を直近past・同seed gen2・2048へ分けるBを各3seedで再学習しました。
+全条件7168（追加1024iteration/16384局）固定。fresh96prefix・先後交換のB対Aはpoint **48.26% [43.83,52.69]**、得点差 **+0.10 [−0.77,+0.93]**で、pool変更の改善は未確認です。
+B対gen2/100ms教師の平均成績は正ですが、それをpool効果とは呼びません。main gen2を維持し、無制限な延長はしません。
+同追加ゲーム/PPO呼出数で比較し、軌跡長と既存early-KLによる実minibatch更新数の差も報告しています。
+[設定・seed別CI・対局/学習state割合・計算量・再現CLI](artifacts/ppo-generation-pool/REPORT.md) を参照してください。

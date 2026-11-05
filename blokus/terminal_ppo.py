@@ -50,9 +50,16 @@ def sample_batch(model,obs):
   logits,values=model(*collate(obs));dist=torch.distributions.Categorical(logits=logits);actions=dist.sample();lp=dist.log_prob(actions)
  return actions.cpu().tolist(),lp.cpu().tolist(),values.cpu().tolist()
 
-def collect(model,past,iteration,seed,batch=16,forbidden_starts=None):
+def pool_modes(iteration,batch,kind="A"):
+ assert kind in ("A","B") and batch%8==0
+ modes=["current","current","past","heuristic"]*(batch//4)
+ if kind=="B":
+  for j,i in enumerate(range(2,batch,4)):modes[i]=("past","gen2","gen2048")[(iteration+j)%3]
+ return modes
+
+def collect(model,past,iteration,seed,batch=16,forbidden_starts=None,fixed_pool=None):
  assert batch%8==0
- states=[State() for _ in range(batch)];hist=[[] for _ in states];traces=[[] for _ in states];records=[];modes=['current','current','past','heuristic']*(batch//4);seats=[(i//4)%2 for i in range(batch)];tally=dict(cpu_generation_pack=0.,gpu_inference_sync=0.,other=0.);start=time.perf_counter();rngs=[];prefixes=[];prefix_rejections=[]
+ states=[State() for _ in range(batch)];hist=[[] for _ in states];traces=[[] for _ in states];records=[];modes=pool_modes(iteration,batch,'B' if fixed_pool else 'A');seats=[(i//4)%2 for i in range(batch)];tally=dict(cpu_generation_pack=0.,gpu_inference_sync=0.,other=0.);start=time.perf_counter();rngs=[];prefixes=[];prefix_rejections=[]
  for i,s in enumerate(states):
   rng=random.Random(seed*100000+(iteration*batch+i));rngs.append(rng);rejected=0
   while True:
@@ -66,7 +73,7 @@ def collect(model,past,iteration,seed,batch=16,forbidden_starts=None):
    s=State();states[i]=s
   prefix_rejections.append(rejected);prefixes.append(prefix)
  while not all(s.done for s in states):
-  groups={'current':[],'past':[]};prepared={}
+  models={'current':model,'past':past,**(fixed_pool or {})};groups={k:[] for k in models};prepared={}
   for i,s in enumerate(states):
    if s.done:continue
    t=time.perf_counter();qs=legal_moves(s);mode='current' if modes[i]=='current' or s.turn==seats[i] else modes[i]
@@ -77,14 +84,14 @@ def collect(model,past,iteration,seed,batch=16,forbidden_starts=None):
    tally['cpu_generation_pack']+=time.perf_counter()-t
   for mode,ids in groups.items():
    if not ids:continue
-   t=time.perf_counter();actions,lp,vs=sample_batch(model if mode=='current' else past,[prepared[i][0] for i in ids]);tally['gpu_inference_sync']+=time.perf_counter()-t
+   t=time.perf_counter();actions,lp,vs=sample_batch(models[mode],[prepared[i][0] for i in ids]);tally['gpu_inference_sync']+=time.perf_counter()-t
    for j,i in enumerate(ids):
     obs,qs,player,h=prepared[i];a=actions[j];m=qs[a].move if qs else None
     if mode=='current':traces[i].append(dict(obs=obs,action=a,log_prob=lp[j],value=vs[j],player=player,state_hash=h,ply=len(prefixes[i])+len(hist[i])))
     hist[i].append(None if m is None else [m.piece,m.orientation,m.row,m.col]);play(states[i],m,validate=False)
  games=[]
  for i,s in enumerate(states):
-  for r in traces[i]:r['return']=terminal_return(s,r['player']);records.append(r)
+  for r in traces[i]:r['return']=terminal_return(s,r['player']);r['opponent']=modes[i];records.append(r)
   games.append(dict(id=seed*100000+iteration*batch+i,opponent=modes[i],learner_seat=seats[i],prefix=prefixes[i],moves=hist[i],scores=[s.score(0),s.score(1)],targets=[{k:r[k] for k in ['ply','player','return','state_hash','action','log_prob','value']} for r in traces[i]]))
  if forbidden_starts is not None:
   for g,rejected in zip(games,prefix_rejections):g['prefix_rejections']=rejected

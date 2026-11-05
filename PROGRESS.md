@@ -538,3 +538,16 @@ loss/勝敗終局報酬/モデル/LR .0003/16並行ゲーム/相手比率current
 
 - 復旧検証完了: 6checkpoint CPU/CUDA forward一致、15履歴SHA、selection SHA PASS。全109tests PASS。既存CUDA別process再開6=2+4（past交換4100込み）PASSを保持。2176 validation/1344 holdout再生算術分離監査を再実施し旧JSONと一致、学習/時間対戦の再実行なし。
 - 最終: 選択5120/5120/6144。対gen2 point.51476 CI[.48175,.54861]、得点差+.6979 CI[-.0417,1.4254]で追加改善未確定。対教師100ms point.59549 CI[.56163,.63021]、得点差+2.0833 CI[1.3420,2.8768]。1401再開元4096対照も未確定。main gen2維持。有限追加98304局、3process3868.25秒、再開smoke込み3904.86秒。REPORT/compute/学習曲線/復旧ログ保存。次案は凍結複数世代を含むpast枠対照、今回は実行しない。
+
+- 新依頼23150245、research/ppo-generation-poolをcb74785から作成。PLAN.mdにA/B割合、同seed世代固定、外生prefix乱数共有、等iteration/ゲームと実更新数差の扱い、validation/gate/fresh評価を事前固定。main維持。追加1024iteration×6runを上限とし自動延長しない。
+- 111tests PASS、B pool循環6144→6150の別process CUDA連続6 vs2+4再開PASS（past交換6148、model/past/optimizer/RNG/pool/履歴bit一致）。2562既存評価prefixを固定除外。6runを直列開始。評価コードはA/B新履歴だけ再生し旧全訪問indexをSHA参照、和集合で分離する。
+- A/1401が7168完走、追加16384局、内部wall645.40秒。B/1401を同じ6144から開始。main変更なし、評価は全6run終了後に直列実施。
+- seed1401 A/Bとも7168完走。A内部645.40秒、B約670.6秒、各追加16384局。生成/更新コスト差は保持。seed1402 Aへ進行、評価対戦未実施。
+- A/1402も7168完走（628.22秒）、B/1402開始。3/6run完了、いずれも追加16384局。early-KLによる実minibatch差を保持して集計する。固定モデル・main・事前gateに変更なし。
+- seed1402 A/Bとも7168完走（A628.22秒、B665.01秒）。4/6run終了、追加計65536局。seed1403 A開始。条件変更・seed除外なし。
+- A/1403が7168完走（634.18秒）。5/6run終了、最後のB/1403を開始。全run等追加1024iterationのまま。学習終了後にA/B全履歴和集合の分離監査と新validationを行う。
+- 全6runが7168完走（各追加1024iteration/16384局、合計98304局）。学習終了、全条件共通7168でselectionを固定。新規全対局再生・報酬・learner対象・pool割当・外生prefix共有を監査中。以後モデル/seed再選択なし。
+- 全6run学習wall3895.823秒（64.93分）で終了。新規98304局の合法性/終局報酬/learner対象/pool割当監査PASS。A/B各seedの16384共有prefix列一致、過去評価開始状態の偶然再訪0。A/B全訪問和集合で分離した新validation1670000/32prefix開始。モデル7168固定、時間対戦は単独実行。
+- validation27組1728局完了。事前gate通過: B対A point .5755208、固定4相手の平均point B−A=-.02734375（閾値-.05）。固定相手全般でBが優位とは言えない。再生算術分離監査後、設定変更なしでfresh1680000/96prefix・B対A/gen2/教師へ進む。
+- fresh1680000/96prefix、B対A/gen2/教師9組1728局完了。B対A point.4826389 CI[.4383464,.5269097]、得点差+.100694 CI[-.765799,.928863]でpool効果未確認。seed1402は退行。対gen2 point.5529514/差+1.621528、対教師point.5711806/差+1.758681の平均成績をpool効果と混同しない。main維持、追加延長なし。
+- validation1728/holdout1728局の再生・報酬/算術・対照指定・gate再計算・分離監査PASS。採用開始/実訪問の訓練重複0。全112tests PASS、CLI1局完走（評価には不算入）。REPORT/compute/曲線/再現CLI保存。学習wall3895.82秒、主実験完了5296.26秒。準備関数由来の未使用旧lock項目は元データを保持しmetadata-notesへ明記。

@@ -1,0 +1,197 @@
+{
+  "pass_": true,
+  "paired_external_prefixes": [
+    {
+      "seed": 1401,
+      "common_games": 16384,
+      "prefix_sequences_equal": true,
+      "sha256": "833fc3b9ec87b3c6a0815f3cf44e1c514a3327ef9f244fb519f9f40b347ecfa6"
+    },
+    {
+      "seed": 1402,
+      "common_games": 16384,
+      "prefix_sequences_equal": true,
+      "sha256": "4dec2d0e4e310cdfef57e1fb09e744b880faecdafc4f9c16b27ce8e206557d89"
+    },
+    {
+      "seed": 1403,
+      "common_games": 16384,
+      "prefix_sequences_equal": true,
+      "sha256": "f676396ef4caa8915e23c5bc2bfe5628596569c5adb3bded6145494588e21e60"
+    }
+  ],
+  "rows": [
+    {
+      "kind": "A",
+      "seed": 1401,
+      "checkpoint_sha256": "f800777d7d947856bb15172443f94d1c5614df5208e28291f9188f3d3c8f7e06",
+      "iteration": 7168,
+      "new_games": 16384,
+      "game_counts": {
+        "current": 8192,
+        "past": 4096,
+        "heuristic": 4096
+      },
+      "state_counts": {
+        "current": 260199,
+        "past": 65053,
+        "heuristic": 66596
+      },
+      "prefix_rejections": 38,
+      "incidental_old_eval_start_overlap": 0
+    },
+    {
+      "kind": "A",
+      "seed": 1402,
+      "checkpoint_sha256": "58aa2faef380708eb61d6ac2247975b3c5117317b4dd2db5836d60b0cccd340f",
+      "iteration": 7168,
+      "new_games": 16384,
+      "game_counts": {
+        "current": 8192,
+        "past": 4096,
+        "heuristic": 4096
+      },
+      "state_counts": {
+        "current": 253581,
+        "past": 63462,
+        "heuristic": 66167
+      },
+      "prefix_rejections": 43,
+      "incidental_old_eval_start_overlap": 0
+    },
+    {
+      "kind": "A",
+      "seed": 1403,
+      "checkpoint_sha256": "c5da8cbe7864a4f46f1f682c0c7b03aa2a27795e2ee76694bc2eaa3c8e2f0fa5",
+      "iteration": 7168,
+      "new_games": 16384,
+      "game_counts": {
+        "current": 8192,
+        "past": 4096,
+        "heuristic": 4096
+      },
+      "state_counts": {
+        "current": 257430,
+        "past": 64438,
+        "heuristic": 66794
+      },
+      "prefix_rejections": 40,
+      "incidental_old_eval_start_overlap": 0
+    },
+    {
+      "kind": "B",
+      "seed": 1401,
+      "checkpoint_sha256": "5da51256c7ddf4d90b2bb1f0a57b142bce35371e8971abddc821acaadaf857f5",
+      "iteration": 7168,
+      "new_games": 16384,
+      "game_counts": {
+        "current": 8192,
+        "past": 1366,
+        "heuristic": 4096,
+        "gen2": 1365,
+        "gen2048": 1365
+      },
+      "state_counts": {
+        "current": 259845,
+        "past": 21676,
+        "heuristic": 66552,
+        "gen2": 21730,
+        "gen2048": 21779
+      },
+      "prefix_rejections": 38,
+      "incidental_old_eval_start_overlap": 0
+    },
+    {
+      "kind": "B",
+      "seed": 1402,
+      "checkpoint_sha256": "98564066a476422699b34b2a8b2f5daf16699becf823173be244dc84925f2c72",
+      "iteration": 7168,
+      "new_games": 16384,
+      "game_counts": {
+        "current": 8192,
+        "past": 1366,
+        "heuristic": 4096,
+        "gen2": 1365,
+        "gen2048": 1365
+      },
+      "state_counts": {
+        "current": 257475,
+        "past": 21407,
+        "heuristic": 66702,
+        "gen2": 21509,
+        "gen2048": 21533
+      },
+      "prefix_rejections": 43,
+      "incidental_old_eval_start_overlap": 0
+    },
+    {
+      "kind": "B",
+      "seed": 1403,
+      "checkpoint_sha256": "b740d38d57d3edc9d70d86508b9fe5c42a6c9149da9f124c3c05504fd253f249",
+      "iteration": 7168,
+      "new_games": 16384,
+      "game_counts": {
+        "current": 8192,
+        "past": 1366,
+        "heuristic": 4096,
+        "gen2": 1365,
+        "gen2048": 1365
+      },
+      "state_counts": {
+        "current": 255519,
+        "past": 21337,
+        "heuristic": 66420,
+        "gen2": 21218,
+        "gen2048": 21424
+      },
+      "prefix_rejections": 40,
+      "incidental_old_eval_start_overlap": 0
+    }
+  ],
+  "base_audit": {
+    "path": "artifacts/ppo-6144/training-audit.json",
+    "sha256": "1aa671e5ccec693f4b33b383567261548ada96566cc908b34101162d1dda9467"
+  },
+  "history_files": {
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-learning-curve/seed-1401/history-2048.json.gz": "e26b8499045607ac32b8c81e9ada194a1a6b756a1fa4d166f8b50085adc64b11",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-4096/seed-1401/history-32768-49152.json.gz": "8111888469cdabb0c1372c2e0b154d245b8bd0fdced3e5646c3dd75ee4c90762",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-4096/seed-1401/history-49152-65536.json.gz": "197c0cc5b93873e00d5024d31d53e413060983c8d3b2d2bdf4b056ef0840c8a8",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-6144/seed-1401/history-65536-81920.json.gz": "ebaaea3d1cf375469553cbd4325e2f0590c892b1457ed62ee8bed65995e22b7b",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-6144/seed-1401/history-81920-98304.json.gz": "0ac4d40509c346e8cc7688068836408f35369f3321a47230e8366f839f1c753b",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/A/seed-1401/history-98304-102400.json.gz": "6091361bfc3a16e898045c633a61c0c9be9c10496bab2b13f4d6f2dd2f2415fb",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/A/seed-1401/history-102400-106496.json.gz": "df6a41c16a1c797fdce096cd30f417c0dffaae1f222df5c3fb87346f41663ba8",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/A/seed-1401/history-106496-110592.json.gz": "9cd0a92a2b814bf188c39568d8f3bceaf06dd472c80b5f92bdaee87df0c44c90",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/A/seed-1401/history-110592-114688.json.gz": "892aacd2ba0dd89e4619fbae94805714282fa9075c28ac6bc44a467752498305",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-learning-curve/seed-1402/history-2048.json.gz": "427918f38268bb5858156c27d29d9485782fe2d2e11642d8c5c2155c1e075679",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-4096/seed-1402/history-32768-49152.json.gz": "aae184d3894e0cdf697da11ed84cb47b931d352fe7bd66628a027178829a5b9d",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-4096/seed-1402/history-49152-65536.json.gz": "e307c0c0a114d6ba660d7defd0a90fc98aed227044e490bc424cbf609b526f9d",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-6144/seed-1402/history-65536-81920.json.gz": "158e4fce0a3c6b2c8cbb05c967dad8ea38935dd6424b4b9005a5a1a41d793b9e",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-6144/seed-1402/history-81920-98304.json.gz": "8ec69760230eddac8397c3d8dcf3c2df66b04a07d056f7479a8251398fbae51e",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/A/seed-1402/history-98304-102400.json.gz": "c206e3e80958777af7690977fb1f19420bdc6aee8a48901a1f5bcf9894a6b471",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/A/seed-1402/history-102400-106496.json.gz": "fd9ec7abe98be4c46f28a93288ceed55858249e813ed3ee2aa072f49fafb30be",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/A/seed-1402/history-106496-110592.json.gz": "f2d8f84099273a3de246be818bd21d532ec67d312516e453c28365c556a0b71f",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/A/seed-1402/history-110592-114688.json.gz": "e94654e003e5d6f9db37f8eed8079e0eb20815551b65479076a2bfa350b392f0",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-learning-curve/seed-1403/history-2048.json.gz": "f714fd5643df13af79c045c23e10c71b249d363e9674989f132884fb636b5d9b",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-4096/seed-1403/history-32768-49152.json.gz": "2d23d860f8e173b7768be1258a6b3a10421e0604c9b8b2e8e648d415e18f55f5",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-4096/seed-1403/history-49152-65536.json.gz": "f1fce51c8159c8765427d309b7fbda1c34cabb845d6ac05197e53f9248e8b186",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-6144/seed-1403/history-65536-81920.json.gz": "b4a9805c2fd42aeffc3266952836ca9b42d6eb0feee2269a1cd9f00a1083edde",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-6144/seed-1403/history-81920-98304.json.gz": "67b6006b1c3e649bbacbd769d2380a8a44ab4afec0783925b94b8724575bca3a",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/A/seed-1403/history-98304-102400.json.gz": "81851bfcb4b306d70f4c6fa951b5ec3bf118c562c2536612d4f08cbed8cee1d9",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/A/seed-1403/history-102400-106496.json.gz": "6cb1205939fd00119bd3bcba0ae099512e52aef44d0136815cd3f705b3a99958",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/A/seed-1403/history-106496-110592.json.gz": "8c6ad7dfe1392aff297e0bf1bb9d787472bca70d0fb90ae499720d6fd2bb52d2",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/A/seed-1403/history-110592-114688.json.gz": "56fc1b47cc034f111e6a4ee2e58bef7254e36c581ea73b53e1f6f2eda0a81cc8",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/B/seed-1401/history-98304-102400.json.gz": "1cdf10493231aa67b9d3c2d5f93c36f2cf3b55099f0f61b2978bfec2003c9770",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/B/seed-1401/history-102400-106496.json.gz": "0094fe62d842ad9fe396ed3fcb0f57eff86f38a1de9755255201ec393b3cb228",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/B/seed-1401/history-106496-110592.json.gz": "daeaf4d68c77f02b98e7c103ecad93b21d09f5ce60b029d509bf60b35df1d593",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/B/seed-1401/history-110592-114688.json.gz": "afad2188a4546e10e5531e82da8dfe5949447c724385586c5c42fe8724c9ed18",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/B/seed-1402/history-98304-102400.json.gz": "6b7f7b43f9c4c4de89aa77db9d50852723f9ad4c9e731e2e9f757fdf7114015b",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/B/seed-1402/history-102400-106496.json.gz": "7a71e95fa00fdea472912fdb7afa05d75fee15a7bbe911f71826b26e2f8062ab",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/B/seed-1402/history-106496-110592.json.gz": "abd806de8ab8cb4c944fbf71e6b8fca686e9b1ac2309b03aaa7359ca6366ac1b",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/B/seed-1402/history-110592-114688.json.gz": "d57a9fddc2f29a9397e848dee5c31adf5b793be5c9a3b7c58ec63e3bc18185e8",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/B/seed-1403/history-98304-102400.json.gz": "1f281b66c0441648d3a47bb7dbeee97207f99c2ce513135eb7c51e77659855d4",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/B/seed-1403/history-102400-106496.json.gz": "2549fafdf0b4a4b1dde4b5c9354ce0f10271b9b49ff1ce0e2152fe33d160d9a1",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/B/seed-1403/history-106496-110592.json.gz": "1a85adbbd777bfc861b26849eb06cc7d417c7f80b23cb176bb7f0374230e961a",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-generation-pool/B/seed-1403/history-110592-114688.json.gz": "7f2990a4acb2746824697c2e8a055c77a3deeb38fcacf3cae988606355768130"
+  },
+  "note": "Prior full legal/reward audit verified by checkpoint/hash reference; all new games fully replayed. Both A/B all visited states union. Action indices checked every 128 targets; every move independently legal."
+}

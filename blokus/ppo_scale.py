@@ -14,13 +14,19 @@ def history(c,path):
  if 'games_gzip' in c:return json.loads(gzip.decompress(c['games_gzip']))
  q=Path(path).parent/c['history'];assert p.sha(q)==c['history_sha256'];return json.loads(gzip.decompress(q.read_bytes()))
 
-def train(seed,resume,output,iterations=2048,cap=1200,batch=16,save_steps=(1024,2048),forbidden_prefixes=None):
+def train(seed,resume,output,iterations=2048,cap=1200,batch=16,save_steps=(1024,2048),forbidden_prefixes=None,pool_config=None):
  out=Path(output);out.mkdir(parents=True,exist_ok=True)
  if (out/'config.json').exists() or any(out.glob('iteration-*.pt')):raise FileExistsError('output already contains a run; resume into a new directory to preserve checkpoints')
  begin=time.perf_counter()
  p.seed_all(1400);model=p.TerminalNet().cuda();past=copy.deepcopy(model);opt=torch.optim.Adam(model.parameters(),lr=.0003)
  c=torch.load(resume,map_location='cpu',weights_only=False);assert c['seed']==seed
  model.load_state_dict(c['model']);past.load_state_dict(c['past']);opt.load_state_dict(c['optimizer']);step=c['iteration'];initial=step;logs=c['logs'];games=history(c,resume);elapsed=c['elapsed']
+ pool=json.loads(Path(pool_config).read_text()) if pool_config else None
+ if 'pool' in c:assert c['pool']==pool,'pool must remain identical on resume'
+ fixed={}
+ if pool and pool['kind']=='B':
+  for name,entry in pool['fixed'][str(seed)].items():
+   assert p.sha(entry['path'])==entry['sha256'];net=p.TerminalNet().cuda();net.load_state_dict(torch.load(entry['path'],map_location='cpu',weights_only=False)['model']);net.eval();net.requires_grad_(False);fixed[name]=net
  chain=[]
  if 'history_chain' in c:
   chain=[dict(e,path=os.path.relpath(Path(resume).parent/e['path'],out)) for e in c['history_chain']]
@@ -31,16 +37,16 @@ def train(seed,resume,output,iterations=2048,cap=1200,batch=16,save_steps=(1024,
   from .tournament import read_prefixes,prefix_state
   forbidden={p.state_hash(prefix_state(row)) for row in read_prefixes(forbidden_prefixes)['prefixes']}
  random.setstate(c['python_rng']);np.random.set_state(c['numpy_rng']);torch.set_rng_state(c['torch_rng']);torch.cuda.set_rng_state_all(c['cuda_rng'])
- p.write(out/'config.json',dict(seed=seed,resume=str(resume),resume_sha256=p.sha(resume),iterations=iterations,initial_iteration=initial,additional_cap_seconds=cap,batch=batch,save_steps=list(save_steps),forbidden_prefixes=str(forbidden_prefixes),forbidden_sha256=p.sha(forbidden_prefixes) if forbidden_prefixes else None,torch=torch.__version__,source_hashes=p.source_hashes()))
+ p.write(out/'config.json',dict(seed=seed,resume=str(resume),resume_sha256=p.sha(resume),iterations=iterations,initial_iteration=initial,additional_cap_seconds=cap,batch=batch,save_steps=list(save_steps),forbidden_prefixes=str(forbidden_prefixes),forbidden_sha256=p.sha(forbidden_prefixes) if forbidden_prefixes else None,torch=torch.__version__,source_hashes=p.source_hashes(),pool=pool))
  def save():
   nonlocal saved_count
   if len(games)>saved_count:
    hp=out/f'history-{saved_count}-{len(games)}.json.gz';hp.write_bytes(gzip.compress(json.dumps(games[saved_count:],separators=(',',':')).encode(),mtime=0));chain.append(dict(path=hp.name,sha256=p.sha(hp),games=len(games)-saved_count));saved_count=len(games)
-  ck=dict(format='terminal-ppo-external-history-v1',model=model.state_dict(),past=past.state_dict(),optimizer=opt.state_dict(),iteration=step,seed=seed,elapsed=elapsed+time.perf_counter()-begin,logs=logs,history_chain=list(chain),python_rng=random.getstate(),numpy_rng=np.random.get_state(),torch_rng=torch.get_rng_state(),cuda_rng=torch.cuda.get_rng_state_all(),source_hashes=p.source_hashes())
+  ck=dict(format='terminal-ppo-external-history-v1',model=model.state_dict(),past=past.state_dict(),optimizer=opt.state_dict(),iteration=step,seed=seed,elapsed=elapsed+time.perf_counter()-begin,logs=logs,history_chain=list(chain),python_rng=random.getstate(),numpy_rng=np.random.get_state(),torch_rng=torch.get_rng_state(),cuda_rng=torch.cuda.get_rng_state_all(),source_hashes=p.source_hashes(),**({'pool':pool} if pool else {}))
   path=out/f'iteration-{step}.pt';torch.save(ck,str(path)+'.tmp');os.replace(str(path)+'.tmp',path)
  while step<iterations and time.perf_counter()-begin<cap:
-  rec,gs,gen=p.collect(model,past,step,seed,batch,forbidden_starts=forbidden);up=p.update(model,opt,rec);assert all(np.isfinite(v) for v in up.values());step+=1;games.extend(gs)
-  logs.append(dict(iteration=step,generation=gen,update=up,opponents={m:float(np.mean([np.sign(g['scores'][g['learner_seat']]-g['scores'][1-g['learner_seat']]) for g in gs if g['opponent']==m])) for m in ['current','past','heuristic']}))
+  rec,gs,gen=p.collect(model,past,step,seed,batch,forbidden_starts=forbidden,fixed_pool=fixed or None);up=p.update(model,opt,rec);assert all(np.isfinite(v) for v in up.values());step+=1;games.extend(gs)
+  logs.append(dict(iteration=step,generation=gen,update=up,opponents={m:float(np.mean([np.sign(g['scores'][g['learner_seat']]-g['scores'][1-g['learner_seat']]) for g in gs if g['opponent']==m])) for m in sorted({g['opponent'] for g in gs})},game_counts={m:sum(g['opponent']==m for g in gs) for m in sorted({g['opponent'] for g in gs})},state_counts={m:sum(r['opponent']==m for r in rec) for m in sorted({g['opponent'] for g in gs})}))
   if step%4==0:past.load_state_dict(model.state_dict())
   if step in save_steps:save()
   if step>=initial+64 and np.mean([l['update']['entropy'] for l in logs[-64:]])<.02 and np.mean([l['opponents']['heuristic'] for l in logs[-64:]])<-.8:
@@ -49,4 +55,4 @@ def train(seed,resume,output,iterations=2048,cap=1200,batch=16,save_steps=(1024,
  if step not in save_steps:save()
  p.write(out/'curve.json',logs);p.write(out/'result.json',dict(seed=seed,initial_iteration=initial,iteration=step,games=len(games),additional_seconds=time.perf_counter()-begin,complete=step==iterations))
 if __name__=='__main__':
- a=argparse.ArgumentParser();a.add_argument('--seed',type=int,required=True);a.add_argument('--resume',required=True);a.add_argument('--output',required=True);a.add_argument('--iterations',type=int,default=2048);a.add_argument('--cap',type=float,default=1200);a.add_argument('--batch',type=int,default=16);a.add_argument('--save-steps',type=int,nargs='+',default=[1024,2048]);a.add_argument('--forbidden-prefixes');train(**vars(a.parse_args()))
+ a=argparse.ArgumentParser();a.add_argument('--seed',type=int,required=True);a.add_argument('--resume',required=True);a.add_argument('--output',required=True);a.add_argument('--iterations',type=int,default=2048);a.add_argument('--cap',type=float,default=1200);a.add_argument('--batch',type=int,default=16);a.add_argument('--save-steps',type=int,nargs='+',default=[1024,2048]);a.add_argument('--forbidden-prefixes');a.add_argument('--pool-config');train(**vars(a.parse_args()))
