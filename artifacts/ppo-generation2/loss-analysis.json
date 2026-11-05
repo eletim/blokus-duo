@@ -1,0 +1,5845 @@
+{
+  "games": [
+    {
+      "seed": 1401,
+      "opponent": "previous",
+      "prefix_id": "1777e3b8b0021cc09051d1af5f1893e731ad53ac94e909717db386036c821b27",
+      "seat": 0,
+      "scores": [
+        -29,
+        -12
+      ],
+      "difference": -17,
+      "sample_rule": "first losing game in fixed evaluation order",
+      "stages": {
+        "opening": {
+          "ply": 6,
+          "state_hash": "d41de364f63aaf08c56271d883b2ba3e4e37f5679b2634697332fde52e8e89b4",
+          "actual_move": [
+            19,
+            2,
+            5,
+            1
+          ],
+          "heuristic_rank": 3,
+          "legal_count": 203,
+          "evaluated_roots": 128,
+          "actual_two_ply_value": -7.6,
+          "best_two_ply_value": -7.6,
+          "reference_gap": 0.0,
+          "reference_choice": [
+            17,
+            2,
+            5,
+            1
+          ],
+          "scores": [
+            -78,
+            -74
+          ],
+          "placed": [
+            11,
+            15
+          ],
+          "frontiers": [
+            7,
+            13
+          ],
+          "legal_counts": [
+            203,
+            694
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        "middle": {
+          "ply": 14,
+          "state_hash": "1bae0d80ea515369974f3b6c544701d169d680de3055572bda4de4df4ac2aca1",
+          "actual_move": [
+            3,
+            0,
+            0,
+            0
+          ],
+          "heuristic_rank": 1,
+          "legal_count": 4,
+          "evaluated_roots": 4,
+          "actual_two_ply_value": -17.400000000000002,
+          "best_two_ply_value": -17.400000000000002,
+          "reference_gap": 0.0,
+          "reference_choice": [
+            3,
+            0,
+            0,
+            0
+          ],
+          "scores": [
+            -58,
+            -54
+          ],
+          "placed": [
+            31,
+            35
+          ],
+          "frontiers": [
+            3,
+            18
+          ],
+          "legal_counts": [
+            4,
+            310
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        }
+      },
+      "trace": [
+        {
+          "ply": 6,
+          "stage": "opening",
+          "scores": [
+            -78,
+            -74
+          ],
+          "placed": [
+            11,
+            15
+          ],
+          "frontiers": [
+            7,
+            13
+          ],
+          "legal_counts": [
+            203,
+            694
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 8,
+          "stage": "opening",
+          "scores": [
+            -73,
+            -69
+          ],
+          "placed": [
+            16,
+            20
+          ],
+          "frontiers": [
+            8,
+            11
+          ],
+          "legal_counts": [
+            143,
+            534
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 10,
+          "stage": "opening",
+          "scores": [
+            -68,
+            -64
+          ],
+          "placed": [
+            21,
+            25
+          ],
+          "frontiers": [
+            7,
+            13
+          ],
+          "legal_counts": [
+            72,
+            458
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 12,
+          "stage": "opening",
+          "scores": [
+            -63,
+            -59
+          ],
+          "placed": [
+            26,
+            30
+          ],
+          "frontiers": [
+            6,
+            13
+          ],
+          "legal_counts": [
+            34,
+            309
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 14,
+          "stage": "middle",
+          "scores": [
+            -58,
+            -54
+          ],
+          "placed": [
+            31,
+            35
+          ],
+          "frontiers": [
+            3,
+            18
+          ],
+          "legal_counts": [
+            4,
+            310
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 16,
+          "stage": "middle",
+          "scores": [
+            -55,
+            -49
+          ],
+          "placed": [
+            34,
+            40
+          ],
+          "frontiers": [
+            2,
+            18
+          ],
+          "legal_counts": [
+            2,
+            300
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 18,
+          "stage": "middle",
+          "scores": [
+            -54,
+            -44
+          ],
+          "placed": [
+            35,
+            45
+          ],
+          "frontiers": [
+            2,
+            21
+          ],
+          "legal_counts": [
+            40,
+            230
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 20,
+          "stage": "middle",
+          "scores": [
+            -49,
+            -39
+          ],
+          "placed": [
+            40,
+            50
+          ],
+          "frontiers": [
+            4,
+            16
+          ],
+          "legal_counts": [
+            30,
+            185
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 22,
+          "stage": "middle",
+          "scores": [
+            -44,
+            -34
+          ],
+          "placed": [
+            45,
+            55
+          ],
+          "frontiers": [
+            5,
+            15
+          ],
+          "legal_counts": [
+            40,
+            114
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 24,
+          "stage": "middle",
+          "scores": [
+            -39,
+            -30
+          ],
+          "placed": [
+            50,
+            59
+          ],
+          "frontiers": [
+            6,
+            12
+          ],
+          "legal_counts": [
+            15,
+            46
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 26,
+          "stage": "middle",
+          "scores": [
+            -34,
+            -26
+          ],
+          "placed": [
+            55,
+            63
+          ],
+          "frontiers": [
+            7,
+            10
+          ],
+          "legal_counts": [
+            5,
+            19
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 28,
+          "stage": "ending",
+          "scores": [
+            -29,
+            -22
+          ],
+          "placed": [
+            60,
+            67
+          ],
+          "frontiers": [
+            6,
+            8
+          ],
+          "legal_counts": [
+            0,
+            11
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 30,
+          "stage": "ending",
+          "scores": [
+            -29,
+            -19
+          ],
+          "placed": [
+            60,
+            70
+          ],
+          "frontiers": [
+            6,
+            8
+          ],
+          "legal_counts": [
+            0,
+            10
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 32,
+          "stage": "ending",
+          "scores": [
+            -29,
+            -18
+          ],
+          "placed": [
+            60,
+            71
+          ],
+          "frontiers": [
+            6,
+            8
+          ],
+          "legal_counts": [
+            0,
+            4
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ],
+            [
+              2,
+              3,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 34,
+          "stage": "ending",
+          "scores": [
+            -29,
+            -14
+          ],
+          "placed": [
+            60,
+            75
+          ],
+          "frontiers": [
+            6,
+            8
+          ],
+          "legal_counts": [
+            0,
+            2
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ],
+            [
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 36,
+          "stage": "ending",
+          "scores": [
+            -29,
+            -12
+          ],
+          "placed": [
+            60,
+            77
+          ],
+          "frontiers": [
+            6,
+            7
+          ],
+          "legal_counts": [
+            0,
+            0
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ],
+            [
+              3,
+              4,
+              5
+            ]
+          ]
+        }
+      ],
+      "final": {
+        "scores": [
+          -29,
+          -12
+        ],
+        "placed": [
+          60,
+          77
+        ],
+        "frontiers": [
+          6,
+          7
+        ],
+        "legal_counts": [
+          0,
+          0
+        ],
+        "remaining_piece_sizes": [
+          [
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "seed": 1401,
+      "opponent": "teacher100",
+      "prefix_id": "1777e3b8b0021cc09051d1af5f1893e731ad53ac94e909717db386036c821b27",
+      "seat": 0,
+      "scores": [
+        -31,
+        -17
+      ],
+      "difference": -14,
+      "sample_rule": "first losing game in fixed evaluation order",
+      "stages": {
+        "opening": {
+          "ply": 6,
+          "state_hash": "a6a9c1683a9ab04d0d61b9d7540005957de02f7c0de60b47e5f0f8cb15c1a640",
+          "actual_move": [
+            17,
+            4,
+            5,
+            2
+          ],
+          "heuristic_rank": 34,
+          "legal_count": 297,
+          "evaluated_roots": 128,
+          "actual_two_ply_value": -8.8,
+          "best_two_ply_value": -8.200000000000001,
+          "reference_gap": 0.5999999999999996,
+          "reference_choice": [
+            18,
+            3,
+            5,
+            1
+          ],
+          "scores": [
+            -78,
+            -74
+          ],
+          "placed": [
+            11,
+            15
+          ],
+          "frontiers": [
+            8,
+            15
+          ],
+          "legal_counts": [
+            297,
+            824
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        "middle": {
+          "ply": 14,
+          "state_hash": "2de183230207e22521108110f2a237c150a105c5a244ce544ad57a2806e53d2a",
+          "actual_move": [
+            11,
+            1,
+            9,
+            5
+          ],
+          "heuristic_rank": 9,
+          "legal_count": 179,
+          "evaluated_roots": 128,
+          "actual_two_ply_value": -9.399999999999999,
+          "best_two_ply_value": -8.200000000000001,
+          "reference_gap": 1.1999999999999975,
+          "reference_choice": [
+            12,
+            3,
+            8,
+            7
+          ],
+          "scores": [
+            -58,
+            -54
+          ],
+          "placed": [
+            31,
+            35
+          ],
+          "frontiers": [
+            11,
+            20
+          ],
+          "legal_counts": [
+            179,
+            375
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        }
+      },
+      "trace": [
+        {
+          "ply": 6,
+          "stage": "opening",
+          "scores": [
+            -78,
+            -74
+          ],
+          "placed": [
+            11,
+            15
+          ],
+          "frontiers": [
+            8,
+            15
+          ],
+          "legal_counts": [
+            297,
+            824
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 8,
+          "stage": "opening",
+          "scores": [
+            -73,
+            -69
+          ],
+          "placed": [
+            16,
+            20
+          ],
+          "frontiers": [
+            10,
+            19
+          ],
+          "legal_counts": [
+            266,
+            634
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 10,
+          "stage": "opening",
+          "scores": [
+            -68,
+            -64
+          ],
+          "placed": [
+            21,
+            25
+          ],
+          "frontiers": [
+            11,
+            20
+          ],
+          "legal_counts": [
+            295,
+            550
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 12,
+          "stage": "opening",
+          "scores": [
+            -63,
+            -59
+          ],
+          "placed": [
+            26,
+            30
+          ],
+          "frontiers": [
+            11,
+            20
+          ],
+          "legal_counts": [
+            199,
+            429
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 14,
+          "stage": "middle",
+          "scores": [
+            -58,
+            -54
+          ],
+          "placed": [
+            31,
+            35
+          ],
+          "frontiers": [
+            11,
+            20
+          ],
+          "legal_counts": [
+            179,
+            375
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 16,
+          "stage": "middle",
+          "scores": [
+            -53,
+            -49
+          ],
+          "placed": [
+            36,
+            40
+          ],
+          "frontiers": [
+            11,
+            19
+          ],
+          "legal_counts": [
+            147,
+            231
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 18,
+          "stage": "middle",
+          "scores": [
+            -48,
+            -44
+          ],
+          "placed": [
+            41,
+            45
+          ],
+          "frontiers": [
+            9,
+            18
+          ],
+          "legal_counts": [
+            60,
+            201
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 20,
+          "stage": "middle",
+          "scores": [
+            -44,
+            -39
+          ],
+          "placed": [
+            45,
+            50
+          ],
+          "frontiers": [
+            8,
+            18
+          ],
+          "legal_counts": [
+            26,
+            85
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 22,
+          "stage": "middle",
+          "scores": [
+            -39,
+            -35
+          ],
+          "placed": [
+            50,
+            54
+          ],
+          "frontiers": [
+            9,
+            16
+          ],
+          "legal_counts": [
+            21,
+            58
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 24,
+          "stage": "middle",
+          "scores": [
+            -35,
+            -31
+          ],
+          "placed": [
+            54,
+            58
+          ],
+          "frontiers": [
+            7,
+            15
+          ],
+          "legal_counts": [
+            10,
+            44
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 26,
+          "stage": "middle",
+          "scores": [
+            -32,
+            -27
+          ],
+          "placed": [
+            57,
+            62
+          ],
+          "frontiers": [
+            6,
+            11
+          ],
+          "legal_counts": [
+            6,
+            20
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 28,
+          "stage": "ending",
+          "scores": [
+            -31,
+            -23
+          ],
+          "placed": [
+            58,
+            66
+          ],
+          "frontiers": [
+            6,
+            11
+          ],
+          "legal_counts": [
+            0,
+            20
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 30,
+          "stage": "ending",
+          "scores": [
+            -31,
+            -21
+          ],
+          "placed": [
+            58,
+            68
+          ],
+          "frontiers": [
+            6,
+            10
+          ],
+          "legal_counts": [
+            0,
+            12
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              3,
+              3,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 32,
+          "stage": "ending",
+          "scores": [
+            -31,
+            -18
+          ],
+          "placed": [
+            58,
+            71
+          ],
+          "frontiers": [
+            6,
+            10
+          ],
+          "legal_counts": [
+            0,
+            10
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              3,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 34,
+          "stage": "ending",
+          "scores": [
+            -31,
+            -17
+          ],
+          "placed": [
+            58,
+            72
+          ],
+          "frontiers": [
+            6,
+            9
+          ],
+          "legal_counts": [
+            0,
+            0
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              3,
+              4,
+              5,
+              5
+            ]
+          ]
+        }
+      ],
+      "final": {
+        "scores": [
+          -31,
+          -17
+        ],
+        "placed": [
+          58,
+          72
+        ],
+        "frontiers": [
+          6,
+          9
+        ],
+        "legal_counts": [
+          0,
+          0
+        ],
+        "remaining_piece_sizes": [
+          [
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            3,
+            4,
+            5,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "seed": 1402,
+      "opponent": "previous",
+      "prefix_id": "1777e3b8b0021cc09051d1af5f1893e731ad53ac94e909717db386036c821b27",
+      "seat": 0,
+      "scores": [
+        -15,
+        -9
+      ],
+      "difference": -6,
+      "sample_rule": "first losing game in fixed evaluation order",
+      "stages": {
+        "opening": {
+          "ply": 6,
+          "state_hash": "ca2286704e1e173b57c1f43d32fe5c96bc5807f1821f93b4a69be7ea9d27ab89",
+          "actual_move": [
+            20,
+            0,
+            5,
+            2
+          ],
+          "heuristic_rank": 10,
+          "legal_count": 275,
+          "evaluated_roots": 128,
+          "actual_two_ply_value": -8.8,
+          "best_two_ply_value": -8.200000000000001,
+          "reference_gap": 0.5999999999999996,
+          "reference_choice": [
+            18,
+            3,
+            5,
+            1
+          ],
+          "scores": [
+            -78,
+            -74
+          ],
+          "placed": [
+            11,
+            15
+          ],
+          "frontiers": [
+            8,
+            15
+          ],
+          "legal_counts": [
+            275,
+            855
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        "middle": {
+          "ply": 14,
+          "state_hash": "6ff29eb7b81e29871224fbfca57364b346e278857d092a3d6225340ae3fbff59",
+          "actual_move": [
+            11,
+            0,
+            11,
+            5
+          ],
+          "heuristic_rank": 2,
+          "legal_count": 186,
+          "evaluated_roots": 128,
+          "actual_two_ply_value": -4.6000000000000005,
+          "best_two_ply_value": -4.6000000000000005,
+          "reference_gap": 0.0,
+          "reference_choice": [
+            11,
+            1,
+            11,
+            5
+          ],
+          "scores": [
+            -58,
+            -54
+          ],
+          "placed": [
+            31,
+            35
+          ],
+          "frontiers": [
+            13,
+            13
+          ],
+          "legal_counts": [
+            186,
+            381
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        "ending": {
+          "ply": 28,
+          "state_hash": "497ef30d81b9ea1ec02ee48fa20634ff54887ff25500d600fd71441d29e525db",
+          "actual_move": [
+            6,
+            1,
+            3,
+            1
+          ],
+          "heuristic_rank": 3,
+          "legal_count": 49,
+          "evaluated_roots": 49,
+          "actual_two_ply_value": 0.9712969228625297,
+          "best_two_ply_value": 1.7214382946491242,
+          "reference_gap": 0.7501413717865946,
+          "reference_choice": [
+            9,
+            1,
+            2,
+            0
+          ],
+          "scores": [
+            -24,
+            -23
+          ],
+          "placed": [
+            65,
+            66
+          ],
+          "frontiers": [
+            15,
+            10
+          ],
+          "legal_counts": [
+            49,
+            34
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              4,
+              4,
+              4,
+              5
+            ]
+          ]
+        }
+      },
+      "trace": [
+        {
+          "ply": 6,
+          "stage": "opening",
+          "scores": [
+            -78,
+            -74
+          ],
+          "placed": [
+            11,
+            15
+          ],
+          "frontiers": [
+            8,
+            15
+          ],
+          "legal_counts": [
+            275,
+            855
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 8,
+          "stage": "opening",
+          "scores": [
+            -73,
+            -69
+          ],
+          "placed": [
+            16,
+            20
+          ],
+          "frontiers": [
+            11,
+            17
+          ],
+          "legal_counts": [
+            224,
+            703
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 10,
+          "stage": "opening",
+          "scores": [
+            -68,
+            -64
+          ],
+          "placed": [
+            21,
+            25
+          ],
+          "frontiers": [
+            11,
+            16
+          ],
+          "legal_counts": [
+            182,
+            580
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 12,
+          "stage": "opening",
+          "scores": [
+            -63,
+            -59
+          ],
+          "placed": [
+            26,
+            30
+          ],
+          "frontiers": [
+            12,
+            14
+          ],
+          "legal_counts": [
+            223,
+            483
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 14,
+          "stage": "middle",
+          "scores": [
+            -58,
+            -54
+          ],
+          "placed": [
+            31,
+            35
+          ],
+          "frontiers": [
+            13,
+            13
+          ],
+          "legal_counts": [
+            186,
+            381
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 16,
+          "stage": "middle",
+          "scores": [
+            -53,
+            -49
+          ],
+          "placed": [
+            36,
+            40
+          ],
+          "frontiers": [
+            16,
+            15
+          ],
+          "legal_counts": [
+            193,
+            266
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 18,
+          "stage": "middle",
+          "scores": [
+            -48,
+            -44
+          ],
+          "placed": [
+            41,
+            45
+          ],
+          "frontiers": [
+            17,
+            16
+          ],
+          "legal_counts": [
+            156,
+            200
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 20,
+          "stage": "middle",
+          "scores": [
+            -43,
+            -40
+          ],
+          "placed": [
+            46,
+            49
+          ],
+          "frontiers": [
+            17,
+            15
+          ],
+          "legal_counts": [
+            133,
+            154
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 22,
+          "stage": "middle",
+          "scores": [
+            -38,
+            -35
+          ],
+          "placed": [
+            51,
+            54
+          ],
+          "frontiers": [
+            18,
+            14
+          ],
+          "legal_counts": [
+            137,
+            103
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 24,
+          "stage": "middle",
+          "scores": [
+            -33,
+            -30
+          ],
+          "placed": [
+            56,
+            59
+          ],
+          "frontiers": [
+            17,
+            14
+          ],
+          "legal_counts": [
+            80,
+            38
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 26,
+          "stage": "middle",
+          "scores": [
+            -28,
+            -27
+          ],
+          "placed": [
+            61,
+            62
+          ],
+          "frontiers": [
+            15,
+            10
+          ],
+          "legal_counts": [
+            65,
+            20
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 28,
+          "stage": "ending",
+          "scores": [
+            -24,
+            -23
+          ],
+          "placed": [
+            65,
+            66
+          ],
+          "frontiers": [
+            15,
+            10
+          ],
+          "legal_counts": [
+            49,
+            34
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              4,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 30,
+          "stage": "ending",
+          "scores": [
+            -20,
+            -19
+          ],
+          "placed": [
+            69,
+            70
+          ],
+          "frontiers": [
+            12,
+            9
+          ],
+          "legal_counts": [
+            15,
+            12
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 32,
+          "stage": "ending",
+          "scores": [
+            -16,
+            -16
+          ],
+          "placed": [
+            73,
+            73
+          ],
+          "frontiers": [
+            10,
+            8
+          ],
+          "legal_counts": [
+            10,
+            9
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              5
+            ],
+            [
+              1,
+              2,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 34,
+          "stage": "ending",
+          "scores": [
+            -15,
+            -15
+          ],
+          "placed": [
+            74,
+            74
+          ],
+          "frontiers": [
+            8,
+            8
+          ],
+          "legal_counts": [
+            0,
+            3
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              3,
+              4,
+              5
+            ],
+            [
+              2,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 36,
+          "stage": "ending",
+          "scores": [
+            -15,
+            -11
+          ],
+          "placed": [
+            74,
+            78
+          ],
+          "frontiers": [
+            7,
+            7
+          ],
+          "legal_counts": [
+            0,
+            1
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              3,
+              4,
+              5
+            ],
+            [
+              2,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 38,
+          "stage": "ending",
+          "scores": [
+            -15,
+            -9
+          ],
+          "placed": [
+            74,
+            80
+          ],
+          "frontiers": [
+            7,
+            7
+          ],
+          "legal_counts": [
+            0,
+            0
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              3,
+              4,
+              5
+            ],
+            [
+              4,
+              5
+            ]
+          ]
+        }
+      ],
+      "final": {
+        "scores": [
+          -15,
+          -9
+        ],
+        "placed": [
+          74,
+          80
+        ],
+        "frontiers": [
+          7,
+          7
+        ],
+        "legal_counts": [
+          0,
+          0
+        ],
+        "remaining_piece_sizes": [
+          [
+            3,
+            3,
+            4,
+            5
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "seed": 1402,
+      "opponent": "teacher100",
+      "prefix_id": "1777e3b8b0021cc09051d1af5f1893e731ad53ac94e909717db386036c821b27",
+      "seat": 0,
+      "scores": [
+        -24,
+        -9
+      ],
+      "difference": -15,
+      "sample_rule": "first losing game in fixed evaluation order",
+      "stages": {
+        "opening": {
+          "ply": 6,
+          "state_hash": "a6a9c1683a9ab04d0d61b9d7540005957de02f7c0de60b47e5f0f8cb15c1a640",
+          "actual_move": [
+            17,
+            4,
+            5,
+            2
+          ],
+          "heuristic_rank": 34,
+          "legal_count": 297,
+          "evaluated_roots": 128,
+          "actual_two_ply_value": -8.8,
+          "best_two_ply_value": -8.200000000000001,
+          "reference_gap": 0.5999999999999996,
+          "reference_choice": [
+            18,
+            3,
+            5,
+            1
+          ],
+          "scores": [
+            -78,
+            -74
+          ],
+          "placed": [
+            11,
+            15
+          ],
+          "frontiers": [
+            8,
+            15
+          ],
+          "legal_counts": [
+            297,
+            824
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        "middle": {
+          "ply": 14,
+          "state_hash": "beaec8fa4eca416fb72bf8a452e6104ae292cca0237ea2dadd85f6416a79889a",
+          "actual_move": [
+            18,
+            1,
+            2,
+            0
+          ],
+          "heuristic_rank": 59,
+          "legal_count": 159,
+          "evaluated_roots": 128,
+          "actual_two_ply_value": -11.8,
+          "best_two_ply_value": -9.399999999999999,
+          "reference_gap": 2.400000000000002,
+          "reference_choice": [
+            18,
+            2,
+            8,
+            7
+          ],
+          "scores": [
+            -58,
+            -54
+          ],
+          "placed": [
+            31,
+            35
+          ],
+          "frontiers": [
+            10,
+            21
+          ],
+          "legal_counts": [
+            159,
+            376
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        "ending": {
+          "ply": 28,
+          "state_hash": "8be19ba9ac4cf0e9ef6e1f38cf5ecc3aa1105986c37f450fb56c683668ef0769",
+          "actual_move": [
+            0,
+            0,
+            6,
+            10
+          ],
+          "heuristic_rank": 1,
+          "legal_count": 7,
+          "evaluated_roots": 7,
+          "actual_two_ply_value": -6.941567468643188,
+          "best_two_ply_value": -6.893371737003326,
+          "reference_gap": 0.04819573163986224,
+          "reference_choice": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "scores": [
+            -25,
+            -23
+          ],
+          "placed": [
+            64,
+            66
+          ],
+          "frontiers": [
+            7,
+            8
+          ],
+          "legal_counts": [
+            7,
+            12
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              5,
+              5
+            ]
+          ]
+        }
+      },
+      "trace": [
+        {
+          "ply": 6,
+          "stage": "opening",
+          "scores": [
+            -78,
+            -74
+          ],
+          "placed": [
+            11,
+            15
+          ],
+          "frontiers": [
+            8,
+            15
+          ],
+          "legal_counts": [
+            297,
+            824
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 8,
+          "stage": "opening",
+          "scores": [
+            -73,
+            -69
+          ],
+          "placed": [
+            16,
+            20
+          ],
+          "frontiers": [
+            10,
+            19
+          ],
+          "legal_counts": [
+            266,
+            634
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 10,
+          "stage": "opening",
+          "scores": [
+            -68,
+            -64
+          ],
+          "placed": [
+            21,
+            25
+          ],
+          "frontiers": [
+            11,
+            20
+          ],
+          "legal_counts": [
+            295,
+            550
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 12,
+          "stage": "opening",
+          "scores": [
+            -63,
+            -59
+          ],
+          "placed": [
+            26,
+            30
+          ],
+          "frontiers": [
+            10,
+            21
+          ],
+          "legal_counts": [
+            180,
+            430
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 14,
+          "stage": "middle",
+          "scores": [
+            -58,
+            -54
+          ],
+          "placed": [
+            31,
+            35
+          ],
+          "frontiers": [
+            10,
+            21
+          ],
+          "legal_counts": [
+            159,
+            376
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 16,
+          "stage": "middle",
+          "scores": [
+            -53,
+            -50
+          ],
+          "placed": [
+            36,
+            39
+          ],
+          "frontiers": [
+            9,
+            23
+          ],
+          "legal_counts": [
+            127,
+            204
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 18,
+          "stage": "middle",
+          "scores": [
+            -48,
+            -45
+          ],
+          "placed": [
+            41,
+            44
+          ],
+          "frontiers": [
+            9,
+            22
+          ],
+          "legal_counts": [
+            80,
+            135
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 20,
+          "stage": "middle",
+          "scores": [
+            -43,
+            -40
+          ],
+          "placed": [
+            46,
+            49
+          ],
+          "frontiers": [
+            10,
+            17
+          ],
+          "legal_counts": [
+            66,
+            64
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 22,
+          "stage": "middle",
+          "scores": [
+            -38,
+            -36
+          ],
+          "placed": [
+            51,
+            53
+          ],
+          "frontiers": [
+            9,
+            17
+          ],
+          "legal_counts": [
+            21,
+            59
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 24,
+          "stage": "middle",
+          "scores": [
+            -33,
+            -31
+          ],
+          "placed": [
+            56,
+            58
+          ],
+          "frontiers": [
+            9,
+            12
+          ],
+          "legal_counts": [
+            17,
+            32
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 26,
+          "stage": "middle",
+          "scores": [
+            -28,
+            -27
+          ],
+          "placed": [
+            61,
+            62
+          ],
+          "frontiers": [
+            8,
+            7
+          ],
+          "legal_counts": [
+            9,
+            12
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 28,
+          "stage": "ending",
+          "scores": [
+            -25,
+            -23
+          ],
+          "placed": [
+            64,
+            66
+          ],
+          "frontiers": [
+            7,
+            8
+          ],
+          "legal_counts": [
+            7,
+            12
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 30,
+          "stage": "ending",
+          "scores": [
+            -24,
+            -21
+          ],
+          "placed": [
+            65,
+            68
+          ],
+          "frontiers": [
+            7,
+            7
+          ],
+          "legal_counts": [
+            0,
+            16
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              1,
+              3,
+              3,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 32,
+          "stage": "ending",
+          "scores": [
+            -24,
+            -16
+          ],
+          "placed": [
+            65,
+            73
+          ],
+          "frontiers": [
+            6,
+            8
+          ],
+          "legal_counts": [
+            0,
+            11
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              1,
+              3,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 34,
+          "stage": "ending",
+          "scores": [
+            -24,
+            -13
+          ],
+          "placed": [
+            65,
+            76
+          ],
+          "frontiers": [
+            5,
+            7
+          ],
+          "legal_counts": [
+            0,
+            8
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              1,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 36,
+          "stage": "ending",
+          "scores": [
+            -24,
+            -12
+          ],
+          "placed": [
+            65,
+            77
+          ],
+          "frontiers": [
+            5,
+            6
+          ],
+          "legal_counts": [
+            0,
+            1
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 38,
+          "stage": "ending",
+          "scores": [
+            -24,
+            -9
+          ],
+          "placed": [
+            65,
+            80
+          ],
+          "frontiers": [
+            5,
+            6
+          ],
+          "legal_counts": [
+            0,
+            0
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              4,
+              5
+            ]
+          ]
+        }
+      ],
+      "final": {
+        "scores": [
+          -24,
+          -9
+        ],
+        "placed": [
+          65,
+          80
+        ],
+        "frontiers": [
+          5,
+          6
+        ],
+        "legal_counts": [
+          0,
+          0
+        ],
+        "remaining_piece_sizes": [
+          [
+            3,
+            4,
+            4,
+            4,
+            4,
+            5
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "seed": 1403,
+      "opponent": "previous",
+      "prefix_id": "31d1377a009af65edbfc357f90b6b42961be320c95150affc42250392feff58a",
+      "seat": 0,
+      "scores": [
+        -24,
+        -21
+      ],
+      "difference": -3,
+      "sample_rule": "first losing game in fixed evaluation order",
+      "stages": {
+        "opening": {
+          "ply": 4,
+          "state_hash": "83aff9b3d5e80e9e0e95dd7c8395519c36406bb03c8c9836f3c9991b1cc3e3f1",
+          "actual_move": [
+            20,
+            0,
+            5,
+            5
+          ],
+          "heuristic_rank": 5,
+          "legal_count": 300,
+          "evaluated_roots": 128,
+          "actual_two_ply_value": -1.7999999999999998,
+          "best_two_ply_value": -1.7999999999999998,
+          "reference_gap": 0.0,
+          "reference_choice": [
+            16,
+            0,
+            6,
+            5
+          ],
+          "scores": [
+            -79,
+            -79
+          ],
+          "placed": [
+            10,
+            10
+          ],
+          "frontiers": [
+            5,
+            8
+          ],
+          "legal_counts": [
+            300,
+            594
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        "middle": {
+          "ply": 14,
+          "state_hash": "186f209cc29850c9116dda18ab029f024cf1eb10a323b073e6c49d1fe5cb9fe6",
+          "actual_move": [
+            6,
+            3,
+            7,
+            7
+          ],
+          "heuristic_rank": 12,
+          "legal_count": 120,
+          "evaluated_roots": 120,
+          "actual_two_ply_value": -2.8000000000000003,
+          "best_two_ply_value": -1.7999999999999998,
+          "reference_gap": 1.0000000000000004,
+          "reference_choice": [
+            10,
+            7,
+            3,
+            7
+          ],
+          "scores": [
+            -54,
+            -54
+          ],
+          "placed": [
+            35,
+            35
+          ],
+          "frontiers": [
+            14,
+            15
+          ],
+          "legal_counts": [
+            120,
+            200
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        "ending": {
+          "ply": 28,
+          "state_hash": "8a47c092645bd9a07a95f6fa3f06c65ad60bd6edda6933d953648daeea5fffd4",
+          "actual_move": [
+            1,
+            1,
+            11,
+            4
+          ],
+          "heuristic_rank": 1,
+          "legal_count": 3,
+          "evaluated_roots": 3,
+          "actual_two_ply_value": -0.9693766891956329,
+          "best_two_ply_value": -0.8748884886503219,
+          "reference_gap": 0.09448820054531104,
+          "reference_choice": [
+            1,
+            0,
+            6,
+            9
+          ],
+          "scores": [
+            -26,
+            -29
+          ],
+          "placed": [
+            63,
+            60
+          ],
+          "frontiers": [
+            12,
+            13
+          ],
+          "legal_counts": [
+            3,
+            5
+          ],
+          "remaining_piece_sizes": [
+            [
+              2,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ]
+          ]
+        }
+      },
+      "trace": [
+        {
+          "ply": 4,
+          "stage": "opening",
+          "scores": [
+            -79,
+            -79
+          ],
+          "placed": [
+            10,
+            10
+          ],
+          "frontiers": [
+            5,
+            8
+          ],
+          "legal_counts": [
+            300,
+            594
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 6,
+          "stage": "opening",
+          "scores": [
+            -74,
+            -74
+          ],
+          "placed": [
+            15,
+            15
+          ],
+          "frontiers": [
+            9,
+            12
+          ],
+          "legal_counts": [
+            406,
+            631
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 8,
+          "stage": "opening",
+          "scores": [
+            -69,
+            -69
+          ],
+          "placed": [
+            20,
+            20
+          ],
+          "frontiers": [
+            11,
+            12
+          ],
+          "legal_counts": [
+            360,
+            469
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 10,
+          "stage": "opening",
+          "scores": [
+            -64,
+            -64
+          ],
+          "placed": [
+            25,
+            25
+          ],
+          "frontiers": [
+            13,
+            14
+          ],
+          "legal_counts": [
+            235,
+            425
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 12,
+          "stage": "opening",
+          "scores": [
+            -59,
+            -59
+          ],
+          "placed": [
+            30,
+            30
+          ],
+          "frontiers": [
+            16,
+            16
+          ],
+          "legal_counts": [
+            155,
+            262
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 14,
+          "stage": "middle",
+          "scores": [
+            -54,
+            -54
+          ],
+          "placed": [
+            35,
+            35
+          ],
+          "frontiers": [
+            14,
+            15
+          ],
+          "legal_counts": [
+            120,
+            200
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 16,
+          "stage": "middle",
+          "scores": [
+            -50,
+            -49
+          ],
+          "placed": [
+            39,
+            40
+          ],
+          "frontiers": [
+            14,
+            14
+          ],
+          "legal_counts": [
+            136,
+            154
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 18,
+          "stage": "middle",
+          "scores": [
+            -45,
+            -44
+          ],
+          "placed": [
+            44,
+            45
+          ],
+          "frontiers": [
+            16,
+            13
+          ],
+          "legal_counts": [
+            112,
+            41
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 20,
+          "stage": "middle",
+          "scores": [
+            -40,
+            -40
+          ],
+          "placed": [
+            49,
+            49
+          ],
+          "frontiers": [
+            16,
+            10
+          ],
+          "legal_counts": [
+            86,
+            19
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 22,
+          "stage": "middle",
+          "scores": [
+            -35,
+            -37
+          ],
+          "placed": [
+            54,
+            52
+          ],
+          "frontiers": [
+            15,
+            10
+          ],
+          "legal_counts": [
+            57,
+            12
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 24,
+          "stage": "middle",
+          "scores": [
+            -30,
+            -36
+          ],
+          "placed": [
+            59,
+            53
+          ],
+          "frontiers": [
+            14,
+            10
+          ],
+          "legal_counts": [
+            19,
+            3
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              2,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 26,
+          "stage": "middle",
+          "scores": [
+            -29,
+            -34
+          ],
+          "placed": [
+            60,
+            55
+          ],
+          "frontiers": [
+            15,
+            11
+          ],
+          "legal_counts": [
+            6,
+            11
+          ],
+          "remaining_piece_sizes": [
+            [
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 28,
+          "stage": "ending",
+          "scores": [
+            -26,
+            -29
+          ],
+          "placed": [
+            63,
+            60
+          ],
+          "frontiers": [
+            12,
+            13
+          ],
+          "legal_counts": [
+            3,
+            5
+          ],
+          "remaining_piece_sizes": [
+            [
+              2,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 30,
+          "stage": "ending",
+          "scores": [
+            -24,
+            -24
+          ],
+          "placed": [
+            65,
+            65
+          ],
+          "frontiers": [
+            10,
+            12
+          ],
+          "legal_counts": [
+            0,
+            1
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 32,
+          "stage": "ending",
+          "scores": [
+            -24,
+            -21
+          ],
+          "placed": [
+            65,
+            68
+          ],
+          "frontiers": [
+            10,
+            11
+          ],
+          "legal_counts": [
+            0,
+            0
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              4,
+              4,
+              4,
+              4,
+              5
+            ]
+          ]
+        }
+      ],
+      "final": {
+        "scores": [
+          -24,
+          -21
+        ],
+        "placed": [
+          65,
+          68
+        ],
+        "frontiers": [
+          10,
+          11
+        ],
+        "legal_counts": [
+          0,
+          0
+        ],
+        "remaining_piece_sizes": [
+          [
+            3,
+            4,
+            4,
+            4,
+            4,
+            5
+          ],
+          [
+            4,
+            4,
+            4,
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "seed": 1403,
+      "opponent": "teacher100",
+      "prefix_id": "1777e3b8b0021cc09051d1af5f1893e731ad53ac94e909717db386036c821b27",
+      "seat": 0,
+      "scores": [
+        -34,
+        -31
+      ],
+      "difference": -3,
+      "sample_rule": "first losing game in fixed evaluation order",
+      "stages": {
+        "opening": {
+          "ply": 6,
+          "state_hash": "a6a9c1683a9ab04d0d61b9d7540005957de02f7c0de60b47e5f0f8cb15c1a640",
+          "actual_move": [
+            20,
+            0,
+            5,
+            2
+          ],
+          "heuristic_rank": 12,
+          "legal_count": 297,
+          "evaluated_roots": 128,
+          "actual_two_ply_value": -8.200000000000001,
+          "best_two_ply_value": -8.200000000000001,
+          "reference_gap": 0.0,
+          "reference_choice": [
+            18,
+            3,
+            5,
+            1
+          ],
+          "scores": [
+            -78,
+            -74
+          ],
+          "placed": [
+            11,
+            15
+          ],
+          "frontiers": [
+            8,
+            15
+          ],
+          "legal_counts": [
+            297,
+            824
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        "middle": {
+          "ply": 14,
+          "state_hash": "f8972fe2bfd31caae51c1b140f39454a34473dfe153d65b947de8de534046986",
+          "actual_move": [
+            6,
+            2,
+            12,
+            3
+          ],
+          "heuristic_rank": 22,
+          "legal_count": 70,
+          "evaluated_roots": 70,
+          "actual_two_ply_value": -10.4,
+          "best_two_ply_value": -9.399999999999999,
+          "reference_gap": 1.0000000000000018,
+          "reference_choice": [
+            12,
+            1,
+            3,
+            6
+          ],
+          "scores": [
+            -58,
+            -54
+          ],
+          "placed": [
+            31,
+            35
+          ],
+          "frontiers": [
+            9,
+            17
+          ],
+          "legal_counts": [
+            70,
+            250
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        }
+      },
+      "trace": [
+        {
+          "ply": 6,
+          "stage": "opening",
+          "scores": [
+            -78,
+            -74
+          ],
+          "placed": [
+            11,
+            15
+          ],
+          "frontiers": [
+            8,
+            15
+          ],
+          "legal_counts": [
+            297,
+            824
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 8,
+          "stage": "opening",
+          "scores": [
+            -73,
+            -69
+          ],
+          "placed": [
+            16,
+            20
+          ],
+          "frontiers": [
+            10,
+            18
+          ],
+          "legal_counts": [
+            276,
+            701
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 10,
+          "stage": "opening",
+          "scores": [
+            -68,
+            -64
+          ],
+          "placed": [
+            21,
+            25
+          ],
+          "frontiers": [
+            10,
+            18
+          ],
+          "legal_counts": [
+            95,
+            502
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 12,
+          "stage": "opening",
+          "scores": [
+            -63,
+            -59
+          ],
+          "placed": [
+            26,
+            30
+          ],
+          "frontiers": [
+            10,
+            18
+          ],
+          "legal_counts": [
+            86,
+            377
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 14,
+          "stage": "middle",
+          "scores": [
+            -58,
+            -54
+          ],
+          "placed": [
+            31,
+            35
+          ],
+          "frontiers": [
+            9,
+            17
+          ],
+          "legal_counts": [
+            70,
+            250
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 16,
+          "stage": "middle",
+          "scores": [
+            -54,
+            -49
+          ],
+          "placed": [
+            35,
+            40
+          ],
+          "frontiers": [
+            9,
+            18
+          ],
+          "legal_counts": [
+            101,
+            139
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 18,
+          "stage": "middle",
+          "scores": [
+            -49,
+            -44
+          ],
+          "placed": [
+            40,
+            45
+          ],
+          "frontiers": [
+            12,
+            14
+          ],
+          "legal_counts": [
+            67,
+            51
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 20,
+          "stage": "middle",
+          "scores": [
+            -44,
+            -42
+          ],
+          "placed": [
+            45,
+            47
+          ],
+          "frontiers": [
+            11,
+            11
+          ],
+          "legal_counts": [
+            48,
+            33
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 22,
+          "stage": "middle",
+          "scores": [
+            -39,
+            -38
+          ],
+          "placed": [
+            50,
+            51
+          ],
+          "frontiers": [
+            9,
+            11
+          ],
+          "legal_counts": [
+            11,
+            24
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 24,
+          "stage": "middle",
+          "scores": [
+            -35,
+            -35
+          ],
+          "placed": [
+            54,
+            54
+          ],
+          "frontiers": [
+            8,
+            9
+          ],
+          "legal_counts": [
+            8,
+            10
+          ],
+          "remaining_piece_sizes": [
+            [
+              1,
+              3,
+              3,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              1,
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 26,
+          "stage": "middle",
+          "scores": [
+            -34,
+            -34
+          ],
+          "placed": [
+            55,
+            55
+          ],
+          "frontiers": [
+            7,
+            8
+          ],
+          "legal_counts": [
+            0,
+            1
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              3,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        },
+        {
+          "ply": 28,
+          "stage": "ending",
+          "scores": [
+            -34,
+            -31
+          ],
+          "placed": [
+            55,
+            58
+          ],
+          "frontiers": [
+            7,
+            7
+          ],
+          "legal_counts": [
+            0,
+            0
+          ],
+          "remaining_piece_sizes": [
+            [
+              3,
+              3,
+              4,
+              4,
+              5,
+              5,
+              5,
+              5
+            ],
+            [
+              4,
+              4,
+              4,
+              4,
+              5,
+              5,
+              5
+            ]
+          ]
+        }
+      ],
+      "final": {
+        "scores": [
+          -34,
+          -31
+        ],
+        "placed": [
+          55,
+          58
+        ],
+        "frontiers": [
+          7,
+          7
+        ],
+        "legal_counts": [
+          0,
+          0
+        ],
+        "remaining_piece_sizes": [
+          [
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ]
+        ]
+      }
+    }
+  ],
+  "phase_summary": {
+    "opening": {
+      "n": 6,
+      "mean_reference_gap": 0.2999999999999998,
+      "mean_heuristic_rank": 16.333333333333332,
+      "positive_gap": 3
+    },
+    "middle": {
+      "n": 6,
+      "mean_reference_gap": 0.9333333333333336,
+      "mean_heuristic_rank": 17.5,
+      "positive_gap": 4
+    },
+    "ending": {
+      "n": 3,
+      "mean_reference_gap": 0.29760843465725595,
+      "mean_heuristic_rank": 1.6666666666666667,
+      "positive_gap": 3
+    }
+  },
+  "reference": "Fixed value alpha .5 gate24, heuristic top128 roots plus actual move, top3 opponent replies, complete depth2. Deterministic node work, not timed strength comparison, not true game value.",
+  "limitations": "Six deliberately selected losses; no matched wins or counterfactual game continuations. Reference disagreement is not proof of error or causality. No training/model changes.",
+  "sample_unique_prefixes": 2
+}

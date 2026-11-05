@@ -1,0 +1,36 @@
+Cloning into '/tmp/blokus-gen2-fresh-drlwcqwl'...
+Using CPython 3.12.14
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+Resolved 10 packages in 2.28s
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 10 packages in 207ms
+ + filelock==4.2.4
+ + fsspec==2026.9.0
+ + jinja2==3.1.6
+ + markupsafe==3.0.3
+ + mpmath==1.3.0
+ + networkx==3.7
+ + setuptools==78.1.0
+ + sympy==1.14.0
+ + torch==2.7.1+cpu
+ + typing-extensions==4.16.0
+Resolved 6 packages in 240ms
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 6 packages in 21ms
+ + iniconfig==2.3.1
+ + numpy==2.5.4
+ + packaging==26.3
+ + pluggy==1.7.0
+ + pygments==2.21.0
+ + pytest==9.2.0
+......                                                                   [100%]
+6 passed in 1.33s
+CLI replay PASS 13
+...........................................................              [100%]
+59 passed in 6.66s
+CLI replay PASS 13

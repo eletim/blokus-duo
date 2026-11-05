@@ -34,9 +34,9 @@ uv pip install --python .venv/bin/python numpy pytest
 
 人間は表示された合法手番号を入力します。不正な番号は再入力、合法手がなければ自動pass。Ctrl-C/EOFで終了できます。例と既定値の1401は評価前に固定しており、今回holdoutで最良seedを選び直していません。CPUでも探索を実行できますが、同じms予算でGPUと同じ手・強さにはなりません。
 
-推論checkpointは `artifacts/ppo-2048/seed-{1401,1402,1403}.pt`。`weights_only=True`で読み込み、学習履歴を参照しません。export元hashはmanifest.json。CPU/CUDAで元checkpointとの入力・logits/value・greedy選択bit一致を確認しました。
+推論checkpoint（旧2048）は `artifacts/ppo-2048/seed-{1401,1402,1403}.pt`。`weights_only=True`で読み込み、学習履歴を参照しません。export元hashはmanifest.json。CPU/CUDAで元checkpointとの入力・logits/value・greedy選択bit一致を確認しました。
 
-## 評価の読み方
+## 評価の読み方（旧世代2048）
 
 旧実験のfresh96prefixでは3seed平均で旧6ms探索に得点差+2.104 [95%CI +1.272,+2.891]。今回別の96prefixで固定2048を再確認し、100ms教師とseed1401再開元512も比較しました。得点差CIは2座席と3seedを同prefix内で平均したcluster bootstrapで、更新seed母集団を代表するCIではありません。推論時間が違うため同時間比較でも、一般的最強の主張でもありません。
 

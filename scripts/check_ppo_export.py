@@ -20,7 +20,7 @@ checks=[]
 for seed in (1401,1402,1403):
  path=f'artifacts/ppo-learning-curve/seed-{seed}/iteration-2048.pt'
  for device in ('cpu','cuda'):
-  a=old.TerminalAgent(path,device);b=new.PPOAgent(seed,device)
+  a=old.TerminalAgent(path,device);b=new.PPOAgent(seed,device,generation="2048")
   for s in states:
    x,qs=old.observe(s);y,rs=new.observe(s);assert qs==rs and all(np.array_equal(i,j) for i,j in zip(x,y))
    with torch.no_grad():av=a.model(*old.collate([x],device));bv=b.model(*new.collate([y],device))
