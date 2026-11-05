@@ -309,3 +309,9 @@ Deep final selection frozen: {'kind': 'deep', 'budget_ms': 25, 'root_width': 12,
 
 ### 初回完了
 validationでlate/25msを固定。fresh530000/96prefix・192局: 94勝91敗7分、得点差+0.10417、CI[-0.15104,+0.33867]。新18.772ms/手、旧17.329ms/手。選択探索平均完了深さ6.13、厳密解12/3009呼出（試行12/12）。超過9/3009対旧0/3008。安定した改善は未確認。全50tests（独立小終盤13局面を含む）PASS、全対局再生・算術・prefix分離・厳密解12標本の独立再証明PASS。開発段階で事前記録した低mobility厳密探索を別seed群で継続する。初回holdoutを再選択に使わない。
+
+Exact-hybrid fixed aftervalidation: {'kind': 'deep', 'budget_ms': 25, 'root_width': 12, 'width': 3, 'deep_gate': 24, 'exact_pieces': 0, 'exact_mobility': 6, 'only_exact': True, 'max_depth': 2}; fresh531000 begins, earlier method same-budget control={'kind': 'deep', 'budget_ms': 25, 'root_width': 12, 'width': 3, 'deep_gate': 14, 'exact_pieces': 8}.
+
+### 固定重み探索・追加案完了
+低mobility閾値6、25msを新validationで固定後、fresh531000/96prefixで旧2plyに90勝89敗13分、+0.21354点 CI[-0.06771,+0.51042]。初回反復深化との同予算副比較は89勝92敗11分、−0.203125点 CI[-0.65625,+0.16146]。厳密解96/2958呼出、98試行中96完了。旧2plyを安定して上回る改善は未確認、既存推奨維持。初回・追加の各holdoutで再選択なし。
+全53テスト7.04秒PASS、CLI CUDA対局終局PASS。両runの全対局再生・算術・CI・時間・prefix分離・選択・固定重みhash監査PASS、独立全探索で13小終盤＋各run12証明標本の値/最善手一致。run合計1376局/1203.17秒、GPU学習0更新、追加checkpointなし。READMEとartifacts/exact-hybrid/conclusions.mdへ全結果・実ms/超過・限界・次案を記録。mainは変更せず研究branchで提出する。

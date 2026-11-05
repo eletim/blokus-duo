@@ -108,3 +108,31 @@ def test_late_leaf_batch_is_discarded():
     tree=TreeSearch(Late(),clock=lambda:clock[0]);tree.deadline=1.
     with pytest.raises(SearchTimeout):tree.search(State(remaining=[3,1]),1)
     assert not tree.tt
+
+
+def test_hybrid_fallback_matches_complete_old_two_ply(monkeypatch):
+    from blokus.value_search import BudgetAgent
+    s=State(remaining=[3,1]);before=key(s)
+    agent=DeepAgent(BASE,100,exact_pieces=0,exact_mobility=10,only_exact=True,max_depth=2,device='cpu')
+    def interrupt_full(*args,**kwargs):raise SearchTimeout()
+    monkeypatch.setattr(agent.tree,'root',interrupt_full)
+    new=agent.act(s,random.Random(119));old=BudgetAgent('value',BASE,.5,24,100,'cpu');previous=old.act(s,random.Random(119))
+    assert old.roots==len(legal_moves(s)) and new==previous and key(s)==before
+    assert agent.decisions[-1]['exact_attempt'] and not agent.decisions[-1]['exact'] and agent.decisions[-1]['completed_depth']==2
+
+
+def test_mobility_gate_certifies_all_legal_tree():
+    s=State(remaining=[3,1]);agent=DeepAgent(BASE,100,exact_pieces=0,exact_mobility=10,only_exact=True,max_depth=2,device='cpu')
+    m=agent.act(s,random.Random(1));v,optimal,_=oracle(s)
+    assert agent.decisions[-1]['exact'] and agent.decisions[-1]['value']==v and m in optimal
+
+
+def test_loose_tt_lower_bound_is_not_exact_value():
+    s=State(remaining=[3,0],last=[None,1]);t=TreeSearch(ValueEvaluator(None,'cpu'))
+    mono=next(q.move for q in legal_moves(s) if q.move.piece==0)
+    # Force the inferior mono-first line first. It reaches0, but domino-first yields5.
+    t.tt[(key(s),-1)]=Entry(-100,LOWER,mono)
+    lower=t.search(s,0,-2,-1,True)
+    assert lower==0 and t.tt[(key(s),-1)].bound==LOWER
+    exact=t.search(s,0,full=True);assert exact==oracle(s)[0]==5
+    assert t.tt[(key(s),-1)].bound==EXACT

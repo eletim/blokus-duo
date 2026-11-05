@@ -377,3 +377,20 @@ GPU主学習は54,000更新・87.47秒。全44テスト、別process CUDA保存�
 # 検証一式。独立checkerの全手再生を含むため約10分
 .venv/bin/python scripts/verify_visited.py
 ```
+
+## 固定重みの反復深化・終盤厳密探索（実験）
+
+追加学習を止め、既存valueを固定して探索器を比較しました。候補幅を制限する反復深化と、全合法手を使う低mobility終盤の厳密探索を実装。TT bound、pass・ボーナス・視点、中断時の完了反復fallbackを検証しています。幅を絞った探索は完全探索ではありません。
+
+新validationで25msを固定し、別々のfresh96prefixを先後交換して同予算の旧2plyと比較しました。
+
+- 反復深化: 94勝91敗7分、得点差 **+0.104 [95%区間 −0.151,+0.339]**。
+- 終盤hybrid: 90勝89敗13分、**+0.214 [−0.068,+0.510]**。厳密解96/2958手、実平均17.624ms対旧17.416ms。
+
+安定した改善は未確認で、**既存value/2ply推奨を維持**します。学習重みの改善ではありません。共通予算は実時間の完全一致やhard deadline保証ではなく、超過率も保存しています。学習0更新、有限run合計1376局/1203秒、全53テスト・独立終盤全探索・全対局再生/算術監査PASS。
+
+[全結果・計算量・限界と次案](artifacts/exact-hybrid/conclusions.md)／[再現手順](artifacts/exact-hybrid/METHOD.md)。研究用CLI:
+
+```bash
+.venv/bin/python -m blokus.deep_experiment play --spec artifacts/exact-hybrid/selection.json
+```

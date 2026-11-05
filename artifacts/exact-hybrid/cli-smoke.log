@@ -1,0 +1,3092 @@
+   01234567890123
+ 0 ..............
+ 1 ..............
+ 2 ..............
+ 3 ..............
+ 4 ....*.........
+ 5 ..............
+ 6 ..............
+ 7 ..............
+ 8 ..............
+ 9 .........*....
+10 ..............
+11 ..............
+12 ..............
+13 ..............
+0 Move(piece=0, orientation=0, row=4, col=4)
+1 Move(piece=1, orientation=0, row=4, col=3)
+2 Move(piece=1, orientation=0, row=4, col=4)
+3 Move(piece=1, orientation=1, row=3, col=4)
+4 Move(piece=1, orientation=1, row=4, col=4)
+5 Move(piece=2, orientation=0, row=4, col=2)
+6 Move(piece=2, orientation=0, row=4, col=3)
+7 Move(piece=2, orientation=0, row=4, col=4)
+8 Move(piece=2, orientation=1, row=2, col=4)
+9 Move(piece=2, orientation=1, row=3, col=4)
+10 Move(piece=2, orientation=1, row=4, col=4)
+11 Move(piece=3, orientation=0, row=3, col=4)
+12 Move(piece=3, orientation=0, row=4, col=3)
+13 Move(piece=3, orientation=0, row=4, col=4)
+14 Move(piece=3, orientation=1, row=3, col=3)
+15 Move(piece=3, orientation=1, row=4, col=3)
+16 Move(piece=3, orientation=1, row=4, col=4)
+17 Move(piece=3, orientation=2, row=3, col=3)
+18 Move(piece=3, orientation=2, row=3, col=4)
+19 Move(piece=3, orientation=2, row=4, col=4)
+20 Move(piece=3, orientation=3, row=3, col=3)
+21 Move(piece=3, orientation=3, row=3, col=4)
+22 Move(piece=3, orientation=3, row=4, col=3)
+23 Move(piece=4, orientation=0, row=4, col=1)
+24 Move(piece=4, orientation=0, row=4, col=2)
+25 Move(piece=4, orientation=0, row=4, col=3)
+26 Move(piece=4, orientation=0, row=4, col=4)
+27 Move(piece=4, orientation=1, row=1, col=4)
+28 Move(piece=4, orientation=1, row=2, col=4)
+29 Move(piece=4, orientation=1, row=3, col=4)
+30 Move(piece=4, orientation=1, row=4, col=4)
+31 Move(piece=5, orientation=0, row=3, col=4)
+32 Move(piece=5, orientation=0, row=4, col=2)
+33 Move(piece=5, orientation=0, row=4, col=3)
+34 Move(piece=5, orientation=0, row=4, col=4)
+35 Move(piece=5, orientation=1, row=3, col=2)
+36 Move(piece=5, orientation=1, row=4, col=2)
+37 Move(piece=5, orientation=1, row=4, col=3)
+38 Move(piece=5, orientation=1, row=4, col=4)
+39 Move(piece=5, orientation=2, row=2, col=4)
+40 Move(piece=5, orientation=2, row=3, col=4)
+41 Move(piece=5, orientation=2, row=4, col=3)
+42 Move(piece=5, orientation=2, row=4, col=4)
+43 Move(piece=5, orientation=3, row=2, col=3)
+44 Move(piece=5, orientation=3, row=3, col=3)
+45 Move(piece=5, orientation=3, row=4, col=3)
+46 Move(piece=5, orientation=3, row=4, col=4)
+47 Move(piece=5, orientation=4, row=3, col=2)
+48 Move(piece=5, orientation=4, row=3, col=3)
+49 Move(piece=5, orientation=4, row=3, col=4)
+50 Move(piece=5, orientation=4, row=4, col=4)
+51 Move(piece=5, orientation=5, row=2, col=3)
+52 Move(piece=5, orientation=5, row=2, col=4)
+53 Move(piece=5, orientation=5, row=3, col=4)
+54 Move(piece=5, orientation=5, row=4, col=4)
+55 Move(piece=5, orientation=6, row=2, col=3)
+56 Move(piece=5, orientation=6, row=2, col=4)
+57 Move(piece=5, orientation=6, row=3, col=3)
+58 Move(piece=5, orientation=6, row=4, col=3)
+59 Move(piece=5, orientation=7, row=3, col=2)
+60 Move(piece=5, orientation=7, row=3, col=3)
+61 Move(piece=5, orientation=7, row=3, col=4)
+62 Move(piece=5, orientation=7, row=4, col=2)
+63 Move(piece=6, orientation=0, row=3, col=3)
+64 Move(piece=6, orientation=0, row=4, col=2)
+65 Move(piece=6, orientation=0, row=4, col=3)
+66 Move(piece=6, orientation=0, row=4, col=4)
+67 Move(piece=6, orientation=1, row=2, col=4)
+68 Move(piece=6, orientation=1, row=3, col=3)
+69 Move(piece=6, orientation=1, row=3, col=4)
+70 Move(piece=6, orientation=1, row=4, col=4)
+71 Move(piece=6, orientation=2, row=3, col=2)
+72 Move(piece=6, orientation=2, row=3, col=3)
+73 Move(piece=6, orientation=2, row=3, col=4)
+74 Move(piece=6, orientation=2, row=4, col=3)
+75 Move(piece=6, orientation=3, row=2, col=3)
+76 Move(piece=6, orientation=3, row=3, col=3)
+77 Move(piece=6, orientation=3, row=3, col=4)
+78 Move(piece=6, orientation=3, row=4, col=3)
+79 Move(piece=7, orientation=0, row=3, col=3)
+80 Move(piece=7, orientation=0, row=3, col=4)
+81 Move(piece=7, orientation=0, row=4, col=3)
+82 Move(piece=7, orientation=0, row=4, col=4)
+83 Move(piece=8, orientation=0, row=3, col=2)
+84 Move(piece=8, orientation=0, row=3, col=3)
+85 Move(piece=8, orientation=0, row=4, col=3)
+86 Move(piece=8, orientation=0, row=4, col=4)
+87 Move(piece=8, orientation=1, row=2, col=3)
+88 Move(piece=8, orientation=1, row=3, col=3)
+89 Move(piece=8, orientation=1, row=3, col=4)
+90 Move(piece=8, orientation=1, row=4, col=4)
+91 Move(piece=8, orientation=2, row=3, col=3)
+92 Move(piece=8, orientation=2, row=3, col=4)
+93 Move(piece=8, orientation=2, row=4, col=2)
+94 Move(piece=8, orientation=2, row=4, col=3)
+95 Move(piece=8, orientation=3, row=2, col=4)
+96 Move(piece=8, orientation=3, row=3, col=3)
+97 Move(piece=8, orientation=3, row=3, col=4)
+98 Move(piece=8, orientation=3, row=4, col=3)
+99 Move(piece=9, orientation=0, row=4, col=0)
+100 Move(piece=9, orientation=0, row=4, col=1)
+101 Move(piece=9, orientation=0, row=4, col=2)
+102 Move(piece=9, orientation=0, row=4, col=3)
+103 Move(piece=9, orientation=0, row=4, col=4)
+104 Move(piece=9, orientation=1, row=0, col=4)
+105 Move(piece=9, orientation=1, row=1, col=4)
+106 Move(piece=9, orientation=1, row=2, col=4)
+107 Move(piece=9, orientation=1, row=3, col=4)
+108 Move(piece=9, orientation=1, row=4, col=4)
+109 Move(piece=10, orientation=0, row=3, col=4)
+110 Move(piece=10, orientation=0, row=4, col=1)
+111 Move(piece=10, orientation=0, row=4, col=2)
+112 Move(piece=10, orientation=0, row=4, col=3)
+113 Move(piece=10, orientation=0, row=4, col=4)
+114 Move(piece=10, orientation=1, row=3, col=1)
+115 Move(piece=10, orientation=1, row=4, col=1)
+116 Move(piece=10, orientation=1, row=4, col=2)
+117 Move(piece=10, orientation=1, row=4, col=3)
+118 Move(piece=10, orientation=1, row=4, col=4)
+119 Move(piece=10, orientation=2, row=1, col=4)
+120 Move(piece=10, orientation=2, row=2, col=4)
+121 Move(piece=10, orientation=2, row=3, col=4)
+122 Move(piece=10, orientation=2, row=4, col=3)
+123 Move(piece=10, orientation=2, row=4, col=4)
+124 Move(piece=10, orientation=3, row=1, col=3)
+125 Move(piece=10, orientation=3, row=2, col=3)
+126 Move(piece=10, orientation=3, row=3, col=3)
+127 Move(piece=10, orientation=3, row=4, col=3)
+128 Move(piece=10, orientation=3, row=4, col=4)
+129 Move(piece=10, orientation=4, row=3, col=1)
+130 Move(piece=10, orientation=4, row=3, col=2)
+131 Move(piece=10, orientation=4, row=3, col=3)
+132 Move(piece=10, orientation=4, row=3, col=4)
+133 Move(piece=10, orientation=4, row=4, col=4)
+134 Move(piece=10, orientation=5, row=1, col=3)
+135 Move(piece=10, orientation=5, row=1, col=4)
+136 Move(piece=10, orientation=5, row=2, col=4)
+137 Move(piece=10, orientation=5, row=3, col=4)
+138 Move(piece=10, orientation=5, row=4, col=4)
+139 Move(piece=10, orientation=6, row=1, col=3)
+140 Move(piece=10, orientation=6, row=1, col=4)
+141 Move(piece=10, orientation=6, row=2, col=3)
+142 Move(piece=10, orientation=6, row=3, col=3)
+143 Move(piece=10, orientation=6, row=4, col=3)
+144 Move(piece=10, orientation=7, row=3, col=1)
+145 Move(piece=10, orientation=7, row=3, col=2)
+146 Move(piece=10, orientation=7, row=3, col=3)
+147 Move(piece=10, orientation=7, row=3, col=4)
+148 Move(piece=10, orientation=7, row=4, col=1)
+149 Move(piece=11, orientation=0, row=3, col=3)
+150 Move(piece=11, orientation=0, row=4, col=1)
+151 Move(piece=11, orientation=0, row=4, col=2)
+152 Move(piece=11, orientation=0, row=4, col=3)
+153 Move(piece=11, orientation=0, row=4, col=4)
+154 Move(piece=11, orientation=1, row=3, col=2)
+155 Move(piece=11, orientation=1, row=4, col=1)
+156 Move(piece=11, orientation=1, row=4, col=2)
+157 Move(piece=11, orientation=1, row=4, col=3)
+158 Move(piece=11, orientation=1, row=4, col=4)
+159 Move(piece=11, orientation=2, row=1, col=4)
+160 Move(piece=11, orientation=2, row=2, col=4)
+161 Move(piece=11, orientation=2, row=3, col=3)
+162 Move(piece=11, orientation=2, row=3, col=4)
+163 Move(piece=11, orientation=2, row=4, col=4)
+164 Move(piece=11, orientation=3, row=1, col=4)
+165 Move(piece=11, orientation=3, row=2, col=3)
+166 Move(piece=11, orientation=3, row=2, col=4)
+167 Move(piece=11, orientation=3, row=3, col=4)
+168 Move(piece=11, orientation=3, row=4, col=4)
+169 Move(piece=11, orientation=4, row=3, col=1)
+170 Move(piece=11, orientation=4, row=3, col=2)
+171 Move(piece=11, orientation=4, row=3, col=3)
+172 Move(piece=11, orientation=4, row=3, col=4)
+173 Move(piece=11, orientation=4, row=4, col=3)
+174 Move(piece=11, orientation=5, row=1, col=3)
+175 Move(piece=11, orientation=5, row=2, col=3)
+176 Move(piece=11, orientation=5, row=3, col=3)
+177 Move(piece=11, orientation=5, row=3, col=4)
+178 Move(piece=11, orientation=5, row=4, col=3)
+179 Move(piece=11, orientation=6, row=1, col=3)
+180 Move(piece=11, orientation=6, row=2, col=3)
+181 Move(piece=11, orientation=6, row=2, col=4)
+182 Move(piece=11, orientation=6, row=3, col=3)
+183 Move(piece=11, orientation=6, row=4, col=3)
+184 Move(piece=11, orientation=7, row=3, col=1)
+185 Move(piece=11, orientation=7, row=3, col=2)
+186 Move(piece=11, orientation=7, row=3, col=3)
+187 Move(piece=11, orientation=7, row=3, col=4)
+188 Move(piece=11, orientation=7, row=4, col=2)
+189 Move(piece=12, orientation=0, row=3, col=3)
+190 Move(piece=12, orientation=0, row=3, col=4)
+191 Move(piece=12, orientation=0, row=4, col=2)
+192 Move(piece=12, orientation=0, row=4, col=3)
+193 Move(piece=12, orientation=0, row=4, col=4)
+194 Move(piece=12, orientation=1, row=3, col=2)
+195 Move(piece=12, orientation=1, row=3, col=3)
+196 Move(piece=12, orientation=1, row=4, col=2)
+197 Move(piece=12, orientation=1, row=4, col=3)
+198 Move(piece=12, orientation=1, row=4, col=4)
+199 Move(piece=12, orientation=2, row=3, col=2)
+200 Move(piece=12, orientation=2, row=3, col=3)
+201 Move(piece=12, orientation=2, row=3, col=4)
+202 Move(piece=12, orientation=2, row=4, col=3)
+203 Move(piece=12, orientation=2, row=4, col=4)
+204 Move(piece=12, orientation=3, row=2, col=4)
+205 Move(piece=12, orientation=3, row=3, col=3)
+206 Move(piece=12, orientation=3, row=3, col=4)
+207 Move(piece=12, orientation=3, row=4, col=3)
+208 Move(piece=12, orientation=3, row=4, col=4)
+209 Move(piece=12, orientation=4, row=2, col=3)
+210 Move(piece=12, orientation=4, row=3, col=3)
+211 Move(piece=12, orientation=4, row=3, col=4)
+212 Move(piece=12, orientation=4, row=4, col=3)
+213 Move(piece=12, orientation=4, row=4, col=4)
+214 Move(piece=12, orientation=5, row=2, col=3)
+215 Move(piece=12, orientation=5, row=2, col=4)
+216 Move(piece=12, orientation=5, row=3, col=3)
+217 Move(piece=12, orientation=5, row=3, col=4)
+218 Move(piece=12, orientation=5, row=4, col=4)
+219 Move(piece=12, orientation=6, row=3, col=2)
+220 Move(piece=12, orientation=6, row=3, col=3)
+221 Move(piece=12, orientation=6, row=3, col=4)
+222 Move(piece=12, orientation=6, row=4, col=2)
+223 Move(piece=12, orientation=6, row=4, col=3)
+224 Move(piece=12, orientation=7, row=2, col=3)
+225 Move(piece=12, orientation=7, row=2, col=4)
+226 Move(piece=12, orientation=7, row=3, col=3)
+227 Move(piece=12, orientation=7, row=3, col=4)
+228 Move(piece=12, orientation=7, row=4, col=3)
+229 Move(piece=13, orientation=0, row=3, col=2)
+230 Move(piece=13, orientation=0, row=3, col=4)
+231 Move(piece=13, orientation=0, row=4, col=2)
+232 Move(piece=13, orientation=0, row=4, col=3)
+233 Move(piece=13, orientation=0, row=4, col=4)
+234 Move(piece=13, orientation=1, row=2, col=3)
+235 Move(piece=13, orientation=1, row=2, col=4)
+236 Move(piece=13, orientation=1, row=3, col=4)
+237 Move(piece=13, orientation=1, row=4, col=3)
+238 Move(piece=13, orientation=1, row=4, col=4)
+239 Move(piece=13, orientation=2, row=2, col=3)
+240 Move(piece=13, orientation=2, row=2, col=4)
+241 Move(piece=13, orientation=2, row=3, col=3)
+242 Move(piece=13, orientation=2, row=4, col=3)
+243 Move(piece=13, orientation=2, row=4, col=4)
+244 Move(piece=13, orientation=3, row=3, col=2)
+245 Move(piece=13, orientation=3, row=3, col=3)
+246 Move(piece=13, orientation=3, row=3, col=4)
+247 Move(piece=13, orientation=3, row=4, col=2)
+248 Move(piece=13, orientation=3, row=4, col=4)
+249 Move(piece=14, orientation=0, row=2, col=4)
+250 Move(piece=14, orientation=0, row=3, col=4)
+251 Move(piece=14, orientation=0, row=4, col=2)
+252 Move(piece=14, orientation=0, row=4, col=3)
+253 Move(piece=14, orientation=0, row=4, col=4)
+254 Move(piece=14, orientation=1, row=2, col=2)
+255 Move(piece=14, orientation=1, row=3, col=2)
+256 Move(piece=14, orientation=1, row=4, col=2)
+257 Move(piece=14, orientation=1, row=4, col=3)
+258 Move(piece=14, orientation=1, row=4, col=4)
+259 Move(piece=14, orientation=2, row=2, col=2)
+260 Move(piece=14, orientation=2, row=2, col=3)
+261 Move(piece=14, orientation=2, row=2, col=4)
+262 Move(piece=14, orientation=2, row=3, col=4)
+263 Move(piece=14, orientation=2, row=4, col=4)
+264 Move(piece=14, orientation=3, row=2, col=2)
+265 Move(piece=14, orientation=3, row=2, col=3)
+266 Move(piece=14, orientation=3, row=2, col=4)
+267 Move(piece=14, orientation=3, row=3, col=2)
+268 Move(piece=14, orientation=3, row=4, col=2)
+269 Move(piece=15, orientation=0, row=2, col=3)
+270 Move(piece=15, orientation=0, row=3, col=3)
+271 Move(piece=15, orientation=0, row=4, col=2)
+272 Move(piece=15, orientation=0, row=4, col=3)
+273 Move(piece=15, orientation=0, row=4, col=4)
+274 Move(piece=15, orientation=1, row=2, col=4)
+275 Move(piece=15, orientation=1, row=3, col=2)
+276 Move(piece=15, orientation=1, row=3, col=3)
+277 Move(piece=15, orientation=1, row=3, col=4)
+278 Move(piece=15, orientation=1, row=4, col=4)
+279 Move(piece=15, orientation=2, row=2, col=2)
+280 Move(piece=15, orientation=2, row=2, col=3)
+281 Move(piece=15, orientation=2, row=2, col=4)
+282 Move(piece=15, orientation=2, row=3, col=3)
+283 Move(piece=15, orientation=2, row=4, col=3)
+284 Move(piece=15, orientation=3, row=2, col=2)
+285 Move(piece=15, orientation=3, row=3, col=2)
+286 Move(piece=15, orientation=3, row=3, col=3)
+287 Move(piece=15, orientation=3, row=3, col=4)
+288 Move(piece=15, orientation=3, row=4, col=2)
+289 Move(piece=16, orientation=0, row=3, col=1)
+290 Move(piece=16, orientation=0, row=3, col=2)
+291 Move(piece=16, orientation=0, row=4, col=2)
+292 Move(piece=16, orientation=0, row=4, col=3)
+293 Move(piece=16, orientation=0, row=4, col=4)
+294 Move(piece=16, orientation=1, row=3, col=1)
+295 Move(piece=16, orientation=1, row=3, col=2)
+296 Move(piece=16, orientation=1, row=3, col=3)
+297 Move(piece=16, orientation=1, row=4, col=3)
+298 Move(piece=16, orientation=1, row=4, col=4)
+299 Move(piece=16, orientation=2, row=1, col=3)
+300 Move(piece=16, orientation=2, row=2, col=3)
+301 Move(piece=16, orientation=2, row=3, col=3)
+302 Move(piece=16, orientation=2, row=3, col=4)
+303 Move(piece=16, orientation=2, row=4, col=4)
+304 Move(piece=16, orientation=3, row=1, col=3)
+305 Move(piece=16, orientation=3, row=2, col=3)
+306 Move(piece=16, orientation=3, row=2, col=4)
+307 Move(piece=16, orientation=3, row=3, col=4)
+308 Move(piece=16, orientation=3, row=4, col=4)
+309 Move(piece=16, orientation=4, row=3, col=3)
+310 Move(piece=16, orientation=4, row=3, col=4)
+311 Move(piece=16, orientation=4, row=4, col=1)
+312 Move(piece=16, orientation=4, row=4, col=2)
+313 Move(piece=16, orientation=4, row=4, col=3)
+314 Move(piece=16, orientation=5, row=1, col=4)
+315 Move(piece=16, orientation=5, row=2, col=4)
+316 Move(piece=16, orientation=5, row=3, col=3)
+317 Move(piece=16, orientation=5, row=3, col=4)
+318 Move(piece=16, orientation=5, row=4, col=3)
+319 Move(piece=16, orientation=6, row=1, col=4)
+320 Move(piece=16, orientation=6, row=2, col=3)
+321 Move(piece=16, orientation=6, row=2, col=4)
+322 Move(piece=16, orientation=6, row=3, col=3)
+323 Move(piece=16, orientation=6, row=4, col=3)
+324 Move(piece=16, orientation=7, row=3, col=2)
+325 Move(piece=16, orientation=7, row=3, col=3)
+326 Move(piece=16, orientation=7, row=3, col=4)
+327 Move(piece=16, orientation=7, row=4, col=1)
+328 Move(piece=16, orientation=7, row=4, col=2)
+329 Move(piece=17, orientation=0, row=2, col=3)
+330 Move(piece=17, orientation=0, row=3, col=2)
+331 Move(piece=17, orientation=0, row=3, col=3)
+332 Move(piece=17, orientation=0, row=4, col=3)
+333 Move(piece=17, orientation=0, row=4, col=4)
+334 Move(piece=17, orientation=1, row=2, col=3)
+335 Move(piece=17, orientation=1, row=3, col=2)
+336 Move(piece=17, orientation=1, row=3, col=3)
+337 Move(piece=17, orientation=1, row=3, col=4)
+338 Move(piece=17, orientation=1, row=4, col=4)
+339 Move(piece=17, orientation=2, row=2, col=3)
+340 Move(piece=17, orientation=2, row=3, col=3)
+341 Move(piece=17, orientation=2, row=3, col=4)
+342 Move(piece=17, orientation=2, row=4, col=2)
+343 Move(piece=17, orientation=2, row=4, col=3)
+344 Move(piece=17, orientation=3, row=2, col=4)
+345 Move(piece=17, orientation=3, row=3, col=2)
+346 Move(piece=17, orientation=3, row=3, col=3)
+347 Move(piece=17, orientation=3, row=3, col=4)
+348 Move(piece=17, orientation=3, row=4, col=3)
+349 Move(piece=17, orientation=4, row=2, col=2)
+350 Move(piece=17, orientation=4, row=3, col=2)
+351 Move(piece=17, orientation=4, row=3, col=3)
+352 Move(piece=17, orientation=4, row=3, col=4)
+353 Move(piece=17, orientation=4, row=4, col=3)
+354 Move(piece=17, orientation=5, row=2, col=2)
+355 Move(piece=17, orientation=5, row=2, col=3)
+356 Move(piece=17, orientation=5, row=3, col=3)
+357 Move(piece=17, orientation=5, row=3, col=4)
+358 Move(piece=17, orientation=5, row=4, col=3)
+359 Move(piece=17, orientation=6, row=2, col=3)
+360 Move(piece=17, orientation=6, row=2, col=4)
+361 Move(piece=17, orientation=6, row=3, col=2)
+362 Move(piece=17, orientation=6, row=3, col=3)
+363 Move(piece=17, orientation=6, row=4, col=3)
+364 Move(piece=17, orientation=7, row=2, col=3)
+365 Move(piece=17, orientation=7, row=3, col=2)
+366 Move(piece=17, orientation=7, row=3, col=3)
+367 Move(piece=17, orientation=7, row=3, col=4)
+368 Move(piece=17, orientation=7, row=4, col=2)
+369 Move(piece=18, orientation=0, row=2, col=2)
+370 Move(piece=18, orientation=0, row=3, col=2)
+371 Move(piece=18, orientation=0, row=3, col=3)
+372 Move(piece=18, orientation=0, row=4, col=3)
+373 Move(piece=18, orientation=0, row=4, col=4)
+374 Move(piece=18, orientation=1, row=2, col=2)
+375 Move(piece=18, orientation=1, row=2, col=3)
+376 Move(piece=18, orientation=1, row=3, col=3)
+377 Move(piece=18, orientation=1, row=3, col=4)
+378 Move(piece=18, orientation=1, row=4, col=4)
+379 Move(piece=18, orientation=2, row=2, col=4)
+380 Move(piece=18, orientation=2, row=3, col=3)
+381 Move(piece=18, orientation=2, row=3, col=4)
+382 Move(piece=18, orientation=2, row=4, col=2)
+383 Move(piece=18, orientation=2, row=4, col=3)
+384 Move(piece=18, orientation=3, row=2, col=3)
+385 Move(piece=18, orientation=3, row=2, col=4)
+386 Move(piece=18, orientation=3, row=3, col=2)
+387 Move(piece=18, orientation=3, row=3, col=3)
+388 Move(piece=18, orientation=3, row=4, col=2)
+389 Move(piece=19, orientation=0, row=2, col=2)
+390 Move(piece=19, orientation=0, row=2, col=3)
+391 Move(piece=19, orientation=0, row=3, col=3)
+392 Move(piece=19, orientation=0, row=4, col=3)
+393 Move(piece=19, orientation=0, row=4, col=4)
+394 Move(piece=19, orientation=1, row=2, col=2)
+395 Move(piece=19, orientation=1, row=3, col=2)
+396 Move(piece=19, orientation=1, row=3, col=3)
+397 Move(piece=19, orientation=1, row=3, col=4)
+398 Move(piece=19, orientation=1, row=4, col=4)
+399 Move(piece=19, orientation=2, row=2, col=3)
+400 Move(piece=19, orientation=2, row=2, col=4)
+401 Move(piece=19, orientation=2, row=3, col=3)
+402 Move(piece=19, orientation=2, row=4, col=2)
+403 Move(piece=19, orientation=2, row=4, col=3)
+404 Move(piece=19, orientation=3, row=2, col=4)
+405 Move(piece=19, orientation=3, row=3, col=2)
+406 Move(piece=19, orientation=3, row=3, col=3)
+407 Move(piece=19, orientation=3, row=3, col=4)
+408 Move(piece=19, orientation=3, row=4, col=2)
+409 Move(piece=20, orientation=0, row=2, col=3)
+410 Move(piece=20, orientation=0, row=3, col=2)
+411 Move(piece=20, orientation=0, row=3, col=3)
+412 Move(piece=20, orientation=0, row=3, col=4)
+413 Move(piece=20, orientation=0, row=4, col=3)
+index>    01234567890123
+ 0 ..............
+ 1 ..............
+ 2 ..............
+ 3 ..............
+ 4 ....X.........
+ 5 ..............
+ 6 ..............
+ 7 ..............
+ 8 ..............
+ 9 .........*....
+10 ..............
+11 ..............
+12 ..............
+13 ..............
+   01234567890123
+ 0 ..............
+ 1 ..............
+ 2 ..............
+ 3 ..............
+ 4 ....X.........
+ 5 ..............
+ 6 ..............
+ 7 ..............
+ 8 ..........O...
+ 9 .........OOO..
+10 ..........O...
+11 ..............
+12 ..............
+13 ..............
+0 Move(piece=1, orientation=0, row=3, col=2)
+1 Move(piece=1, orientation=0, row=3, col=5)
+2 Move(piece=1, orientation=0, row=5, col=2)
+3 Move(piece=1, orientation=0, row=5, col=5)
+4 Move(piece=1, orientation=1, row=2, col=3)
+5 Move(piece=1, orientation=1, row=2, col=5)
+6 Move(piece=1, orientation=1, row=5, col=3)
+7 Move(piece=1, orientation=1, row=5, col=5)
+8 Move(piece=2, orientation=0, row=3, col=1)
+9 Move(piece=2, orientation=0, row=3, col=5)
+10 Move(piece=2, orientation=0, row=5, col=1)
+11 Move(piece=2, orientation=0, row=5, col=5)
+12 Move(piece=2, orientation=1, row=1, col=3)
+13 Move(piece=2, orientation=1, row=1, col=5)
+14 Move(piece=2, orientation=1, row=5, col=3)
+15 Move(piece=2, orientation=1, row=5, col=5)
+16 Move(piece=3, orientation=0, row=2, col=3)
+17 Move(piece=3, orientation=0, row=2, col=5)
+18 Move(piece=3, orientation=0, row=3, col=2)
+19 Move(piece=3, orientation=0, row=5, col=2)
+20 Move(piece=3, orientation=0, row=5, col=5)
+21 Move(piece=3, orientation=1, row=2, col=2)
+22 Move(piece=3, orientation=1, row=2, col=4)
+23 Move(piece=3, orientation=1, row=3, col=5)
+24 Move(piece=3, orientation=1, row=5, col=2)
+25 Move(piece=3, orientation=1, row=5, col=5)
+26 Move(piece=3, orientation=2, row=2, col=2)
+27 Move(piece=3, orientation=2, row=2, col=5)
+28 Move(piece=3, orientation=2, row=4, col=2)
+29 Move(piece=3, orientation=2, row=5, col=3)
+30 Move(piece=3, orientation=2, row=5, col=5)
+31 Move(piece=3, orientation=3, row=2, col=2)
+32 Move(piece=3, orientation=3, row=2, col=5)
+33 Move(piece=3, orientation=3, row=4, col=5)
+34 Move(piece=3, orientation=3, row=5, col=2)
+35 Move(piece=3, orientation=3, row=5, col=4)
+36 Move(piece=4, orientation=0, row=3, col=0)
+37 Move(piece=4, orientation=0, row=3, col=5)
+38 Move(piece=4, orientation=0, row=5, col=0)
+39 Move(piece=4, orientation=0, row=5, col=5)
+40 Move(piece=4, orientation=1, row=0, col=3)
+41 Move(piece=4, orientation=1, row=0, col=5)
+42 Move(piece=4, orientation=1, row=5, col=3)
+43 Move(piece=4, orientation=1, row=5, col=5)
+44 Move(piece=5, orientation=0, row=2, col=3)
+45 Move(piece=5, orientation=0, row=2, col=5)
+46 Move(piece=5, orientation=0, row=3, col=1)
+47 Move(piece=5, orientation=0, row=5, col=1)
+48 Move(piece=5, orientation=0, row=5, col=5)
+49 Move(piece=5, orientation=1, row=2, col=1)
+50 Move(piece=5, orientation=1, row=2, col=3)
+51 Move(piece=5, orientation=1, row=3, col=5)
+52 Move(piece=5, orientation=1, row=5, col=1)
+53 Move(piece=5, orientation=1, row=5, col=5)
+54 Move(piece=5, orientation=2, row=1, col=3)
+55 Move(piece=5, orientation=2, row=1, col=5)
+56 Move(piece=5, orientation=2, row=3, col=2)
+57 Move(piece=5, orientation=2, row=5, col=2)
+58 Move(piece=5, orientation=2, row=5, col=5)
+59 Move(piece=5, orientation=3, row=1, col=2)
+60 Move(piece=5, orientation=3, row=1, col=4)
+61 Move(piece=5, orientation=3, row=3, col=5)
+62 Move(piece=5, orientation=3, row=5, col=2)
+63 Move(piece=5, orientation=3, row=5, col=5)
+64 Move(piece=5, orientation=4, row=2, col=1)
+65 Move(piece=5, orientation=4, row=2, col=5)
+66 Move(piece=5, orientation=4, row=4, col=1)
+67 Move(piece=5, orientation=4, row=5, col=3)
+68 Move(piece=5, orientation=4, row=5, col=5)
+69 Move(piece=5, orientation=5, row=1, col=2)
+70 Move(piece=5, orientation=5, row=1, col=5)
+71 Move(piece=5, orientation=5, row=3, col=2)
+72 Move(piece=5, orientation=5, row=5, col=3)
+73 Move(piece=5, orientation=5, row=5, col=5)
+74 Move(piece=5, orientation=6, row=1, col=2)
+75 Move(piece=5, orientation=6, row=1, col=5)
+76 Move(piece=5, orientation=6, row=3, col=5)
+77 Move(piece=5, orientation=6, row=5, col=2)
+78 Move(piece=5, orientation=6, row=5, col=4)
+79 Move(piece=5, orientation=7, row=2, col=1)
+80 Move(piece=5, orientation=7, row=2, col=5)
+81 Move(piece=5, orientation=7, row=4, col=5)
+82 Move(piece=5, orientation=7, row=5, col=1)
+83 Move(piece=5, orientation=7, row=5, col=3)
+84 Move(piece=6, orientation=0, row=2, col=2)
+85 Move(piece=6, orientation=0, row=2, col=4)
+86 Move(piece=6, orientation=0, row=3, col=1)
+87 Move(piece=6, orientation=0, row=3, col=5)
+88 Move(piece=6, orientation=0, row=5, col=1)
+89 Move(piece=6, orientation=0, row=5, col=5)
+90 Move(piece=6, orientation=1, row=1, col=3)
+91 Move(piece=6, orientation=1, row=1, col=5)
+92 Move(piece=6, orientation=1, row=2, col=2)
+93 Move(piece=6, orientation=1, row=4, col=2)
+94 Move(piece=6, orientation=1, row=5, col=3)
+95 Move(piece=6, orientation=1, row=5, col=5)
+96 Move(piece=6, orientation=2, row=2, col=1)
+97 Move(piece=6, orientation=2, row=2, col=5)
+98 Move(piece=6, orientation=2, row=4, col=1)
+99 Move(piece=6, orientation=2, row=4, col=5)
+100 Move(piece=6, orientation=2, row=5, col=2)
+101 Move(piece=6, orientation=2, row=5, col=4)
+102 Move(piece=6, orientation=3, row=1, col=2)
+103 Move(piece=6, orientation=3, row=1, col=4)
+104 Move(piece=6, orientation=3, row=2, col=5)
+105 Move(piece=6, orientation=3, row=4, col=5)
+106 Move(piece=6, orientation=3, row=5, col=2)
+107 Move(piece=6, orientation=3, row=5, col=4)
+108 Move(piece=7, orientation=0, row=2, col=2)
+109 Move(piece=7, orientation=0, row=2, col=5)
+110 Move(piece=7, orientation=0, row=5, col=2)
+111 Move(piece=7, orientation=0, row=5, col=5)
+112 Move(piece=8, orientation=0, row=2, col=1)
+113 Move(piece=8, orientation=0, row=2, col=4)
+114 Move(piece=8, orientation=0, row=3, col=5)
+115 Move(piece=8, orientation=0, row=4, col=1)
+116 Move(piece=8, orientation=0, row=5, col=2)
+117 Move(piece=8, orientation=0, row=5, col=5)
+118 Move(piece=8, orientation=1, row=1, col=2)
+119 Move(piece=8, orientation=1, row=1, col=4)
+120 Move(piece=8, orientation=1, row=2, col=5)
+121 Move(piece=8, orientation=1, row=4, col=2)
+122 Move(piece=8, orientation=1, row=5, col=3)
+123 Move(piece=8, orientation=1, row=5, col=5)
+124 Move(piece=8, orientation=2, row=2, col=2)
+125 Move(piece=8, orientation=2, row=2, col=5)
+126 Move(piece=8, orientation=2, row=3, col=1)
+127 Move(piece=8, orientation=2, row=4, col=5)
+128 Move(piece=8, orientation=2, row=5, col=1)
+129 Move(piece=8, orientation=2, row=5, col=4)
+130 Move(piece=8, orientation=3, row=1, col=3)
+131 Move(piece=8, orientation=3, row=1, col=5)
+132 Move(piece=8, orientation=3, row=2, col=2)
+133 Move(piece=8, orientation=3, row=4, col=5)
+134 Move(piece=8, orientation=3, row=5, col=2)
+135 Move(piece=8, orientation=3, row=5, col=4)
+136 Move(piece=9, orientation=0, row=3, col=5)
+137 Move(piece=9, orientation=0, row=5, col=5)
+138 Move(piece=9, orientation=1, row=5, col=3)
+139 Move(piece=9, orientation=1, row=5, col=5)
+140 Move(piece=10, orientation=0, row=2, col=3)
+141 Move(piece=10, orientation=0, row=2, col=5)
+142 Move(piece=10, orientation=0, row=3, col=0)
+143 Move(piece=10, orientation=0, row=5, col=0)
+144 Move(piece=10, orientation=0, row=5, col=5)
+145 Move(piece=10, orientation=1, row=2, col=0)
+146 Move(piece=10, orientation=1, row=2, col=2)
+147 Move(piece=10, orientation=1, row=3, col=5)
+148 Move(piece=10, orientation=1, row=5, col=0)
+149 Move(piece=10, orientation=1, row=5, col=5)
+150 Move(piece=10, orientation=2, row=0, col=3)
+151 Move(piece=10, orientation=2, row=0, col=5)
+152 Move(piece=10, orientation=2, row=3, col=2)
+153 Move(piece=10, orientation=2, row=5, col=2)
+154 Move(piece=10, orientation=2, row=5, col=5)
+155 Move(piece=10, orientation=3, row=0, col=2)
+156 Move(piece=10, orientation=3, row=0, col=4)
+157 Move(piece=10, orientation=3, row=3, col=5)
+158 Move(piece=10, orientation=3, row=5, col=2)
+159 Move(piece=10, orientation=3, row=5, col=5)
+160 Move(piece=10, orientation=4, row=2, col=0)
+161 Move(piece=10, orientation=4, row=2, col=5)
+162 Move(piece=10, orientation=4, row=4, col=0)
+163 Move(piece=10, orientation=4, row=5, col=3)
+164 Move(piece=10, orientation=4, row=5, col=5)
+165 Move(piece=10, orientation=5, row=0, col=2)
+166 Move(piece=10, orientation=5, row=0, col=5)
+167 Move(piece=10, orientation=5, row=2, col=2)
+168 Move(piece=10, orientation=5, row=5, col=3)
+169 Move(piece=10, orientation=5, row=5, col=5)
+170 Move(piece=10, orientation=6, row=0, col=2)
+171 Move(piece=10, orientation=6, row=0, col=5)
+172 Move(piece=10, orientation=6, row=2, col=5)
+173 Move(piece=10, orientation=6, row=5, col=2)
+174 Move(piece=10, orientation=6, row=5, col=4)
+175 Move(piece=10, orientation=7, row=2, col=0)
+176 Move(piece=10, orientation=7, row=2, col=5)
+177 Move(piece=10, orientation=7, row=4, col=5)
+178 Move(piece=10, orientation=7, row=5, col=0)
+179 Move(piece=10, orientation=7, row=5, col=2)
+180 Move(piece=11, orientation=0, row=2, col=2)
+181 Move(piece=11, orientation=0, row=2, col=4)
+182 Move(piece=11, orientation=0, row=3, col=0)
+183 Move(piece=11, orientation=0, row=3, col=5)
+184 Move(piece=11, orientation=0, row=5, col=0)
+185 Move(piece=11, orientation=0, row=5, col=5)
+186 Move(piece=11, orientation=1, row=2, col=1)
+187 Move(piece=11, orientation=1, row=2, col=3)
+188 Move(piece=11, orientation=1, row=3, col=0)
+189 Move(piece=11, orientation=1, row=3, col=5)
+190 Move(piece=11, orientation=1, row=5, col=0)
+191 Move(piece=11, orientation=1, row=5, col=5)
+192 Move(piece=11, orientation=2, row=0, col=3)
+193 Move(piece=11, orientation=2, row=0, col=5)
+194 Move(piece=11, orientation=2, row=2, col=2)
+195 Move(piece=11, orientation=2, row=4, col=2)
+196 Move(piece=11, orientation=2, row=5, col=3)
+197 Move(piece=11, orientation=2, row=5, col=5)
+198 Move(piece=11, orientation=3, row=0, col=3)
+199 Move(piece=11, orientation=3, row=0, col=5)
+200 Move(piece=11, orientation=3, row=1, col=2)
+201 Move(piece=11, orientation=3, row=3, col=2)
+202 Move(piece=11, orientation=3, row=5, col=3)
+203 Move(piece=11, orientation=3, row=5, col=5)
+204 Move(piece=11, orientation=4, row=2, col=0)
+205 Move(piece=11, orientation=4, row=2, col=5)
+206 Move(piece=11, orientation=4, row=4, col=0)
+207 Move(piece=11, orientation=4, row=4, col=5)
+208 Move(piece=11, orientation=4, row=5, col=2)
+209 Move(piece=11, orientation=4, row=5, col=4)
+210 Move(piece=11, orientation=5, row=0, col=2)
+211 Move(piece=11, orientation=5, row=0, col=4)
+212 Move(piece=11, orientation=5, row=2, col=5)
+213 Move(piece=11, orientation=5, row=4, col=5)
+214 Move(piece=11, orientation=5, row=5, col=2)
+215 Move(piece=11, orientation=5, row=5, col=4)
+216 Move(piece=11, orientation=6, row=0, col=2)
+217 Move(piece=11, orientation=6, row=0, col=4)
+218 Move(piece=11, orientation=6, row=1, col=5)
+219 Move(piece=11, orientation=6, row=3, col=5)
+220 Move(piece=11, orientation=6, row=5, col=2)
+221 Move(piece=11, orientation=6, row=5, col=4)
+222 Move(piece=11, orientation=7, row=2, col=0)
+223 Move(piece=11, orientation=7, row=2, col=5)
+224 Move(piece=11, orientation=7, row=4, col=0)
+225 Move(piece=11, orientation=7, row=4, col=5)
+226 Move(piece=11, orientation=7, row=5, col=1)
+227 Move(piece=11, orientation=7, row=5, col=3)
+228 Move(piece=12, orientation=0, row=2, col=2)
+229 Move(piece=12, orientation=0, row=2, col=5)
+230 Move(piece=12, orientation=0, row=3, col=1)
+231 Move(piece=12, orientation=0, row=5, col=1)
+232 Move(piece=12, orientation=0, row=5, col=5)
+233 Move(piece=12, orientation=1, row=2, col=1)
+234 Move(piece=12, orientation=1, row=2, col=4)
+235 Move(piece=12, orientation=1, row=3, col=5)
+236 Move(piece=12, orientation=1, row=5, col=1)
+237 Move(piece=12, orientation=1, row=5, col=5)
+238 Move(piece=12, orientation=2, row=2, col=1)
+239 Move(piece=12, orientation=2, row=2, col=5)
+240 Move(piece=12, orientation=2, row=4, col=1)
+241 Move(piece=12, orientation=2, row=5, col=2)
+242 Move(piece=12, orientation=2, row=5, col=5)
+243 Move(piece=12, orientation=3, row=1, col=3)
+244 Move(piece=12, orientation=3, row=1, col=5)
+245 Move(piece=12, orientation=3, row=2, col=2)
+246 Move(piece=12, orientation=3, row=5, col=2)
+247 Move(piece=12, orientation=3, row=5, col=5)
+248 Move(piece=12, orientation=4, row=1, col=2)
+249 Move(piece=12, orientation=4, row=1, col=4)
+250 Move(piece=12, orientation=4, row=2, col=5)
+251 Move(piece=12, orientation=4, row=5, col=2)
+252 Move(piece=12, orientation=4, row=5, col=5)
+253 Move(piece=12, orientation=5, row=1, col=2)
+254 Move(piece=12, orientation=5, row=1, col=5)
+255 Move(piece=12, orientation=5, row=4, col=2)
+256 Move(piece=12, orientation=5, row=5, col=3)
+257 Move(piece=12, orientation=5, row=5, col=5)
+258 Move(piece=12, orientation=6, row=2, col=1)
+259 Move(piece=12, orientation=6, row=2, col=5)
+260 Move(piece=12, orientation=6, row=4, col=5)
+261 Move(piece=12, orientation=6, row=5, col=1)
+262 Move(piece=12, orientation=6, row=5, col=4)
+263 Move(piece=12, orientation=7, row=1, col=2)
+264 Move(piece=12, orientation=7, row=1, col=5)
+265 Move(piece=12, orientation=7, row=4, col=5)
+266 Move(piece=12, orientation=7, row=5, col=2)
+267 Move(piece=12, orientation=7, row=5, col=4)
+268 Move(piece=13, orientation=0, row=2, col=1)
+269 Move(piece=13, orientation=0, row=2, col=3)
+270 Move(piece=13, orientation=0, row=2, col=5)
+271 Move(piece=13, orientation=0, row=5, col=1)
+272 Move(piece=13, orientation=0, row=5, col=5)
+273 Move(piece=13, orientation=1, row=1, col=2)
+274 Move(piece=13, orientation=1, row=1, col=5)
+275 Move(piece=13, orientation=1, row=3, col=2)
+276 Move(piece=13, orientation=1, row=5, col=2)
+277 Move(piece=13, orientation=1, row=5, col=5)
+278 Move(piece=13, orientation=2, row=1, col=2)
+279 Move(piece=13, orientation=2, row=1, col=5)
+280 Move(piece=13, orientation=2, row=3, col=5)
+281 Move(piece=13, orientation=2, row=5, col=2)
+282 Move(piece=13, orientation=2, row=5, col=5)
+283 Move(piece=13, orientation=3, row=2, col=1)
+284 Move(piece=13, orientation=3, row=2, col=5)
+285 Move(piece=13, orientation=3, row=5, col=1)
+286 Move(piece=13, orientation=3, row=5, col=3)
+287 Move(piece=13, orientation=3, row=5, col=5)
+288 Move(piece=14, orientation=0, row=1, col=3)
+289 Move(piece=14, orientation=0, row=1, col=5)
+290 Move(piece=14, orientation=0, row=3, col=1)
+291 Move(piece=14, orientation=0, row=5, col=1)
+292 Move(piece=14, orientation=0, row=5, col=5)
+293 Move(piece=14, orientation=1, row=1, col=1)
+294 Move(piece=14, orientation=1, row=1, col=3)
+295 Move(piece=14, orientation=1, row=3, col=5)
+296 Move(piece=14, orientation=1, row=5, col=1)
+297 Move(piece=14, orientation=1, row=5, col=5)
+298 Move(piece=14, orientation=2, row=1, col=1)
+299 Move(piece=14, orientation=2, row=1, col=5)
+300 Move(piece=14, orientation=2, row=3, col=1)
+301 Move(piece=14, orientation=2, row=5, col=3)
+302 Move(piece=14, orientation=2, row=5, col=5)
+303 Move(piece=14, orientation=3, row=1, col=1)
+304 Move(piece=14, orientation=3, row=1, col=5)
+305 Move(piece=14, orientation=3, row=3, col=5)
+306 Move(piece=14, orientation=3, row=5, col=1)
+307 Move(piece=14, orientation=3, row=5, col=3)
+308 Move(piece=15, orientation=0, row=1, col=2)
+309 Move(piece=15, orientation=0, row=1, col=4)
+310 Move(piece=15, orientation=0, row=3, col=1)
+311 Move(piece=15, orientation=0, row=3, col=5)
+312 Move(piece=15, orientation=0, row=5, col=1)
+313 Move(piece=15, orientation=0, row=5, col=5)
+314 Move(piece=15, orientation=1, row=1, col=3)
+315 Move(piece=15, orientation=1, row=1, col=5)
+316 Move(piece=15, orientation=1, row=2, col=1)
+317 Move(piece=15, orientation=1, row=4, col=1)
+318 Move(piece=15, orientation=1, row=5, col=3)
+319 Move(piece=15, orientation=1, row=5, col=5)
+320 Move(piece=15, orientation=2, row=1, col=1)
+321 Move(piece=15, orientation=2, row=1, col=5)
+322 Move(piece=15, orientation=2, row=3, col=1)
+323 Move(piece=15, orientation=2, row=3, col=5)
+324 Move(piece=15, orientation=2, row=5, col=2)
+325 Move(piece=15, orientation=2, row=5, col=4)
+326 Move(piece=15, orientation=3, row=1, col=1)
+327 Move(piece=15, orientation=3, row=1, col=3)
+328 Move(piece=15, orientation=3, row=2, col=5)
+329 Move(piece=15, orientation=3, row=4, col=5)
+330 Move(piece=15, orientation=3, row=5, col=1)
+331 Move(piece=15, orientation=3, row=5, col=3)
+332 Move(piece=16, orientation=0, row=2, col=0)
+333 Move(piece=16, orientation=0, row=2, col=3)
+334 Move(piece=16, orientation=0, row=3, col=5)
+335 Move(piece=16, orientation=0, row=4, col=0)
+336 Move(piece=16, orientation=0, row=5, col=1)
+337 Move(piece=16, orientation=0, row=5, col=5)
+338 Move(piece=16, orientation=1, row=2, col=0)
+339 Move(piece=16, orientation=1, row=2, col=4)
+340 Move(piece=16, orientation=1, row=3, col=5)
+341 Move(piece=16, orientation=1, row=4, col=0)
+342 Move(piece=16, orientation=1, row=5, col=2)
+343 Move(piece=16, orientation=1, row=5, col=5)
+344 Move(piece=16, orientation=2, row=0, col=2)
+345 Move(piece=16, orientation=2, row=0, col=4)
+346 Move(piece=16, orientation=2, row=2, col=5)
+347 Move(piece=16, orientation=2, row=4, col=2)
+348 Move(piece=16, orientation=2, row=5, col=3)
+349 Move(piece=16, orientation=2, row=5, col=5)
+350 Move(piece=16, orientation=3, row=0, col=2)
+351 Move(piece=16, orientation=3, row=0, col=4)
+352 Move(piece=16, orientation=3, row=1, col=5)
+353 Move(piece=16, orientation=3, row=3, col=2)
+354 Move(piece=16, orientation=3, row=5, col=3)
+355 Move(piece=16, orientation=3, row=5, col=5)
+356 Move(piece=16, orientation=4, row=2, col=2)
+357 Move(piece=16, orientation=4, row=2, col=5)
+358 Move(piece=16, orientation=4, row=3, col=0)
+359 Move(piece=16, orientation=4, row=4, col=5)
+360 Move(piece=16, orientation=4, row=5, col=0)
+361 Move(piece=16, orientation=4, row=5, col=4)
+362 Move(piece=16, orientation=5, row=0, col=3)
+363 Move(piece=16, orientation=5, row=0, col=5)
+364 Move(piece=16, orientation=5, row=2, col=2)
+365 Move(piece=16, orientation=5, row=4, col=5)
+366 Move(piece=16, orientation=5, row=5, col=2)
+367 Move(piece=16, orientation=5, row=5, col=4)
+368 Move(piece=16, orientation=6, row=0, col=3)
+369 Move(piece=16, orientation=6, row=0, col=5)
+370 Move(piece=16, orientation=6, row=1, col=2)
+371 Move(piece=16, orientation=6, row=3, col=5)
+372 Move(piece=16, orientation=6, row=5, col=2)
+373 Move(piece=16, orientation=6, row=5, col=4)
+374 Move(piece=16, orientation=7, row=2, col=1)
+375 Move(piece=16, orientation=7, row=2, col=5)
+376 Move(piece=16, orientation=7, row=3, col=0)
+377 Move(piece=16, orientation=7, row=4, col=5)
+378 Move(piece=16, orientation=7, row=5, col=0)
+379 Move(piece=16, orientation=7, row=5, col=3)
+380 Move(piece=17, orientation=0, row=1, col=2)
+381 Move(piece=17, orientation=0, row=1, col=4)
+382 Move(piece=17, orientation=0, row=2, col=1)
+383 Move(piece=17, orientation=0, row=3, col=5)
+384 Move(piece=17, orientation=0, row=4, col=1)
+385 Move(piece=17, orientation=0, row=5, col=2)
+386 Move(piece=17, orientation=0, row=5, col=5)
+387 Move(piece=17, orientation=1, row=1, col=2)
+388 Move(piece=17, orientation=1, row=1, col=4)
+389 Move(piece=17, orientation=1, row=2, col=1)
+390 Move(piece=17, orientation=1, row=2, col=5)
+391 Move(piece=17, orientation=1, row=4, col=1)
+392 Move(piece=17, orientation=1, row=5, col=3)
+393 Move(piece=17, orientation=1, row=5, col=5)
+394 Move(piece=17, orientation=2, row=1, col=2)
+395 Move(piece=17, orientation=2, row=1, col=4)
+396 Move(piece=17, orientation=2, row=2, col=5)
+397 Move(piece=17, orientation=2, row=3, col=1)
+398 Move(piece=17, orientation=2, row=4, col=5)
+399 Move(piece=17, orientation=2, row=5, col=1)
+400 Move(piece=17, orientation=2, row=5, col=4)
+401 Move(piece=17, orientation=3, row=1, col=3)
+402 Move(piece=17, orientation=3, row=1, col=5)
+403 Move(piece=17, orientation=3, row=2, col=1)
+404 Move(piece=17, orientation=3, row=4, col=1)
+405 Move(piece=17, orientation=3, row=4, col=5)
+406 Move(piece=17, orientation=3, row=5, col=2)
+407 Move(piece=17, orientation=3, row=5, col=4)
+408 Move(piece=17, orientation=4, row=1, col=1)
+409 Move(piece=17, orientation=4, row=1, col=3)
+410 Move(piece=17, orientation=4, row=2, col=5)
+411 Move(piece=17, orientation=4, row=4, col=1)
+412 Move(piece=17, orientation=4, row=4, col=5)
+413 Move(piece=17, orientation=4, row=5, col=2)
+414 Move(piece=17, orientation=4, row=5, col=4)
+415 Move(piece=17, orientation=5, row=1, col=1)
+416 Move(piece=17, orientation=5, row=1, col=4)
+417 Move(piece=17, orientation=5, row=2, col=5)
+418 Move(piece=17, orientation=5, row=3, col=1)
+419 Move(piece=17, orientation=5, row=4, col=5)
+420 Move(piece=17, orientation=5, row=5, col=2)
+421 Move(piece=17, orientation=5, row=5, col=4)
+422 Move(piece=17, orientation=6, row=1, col=2)
+423 Move(piece=17, orientation=6, row=1, col=5)
+424 Move(piece=17, orientation=6, row=2, col=1)
+425 Move(piece=17, orientation=6, row=3, col=5)
+426 Move(piece=17, orientation=6, row=4, col=1)
+427 Move(piece=17, orientation=6, row=5, col=2)
+428 Move(piece=17, orientation=6, row=5, col=4)
+429 Move(piece=17, orientation=7, row=1, col=2)
+430 Move(piece=17, orientation=7, row=1, col=4)
+431 Move(piece=17, orientation=7, row=2, col=1)
+432 Move(piece=17, orientation=7, row=2, col=5)
+433 Move(piece=17, orientation=7, row=4, col=5)
+434 Move(piece=17, orientation=7, row=5, col=1)
+435 Move(piece=17, orientation=7, row=5, col=3)
+436 Move(piece=18, orientation=0, row=1, col=1)
+437 Move(piece=18, orientation=0, row=1, col=3)
+438 Move(piece=18, orientation=0, row=2, col=4)
+439 Move(piece=18, orientation=0, row=3, col=5)
+440 Move(piece=18, orientation=0, row=4, col=1)
+441 Move(piece=18, orientation=0, row=5, col=2)
+442 Move(piece=18, orientation=0, row=5, col=5)
+443 Move(piece=18, orientation=1, row=1, col=1)
+444 Move(piece=18, orientation=1, row=1, col=4)
+445 Move(piece=18, orientation=1, row=2, col=5)
+446 Move(piece=18, orientation=1, row=3, col=1)
+447 Move(piece=18, orientation=1, row=4, col=2)
+448 Move(piece=18, orientation=1, row=5, col=3)
+449 Move(piece=18, orientation=1, row=5, col=5)
+450 Move(piece=18, orientation=2, row=1, col=3)
+451 Move(piece=18, orientation=2, row=1, col=5)
+452 Move(piece=18, orientation=2, row=2, col=2)
+453 Move(piece=18, orientation=2, row=3, col=1)
+454 Move(piece=18, orientation=2, row=4, col=5)
+455 Move(piece=18, orientation=2, row=5, col=1)
+456 Move(piece=18, orientation=2, row=5, col=4)
+457 Move(piece=18, orientation=3, row=1, col=2)
+458 Move(piece=18, orientation=3, row=1, col=5)
+459 Move(piece=18, orientation=3, row=2, col=1)
+460 Move(piece=18, orientation=3, row=3, col=5)
+461 Move(piece=18, orientation=3, row=4, col=4)
+462 Move(piece=18, orientation=3, row=5, col=1)
+463 Move(piece=18, orientation=3, row=5, col=3)
+464 Move(piece=19, orientation=0, row=1, col=1)
+465 Move(piece=19, orientation=0, row=1, col=4)
+466 Move(piece=19, orientation=0, row=3, col=1)
+467 Move(piece=19, orientation=0, row=3, col=5)
+468 Move(piece=19, orientation=0, row=5, col=2)
+469 Move(piece=19, orientation=0, row=5, col=5)
+470 Move(piece=19, orientation=1, row=1, col=1)
+471 Move(piece=19, orientation=1, row=1, col=3)
+472 Move(piece=19, orientation=1, row=2, col=5)
+473 Move(piece=19, orientation=1, row=4, col=1)
+474 Move(piece=19, orientation=1, row=5, col=3)
+475 Move(piece=19, orientation=1, row=5, col=5)
+476 Move(piece=19, orientation=2, row=1, col=2)
+477 Move(piece=19, orientation=2, row=1, col=5)
+478 Move(piece=19, orientation=2, row=3, col=1)
+479 Move(piece=19, orientation=2, row=3, col=5)
+480 Move(piece=19, orientation=2, row=5, col=1)
+481 Move(piece=19, orientation=2, row=5, col=4)
+482 Move(piece=19, orientation=3, row=1, col=3)
+483 Move(piece=19, orientation=3, row=1, col=5)
+484 Move(piece=19, orientation=3, row=2, col=1)
+485 Move(piece=19, orientation=3, row=4, col=5)
+486 Move(piece=19, orientation=3, row=5, col=1)
+487 Move(piece=19, orientation=3, row=5, col=3)
+488 Move(piece=20, orientation=0, row=1, col=2)
+489 Move(piece=20, orientation=0, row=1, col=4)
+490 Move(piece=20, orientation=0, row=2, col=1)
+491 Move(piece=20, orientation=0, row=2, col=5)
+492 Move(piece=20, orientation=0, row=4, col=1)
+493 Move(piece=20, orientation=0, row=4, col=5)
+494 Move(piece=20, orientation=0, row=5, col=2)
+495 Move(piece=20, orientation=0, row=5, col=4)
+index>    01234567890123
+ 0 ..............
+ 1 ..............
+ 2 ..............
+ 3 ..XX..........
+ 4 ....X.........
+ 5 ..............
+ 6 ..............
+ 7 ..............
+ 8 ..........O...
+ 9 .........OOO..
+10 ..........O...
+11 ..............
+12 ..............
+13 ..............
+   01234567890123
+ 0 ..............
+ 1 ..............
+ 2 ..............
+ 3 ..XX..........
+ 4 ....X.........
+ 5 ..............
+ 6 ..............
+ 7 ..............
+ 8 ..........O...
+ 9 .........OOO..
+10 ........O.O...
+11 ......OOO.....
+12 .......O......
+13 ..............
+0 Move(piece=2, orientation=0, row=2, col=4)
+1 Move(piece=2, orientation=0, row=3, col=5)
+2 Move(piece=2, orientation=0, row=5, col=1)
+3 Move(piece=2, orientation=0, row=5, col=5)
+4 Move(piece=2, orientation=1, row=0, col=1)
+5 Move(piece=2, orientation=1, row=0, col=4)
+6 Move(piece=2, orientation=1, row=1, col=5)
+7 Move(piece=2, orientation=1, row=4, col=1)
+8 Move(piece=2, orientation=1, row=5, col=3)
+9 Move(piece=2, orientation=1, row=5, col=5)
+10 Move(piece=3, orientation=0, row=1, col=1)
+11 Move(piece=3, orientation=0, row=1, col=4)
+12 Move(piece=3, orientation=0, row=2, col=0)
+13 Move(piece=3, orientation=0, row=2, col=5)
+14 Move(piece=3, orientation=0, row=4, col=0)
+15 Move(piece=3, orientation=0, row=5, col=2)
+16 Move(piece=3, orientation=0, row=5, col=5)
+17 Move(piece=3, orientation=1, row=1, col=0)
+18 Move(piece=3, orientation=1, row=1, col=3)
+19 Move(piece=3, orientation=1, row=2, col=4)
+20 Move(piece=3, orientation=1, row=3, col=5)
+21 Move(piece=3, orientation=1, row=4, col=0)
+22 Move(piece=3, orientation=1, row=5, col=2)
+23 Move(piece=3, orientation=1, row=5, col=5)
+24 Move(piece=3, orientation=2, row=1, col=0)
+25 Move(piece=3, orientation=2, row=1, col=4)
+26 Move(piece=3, orientation=2, row=2, col=5)
+27 Move(piece=3, orientation=2, row=3, col=0)
+28 Move(piece=3, orientation=2, row=4, col=1)
+29 Move(piece=3, orientation=2, row=5, col=3)
+30 Move(piece=3, orientation=2, row=5, col=5)
+31 Move(piece=3, orientation=3, row=1, col=0)
+32 Move(piece=3, orientation=3, row=1, col=4)
+33 Move(piece=3, orientation=3, row=2, col=5)
+34 Move(piece=3, orientation=3, row=4, col=0)
+35 Move(piece=3, orientation=3, row=4, col=5)
+36 Move(piece=3, orientation=3, row=5, col=2)
+37 Move(piece=3, orientation=3, row=5, col=4)
+38 Move(piece=4, orientation=0, row=2, col=4)
+39 Move(piece=4, orientation=0, row=3, col=5)
+40 Move(piece=4, orientation=0, row=5, col=0)
+41 Move(piece=4, orientation=0, row=5, col=5)
+42 Move(piece=4, orientation=1, row=0, col=5)
+43 Move(piece=4, orientation=1, row=4, col=1)
+44 Move(piece=4, orientation=1, row=5, col=3)
+45 Move(piece=4, orientation=1, row=5, col=5)
+46 Move(piece=5, orientation=0, row=1, col=1)
+47 Move(piece=5, orientation=0, row=1, col=4)
+48 Move(piece=5, orientation=0, row=2, col=5)
+49 Move(piece=5, orientation=0, row=5, col=1)
+50 Move(piece=5, orientation=0, row=5, col=5)
+51 Move(piece=5, orientation=1, row=1, col=2)
+52 Move(piece=5, orientation=1, row=2, col=4)
+53 Move(piece=5, orientation=1, row=3, col=5)
+54 Move(piece=5, orientation=1, row=5, col=1)
+55 Move(piece=5, orientation=1, row=5, col=5)
+56 Move(piece=5, orientation=2, row=0, col=1)
+57 Move(piece=5, orientation=2, row=0, col=4)
+58 Move(piece=5, orientation=2, row=1, col=5)
+59 Move(piece=5, orientation=2, row=2, col=0)
+60 Move(piece=5, orientation=2, row=4, col=0)
+61 Move(piece=5, orientation=2, row=5, col=2)
+62 Move(piece=5, orientation=2, row=5, col=5)
+63 Move(piece=5, orientation=3, row=0, col=0)
+64 Move(piece=5, orientation=3, row=0, col=3)
+65 Move(piece=5, orientation=3, row=1, col=4)
+66 Move(piece=5, orientation=3, row=3, col=5)
+67 Move(piece=5, orientation=3, row=4, col=0)
+68 Move(piece=5, orientation=3, row=5, col=2)
+69 Move(piece=5, orientation=3, row=5, col=5)
+70 Move(piece=5, orientation=4, row=1, col=4)
+71 Move(piece=5, orientation=4, row=2, col=5)
+72 Move(piece=5, orientation=4, row=4, col=1)
+73 Move(piece=5, orientation=4, row=5, col=3)
+74 Move(piece=5, orientation=4, row=5, col=5)
+75 Move(piece=5, orientation=5, row=0, col=0)
+76 Move(piece=5, orientation=5, row=0, col=4)
+77 Move(piece=5, orientation=5, row=1, col=5)
+78 Move(piece=5, orientation=5, row=2, col=0)
+79 Move(piece=5, orientation=5, row=4, col=1)
+80 Move(piece=5, orientation=5, row=5, col=3)
+81 Move(piece=5, orientation=5, row=5, col=5)
+82 Move(piece=5, orientation=6, row=0, col=0)
+83 Move(piece=5, orientation=6, row=0, col=4)
+84 Move(piece=5, orientation=6, row=1, col=5)
+85 Move(piece=5, orientation=6, row=3, col=5)
+86 Move(piece=5, orientation=6, row=4, col=0)
+87 Move(piece=5, orientation=6, row=5, col=2)
+88 Move(piece=5, orientation=6, row=5, col=4)
+89 Move(piece=5, orientation=7, row=1, col=4)
+90 Move(piece=5, orientation=7, row=2, col=5)
+91 Move(piece=5, orientation=7, row=4, col=5)
+92 Move(piece=5, orientation=7, row=5, col=1)
+93 Move(piece=5, orientation=7, row=5, col=3)
+94 Move(piece=6, orientation=0, row=1, col=0)
+95 Move(piece=6, orientation=0, row=1, col=3)
+96 Move(piece=6, orientation=0, row=2, col=4)
+97 Move(piece=6, orientation=0, row=3, col=5)
+98 Move(piece=6, orientation=0, row=5, col=1)
+99 Move(piece=6, orientation=0, row=5, col=5)
+100 Move(piece=6, orientation=1, row=0, col=1)
+101 Move(piece=6, orientation=1, row=0, col=4)
+102 Move(piece=6, orientation=1, row=1, col=0)
+103 Move(piece=6, orientation=1, row=1, col=5)
+104 Move(piece=6, orientation=1, row=3, col=0)
+105 Move(piece=6, orientation=1, row=4, col=1)
+106 Move(piece=6, orientation=1, row=5, col=3)
+107 Move(piece=6, orientation=1, row=5, col=5)
+108 Move(piece=6, orientation=2, row=1, col=4)
+109 Move(piece=6, orientation=2, row=2, col=5)
+110 Move(piece=6, orientation=2, row=4, col=0)
+111 Move(piece=6, orientation=2, row=4, col=5)
+112 Move(piece=6, orientation=2, row=5, col=2)
+113 Move(piece=6, orientation=2, row=5, col=4)
+114 Move(piece=6, orientation=3, row=0, col=0)
+115 Move(piece=6, orientation=3, row=0, col=3)
+116 Move(piece=6, orientation=3, row=1, col=4)
+117 Move(piece=6, orientation=3, row=2, col=5)
+118 Move(piece=6, orientation=3, row=4, col=0)
+119 Move(piece=6, orientation=3, row=4, col=5)
+120 Move(piece=6, orientation=3, row=5, col=2)
+121 Move(piece=6, orientation=3, row=5, col=4)
+122 Move(piece=7, orientation=0, row=1, col=0)
+123 Move(piece=7, orientation=0, row=1, col=4)
+124 Move(piece=7, orientation=0, row=2, col=5)
+125 Move(piece=7, orientation=0, row=4, col=0)
+126 Move(piece=7, orientation=0, row=5, col=2)
+127 Move(piece=7, orientation=0, row=5, col=5)
+128 Move(piece=8, orientation=0, row=1, col=3)
+129 Move(piece=8, orientation=0, row=2, col=4)
+130 Move(piece=8, orientation=0, row=3, col=5)
+131 Move(piece=8, orientation=0, row=4, col=0)
+132 Move(piece=8, orientation=0, row=5, col=2)
+133 Move(piece=8, orientation=0, row=5, col=5)
+134 Move(piece=8, orientation=1, row=0, col=0)
+135 Move(piece=8, orientation=1, row=0, col=3)
+136 Move(piece=8, orientation=1, row=1, col=4)
+137 Move(piece=8, orientation=1, row=2, col=5)
+138 Move(piece=8, orientation=1, row=3, col=0)
+139 Move(piece=8, orientation=1, row=4, col=1)
+140 Move(piece=8, orientation=1, row=5, col=3)
+141 Move(piece=8, orientation=1, row=5, col=5)
+142 Move(piece=8, orientation=2, row=1, col=0)
+143 Move(piece=8, orientation=2, row=1, col=4)
+144 Move(piece=8, orientation=2, row=2, col=5)
+145 Move(piece=8, orientation=2, row=4, col=5)
+146 Move(piece=8, orientation=2, row=5, col=1)
+147 Move(piece=8, orientation=2, row=5, col=4)
+148 Move(piece=8, orientation=3, row=0, col=1)
+149 Move(piece=8, orientation=3, row=0, col=4)
+150 Move(piece=8, orientation=3, row=1, col=0)
+151 Move(piece=8, orientation=3, row=1, col=5)
+152 Move(piece=8, orientation=3, row=4, col=0)
+153 Move(piece=8, orientation=3, row=4, col=5)
+154 Move(piece=8, orientation=3, row=5, col=2)
+155 Move(piece=8, orientation=3, row=5, col=4)
+156 Move(piece=9, orientation=0, row=2, col=4)
+157 Move(piece=9, orientation=0, row=3, col=5)
+158 Move(piece=9, orientation=0, row=5, col=5)
+159 Move(piece=9, orientation=1, row=4, col=1)
+160 Move(piece=9, orientation=1, row=5, col=3)
+161 Move(piece=9, orientation=1, row=5, col=5)
+162 Move(piece=10, orientation=0, row=1, col=1)
+163 Move(piece=10, orientation=0, row=1, col=4)
+164 Move(piece=10, orientation=0, row=2, col=5)
+165 Move(piece=10, orientation=0, row=5, col=0)
+166 Move(piece=10, orientation=0, row=5, col=5)
+167 Move(piece=10, orientation=1, row=1, col=1)
+168 Move(piece=10, orientation=1, row=2, col=4)
+169 Move(piece=10, orientation=1, row=3, col=5)
+170 Move(piece=10, orientation=1, row=5, col=0)
+171 Move(piece=10, orientation=1, row=5, col=5)
+172 Move(piece=10, orientation=2, row=0, col=5)
+173 Move(piece=10, orientation=2, row=2, col=0)
+174 Move(piece=10, orientation=2, row=4, col=0)
+175 Move(piece=10, orientation=2, row=5, col=2)
+176 Move(piece=10, orientation=2, row=5, col=5)
+177 Move(piece=10, orientation=3, row=0, col=4)
+178 Move(piece=10, orientation=3, row=3, col=5)
+179 Move(piece=10, orientation=3, row=4, col=0)
+180 Move(piece=10, orientation=3, row=5, col=2)
+181 Move(piece=10, orientation=3, row=5, col=5)
+182 Move(piece=10, orientation=4, row=1, col=4)
+183 Move(piece=10, orientation=4, row=2, col=5)
+184 Move(piece=10, orientation=4, row=4, col=0)
+185 Move(piece=10, orientation=4, row=5, col=3)
+186 Move(piece=10, orientation=4, row=5, col=5)
+187 Move(piece=10, orientation=5, row=0, col=5)
+188 Move(piece=10, orientation=5, row=1, col=0)
+189 Move(piece=10, orientation=5, row=4, col=1)
+190 Move(piece=10, orientation=5, row=5, col=3)
+191 Move(piece=10, orientation=5, row=5, col=5)
+192 Move(piece=10, orientation=6, row=0, col=5)
+193 Move(piece=10, orientation=6, row=2, col=5)
+194 Move(piece=10, orientation=6, row=4, col=0)
+195 Move(piece=10, orientation=6, row=5, col=2)
+196 Move(piece=10, orientation=6, row=5, col=4)
+197 Move(piece=10, orientation=7, row=1, col=4)
+198 Move(piece=10, orientation=7, row=2, col=5)
+199 Move(piece=10, orientation=7, row=4, col=5)
+200 Move(piece=10, orientation=7, row=5, col=0)
+201 Move(piece=10, orientation=7, row=5, col=2)
+202 Move(piece=11, orientation=0, row=1, col=0)
+203 Move(piece=11, orientation=0, row=1, col=3)
+204 Move(piece=11, orientation=0, row=2, col=4)
+205 Move(piece=11, orientation=0, row=3, col=5)
+206 Move(piece=11, orientation=0, row=5, col=0)
+207 Move(piece=11, orientation=0, row=5, col=5)
+208 Move(piece=11, orientation=1, row=1, col=2)
+209 Move(piece=11, orientation=1, row=2, col=4)
+210 Move(piece=11, orientation=1, row=3, col=5)
+211 Move(piece=11, orientation=1, row=5, col=0)
+212 Move(piece=11, orientation=1, row=5, col=5)
+213 Move(piece=11, orientation=2, row=0, col=5)
+214 Move(piece=11, orientation=2, row=1, col=0)
+215 Move(piece=11, orientation=2, row=3, col=0)
+216 Move(piece=11, orientation=2, row=4, col=1)
+217 Move(piece=11, orientation=2, row=5, col=3)
+218 Move(piece=11, orientation=2, row=5, col=5)
+219 Move(piece=11, orientation=3, row=0, col=0)
+220 Move(piece=11, orientation=3, row=0, col=5)
+221 Move(piece=11, orientation=3, row=2, col=0)
+222 Move(piece=11, orientation=3, row=4, col=1)
+223 Move(piece=11, orientation=3, row=5, col=3)
+224 Move(piece=11, orientation=3, row=5, col=5)
+225 Move(piece=11, orientation=4, row=1, col=4)
+226 Move(piece=11, orientation=4, row=2, col=5)
+227 Move(piece=11, orientation=4, row=4, col=0)
+228 Move(piece=11, orientation=4, row=4, col=5)
+229 Move(piece=11, orientation=4, row=5, col=2)
+230 Move(piece=11, orientation=4, row=5, col=4)
+231 Move(piece=11, orientation=5, row=0, col=4)
+232 Move(piece=11, orientation=5, row=2, col=5)
+233 Move(piece=11, orientation=5, row=4, col=0)
+234 Move(piece=11, orientation=5, row=4, col=5)
+235 Move(piece=11, orientation=5, row=5, col=2)
+236 Move(piece=11, orientation=5, row=5, col=4)
+237 Move(piece=11, orientation=6, row=0, col=4)
+238 Move(piece=11, orientation=6, row=1, col=5)
+239 Move(piece=11, orientation=6, row=3, col=5)
+240 Move(piece=11, orientation=6, row=4, col=0)
+241 Move(piece=11, orientation=6, row=5, col=2)
+242 Move(piece=11, orientation=6, row=5, col=4)
+243 Move(piece=11, orientation=7, row=1, col=4)
+244 Move(piece=11, orientation=7, row=2, col=5)
+245 Move(piece=11, orientation=7, row=4, col=5)
+246 Move(piece=11, orientation=7, row=5, col=1)
+247 Move(piece=11, orientation=7, row=5, col=3)
+248 Move(piece=12, orientation=0, row=1, col=0)
+249 Move(piece=12, orientation=0, row=1, col=4)
+250 Move(piece=12, orientation=0, row=2, col=5)
+251 Move(piece=12, orientation=0, row=5, col=1)
+252 Move(piece=12, orientation=0, row=5, col=5)
+253 Move(piece=12, orientation=1, row=1, col=3)
+254 Move(piece=12, orientation=1, row=2, col=4)
+255 Move(piece=12, orientation=1, row=3, col=5)
+256 Move(piece=12, orientation=1, row=5, col=1)
+257 Move(piece=12, orientation=1, row=5, col=5)
+258 Move(piece=12, orientation=2, row=1, col=4)
+259 Move(piece=12, orientation=2, row=2, col=5)
+260 Move(piece=12, orientation=2, row=4, col=0)
+261 Move(piece=12, orientation=2, row=5, col=2)
+262 Move(piece=12, orientation=2, row=5, col=5)
+263 Move(piece=12, orientation=3, row=0, col=1)
+264 Move(piece=12, orientation=3, row=0, col=4)
+265 Move(piece=12, orientation=3, row=1, col=0)
+266 Move(piece=12, orientation=3, row=1, col=5)
+267 Move(piece=12, orientation=3, row=4, col=0)
+268 Move(piece=12, orientation=3, row=5, col=2)
+269 Move(piece=12, orientation=3, row=5, col=5)
+270 Move(piece=12, orientation=4, row=0, col=0)
+271 Move(piece=12, orientation=4, row=0, col=3)
+272 Move(piece=12, orientation=4, row=1, col=4)
+273 Move(piece=12, orientation=4, row=2, col=5)
+274 Move(piece=12, orientation=4, row=4, col=0)
+275 Move(piece=12, orientation=4, row=5, col=2)
+276 Move(piece=12, orientation=4, row=5, col=5)
+277 Move(piece=12, orientation=5, row=0, col=0)
+278 Move(piece=12, orientation=5, row=0, col=4)
+279 Move(piece=12, orientation=5, row=1, col=5)
+280 Move(piece=12, orientation=5, row=3, col=0)
+281 Move(piece=12, orientation=5, row=4, col=1)
+282 Move(piece=12, orientation=5, row=5, col=3)
+283 Move(piece=12, orientation=5, row=5, col=5)
+284 Move(piece=12, orientation=6, row=1, col=4)
+285 Move(piece=12, orientation=6, row=2, col=5)
+286 Move(piece=12, orientation=6, row=4, col=5)
+287 Move(piece=12, orientation=6, row=5, col=1)
+288 Move(piece=12, orientation=6, row=5, col=4)
+289 Move(piece=12, orientation=7, row=0, col=0)
+290 Move(piece=12, orientation=7, row=0, col=4)
+291 Move(piece=12, orientation=7, row=1, col=5)
+292 Move(piece=12, orientation=7, row=4, col=0)
+293 Move(piece=12, orientation=7, row=4, col=5)
+294 Move(piece=12, orientation=7, row=5, col=2)
+295 Move(piece=12, orientation=7, row=5, col=4)
+296 Move(piece=13, orientation=0, row=1, col=4)
+297 Move(piece=13, orientation=0, row=2, col=5)
+298 Move(piece=13, orientation=0, row=5, col=1)
+299 Move(piece=13, orientation=0, row=5, col=5)
+300 Move(piece=13, orientation=1, row=0, col=0)
+301 Move(piece=13, orientation=1, row=0, col=4)
+302 Move(piece=13, orientation=1, row=1, col=5)
+303 Move(piece=13, orientation=1, row=2, col=0)
+304 Move(piece=13, orientation=1, row=4, col=0)
+305 Move(piece=13, orientation=1, row=5, col=2)
+306 Move(piece=13, orientation=1, row=5, col=5)
+307 Move(piece=13, orientation=2, row=0, col=0)
+308 Move(piece=13, orientation=2, row=0, col=4)
+309 Move(piece=13, orientation=2, row=1, col=5)
+310 Move(piece=13, orientation=2, row=3, col=5)
+311 Move(piece=13, orientation=2, row=4, col=0)
+312 Move(piece=13, orientation=2, row=5, col=2)
+313 Move(piece=13, orientation=2, row=5, col=5)
+314 Move(piece=13, orientation=3, row=1, col=4)
+315 Move(piece=13, orientation=3, row=2, col=5)
+316 Move(piece=13, orientation=3, row=5, col=1)
+317 Move(piece=13, orientation=3, row=5, col=3)
+318 Move(piece=13, orientation=3, row=5, col=5)
+319 Move(piece=14, orientation=0, row=0, col=1)
+320 Move(piece=14, orientation=0, row=0, col=4)
+321 Move(piece=14, orientation=0, row=1, col=5)
+322 Move(piece=14, orientation=0, row=5, col=1)
+323 Move(piece=14, orientation=0, row=5, col=5)
+324 Move(piece=14, orientation=1, row=0, col=2)
+325 Move(piece=14, orientation=1, row=1, col=3)
+326 Move(piece=14, orientation=1, row=2, col=4)
+327 Move(piece=14, orientation=1, row=3, col=5)
+328 Move(piece=14, orientation=1, row=5, col=1)
+329 Move(piece=14, orientation=1, row=5, col=5)
+330 Move(piece=14, orientation=2, row=0, col=4)
+331 Move(piece=14, orientation=2, row=1, col=5)
+332 Move(piece=14, orientation=2, row=4, col=1)
+333 Move(piece=14, orientation=2, row=5, col=3)
+334 Move(piece=14, orientation=2, row=5, col=5)
+335 Move(piece=14, orientation=3, row=0, col=4)
+336 Move(piece=14, orientation=3, row=1, col=5)
+337 Move(piece=14, orientation=3, row=3, col=5)
+338 Move(piece=14, orientation=3, row=5, col=1)
+339 Move(piece=14, orientation=3, row=5, col=3)
+340 Move(piece=15, orientation=0, row=0, col=0)
+341 Move(piece=15, orientation=0, row=0, col=3)
+342 Move(piece=15, orientation=0, row=1, col=4)
+343 Move(piece=15, orientation=0, row=3, col=5)
+344 Move(piece=15, orientation=0, row=5, col=1)
+345 Move(piece=15, orientation=0, row=5, col=5)
+346 Move(piece=15, orientation=1, row=0, col=1)
+347 Move(piece=15, orientation=1, row=0, col=4)
+348 Move(piece=15, orientation=1, row=1, col=5)
+349 Move(piece=15, orientation=1, row=4, col=1)
+350 Move(piece=15, orientation=1, row=5, col=3)
+351 Move(piece=15, orientation=1, row=5, col=5)
+352 Move(piece=15, orientation=2, row=0, col=4)
+353 Move(piece=15, orientation=2, row=1, col=5)
+354 Move(piece=15, orientation=2, row=3, col=5)
+355 Move(piece=15, orientation=2, row=4, col=0)
+356 Move(piece=15, orientation=2, row=5, col=2)
+357 Move(piece=15, orientation=2, row=5, col=4)
+358 Move(piece=15, orientation=3, row=0, col=2)
+359 Move(piece=15, orientation=3, row=1, col=4)
+360 Move(piece=15, orientation=3, row=2, col=5)
+361 Move(piece=15, orientation=3, row=4, col=5)
+362 Move(piece=15, orientation=3, row=5, col=1)
+363 Move(piece=15, orientation=3, row=5, col=3)
+364 Move(piece=16, orientation=0, row=1, col=2)
+365 Move(piece=16, orientation=0, row=2, col=4)
+366 Move(piece=16, orientation=0, row=3, col=5)
+367 Move(piece=16, orientation=0, row=5, col=1)
+368 Move(piece=16, orientation=0, row=5, col=5)
+369 Move(piece=16, orientation=1, row=1, col=3)
+370 Move(piece=16, orientation=1, row=2, col=4)
+371 Move(piece=16, orientation=1, row=3, col=5)
+372 Move(piece=16, orientation=1, row=4, col=0)
+373 Move(piece=16, orientation=1, row=5, col=2)
+374 Move(piece=16, orientation=1, row=5, col=5)
+375 Move(piece=16, orientation=2, row=0, col=4)
+376 Move(piece=16, orientation=2, row=2, col=5)
+377 Move(piece=16, orientation=2, row=3, col=0)
+378 Move(piece=16, orientation=2, row=4, col=1)
+379 Move(piece=16, orientation=2, row=5, col=3)
+380 Move(piece=16, orientation=2, row=5, col=5)
+381 Move(piece=16, orientation=3, row=0, col=4)
+382 Move(piece=16, orientation=3, row=1, col=5)
+383 Move(piece=16, orientation=3, row=2, col=0)
+384 Move(piece=16, orientation=3, row=4, col=1)
+385 Move(piece=16, orientation=3, row=5, col=3)
+386 Move(piece=16, orientation=3, row=5, col=5)
+387 Move(piece=16, orientation=4, row=1, col=0)
+388 Move(piece=16, orientation=4, row=1, col=4)
+389 Move(piece=16, orientation=4, row=2, col=5)
+390 Move(piece=16, orientation=4, row=4, col=5)
+391 Move(piece=16, orientation=4, row=5, col=0)
+392 Move(piece=16, orientation=4, row=5, col=4)
+393 Move(piece=16, orientation=5, row=0, col=5)
+394 Move(piece=16, orientation=5, row=1, col=0)
+395 Move(piece=16, orientation=5, row=4, col=0)
+396 Move(piece=16, orientation=5, row=4, col=5)
+397 Move(piece=16, orientation=5, row=5, col=2)
+398 Move(piece=16, orientation=5, row=5, col=4)
+399 Move(piece=16, orientation=6, row=0, col=0)
+400 Move(piece=16, orientation=6, row=0, col=5)
+401 Move(piece=16, orientation=6, row=3, col=5)
+402 Move(piece=16, orientation=6, row=4, col=0)
+403 Move(piece=16, orientation=6, row=5, col=2)
+404 Move(piece=16, orientation=6, row=5, col=4)
+405 Move(piece=16, orientation=7, row=1, col=4)
+406 Move(piece=16, orientation=7, row=2, col=5)
+407 Move(piece=16, orientation=7, row=4, col=5)
+408 Move(piece=16, orientation=7, row=5, col=0)
+409 Move(piece=16, orientation=7, row=5, col=3)
+410 Move(piece=17, orientation=0, row=0, col=0)
+411 Move(piece=17, orientation=0, row=0, col=3)
+412 Move(piece=17, orientation=0, row=1, col=4)
+413 Move(piece=17, orientation=0, row=3, col=5)
+414 Move(piece=17, orientation=0, row=4, col=0)
+415 Move(piece=17, orientation=0, row=5, col=2)
+416 Move(piece=17, orientation=0, row=5, col=5)
+417 Move(piece=17, orientation=1, row=0, col=0)
+418 Move(piece=17, orientation=1, row=0, col=3)
+419 Move(piece=17, orientation=1, row=1, col=4)
+420 Move(piece=17, orientation=1, row=2, col=5)
+421 Move(piece=17, orientation=1, row=4, col=1)
+422 Move(piece=17, orientation=1, row=5, col=3)
+423 Move(piece=17, orientation=1, row=5, col=5)
+424 Move(piece=17, orientation=2, row=0, col=0)
+425 Move(piece=17, orientation=2, row=0, col=3)
+426 Move(piece=17, orientation=2, row=1, col=4)
+427 Move(piece=17, orientation=2, row=2, col=5)
+428 Move(piece=17, orientation=2, row=4, col=5)
+429 Move(piece=17, orientation=2, row=5, col=1)
+430 Move(piece=17, orientation=2, row=5, col=4)
+431 Move(piece=17, orientation=3, row=0, col=1)
+432 Move(piece=17, orientation=3, row=0, col=4)
+433 Move(piece=17, orientation=3, row=1, col=5)
+434 Move(piece=17, orientation=3, row=4, col=0)
+435 Move(piece=17, orientation=3, row=4, col=5)
+436 Move(piece=17, orientation=3, row=5, col=2)
+437 Move(piece=17, orientation=3, row=5, col=4)
+438 Move(piece=17, orientation=4, row=0, col=2)
+439 Move(piece=17, orientation=4, row=1, col=4)
+440 Move(piece=17, orientation=4, row=2, col=5)
+441 Move(piece=17, orientation=4, row=4, col=0)
+442 Move(piece=17, orientation=4, row=4, col=5)
+443 Move(piece=17, orientation=4, row=5, col=2)
+444 Move(piece=17, orientation=4, row=5, col=4)
+445 Move(piece=17, orientation=5, row=0, col=3)
+446 Move(piece=17, orientation=5, row=1, col=4)
+447 Move(piece=17, orientation=5, row=2, col=5)
+448 Move(piece=17, orientation=5, row=4, col=0)
+449 Move(piece=17, orientation=5, row=4, col=5)
+450 Move(piece=17, orientation=5, row=5, col=2)
+451 Move(piece=17, orientation=5, row=5, col=4)
+452 Move(piece=17, orientation=6, row=0, col=0)
+453 Move(piece=17, orientation=6, row=0, col=4)
+454 Move(piece=17, orientation=6, row=1, col=5)
+455 Move(piece=17, orientation=6, row=3, col=5)
+456 Move(piece=17, orientation=6, row=4, col=0)
+457 Move(piece=17, orientation=6, row=5, col=2)
+458 Move(piece=17, orientation=6, row=5, col=4)
+459 Move(piece=17, orientation=7, row=0, col=0)
+460 Move(piece=17, orientation=7, row=0, col=3)
+461 Move(piece=17, orientation=7, row=1, col=4)
+462 Move(piece=17, orientation=7, row=2, col=5)
+463 Move(piece=17, orientation=7, row=4, col=5)
+464 Move(piece=17, orientation=7, row=5, col=1)
+465 Move(piece=17, orientation=7, row=5, col=3)
+466 Move(piece=18, orientation=0, row=0, col=2)
+467 Move(piece=18, orientation=0, row=1, col=3)
+468 Move(piece=18, orientation=0, row=2, col=4)
+469 Move(piece=18, orientation=0, row=3, col=5)
+470 Move(piece=18, orientation=0, row=4, col=0)
+471 Move(piece=18, orientation=0, row=5, col=2)
+472 Move(piece=18, orientation=0, row=5, col=5)
+473 Move(piece=18, orientation=1, row=0, col=3)
+474 Move(piece=18, orientation=1, row=1, col=4)
+475 Move(piece=18, orientation=1, row=2, col=5)
+476 Move(piece=18, orientation=1, row=3, col=0)
+477 Move(piece=18, orientation=1, row=4, col=1)
+478 Move(piece=18, orientation=1, row=5, col=3)
+479 Move(piece=18, orientation=1, row=5, col=5)
+480 Move(piece=18, orientation=2, row=0, col=1)
+481 Move(piece=18, orientation=2, row=0, col=4)
+482 Move(piece=18, orientation=2, row=1, col=0)
+483 Move(piece=18, orientation=2, row=1, col=5)
+484 Move(piece=18, orientation=2, row=4, col=5)
+485 Move(piece=18, orientation=2, row=5, col=1)
+486 Move(piece=18, orientation=2, row=5, col=4)
+487 Move(piece=18, orientation=3, row=0, col=0)
+488 Move(piece=18, orientation=3, row=0, col=4)
+489 Move(piece=18, orientation=3, row=1, col=5)
+490 Move(piece=18, orientation=3, row=3, col=5)
+491 Move(piece=18, orientation=3, row=4, col=4)
+492 Move(piece=18, orientation=3, row=5, col=1)
+493 Move(piece=18, orientation=3, row=5, col=3)
+494 Move(piece=19, orientation=0, row=0, col=3)
+495 Move(piece=19, orientation=0, row=1, col=4)
+496 Move(piece=19, orientation=0, row=3, col=5)
+497 Move(piece=19, orientation=0, row=4, col=0)
+498 Move(piece=19, orientation=0, row=5, col=2)
+499 Move(piece=19, orientation=0, row=5, col=5)
+500 Move(piece=19, orientation=1, row=0, col=2)
+501 Move(piece=19, orientation=1, row=1, col=4)
+502 Move(piece=19, orientation=1, row=2, col=5)
+503 Move(piece=19, orientation=1, row=4, col=1)
+504 Move(piece=19, orientation=1, row=5, col=3)
+505 Move(piece=19, orientation=1, row=5, col=5)
+506 Move(piece=19, orientation=2, row=0, col=0)
+507 Move(piece=19, orientation=2, row=0, col=4)
+508 Move(piece=19, orientation=2, row=1, col=5)
+509 Move(piece=19, orientation=2, row=3, col=5)
+510 Move(piece=19, orientation=2, row=5, col=1)
+511 Move(piece=19, orientation=2, row=5, col=4)
+512 Move(piece=19, orientation=3, row=0, col=1)
+513 Move(piece=19, orientation=3, row=0, col=4)
+514 Move(piece=19, orientation=3, row=1, col=5)
+515 Move(piece=19, orientation=3, row=4, col=5)
+516 Move(piece=19, orientation=3, row=5, col=1)
+517 Move(piece=19, orientation=3, row=5, col=3)
+518 Move(piece=20, orientation=0, row=0, col=0)
+519 Move(piece=20, orientation=0, row=0, col=3)
+520 Move(piece=20, orientation=0, row=1, col=4)
+521 Move(piece=20, orientation=0, row=2, col=5)
+522 Move(piece=20, orientation=0, row=4, col=0)
+523 Move(piece=20, orientation=0, row=4, col=5)
+524 Move(piece=20, orientation=0, row=5, col=2)
+525 Move(piece=20, orientation=0, row=5, col=4)
+index>    01234567890123
+ 0 ..............
+ 1 ..............
+ 2 ....XXX.......
+ 3 ..XX..........
+ 4 ....X.........
+ 5 ..............
+ 6 ..............
+ 7 ..............
+ 8 ..........O...
+ 9 .........OOO..
+10 ........O.O...
+11 ......OOO.....
+12 .......O......
+13 ..............
+   01234567890123
+ 0 ..............
+ 1 ..............
+ 2 ....XXX.......
+ 3 ..XX..........
+ 4 ....X.........
+ 5 ..............
+ 6 ..............
+ 7 ..............
+ 8 ...OO.....O...
+ 9 ....OO...OOO..
+10 .....O..O.O...
+11 ......OOO.....
+12 .......O......
+13 ..............
+0 Move(piece=3, orientation=0, row=0, col=3)
+1 Move(piece=3, orientation=0, row=0, col=7)
+2 Move(piece=3, orientation=0, row=1, col=1)
+3 Move(piece=3, orientation=0, row=2, col=0)
+4 Move(piece=3, orientation=0, row=3, col=7)
+5 Move(piece=3, orientation=0, row=4, col=0)
+6 Move(piece=3, orientation=0, row=5, col=2)
+7 Move(piece=3, orientation=0, row=5, col=5)
+8 Move(piece=3, orientation=1, row=0, col=2)
+9 Move(piece=3, orientation=1, row=0, col=6)
+10 Move(piece=3, orientation=1, row=1, col=0)
+11 Move(piece=3, orientation=1, row=1, col=7)
+12 Move(piece=3, orientation=1, row=3, col=7)
+13 Move(piece=3, orientation=1, row=4, col=0)
+14 Move(piece=3, orientation=1, row=5, col=2)
+15 Move(piece=3, orientation=1, row=5, col=5)
+16 Move(piece=3, orientation=2, row=0, col=2)
+17 Move(piece=3, orientation=2, row=0, col=7)
+18 Move(piece=3, orientation=2, row=1, col=0)
+19 Move(piece=3, orientation=2, row=3, col=0)
+20 Move(piece=3, orientation=2, row=3, col=7)
+21 Move(piece=3, orientation=2, row=4, col=1)
+22 Move(piece=3, orientation=2, row=5, col=3)
+23 Move(piece=3, orientation=2, row=5, col=5)
+24 Move(piece=3, orientation=3, row=0, col=2)
+25 Move(piece=3, orientation=3, row=0, col=7)
+26 Move(piece=3, orientation=3, row=1, col=0)
+27 Move(piece=3, orientation=3, row=2, col=7)
+28 Move(piece=3, orientation=3, row=3, col=6)
+29 Move(piece=3, orientation=3, row=4, col=0)
+30 Move(piece=3, orientation=3, row=4, col=5)
+31 Move(piece=3, orientation=3, row=5, col=2)
+32 Move(piece=3, orientation=3, row=5, col=4)
+33 Move(piece=4, orientation=0, row=1, col=0)
+34 Move(piece=4, orientation=0, row=1, col=7)
+35 Move(piece=4, orientation=0, row=3, col=7)
+36 Move(piece=4, orientation=0, row=5, col=0)
+37 Move(piece=4, orientation=0, row=5, col=5)
+38 Move(piece=4, orientation=1, row=3, col=7)
+39 Move(piece=4, orientation=1, row=4, col=1)
+40 Move(piece=4, orientation=1, row=5, col=5)
+41 Move(piece=5, orientation=0, row=0, col=3)
+42 Move(piece=5, orientation=0, row=0, col=7)
+43 Move(piece=5, orientation=0, row=1, col=1)
+44 Move(piece=5, orientation=0, row=3, col=7)
+45 Move(piece=5, orientation=0, row=5, col=1)
+46 Move(piece=5, orientation=0, row=5, col=5)
+47 Move(piece=5, orientation=1, row=0, col=1)
+48 Move(piece=5, orientation=1, row=0, col=5)
+49 Move(piece=5, orientation=1, row=1, col=7)
+50 Move(piece=5, orientation=1, row=3, col=7)
+51 Move(piece=5, orientation=1, row=5, col=1)
+52 Move(piece=5, orientation=1, row=5, col=5)
+53 Move(piece=5, orientation=2, row=0, col=1)
+54 Move(piece=5, orientation=2, row=2, col=0)
+55 Move(piece=5, orientation=2, row=3, col=7)
+56 Move(piece=5, orientation=2, row=4, col=0)
+57 Move(piece=5, orientation=2, row=5, col=2)
+58 Move(piece=5, orientation=2, row=5, col=5)
+59 Move(piece=5, orientation=3, row=0, col=0)
+60 Move(piece=5, orientation=3, row=1, col=7)
+61 Move(piece=5, orientation=3, row=3, col=7)
+62 Move(piece=5, orientation=3, row=4, col=0)
+63 Move(piece=5, orientation=3, row=5, col=2)
+64 Move(piece=5, orientation=3, row=5, col=5)
+65 Move(piece=5, orientation=4, row=0, col=1)
+66 Move(piece=5, orientation=4, row=0, col=7)
+67 Move(piece=5, orientation=4, row=3, col=7)
+68 Move(piece=5, orientation=4, row=4, col=1)
+69 Move(piece=5, orientation=4, row=5, col=3)
+70 Move(piece=5, orientation=4, row=5, col=5)
+71 Move(piece=5, orientation=5, row=0, col=0)
+72 Move(piece=5, orientation=5, row=2, col=0)
+73 Move(piece=5, orientation=5, row=3, col=7)
+74 Move(piece=5, orientation=5, row=4, col=1)
+75 Move(piece=5, orientation=5, row=5, col=3)
+76 Move(piece=5, orientation=5, row=5, col=5)
+77 Move(piece=5, orientation=6, row=0, col=0)
+78 Move(piece=5, orientation=6, row=1, col=7)
+79 Move(piece=5, orientation=6, row=3, col=6)
+80 Move(piece=5, orientation=6, row=4, col=0)
+81 Move(piece=5, orientation=6, row=5, col=2)
+82 Move(piece=5, orientation=6, row=5, col=4)
+83 Move(piece=5, orientation=7, row=0, col=1)
+84 Move(piece=5, orientation=7, row=0, col=7)
+85 Move(piece=5, orientation=7, row=2, col=7)
+86 Move(piece=5, orientation=7, row=4, col=5)
+87 Move(piece=5, orientation=7, row=5, col=1)
+88 Move(piece=5, orientation=7, row=5, col=3)
+89 Move(piece=6, orientation=0, row=0, col=2)
+90 Move(piece=6, orientation=0, row=0, col=6)
+91 Move(piece=6, orientation=0, row=1, col=0)
+92 Move(piece=6, orientation=0, row=1, col=7)
+93 Move(piece=6, orientation=0, row=3, col=7)
+94 Move(piece=6, orientation=0, row=5, col=1)
+95 Move(piece=6, orientation=0, row=5, col=5)
+96 Move(piece=6, orientation=1, row=0, col=1)
+97 Move(piece=6, orientation=1, row=1, col=0)
+98 Move(piece=6, orientation=1, row=3, col=0)
+99 Move(piece=6, orientation=1, row=3, col=7)
+100 Move(piece=6, orientation=1, row=4, col=1)
+101 Move(piece=6, orientation=1, row=5, col=3)
+102 Move(piece=6, orientation=1, row=5, col=5)
+103 Move(piece=6, orientation=2, row=0, col=1)
+104 Move(piece=6, orientation=2, row=0, col=7)
+105 Move(piece=6, orientation=2, row=2, col=7)
+106 Move(piece=6, orientation=2, row=3, col=6)
+107 Move(piece=6, orientation=2, row=4, col=0)
+108 Move(piece=6, orientation=2, row=4, col=5)
+109 Move(piece=6, orientation=2, row=5, col=2)
+110 Move(piece=6, orientation=2, row=5, col=4)
+111 Move(piece=6, orientation=3, row=0, col=0)
+112 Move(piece=6, orientation=3, row=0, col=7)
+113 Move(piece=6, orientation=3, row=2, col=7)
+114 Move(piece=6, orientation=3, row=3, col=6)
+115 Move(piece=6, orientation=3, row=4, col=0)
+116 Move(piece=6, orientation=3, row=4, col=5)
+117 Move(piece=6, orientation=3, row=5, col=2)
+118 Move(piece=6, orientation=3, row=5, col=4)
+119 Move(piece=7, orientation=0, row=0, col=2)
+120 Move(piece=7, orientation=0, row=0, col=7)
+121 Move(piece=7, orientation=0, row=1, col=0)
+122 Move(piece=7, orientation=0, row=3, col=7)
+123 Move(piece=7, orientation=0, row=4, col=0)
+124 Move(piece=7, orientation=0, row=5, col=2)
+125 Move(piece=7, orientation=0, row=5, col=5)
+126 Move(piece=8, orientation=0, row=0, col=1)
+127 Move(piece=8, orientation=0, row=0, col=6)
+128 Move(piece=8, orientation=0, row=1, col=7)
+129 Move(piece=8, orientation=0, row=3, col=7)
+130 Move(piece=8, orientation=0, row=4, col=0)
+131 Move(piece=8, orientation=0, row=5, col=2)
+132 Move(piece=8, orientation=0, row=5, col=5)
+133 Move(piece=8, orientation=1, row=0, col=0)
+134 Move(piece=8, orientation=1, row=0, col=7)
+135 Move(piece=8, orientation=1, row=3, col=0)
+136 Move(piece=8, orientation=1, row=3, col=7)
+137 Move(piece=8, orientation=1, row=4, col=1)
+138 Move(piece=8, orientation=1, row=5, col=3)
+139 Move(piece=8, orientation=1, row=5, col=5)
+140 Move(piece=8, orientation=2, row=0, col=2)
+141 Move(piece=8, orientation=2, row=0, col=7)
+142 Move(piece=8, orientation=2, row=1, col=0)
+143 Move(piece=8, orientation=2, row=2, col=7)
+144 Move(piece=8, orientation=2, row=3, col=6)
+145 Move(piece=8, orientation=2, row=4, col=5)
+146 Move(piece=8, orientation=2, row=5, col=1)
+147 Move(piece=8, orientation=2, row=5, col=4)
+148 Move(piece=8, orientation=3, row=0, col=1)
+149 Move(piece=8, orientation=3, row=1, col=0)
+150 Move(piece=8, orientation=3, row=2, col=7)
+151 Move(piece=8, orientation=3, row=3, col=6)
+152 Move(piece=8, orientation=3, row=4, col=0)
+153 Move(piece=8, orientation=3, row=4, col=5)
+154 Move(piece=8, orientation=3, row=5, col=2)
+155 Move(piece=8, orientation=3, row=5, col=4)
+156 Move(piece=9, orientation=0, row=1, col=7)
+157 Move(piece=9, orientation=0, row=3, col=7)
+158 Move(piece=9, orientation=0, row=5, col=5)
+159 Move(piece=9, orientation=1, row=3, col=7)
+160 Move(piece=9, orientation=1, row=4, col=1)
+161 Move(piece=10, orientation=0, row=0, col=3)
+162 Move(piece=10, orientation=0, row=0, col=7)
+163 Move(piece=10, orientation=0, row=1, col=0)
+164 Move(piece=10, orientation=0, row=3, col=7)
+165 Move(piece=10, orientation=0, row=5, col=0)
+166 Move(piece=10, orientation=0, row=5, col=5)
+167 Move(piece=10, orientation=1, row=0, col=0)
+168 Move(piece=10, orientation=1, row=0, col=4)
+169 Move(piece=10, orientation=1, row=1, col=7)
+170 Move(piece=10, orientation=1, row=3, col=7)
+171 Move(piece=10, orientation=1, row=5, col=0)
+172 Move(piece=10, orientation=1, row=5, col=5)
+173 Move(piece=10, orientation=2, row=2, col=0)
+174 Move(piece=10, orientation=2, row=3, col=7)
+175 Move(piece=10, orientation=2, row=4, col=0)
+176 Move(piece=10, orientation=2, row=5, col=2)
+177 Move(piece=10, orientation=2, row=5, col=5)
+178 Move(piece=10, orientation=3, row=1, col=7)
+179 Move(piece=10, orientation=3, row=3, col=7)
+180 Move(piece=10, orientation=3, row=4, col=0)
+181 Move(piece=10, orientation=3, row=5, col=5)
+182 Move(piece=10, orientation=4, row=0, col=0)
+183 Move(piece=10, orientation=4, row=0, col=7)
+184 Move(piece=10, orientation=4, row=3, col=7)
+185 Move(piece=10, orientation=4, row=4, col=0)
+186 Move(piece=10, orientation=4, row=5, col=3)
+187 Move(piece=10, orientation=4, row=5, col=5)
+188 Move(piece=10, orientation=5, row=1, col=0)
+189 Move(piece=10, orientation=5, row=3, col=7)
+190 Move(piece=10, orientation=5, row=4, col=1)
+191 Move(piece=10, orientation=5, row=5, col=5)
+192 Move(piece=10, orientation=6, row=0, col=7)
+193 Move(piece=10, orientation=6, row=3, col=6)
+194 Move(piece=10, orientation=6, row=4, col=0)
+195 Move(piece=10, orientation=7, row=0, col=0)
+196 Move(piece=10, orientation=7, row=0, col=7)
+197 Move(piece=10, orientation=7, row=2, col=7)
+198 Move(piece=10, orientation=7, row=4, col=5)
+199 Move(piece=10, orientation=7, row=5, col=0)
+200 Move(piece=10, orientation=7, row=5, col=2)
+201 Move(piece=11, orientation=0, row=0, col=2)
+202 Move(piece=11, orientation=0, row=0, col=6)
+203 Move(piece=11, orientation=0, row=1, col=0)
+204 Move(piece=11, orientation=0, row=1, col=7)
+205 Move(piece=11, orientation=0, row=3, col=7)
+206 Move(piece=11, orientation=0, row=5, col=0)
+207 Move(piece=11, orientation=0, row=5, col=5)
+208 Move(piece=11, orientation=1, row=0, col=1)
+209 Move(piece=11, orientation=1, row=0, col=5)
+210 Move(piece=11, orientation=1, row=1, col=7)
+211 Move(piece=11, orientation=1, row=3, col=7)
+212 Move(piece=11, orientation=1, row=5, col=0)
+213 Move(piece=11, orientation=1, row=5, col=5)
+214 Move(piece=11, orientation=2, row=1, col=0)
+215 Move(piece=11, orientation=2, row=3, col=0)
+216 Move(piece=11, orientation=2, row=3, col=7)
+217 Move(piece=11, orientation=2, row=4, col=1)
+218 Move(piece=11, orientation=2, row=5, col=5)
+219 Move(piece=11, orientation=3, row=0, col=0)
+220 Move(piece=11, orientation=3, row=2, col=0)
+221 Move(piece=11, orientation=3, row=3, col=7)
+222 Move(piece=11, orientation=3, row=4, col=1)
+223 Move(piece=11, orientation=3, row=5, col=5)
+224 Move(piece=11, orientation=4, row=0, col=0)
+225 Move(piece=11, orientation=4, row=0, col=7)
+226 Move(piece=11, orientation=4, row=2, col=7)
+227 Move(piece=11, orientation=4, row=3, col=6)
+228 Move(piece=11, orientation=4, row=4, col=0)
+229 Move(piece=11, orientation=4, row=4, col=5)
+230 Move(piece=11, orientation=4, row=5, col=2)
+231 Move(piece=11, orientation=4, row=5, col=4)
+232 Move(piece=11, orientation=5, row=0, col=7)
+233 Move(piece=11, orientation=5, row=2, col=7)
+234 Move(piece=11, orientation=5, row=3, col=6)
+235 Move(piece=11, orientation=5, row=4, col=0)
+236 Move(piece=11, orientation=5, row=4, col=5)
+237 Move(piece=11, orientation=5, row=5, col=4)
+238 Move(piece=11, orientation=6, row=1, col=7)
+239 Move(piece=11, orientation=6, row=3, col=6)
+240 Move(piece=11, orientation=6, row=4, col=0)
+241 Move(piece=11, orientation=6, row=5, col=4)
+242 Move(piece=11, orientation=7, row=0, col=0)
+243 Move(piece=11, orientation=7, row=0, col=7)
+244 Move(piece=11, orientation=7, row=2, col=7)
+245 Move(piece=11, orientation=7, row=4, col=5)
+246 Move(piece=11, orientation=7, row=5, col=1)
+247 Move(piece=11, orientation=7, row=5, col=3)
+248 Move(piece=12, orientation=0, row=0, col=2)
+249 Move(piece=12, orientation=0, row=0, col=7)
+250 Move(piece=12, orientation=0, row=1, col=0)
+251 Move(piece=12, orientation=0, row=3, col=7)
+252 Move(piece=12, orientation=0, row=5, col=1)
+253 Move(piece=12, orientation=0, row=5, col=5)
+254 Move(piece=12, orientation=1, row=0, col=1)
+255 Move(piece=12, orientation=1, row=0, col=6)
+256 Move(piece=12, orientation=1, row=1, col=7)
+257 Move(piece=12, orientation=1, row=3, col=7)
+258 Move(piece=12, orientation=1, row=5, col=1)
+259 Move(piece=12, orientation=1, row=5, col=5)
+260 Move(piece=12, orientation=2, row=0, col=1)
+261 Move(piece=12, orientation=2, row=0, col=7)
+262 Move(piece=12, orientation=2, row=3, col=7)
+263 Move(piece=12, orientation=2, row=4, col=0)
+264 Move(piece=12, orientation=2, row=5, col=2)
+265 Move(piece=12, orientation=2, row=5, col=5)
+266 Move(piece=12, orientation=3, row=0, col=1)
+267 Move(piece=12, orientation=3, row=1, col=0)
+268 Move(piece=12, orientation=3, row=3, col=7)
+269 Move(piece=12, orientation=3, row=4, col=0)
+270 Move(piece=12, orientation=3, row=5, col=2)
+271 Move(piece=12, orientation=3, row=5, col=5)
+272 Move(piece=12, orientation=4, row=0, col=0)
+273 Move(piece=12, orientation=4, row=0, col=7)
+274 Move(piece=12, orientation=4, row=3, col=7)
+275 Move(piece=12, orientation=4, row=4, col=0)
+276 Move(piece=12, orientation=4, row=5, col=2)
+277 Move(piece=12, orientation=4, row=5, col=5)
+278 Move(piece=12, orientation=5, row=0, col=0)
+279 Move(piece=12, orientation=5, row=3, col=0)
+280 Move(piece=12, orientation=5, row=3, col=7)
+281 Move(piece=12, orientation=5, row=4, col=1)
+282 Move(piece=12, orientation=5, row=5, col=3)
+283 Move(piece=12, orientation=5, row=5, col=5)
+284 Move(piece=12, orientation=6, row=0, col=1)
+285 Move(piece=12, orientation=6, row=0, col=7)
+286 Move(piece=12, orientation=6, row=2, col=7)
+287 Move(piece=12, orientation=6, row=3, col=6)
+288 Move(piece=12, orientation=6, row=4, col=5)
+289 Move(piece=12, orientation=6, row=5, col=1)
+290 Move(piece=12, orientation=6, row=5, col=4)
+291 Move(piece=12, orientation=7, row=0, col=0)
+292 Move(piece=12, orientation=7, row=2, col=7)
+293 Move(piece=12, orientation=7, row=3, col=6)
+294 Move(piece=12, orientation=7, row=4, col=0)
+295 Move(piece=12, orientation=7, row=4, col=5)
+296 Move(piece=12, orientation=7, row=5, col=2)
+297 Move(piece=12, orientation=7, row=5, col=4)
+298 Move(piece=13, orientation=0, row=0, col=1)
+299 Move(piece=13, orientation=0, row=0, col=7)
+300 Move(piece=13, orientation=0, row=3, col=7)
+301 Move(piece=13, orientation=0, row=5, col=1)
+302 Move(piece=13, orientation=0, row=5, col=5)
+303 Move(piece=13, orientation=1, row=0, col=0)
+304 Move(piece=13, orientation=1, row=2, col=0)
+305 Move(piece=13, orientation=1, row=3, col=7)
+306 Move(piece=13, orientation=1, row=4, col=0)
+307 Move(piece=13, orientation=1, row=5, col=2)
+308 Move(piece=13, orientation=1, row=5, col=5)
+309 Move(piece=13, orientation=2, row=0, col=0)
+310 Move(piece=13, orientation=2, row=1, col=7)
+311 Move(piece=13, orientation=2, row=3, col=7)
+312 Move(piece=13, orientation=2, row=4, col=0)
+313 Move(piece=13, orientation=2, row=5, col=2)
+314 Move(piece=13, orientation=2, row=5, col=5)
+315 Move(piece=13, orientation=3, row=0, col=1)
+316 Move(piece=13, orientation=3, row=0, col=7)
+317 Move(piece=13, orientation=3, row=3, col=7)
+318 Move(piece=13, orientation=3, row=5, col=1)
+319 Move(piece=13, orientation=3, row=5, col=3)
+320 Move(piece=13, orientation=3, row=5, col=5)
+321 Move(piece=14, orientation=0, row=0, col=1)
+322 Move(piece=14, orientation=0, row=3, col=7)
+323 Move(piece=14, orientation=0, row=5, col=1)
+324 Move(piece=14, orientation=0, row=5, col=5)
+325 Move(piece=14, orientation=1, row=1, col=7)
+326 Move(piece=14, orientation=1, row=3, col=7)
+327 Move(piece=14, orientation=1, row=5, col=1)
+328 Move(piece=14, orientation=1, row=5, col=5)
+329 Move(piece=14, orientation=2, row=3, col=7)
+330 Move(piece=14, orientation=2, row=4, col=1)
+331 Move(piece=14, orientation=2, row=5, col=3)
+332 Move(piece=14, orientation=2, row=5, col=5)
+333 Move(piece=14, orientation=3, row=1, col=7)
+334 Move(piece=14, orientation=3, row=3, col=5)
+335 Move(piece=14, orientation=3, row=5, col=1)
+336 Move(piece=14, orientation=3, row=5, col=3)
+337 Move(piece=15, orientation=0, row=0, col=0)
+338 Move(piece=15, orientation=0, row=1, col=7)
+339 Move(piece=15, orientation=0, row=3, col=7)
+340 Move(piece=15, orientation=0, row=5, col=1)
+341 Move(piece=15, orientation=0, row=5, col=5)
+342 Move(piece=15, orientation=1, row=0, col=1)
+343 Move(piece=15, orientation=1, row=3, col=7)
+344 Move(piece=15, orientation=1, row=4, col=1)
+345 Move(piece=15, orientation=1, row=5, col=3)
+346 Move(piece=15, orientation=1, row=5, col=5)
+347 Move(piece=15, orientation=2, row=1, col=7)
+348 Move(piece=15, orientation=2, row=3, col=6)
+349 Move(piece=15, orientation=2, row=4, col=0)
+350 Move(piece=15, orientation=2, row=5, col=2)
+351 Move(piece=15, orientation=2, row=5, col=4)
+352 Move(piece=15, orientation=3, row=0, col=7)
+353 Move(piece=15, orientation=3, row=2, col=7)
+354 Move(piece=15, orientation=3, row=4, col=5)
+355 Move(piece=15, orientation=3, row=5, col=1)
+356 Move(piece=15, orientation=3, row=5, col=3)
+357 Move(piece=16, orientation=0, row=0, col=0)
+358 Move(piece=16, orientation=0, row=0, col=5)
+359 Move(piece=16, orientation=0, row=1, col=7)
+360 Move(piece=16, orientation=0, row=3, col=7)
+361 Move(piece=16, orientation=0, row=5, col=1)
+362 Move(piece=16, orientation=0, row=5, col=5)
+363 Move(piece=16, orientation=1, row=0, col=0)
+364 Move(piece=16, orientation=1, row=0, col=6)
+365 Move(piece=16, orientation=1, row=1, col=7)
+366 Move(piece=16, orientation=1, row=3, col=7)
+367 Move(piece=16, orientation=1, row=4, col=0)
+368 Move(piece=16, orientation=1, row=5, col=2)
+369 Move(piece=16, orientation=1, row=5, col=5)
+370 Move(piece=16, orientation=2, row=0, col=7)
+371 Move(piece=16, orientation=2, row=3, col=0)
+372 Move(piece=16, orientation=2, row=3, col=7)
+373 Move(piece=16, orientation=2, row=4, col=1)
+374 Move(piece=16, orientation=2, row=5, col=5)
+375 Move(piece=16, orientation=3, row=2, col=0)
+376 Move(piece=16, orientation=3, row=3, col=7)
+377 Move(piece=16, orientation=3, row=4, col=1)
+378 Move(piece=16, orientation=3, row=5, col=5)
+379 Move(piece=16, orientation=4, row=0, col=2)
+380 Move(piece=16, orientation=4, row=0, col=7)
+381 Move(piece=16, orientation=4, row=1, col=0)
+382 Move(piece=16, orientation=4, row=2, col=7)
+383 Move(piece=16, orientation=4, row=3, col=6)
+384 Move(piece=16, orientation=4, row=4, col=5)
+385 Move(piece=16, orientation=4, row=5, col=0)
+386 Move(piece=16, orientation=4, row=5, col=4)
+387 Move(piece=16, orientation=5, row=1, col=0)
+388 Move(piece=16, orientation=5, row=2, col=7)
+389 Move(piece=16, orientation=5, row=3, col=6)
+390 Move(piece=16, orientation=5, row=4, col=0)
+391 Move(piece=16, orientation=5, row=4, col=5)
+392 Move(piece=16, orientation=5, row=5, col=2)
+393 Move(piece=16, orientation=6, row=0, col=0)
+394 Move(piece=16, orientation=6, row=1, col=7)
+395 Move(piece=16, orientation=6, row=3, col=6)
+396 Move(piece=16, orientation=6, row=4, col=0)
+397 Move(piece=16, orientation=6, row=5, col=2)
+398 Move(piece=16, orientation=7, row=0, col=1)
+399 Move(piece=16, orientation=7, row=0, col=7)
+400 Move(piece=16, orientation=7, row=2, col=7)
+401 Move(piece=16, orientation=7, row=4, col=5)
+402 Move(piece=16, orientation=7, row=5, col=0)
+403 Move(piece=16, orientation=7, row=5, col=3)
+404 Move(piece=17, orientation=0, row=0, col=0)
+405 Move(piece=17, orientation=0, row=1, col=7)
+406 Move(piece=17, orientation=0, row=3, col=7)
+407 Move(piece=17, orientation=0, row=4, col=0)
+408 Move(piece=17, orientation=0, row=5, col=2)
+409 Move(piece=17, orientation=0, row=5, col=5)
+410 Move(piece=17, orientation=1, row=0, col=0)
+411 Move(piece=17, orientation=1, row=0, col=7)
+412 Move(piece=17, orientation=1, row=3, col=7)
+413 Move(piece=17, orientation=1, row=4, col=1)
+414 Move(piece=17, orientation=1, row=5, col=3)
+415 Move(piece=17, orientation=1, row=5, col=5)
+416 Move(piece=17, orientation=2, row=0, col=0)
+417 Move(piece=17, orientation=2, row=0, col=7)
+418 Move(piece=17, orientation=2, row=2, col=7)
+419 Move(piece=17, orientation=2, row=3, col=6)
+420 Move(piece=17, orientation=2, row=4, col=5)
+421 Move(piece=17, orientation=2, row=5, col=1)
+422 Move(piece=17, orientation=2, row=5, col=4)
+423 Move(piece=17, orientation=3, row=0, col=1)
+424 Move(piece=17, orientation=3, row=2, col=7)
+425 Move(piece=17, orientation=3, row=3, col=6)
+426 Move(piece=17, orientation=3, row=4, col=0)
+427 Move(piece=17, orientation=3, row=4, col=5)
+428 Move(piece=17, orientation=3, row=5, col=2)
+429 Move(piece=17, orientation=3, row=5, col=4)
+430 Move(piece=17, orientation=4, row=0, col=7)
+431 Move(piece=17, orientation=4, row=2, col=7)
+432 Move(piece=17, orientation=4, row=3, col=6)
+433 Move(piece=17, orientation=4, row=4, col=0)
+434 Move(piece=17, orientation=4, row=4, col=5)
+435 Move(piece=17, orientation=4, row=5, col=2)
+436 Move(piece=17, orientation=4, row=5, col=4)
+437 Move(piece=17, orientation=5, row=0, col=7)
+438 Move(piece=17, orientation=5, row=2, col=7)
+439 Move(piece=17, orientation=5, row=3, col=6)
+440 Move(piece=17, orientation=5, row=4, col=0)
+441 Move(piece=17, orientation=5, row=4, col=5)
+442 Move(piece=17, orientation=5, row=5, col=2)
+443 Move(piece=17, orientation=5, row=5, col=4)
+444 Move(piece=17, orientation=6, row=0, col=0)
+445 Move(piece=17, orientation=6, row=1, col=7)
+446 Move(piece=17, orientation=6, row=3, col=6)
+447 Move(piece=17, orientation=6, row=4, col=0)
+448 Move(piece=17, orientation=6, row=5, col=2)
+449 Move(piece=17, orientation=6, row=5, col=4)
+450 Move(piece=17, orientation=7, row=0, col=0)
+451 Move(piece=17, orientation=7, row=0, col=7)
+452 Move(piece=17, orientation=7, row=2, col=7)
+453 Move(piece=17, orientation=7, row=4, col=5)
+454 Move(piece=17, orientation=7, row=5, col=1)
+455 Move(piece=17, orientation=7, row=5, col=3)
+456 Move(piece=18, orientation=0, row=0, col=6)
+457 Move(piece=18, orientation=0, row=1, col=7)
+458 Move(piece=18, orientation=0, row=3, col=7)
+459 Move(piece=18, orientation=0, row=4, col=0)
+460 Move(piece=18, orientation=0, row=5, col=2)
+461 Move(piece=18, orientation=0, row=5, col=5)
+462 Move(piece=18, orientation=1, row=0, col=7)
+463 Move(piece=18, orientation=1, row=3, col=0)
+464 Move(piece=18, orientation=1, row=3, col=7)
+465 Move(piece=18, orientation=1, row=4, col=1)
+466 Move(piece=18, orientation=1, row=5, col=3)
+467 Move(piece=18, orientation=1, row=5, col=5)
+468 Move(piece=18, orientation=2, row=0, col=1)
+469 Move(piece=18, orientation=2, row=1, col=0)
+470 Move(piece=18, orientation=2, row=2, col=7)
+471 Move(piece=18, orientation=2, row=3, col=6)
+472 Move(piece=18, orientation=2, row=4, col=5)
+473 Move(piece=18, orientation=2, row=5, col=1)
+474 Move(piece=18, orientation=2, row=5, col=4)
+475 Move(piece=18, orientation=3, row=0, col=0)
+476 Move(piece=18, orientation=3, row=1, col=7)
+477 Move(piece=18, orientation=3, row=2, col=6)
+478 Move(piece=18, orientation=3, row=3, col=5)
+479 Move(piece=18, orientation=3, row=4, col=4)
+480 Move(piece=18, orientation=3, row=5, col=1)
+481 Move(piece=18, orientation=3, row=5, col=3)
+482 Move(piece=19, orientation=0, row=1, col=7)
+483 Move(piece=19, orientation=0, row=3, col=7)
+484 Move(piece=19, orientation=0, row=4, col=0)
+485 Move(piece=19, orientation=0, row=5, col=2)
+486 Move(piece=19, orientation=0, row=5, col=5)
+487 Move(piece=19, orientation=1, row=0, col=7)
+488 Move(piece=19, orientation=1, row=3, col=7)
+489 Move(piece=19, orientation=1, row=4, col=1)
+490 Move(piece=19, orientation=1, row=5, col=3)
+491 Move(piece=19, orientation=1, row=5, col=5)
+492 Move(piece=19, orientation=2, row=0, col=0)
+493 Move(piece=19, orientation=2, row=1, col=7)
+494 Move(piece=19, orientation=2, row=3, col=6)
+495 Move(piece=19, orientation=2, row=5, col=1)
+496 Move(piece=19, orientation=2, row=5, col=4)
+497 Move(piece=19, orientation=3, row=0, col=1)
+498 Move(piece=19, orientation=3, row=2, col=7)
+499 Move(piece=19, orientation=3, row=4, col=5)
+500 Move(piece=19, orientation=3, row=5, col=1)
+501 Move(piece=19, orientation=3, row=5, col=3)
+502 Move(piece=20, orientation=0, row=0, col=0)
+503 Move(piece=20, orientation=0, row=0, col=7)
+504 Move(piece=20, orientation=0, row=2, col=7)
+505 Move(piece=20, orientation=0, row=3, col=6)
+506 Move(piece=20, orientation=0, row=4, col=0)
+507 Move(piece=20, orientation=0, row=4, col=5)
+508 Move(piece=20, orientation=0, row=5, col=2)
+509 Move(piece=20, orientation=0, row=5, col=4)
+index>    01234567890123
+ 0 ...XX.........
+ 1 ...X..........
+ 2 ....XXX.......
+ 3 ..XX..........
+ 4 ....X.........
+ 5 ..............
+ 6 ..............
+ 7 ..............
+ 8 ...OO.....O...
+ 9 ....OO...OOO..
+10 .....O..O.O...
+11 ......OOO.....
+12 .......O......
+13 ..............
+   01234567890123
+ 0 ...XX.........
+ 1 ...X..........
+ 2 ....XXX.......
+ 3 ..XX..........
+ 4 ....X.........
+ 5 ...OOO........
+ 6 .....O........
+ 7 .....O........
+ 8 ...OO.....O...
+ 9 ....OO...OOO..
+10 .....O..O.O...
+11 ......OOO.....
+12 .......O......
+13 ..............
+0 Move(piece=4, orientation=0, row=1, col=7)
+1 Move(piece=4, orientation=0, row=3, col=7)
+2 Move(piece=4, orientation=1, row=3, col=7)
+3 Move(piece=4, orientation=1, row=4, col=1)
+4 Move(piece=5, orientation=0, row=0, col=7)
+5 Move(piece=5, orientation=0, row=3, col=7)
+6 Move(piece=5, orientation=1, row=1, col=7)
+7 Move(piece=5, orientation=1, row=3, col=7)
+8 Move(piece=5, orientation=2, row=2, col=0)
+9 Move(piece=5, orientation=2, row=3, col=7)
+10 Move(piece=5, orientation=2, row=4, col=0)
+11 Move(piece=5, orientation=3, row=0, col=0)
+12 Move(piece=5, orientation=3, row=1, col=7)
+13 Move(piece=5, orientation=3, row=3, col=7)
+14 Move(piece=5, orientation=3, row=4, col=0)
+15 Move(piece=5, orientation=4, row=0, col=7)
+16 Move(piece=5, orientation=4, row=3, col=7)
+17 Move(piece=5, orientation=5, row=0, col=0)
+18 Move(piece=5, orientation=5, row=2, col=0)
+19 Move(piece=5, orientation=5, row=3, col=7)
+20 Move(piece=5, orientation=5, row=4, col=1)
+21 Move(piece=5, orientation=6, row=0, col=0)
+22 Move(piece=5, orientation=6, row=1, col=7)
+23 Move(piece=5, orientation=6, row=3, col=6)
+24 Move(piece=5, orientation=6, row=4, col=0)
+25 Move(piece=5, orientation=7, row=0, col=7)
+26 Move(piece=5, orientation=7, row=2, col=7)
+27 Move(piece=6, orientation=0, row=0, col=6)
+28 Move(piece=6, orientation=0, row=1, col=7)
+29 Move(piece=6, orientation=0, row=3, col=7)
+30 Move(piece=6, orientation=1, row=1, col=0)
+31 Move(piece=6, orientation=1, row=3, col=0)
+32 Move(piece=6, orientation=1, row=3, col=7)
+33 Move(piece=6, orientation=1, row=4, col=1)
+34 Move(piece=6, orientation=2, row=0, col=7)
+35 Move(piece=6, orientation=2, row=2, col=7)
+36 Move(piece=6, orientation=2, row=3, col=6)
+37 Move(piece=6, orientation=2, row=4, col=0)
+38 Move(piece=6, orientation=3, row=0, col=0)
+39 Move(piece=6, orientation=3, row=0, col=7)
+40 Move(piece=6, orientation=3, row=2, col=7)
+41 Move(piece=6, orientation=3, row=3, col=6)
+42 Move(piece=6, orientation=3, row=4, col=0)
+43 Move(piece=7, orientation=0, row=0, col=7)
+44 Move(piece=7, orientation=0, row=1, col=0)
+45 Move(piece=7, orientation=0, row=3, col=7)
+46 Move(piece=7, orientation=0, row=4, col=0)
+47 Move(piece=8, orientation=0, row=0, col=6)
+48 Move(piece=8, orientation=0, row=1, col=7)
+49 Move(piece=8, orientation=0, row=3, col=7)
+50 Move(piece=8, orientation=0, row=4, col=0)
+51 Move(piece=8, orientation=1, row=0, col=0)
+52 Move(piece=8, orientation=1, row=0, col=7)
+53 Move(piece=8, orientation=1, row=3, col=0)
+54 Move(piece=8, orientation=1, row=3, col=7)
+55 Move(piece=8, orientation=1, row=4, col=1)
+56 Move(piece=8, orientation=2, row=0, col=7)
+57 Move(piece=8, orientation=2, row=2, col=7)
+58 Move(piece=8, orientation=2, row=3, col=6)
+59 Move(piece=8, orientation=3, row=1, col=0)
+60 Move(piece=8, orientation=3, row=2, col=7)
+61 Move(piece=8, orientation=3, row=3, col=6)
+62 Move(piece=8, orientation=3, row=4, col=0)
+63 Move(piece=9, orientation=0, row=1, col=7)
+64 Move(piece=9, orientation=0, row=3, col=7)
+65 Move(piece=9, orientation=1, row=3, col=7)
+66 Move(piece=9, orientation=1, row=4, col=1)
+67 Move(piece=10, orientation=0, row=0, col=7)
+68 Move(piece=10, orientation=0, row=3, col=7)
+69 Move(piece=10, orientation=1, row=1, col=7)
+70 Move(piece=10, orientation=1, row=3, col=7)
+71 Move(piece=10, orientation=2, row=2, col=0)
+72 Move(piece=10, orientation=2, row=3, col=7)
+73 Move(piece=10, orientation=2, row=4, col=0)
+74 Move(piece=10, orientation=3, row=1, col=7)
+75 Move(piece=10, orientation=3, row=3, col=7)
+76 Move(piece=10, orientation=3, row=4, col=0)
+77 Move(piece=10, orientation=4, row=0, col=7)
+78 Move(piece=10, orientation=4, row=3, col=7)
+79 Move(piece=10, orientation=5, row=1, col=0)
+80 Move(piece=10, orientation=5, row=3, col=7)
+81 Move(piece=10, orientation=5, row=4, col=1)
+82 Move(piece=10, orientation=6, row=0, col=7)
+83 Move(piece=10, orientation=6, row=3, col=6)
+84 Move(piece=10, orientation=6, row=4, col=0)
+85 Move(piece=10, orientation=7, row=0, col=7)
+86 Move(piece=10, orientation=7, row=2, col=7)
+87 Move(piece=11, orientation=0, row=0, col=6)
+88 Move(piece=11, orientation=0, row=1, col=7)
+89 Move(piece=11, orientation=0, row=3, col=7)
+90 Move(piece=11, orientation=1, row=1, col=7)
+91 Move(piece=11, orientation=1, row=3, col=7)
+92 Move(piece=11, orientation=2, row=1, col=0)
+93 Move(piece=11, orientation=2, row=3, col=0)
+94 Move(piece=11, orientation=2, row=3, col=7)
+95 Move(piece=11, orientation=2, row=4, col=1)
+96 Move(piece=11, orientation=3, row=0, col=0)
+97 Move(piece=11, orientation=3, row=2, col=0)
+98 Move(piece=11, orientation=3, row=3, col=7)
+99 Move(piece=11, orientation=3, row=4, col=1)
+100 Move(piece=11, orientation=4, row=0, col=7)
+101 Move(piece=11, orientation=4, row=2, col=7)
+102 Move(piece=11, orientation=4, row=3, col=6)
+103 Move(piece=11, orientation=5, row=0, col=7)
+104 Move(piece=11, orientation=5, row=2, col=7)
+105 Move(piece=11, orientation=5, row=3, col=6)
+106 Move(piece=11, orientation=5, row=4, col=0)
+107 Move(piece=11, orientation=6, row=1, col=7)
+108 Move(piece=11, orientation=6, row=3, col=6)
+109 Move(piece=11, orientation=6, row=4, col=0)
+110 Move(piece=11, orientation=7, row=0, col=7)
+111 Move(piece=11, orientation=7, row=2, col=7)
+112 Move(piece=12, orientation=0, row=0, col=7)
+113 Move(piece=12, orientation=0, row=3, col=7)
+114 Move(piece=12, orientation=1, row=0, col=6)
+115 Move(piece=12, orientation=1, row=1, col=7)
+116 Move(piece=12, orientation=1, row=3, col=7)
+117 Move(piece=12, orientation=2, row=0, col=7)
+118 Move(piece=12, orientation=2, row=3, col=7)
+119 Move(piece=12, orientation=2, row=4, col=0)
+120 Move(piece=12, orientation=3, row=1, col=0)
+121 Move(piece=12, orientation=3, row=3, col=7)
+122 Move(piece=12, orientation=3, row=4, col=0)
+123 Move(piece=12, orientation=4, row=0, col=0)
+124 Move(piece=12, orientation=4, row=0, col=7)
+125 Move(piece=12, orientation=4, row=3, col=7)
+126 Move(piece=12, orientation=4, row=4, col=0)
+127 Move(piece=12, orientation=5, row=0, col=0)
+128 Move(piece=12, orientation=5, row=3, col=0)
+129 Move(piece=12, orientation=5, row=3, col=7)
+130 Move(piece=12, orientation=5, row=4, col=1)
+131 Move(piece=12, orientation=6, row=0, col=7)
+132 Move(piece=12, orientation=6, row=2, col=7)
+133 Move(piece=12, orientation=6, row=3, col=6)
+134 Move(piece=12, orientation=7, row=0, col=0)
+135 Move(piece=12, orientation=7, row=2, col=7)
+136 Move(piece=12, orientation=7, row=3, col=6)
+137 Move(piece=12, orientation=7, row=4, col=0)
+138 Move(piece=13, orientation=0, row=0, col=7)
+139 Move(piece=13, orientation=0, row=3, col=7)
+140 Move(piece=13, orientation=1, row=0, col=0)
+141 Move(piece=13, orientation=1, row=2, col=0)
+142 Move(piece=13, orientation=1, row=3, col=7)
+143 Move(piece=13, orientation=1, row=4, col=0)
+144 Move(piece=13, orientation=2, row=0, col=0)
+145 Move(piece=13, orientation=2, row=1, col=7)
+146 Move(piece=13, orientation=2, row=3, col=7)
+147 Move(piece=13, orientation=2, row=4, col=0)
+148 Move(piece=13, orientation=3, row=0, col=7)
+149 Move(piece=13, orientation=3, row=3, col=7)
+150 Move(piece=14, orientation=0, row=3, col=7)
+151 Move(piece=14, orientation=1, row=1, col=7)
+152 Move(piece=14, orientation=1, row=3, col=7)
+153 Move(piece=14, orientation=2, row=3, col=7)
+154 Move(piece=14, orientation=2, row=4, col=1)
+155 Move(piece=14, orientation=3, row=1, col=7)
+156 Move(piece=15, orientation=0, row=1, col=7)
+157 Move(piece=15, orientation=0, row=3, col=7)
+158 Move(piece=15, orientation=1, row=3, col=7)
+159 Move(piece=15, orientation=2, row=1, col=7)
+160 Move(piece=15, orientation=2, row=3, col=6)
+161 Move(piece=15, orientation=2, row=4, col=0)
+162 Move(piece=15, orientation=3, row=0, col=7)
+163 Move(piece=15, orientation=3, row=2, col=7)
+164 Move(piece=16, orientation=0, row=1, col=7)
+165 Move(piece=16, orientation=0, row=3, col=7)
+166 Move(piece=16, orientation=1, row=0, col=6)
+167 Move(piece=16, orientation=1, row=1, col=7)
+168 Move(piece=16, orientation=1, row=3, col=7)
+169 Move(piece=16, orientation=2, row=0, col=7)
+170 Move(piece=16, orientation=2, row=3, col=0)
+171 Move(piece=16, orientation=2, row=3, col=7)
+172 Move(piece=16, orientation=2, row=4, col=1)
+173 Move(piece=16, orientation=3, row=2, col=0)
+174 Move(piece=16, orientation=3, row=3, col=7)
+175 Move(piece=16, orientation=3, row=4, col=1)
+176 Move(piece=16, orientation=4, row=0, col=7)
+177 Move(piece=16, orientation=4, row=2, col=7)
+178 Move(piece=16, orientation=4, row=3, col=6)
+179 Move(piece=16, orientation=5, row=1, col=0)
+180 Move(piece=16, orientation=5, row=2, col=7)
+181 Move(piece=16, orientation=5, row=3, col=6)
+182 Move(piece=16, orientation=5, row=4, col=0)
+183 Move(piece=16, orientation=6, row=0, col=0)
+184 Move(piece=16, orientation=6, row=1, col=7)
+185 Move(piece=16, orientation=6, row=3, col=6)
+186 Move(piece=16, orientation=6, row=4, col=0)
+187 Move(piece=16, orientation=7, row=0, col=7)
+188 Move(piece=16, orientation=7, row=2, col=7)
+189 Move(piece=17, orientation=0, row=1, col=7)
+190 Move(piece=17, orientation=0, row=3, col=7)
+191 Move(piece=17, orientation=0, row=4, col=0)
+192 Move(piece=17, orientation=1, row=0, col=7)
+193 Move(piece=17, orientation=1, row=3, col=7)
+194 Move(piece=17, orientation=2, row=0, col=7)
+195 Move(piece=17, orientation=2, row=2, col=7)
+196 Move(piece=17, orientation=2, row=3, col=6)
+197 Move(piece=17, orientation=3, row=2, col=7)
+198 Move(piece=17, orientation=3, row=3, col=6)
+199 Move(piece=17, orientation=3, row=4, col=0)
+200 Move(piece=17, orientation=4, row=0, col=7)
+201 Move(piece=17, orientation=4, row=2, col=7)
+202 Move(piece=17, orientation=4, row=3, col=6)
+203 Move(piece=17, orientation=4, row=4, col=0)
+204 Move(piece=17, orientation=5, row=0, col=7)
+205 Move(piece=17, orientation=5, row=2, col=7)
+206 Move(piece=17, orientation=5, row=3, col=6)
+207 Move(piece=17, orientation=5, row=4, col=0)
+208 Move(piece=17, orientation=6, row=1, col=7)
+209 Move(piece=17, orientation=6, row=3, col=6)
+210 Move(piece=17, orientation=6, row=4, col=0)
+211 Move(piece=17, orientation=7, row=0, col=7)
+212 Move(piece=17, orientation=7, row=2, col=7)
+213 Move(piece=18, orientation=0, row=0, col=6)
+214 Move(piece=18, orientation=0, row=1, col=7)
+215 Move(piece=18, orientation=0, row=3, col=7)
+216 Move(piece=18, orientation=0, row=4, col=0)
+217 Move(piece=18, orientation=1, row=0, col=7)
+218 Move(piece=18, orientation=1, row=3, col=0)
+219 Move(piece=18, orientation=1, row=3, col=7)
+220 Move(piece=18, orientation=1, row=4, col=1)
+221 Move(piece=18, orientation=2, row=2, col=7)
+222 Move(piece=18, orientation=2, row=3, col=6)
+223 Move(piece=18, orientation=3, row=1, col=7)
+224 Move(piece=18, orientation=3, row=2, col=6)
+225 Move(piece=19, orientation=0, row=1, col=7)
+226 Move(piece=19, orientation=0, row=3, col=7)
+227 Move(piece=19, orientation=0, row=4, col=0)
+228 Move(piece=19, orientation=1, row=0, col=7)
+229 Move(piece=19, orientation=1, row=3, col=7)
+230 Move(piece=19, orientation=2, row=1, col=7)
+231 Move(piece=19, orientation=2, row=3, col=6)
+232 Move(piece=19, orientation=3, row=2, col=7)
+233 Move(piece=20, orientation=0, row=0, col=7)
+234 Move(piece=20, orientation=0, row=2, col=7)
+235 Move(piece=20, orientation=0, row=3, col=6)
+236 Move(piece=20, orientation=0, row=4, col=0)
+index>    01234567890123
+ 0 ...XX.........
+ 1 ...X...XXXX...
+ 2 ....XXX.......
+ 3 ..XX..........
+ 4 ....X.........
+ 5 ...OOO........
+ 6 .....O........
+ 7 .....O........
+ 8 ...OO.....O...
+ 9 ....OO...OOO..
+10 .....O..O.O...
+11 ......OOO.....
+12 .......O......
+13 ..............
+   01234567890123
+ 0 ...XX.........
+ 1 ...X...XXXX...
+ 2 ....XXX.......
+ 3 ..XX..........
+ 4 ....X.OOOO....
+ 5 ...OOO..O.....
+ 6 .....O........
+ 7 .....O........
+ 8 ...OO.....O...
+ 9 ....OO...OOO..
+10 .....O..O.O...
+11 ......OOO.....
+12 .......O......
+13 ..............
+0 Move(piece=5, orientation=0, row=2, col=11)
+1 Move(piece=5, orientation=1, row=0, col=11)
+2 Move(piece=5, orientation=1, row=2, col=11)
+3 Move(piece=5, orientation=2, row=2, col=0)
+4 Move(piece=5, orientation=2, row=2, col=11)
+5 Move(piece=5, orientation=2, row=4, col=0)
+6 Move(piece=5, orientation=3, row=0, col=0)
+7 Move(piece=5, orientation=3, row=0, col=11)
+8 Move(piece=5, orientation=3, row=2, col=11)
+9 Move(piece=5, orientation=3, row=4, col=0)
+10 Move(piece=5, orientation=4, row=2, col=11)
+11 Move(piece=5, orientation=5, row=0, col=0)
+12 Move(piece=5, orientation=5, row=2, col=0)
+13 Move(piece=5, orientation=5, row=2, col=11)
+14 Move(piece=5, orientation=5, row=4, col=1)
+15 Move(piece=5, orientation=6, row=0, col=0)
+16 Move(piece=5, orientation=6, row=0, col=11)
+17 Move(piece=5, orientation=6, row=2, col=10)
+18 Move(piece=5, orientation=6, row=4, col=0)
+19 Move(piece=5, orientation=7, row=1, col=11)
+20 Move(piece=5, orientation=7, row=2, col=9)
+21 Move(piece=6, orientation=0, row=0, col=11)
+22 Move(piece=6, orientation=0, row=2, col=11)
+23 Move(piece=6, orientation=1, row=1, col=0)
+24 Move(piece=6, orientation=1, row=2, col=11)
+25 Move(piece=6, orientation=1, row=3, col=0)
+26 Move(piece=6, orientation=1, row=4, col=1)
+27 Move(piece=6, orientation=2, row=1, col=11)
+28 Move(piece=6, orientation=2, row=2, col=10)
+29 Move(piece=6, orientation=2, row=4, col=0)
+30 Move(piece=6, orientation=3, row=0, col=0)
+31 Move(piece=6, orientation=3, row=1, col=11)
+32 Move(piece=6, orientation=3, row=2, col=10)
+33 Move(piece=6, orientation=3, row=4, col=0)
+34 Move(piece=7, orientation=0, row=1, col=0)
+35 Move(piece=7, orientation=0, row=2, col=11)
+36 Move(piece=7, orientation=0, row=4, col=0)
+37 Move(piece=8, orientation=0, row=0, col=11)
+38 Move(piece=8, orientation=0, row=2, col=11)
+39 Move(piece=8, orientation=0, row=4, col=0)
+40 Move(piece=8, orientation=1, row=0, col=0)
+41 Move(piece=8, orientation=1, row=2, col=11)
+42 Move(piece=8, orientation=1, row=3, col=0)
+43 Move(piece=8, orientation=1, row=4, col=1)
+44 Move(piece=8, orientation=2, row=1, col=11)
+45 Move(piece=8, orientation=2, row=2, col=10)
+46 Move(piece=8, orientation=3, row=1, col=0)
+47 Move(piece=8, orientation=3, row=1, col=11)
+48 Move(piece=8, orientation=3, row=2, col=10)
+49 Move(piece=8, orientation=3, row=4, col=0)
+50 Move(piece=9, orientation=0, row=3, col=7)
+51 Move(piece=9, orientation=1, row=2, col=11)
+52 Move(piece=9, orientation=1, row=4, col=1)
+53 Move(piece=10, orientation=1, row=3, col=7)
+54 Move(piece=10, orientation=2, row=2, col=0)
+55 Move(piece=10, orientation=2, row=2, col=11)
+56 Move(piece=10, orientation=2, row=4, col=0)
+57 Move(piece=10, orientation=3, row=0, col=11)
+58 Move(piece=10, orientation=3, row=2, col=11)
+59 Move(piece=10, orientation=3, row=4, col=0)
+60 Move(piece=10, orientation=5, row=1, col=0)
+61 Move(piece=10, orientation=5, row=2, col=11)
+62 Move(piece=10, orientation=5, row=4, col=1)
+63 Move(piece=10, orientation=6, row=2, col=10)
+64 Move(piece=10, orientation=6, row=4, col=0)
+65 Move(piece=10, orientation=7, row=2, col=8)
+66 Move(piece=11, orientation=2, row=1, col=0)
+67 Move(piece=11, orientation=2, row=2, col=11)
+68 Move(piece=11, orientation=2, row=3, col=0)
+69 Move(piece=11, orientation=2, row=4, col=1)
+70 Move(piece=11, orientation=3, row=0, col=0)
+71 Move(piece=11, orientation=3, row=2, col=0)
+72 Move(piece=11, orientation=3, row=2, col=11)
+73 Move(piece=11, orientation=3, row=4, col=1)
+74 Move(piece=11, orientation=4, row=2, col=10)
+75 Move(piece=11, orientation=5, row=1, col=11)
+76 Move(piece=11, orientation=5, row=2, col=10)
+77 Move(piece=11, orientation=5, row=4, col=0)
+78 Move(piece=11, orientation=6, row=0, col=11)
+79 Move(piece=11, orientation=6, row=2, col=10)
+80 Move(piece=11, orientation=6, row=4, col=0)
+81 Move(piece=11, orientation=7, row=2, col=9)
+82 Move(piece=12, orientation=0, row=2, col=11)
+83 Move(piece=12, orientation=1, row=0, col=11)
+84 Move(piece=12, orientation=1, row=2, col=11)
+85 Move(piece=12, orientation=2, row=2, col=11)
+86 Move(piece=12, orientation=2, row=4, col=0)
+87 Move(piece=12, orientation=3, row=1, col=0)
+88 Move(piece=12, orientation=3, row=2, col=11)
+89 Move(piece=12, orientation=3, row=4, col=0)
+90 Move(piece=12, orientation=4, row=0, col=0)
+91 Move(piece=12, orientation=4, row=2, col=11)
+92 Move(piece=12, orientation=4, row=4, col=0)
+93 Move(piece=12, orientation=5, row=0, col=0)
+94 Move(piece=12, orientation=5, row=2, col=11)
+95 Move(piece=12, orientation=5, row=3, col=0)
+96 Move(piece=12, orientation=5, row=4, col=1)
+97 Move(piece=12, orientation=6, row=1, col=11)
+98 Move(piece=12, orientation=6, row=2, col=10)
+99 Move(piece=12, orientation=7, row=0, col=0)
+100 Move(piece=12, orientation=7, row=1, col=11)
+101 Move(piece=12, orientation=7, row=2, col=10)
+102 Move(piece=12, orientation=7, row=4, col=0)
+103 Move(piece=13, orientation=0, row=2, col=11)
+104 Move(piece=13, orientation=1, row=0, col=0)
+105 Move(piece=13, orientation=1, row=2, col=0)
+106 Move(piece=13, orientation=1, row=2, col=11)
+107 Move(piece=13, orientation=1, row=4, col=0)
+108 Move(piece=13, orientation=2, row=0, col=0)
+109 Move(piece=13, orientation=2, row=0, col=11)
+110 Move(piece=13, orientation=2, row=2, col=11)
+111 Move(piece=13, orientation=2, row=4, col=0)
+112 Move(piece=13, orientation=3, row=2, col=11)
+113 Move(piece=14, orientation=0, row=2, col=11)
+114 Move(piece=14, orientation=1, row=0, col=11)
+115 Move(piece=14, orientation=1, row=2, col=11)
+116 Move(piece=14, orientation=2, row=2, col=11)
+117 Move(piece=14, orientation=2, row=4, col=1)
+118 Move(piece=14, orientation=3, row=0, col=11)
+119 Move(piece=15, orientation=0, row=0, col=11)
+120 Move(piece=15, orientation=0, row=2, col=11)
+121 Move(piece=15, orientation=1, row=2, col=11)
+122 Move(piece=15, orientation=2, row=0, col=11)
+123 Move(piece=15, orientation=2, row=2, col=10)
+124 Move(piece=15, orientation=2, row=4, col=0)
+125 Move(piece=15, orientation=3, row=1, col=11)
+126 Move(piece=15, orientation=3, row=2, col=9)
+127 Move(piece=16, orientation=2, row=2, col=11)
+128 Move(piece=16, orientation=2, row=3, col=0)
+129 Move(piece=16, orientation=2, row=4, col=1)
+130 Move(piece=16, orientation=3, row=2, col=0)
+131 Move(piece=16, orientation=3, row=2, col=11)
+132 Move(piece=16, orientation=3, row=4, col=1)
+133 Move(piece=16, orientation=4, row=2, col=10)
+134 Move(piece=16, orientation=5, row=1, col=0)
+135 Move(piece=16, orientation=5, row=1, col=11)
+136 Move(piece=16, orientation=5, row=2, col=10)
+137 Move(piece=16, orientation=5, row=4, col=0)
+138 Move(piece=16, orientation=6, row=0, col=0)
+139 Move(piece=16, orientation=6, row=0, col=11)
+140 Move(piece=16, orientation=6, row=2, col=10)
+141 Move(piece=16, orientation=6, row=4, col=0)
+142 Move(piece=16, orientation=7, row=2, col=9)
+143 Move(piece=17, orientation=0, row=0, col=11)
+144 Move(piece=17, orientation=0, row=2, col=11)
+145 Move(piece=17, orientation=0, row=4, col=0)
+146 Move(piece=17, orientation=1, row=2, col=11)
+147 Move(piece=17, orientation=2, row=1, col=11)
+148 Move(piece=17, orientation=2, row=2, col=10)
+149 Move(piece=17, orientation=3, row=1, col=11)
+150 Move(piece=17, orientation=3, row=2, col=10)
+151 Move(piece=17, orientation=3, row=4, col=0)
+152 Move(piece=17, orientation=4, row=1, col=11)
+153 Move(piece=17, orientation=4, row=2, col=10)
+154 Move(piece=17, orientation=4, row=4, col=0)
+155 Move(piece=17, orientation=5, row=1, col=11)
+156 Move(piece=17, orientation=5, row=2, col=10)
+157 Move(piece=17, orientation=5, row=4, col=0)
+158 Move(piece=17, orientation=6, row=0, col=11)
+159 Move(piece=17, orientation=6, row=2, col=10)
+160 Move(piece=17, orientation=6, row=4, col=0)
+161 Move(piece=17, orientation=7, row=1, col=11)
+162 Move(piece=17, orientation=7, row=2, col=9)
+163 Move(piece=18, orientation=0, row=0, col=11)
+164 Move(piece=18, orientation=0, row=2, col=11)
+165 Move(piece=18, orientation=0, row=4, col=0)
+166 Move(piece=18, orientation=1, row=2, col=11)
+167 Move(piece=18, orientation=1, row=3, col=0)
+168 Move(piece=18, orientation=1, row=4, col=1)
+169 Move(piece=18, orientation=2, row=1, col=11)
+170 Move(piece=18, orientation=2, row=2, col=10)
+171 Move(piece=18, orientation=3, row=0, col=11)
+172 Move(piece=18, orientation=3, row=1, col=10)
+173 Move(piece=19, orientation=0, row=0, col=11)
+174 Move(piece=19, orientation=0, row=2, col=11)
+175 Move(piece=19, orientation=0, row=4, col=0)
+176 Move(piece=19, orientation=1, row=2, col=11)
+177 Move(piece=19, orientation=2, row=0, col=11)
+178 Move(piece=19, orientation=2, row=2, col=10)
+179 Move(piece=19, orientation=3, row=1, col=11)
+180 Move(piece=20, orientation=0, row=1, col=11)
+181 Move(piece=20, orientation=0, row=2, col=10)
+182 Move(piece=20, orientation=0, row=4, col=0)
+index>    01234567890123
+ 0 ...XX.........
+ 1 ...X...XXXX...
+ 2 ....XXX....XXX
+ 3 ..XX.......X..
+ 4 ....X.OOOO....
+ 5 ...OOO..O.....
+ 6 .....O........
+ 7 .....O........
+ 8 ...OO.....O...
+ 9 ....OO...OOO..
+10 .....O..O.O...
+11 ......OOO.....
+12 .......O......
+13 ..............
+   01234567890123
+ 0 ...XX.........
+ 1 ...X...XXXX...
+ 2 ....XXX....XXX
+ 3 ..XX.......X..
+ 4 ....X.OOOO.OO.
+ 5 ...OOO..O.OOO.
+ 6 .....O........
+ 7 .....O........
+ 8 ...OO.....O...
+ 9 ....OO...OOO..
+10 .....O..O.O...
+11 ......OOO.....
+12 .......O......
+13 ..............
+0 Move(piece=6, orientation=1, row=1, col=0)
+1 Move(piece=6, orientation=1, row=3, col=0)
+2 Move(piece=6, orientation=1, row=4, col=1)
+3 Move(piece=6, orientation=2, row=4, col=0)
+4 Move(piece=6, orientation=3, row=0, col=0)
+5 Move(piece=6, orientation=3, row=4, col=0)
+6 Move(piece=7, orientation=0, row=1, col=0)
+7 Move(piece=7, orientation=0, row=4, col=0)
+8 Move(piece=8, orientation=0, row=4, col=0)
+9 Move(piece=8, orientation=1, row=0, col=0)
+10 Move(piece=8, orientation=1, row=3, col=0)
+11 Move(piece=8, orientation=1, row=4, col=1)
+12 Move(piece=8, orientation=3, row=1, col=0)
+13 Move(piece=8, orientation=3, row=4, col=0)
+14 Move(piece=9, orientation=1, row=4, col=1)
+15 Move(piece=10, orientation=2, row=2, col=0)
+16 Move(piece=10, orientation=2, row=4, col=0)
+17 Move(piece=10, orientation=3, row=4, col=0)
+18 Move(piece=10, orientation=5, row=1, col=0)
+19 Move(piece=10, orientation=5, row=4, col=1)
+20 Move(piece=10, orientation=6, row=4, col=0)
+21 Move(piece=11, orientation=2, row=1, col=0)
+22 Move(piece=11, orientation=2, row=3, col=0)
+23 Move(piece=11, orientation=2, row=4, col=1)
+24 Move(piece=11, orientation=3, row=0, col=0)
+25 Move(piece=11, orientation=3, row=2, col=0)
+26 Move(piece=11, orientation=3, row=4, col=1)
+27 Move(piece=11, orientation=5, row=4, col=0)
+28 Move(piece=11, orientation=6, row=4, col=0)
+29 Move(piece=12, orientation=2, row=4, col=0)
+30 Move(piece=12, orientation=3, row=1, col=0)
+31 Move(piece=12, orientation=3, row=4, col=0)
+32 Move(piece=12, orientation=4, row=0, col=0)
+33 Move(piece=12, orientation=4, row=4, col=0)
+34 Move(piece=12, orientation=5, row=0, col=0)
+35 Move(piece=12, orientation=5, row=3, col=0)
+36 Move(piece=12, orientation=5, row=4, col=1)
+37 Move(piece=12, orientation=7, row=0, col=0)
+38 Move(piece=12, orientation=7, row=4, col=0)
+39 Move(piece=13, orientation=1, row=0, col=0)
+40 Move(piece=13, orientation=1, row=2, col=0)
+41 Move(piece=13, orientation=1, row=4, col=0)
+42 Move(piece=13, orientation=2, row=0, col=0)
+43 Move(piece=13, orientation=2, row=4, col=0)
+44 Move(piece=14, orientation=2, row=4, col=1)
+45 Move(piece=15, orientation=2, row=4, col=0)
+46 Move(piece=16, orientation=2, row=3, col=0)
+47 Move(piece=16, orientation=2, row=4, col=1)
+48 Move(piece=16, orientation=3, row=2, col=0)
+49 Move(piece=16, orientation=3, row=4, col=1)
+50 Move(piece=16, orientation=5, row=1, col=0)
+51 Move(piece=16, orientation=5, row=4, col=0)
+52 Move(piece=16, orientation=6, row=0, col=0)
+53 Move(piece=16, orientation=6, row=4, col=0)
+54 Move(piece=17, orientation=0, row=4, col=0)
+55 Move(piece=17, orientation=3, row=4, col=0)
+56 Move(piece=17, orientation=4, row=4, col=0)
+57 Move(piece=17, orientation=5, row=4, col=0)
+58 Move(piece=17, orientation=6, row=4, col=0)
+59 Move(piece=18, orientation=0, row=4, col=0)
+60 Move(piece=18, orientation=1, row=3, col=0)
+61 Move(piece=18, orientation=1, row=4, col=1)
+62 Move(piece=19, orientation=0, row=4, col=0)
+63 Move(piece=20, orientation=0, row=4, col=0)
+index>    01234567890123
+ 0 ...XX.........
+ 1 X..X...XXXX...
+ 2 XX..XXX....XXX
+ 3 X.XX.......X..
+ 4 ....X.OOOO.OO.
+ 5 ...OOO..O.OOO.
+ 6 .....O........
+ 7 .....O........
+ 8 ...OO.....O...
+ 9 ....OO...OOO..
+10 .....O..O.O...
+11 ......OOO.....
+12 .......O......
+13 ..............
+   01234567890123
+ 0 ...XX.........
+ 1 X..X...XXXX...
+ 2 XX..XXX....XXX
+ 3 X.XX.......X..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O........
+ 7 ..O..O........
+ 8 ...OO.....O...
+ 9 ....OO...OOO..
+10 .....O..O.O...
+11 ......OOO.....
+12 .......O......
+13 ..............
+   01234567890123
+ 0 ...XX.........
+ 1 X..X...XXXX...
+ 2 XX..XXX....XXX
+ 3 X.XX.......X..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O........
+ 7 ..O..O........
+ 8 ...OO.....O...
+ 9 ....OO...OOO..
+10 .....O..O.O...
+11 ......OOO.....
+12 .......O......
+13 ..............
+   01234567890123
+ 0 ...XX.........
+ 1 X..X...XXXX...
+ 2 XX..XXX....XXX
+ 3 X.XX.......X..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O........
+ 7 ..O..O........
+ 8 ...OO.....O...
+ 9 ..O.OO...OOO..
+10 ..O..O..O.O...
+11 .OO...OOO.....
+12 .O.....O......
+13 ..............
+   01234567890123
+ 0 ...XX.........
+ 1 X..X...XXXX...
+ 2 XX..XXX....XXX
+ 3 X.XX.......X..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O........
+ 7 ..O..O........
+ 8 ...OO.....O...
+ 9 ..O.OO...OOO..
+10 ..O..O..O.O...
+11 .OO...OOO.....
+12 .O.....O......
+13 ..............
+   01234567890123
+ 0 ...XX.........
+ 1 X..X...XXXX...
+ 2 XX..XXXOOOOXXX
+ 3 X.XX......OX..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O........
+ 7 ..O..O........
+ 8 ...OO.....O...
+ 9 ..O.OO...OOO..
+10 ..O..O..O.O...
+11 .OO...OOO.....
+12 .O.....O......
+13 ..............
+   01234567890123
+ 0 ...XX.........
+ 1 X..X...XXXX...
+ 2 XX..XXXOOOOXXX
+ 3 X.XX......OX..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O........
+ 7 ..O..O........
+ 8 ...OO.....O...
+ 9 ..O.OO...OOO..
+10 ..O..O..O.O...
+11 .OO...OOO.....
+12 .O.....O......
+13 ..............
+   01234567890123
+ 0 ...XX.........
+ 1 X..X...XXXX...
+ 2 XX..XXXOOOOXXX
+ 3 X.XX......OX..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O........
+ 7 ..O..O........
+ 8 ...OO.....O...
+ 9 ..O.OO...OOO..
+10 ..O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..............
+   01234567890123
+ 0 ...XX.........
+ 1 X..X...XXXX...
+ 2 XX..XXXOOOOXXX
+ 3 X.XX......OX..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O........
+ 7 ..O..O........
+ 8 ...OO.....O...
+ 9 ..O.OO...OOO..
+10 ..O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..............
+   01234567890123
+ 0 ...XX.........
+ 1 X..X...XXXX...
+ 2 XX..XXXOOOOXXX
+ 3 X.XX......OX..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O......
+ 7 ..O..O.O......
+ 8 ...OO.OOO.O...
+ 9 ..O.OO...OOO..
+10 ..O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..............
+   01234567890123
+ 0 ...XX.........
+ 1 X..X...XXXX...
+ 2 XX..XXXOOOOXXX
+ 3 X.XX......OX..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O......
+ 7 ..O..O.O......
+ 8 ...OO.OOO.O...
+ 9 ..O.OO...OOO..
+10 ..O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..............
+   01234567890123
+ 0 ...XX......OOO
+ 1 X..X...XXXXO.O
+ 2 XX..XXXOOOOXXX
+ 3 X.XX......OX..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O......
+ 7 ..O..O.O......
+ 8 ...OO.OOO.O...
+ 9 ..O.OO...OOO..
+10 ..O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..............
+   01234567890123
+ 0 ...XX......OOO
+ 1 X..X...XXXXO.O
+ 2 XX..XXXOOOOXXX
+ 3 X.XX......OX..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O......
+ 7 ..O..O.O......
+ 8 ...OO.OOO.O...
+ 9 ..O.OO...OOO..
+10 ..O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..............
+   01234567890123
+ 0 ...XX......OOO
+ 1 X..X...XXXXO.O
+ 2 XX..XXXOOOOXXX
+ 3 X.XX......OX..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O......
+ 7 ..O..O.O......
+ 8 ...OO.OOO.O...
+ 9 ..O.OO...OOO..
+10 ..O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XX......OOO
+ 1 X..X...XXXXO.O
+ 2 XX..XXXOOOOXXX
+ 3 X.XX......OX..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O......
+ 7 ..O..O.O......
+ 8 ...OO.OOO.O...
+ 9 ..O.OO...OOO..
+10 ..O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XX......OOO
+ 1 X..X...XXXXO.O
+ 2 XX..XXXOOOOXXX
+ 3 X.XX......OX..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O......
+ 7 ..O..O.O......
+ 8 OO.OO.OOO.O...
+ 9 O.O.OO...OOO..
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XX......OOO
+ 1 X..X...XXXXO.O
+ 2 XX..XXXOOOOXXX
+ 3 X.XX......OX..
+ 4 ....X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O......
+ 7 ..O..O.O......
+ 8 OO.OO.OOO.O...
+ 9 O.O.OO...OOO..
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XX......OOO
+ 1 X..X...XXXXO.O
+ 2 XX..XXXOOOOXXX
+ 3 XOXX......OX..
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O......
+ 7 ..O..O.O......
+ 8 OO.OO.OOO.O...
+ 9 O.O.OO...OOO..
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XX......OOO
+ 1 X..X...XXXXO.O
+ 2 XX..XXXOOOOXXX
+ 3 XOXX......OX..
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O......
+ 7 ..O..O.O......
+ 8 OO.OO.OOO.O...
+ 9 O.O.OO...OOO..
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XX......OOO
+ 1 X..X...XXXXO.O
+ 2 XX..XXXOOOOXXX
+ 3 XOXX......OX..
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O.....O
+ 7 ..O..O.O.....O
+ 8 OO.OO.OOO.O..O
+ 9 O.O.OO...OOO.O
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XX......OOO
+ 1 X..X...XXXXO.O
+ 2 XX..XXXOOOOXXX
+ 3 XOXX......OX..
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O.....O
+ 7 ..O..O.O.....O
+ 8 OO.OO.OOO.O..O
+ 9 O.O.OO...OOO.O
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XX......OOO
+ 1 XOOX...XXXXO.O
+ 2 XXOOXXXOOOOXXX
+ 3 XOXX......OX..
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O.....O
+ 7 ..O..O.O.....O
+ 8 OO.OO.OOO.O..O
+ 9 O.O.OO...OOO.O
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XX......OOO
+ 1 XOOX...XXXXO.O
+ 2 XXOOXXXOOOOXXX
+ 3 XOXX......OX..
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O.....O
+ 7 ..O..O.O.....O
+ 8 OO.OO.OOO.O..O
+ 9 O.O.OO...OOO.O
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XXOO....OOO
+ 1 XOOX.OOXXXXO.O
+ 2 XXOOXXXOOOOXXX
+ 3 XOXX......OX..
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O.....O
+ 7 ..O..O.O.....O
+ 8 OO.OO.OOO.O..O
+ 9 O.O.OO...OOO.O
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XXOO....OOO
+ 1 XOOX.OOXXXXO.O
+ 2 XXOOXXXOOOOXXX
+ 3 XOXX......OX..
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O.....O
+ 7 ..O..O.O.....O
+ 8 OO.OO.OOO.O..O
+ 9 O.O.OO...OOO.O
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XXOO....OOO
+ 1 XOOX.OOXXXXO.O
+ 2 XXOOXXXOOOOXXX
+ 3 XOXX......OX..
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O.O...O
+ 7 ..O..O.O.O...O
+ 8 OO.OO.OOO.O..O
+ 9 O.O.OO...OOO.O
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XXOO....OOO
+ 1 XOOX.OOXXXXO.O
+ 2 XXOOXXXOOOOXXX
+ 3 XOXX......OX..
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O.O...O
+ 7 ..O..O.O.O...O
+ 8 OO.OO.OOO.O..O
+ 9 O.O.OO...OOO.O
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO.......
+   01234567890123
+ 0 ...XXOO....OOO
+ 1 XOOX.OOXXXXO.O
+ 2 XXOOXXXOOOOXXX
+ 3 XOXX......OX..
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O.O...O
+ 7 ..O..O.O.O...O
+ 8 OO.OO.OOO.O..O
+ 9 O.O.OO...OOO.O
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO..OOO..
+   01234567890123
+ 0 ...XXOO....OOO
+ 1 XOOX.OOXXXXO.O
+ 2 XXOOXXXOOOOXXX
+ 3 XOXX......OX..
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O.O...O
+ 7 ..O..O.O.O...O
+ 8 OO.OO.OOO.O..O
+ 9 O.O.OO...OOO.O
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO..OOO..
+   01234567890123
+ 0 ...XXOO....OOO
+ 1 XOOX.OOXXXXO.O
+ 2 XXOOXXXOOOOXXX
+ 3 XOXX......OX.O
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O.O...O
+ 7 ..O..O.O.O...O
+ 8 OO.OO.OOO.O..O
+ 9 O.O.OO...OOO.O
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO..OOO..
+   01234567890123
+ 0 ...XXOO....OOO
+ 1 XOOX.OOXXXXO.O
+ 2 XXOOXXXOOOOXXX
+ 3 XOXX......OX.O
+ 4 .OO.X.OOOO.OO.
+ 5 O..OOO..O.OOO.
+ 6 OOO..O.O.O...O
+ 7 ..O..O.O.O...O
+ 8 OO.OO.OOO.O..O
+ 9 O.O.OO...OOO.O
+10 O.O..O..O.O.O.
+11 .OO...OOO..OO.
+12 .O.....O....O.
+13 ..OOOOO..OOO..
+scores -68 20
+{'calls': 22, 'milliseconds_per_move': 20.967266090420626, 'p50_ms': 24.421314003120642, 'p95_ms': 24.77375350026705, 'max_ms': 24.842504994012415, 'total_seconds': 0.46127985398925375, 'allowance_ms': 25, 'overruns': 0, 'overrun_ms': 0.0, 'nodes': 1930, 'selective_calls': 0, 'completed_depth_mean': 0, 'depth_histogram': {'0': 0, '2': 0}, 'exact_attempts': 0, 'exact_solved': 0, 'exact_fraction_all_calls': 0.0, 'exact_fraction_attempts': 0, 'tt_hits': 0, 'cutoffs': 0, 'aborted_iterations': 0, 'fallbacks': 0, 'old_opening_calls': 11, 'old_mobility_calls': 10}
