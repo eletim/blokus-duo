@@ -1,0 +1,115 @@
+{
+  "chosen": {
+    "budget": 6,
+    "margin": 0.15,
+    "aggregate": {
+      "point": 0.5130208333333333,
+      "difference": 0.24479166666666663,
+      "point_ci95": [
+        0.49739583333333326,
+        0.53125
+      ],
+      "difference_ci95": [
+        -0.06250000000000001,
+        0.5624999999999999
+      ]
+    },
+    "fallback_rate": 0.6173845556849049,
+    "advance": false,
+    "seed_summaries": [
+      {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 33,
+        "losses": 30,
+        "draws": 1,
+        "mean_difference": 0.3125,
+        "difference_ci95": [
+          -0.234375,
+          0.921875
+        ],
+        "point_rate": 0.5234375,
+        "point_rate_ci95": [
+          0.46875,
+          0.578125
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 29,
+        "losses": 30,
+        "draws": 5,
+        "mean_difference": -0.40625,
+        "difference_ci95": [
+          -0.859375,
+          0.046875
+        ],
+        "point_rate": 0.4921875,
+        "point_rate_ci95": [
+          0.4453125,
+          0.53125
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 33,
+        "losses": 30,
+        "draws": 1,
+        "mean_difference": 0.828125,
+        "difference_ci95": [
+          0.1875,
+          1.5
+        ],
+        "point_rate": 0.5234375,
+        "point_rate_ci95": [
+          0.5,
+          0.5625
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      }
+    ]
+  },
+  "models": {
+    "1401": {
+      "path": "artifacts/ppo-gen2/seed-1401.pt",
+      "sha256": "7e111fd012868d9cd6f489b48f03ca2c8ab8d761935baeeaad29af94dd09bb1f",
+      "source_sha256": "434fea1882ab986a2783ae88685067897c662de29a3a623c53ebcbb5a0d82442",
+      "iteration": 3072,
+      "bytes": 282527
+    },
+    "1402": {
+      "path": "artifacts/ppo-gen2/seed-1402.pt",
+      "sha256": "d09a39986cb4832ac9752c1fb35a5f351e66069e1045612a5df2a0f34be3ce9d",
+      "source_sha256": "e4aa7476b74942343a12109424ee1f86f90235245af256ac795ed3ec086b40fe",
+      "iteration": 4096,
+      "bytes": 282527
+    },
+    "1403": {
+      "path": "artifacts/ppo-gen2/seed-1403.pt",
+      "sha256": "846e15564e99688c46d1137b860da87e00d7aa073c717678f497571a2f86cf9d",
+      "source_sha256": "d0e68ca6cd0d32abf499f4c00a84fa4dd538232f0b185a6b4209ef1a8d9309e1",
+      "iteration": 4096,
+      "bytes": 282527
+    }
+  },
+  "fixed_before_holdout": true
+}

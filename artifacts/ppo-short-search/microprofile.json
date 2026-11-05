@@ -1,0 +1,127 @@
+{
+  "rows": [
+    {
+      "game": 1,
+      "ply": 8,
+      "root_candidates": 346,
+      "children": 8,
+      "child_max_candidates": 315,
+      "CPU_root_observe_ms": 2.16658799945435,
+      "CPU_children_observe_ms": 11.337983998600976,
+      "collate_transfer_sync_ms": 0.19373099894437473,
+      "GPU_forward_kernel_ms": 1.6637760400772095,
+      "peak_allocated_bytes": 37867008
+    },
+    {
+      "game": 1,
+      "ply": 20,
+      "root_candidates": 54,
+      "children": 8,
+      "child_max_candidates": 55,
+      "CPU_root_observe_ms": 0.9703739997348748,
+      "CPU_children_observe_ms": 4.817398999875877,
+      "collate_transfer_sync_ms": 0.10447000022395514,
+      "GPU_forward_kernel_ms": 0.4843519926071167,
+      "peak_allocated_bytes": 35513344
+    },
+    {
+      "game": 2,
+      "ply": 8,
+      "root_candidates": 424,
+      "children": 8,
+      "child_max_candidates": 312,
+      "CPU_root_observe_ms": 1.9072269988100743,
+      "CPU_children_observe_ms": 10.164688999793725,
+      "collate_transfer_sync_ms": 0.14241099961509462,
+      "GPU_forward_kernel_ms": 0.47708800435066223,
+      "peak_allocated_bytes": 37841920
+    },
+    {
+      "game": 2,
+      "ply": 20,
+      "root_candidates": 113,
+      "children": 8,
+      "child_max_candidates": 53,
+      "CPU_root_observe_ms": 0.8163629991031485,
+      "CPU_children_observe_ms": 3.9337650014203973,
+      "collate_transfer_sync_ms": 0.09804999899643008,
+      "GPU_forward_kernel_ms": 0.4168640077114105,
+      "peak_allocated_bytes": 35495424
+    },
+    {
+      "game": 2,
+      "ply": 32,
+      "root_candidates": 11,
+      "children": 8,
+      "child_max_candidates": 1,
+      "CPU_root_observe_ms": 0.33574099870747887,
+      "CPU_children_observe_ms": 1.2604550011019455,
+      "collate_transfer_sync_ms": 0.09193000005325302,
+      "GPU_forward_kernel_ms": 0.4259200096130371,
+      "peak_allocated_bytes": 35015168
+    },
+    {
+      "game": 3,
+      "ply": 8,
+      "root_candidates": 467,
+      "children": 8,
+      "child_max_candidates": 337,
+      "CPU_root_observe_ms": 2.0452480002859375,
+      "CPU_children_observe_ms": 11.016483000275912,
+      "collate_transfer_sync_ms": 0.14943000132916495,
+      "GPU_forward_kernel_ms": 0.49935999512672424,
+      "peak_allocated_bytes": 38069248
+    },
+    {
+      "game": 3,
+      "ply": 20,
+      "root_candidates": 58,
+      "children": 8,
+      "child_max_candidates": 23,
+      "CPU_root_observe_ms": 0.6648319995292695,
+      "CPU_children_observe_ms": 2.459309000187204,
+      "collate_transfer_sync_ms": 0.0940609988901997,
+      "GPU_forward_kernel_ms": 0.4657920002937317,
+      "peak_allocated_bytes": 35223552
+    },
+    {
+      "game": 4,
+      "ply": 8,
+      "root_candidates": 311,
+      "children": 8,
+      "child_max_candidates": 463,
+      "CPU_root_observe_ms": 1.4510259989037877,
+      "CPU_children_observe_ms": 14.660846998594934,
+      "collate_transfer_sync_ms": 0.19912100106012076,
+      "GPU_forward_kernel_ms": 0.4784319996833801,
+      "peak_allocated_bytes": 39215104
+    },
+    {
+      "game": 4,
+      "ply": 20,
+      "root_candidates": 138,
+      "children": 8,
+      "child_max_candidates": 60,
+      "CPU_root_observe_ms": 0.9302040016336832,
+      "CPU_children_observe_ms": 3.709285001605167,
+      "collate_transfer_sync_ms": 0.11002999963238835,
+      "GPU_forward_kernel_ms": 0.47974398732185364,
+      "peak_allocated_bytes": 35563008
+    },
+    {
+      "game": 4,
+      "ply": 32,
+      "root_candidates": 3,
+      "children": 3,
+      "child_max_candidates": 3,
+      "CPU_root_observe_ms": 0.36176200046611484,
+      "CPU_children_observe_ms": 0.8462129990221001,
+      "collate_transfer_sync_ms": 0.08221099960792344,
+      "GPU_forward_kernel_ms": 0.9739519953727722,
+      "peak_allocated_bytes": 34944000
+    }
+  ],
+  "scope": "separate post-evaluation diagnostic; CUDA event is kernel-only, tournament time includes all work",
+  "device": "NVIDIA GeForce RTX 5090",
+  "torch": "2.7.1+cu128"
+}

@@ -1,0 +1,271 @@
+{
+  "options": [
+    {
+      "budget": 6,
+      "margin": 0.0,
+      "aggregate": {
+        "point": 0.5,
+        "difference": 0.546875,
+        "point_ci95": [
+          0.47135416666666663,
+          0.5312499999999999
+        ],
+        "difference_ci95": [
+          -0.04687500000000001,
+          1.1199218750000008
+        ]
+      },
+      "fallback_rate": 0.613785136696188,
+      "advance": false,
+      "seed_summaries": [
+        {
+          "prefixes": 32,
+          "games": 64,
+          "wins": 31,
+          "losses": 32,
+          "draws": 1,
+          "mean_difference": 0.234375,
+          "difference_ci95": [
+            -1.0003906249999999,
+            1.421875
+          ],
+          "point_rate": 0.4921875,
+          "point_rate_ci95": [
+            0.421875,
+            0.5546875
+          ],
+          "bootstrap": {
+            "unit": "prefix pair, not individual game",
+            "samples": 4000,
+            "seed": 9817
+          },
+          "provisional": true
+        },
+        {
+          "prefixes": 32,
+          "games": 64,
+          "wins": 28,
+          "losses": 34,
+          "draws": 2,
+          "mean_difference": -0.125,
+          "difference_ci95": [
+            -0.984375,
+            0.765625
+          ],
+          "point_rate": 0.453125,
+          "point_rate_ci95": [
+            0.40625,
+            0.4921875
+          ],
+          "bootstrap": {
+            "unit": "prefix pair, not individual game",
+            "samples": 4000,
+            "seed": 9817
+          },
+          "provisional": true
+        },
+        {
+          "prefixes": 32,
+          "games": 64,
+          "wins": 34,
+          "losses": 27,
+          "draws": 3,
+          "mean_difference": 1.53125,
+          "difference_ci95": [
+            0.640625,
+            2.4375
+          ],
+          "point_rate": 0.5546875,
+          "point_rate_ci95": [
+            0.4921875,
+            0.6171875
+          ],
+          "bootstrap": {
+            "unit": "prefix pair, not individual game",
+            "samples": 4000,
+            "seed": 9817
+          },
+          "provisional": true
+        }
+      ]
+    },
+    {
+      "budget": 25,
+      "margin": 0.0,
+      "aggregate": {
+        "point": 0.43489583333333326,
+        "difference": -2.484375,
+        "point_ci95": [
+          0.3776041666666667,
+          0.4895833333333333
+        ],
+        "difference_ci95": [
+          -3.791666666666666,
+          -1.2239583333333335
+        ]
+      },
+      "fallback_rate": 0.038431372549019606,
+      "advance": false,
+      "seed_summaries": [
+        {
+          "prefixes": 32,
+          "games": 64,
+          "wins": 23,
+          "losses": 39,
+          "draws": 2,
+          "mean_difference": -3.6875,
+          "difference_ci95": [
+            -5.78125,
+            -1.5933593749999986
+          ],
+          "point_rate": 0.375,
+          "point_rate_ci95": [
+            0.265625,
+            0.484375
+          ],
+          "bootstrap": {
+            "unit": "prefix pair, not individual game",
+            "samples": 4000,
+            "seed": 9817
+          },
+          "provisional": true
+        },
+        {
+          "prefixes": 32,
+          "games": 64,
+          "wins": 27,
+          "losses": 35,
+          "draws": 2,
+          "mean_difference": -2.25,
+          "difference_ci95": [
+            -4.171875,
+            -0.375
+          ],
+          "point_rate": 0.4375,
+          "point_rate_ci95": [
+            0.34375,
+            0.53125
+          ],
+          "bootstrap": {
+            "unit": "prefix pair, not individual game",
+            "samples": 4000,
+            "seed": 9817
+          },
+          "provisional": true
+        },
+        {
+          "prefixes": 32,
+          "games": 64,
+          "wins": 31,
+          "losses": 32,
+          "draws": 1,
+          "mean_difference": -1.515625,
+          "difference_ci95": [
+            -4.234765625,
+            1.328125
+          ],
+          "point_rate": 0.4921875,
+          "point_rate_ci95": [
+            0.375,
+            0.609375
+          ],
+          "bootstrap": {
+            "unit": "prefix pair, not individual game",
+            "samples": 4000,
+            "seed": 9817
+          },
+          "provisional": true
+        }
+      ]
+    }
+  ],
+  "chosen": {
+    "budget": 6,
+    "margin": 0.0,
+    "aggregate": {
+      "point": 0.5,
+      "difference": 0.546875,
+      "point_ci95": [
+        0.47135416666666663,
+        0.5312499999999999
+      ],
+      "difference_ci95": [
+        -0.04687500000000001,
+        1.1199218750000008
+      ]
+    },
+    "fallback_rate": 0.613785136696188,
+    "advance": false,
+    "seed_summaries": [
+      {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 31,
+        "losses": 32,
+        "draws": 1,
+        "mean_difference": 0.234375,
+        "difference_ci95": [
+          -1.0003906249999999,
+          1.421875
+        ],
+        "point_rate": 0.4921875,
+        "point_rate_ci95": [
+          0.421875,
+          0.5546875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 28,
+        "losses": 34,
+        "draws": 2,
+        "mean_difference": -0.125,
+        "difference_ci95": [
+          -0.984375,
+          0.765625
+        ],
+        "point_rate": 0.453125,
+        "point_rate_ci95": [
+          0.40625,
+          0.4921875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 34,
+        "losses": 27,
+        "draws": 3,
+        "mean_difference": 1.53125,
+        "difference_ci95": [
+          0.640625,
+          2.4375
+        ],
+        "point_rate": 0.5546875,
+        "point_rate_ci95": [
+          0.4921875,
+          0.6171875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      }
+    ]
+  }
+}

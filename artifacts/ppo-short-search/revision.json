@@ -1,0 +1,93 @@
+{
+  "reason": "preregistered gate failed",
+  "first": {
+    "budget": 6,
+    "margin": 0.0,
+    "aggregate": {
+      "point": 0.5,
+      "difference": 0.546875,
+      "point_ci95": [
+        0.47135416666666663,
+        0.5312499999999999
+      ],
+      "difference_ci95": [
+        -0.04687500000000001,
+        1.1199218750000008
+      ]
+    },
+    "fallback_rate": 0.613785136696188,
+    "advance": false,
+    "seed_summaries": [
+      {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 31,
+        "losses": 32,
+        "draws": 1,
+        "mean_difference": 0.234375,
+        "difference_ci95": [
+          -1.0003906249999999,
+          1.421875
+        ],
+        "point_rate": 0.4921875,
+        "point_rate_ci95": [
+          0.421875,
+          0.5546875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 28,
+        "losses": 34,
+        "draws": 2,
+        "mean_difference": -0.125,
+        "difference_ci95": [
+          -0.984375,
+          0.765625
+        ],
+        "point_rate": 0.453125,
+        "point_rate_ci95": [
+          0.40625,
+          0.4921875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      {
+        "prefixes": 32,
+        "games": 64,
+        "wins": 34,
+        "losses": 27,
+        "draws": 3,
+        "mean_difference": 1.53125,
+        "difference_ci95": [
+          0.640625,
+          2.4375
+        ],
+        "point_rate": 0.5546875,
+        "point_rate_ci95": [
+          0.4921875,
+          0.6171875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      }
+    ]
+  },
+  "change": "require WDL improvement >0.15 to replace policy greedy; no width or checkpoint changes"
+}

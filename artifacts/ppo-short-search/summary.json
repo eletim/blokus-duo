@@ -1,0 +1,499 @@
+{
+  "comparisons": [
+    {
+      "margin": 0.0,
+      "budget": 6,
+      "aggregate": {
+        "point": 0.5,
+        "difference": 0.546875,
+        "point_ci95": [
+          0.47135416666666663,
+          0.5312499999999999
+        ],
+        "difference_ci95": [
+          -0.04687500000000001,
+          1.1199218750000008
+        ]
+      },
+      "search": {
+        "calls": 2978,
+        "nonforced": 2597,
+        "completed": 1003,
+        "fallback_rate": 0.613785136696188,
+        "switch_rate": 0.180658159838818,
+        "overrun_rate": 0.0,
+        "mean_roots": 1.305574210879785,
+        "mean_replies": 2.2847548690396238,
+        "phase_mean_ms": {
+          "root_ms": 1.3364072437961887,
+          "prepare_ms": 0.47557268368180217,
+          "policy_ms": 0.17558667126292174,
+          "leaf_ms": 0.12533414673918028
+        }
+      },
+      "mean_ms": 2.1599683334307493,
+      "network_ms": 1.3385209720964393,
+      "actual_overrun_rate": 0.0,
+      "seconds": 10.457797888999266,
+      "seeds": [
+        {
+          "seed": 1401,
+          "summary": {
+            "prefixes": 32,
+            "games": 64,
+            "wins": 31,
+            "losses": 32,
+            "draws": 1,
+            "mean_difference": 0.234375,
+            "difference_ci95": [
+              -1.0003906249999999,
+              1.421875
+            ],
+            "point_rate": 0.4921875,
+            "point_rate_ci95": [
+              0.421875,
+              0.5546875
+            ],
+            "bootstrap": {
+              "unit": "prefix pair, not individual game",
+              "samples": 4000,
+              "seed": 9817
+            },
+            "provisional": true
+          },
+          "timing": 2.2045490366596936
+        },
+        {
+          "seed": 1402,
+          "summary": {
+            "prefixes": 32,
+            "games": 64,
+            "wins": 28,
+            "losses": 34,
+            "draws": 2,
+            "mean_difference": -0.125,
+            "difference_ci95": [
+              -0.984375,
+              0.765625
+            ],
+            "point_rate": 0.453125,
+            "point_rate_ci95": [
+              0.40625,
+              0.4921875
+            ],
+            "bootstrap": {
+              "unit": "prefix pair, not individual game",
+              "samples": 4000,
+              "seed": 9817
+            },
+            "provisional": true
+          },
+          "timing": 2.16058896683469
+        },
+        {
+          "seed": 1403,
+          "summary": {
+            "prefixes": 32,
+            "games": 64,
+            "wins": 34,
+            "losses": 27,
+            "draws": 3,
+            "mean_difference": 1.53125,
+            "difference_ci95": [
+              0.640625,
+              2.4375
+            ],
+            "point_rate": 0.5546875,
+            "point_rate_ci95": [
+              0.4921875,
+              0.6171875
+            ],
+            "bootstrap": {
+              "unit": "prefix pair, not individual game",
+              "samples": 4000,
+              "seed": 9817
+            },
+            "provisional": true
+          },
+          "timing": 2.113200293265086
+        }
+      ]
+    },
+    {
+      "margin": 0.0,
+      "budget": 25,
+      "aggregate": {
+        "point": 0.43489583333333326,
+        "difference": -2.484375,
+        "point_ci95": [
+          0.3776041666666667,
+          0.4895833333333333
+        ],
+        "difference_ci95": [
+          -3.791666666666666,
+          -1.2239583333333335
+        ]
+      },
+      "search": {
+        "calls": 2959,
+        "nonforced": 2550,
+        "completed": 2452,
+        "fallback_rate": 0.038431372549019606,
+        "switch_rate": 0.6214937478878,
+        "overrun_rate": 0.0003379520108144643,
+        "mean_roots": 6.465359918891518,
+        "mean_replies": 18.422777965528894,
+        "phase_mean_ms": {
+          "root_ms": 1.345273861438111,
+          "prepare_ms": 5.464335282184022,
+          "policy_ms": 0.5087924606108641,
+          "leaf_ms": 0.5528123568737399
+        }
+      },
+      "mean_ms": 7.986956608649615,
+      "network_ms": 1.3289948846143405,
+      "actual_overrun_rate": 0.0003379520108144643,
+      "seconds": 27.6209753990006,
+      "seeds": [
+        {
+          "seed": 1401,
+          "summary": {
+            "prefixes": 32,
+            "games": 64,
+            "wins": 23,
+            "losses": 39,
+            "draws": 2,
+            "mean_difference": -3.6875,
+            "difference_ci95": [
+              -5.78125,
+              -1.5933593749999986
+            ],
+            "point_rate": 0.375,
+            "point_rate_ci95": [
+              0.265625,
+              0.484375
+            ],
+            "bootstrap": {
+              "unit": "prefix pair, not individual game",
+              "samples": 4000,
+              "seed": 9817
+            },
+            "provisional": true
+          },
+          "timing": 8.09537863861081
+        },
+        {
+          "seed": 1402,
+          "summary": {
+            "prefixes": 32,
+            "games": 64,
+            "wins": 27,
+            "losses": 35,
+            "draws": 2,
+            "mean_difference": -2.25,
+            "difference_ci95": [
+              -4.171875,
+              -0.375
+            ],
+            "point_rate": 0.4375,
+            "point_rate_ci95": [
+              0.34375,
+              0.53125
+            ],
+            "bootstrap": {
+              "unit": "prefix pair, not individual game",
+              "samples": 4000,
+              "seed": 9817
+            },
+            "provisional": true
+          },
+          "timing": 8.035406557870376
+        },
+        {
+          "seed": 1403,
+          "summary": {
+            "prefixes": 32,
+            "games": 64,
+            "wins": 31,
+            "losses": 32,
+            "draws": 1,
+            "mean_difference": -1.515625,
+            "difference_ci95": [
+              -4.234765625,
+              1.328125
+            ],
+            "point_rate": 0.4921875,
+            "point_rate_ci95": [
+              0.375,
+              0.609375
+            ],
+            "bootstrap": {
+              "unit": "prefix pair, not individual game",
+              "samples": 4000,
+              "seed": 9817
+            },
+            "provisional": true
+          },
+          "timing": 7.829049881750541
+        }
+      ]
+    },
+    {
+      "margin": 0.15,
+      "budget": 6,
+      "aggregate": {
+        "point": 0.5130208333333333,
+        "difference": 0.24479166666666663,
+        "point_ci95": [
+          0.49739583333333326,
+          0.53125
+        ],
+        "difference_ci95": [
+          -0.06250000000000001,
+          0.5624999999999999
+        ]
+      },
+      "search": {
+        "calls": 2972,
+        "nonforced": 2577,
+        "completed": 986,
+        "fallback_rate": 0.6173845556849049,
+        "switch_rate": 0.04475100942126514,
+        "overrun_rate": 0.0,
+        "mean_roots": 1.285329744279946,
+        "mean_replies": 2.2489905787348587,
+        "phase_mean_ms": {
+          "root_ms": 1.330445906140692,
+          "prepare_ms": 0.47187218607712705,
+          "policy_ms": 0.17111660632572226,
+          "leaf_ms": 0.12267626581342239
+        }
+      },
+      "mean_ms": 2.1430665225360293,
+      "network_ms": 1.3272560144740189,
+      "actual_overrun_rate": 0.0,
+      "seconds": 10.34840306100159,
+      "seeds": [
+        {
+          "seed": 1401,
+          "summary": {
+            "prefixes": 32,
+            "games": 64,
+            "wins": 33,
+            "losses": 30,
+            "draws": 1,
+            "mean_difference": 0.3125,
+            "difference_ci95": [
+              -0.234375,
+              0.921875
+            ],
+            "point_rate": 0.5234375,
+            "point_rate_ci95": [
+              0.46875,
+              0.578125
+            ],
+            "bootstrap": {
+              "unit": "prefix pair, not individual game",
+              "samples": 4000,
+              "seed": 9817
+            },
+            "provisional": true
+          },
+          "timing": 2.18190482752317
+        },
+        {
+          "seed": 1402,
+          "summary": {
+            "prefixes": 32,
+            "games": 64,
+            "wins": 29,
+            "losses": 30,
+            "draws": 5,
+            "mean_difference": -0.40625,
+            "difference_ci95": [
+              -0.859375,
+              0.046875
+            ],
+            "point_rate": 0.4921875,
+            "point_rate_ci95": [
+              0.4453125,
+              0.53125
+            ],
+            "bootstrap": {
+              "unit": "prefix pair, not individual game",
+              "samples": 4000,
+              "seed": 9817
+            },
+            "provisional": true
+          },
+          "timing": 2.1388856833406256
+        },
+        {
+          "seed": 1403,
+          "summary": {
+            "prefixes": 32,
+            "games": 64,
+            "wins": 33,
+            "losses": 30,
+            "draws": 1,
+            "mean_difference": 0.828125,
+            "difference_ci95": [
+              0.1875,
+              1.5
+            ],
+            "point_rate": 0.5234375,
+            "point_rate_ci95": [
+              0.5,
+              0.5625
+            ],
+            "bootstrap": {
+              "unit": "prefix pair, not individual game",
+              "samples": 4000,
+              "seed": 9817
+            },
+            "provisional": true
+          },
+          "timing": 2.107245366629655
+        }
+      ]
+    },
+    {
+      "margin": 0.15,
+      "budget": 25,
+      "aggregate": {
+        "point": 0.4583333333333333,
+        "difference": -0.90625,
+        "point_ci95": [
+          0.39322916666666663,
+          0.5261067708333337
+        ],
+        "difference_ci95": [
+          -2.1147135416666667,
+          0.2813802083333339
+        ]
+      },
+      "search": {
+        "calls": 2958,
+        "nonforced": 2566,
+        "completed": 2477,
+        "fallback_rate": 0.034684333593141076,
+        "switch_rate": 0.2616632860040568,
+        "overrun_rate": 0.0003380662609871535,
+        "mean_roots": 6.431710615280595,
+        "mean_replies": 18.35361730899256,
+        "phase_mean_ms": {
+          "root_ms": 1.3486150226586926,
+          "prepare_ms": 5.488268537526725,
+          "policy_ms": 0.5031329702310767,
+          "leaf_ms": 0.5515276697303508
+        }
+      },
+      "mean_ms": 8.008227348211758,
+      "network_ms": 1.3317965886413425,
+      "actual_overrun_rate": 0.0003380662609871535,
+      "seconds": 27.669605290999243,
+      "seeds": [
+        {
+          "seed": 1401,
+          "summary": {
+            "prefixes": 32,
+            "games": 64,
+            "wins": 31,
+            "losses": 30,
+            "draws": 3,
+            "mean_difference": -0.859375,
+            "difference_ci95": [
+              -2.90625,
+              1.1722656250000014
+            ],
+            "point_rate": 0.5078125,
+            "point_rate_ci95": [
+              0.390625,
+              0.625
+            ],
+            "bootstrap": {
+              "unit": "prefix pair, not individual game",
+              "samples": 4000,
+              "seed": 9817
+            },
+            "provisional": true
+          },
+          "timing": 8.205086132715543
+        },
+        {
+          "seed": 1402,
+          "summary": {
+            "prefixes": 32,
+            "games": 64,
+            "wins": 21,
+            "losses": 39,
+            "draws": 4,
+            "mean_difference": -2.390625,
+            "difference_ci95": [
+              -4.828125,
+              -0.0625
+            ],
+            "point_rate": 0.359375,
+            "point_rate_ci95": [
+              0.24980468750000007,
+              0.4765625
+            ],
+            "bootstrap": {
+              "unit": "prefix pair, not individual game",
+              "samples": 4000,
+              "seed": 9817
+            },
+            "provisional": true
+          },
+          "timing": 7.937616009088466
+        },
+        {
+          "seed": 1403,
+          "summary": {
+            "prefixes": 32,
+            "games": 64,
+            "wins": 32,
+            "losses": 31,
+            "draws": 1,
+            "mean_difference": 0.53125,
+            "difference_ci95": [
+              -1.265625,
+              2.3285156250000014
+            ],
+            "point_rate": 0.5078125,
+            "point_rate_ci95": [
+              0.390625,
+              0.625
+            ],
+            "bootstrap": {
+              "unit": "prefix pair, not individual game",
+              "samples": 4000,
+              "seed": 9817
+            },
+            "provisional": true
+          },
+          "timing": 7.876207158883238
+        }
+      ]
+    }
+  ],
+  "auxiliary_old6ms": {
+    "point": 0.6432291666666667,
+    "difference": 3.369791666666667,
+    "point_ci95": [
+      0.5885416666666666,
+      0.7005208333333333
+    ],
+    "difference_ci95": [
+      2.0260416666666665,
+      4.838541666666666
+    ]
+  },
+  "training_updates": 0,
+  "validation_games": 960,
+  "independent_validation_prefixes": 32,
+  "holdout_games": 0,
+  "reason": "preregistered gate failed after one permitted revision",
+  "match_seconds": 96.35190681599852,
+  "main_unchanged": "a96d280"
+}

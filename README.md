@@ -526,3 +526,12 @@ seed1401のgen2は3072、再開元は4096であり、再開元への改善も未
 B対gen2/100ms教師の平均成績は正ですが、それをpool効果とは呼びません。main gen2を維持し、無制限な延長はしません。
 同追加ゲーム/PPO呼出数で比較し、軌跡長と既存early-KLによる実minibatch更新数の差も報告しています。
 [設定・seed別CI・対局/学習state割合・計算量・再現CLI](artifacts/ppo-generation-pool/REPORT.md) を参照してください。
+
+### 固定PPOの短時間探索（研究限定、採用見送り）
+
+`research/ppo-short-search`はgen2重みを固定したpolicy順序＋勝敗valueのbatched 2ply探索を比較した。新32prefix・3seed・先後交換で、25ms版は同ネット単体より弱く、保守的修正も進行gate未達。大規模holdoutは実施せず、既存gen2ネット単体と100ms教師の案内・既定は維持する。探索を学習改善と混同しない。詳しいCI、分離監査、実時間、再現方法は[研究レポート](artifacts/ppo-short-search/REPORT.md)。研究用対戦CLI:
+
+```bash
+.venv/bin/python -m blokus.ppo_short_play --device cuda --budget-ms 25 --margin 0.15 --opponent self
+.venv/bin/python -m blokus.ppo_short_play --device cpu --budget-ms 6 --human-seat 0
+```

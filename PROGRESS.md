@@ -551,3 +551,6 @@ loss/勝敗終局報酬/モデル/LR .0003/16並行ゲーム/相手比率current
 - validation27組1728局完了。事前gate通過: B対A point .5755208、固定4相手の平均point B−A=-.02734375（閾値-.05）。固定相手全般でBが優位とは言えない。再生算術分離監査後、設定変更なしでfresh1680000/96prefix・B対A/gen2/教師へ進む。
 - fresh1680000/96prefix、B対A/gen2/教師9組1728局完了。B対A point.4826389 CI[.4383464,.5269097]、得点差+.100694 CI[-.765799,.928863]でpool効果未確認。seed1402は退行。対gen2 point.5529514/差+1.621528、対教師point.5711806/差+1.758681の平均成績をpool効果と混同しない。main維持、追加延長なし。
 - validation1728/holdout1728局の再生・報酬/算術・対照指定・gate再計算・分離監査PASS。採用開始/実訪問の訓練重複0。全112tests PASS、CLI1局完走（評価には不算入）。REPORT/compute/曲線/再現CLI保存。学習wall3895.82秒、主実験完了5296.26秒。準備関数由来の未使用旧lock項目は元データを保持しmetadata-notesへ明記。
+- 新依頼2d02d0e6、research/ppo-short-searchを952d4cbから開始。公開gen2全3seed固定、学習0。PLAN.mdにbatched2ply、6ms4x2/25ms8x3、value勝敗単位/手番視点、完了候補集合fallback、validation/gateと一度だけmargin保守修正を事前記録。main変更なし。
+- ppo-short-search: 独立小終盤/視点/pass/fallbackの8テスト追加、全120PASS。dev36ゲーム105rootでvalue校正・CPU/GPU費用を測定、validation前に費用予測を固定。初版25msは対単体point .435/差−2.484で悪化、6msはfallback61%。登録済みmargin .15修正も6ms point .513/差+.245（CIは無改善含む）/fallback61.74%、25ms .458/−.906、両方gate未達。96prefix holdout/教師100ms比較には進まない。追加学習0、有限960対局96.35秒、main a96d280維持。
+- 960局の合法再生/得点/paired CI/時間算術PASS、訓練13,101,265全状態と過去評価開始の事前・事後分離PASS。CPU/CUDA CLI、人間先後自動合法入力完走。REPORT.md/summary.json/detail-audit.jsonへ結果・制約・再現CLI保存。探索を改善教師として採用する根拠なし、追加学習への利用自体は未検証。branch commit/pushを仕上げる。
