@@ -211,3 +211,6 @@ Ranking seed303: 8.95秒/6000更新、validation criterion=+1.867, alpha=1.0。
 正式子依頼の最終結果: repaired共通6ms、fresh230000/96prefix、3seed平均で非学習探索+2.583 CI[1.773,3.325]、現value -0.066 CI[-0.688,0.578]。既存valueからの改善は示せず推奨を維持。主学習27.16秒/18000更新、CPU19200継続/52.38秒、初回+修正版実験run617.86秒、3840評価対局。全38テスト、CUDA別process4vs2+2 model/optimizer/全RNG bit一致、256終局ラベル再生、選択/時間/hash/開始状態非重複の監査PASS。CLI終局PASS。artifacts/paired-ranking/conclusions.mdに原因と次案。research/paired-rankingへcommit/pushし、正式requests finishで秘書へ引き継ぐ。
 
 main統合レビュー: origin/main=69065fcに対する1b5cf87/3dc3eb6の差分を確認。既存engine/既存学習APIへの変更なし、新規value/ranking経路とテスト追加。終局価値符号、group分割、RNG再開、時間費用上限、旧結果保全を確認。全38テスト6.17秒PASS。origin/mainをfetchし他者更新なし、3dc3eb6までfast-forward。README冒頭を既存value推奨/paired-ranking改善未確認へ更新して通常pushする。
+
+## 100ms教師の限定統合
+main eb96a90とd3c4698の依存差分を確認。engine/ai/research/value_searchと固定checkpointは同一。deep_search/refinement_searchを原本のまま追加し、独立終盤oracleを含む関連テストを追加（テストのBASE importのみ定数化）。研究用生成/学習/評価モジュールと巨大生データは取り込まず、専用teacher_play CLIと固定設定/2標本要約を追加。53 tests PASS、CUDA CLI対局完走 scores -22/-29、教師超過0。低予算デフォルト変更なし。生結果は保存済み研究branchを参照。

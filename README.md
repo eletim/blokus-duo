@@ -343,3 +343,16 @@ GPU学習は9モデル計24,000更新・約30.67秒（smoke/再開検証別）�
 ```
 
 最終96prefix確認では3seed平均得点差が非学習探索に **+2.58 [95%区間 +1.77,+3.32]**、現valueに **−0.07 [−0.69,+0.58]**。今回の追加学習による置換の根拠は得られなかったため、推奨は既存valueのままです。主学習18,000更新/27.16秒、全38テスト・CUDA別process再開・256終局ラベル再生監査PASS。[原因分析・次案・全計算量](artifacts/paired-ranking/conclusions.md)を保存しています。
+
+## 追加選択肢: 固定valueによる100ms教師探索
+
+低予算の既存value/2ply推奨・デフォルトは維持します。新しい教師はheuristic上位128候補の2ply評価を完了後、初期値の良い候補を選択的depth4で再評価します。相手幅3であり完全minimaxではありません。途中終了は完了済み評価へfallback、試合ごとcold、TTなし。学習重みの改善ではありません。
+
+```bash
+.venv/bin/python -m blokus.teacher_play              # 教師 vs 旧2ply、双方100ms上限
+.venv/bin/python -m blokus.teacher_play --human      # 人間は後手、合法手番号入力
+```
+
+独立prefix集合96件×先後交換の2標本で平均得点差は +2.479 [95% prefix CI 1.422,3.620] と +1.406 [0.234,2.625]。2標本目98勝89敗5分で、勝率優越は確定していません。実消費は教師70.68/68.55ms、旧51.61/49.50msで等しくなく、共通100ms上限の比較です。優先配分が均等配分より優れる証拠も未確認。2標本目は同一実装の独立標本再確認で、独立実装監査ではありません。
+
+[固定設定・結果要約](artifacts/teacher-100ms/)を同梱。完全な再現・監査・生ログは [初回研究branch](https://github.com/eletim/blokus-duo/tree/research/minimax-refinement/artifacts/minimax-refinement) と [再確認branch](https://github.com/eletim/blokus-duo/tree/research/root-policy-distillation/artifacts/root-policy-distillation) を参照。不要な研究データの複製を避けています。

@@ -1,0 +1,170 @@
+[
+  {
+    "left": {
+      "spec": {
+        "method": "priority",
+        "budget_ms": 100,
+        "reserve_fraction": 0
+      },
+      "stats": {
+        "calls": 3001,
+        "milliseconds_per_move": 70.67919968535475,
+        "p50_ms": 89.34780200070236,
+        "p95_ms": 94.36139299941715,
+        "max_ms": 95.09112399973674,
+        "allowance_ms": 100,
+        "overruns": 0,
+        "overrun_ms": 0.0,
+        "total_seconds": 212.1082782557496,
+        "nodes": 960433,
+        "completed_roots": 174074,
+        "fallbacks": 0,
+        "sections_ms": {
+          "legal": 900.0519058681675,
+          "rank": 883.2604819326662,
+          "initial": 151317.97516618826,
+          "extra": 59010.338122017856
+        },
+        "completed_refinements": 13319,
+        "attempted_refinements": 13320,
+        "baseline_retained_calls": 1450
+      }
+    },
+    "right": {
+      "spec": {
+        "method": "old",
+        "budget_ms": 100
+      },
+      "stats": {
+        "calls": 2976,
+        "milliseconds_per_move": 51.61187617308784,
+        "p50_ms": 48.59428399868193,
+        "p95_ms": 99.52046374746715,
+        "max_ms": 99.92243500164477,
+        "allowance_ms": 100,
+        "overruns": 0,
+        "overrun_ms": 0.0,
+        "total_seconds": 153.5969434911094,
+        "nodes": 687927,
+        "completed_roots": 173341,
+        "fallbacks": 0,
+        "sections": {
+          "legal": 0.9005582079844316,
+          "rank": 0.8548351550853113,
+          "expand": 127.72027574309323,
+          "value": 23.86439552349475
+        }
+      }
+    },
+    "summary": {
+      "prefixes": 96,
+      "games": 192,
+      "wins": 114,
+      "losses": 68,
+      "draws": 10,
+      "mean_difference": 2.4791666666666665,
+      "difference_ci95": [
+        1.4216145833333333,
+        3.6197916666666665
+      ],
+      "point_rate": 0.6197916666666666,
+      "point_rate_ci95": [
+        0.5703125,
+        0.671875
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "prefix_sha256": "c9ac1f56f5494b72e4ab820bbff02dcdbabbe8bdb4f4958afaaa6dfcf23f64e5",
+    "checkpoint_sha256": "8a5795a2e4fe73e4055ce94d11f761fddbc7a66db7ec0863b39df8ba195bf2ad",
+    "seconds": 366.08129686799657
+  },
+  {
+    "left": {
+      "spec": {
+        "method": "priority",
+        "budget_ms": 100,
+        "reserve_fraction": 0
+      },
+      "stats": {
+        "calls": 3021,
+        "milliseconds_per_move": 68.55178027519777,
+        "p50_ms": 89.16012100235093,
+        "p95_ms": 94.34446200612001,
+        "max_ms": 94.90242399624549,
+        "allowance_ms": 100,
+        "overruns": 0,
+        "overrun_ms": 0.0,
+        "total_seconds": 207.09492821137246,
+        "nodes": 944596,
+        "completed_roots": 172351,
+        "fallbacks": 0,
+        "sections_ms": {
+          "legal": 899.8759013629751,
+          "rank": 845.5140748556005,
+          "initial": 146884.4524223241,
+          "extra": 58468.39052255382
+        },
+        "completed_refinements": 13228,
+        "attempted_refinements": 13228,
+        "baseline_retained_calls": 1455
+      }
+    },
+    "right": {
+      "spec": {
+        "method": "old",
+        "budget_ms": 100
+      },
+      "stats": {
+        "calls": 3012,
+        "milliseconds_per_move": 49.497007117314695,
+        "p50_ms": 44.32090950285783,
+        "p95_ms": 99.48886350175599,
+        "max_ms": 100.00495599524584,
+        "allowance_ms": 100,
+        "overruns": 1,
+        "overrun_ms": 0.004955995245836675,
+        "total_seconds": 149.08498543735186,
+        "nodes": 680681,
+        "completed_roots": 172428,
+        "fallbacks": 0,
+        "sections": {
+          "legal": 0.8929253660462564,
+          "rank": 0.8134281026868848,
+          "expand": 123.10775428987108,
+          "value": 24.016935880717938
+        }
+      }
+    },
+    "summary": {
+      "prefixes": 96,
+      "games": 192,
+      "wins": 98,
+      "losses": 89,
+      "draws": 5,
+      "mean_difference": 1.40625,
+      "difference_ci95": [
+        0.2342447916666667,
+        2.625
+      ],
+      "point_rate": 0.5234375,
+      "point_rate_ci95": [
+        0.4791666666666667,
+        0.5703125
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "prefix_sha256": "69557242ffe933d92b5450707c846a1e73a1b3734472c9f3c512573d0c03e26e",
+    "checkpoint_sha256": "8a5795a2e4fe73e4055ce94d11f761fddbc7a66db7ec0863b39df8ba195bf2ad",
+    "seconds": 356.56225172200357
+  }
+]
