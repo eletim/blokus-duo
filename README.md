@@ -413,3 +413,20 @@ GPU主学習は54,000更新・87.47秒。全44テスト、別process CUDA保存�
 配分改善は見られましたが、方式全体は旧2plyを下回り、**既存value/2ply推奨を維持**します。主比較の実平均73.28ms対旧55.42ms、fallback15.7%。時間超過は57.2%で主比較最大100.97msのため、hard deadline保証はありません。固定相手方策の平均rolloutは、相手が最悪応手へ適応する値とは異なります。
 
 学習0、512局1073.90秒、全68テスト・終局ラベル/全対局監査PASS。[詳細・原因と次案](artifacts/terminal-rollouts/conclusions.md)／[再現手順](artifacts/terminal-rollouts/METHOD.md)。研究用CLI: `.venv/bin/python -m blokus.rollout_experiment play`。
+
+## 広い2plyを保持した候補優先追加探索（実験）
+
+固定valueで旧方式と同じroot上位128/相手上位3の2plyを初期評価し、余剰時間で候補単位の深さ4 negamaxを追加しました。枝限定探索であり完全minimaxではありません。未完了の追加値は使わず初期値を保持、試合ごとcold。学習重みは変更していません。
+
+新validationで100msを固定後、fresh96prefix・先後交換:
+
+- 同100ms旧2plyへ **114勝68敗10分、+2.479点 [95% prefix CI +1.422,+3.620]**。
+- 同一初期処理・追加なしへ **111勝70敗11分、+2.490点 [+1.401,+3.625]**。
+
+この条件では追加探索に正の差が出ました。主比較実時間は70.679ms対51.612msで、**共通上限での改善であり実消費時間の完全一致ではありません**。追加側3001手の超過・初期fallbackは0、追加root13319完了。25msは開発中盤で追加探索できず、priority対uniformの優位も未確認です。**mainの既存value/2ply推奨は維持**し、採用は独立レビュー後に判断します。
+
+全74テスト、480対局全再生・算術監査、小終盤12独立解照合PASS。主要実験約15.8分、追加学習0。[詳細・制約・次のpolicy学習案](artifacts/minimax-refinement/conclusions.md)／[再現手順](artifacts/minimax-refinement/METHOD.md)。研究用CLI:
+
+```bash
+.venv/bin/python -m blokus.refinement_experiment play --budget 100
+```

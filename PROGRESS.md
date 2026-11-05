@@ -348,3 +348,21 @@ Rollout final selection {'method': 'halving', 'budget_ms': 100, 'diverse': False
 主比較実73.276ms対55.417ms、超過1719/3003（最大100.970ms）、fallback472/3003。序盤（残駒24超）のfallbackは472/1342。主比較個別完走51577、採用46267、部分round破棄5310。平均相手方策バイアス、root8制限、序盤fallbackの寄与は未分離。次案は旧2plyと候補/序盤条件を揃え、相手minを扱うtree searchへ配分を移す固定simulation対照。
 全68tests7.44秒、独立終盤10/12（2局面はnode上限・厳密値非主張）、3189終局trace・159ラベル再生成・96固定配分再現・512局全再生/算術/時間/選択/hash分離PASS。監査側のsnapshot共有listによる破壊的再生をcloneへ修正し、保存snapshot不変の回帰テストを追加後、全監査を再実行してPASS。実対戦・保存ラベルの生成コードはこの監査修正で変更していない。
 修正後pilot127.94秒、本対戦1073.90秒、追加学習0、checkpoint作成0。CLI終局PASS（-67/-5）。READMEとartifacts/terminal-rollouts/conclusions.mdに制約・計算量・次案を記録。mainと旧成果は保持、研究branchのみ提出する。
+
+## Minimax refinement — 2026-11-05 事前計画
+基点eb7dbd4、branch research/minimax-refinement。学習なし、value固定。上位128root/相手上位3/初期2plyを保持し、全初期候補完了時だけ余剰時間をdepth4（内部幅3）のroot単位追加negamaxへ配分。相手はmin、自分はmax、葉は手番視点。枝限定探索であり完全minimaxとは呼ばない。未完了rootは初期値を保持、未評価rootは選択対象外。比較は追加なし(control)、初期値の高い順(priority)、元のheuristic順(uniform: 各root一回)で同一初期処理。初期候補数が時間で制限された場合は追加探索しない。予測費用1.5倍と最低1ms/予算5%余裕を確保。coldは毎試合、TTなし。
+新規12独立ゲーム820000+、各中盤1・終盤1。固定node上限で再現性と独立終盤oracleを検証。devで25/100ms比較。validation821000/16prefixで優先配分対旧2ply/配分対照。進行条件: 中盤追加完了率>=50%、validation対旧平均得点差>=-1、95%得点差CI上限>=0、超過率<10%。満たさなければ一度設計を修正し別validation821100で確認。二度目も不適ならholdout省略。進む場合主要予算固定後fresh822000/96prefix先後交換、旧2ply主対照と追加なし対照。時間計測中の他作業負荷なし。途中結果・失敗も保持、全体90分目安。
+
+### 初回pilot
+新規12ゲーム・24局面、固定2048node再実行一致、独立小終盤oracleも確認。中盤25msは追加完了0/12、初期完了0/12、平均23.15ms。100msは追加完了12/12、初期完了12/12、平均6root追加、実88.15ms、初期49.13ms、超過0/12。100msを新validation821000/16へ進める。固定nodeの値は幅3限定depth4であり完全解ではない（独立oracle欄のみ厳密）。
+
+### validation固定
+100ms priority対旧16勝15敗1分/+1.15625 CI[-1.25,4.125]、対uniform15勝16敗1分/0 CI[-1.84375,1.8125]、対control14勝17敗1分/+1.09375 CI[-1.5625,4.1570]。改善証明ではないが事前進行基準を満たす。主比較500手超過0、初期fallback0。仕様修正は不要、reserve variantは未使用。selection.json固定後fresh822000/96prefixへ進行。validationの継承stats.sectionsは未使用ゼロ値のため詳細内訳はdecisions.sections_msを用いる。holdout前に集計表示だけ修正（探索処理変更なし）。
+
+### fresh主対照（監査前）
+822000/96prefix・192局、priority100ms対旧100ms:114勝68敗10分、+2.47917点 CI[1.42161,3.61979]。旧holdoutの再選択なし。追加なし対照を継続、main推奨は維持。
+
+### 最終結果・検証
+fresh96prefix/192局の同初期処理control対照も111勝70敗11分/+2.48958 CI[1.40104,3.625]。共通100ms下の追加探索には正の差、priority配分そのもののuniformに対する優位は未確認。主対照実70.679/旧51.612ms、追加13319/13320root、初期fallback0/3001、超過0/3001、最大95.091ms。実消費時間同一や学習重み改善とは主張しない。main推奨維持。
+全74tests7.46秒PASS、480対局全再生/得点/独立CI算術/時間/hash監査PASS、独立小終盤12件再照合PASS、保存状態hashのvalidation/holdout重複0。CLI play完走(-68,-7)、help確認。RTX5090・既存CUDA value実推論、学習0更新・checkpoint新規0。pilot27.657秒、validation192.367秒、holdout727.266秒、主要実験計947.291秒。実装込みレポート時26.4分。時間計測中の監査・テスト重畳なし。
+README/METHOD/conclusions/run-manifest/verificationへ設計・条件・全成績・計算量・再現コマンドを保存。JSONは大きな2ファイルのみ空白圧縮、parse同一確認。次案は実対戦で改善を示した探索を教師とする低予算policy学習の小規模検証（学習成功は未検証）。今回は追加開発せず秘書へ判断を返す。

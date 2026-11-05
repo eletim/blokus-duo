@@ -1,0 +1,35 @@
+{
+  "spec": {
+    "method": "priority",
+    "budget_ms": 100,
+    "reserve_fraction": 0
+  },
+  "revision": 0,
+  "gate_pass": true,
+  "validation_sha256": "910076d62fc638cdb64f53e3f6f21b341c017d49f7e250b193057410faaea989",
+  "validation_summary": {
+    "prefixes": 16,
+    "games": 32,
+    "wins": 16,
+    "losses": 15,
+    "draws": 1,
+    "mean_difference": 1.15625,
+    "difference_ci95": [
+      -1.25,
+      4.125
+    ],
+    "point_rate": 0.515625,
+    "point_rate_ci95": [
+      0.39023437500000013,
+      0.640625
+    ],
+    "bootstrap": {
+      "unit": "prefix pair, not individual game",
+      "samples": 4000,
+      "seed": 9817
+    },
+    "provisional": true
+  },
+  "selection": "preregistered priority method, smallest budget passing middle extra-coverage; validation go/no-go; no old holdout",
+  "frozen_before_holdout": true
+}
