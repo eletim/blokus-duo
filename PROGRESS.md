@@ -428,3 +428,36 @@ c46a180から新branch。学習/実戦の偶然の最大値選択を止め、固
 
 ## candidate-mask 診断完了
 候補配置の区別・勾配確認、18run/18000更新完走。新bank356ゲーム672roots。summary/cells raw MSE6.45957/6.45132、regret .520514/.537984、zero .540837。両gate未達、対戦を実施しない。89tests、CUDA別process40 vs20+20、教師75root再生、split/算術監査PASS。全履歴には共通状態あり、採用ラベルrootの重複は0（詳細REPORT）。GPU主学習19.82秒。main/推奨維持。root補正の微調整を区切る判断を推奨。
+# Terminal PPO 事前計画
+基点f6db8c9、新branch research/terminal-ppo。main変更なし。root補正は終了。
+全合法手（passは合法手なし時のみ）の可変長分布。盤面6ch CNN、残駒/score/pass49状態、候補39要約と正確な占有セルの位置埋込・盤面conv局所特徴を使用。maskでpaddingを除外。候補上位制限なし。ネット単体、探索なし。
+初期policyは従来heuristic logitへのゼロ残差、valueゼロ。初期seed1400共有、学習seed1401/1402/1403（対局乱数・sample・minibatchは別）。初期checkpointを保持。同一アーキテクチャ学習前を対照。
+終局勝敗+1/0/-1のみをMC return（gamma1）とする。各記録の実プレイヤー視点へ終局scoreから直接割当、advantage=return-old_value、batch内標準化。得点差は評価指標のみ、shapingなし。PPO clip .2、value MSE係数.5、entropy係数.01、Adam lr .0003、grad clip .5、2epochs、minibatch16states、近似KL .03超でepoch中断。
+16並列対局を1収集単位とし、current同士50%/凍結過去policy25%/heuristic25%を毎単位固定。後2種では座席を均等化しcurrent側のみ更新、current同士は両側記録。凍結過去は初期から開始し4単位毎に更新する1スロットpool（過去全履歴ではない）。毎対局新seedの合法random2–6ply prefix。全局終局まで完了後更新、保存は単位境界。iteration=収集+更新。
+まずsmokeとCUDA別process再開。pilot各seed64iterations=1024games、保存16/32/64。3seed合計生成+更新wall上限1800秒（各seed600秒、途中の単位は終了して記録）。上限時は未達と明記。timingはCPUlegal/pack、GPU推論同期、更新、残余を記録。途中ckptは3個以下。
+validation固定新prefix seed1430000、32prefix先後交換。相手poolはheuristic/各seed学習前を等重み。各seedのcheckpointは勝敗点率平均最大、同値は得点差→早いiteration。oldvalue/2ply6msは選択後の強い比較基準、選択に使わない。
+対戦進行gate: 選択後各seedについて両基準への点率>=.5、3seed平均点率>=.53かつ平均得点差>0、さらに各基準へのprefix単位seed平均bootstrap95%下限点率>.5。旧教師MSE gateは使わない。未達なら最終holdoutは作らない。診断で根拠があれば1回だけ修正・新validationで再pilot可、その条件は開始前に追記する。
+gate通過時のみ設定固定、fresh seed1440000 96prefix先後交換で3seed/学習前/heuristic/旧valueと比較。時間同等を主張しない。単独計測、試合cold。全対局再生・終局報酬・算術監査。PPO参考 https://arxiv.org/abs/1707.06347 。初期v1は46状態+12要約MLP・単純終局得点差actor-critic、今回は空間/正確配置・勝敗PPO・batch/pool・clip/固定検証を導入。
+# 1回だけの再pilot（初回結果確認後・実行前固定）
+初回64iterations×3seedのgateは未達（heuristic点率.5234、CI[.4635,.5833]）。損失有限・KL小・entropy約2.6、方策崩壊なし。経験量が1024games/seed、生成+更新計約112秒と小さいため、変更軸を経験量だけに限定して検証する。
+常に各seedの最新64iterationから継続（validation選択checkpointからは開始しない）。モデル/初期重み/損失/PPO係数/相手割合/学習率は不変。総512iterations=8192games/seed、保存128/256/512、3seed生成+更新の累積wall上限1800秒を維持。訓練prefixは通算iterationの新seed、旧validation/holdoutは使わない。
+出力artifacts/terminal-ppo/extended。新validation seed1470000、32prefix先後交換、固定heuristic/学習前poolでcheckpointを選ぶ。同一gate。通過時だけfresh holdout seed1480000、96prefix。未達ならこの依頼での修正は終了し、追加ハイパーパラメータ探索をしない。
+保存実装のみ大きな履歴重複を避けてgzip圧縮（mtime0）、学習意味は不変。新保存形式でもCUDA別process再開を再検証する。
+
+## terminal-ppo 初回pilotと再pilot進行
+初回3seed各1024games完走、生成+更新wall合計111.68秒。固定32prefix validation選択後は対heuristic点率.52344/得点差+.89583、CI点率[.46354,.58333]でgate未達。旧value6msに各seed負け。3072訓練対局/1344評価対局再生、69348終局target、分割・算術監査PASS。CUDA別process2 vs1+1もPASS。
+1回の修正として経験量のみ8192games/seedへ増加、最新64iterationから継続、新validation1470000に変更。設定・gateはREPAIR-PLANで事前固定。2seedは約305/307秒（初回を含む累積）で完走、3seed目実行中。pool50/25/25はゲーム比率で、current同士両側学習によりstate比率は概ね2/3,1/6,1/6。実数を監査へ保存する。
+
+## terminal-ppo 再pilot validation gate通過・holdout開始
+3seed各8192games完走。新validation1470000/32prefix先後交換で点率平均.60417、CI[.53900,.671875]、平均得点差+1.52083、CI[.31771,2.78125]（学習前とheuristic双方）。全seed点率>=.5で事前gate通過。選択は1401=iteration128、1402=512、1403=512。selection.jsonのcheckpoint/hashを固定し、fresh seed1480000/96prefix先後交換を開始。holdoutによる再選択なし。旧value/2ply6msにはvalidationで各seed負け、main推奨維持。
+
+## terminal-ppo 最終検証完了
+fresh1480000/96prefix先後交換、3seed平均対heuristic点率.580729（CI[.539041,.622396]）、得点差+1.47222（CI[.775998,2.112891]）。対学習前点率同じ/得点差+1.45660。1402/1403は改善、1401はほぼ互角でCIに0。対旧value6ms点率.296875/得点差-4.75521。新ネットは探索なし、思考時間同等とは主張しない。main/既存推奨維持。
+生成+更新累積919.32秒、24576games、70975minibatch更新、556410current records。全93tests PASS、CUDA別process6iterations連続vs4保存+追加2でモデル/過去policy/optimizer/対局/RNG bit一致。初回+再pilot validation各1344局、freshholdout1728局の合法/終局/符号/算術を監査、訓練/validation訪問状態重複0。CLI完走。checkpoint選択固定を維持。REPORT/METHOD/設定/curve/各局結果/再現コマンド保存。必要ckptのみ保持、削減hashをpruned-checkpointsへ保存。
+
+## terminal-ppo holdout分離の訂正（モデル選択変更なし）
+追加監査でseed1480000 holdoutの一部prefixが訓練prefixに一致と判明。先のfresh成績は独立性条件を満たさないため最終結論から外し、全ファイルをextended/holdout-1480000-overlapへ保全。算術監査PASSと訓練分離PASSは別であり、前者だけでは不足した。
+固定checkpointは一切変更せず、seed1500000の事前生成候補から訓練prefix hash/訓練state hashおよび旧validation/holdout/diagnostic prefixと一致するものを除き、最初の96prefixを固定（holdout-disjoint-plan.json）。新ゲームの結果はフィルタ・モデル選択に使わない。追加学習なし、対戦のみ再実行。旧結果と失敗監査logを保持する。
+
+## terminal-ppo 最終確定（seed1500000）
+分離済み96prefix/1728局の最終監査PASS。訓練prefix重複0、訓練訪問状態重複0、固定selection hash一致。対heuristic点率.605035（CI[.569444,.640625]）/得点差+1.600694（CI[1.006944,2.196181]）、対学習前点率.606771/得点差+1.633681。対旧value6ms点率.331597/得点差-3.684028。新holdoutでは3seedとも平均差が正だが、3seedと共有prefixに条件付けた結果。旧1480000結果は最終結論に使わない。分離チェックを評価CLIの実行前へ移し回帰テスト追加、最終94tests PASS。全処理終了、main・既存推奨維持。branch commit/pushへ進む。

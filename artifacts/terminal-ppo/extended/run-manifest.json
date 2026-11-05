@@ -1,0 +1,56 @@
+{
+  "format": "terminal-ppo-run-v1",
+  "architecture": "TerminalNet",
+  "all_legal": true,
+  "search": false,
+  "reward": "terminal sign(score_player-score_opponent), gamma=1; no shaping",
+  "optimizer": {
+    "name": "Adam",
+    "lr": 0.0003
+  },
+  "ppo": {
+    "clip": 0.2,
+    "epochs": 2,
+    "minibatch_states": 16,
+    "value_coefficient": 0.5,
+    "entropy_coefficient": 0.01,
+    "grad_clip": 0.5,
+    "target_kl": 0.03
+  },
+  "pool_game_ratio": {
+    "current": 0.5,
+    "past": 0.25,
+    "heuristic": 0.25
+  },
+  "past_refresh_iterations": 4,
+  "initial_seed": 1400,
+  "seeds": [
+    1401,
+    1402,
+    1403
+  ],
+  "sampling": "categorical training, greedy evaluation with random ties",
+  "initial_plan_sha256": "9cef668d388391853edfe04df660e30e063b966f3317860cb37c49010f7315ad",
+  "repair_plan_sha256": "7bbff4d4d1d3f34d92f51893eebc61c9aef8d39a1c1a5a6804000a10e28f8bf3",
+  "checkpoints": {
+    "artifacts/terminal-ppo/extended/seed-1401/iteration-128.pt": "0634e120302368cf0668c27eb673445c713df727ae1a000712ed5445a67965d9",
+    "artifacts/terminal-ppo/extended/seed-1401/iteration-512.pt": "ef1c6e5191fcbbe35e304220ff860a5e526496b814fcc09b7e7fb994631a3b04",
+    "artifacts/terminal-ppo/extended/seed-1401/untrained.pt": "1e23b2d689c6083d0bac75d9e61db4e743a76a930a63dd64014d2b47e57ac9a4",
+    "artifacts/terminal-ppo/extended/seed-1403/iteration-512.pt": "5f6bbe6feb8e0819bfb5cf85decea561ae643ec57a4f71271ab88fb884a8e3c9",
+    "artifacts/terminal-ppo/extended/seed-1403/untrained.pt": "ea8822cef3f009be48fd4f47c939e5187a49a47b78095ba84c98a094b0fd8c46",
+    "artifacts/terminal-ppo/extended/seed-1402/iteration-512.pt": "1a018a7f40b399deaba7929f2ab27a40c1bedd98e0b7c93c1680572385cb0bc8",
+    "artifacts/terminal-ppo/extended/seed-1402/untrained.pt": "bc83c02341dde874d1e09c6471ed98dc397a6a29f4d754e936d5061a7f382524"
+  },
+  "source_hashes": {
+    "blokus/terminal_ppo.py": "8d6f124c19e28f8909816ab044c520bfa699e1b12962f9f2dcc551e16426dcea",
+    "blokus/terminal_play.py": "911f38e4d7b5c626ae3c3969c6ae1aa993fae87e93d85536d29aa4677c69e4eb",
+    "blokus/terminal_eval.py": "c0a2277dab0b32b22e2459bc255a629b2affc017be3669d3d4e1ee03b8c89dc1",
+    "scripts/diagnose_terminal.py": "97111a2402c3a1c3700d15d57a9dad0ae6c90f222dc214adb062db49bdf319b8",
+    "scripts/report_terminal.py": "f694792e7cde544026484fafd1ea496682b4f5ec84132f73a6095a0516e98a11",
+    "scripts/audit_terminal_holdout.py": "7e397ee0523bab02757d753d3dbd66aba543f6ba3794b3009741c0ed61a95949",
+    "scripts/audit_terminal.py": "10677b06f359bb575d5584fb25bfd114091b15aadbf211ef5d01f1dad1349779",
+    "scripts/check_terminal_resume.py": "d974264488a74ca4e9efd5cff38f766f1b250872a9b1ebfd6ed220590076f3b5",
+    "scripts/prepare_terminal_holdout.py": "b080a74fb0c5e18f284ec1bf22919540ea066d64ab8e1789b21adfc531cbfb61",
+    "scripts/finalize_terminal.py": "d60f52b53c72ff83d11442425150319c2a50a9c594d26a69f556f3cab426cf1b"
+  }
+}

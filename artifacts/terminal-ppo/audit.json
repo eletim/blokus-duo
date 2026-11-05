@@ -1,0 +1,41 @@
+{
+  "pass_": true,
+  "training_games": 3072,
+  "terminal_targets": 69348,
+  "initial_policy_logprob_replays": 24,
+  "unique_initial_model_hash": "53c265ae8fe1ede0cf9a6e6432b49ad7e51df3222140ff3745dbd45c4bf32c3c",
+  "eval_games": 1344,
+  "training_validation_prefix_overlap": 0,
+  "training_validation_visited_state_overlap": 0,
+  "pool": [
+    {
+      "seed": 1401,
+      "games": 1024,
+      "pool": {
+        "current": 512,
+        "past": 256,
+        "heuristic": 256
+      }
+    },
+    {
+      "seed": 1402,
+      "games": 1024,
+      "pool": {
+        "current": 512,
+        "past": 256,
+        "heuristic": 256
+      }
+    },
+    {
+      "seed": 1403,
+      "games": 1024,
+      "pool": {
+        "current": 512,
+        "past": 256,
+        "heuristic": 256
+      }
+    }
+  ],
+  "seconds": 21.92806155300059,
+  "note": "Implementation-side replay and arithmetic, not independent secretary implementation."
+}

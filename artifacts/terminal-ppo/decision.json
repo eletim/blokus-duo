@@ -1,0 +1,35 @@
+{
+  "advance": false,
+  "checks": {
+    "heuristic": {
+      "point_rate": 0.5234375,
+      "difference": 0.8958333333333335,
+      "point_ci95": [
+        0.46354166666666663,
+        0.5833333333333334
+      ],
+      "difference_ci95": [
+        -0.15104166666666663,
+        1.9843750000000002
+      ],
+      "each_seed_nonnegative": false,
+      "advance": false
+    },
+    "untrained": {
+      "point_rate": 0.5286458333333334,
+      "difference": 0.8958333333333335,
+      "point_ci95": [
+        0.46875000000000006,
+        0.5859375000000001
+      ],
+      "difference_ci95": [
+        -0.13541666666666663,
+        1.9791666666666665
+      ],
+      "each_seed_nonnegative": false,
+      "advance": false
+    }
+  },
+  "criterion": "preregistered win/loss validation gate; no teacher MSE",
+  "prefix_sha256": "92486ced6817d6ce99ff73ea66298eb5777e91b8ddc60b9b8493184b1edcc7d4"
+}

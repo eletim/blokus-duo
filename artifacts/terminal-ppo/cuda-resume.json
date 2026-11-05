@@ -1,0 +1,22 @@
+{
+  "pass_": true,
+  "separate_process": true,
+  "continuous_iterations": 6,
+  "first_iterations": 4,
+  "resumed_additional_iterations": 2,
+  "games": 48,
+  "checks": {
+    "model": true,
+    "past": true,
+    "optimizer": true,
+    "iteration": true,
+    "games_gzip": true,
+    "python_rng": true,
+    "numpy_rng": true,
+    "torch_rng": true,
+    "cuda_rng": true
+  },
+  "nonzero_gradient": true,
+  "parameters_changed": true,
+  "policy_head_changed": true
+}

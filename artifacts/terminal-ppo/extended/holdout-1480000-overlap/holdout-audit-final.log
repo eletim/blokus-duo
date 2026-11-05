@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/eletim/blokus-duo-ai/scripts/audit_terminal_holdout.py", line 19, in <module>
+    assert not train_prefixes & {digest(p['moves']) for p in fixture['prefixes']}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

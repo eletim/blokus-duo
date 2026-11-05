@@ -1,0 +1,45 @@
+{
+  "pass_": true,
+  "games": 1728,
+  "prefixes": 96,
+  "checkpoint_reselection": false,
+  "aggregate": {
+    "heuristic": {
+      "point_rate": 0.5807291666666666,
+      "difference": 1.472222222222222,
+      "point_ci95": [
+        0.5390407986111109,
+        0.6223958333333333
+      ],
+      "difference_ci95": [
+        0.775998263888889,
+        2.1128906250000012
+      ]
+    },
+    "untrained": {
+      "point_rate": 0.5807291666666666,
+      "difference": 1.456597222222222,
+      "point_ci95": [
+        0.5390407986111109,
+        0.6223958333333333
+      ],
+      "difference_ci95": [
+        0.7604166666666669,
+        2.0972222222222214
+      ]
+    },
+    "oldvalue": {
+      "point_rate": 0.296875,
+      "difference": -4.755208333333333,
+      "point_ci95": [
+        0.2604166666666666,
+        0.33420138888888884
+      ],
+      "difference_ci95": [
+        -5.428862847222222,
+        -4.091970486111111
+      ]
+    }
+  },
+  "note": "Game pair and update seeds averaged inside each prefix, conditional on selected models."
+}

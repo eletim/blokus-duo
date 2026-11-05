@@ -1,0 +1,56 @@
+{
+  "pass_": true,
+  "training_games": 24576,
+  "terminal_targets": 556410,
+  "initial_policy_logprob_replays": 24,
+  "unique_initial_model_hash": "53c265ae8fe1ede0cf9a6e6432b49ad7e51df3222140ff3745dbd45c4bf32c3c",
+  "eval_games": 1344,
+  "training_validation_prefix_overlap": 0,
+  "training_validation_visited_state_overlap": 0,
+  "pool": [
+    {
+      "seed": 1401,
+      "games": 8192,
+      "pool": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learning_records_by_pool": {
+        "current": 122704,
+        "past": 30675,
+        "heuristic": 31603
+      }
+    },
+    {
+      "seed": 1402,
+      "games": 8192,
+      "pool": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learning_records_by_pool": {
+        "current": 123352,
+        "past": 30927,
+        "heuristic": 31531
+      }
+    },
+    {
+      "seed": 1403,
+      "games": 8192,
+      "pool": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learning_records_by_pool": {
+        "current": 123099,
+        "past": 30806,
+        "heuristic": 31713
+      }
+    }
+  ],
+  "seconds": 170.12143422299414,
+  "note": "Implementation-side replay and arithmetic, not independent secretary implementation."
+}

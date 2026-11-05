@@ -1,0 +1,47 @@
+{
+  "prefix_seed": 1490000,
+  "selection_use": false,
+  "rows": [
+    {
+      "seed": "1401",
+      "roots": 48,
+      "greedy_change_rate": 0.4166666666666667,
+      "kl_initial_to_trained": 0.10252911114366725,
+      "trained_entropy": 2.8663387211660543
+    },
+    {
+      "seed": "1402",
+      "roots": 48,
+      "greedy_change_rate": 0.6666666666666666,
+      "kl_initial_to_trained": 0.5471270821678141,
+      "trained_entropy": 2.463706761598587
+    },
+    {
+      "seed": "1403",
+      "roots": 48,
+      "greedy_change_rate": 0.7291666666666666,
+      "kl_initial_to_trained": 1.5496431266268094,
+      "trained_entropy": 2.051754331526657
+    }
+  ],
+  "timing": [
+    {
+      "batch": 1,
+      "max_candidates": 324,
+      "valid_candidates": 324,
+      "gpu_kernel_ms": 0.32515359938144683,
+      "host_forward_sync_ms": 0.33415486934245564,
+      "incremental_peak_bytes": 1371136,
+      "note": "Prepacked GPU inputs, excludes legal generation and H2D; see actual match timing for whole decision."
+    },
+    {
+      "batch": 16,
+      "max_candidates": 489,
+      "valid_candidates": 2432,
+      "gpu_kernel_ms": 0.3243696016073227,
+      "host_forward_sync_ms": 0.3326425598061178,
+      "incremental_peak_bytes": 9597440,
+      "note": "Prepacked GPU inputs, excludes legal generation and H2D; see actual match timing for whole decision."
+    }
+  ]
+}

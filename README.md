@@ -468,3 +468,14 @@ depth4−depth2を全盤面＋候補の小型CNNで学び、完了したrootの�
 ### 候補セルmask対照（研究限定）
 
 [実験レポート](artifacts/candidate-mask/REPORT.md): 従来要約と正確な配置maskを3ゲーム分割×3更新seedで比較。配置を入力・勾配で区別できるが、固定汎化gateは未達。対戦holdoutなし。mainの既存value/2ply推奨は変更しない。
+
+### 終局勝敗PPO（研究branch）
+
+[実験レポート](artifacts/terminal-ppo/REPORT.md)。全合法手・盤面/残駒/正確な候補配置を使うpolicy/valueを、実ゲーム終局勝敗で更新。3seed計24,576対局、生成+更新919秒。分離済みfresh96prefixで対heuristic平均点率60.5%（CI56.9–64.1%）、得点差+1.60（CI+1.01～+2.20）。学習前にも改善。ただし初期policyはheuristic事前値を持ち、両対照を独立な証拠とは数えない。旧value/2ply6msには平均得点差−3.68で負け、既存低予算AIと100ms教師の推奨は維持する。
+
+当初holdoutの1prefixが訓練と一致したため旧成績を保全し、モデルを変更せず新96prefixで再評価した。最終監査では訓練prefix/訪問状態の重複ゼロ。新ネットは探索なしで、旧探索との時間同等比較ではない。
+
+```bash
+.venv/bin/python -m blokus.terminal_play --model artifacts/terminal-ppo/extended/seed-1401/iteration-128.pt --opponent heuristic
+# --human-seat 1 で人間対AI。全seedの固定checkpointはextended/selection.json。
+```

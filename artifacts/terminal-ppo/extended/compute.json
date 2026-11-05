@@ -1,0 +1,12 @@
+{
+  "wall_seconds": 919.3198625850055,
+  "games": 24576,
+  "ppo_updates": 70975,
+  "records": 556410,
+  "generation_seconds": 691.1739353477897,
+  "cpu_generation_pack_seconds": 589.0929883705103,
+  "inference_collation_transfer_sync_seconds": 83.64631718116289,
+  "update_seconds": 214.91571413837664,
+  "unattributed_wall_seconds": 13.230213098839158,
+  "note": "GPU inference phase includes collation/H2D/synchronization; not pure CUDA kernel time. Residual includes prefix init, Python dispatch, logging/checkpoint I/O. No external wait worker."
+}
