@@ -216,3 +216,8 @@ main統合レビュー: origin/main=69065fcに対する1b5cf87/3dc3eb6の差分�
 main eb96a90とd3c4698の依存差分を確認。engine/ai/research/value_searchと固定checkpointは同一。deep_search/refinement_searchを原本のまま追加し、独立終盤oracleを含む関連テストを追加（テストのBASE importのみ定数化）。研究用生成/学習/評価モジュールと巨大生データは取り込まず、専用teacher_play CLIと固定設定/2標本要約を追加。53 tests PASS、CUDA CLI対局完走 scores -22/-29、教師超過0。低予算デフォルト変更なし。生結果は保存済み研究branchを参照。
 
 PPO2048推論追加: 3seedの固定モデルを履歴不要へexport、CPU/CUDA出力bit一致。新96prefix再確認/1344対局を監査。新clone CPU専用2.7.1+cpu/人間先後/各seed/既存探索対戦とCUDAを確認、main57tests PASS。既定例1401固定、既存デフォルト維持。研究履歴はresearch/ppo-4096参照。
+
+## 新世代PPO提供
+- 固定3072/4096/4096を凍結、新96prefix×3seed×3対照×先後=1728局を単独計測。対2048 +3.9583 [3.2031,4.6650]、旧6ms +2.9184 [2.0955,3.7049]。教師100ms +0.7674 [-0.2366,1.7484]、優位未確定。実訪問訓練重複0、合法性/算術/SHA/過去prefix分離PASS。
+- 公開コードは80a5179を通常cherry-pickした22801aa。PPO CLI世代gen2既定、seed1401維持、旧2048は--generation 2048。旧グローバルAIデフォルトと100ms教師維持。学習履歴なし。
+- 3seed×CPU/CUDA×26局面export bit一致。新cloneでCPU専用torch2.7.1+cpu、6推論テストPASS、人間先後・AI・世代対戦/旧探索をCPU/CUDA各13局再生PASS、main全59tests PASS。今回は追加学習なし。

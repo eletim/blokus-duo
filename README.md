@@ -357,7 +357,7 @@ GPU学習は9モデル計24,000更新・約30.67秒（smoke/再開検証別）�
 
 [固定設定・結果要約](artifacts/teacher-100ms/)を同梱。完全な再現・監査・生ログは [初回研究branch](https://github.com/eletim/blokus-duo/tree/research/minimax-refinement/artifacts/minimax-refinement) と [再確認branch](https://github.com/eletim/blokus-duo/tree/research/root-policy-distillation/artifacts/root-policy-distillation) を参照。不要な研究データの複製を避けています。
 
-## 追加選択肢：終局PPO（2048iteration）
+## 旧世代の追加選択肢：終局PPO（2048iteration）
 
 [CPU/GPUの導入・人間対戦・評価範囲](PPO.md)。全合法手を評価する学習済みpolicyを3seed同梱しました。訓練履歴sidecarは不要で、推論モデルは各約276KiBです。既存低予算AIと100ms教師を残し、デフォルトは変更しません。
 
@@ -367,3 +367,17 @@ GPU学習は9モデル計24,000更新・約30.67秒（smoke/再開検証別）�
 ```
 
 seed1401の例は評価前に固定。2回目の新96prefixでは旧6ms探索へpoint56.1%ですが平均得点差+0.70のCIは0を含み、100ms教師には平均−2.03点でした。実時間も異なるため一般的最強とは呼びません。詳細なseed差・CI・実時間はPPO.mdと評価要約を参照してください。新規cloneのCPU専用環境・CUDAで動作確認し、main全57テストPASSです。
+
+## 新世代PPO（gen2）
+
+PPO専用CLIは新世代を既定にしました。seed既定1401は維持し、旧グローバルAIデフォルトは変更しません。旧2048も明示的に選べます。
+
+```bash
+.venv/bin/python -m blokus.ppo_play --generation gen2 --model-seed 1401 --device cpu --human-seat 0
+.venv/bin/python -m blokus.ppo_play --generation 2048 --device cpu
+.venv/bin/python -m blokus.ppo_play --generation gen2 --opponent ppo --opponent-generation 2048 --device cuda
+```
+
+固定3072/4096/4096を新96prefixで再確認し、対2048得点差+3.96 [95%CI 3.20,4.66]、旧6msに+2.92 [2.10,3.70]。100ms教師には+0.77 [-0.24,1.75]で優位未確定です。教師戦の実平均はPPO1.41ms/教師69.59msで、同時間比較ではありません。seedを選び直さず、全3seedと旧2048を提供します。
+
+[世代選択・CPU/GPU導入・評価範囲](PPO.md)。新cloneのCPU専用環境とCUDAで、両世代の人間先後・AI対戦・旧探索対戦を各13局完走、main全59テストPASS。推論checkpointは各約276KiBで学習履歴を参照しません。研究記録は [research/ppo-generation2](https://github.com/eletim/blokus-duo/tree/research/ppo-generation2/artifacts/ppo-generation2) にあります。
