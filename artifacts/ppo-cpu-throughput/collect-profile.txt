@@ -1,0 +1,43 @@
+         5432065 function calls (5429443 primitive calls) in 1.085 seconds
+
+   Ordered by: cumulative time
+   List reduced from 176 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.011    0.011    1.085    1.085 /home/eletim/blokus-duo-ai/blokus/terminal_ppo.py:60(collect)
+      462    0.026    0.000    0.715    0.002 /home/eletim/blokus-duo-ai/blokus/terminal_ppo.py:20(observe)
+      411    0.096    0.000    0.620    0.002 /home/eletim/blokus-duo-ai/blokus/root_policy.py:15(inputs)
+      462    0.145    0.000    0.482    0.001 /home/eletim/blokus-duo-ai/blokus/ai.py:14(features)
+   299335    0.069    0.000    0.229    0.000 {built-in method builtins.sum}
+      591    0.096    0.000    0.163    0.000 /home/eletim/blokus-duo-ai/blokus/engine.py:86(legal_moves)
+   216467    0.090    0.000    0.143    0.000 /home/eletim/blokus-duo-ai/blokus/engine.py:47(cells)
+       69    0.001    0.000    0.119    0.002 /home/eletim/blokus-duo-ai/blokus/terminal_ppo.py:48(sample_batch)
+   403631    0.058    0.000    0.081    0.000 /home/eletim/blokus-duo-ai/blokus/ai.py:22(<genexpr>)
+   403631    0.053    0.000    0.075    0.000 /home/eletim/blokus-duo-ai/blokus/ai.py:23(<genexpr>)
+  1101591    0.052    0.000    0.052    0.000 /home/eletim/blokus-duo-ai/blokus/engine.py:49(<genexpr>)
+  1380/69    0.001    0.000    0.049    0.001 /home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py:1747(_wrapped_call_impl)
+  1380/69    0.001    0.000    0.049    0.001 /home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py:1755(_call_impl)
+       69    0.012    0.000    0.049    0.001 /home/eletim/blokus-duo-ai/blokus/terminal_ppo.py:41(forward)
+   797376    0.046    0.000    0.046    0.000 {method 'bit_count' of 'int' objects}
+  1297052    0.046    0.000    0.046    0.000 {built-in method builtins.abs}
+      591    0.037    0.000    0.037    0.000 {built-in method builtins.sorted}
+      462    0.008    0.000    0.028    0.000 /home/eletim/blokus-duo-ai/blokus/value_search.py:17(encode)
+     5810    0.027    0.000    0.027    0.000 {method 'update' of 'set' objects}
+      276    0.001    0.000    0.027    0.000 /home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/nn/modules/container.py:238(forward)
+   273136    0.026    0.000    0.026    0.000 {built-in method builtins.min}
+       69    0.000    0.000    0.025    0.000 /home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/distributions/categorical.py:131(sample)
+       69    0.001    0.000    0.019    0.000 /home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/distributions/categorical.py:54(__init__)
+    60930    0.013    0.000    0.018    0.000 /home/eletim/blokus-duo-ai/blokus/engine.py:38(cells_of)
+       69    0.017    0.000    0.017    0.000 {built-in method torch.multinomial}
+      462    0.017    0.000    0.017    0.000 {built-in method numpy.asarray}
+      345    0.000    0.000    0.014    0.000 /home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/nn/modules/linear.py:124(forward)
+   136637    0.014    0.000    0.014    0.000 {built-in method builtins.max}
+      345    0.014    0.000    0.014    0.000 {built-in method torch._C._nn.linear}
+       69    0.001    0.000    0.012    0.000 /home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/distributions/categorical.py:138(log_prob)
+       69    0.011    0.000    0.011    0.000 {method 'logsumexp' of 'torch._C.TensorBase' objects}
+       69    0.002    0.000    0.011    0.000 /home/eletim/blokus-duo-ai/blokus/terminal_ppo.py:30(collate)
+       69    0.001    0.000    0.010    0.000 /home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/distributions/distribution.py:275(_validate_sample)
+       69    0.009    0.000    0.009    0.000 /home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/distributions/constraints.py:305(check)
+      138    0.000    0.000    0.009    0.000 /home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/nn/modules/conv.py:553(forward)
+
+

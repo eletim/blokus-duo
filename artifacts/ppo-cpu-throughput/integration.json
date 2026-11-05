@@ -1,0 +1,20 @@
+{
+  "base": "a96d280347930ef3d8f916725f00b6474d4884d7",
+  "branch": "integration/ppo-cpu-throughput",
+  "commit": "c901d09b5fd1369b0f6fe17280679aac94a95fff",
+  "main_modified": false,
+  "production_files": [
+    "blokus/ai.py",
+    "blokus/placement_geometry.py",
+    "blokus/ppo_policy.py"
+  ],
+  "reference_and_tests": true,
+  "no_training_history": true,
+  "research_geometry_and_features_identical": true,
+  "fresh_clone": "/tmp/blokus-cpu-fresh-clone",
+  "cpu_environment": {
+    "torch": "2.7.1+cpu",
+    "cuda": false,
+    "module": "/tmp/blokus-cpu-fresh-clone/blokus/__init__.py"
+  }
+}

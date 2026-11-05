@@ -7,6 +7,7 @@ from torch import nn
 from .research import clone,source_hashes,sha
 from .ai import features,heuristic,seed_all
 from .root_policy import inputs
+from .placement_geometry import geometry
 from .value_search import encode
 from .engine import State,legal_moves,play,Move
 from .value_experiment import write
@@ -21,9 +22,7 @@ def observe(s,qs=None):
  if s.done:raise ValueError('terminal has no policy actions')
  qs=legal_moves(s) if qs is None else qs;b,st=encode(s)
  if qs:
-  x,_=inputs(s,qs);cells=np.full((len(qs),5),196,np.int64)
-  for i,q in enumerate(qs):
-   for j,(y,col) in enumerate(q.move.cells):cells[i,j]=14*y+col
+  x,_=inputs(s,qs);cells=np.asarray([geometry(q.move)[3] for q in qs],dtype=np.int64)
  else:x=np.zeros((1,39),np.float32);cells=np.full((1,5),196,np.int64)
  return (b,st,x,cells),qs
 

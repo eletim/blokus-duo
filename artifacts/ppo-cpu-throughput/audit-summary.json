@@ -1,0 +1,70 @@
+{
+  "pass_": true,
+  "oracle_AST_matches": "bd962d7",
+  "engine_unchanged": true,
+  "game_replays": 15,
+  "training_trajectory_inputs_logs_equal": true,
+  "training_reward_replay": true,
+  "measurements": {
+    "encode": {
+      "old": 0.019128345331409946,
+      "new": 0.01911966533468027,
+      "speedup": 1.0004539826706031
+    },
+    "features12": {
+      "old": 0.22430041066642542,
+      "new": 0.10058362933583945,
+      "speedup": 2.229989235300976
+    },
+    "inference_cpu": {
+      "old": 0.9245084173332241,
+      "new": 0.6663564159995683,
+      "speedup": 1.3874082925222755
+    },
+    "inference_cuda": {
+      "old": 1.2002165706653614,
+      "new": 0.9289881186656809,
+      "speedup": 1.291961163496095
+    },
+    "inputs39": {
+      "old": 0.39662609066484344,
+      "new": 0.18395008933293866,
+      "speedup": 2.1561614463093517
+    },
+    "legal": {
+      "old": 0.21278678666809964,
+      "new": 0.21307915999932447,
+      "speedup": 0.9986278651970198
+    },
+    "observe_with_legal": {
+      "old": 0.707738608000606,
+      "new": 0.45106493333393394,
+      "speedup": 1.5690393016578181
+    }
+  },
+  "training": {
+    "old": {
+      "wall_median": 1.3046583900013502,
+      "games_per_second_median": 30.929138041139968,
+      "CPU_generation_pack_median": 0.8972614199592499,
+      "GPU_inference_sync_median": 0.11856695998721989,
+      "update_wall_median": 0.25533162300052936
+    },
+    "new": {
+      "wall_median": 1.0244280670012813,
+      "games_per_second_median": 41.19151821338821,
+      "CPU_generation_pack_median": 0.6385764570295578,
+      "GPU_inference_sync_median": 0.11804081399350252,
+      "update_wall_median": 0.23859721800181433
+    }
+  },
+  "source_hashes": {
+    "blokus/ai.py": "18e36d1163a8918845897acb9bf61a62e022523f49a3fd4a998141a861a623f2",
+    "blokus/root_policy.py": "4cbbf7b53b21ef79223e9a87951fb9fbf94a537170df12a88be061631913a2fe",
+    "blokus/terminal_ppo.py": "70297d3fc214f25affd607ecafa71757fccd1c0ce5c342e8a10acb153dbbec9f",
+    "blokus/placement_geometry.py": "dd648b24f52e40acfb5c7e23e9fc79d0647681d598c655355d6346c0e3dae09a",
+    "blokus/cpu_reference.py": "3085ccda28a42386da41e4913827297e64b2503b3408bd2bc169d95c1f67db76",
+    "scripts/bench_cpu_throughput.py": "d7768ca67355146841db7a729ffcac2abd90b196553437fa3181de882f897fa3"
+  },
+  "model_sha256": "7e111fd012868d9cd6f489b48f03ca2c8ab8d761935baeeaad29af94dd09bb1f"
+}

@@ -1,0 +1,364 @@
+{
+  "pass_": true,
+  "bit_equal": [
+    "trajectory",
+    "all observation arrays",
+    "model",
+    "past",
+    "optimizer",
+    "Python NumPy Torch CUDA RNG"
+  ],
+  "rows": [
+    {
+      "repeat": 0,
+      "backend": "old",
+      "games": 32,
+      "iterations": 2,
+      "wall": 1.42703706499924,
+      "generation_seconds": 1.0359809689998656,
+      "games_per_second": 30.888598302044823,
+      "logs": [
+        {
+          "generation": {
+            "cpu_generation_pack": 0.4499327629964682,
+            "gpu_inference_sync": 0.062472606005030684,
+            "other": 0.009734738998304238,
+            "seconds": 0.5221401079998031
+          },
+          "update": {
+            "loss": 0.229517046129331,
+            "policy_loss": -0.01488342535837243,
+            "value_mse": 0.5095671443268657,
+            "entropy": 1.0383102881411712,
+            "approx_kl": 0.006397257646312937,
+            "grad_norm": 3.0353896071513495,
+            "clip_fraction": 0.08506944496184587,
+            "updates": 48,
+            "records": 383,
+            "early_kl": false,
+            "seconds": 0.28195908599991526
+          }
+        },
+        {
+          "generation": {
+            "cpu_generation_pack": 0.4402269970087218,
+            "gpu_inference_sync": 0.06309754200810858,
+            "other": 0.010516321983232046,
+            "seconds": 0.5138408610000624
+          },
+          "update": {
+            "loss": 0.25899957203916435,
+            "policy_loss": -0.012265924235870099,
+            "value_mse": 0.5643665225341402,
+            "entropy": 1.091776196298928,
+            "approx_kl": 0.004253105645806625,
+            "grad_norm": 3.564557231705764,
+            "clip_fraction": 0.04956896551724138,
+            "updates": 29,
+            "records": 386,
+            "early_kl": true,
+            "seconds": 0.09413521900023625
+          }
+        }
+      ],
+      "inputs": [
+        "772b3ee838bf8146c4eacf0e4e55fb0cc8a1a4848751ad5c86eddafa984d0d4b",
+        "c4e406a8894cd3c969c11c208686936c4287c7b353ede080ad4fe0b2de4a72ec"
+      ],
+      "games_sha256": "7479328ab6004cb8c364e680be58ed4acf9529ddd2c3e9ecaad7203dc037dbc6"
+    },
+    {
+      "repeat": 0,
+      "backend": "new",
+      "games": 32,
+      "iterations": 2,
+      "wall": 1.0111046109996096,
+      "generation_seconds": 0.7512459489989851,
+      "games_per_second": 42.59590356878348,
+      "logs": [
+        {
+          "generation": {
+            "cpu_generation_pack": 0.3175212580281368,
+            "gpu_inference_sync": 0.05786943500424968,
+            "other": 0.010384371968029882,
+            "seconds": 0.38577506500041636
+          },
+          "update": {
+            "loss": 0.229517046129331,
+            "policy_loss": -0.01488342535837243,
+            "value_mse": 0.5095671443268657,
+            "entropy": 1.0383102881411712,
+            "approx_kl": 0.006397257646312937,
+            "grad_norm": 3.0353896071513495,
+            "clip_fraction": 0.08506944496184587,
+            "updates": 48,
+            "records": 383,
+            "early_kl": false,
+            "seconds": 0.1526684969994676
+          }
+        },
+        {
+          "generation": {
+            "cpu_generation_pack": 0.2993483779991948,
+            "gpu_inference_sync": 0.055726784990838496,
+            "other": 0.010395721008535475,
+            "seconds": 0.36547088399856875
+          },
+          "update": {
+            "loss": 0.25899957203916435,
+            "policy_loss": -0.012265924235870099,
+            "value_mse": 0.5643665225341402,
+            "entropy": 1.091776196298928,
+            "approx_kl": 0.004253105645806625,
+            "grad_norm": 3.564557231705764,
+            "clip_fraction": 0.04956896551724138,
+            "updates": 29,
+            "records": 386,
+            "early_kl": true,
+            "seconds": 0.09201906499947654
+          }
+        }
+      ],
+      "inputs": [
+        "772b3ee838bf8146c4eacf0e4e55fb0cc8a1a4848751ad5c86eddafa984d0d4b",
+        "c4e406a8894cd3c969c11c208686936c4287c7b353ede080ad4fe0b2de4a72ec"
+      ],
+      "games_sha256": "7479328ab6004cb8c364e680be58ed4acf9529ddd2c3e9ecaad7203dc037dbc6"
+    },
+    {
+      "repeat": 1,
+      "backend": "new",
+      "games": 32,
+      "iterations": 2,
+      "wall": 1.0255512599997019,
+      "generation_seconds": 0.7844094249994669,
+      "games_per_second": 40.795022318888826,
+      "logs": [
+        {
+          "generation": {
+            "cpu_generation_pack": 0.3165214529926743,
+            "gpu_inference_sync": 0.06309690899797715,
+            "other": 0.009737540009155055,
+            "seconds": 0.3893559019998065
+          },
+          "update": {
+            "loss": 0.24194449668421464,
+            "policy_loss": -0.03151436719824286,
+            "value_mse": 0.5690208103726891,
+            "entropy": 1.1051543635480545,
+            "approx_kl": 0.006299352239105193,
+            "grad_norm": 3.1892576883820927,
+            "clip_fraction": 0.09044117655824213,
+            "updates": 34,
+            "records": 394,
+            "early_kl": true,
+            "seconds": 0.10280989700004284
+          }
+        },
+        {
+          "generation": {
+            "cpu_generation_pack": 0.32009541399020236,
+            "gpu_inference_sync": 0.06284608399255376,
+            "other": 0.012112025016904227,
+            "seconds": 0.39505352299966034
+          },
+          "update": {
+            "loss": 0.27519385347998626,
+            "policy_loss": -0.02757164745314701,
+            "value_mse": 0.6277574832374985,
+            "entropy": 1.1113242313668534,
+            "approx_kl": 0.005761042136598278,
+            "grad_norm": 3.166945976179999,
+            "clip_fraction": 0.044308731886180674,
+            "updates": 37,
+            "records": 381,
+            "early_kl": true,
+            "seconds": 0.1224412259998644
+          }
+        }
+      ],
+      "inputs": [
+        "021551feaa3ec0dc504f98e76122b61d15351b0d68e70a4b1f37e32a3c0b11b3",
+        "544fd80b571a957c08883c3c646b84310847c95c4614a33c37d647c9bea4a932"
+      ],
+      "games_sha256": "8b1b78769eab06fe1df3a6b827f0590c98a38ad869f581e17e378ce34c6e5d7d"
+    },
+    {
+      "repeat": 1,
+      "backend": "old",
+      "games": 32,
+      "iterations": 2,
+      "wall": 1.2698182510011975,
+      "generation_seconds": 1.0301812880006764,
+      "games_per_second": 31.062493924835284,
+      "logs": [
+        {
+          "generation": {
+            "cpu_generation_pack": 0.44798758699107566,
+            "gpu_inference_sync": 0.0539135509825428,
+            "other": 0.010595011026452994,
+            "seconds": 0.5124961490000715
+          },
+          "update": {
+            "loss": 0.24194449668421464,
+            "policy_loss": -0.03151436719824286,
+            "value_mse": 0.5690208103726891,
+            "entropy": 1.1051543635480545,
+            "approx_kl": 0.006299352239105193,
+            "grad_norm": 3.1892576883820927,
+            "clip_fraction": 0.09044117655824213,
+            "updates": 34,
+            "records": 394,
+            "early_kl": true,
+            "seconds": 0.10900667900023109
+          }
+        },
+        {
+          "generation": {
+            "cpu_generation_pack": 0.45095652698182676,
+            "gpu_inference_sync": 0.05513730799611949,
+            "other": 0.011591304022658733,
+            "seconds": 0.517685139000605
+          },
+          "update": {
+            "loss": 0.27519385347998626,
+            "policy_loss": -0.02757164745314701,
+            "value_mse": 0.6277574832374985,
+            "entropy": 1.1113242313668534,
+            "approx_kl": 0.005761042136598278,
+            "grad_norm": 3.166945976179999,
+            "clip_fraction": 0.044308731886180674,
+            "updates": 37,
+            "records": 381,
+            "early_kl": true,
+            "seconds": 0.11523440100063453
+          }
+        }
+      ],
+      "inputs": [
+        "021551feaa3ec0dc504f98e76122b61d15351b0d68e70a4b1f37e32a3c0b11b3",
+        "544fd80b571a957c08883c3c646b84310847c95c4614a33c37d647c9bea4a932"
+      ],
+      "games_sha256": "8b1b78769eab06fe1df3a6b827f0590c98a38ad869f581e17e378ce34c6e5d7d"
+    },
+    {
+      "repeat": 2,
+      "backend": "old",
+      "games": 32,
+      "iterations": 2,
+      "wall": 1.304947700999037,
+      "generation_seconds": 1.0415536530017562,
+      "games_per_second": 30.72333327023149,
+      "logs": [
+        {
+          "generation": {
+            "cpu_generation_pack": 0.47370426098132157,
+            "gpu_inference_sync": 0.05919450799410697,
+            "other": 0.009512481025012676,
+            "seconds": 0.5424112500004412
+          },
+          "update": {
+            "loss": 0.3333429632442338,
+            "policy_loss": 0.015217272085802896,
+            "value_mse": 0.6575970926455089,
+            "entropy": 1.0672855802944727,
+            "approx_kl": 0.006563266865643008,
+            "grad_norm": 3.455905750819615,
+            "clip_fraction": 0.08571428571428572,
+            "updates": 35,
+            "records": 390,
+            "early_kl": true,
+            "seconds": 0.10865259800084459
+          }
+        },
+        {
+          "generation": {
+            "cpu_generation_pack": 0.43019154299327056,
+            "gpu_inference_sync": 0.05562655500580149,
+            "other": 0.013324305002242909,
+            "seconds": 0.49914240300131496
+          },
+          "update": {
+            "loss": 0.2391306755016558,
+            "policy_loss": -0.011376071624302616,
+            "value_mse": 0.520610798150301,
+            "entropy": 0.9798652504881223,
+            "approx_kl": 0.004094895127915758,
+            "grad_norm": 3.41194881995519,
+            "clip_fraction": 0.048177083333333336,
+            "updates": 48,
+            "records": 375,
+            "early_kl": false,
+            "seconds": 0.1392058800011
+          }
+        }
+      ],
+      "inputs": [
+        "e5743da30bbe796cf86166c8cb4f5c427fe391434ef6806750c0df0eed29a1ff",
+        "774f5194404e6b84a99d219f9096a9f705997c878076b1064ddb85db684d3496"
+      ],
+      "games_sha256": "7aee8f7260c3524c31848d308a98574b8b5b8d0c4e78295b8f8f5bf7dff1ed06"
+    },
+    {
+      "repeat": 2,
+      "backend": "new",
+      "games": 32,
+      "iterations": 2,
+      "wall": 1.0358006000005844,
+      "generation_seconds": 0.7761761789988668,
+      "games_per_second": 41.2277532676595,
+      "logs": [
+        {
+          "generation": {
+            "cpu_generation_pack": 0.32156219899297867,
+            "gpu_inference_sync": 0.05371886600551079,
+            "other": 0.010624860000461922,
+            "seconds": 0.3859059249989514
+          },
+          "update": {
+            "loss": 0.3333429632442338,
+            "policy_loss": 0.015217272085802896,
+            "value_mse": 0.6575970926455089,
+            "entropy": 1.0672855802944727,
+            "approx_kl": 0.006563266865643008,
+            "grad_norm": 3.455905750819615,
+            "clip_fraction": 0.08571428571428572,
+            "updates": 35,
+            "records": 390,
+            "early_kl": true,
+            "seconds": 0.1010778929994558
+          }
+        },
+        {
+          "generation": {
+            "cpu_generation_pack": 0.31633391700233915,
+            "gpu_inference_sync": 0.06011217600098462,
+            "other": 0.013824160996591672,
+            "seconds": 0.39027025399991544
+          },
+          "update": {
+            "loss": 0.2391306755016558,
+            "policy_loss": -0.011376071624302616,
+            "value_mse": 0.520610798150301,
+            "entropy": 0.9798652504881223,
+            "approx_kl": 0.004094895127915758,
+            "grad_norm": 3.41194881995519,
+            "clip_fraction": 0.048177083333333336,
+            "updates": 48,
+            "records": 375,
+            "early_kl": false,
+            "seconds": 0.1428398970001581
+          }
+        }
+      ],
+      "inputs": [
+        "e5743da30bbe796cf86166c8cb4f5c427fe391434ef6806750c0df0eed29a1ff",
+        "774f5194404e6b84a99d219f9096a9f705997c878076b1064ddb85db684d3496"
+      ],
+      "games_sha256": "7aee8f7260c3524c31848d308a98574b8b5b8d0c4e78295b8f8f5bf7dff1ed06"
+    }
+  ],
+  "additional_training_games": 192,
+  "production_training": false,
+  "reward_action_legal_replay_pass": true
+}
