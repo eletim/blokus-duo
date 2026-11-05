@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/eletim/blokus-duo-ai/scripts/run_ppo_6144.py", line 21, in <module>
+    smoke=run(['scripts/check_ppo_6144_resume.py'],'resume.log',300)
+                                                                    ^
+  File "/home/eletim/blokus-duo-ai/scripts/run_ppo_6144.py", line 8, in run
+    with open(r/log,'w') as f:subprocess.run([sys.executable]+cmd,stdout=f,stderr=subprocess.STDOUT,check=True,timeout=timeout)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/eletim/blokus-duo-ai/.venv/bin/python', '-m', 'blokus.ppo_6144_eval', 'audit_train']' died with <Signals.SIGTERM: 15>.

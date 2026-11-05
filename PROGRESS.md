@@ -509,3 +509,32 @@ mainへの新世代既定採用は、対2048でaggregate得点差95%CI上端<0�
 - 事後合法性・得点・算術・ペア・SHA・過去prefix/開始状態・訓練全訪問分離監査PASS、実訪問訓練重複0。新モデル固定の再確認であり独立実装監査とは呼ばない。追加学習なし、再選択なし。
 - main a96d280 push確認。80a5179を22801aaとして通常cherry-pickし、文書と新clone証拠を追加。PPO専用CLIはgen2既定、旧2048指定可能、seed1401/旧グローバルAIデフォルト維持。3seed×CPU/CUDA×26局面export bit一致。main59tests/CPU専用6tests、CPU/CUDA各13局再生PASS。
 - 敗局6件は2prefixのみで強い選択偏りあり。中盤合法手不足と3〜5マス残駒を観察したが原因断定不可。次案は同条件の有限継続を第一候補、過去世代poolや小予算探索は別の対照実験が必要。詳細 artifacts/ppo-generation2/REPORT.md。
+
+## 4096→6144有限継続開始
+基点 d29f47a。main gen2は変更しない。3seed最新4096のmodel/optimizer/past/全RNGから継続し、5120/6144を保存。seed1401のgen2基準は3072であり再開元4096と異なる。1402/1403は同一4096。
+loss/勝敗終局報酬/モデル/LR .0003/16並行ゲーム/相手比率current .5,past .25,heuristic .25/4iterationごとのpast交換を固定。新しいshaping/探索なし。
+既存全評価prefix集合を凍結し、その開始状態を含む新生成prefixを棄却。棄却数と旧評価開始状態への偶然の実訪問重複は別に記録する。旧訓練履歴・state indexはSHA付き参照で保持し、追加分だけ保存する。
+生成+更新+保存wallは3seed合計5400秒以内。各seed cap最大1760秒、保存余裕を確保し、全体予算の残りで制限。予算到達なら完了iterationまでを保存し自動延長しない。非有限値は停止。64iteration連続窓でentropy平均<.02かつheuristic対戦point<.10なら崩壊疑いとして停止診断。タイムアウトは有限subprocess timeoutで回収する。
+新validation seed1650000/32prefix。候補gen2・latest4096・5120・6144（未完走なら存在する保存checkpointのみ）。選択criterionはgen2 .5 + oldvalue6ms .25 + teacher100ms .25 のpoint、同値時同重み得点差、さらに早いiteration。再開元4096への直接対戦は全候補で別記しcriterionに追加しない。gen2自体は必ず候補に残す。seed選別なし。
+選択固定後holdout seed1660000/96prefix・先後交換。主比較はgen2とteacher100ms。seed1401は選択と再開元の違いを明確にするため、成績に依存せずfresh同96prefixでlatest4096への補足を常に行う（他seedはgen2=latestなので重複対戦しない）。全seed/個別のpoint・得点差CIはprefix単位bootstrap。旧holdout成績を選択に使わない。
+訓練全訪問・過去評価prefix/開始状態を新bankから事前除外。実訪問重複を事後監査。時間対戦は学習/監査と順次実行し、教師/旧探索を毎試合cold。ネット単体で全合法手、推論全費用を計測。同時間比較ではない。
+
+- 事前テスト109件PASS。CUDA別process 4096→4102の6iteration vs2+保存再開4（past交換4100）model/past/optimizer/Python/NumPy/Torch/CUDA RNG/履歴bit一致。既存評価prefix2434件凍結。
+- seed1401は6144完走、追加32768局/1314.01秒。seed1402は5120保存済みで継続中。崩壊/非有限停止なし。生成更新と時間評価は順次実行。
+
+- seed1402も6144完走（process wall1282.82秒）。seed1401/1402＋CUDA再開smoke計2634.98秒。seed1403開始。5120/6144は保持し、main/モデル条件に変更なし。
+
+- 全3seedの5120保存完了。seed1403は6144に向け継続中、非有限/崩壊停止なし。学習曲線と各phase費用はseed別curve.jsonに16iterationごとに更新。
+
+- 3seedとも6144完走、5120/6144保存。追加32768×3=98304局。process wallは1401=1315.55、1402=1282.82、1403=1269.89秒、CUDA再開smoke36.62秒込み3904.86秒（65.08分、90分以内）。追加学習終了、全訓練履歴の報酬/合法性/分離監査を実行中。
+
+- 追加分離監査がplay(validate=True)のpassで独立全配置checkerを重複実行し遅延したため、その監査processのみ停止。全履歴合法性/報酬監査とstate indexは完了済み。checkpoint/hash照合後、分離用再生のみvalidate=Falseへ修正して再開する。学習・ルール・評価条件の変更なし、既存監査結果を破棄せず保存。
+
+- 重複pass総当たりを除いた分離用再生が完了。新prefix棄却は1401=84/1402=75/1403=63、prefix混入0、偶然の実訪問旧評価開始状態重複0。元の全履歴合法性/報酬監査は保持。新validation seed1650000/32prefixを開始（生成/学習/監査と分離）。
+
+- 新validation完了。事前criterionによる選択は1401=5120、1402=5120、1403=6144。gen2自体とlatest4096も候補に保持した上で確定。fresh seed1660000/96prefixへ進み、gen2/教師100ms＋seed1401のみ再開元4096を比較。以後checkpoint/seed再選択なし。
+
+- 2026-11-06 明示再開許可、新依頼5d5e572d-61ab-4a04-9964-44e853c01702で復旧。complete=true、学習・2176 validation/1344 holdout局完了を確認。停止記録を再開へ更新。学習/時間対戦を繰り返さずcheckpointロード・hash・監査と報告を仕上げる。
+
+- 復旧検証完了: 6checkpoint CPU/CUDA forward一致、15履歴SHA、selection SHA PASS。全109tests PASS。既存CUDA別process再開6=2+4（past交換4100込み）PASSを保持。2176 validation/1344 holdout再生算術分離監査を再実施し旧JSONと一致、学習/時間対戦の再実行なし。
+- 最終: 選択5120/5120/6144。対gen2 point.51476 CI[.48175,.54861]、得点差+.6979 CI[-.0417,1.4254]で追加改善未確定。対教師100ms point.59549 CI[.56163,.63021]、得点差+2.0833 CI[1.3420,2.8768]。1401再開元4096対照も未確定。main gen2維持。有限追加98304局、3process3868.25秒、再開smoke込み3904.86秒。REPORT/compute/学習曲線/復旧ログ保存。次案は凍結複数世代を含むpast枠対照、今回は実行しない。

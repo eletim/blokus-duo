@@ -51,3 +51,16 @@ def test_prefix_exclusion_does_not_change_other_games(monkeypatch):
  assert second[0]['prefix_rejections']>=1 and second[0]['prefix']!=first[0]['prefix']
  assert all(state_hash(prefix_state({'moves':g['prefix']})) not in banned for g in second)
  assert [g['prefix'] for g in first[1:]]==[g['prefix'] for g in second[1:]]
+
+
+def test_incremental_state_index_union_and_integrity(tmp_path):
+ from blokus.ppo_curve_eval import read_hash_index
+ from blokus.value_experiment import write
+ a='01'*32;b='02'*32
+ base=tmp_path/'base';base.mkdir();(base/'0.gz').write_bytes(gzip.compress(bytes.fromhex(a)))
+ write(base/'index.json',dict(count=1,parts=[dict(path='0.gz',sha256=sha(base/'0.gz'))]))
+ delta=tmp_path/'delta';delta.mkdir();(delta/'0.gz').write_bytes(gzip.compress(bytes.fromhex(b)))
+ write(delta/'index.json',dict(count=2,bases=[dict(path='../base/index.json',sha256=sha(base/'index.json'))],parts=[dict(path='0.gz',sha256=sha(delta/'0.gz'))]))
+ assert read_hash_index(delta/'index.json')=={a,b}
+ (base/'0.gz').write_bytes(b'broken')
+ with pytest.raises(AssertionError):read_hash_index(delta/'index.json')

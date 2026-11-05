@@ -1,0 +1,69 @@
+{
+  "pass_": true,
+  "time": "2026-11-06T01:42:22.711035+09:00",
+  "torch": "2.7.1+cu128",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "checkpoints": [
+    {
+      "seed": 1401,
+      "iteration": 5120,
+      "sha256": "8918a75399128dfbe06d35c330e9433fc955abb8fa619564bc13cbea552b6c1a",
+      "games": 81920,
+      "cpu_cuda_close": true
+    },
+    {
+      "seed": 1401,
+      "iteration": 6144,
+      "sha256": "c6b2d456200201b45e1d258411097ee9546339402c6ddd73b1ce3f545ef8758c",
+      "games": 98304,
+      "cpu_cuda_close": true
+    },
+    {
+      "seed": 1402,
+      "iteration": 5120,
+      "sha256": "5961126563c14b2a76289e0406ae35e1b7effdb499fd97049f898382678bb2e2",
+      "games": 81920,
+      "cpu_cuda_close": true
+    },
+    {
+      "seed": 1402,
+      "iteration": 6144,
+      "sha256": "42b767ce92f2fed8549177da573768540373801889fbd31841919e119f622adc",
+      "games": 98304,
+      "cpu_cuda_close": true
+    },
+    {
+      "seed": 1403,
+      "iteration": 5120,
+      "sha256": "6084d4ac9d0c50a38a01caa027579c6a7c12f3770505a805343ceef673a06e6c",
+      "games": 81920,
+      "cpu_cuda_close": true
+    },
+    {
+      "seed": 1403,
+      "iteration": 6144,
+      "sha256": "95af574399265802272a9c1953aa8d2ff6bfe09df2ad2961c2fef04f0deda019",
+      "games": 98304,
+      "cpu_cuda_close": true
+    }
+  ],
+  "unique_history_files": 15,
+  "history_sha256": {
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-learning-curve/seed-1401/history-2048.json.gz": "e26b8499045607ac32b8c81e9ada194a1a6b756a1fa4d166f8b50085adc64b11",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-4096/seed-1401/history-32768-49152.json.gz": "8111888469cdabb0c1372c2e0b154d245b8bd0fdced3e5646c3dd75ee4c90762",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-4096/seed-1401/history-49152-65536.json.gz": "197c0cc5b93873e00d5024d31d53e413060983c8d3b2d2bdf4b056ef0840c8a8",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-6144/seed-1401/history-65536-81920.json.gz": "ebaaea3d1cf375469553cbd4325e2f0590c892b1457ed62ee8bed65995e22b7b",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-6144/seed-1401/history-81920-98304.json.gz": "0ac4d40509c346e8cc7688068836408f35369f3321a47230e8366f839f1c753b",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-learning-curve/seed-1402/history-2048.json.gz": "427918f38268bb5858156c27d29d9485782fe2d2e11642d8c5c2155c1e075679",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-4096/seed-1402/history-32768-49152.json.gz": "aae184d3894e0cdf697da11ed84cb47b931d352fe7bd66628a027178829a5b9d",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-4096/seed-1402/history-49152-65536.json.gz": "e307c0c0a114d6ba660d7defd0a90fc98aed227044e490bc424cbf609b526f9d",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-6144/seed-1402/history-65536-81920.json.gz": "158e4fce0a3c6b2c8cbb05c967dad8ea38935dd6424b4b9005a5a1a41d793b9e",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-6144/seed-1402/history-81920-98304.json.gz": "8ec69760230eddac8397c3d8dcf3c2df66b04a07d056f7479a8251398fbae51e",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-learning-curve/seed-1403/history-2048.json.gz": "f714fd5643df13af79c045c23e10c71b249d363e9674989f132884fb636b5d9b",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-4096/seed-1403/history-32768-49152.json.gz": "2d23d860f8e173b7768be1258a6b3a10421e0604c9b8b2e8e648d415e18f55f5",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-4096/seed-1403/history-49152-65536.json.gz": "f1fce51c8159c8765427d309b7fbda1c34cabb845d6ac05197e53f9248e8b186",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-6144/seed-1403/history-65536-81920.json.gz": "b4a9805c2fd42aeffc3266952836ca9b42d6eb0feee2269a1cd9f00a1083edde",
+    "/home/eletim/blokus-duo-ai/artifacts/ppo-6144/seed-1403/history-81920-98304.json.gz": "67b6006b1c3e649bbacbd769d2380a8a44ab4afec0783925b94b8724575bca3a"
+  },
+  "note": "No training or timed games rerun. All referenced history bytes checked against checkpoint hashes; prior full legal/reward replay retained. CPU/CUDA inference tolerance 1e-4."
+}

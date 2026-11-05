@@ -1,0 +1,463 @@
+{
+  "pass_": true,
+  "phases": {
+    "validation": {
+      "games": 2176,
+      "unique_actual_states": 56894,
+      "training_actual_overlap": 0,
+      "adopted_start_overlap": 0
+    },
+    "holdout": {
+      "games": 1344,
+      "unique_actual_states": 40266,
+      "training_actual_overlap": 0,
+      "adopted_start_overlap": 0
+    }
+  },
+  "individual": {
+    "seed-1401/holdout-gen2.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 93,
+        "losses": 92,
+        "draws": 7,
+        "mean_difference": 0.6979166666666666,
+        "difference_ci95": [
+          -0.541796875,
+          1.9740885416666671
+        ],
+        "point_rate": 0.5026041666666666,
+        "point_rate_ci95": [
+          0.4348958333333333,
+          0.5703125
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.5026041666666666,
+        "difference": 0.6979166666666666,
+        "point_ci95": [
+          0.4348958333333333,
+          0.5677734375000003
+        ],
+        "difference_ci95": [
+          -0.5834635416666667,
+          1.953125
+        ]
+      },
+      "timing": [
+        {
+          "calls": 2976,
+          "mean_ms": 1.3237105106596299,
+          "p95_ms": 2.624616761750076,
+          "max_ms": 35.3950239950791
+        },
+        {
+          "calls": 2982,
+          "mean_ms": 1.4001198622349982,
+          "p95_ms": 2.7960849540249906,
+          "max_ms": 4.2920809937641025
+        }
+      ]
+    },
+    "seed-1401/holdout-latest4096.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 100,
+        "losses": 84,
+        "draws": 8,
+        "mean_difference": -0.010416666666666666,
+        "difference_ci95": [
+          -1.3802083333333333,
+          1.4115885416666671
+        ],
+        "point_rate": 0.5416666666666666,
+        "point_rate_ci95": [
+          0.4739583333333333,
+          0.609375
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.5416666666666666,
+        "difference": -0.010416666666666666,
+        "point_ci95": [
+          0.4739583333333333,
+          0.609375
+        ],
+        "difference_ci95": [
+          -1.3697916666666667,
+          1.3333333333333333
+        ]
+      },
+      "timing": [
+        {
+          "calls": 3018,
+          "mean_ms": 1.306974065658904,
+          "p95_ms": 2.646811650629388,
+          "max_ms": 3.8023490051273257
+        },
+        {
+          "calls": 3011,
+          "mean_ms": 1.4160729542452557,
+          "p95_ms": 2.786606506560929,
+          "max_ms": 4.711071000201628
+        }
+      ]
+    },
+    "seed-1401/holdout-teacher100.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 102,
+        "losses": 82,
+        "draws": 8,
+        "mean_difference": 0.9583333333333334,
+        "difference_ci95": [
+          -0.588671875,
+          2.4635416666666665
+        ],
+        "point_rate": 0.5520833333333334,
+        "point_rate_ci95": [
+          0.4895833333333333,
+          0.6119791666666666
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.5520833333333334,
+        "difference": 0.9583333333333334,
+        "point_ci95": [
+          0.4921875,
+          0.6145833333333334
+        ],
+        "difference_ci95": [
+          -0.526171875,
+          2.4376302083333337
+        ]
+      },
+      "timing": [
+        {
+          "calls": 2931,
+          "mean_ms": 1.378355427006352,
+          "p95_ms": 2.9410219940473326,
+          "max_ms": 4.633461008779705
+        },
+        {
+          "calls": 2922,
+          "mean_ms": 68.87141128474958,
+          "p95_ms": 94.35555169548024,
+          "max_ms": 95.00579499581363
+        }
+      ]
+    },
+    "seed-1402/holdout-gen2.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 92,
+        "losses": 94,
+        "draws": 6,
+        "mean_difference": 0.6875,
+        "difference_ci95": [
+          -0.5626302083333333,
+          1.9376302083333339
+        ],
+        "point_rate": 0.4947916666666667,
+        "point_rate_ci95": [
+          0.4270833333333333,
+          0.5598958333333334
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.4947916666666667,
+        "difference": 0.6875,
+        "point_ci95": [
+          0.4296875,
+          0.5625
+        ],
+        "difference_ci95": [
+          -0.6147135416666667,
+          1.9739583333333333
+        ]
+      },
+      "timing": [
+        {
+          "calls": 3028,
+          "mean_ms": 1.372606998673464,
+          "p95_ms": 2.700022005592473,
+          "max_ms": 4.473380002309568
+        },
+        {
+          "calls": 3026,
+          "mean_ms": 1.2488720321006226,
+          "p95_ms": 2.5604935035516974,
+          "max_ms": 4.170408996287733
+        }
+      ]
+    },
+    "seed-1402/holdout-teacher100.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 106,
+        "losses": 80,
+        "draws": 6,
+        "mean_difference": 1.3385416666666667,
+        "difference_ci95": [
+          -0.046875,
+          2.6770833333333335
+        ],
+        "point_rate": 0.5677083333333334,
+        "point_rate_ci95": [
+          0.4921875,
+          0.640625
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.5677083333333334,
+        "difference": 1.3385416666666667,
+        "point_ci95": [
+          0.4921875,
+          0.6380208333333334
+        ],
+        "difference_ci95": [
+          -0.026171874999999956,
+          2.7135416666666665
+        ]
+      },
+      "timing": [
+        {
+          "calls": 2978,
+          "mean_ms": 1.4276735603654085,
+          "p95_ms": 2.9510056476283353,
+          "max_ms": 4.89708200620953
+        },
+        {
+          "calls": 2971,
+          "mean_ms": 69.63617343985652,
+          "p95_ms": 94.37368499493459,
+          "max_ms": 95.31064100156073
+        }
+      ]
+    },
+    "seed-1403/holdout-gen2.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 102,
+        "losses": 84,
+        "draws": 6,
+        "mean_difference": 0.7083333333333334,
+        "difference_ci95": [
+          -0.43242187499999996,
+          1.828125
+        ],
+        "point_rate": 0.546875,
+        "point_rate_ci95": [
+          0.4791666666666667,
+          0.6119791666666666
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.546875,
+        "difference": 0.7083333333333334,
+        "point_ci95": [
+          0.484375,
+          0.6119791666666666
+        ],
+        "difference_ci95": [
+          -0.4010416666666667,
+          1.8179687500000008
+        ]
+      },
+      "timing": [
+        {
+          "calls": 2964,
+          "mean_ms": 1.3622023688162115,
+          "p95_ms": 2.7591901533014607,
+          "max_ms": 4.002048997790553
+        },
+        {
+          "calls": 2950,
+          "mean_ms": 1.316745208267525,
+          "p95_ms": 2.741797560156556,
+          "max_ms": 3.816669006482698
+        }
+      ]
+    },
+    "seed-1403/holdout-teacher100.json": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 125,
+        "losses": 61,
+        "draws": 6,
+        "mean_difference": 3.953125,
+        "difference_ci95": [
+          2.4321614583333333,
+          5.421875
+        ],
+        "point_rate": 0.6666666666666666,
+        "point_rate_ci95": [
+          0.6015625,
+          0.7317708333333334
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.6666666666666666,
+        "difference": 3.953125,
+        "point_ci95": [
+          0.6015625,
+          0.7317708333333334
+        ],
+        "difference_ci95": [
+          2.504947916666667,
+          5.448046875000001
+        ]
+      },
+      "timing": [
+        {
+          "calls": 2984,
+          "mean_ms": 1.4054224404399722,
+          "p95_ms": 2.9354819998843595,
+          "max_ms": 4.380860002129339
+        },
+        {
+          "calls": 2958,
+          "mean_ms": 68.12593204766084,
+          "p95_ms": 94.3452393548796,
+          "max_ms": 95.1359210012015
+        }
+      ]
+    }
+  },
+  "aggregate": {
+    "gen2": {
+      "point": 0.5147569444444444,
+      "difference": 0.6979166666666666,
+      "point_ci95": [
+        0.48174913194444424,
+        0.5486111111111109
+      ],
+      "difference_ci95": [
+        -0.04166666666666655,
+        1.4253906250000004
+      ],
+      "per_seed_mean": [
+        [
+          0.5026041666666666,
+          0.6979166666666666
+        ],
+        [
+          0.4947916666666667,
+          0.6875
+        ],
+        [
+          0.546875,
+          0.7083333333333334
+        ]
+      ],
+      "timing": [
+        {
+          "mean_ms": 1.3529420487151604,
+          "p95_ms": 2.71908600043389,
+          "max_ms": 35.3950239950791,
+          "budget_ms": null,
+          "over_budget_rate": null
+        },
+        {
+          "mean_ms": 1.3215720654956962,
+          "p95_ms": 2.703872350684833,
+          "max_ms": 4.2920809937641025,
+          "budget_ms": null,
+          "over_budget_rate": null
+        }
+      ]
+    },
+    "teacher100": {
+      "point": 0.5954861111111112,
+      "difference": 2.0833333333333335,
+      "point_ci95": [
+        0.5616319444444445,
+        0.6302083333333335
+      ],
+      "difference_ci95": [
+        1.342013888888889,
+        2.8768229166666672
+      ],
+      "per_seed_mean": [
+        [
+          0.5520833333333334,
+          0.9583333333333334
+        ],
+        [
+          0.5677083333333334,
+          1.3385416666666667
+        ],
+        [
+          0.6666666666666666,
+          3.953125
+        ]
+      ],
+      "timing": [
+        {
+          "mean_ms": 1.403952792263205,
+          "p95_ms": 2.9443086008541286,
+          "max_ms": 4.89708200620953,
+          "budget_ms": null,
+          "over_budget_rate": null
+        },
+        {
+          "mean_ms": 68.87897887931678,
+          "p95_ms": 94.35589200438699,
+          "max_ms": 95.31064100156073,
+          "budget_ms": 100,
+          "over_budget_rate": 0.0
+        }
+      ]
+    }
+  },
+  "note": "Fixed selected models, seats and seeds clustered within prefix. Seed1401 latest4096 supplement was preregistered; no holdout reselection."
+}

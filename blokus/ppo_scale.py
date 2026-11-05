@@ -39,10 +39,12 @@ def train(seed,resume,output,iterations=2048,cap=1200,batch=16,save_steps=(1024,
   ck=dict(format='terminal-ppo-external-history-v1',model=model.state_dict(),past=past.state_dict(),optimizer=opt.state_dict(),iteration=step,seed=seed,elapsed=elapsed+time.perf_counter()-begin,logs=logs,history_chain=list(chain),python_rng=random.getstate(),numpy_rng=np.random.get_state(),torch_rng=torch.get_rng_state(),cuda_rng=torch.cuda.get_rng_state_all(),source_hashes=p.source_hashes())
   path=out/f'iteration-{step}.pt';torch.save(ck,str(path)+'.tmp');os.replace(str(path)+'.tmp',path)
  while step<iterations and time.perf_counter()-begin<cap:
-  rec,gs,gen=p.collect(model,past,step,seed,batch,forbidden_starts=forbidden);up=p.update(model,opt,rec);step+=1;games.extend(gs)
+  rec,gs,gen=p.collect(model,past,step,seed,batch,forbidden_starts=forbidden);up=p.update(model,opt,rec);assert all(np.isfinite(v) for v in up.values());step+=1;games.extend(gs)
   logs.append(dict(iteration=step,generation=gen,update=up,opponents={m:float(np.mean([np.sign(g['scores'][g['learner_seat']]-g['scores'][1-g['learner_seat']]) for g in gs if g['opponent']==m])) for m in ['current','past','heuristic']}))
   if step%4==0:past.load_state_dict(model.state_dict())
   if step in save_steps:save()
+  if step>=initial+64 and np.mean([l['update']['entropy'] for l in logs[-64:]])<.02 and np.mean([l['opponents']['heuristic'] for l in logs[-64:]])<-.8:
+   save();p.write(out/'stopped.json',dict(reason='collapse diagnostic: low entropy and heuristic point',iteration=step));break
   if step%16==0:p.write(out/'curve.json',logs);print(seed,step,round(time.perf_counter()-begin,2),up,flush=True)
  if step not in save_steps:save()
  p.write(out/'curve.json',logs);p.write(out/'result.json',dict(seed=seed,initial_iteration=initial,iteration=step,games=len(games),additional_seconds=time.perf_counter()-begin,complete=step==iterations))

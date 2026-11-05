@@ -1,0 +1,20 @@
+{
+  "pass_": true,
+  "separate_process": true,
+  "base_iteration": 4096,
+  "continuous_additional": 6,
+  "first_additional": 2,
+  "resumed_additional": 4,
+  "past_exchange_iteration": 4100,
+  "checks": {
+    "model": true,
+    "past": true,
+    "optimizer": true,
+    "iteration": true,
+    "python_rng": true,
+    "numpy_rng": true,
+    "torch_rng": true,
+    "cuda_rng": true,
+    "history": true
+  }
+}

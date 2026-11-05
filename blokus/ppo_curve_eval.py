@@ -1,5 +1,5 @@
 """Preregistered scaling evaluation; all training states excluded before evaluation."""
-import argparse,gzip,json,random,time
+import argparse,gzip,json,random,time,os
 from pathlib import Path
 import numpy as np
 import torch
@@ -15,7 +15,7 @@ R=Path('artifacts/ppo-learning-curve');OLD=Path('artifacts/terminal-ppo/extended
 def previous():return json.loads((OLD/'selection.json').read_text())
 def paths(seed):
  d=R/f'seed-{seed}';return sorted(d.glob('iteration-*.pt'),key=lambda p:int(p.stem.split('-')[-1]))
-def audit_train():
+def audit_train(base=None):
  from .engine import is_legal,legal_moves
  prefixes=set();states=set();report=[]
  for seed in (1401,1402,1403):
@@ -41,17 +41,24 @@ def audit_train():
   print('training audit',report[-1],flush=True)
  # Compact sorted binary hashes for exact reproducible membership audit.
  for name,values in [('training-states',states),('training-prefixes',prefixes)]:
-  folder=R/name;folder.mkdir(exist_ok=True);ordered=sorted(values);parts=[]
+  folder=R/name;folder.mkdir(exist_ok=True);bases=[];delta=values
+  if base is not None:
+   bp=Path(base)/name/'index.json';old=read_hash_index(bp);assert old<=values;delta=values-old;bases=[dict(path=os.path.relpath(bp,folder),sha256=sha(bp))]
+  ordered=sorted(delta);parts=[]
   for offset in range(0,len(ordered),500000):
    path=folder/f'{offset//500000:03d}.bin.gz';path.write_bytes(gzip.compress(b''.join(bytes.fromhex(x) for x in ordered[offset:offset+500000]),mtime=0));parts.append(dict(path=path.name,sha256=sha(path)))
-  write(folder/'index.json',dict(count=len(values),parts=parts))
+  write(folder/'index.json',dict(count=len(values),parts=parts,bases=bases))
  write(R/'training-audit.json',dict(pass_=True,seeds=report,unique_states=len(states),unique_prefixes=len(prefixes),includes_opponent_turns=True,includes_prefix_and_terminal=True))
 
-def hashes(name):
- index=json.loads((R/name/'index.json').read_text());out=set()
+def read_hash_index(path):
+ path=Path(path);index=json.loads(path.read_text());out=set()
+ for base in index.get('bases',[]):
+  bp=path.parent/base['path'];assert sha(bp)==base['sha256'];out.update(read_hash_index(bp))
  for part in index['parts']:
-  path=R/name/part['path'];assert sha(path)==part['sha256'];data=gzip.decompress(path.read_bytes());out.update(data[i:i+32].hex() for i in range(0,len(data),32))
+  p=path.parent/part['path'];assert sha(p)==part['sha256'];data=gzip.decompress(p.read_bytes());assert len(data)%32==0;out.update(data[i:i+32].hex() for i in range(0,len(data),32))
  assert len(out)==index['count'];return out
+
+def hashes(name):return read_hash_index(R/name/'index.json')
 def forbidden():
  ps=hashes('training-prefixes');ss=hashes('training-states');sources=[]
  for p in Path('artifacts').rglob('*prefix*.json'):

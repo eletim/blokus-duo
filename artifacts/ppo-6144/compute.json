@@ -1,0 +1,86 @@
+{
+  "seeds": [
+    {
+      "seed": 1401,
+      "initial_iteration": 4096,
+      "iteration": 6144,
+      "games": 98304,
+      "additional_seconds": 1314.0145321269956,
+      "complete": true,
+      "new_games": 32768,
+      "updates": 82615,
+      "generation_seconds": 1035.2294325110852,
+      "cpu_generation_pack_seconds": 900.1071158107952,
+      "gpu_inference_sync_seconds": 110.04476371187775,
+      "update_seconds": 260.87931985067553,
+      "last64": {
+        "entropy": 1.007675058708135,
+        "approx_kl": 0.0048239528220473775,
+        "value_mse": 0.624452285601585,
+        "clip_fraction": 0.051983534443361706
+      }
+    },
+    {
+      "seed": 1402,
+      "initial_iteration": 4096,
+      "iteration": 6144,
+      "games": 98304,
+      "additional_seconds": 1281.3251814870018,
+      "complete": true,
+      "new_games": 32768,
+      "updates": 80395,
+      "generation_seconds": 1012.1524010057037,
+      "cpu_generation_pack_seconds": 874.5630798666534,
+      "gpu_inference_sync_seconds": 112.37926687358413,
+      "update_seconds": 251.17799444419506,
+      "last64": {
+        "entropy": 0.9548739175400773,
+        "approx_kl": 0.005435514108514205,
+        "value_mse": 0.6127734473974542,
+        "clip_fraction": 0.056507058440997425
+      }
+    },
+    {
+      "seed": 1403,
+      "initial_iteration": 4096,
+      "iteration": 6144,
+      "games": 98304,
+      "additional_seconds": 1268.3653400539915,
+      "complete": true,
+      "new_games": 32768,
+      "updates": 80086,
+      "generation_seconds": 1006.9074230429542,
+      "cpu_generation_pack_seconds": 867.400626647679,
+      "gpu_inference_sync_seconds": 113.8857841923309,
+      "update_seconds": 243.41458876710385,
+      "last64": {
+        "entropy": 0.891528276736288,
+        "approx_kl": 0.005419785287519013,
+        "value_mse": 0.6155114659464451,
+        "clip_fraction": 0.053848052551133736
+      }
+    }
+  ],
+  "new_games": 98304,
+  "updates": 243096,
+  "budget": {
+    "smoke_seconds": 36.616548324003816,
+    "seeds": [
+      {
+        "seed": 1401,
+        "subprocess_seconds": 1315.5457600530062
+      },
+      {
+        "seed": 1402,
+        "subprocess_seconds": 1282.8161765609984
+      },
+      {
+        "seed": 1403,
+        "subprocess_seconds": 1269.8862031870085
+      }
+    ],
+    "total_including_smoke_seconds": 3904.864688125017,
+    "limit": 5400
+  },
+  "note": "Subprocess wall includes init/history loading, generation, CUDA updates, checkpoints and I/O. CUDA sync region is not pure device kernel timing. Previous histories and hash-index bases referenced, not duplicated."
+}

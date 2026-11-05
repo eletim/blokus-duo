@@ -1,0 +1,391 @@
+{
+  "pass_": true,
+  "seed": 1650000,
+  "candidate_pool_sha256": "2c31f768dceddf0ef87503144d4e795edeffd99416aa8b2056a8cc9166c58646",
+  "candidate_pool_count": 128,
+  "overlap_rejections_in_pool": [
+    {
+      "id": "08931607a53e6754e2c68c9a48f66157542758e8f2eb443b3affea4ee765321e",
+      "prefix_overlap": true,
+      "state_overlap": true
+    },
+    {
+      "id": "05982a24056fa4b4f8cb23959dc8cf80ef9eabe4aa376242721aabaf227b8139",
+      "prefix_overlap": false,
+      "state_overlap": true
+    },
+    {
+      "id": "ddabf5d0e46712bb7ecda0de977e6c9c89bf90cfe057e3750d37f5c3503f69e2",
+      "prefix_overlap": false,
+      "state_overlap": true
+    },
+    {
+      "id": "7e540c5947eb0adc66ade3bb7c42812ea085ede15f59747b913e39191d0389c1",
+      "prefix_overlap": false,
+      "state_overlap": true
+    },
+    {
+      "id": "471f570c37d85e83b8c70210028566d6448f456b21ec4bbdd1018cc751541d9b",
+      "prefix_overlap": false,
+      "state_overlap": true
+    },
+    {
+      "id": "0175b4c1ede51ac07ee74893574d96287377f3e65f9fa08cce82e9cc2b74272c",
+      "prefix_overlap": false,
+      "state_overlap": true
+    },
+    {
+      "id": "136620c0121ea87633d42634574ffd2a338262759de6afbb5b3d4fbb29db3afb",
+      "prefix_overlap": true,
+      "state_overlap": true
+    },
+    {
+      "id": "eb4a593d7ebbc1957bf0c9febc6333a14452423c2662cf25b4bfbc369c7d0533",
+      "prefix_overlap": false,
+      "state_overlap": true
+    },
+    {
+      "id": "e5ddbce896ddbbc0cf815e2314caa7ed92d8c66c4c404517d121e05578ee1f71",
+      "prefix_overlap": true,
+      "state_overlap": true
+    },
+    {
+      "id": "74c437da215f6ce139275127e5d0f3142a70f50d2c1df765965d810cf06ec415",
+      "prefix_overlap": false,
+      "state_overlap": true
+    },
+    {
+      "id": "c600f9d7e7f8d20b4385bcaeb473ae5e17b3a8de40e3166304718ae2301c33fe",
+      "prefix_overlap": true,
+      "state_overlap": true
+    },
+    {
+      "id": "e98606756d373f3e3036df06420452f736e3a32dccb0b508a65ee1a9af99de49",
+      "prefix_overlap": true,
+      "state_overlap": true
+    },
+    {
+      "id": "991055dd0b52eff4702bc1c377efa612513b238877c28c5fc725b938c5e9e3a2",
+      "prefix_overlap": false,
+      "state_overlap": true
+    },
+    {
+      "id": "7da7091fc6b597bf4a2b731ecf0f40208cff0fdcdefa6fe057c7de431d7c3470",
+      "prefix_overlap": false,
+      "state_overlap": true
+    },
+    {
+      "id": "f57a31020ac351278c465435b73f62e9876fa41c62ed1d1ff4fba08e96ee43ce",
+      "prefix_overlap": true,
+      "state_overlap": true
+    },
+    {
+      "id": "eb5acf9aef2ec2e532b20af85b0187df86df700a70ef1f47e15a395787376712",
+      "prefix_overlap": false,
+      "state_overlap": true
+    },
+    {
+      "id": "11d2d3574e96e27dc5484ac19c052b0698435080fc3950423f55cb2fa428bf12",
+      "prefix_overlap": false,
+      "state_overlap": true
+    },
+    {
+      "id": "9bd25dcf46ee3e0abbd27c87039233ddd033cc20ca6a1a633c04e4d32325f8a4",
+      "prefix_overlap": true,
+      "state_overlap": true
+    },
+    {
+      "id": "1449e578c95313af21ec118769d5d25afba94cef2aa2cb2554f6589ac5b06f92",
+      "prefix_overlap": true,
+      "state_overlap": true
+    },
+    {
+      "id": "bb02132560b352b8b83d32eccbee4531542353cd0387d0773c24116af9aa564b",
+      "prefix_overlap": false,
+      "state_overlap": true
+    },
+    {
+      "id": "dfe9165e2a1b70e066f79c3f2b4d1326837dd5c81d08b1b418263e22188569c5",
+      "prefix_overlap": false,
+      "state_overlap": true
+    },
+    {
+      "id": "b09232f61d527c7b57adfccc1dd424a705223829b56afec8ca105293e225ad66",
+      "prefix_overlap": false,
+      "state_overlap": true
+    }
+  ],
+  "prefix_sha256": "3a939d6a0559c01d5e1d4c3cbe0b74efbe3b17a1fc2f7cfbfdf6872da9b7e793",
+  "training_states_sha256": "e58f720f18a6b58d8faad533daa6fafaa4c132a160f1ae922c109bf7d7305ea9",
+  "forbidden_states": 9980700,
+  "forbidden_prefixes": 288071,
+  "sources": [
+    {
+      "path": "artifacts/research-round1/holdout-prefixes.json",
+      "sha256": "c2173a76fa517470881c1ed3eda4df1814c3b9907a8d9768aef70ed9c7b144fe",
+      "count": 24
+    },
+    {
+      "path": "artifacts/research-round1/validation-prefixes.json",
+      "sha256": "0e0251e77e2cbfd4e17b8a04a7303adfcd418eab377f7dc731e86dfff3518256",
+      "count": 12
+    },
+    {
+      "path": "artifacts/search-aligned/holdout-prefixes.json",
+      "sha256": "ef90ddb32979a5c6e0dbd28c979ed85a445bff76e2dc3b6ca5a31aa986cb6a2f",
+      "count": 96
+    },
+    {
+      "path": "artifacts/search-aligned/validation-prefixes.json",
+      "sha256": "2cc46823732e63b18f6d8ab633403dcb775eb88f36b696a50ae9c549d256592c",
+      "count": 32
+    },
+    {
+      "path": "artifacts/minimax-refinement/holdout-prefixes.json",
+      "sha256": "03997c6badd3b672d601d17ff9eeedc2a4a7a33b2c69cbdfaa8129d17e4074b2",
+      "count": 96
+    },
+    {
+      "path": "artifacts/minimax-refinement/validation-prefixes-0.json",
+      "sha256": "58f3f89ac3309f3e740373900090136f080d02e95d2d0bf2a2599cd457dc2842",
+      "count": 16
+    },
+    {
+      "path": "artifacts/ppo-learning-curve/holdout-prefixes.json",
+      "sha256": "c15a50b0bafc7abf3259bb6d6adf703ce24c0bd73f13afd53f948c6608651686",
+      "count": 96
+    },
+    {
+      "path": "artifacts/ppo-learning-curve/dev-prefixes.json",
+      "sha256": "54903f52b45b9832c9bb14c25c2199a07c8bb2282f91678e7ad5fb601ca15f20",
+      "count": 8
+    },
+    {
+      "path": "artifacts/ppo-learning-curve/validation-prefixes.json",
+      "sha256": "a6f3f1b2ea680dbc26f4098ff4a885e550301410b8d03733d3372c7536bb9282",
+      "count": 32
+    },
+    {
+      "path": "artifacts/ppo-6144/forbidden-prefixes.json",
+      "sha256": "608129744bf63b53a84531660e3a877445f9ba8a19ab0f229bb46c65133c2e91",
+      "count": 2434
+    },
+    {
+      "path": "artifacts/root-policy-distillation/holdout-prefixes.json",
+      "sha256": "61ab5810204beb37bd3ea2e7a5203c2ea4243d2e2bbb669707061bf8586ced62",
+      "count": 96
+    },
+    {
+      "path": "artifacts/root-policy-distillation/teacher-prefixes.json",
+      "sha256": "5e743d0aaea3c632888150873562d18b3d84efaa46a82db0a14e6ed9667427e1",
+      "count": 96
+    },
+    {
+      "path": "artifacts/root-policy-distillation/validation-prefixes.json",
+      "sha256": "cbe6fd38c228b6f2f7f37f09e82fea7a960026ccc329ce38dcb20c89fe4a5cf3",
+      "count": 16
+    },
+    {
+      "path": "artifacts/ppo-generation2/prefixes.json",
+      "sha256": "3ae4058789d0f3b55c0f419d24567630b04d45fe62e088d9a64116accf1b9276",
+      "count": 96
+    },
+    {
+      "path": "artifacts/research-a2/holdout-prefixes.json",
+      "sha256": "40adb7702a998a80f8136c851a851a5a94646c58628b6c3d5bca3d37776a7fae",
+      "count": 24
+    },
+    {
+      "path": "artifacts/research-a2/validation-prefixes.json",
+      "sha256": "0e0251e77e2cbfd4e17b8a04a7303adfcd418eab377f7dc731e86dfff3518256",
+      "count": 12
+    },
+    {
+      "path": "artifacts/reply-diagnostics/holdout-prefixes.json",
+      "sha256": "9757f095b831e0d00548f90d189a3ed7d3e800f7d2ef2c743fe59a4fae44ae01",
+      "count": 96
+    },
+    {
+      "path": "artifacts/reply-diagnostics/validation-prefixes.json",
+      "sha256": "a0cae5ef29e6ad823b9aa1995977d3b81fac176bb6e41cb432df4b4dd266dfaf",
+      "count": 32
+    },
+    {
+      "path": "artifacts/terminal-ppo/validation-prefixes.json",
+      "sha256": "9ae0d391f66adb2c87be75646d96ccd2877458a8e94f2ebe890e3b69ce8670bb",
+      "count": 32
+    },
+    {
+      "path": "artifacts/terminal-rollouts/holdout-prefixes.json",
+      "sha256": "ba668735cce7e8f3db43769bfb5fde0e0b24affa416df07cff211373184607f1",
+      "count": 96
+    },
+    {
+      "path": "artifacts/terminal-rollouts/validation-prefixes.json",
+      "sha256": "04a5ffe9b9e34491abb877437a327a75a30a3c55b9fe7276693e379ed6db78be",
+      "count": 32
+    },
+    {
+      "path": "artifacts/root-value-correction/holdout-prefixes.json",
+      "sha256": "c1ca0a33d91b5f21b459cdff9df931ca932fe6287944549a4620d9835f7e30f8",
+      "count": 96
+    },
+    {
+      "path": "artifacts/root-value-correction/validation-prefixes.json",
+      "sha256": "f1ab488c235e11c04783a9cc3239c0af3dd25ddf4f4a179147d65d6bae93c9db",
+      "count": 16
+    },
+    {
+      "path": "artifacts/visited-diversity/holdout-prefixes.json",
+      "sha256": "2b814c7de5263822ee11bd82a3da97c4ca13c173be0ee5010d10d92ab7395af6",
+      "count": 96
+    },
+    {
+      "path": "artifacts/visited-diversity/curve-prefixes.json",
+      "sha256": "1c9f7c61709835933e6614cc7a8a2fdef67a298cf0c8336e9281e3e1886fbbd7",
+      "count": 8
+    },
+    {
+      "path": "artifacts/deep-search/holdout-prefixes.json",
+      "sha256": "0bd6f443ca91bf4006d168d1cc9fbf498ba7613ea996d18bd2a734af284d6bdd",
+      "count": 96
+    },
+    {
+      "path": "artifacts/deep-search/dev-prefixes.json",
+      "sha256": "ddeb4310e810d6a2169778256799444638a970327d8651bffb244d2e8014b370",
+      "count": 32
+    },
+    {
+      "path": "artifacts/deep-search/six-prefixes.json",
+      "sha256": "3a66a248b88e66884fa9891b7f97f42b84e341341b9de0f551cc52d2c855b177",
+      "count": 8
+    },
+    {
+      "path": "artifacts/deep-search/validation-prefixes.json",
+      "sha256": "8d0d3ffa1d7709af40582733479a00e3d8966cb642fa9ce154e59cf5c23ce98c",
+      "count": 32
+    },
+    {
+      "path": "artifacts/ppo-4096/holdout-prefixes.json",
+      "sha256": "60ed646ba8f1e28e138abbddcc6a5024838356607fda1f72d5cd9711e84b553d",
+      "count": 96
+    },
+    {
+      "path": "artifacts/ppo-4096/confirmation-prefixes.json",
+      "sha256": "fe7cb35a61a59e075d669a2639166b6408c477f3ce004d4e68ae453aeab14e63",
+      "count": 96
+    },
+    {
+      "path": "artifacts/ppo-4096/validation-prefixes.json",
+      "sha256": "227ec82b21db167271fcb40749b62a95a9ef5e0453152e4981bd27b70939437f",
+      "count": 32
+    },
+    {
+      "path": "artifacts/secretary-review/audit-sample-prefixes.json",
+      "sha256": "ca780e25b57ef033f995f2746b8a8c3fd755938e2313ad9747b23944ed3c08c8",
+      "count": 2
+    },
+    {
+      "path": "artifacts/exact-hybrid/holdout-prefixes.json",
+      "sha256": "bfa5d4236d62b92a856ac519530e87ea2f7e7c24ccaf8278b04b362f016d3af7",
+      "count": 96
+    },
+    {
+      "path": "artifacts/exact-hybrid/dev-prefixes.json",
+      "sha256": "a8334c66e77430035d2ea62bef4572f810ba5b2dc80872d19c339c982bd399bd",
+      "count": 32
+    },
+    {
+      "path": "artifacts/exact-hybrid/six-prefixes.json",
+      "sha256": "3a3513ee8c40bd3bb81a0e62d31949bdc4b5b10ce66783953d0c9c05eb7ea93f",
+      "count": 8
+    },
+    {
+      "path": "artifacts/exact-hybrid/validation-prefixes.json",
+      "sha256": "68941aa8749983800ec9644e4d5c674026b72062b098734eacf4c18f81068d47",
+      "count": 32
+    },
+    {
+      "path": "artifacts/paired-ranking/holdout-prefixes.json",
+      "sha256": "28447e905e5ceb9420fc65e6df16c3f41d5f558f94337bca9d4657b6a49b798e",
+      "count": 96
+    },
+    {
+      "path": "artifacts/paired-ranking/validation-prefixes.json",
+      "sha256": "9b4dca829d268ec4feac3c8e1d7f77f53632127c6c47939f11ae94dc19e82a18",
+      "count": 32
+    },
+    {
+      "path": "artifacts/terminal-ppo/extended/holdout-prefixes.json",
+      "sha256": "203049b76e681bc26d7ace4e51d72f9b13b70d5d6005b5ab011b91d050a8edc8",
+      "count": 96
+    },
+    {
+      "path": "artifacts/terminal-ppo/extended/holdout-disjoint-prefixes.json",
+      "sha256": "203049b76e681bc26d7ace4e51d72f9b13b70d5d6005b5ab011b91d050a8edc8",
+      "count": 96
+    },
+    {
+      "path": "artifacts/terminal-ppo/extended/validation-prefixes.json",
+      "sha256": "7c1e4ca3394633550e592b8ab9d0909134c3c3f2f74467f467baeefcc2833fb6",
+      "count": 32
+    },
+    {
+      "path": "artifacts/terminal-ppo/extended/holdout-1480000-overlap/holdout-prefixes.json",
+      "sha256": "195aa2ad08a692c3d3acd1e63afb572581f04b8b6ba3b585dab177a8c812dd92",
+      "count": 96
+    },
+    {
+      "path": "artifacts/terminal-rollouts/pre-fix-pilot/validation-prefixes.json",
+      "sha256": "04a5ffe9b9e34491abb877437a327a75a30a3c55b9fe7276693e379ed6db78be",
+      "count": 32
+    },
+    {
+      "path": "artifacts/value-search/compact/holdout-prefixes.json",
+      "sha256": "6b810a5232d67ba0b7370b157a7506de6becbd635cd5f1fa5699f4ee19f660a0",
+      "count": 24
+    },
+    {
+      "path": "artifacts/value-search/run/holdout2-prefixes.json",
+      "sha256": "a1d94e7925d317a3fbc0e1625b066e4a472967076f0885e28f3a2fd5ff660e0a",
+      "count": 24
+    },
+    {
+      "path": "artifacts/value-search/run/holdout1-prefixes.json",
+      "sha256": "bebc717e7273ab99b90e573befa45d1f6262202818ff7e9a06797dff898f8bd7",
+      "count": 24
+    },
+    {
+      "path": "artifacts/value-search/run/validation-prefixes.json",
+      "sha256": "da0aa48cfeab4522aa46bbf51d4224d024cdcb907cccfe07dd76d248a20e196d",
+      "count": 12
+    },
+    {
+      "path": "artifacts/value-search/confirm/holdout-prefixes.json",
+      "sha256": "c50ed864758668e3d11133cd0900672df8441933e5b266d42ae5ad2b04298342",
+      "count": 24
+    },
+    {
+      "path": "artifacts/visited-diversity/full/validation-prefixes.json",
+      "sha256": "2884efdafbdcd5a7a6c52ccd34034dbbdedce32561876ae7f60e2a51c8c023ee",
+      "count": 32
+    },
+    {
+      "path": "artifacts/visited-diversity/pilot/validation-prefixes.json",
+      "sha256": "134412a47ba6f10fa5874b59ca0a201e29bd1680cc0490566006e3a00bd6bd2e",
+      "count": 16
+    },
+    {
+      "path": "artifacts/secretary-review/search-controls/prefixes.json",
+      "sha256": "fa8944752a177096622d0af5551f8d36598a580da328ff8952c4f78e17937774",
+      "count": 24
+    },
+    {
+      "path": "artifacts/paired-ranking/confirmed/holdout-prefixes.json",
+      "sha256": "bc42febbc44bccb3e63ed0abab050a46ade4b13248064ddd373472c2f8368f78",
+      "count": 96
+    }
+  ],
+  "adopted_start_overlap": 0,
+  "selection_sha256": null
+}
