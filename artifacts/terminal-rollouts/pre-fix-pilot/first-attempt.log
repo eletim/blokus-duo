@@ -1,0 +1,119 @@
+TIMING 0 mid
+TIMING 0 end
+TIMING 1 mid
+TIMING 1 end
+TIMING 2 mid
+TIMING 2 end
+TIMING 3 mid
+TIMING 3 end
+TIMING 4 mid
+TIMING 4 end
+TIMING 5 mid
+TIMING 5 end
+TIMING 6 mid
+TIMING 6 end
+TIMING 7 mid
+TIMING 7 end
+TIMING 8 mid
+TIMING 8 end
+TIMING 9 mid
+TIMING 9 end
+TIMING 10 mid
+TIMING 10 end
+TIMING 11 mid
+TIMING 11 end
+DIAG 0 mid
+DIAG 0 end
+DIAG 1 mid
+DIAG 1 end
+DIAG 2 mid
+DIAG 2 end
+DIAG 3 mid
+DIAG 3 end
+DIAG 4 mid
+DIAG 4 end
+DIAG 5 mid
+DIAG 5 end
+DIAG 6 mid
+DIAG 6 end
+DIAG 7 mid
+Traceback (most recent call last):
+  File "/home/eletim/blokus-duo-ai/scripts/pilot_rollouts.py", line 73, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/eletim/blokus-duo-ai/scripts/pilot_rollouts.py", line 54, in main
+    v,best,n=oracle(s);exact=dict(value=v,best_moves=[row(m) for m in sorted(best,key=lambda m:str(m))],nodes=n)
+             ^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 41, in oracle
+    moves=independent_moves(s) or [None];values=[-visit(independent_child(s,m)) for m in moves];best=max(values)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in visit
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in <genexpr>
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in visit
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in <genexpr>
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in visit
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in <genexpr>
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in visit
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in <genexpr>
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in visit
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in <genexpr>
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in visit
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in <genexpr>
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in visit
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in <genexpr>
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in visit
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in <genexpr>
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in visit
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in <genexpr>
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in visit
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in <genexpr>
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in visit
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 39, in <genexpr>
+    else:v=max(-visit(independent_child(z,m)) for m in independent_moves(z) or [None])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/tests/test_deep_search.py", line 37, in visit
+    if nodes>20000:raise RuntimeError('oracle bound')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: oracle bound

@@ -331,3 +331,20 @@ Reply width fixed to 6 after newvalidation621000; fresh622000/96 begins.
 validation621000で幅6 +0.78125点、幅12 −0.21875点のため幅6を選択。fresh622000/96prefix/192局は89勝98敗5分、−0.23958点 CI[-1.14596,+0.61471]。途中返答の「幅12を選択」は誤記として訂正済み。selection・対戦・監査は一貫して幅6。旧holdout再選択なし。
 実17.726/17.541ms、超過1/2983対0/2990、完了root20.53/21.68（pass含む）。改善未確認、推奨維持。中盤は上位3の応手脱落48.18%だが、単純拡幅のregret差は僅か。4ply幅12は固定2048nodeで完了root3へ減り、葉評価と配分の問題が残った。次は候補別終局rolloutにsequential halvingで配分する別探索系統を、小規模固定node診断から検討する案。
 全60tests 7.05秒、16終盤独立全探索、32条件固定node反復再現、全対局/算術/時間/完了候補数/選択/hash分離監査PASS（監査5.83秒）。CLI CUDA対局終局PASS。実戦320局175.21秒、GPU追加学習0。詳細と再現手順をartifacts/reply-diagnosticsへ保存。main・旧warm-cache成果は変更せず研究branchへ提出する。
+
+## 終局rollout配分（基点376dce2、事前計画）
+追加学習なし。root候補8: heuristic上位8、または上位4に異なる駒/盤面象限の候補を加える多様化案。continuationは両者heuristic上位3から一様ランダム、終局得点差のみ。共通乱数は候補間で同じsample seedを用い、continuationの各plyでpassでも1回消費する。同seedでも盤面/合法集合が違うため同じ手を意味しない。平均rolloutは戦略的な相手の適応・最悪応手を表さない。
+均等配分32完走対sequential halving32完走（8候補×2、4候補×2、2候補×4）。deadline時は完了した全active候補roundだけを採用、最初の全候補1round未完了ならheuristic先頭fallback。中断/期限後完走は評価へ入れない。完了round内のみ同数標本で比較し、stage途中の追加標本は選択へ反映しない。
+新規独立12ゲーム(seed720000+)各中盤1・小終盤1。固定seed/完走数で配分・候補集合の診断、別seed64完走/候補の平均を中盤参照（厳密解でない）、小終盤は独立全探索。各方式3sample seed、同ゲームroot/seedを独立ゲーム数へ水増ししない。25/100msのpilotは均等/適応を同じ局面で計測、旧2plyも同予算で測定。GPU/CPU他計測・監査を重ねない。
+継続基準: 100msでも中盤の80%以上で全8候補最低1標本が揃わない、または中盤完走数中央値が16未満なら現実装は配分比較に不足と判断し、大量validation/holdoutを省略して原因を返す。基準を満たす場合のみ新validation721000/32で方式/25または100msを固定しfresh722000/96prefixへ進む。固定予算同士の旧2ply対照、cold reset、実ms・超過・完走・fallbackを保存。全体90分目安。
+
+### pilotの回復・配分テストでの修正
+初回の独立終盤oracleは1局面で20000node上限に達した。部分結果を保全して再開し、その局面は厳密解と主張しない。加えて配分数テストが、実装のround切捨てにより予定16+8+8ではなく8+12+12になっている点を検出。開始直後の実戦runを停止し、全候補の最初2標本を優先する16+8+8へ修正、7テストPASS。修正前pilot/途中資料はpre-fix-pilotへ隔離し、最終選択・比較には利用しない。正しい配分でpilot全体を再実行する。
+
+Rollout final selection {'method': 'halving', 'budget_ms': 100, 'diverse': False}; fresh722000/96 begins.
+
+### 終局rollout最終結果
+修正後devで上位8候補、100msを選択。validationはuniform−1.71875点、halving−1.6875点のためhalvingを固定。fresh722000/96prefix・先後交換では旧100ms2plyに71勝113敗8分、−3.03125点 CI[-4.515625,-1.546875]。halving対uniformは101勝84敗7分、+1.125点 CI[0.375,1.890625]。配分効果と全体の劣位を分け、既存推奨維持。holdout再選択なし。
+主比較実73.276ms対55.417ms、超過1719/3003（最大100.970ms）、fallback472/3003。序盤（残駒24超）のfallbackは472/1342。主比較個別完走51577、採用46267、部分round破棄5310。平均相手方策バイアス、root8制限、序盤fallbackの寄与は未分離。次案は旧2plyと候補/序盤条件を揃え、相手minを扱うtree searchへ配分を移す固定simulation対照。
+全68tests7.44秒、独立終盤10/12（2局面はnode上限・厳密値非主張）、3189終局trace・159ラベル再生成・96固定配分再現・512局全再生/算術/時間/選択/hash分離PASS。監査側のsnapshot共有listによる破壊的再生をcloneへ修正し、保存snapshot不変の回帰テストを追加後、全監査を再実行してPASS。実対戦・保存ラベルの生成コードはこの監査修正で変更していない。
+修正後pilot127.94秒、本対戦1073.90秒、追加学習0、checkpoint作成0。CLI終局PASS（-67/-5）。READMEとartifacts/terminal-rollouts/conclusions.mdに制約・計算量・次案を記録。mainと旧成果は保持、研究branchのみ提出する。

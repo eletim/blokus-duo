@@ -402,3 +402,14 @@ GPU主学習は54,000更新・87.47秒。全44テスト、別process CUDA保存�
 変更を応手幅だけに限定し、新validationで幅6を固定。試合ごとcold・共通25ms・fresh96prefix先後交換では旧幅3に **89勝98敗5分、−0.240点 [95%CI −1.146,+0.615]**。実時間17.726/17.541ms、平均完了root20.53/21.68。**追加改善は未確認で、既存value/2ply推奨を維持**します。以前のwarm-cache結果は変更していません。
 
 全60テスト、全16終盤の独立全探索、固定node再現、評価再生・算術監査PASS。GPU追加学習なし。[詳細結果・原因と別系統への次案](artifacts/reply-diagnostics/conclusions.md)／[再現コマンドと指標定義](artifacts/reply-diagnostics/METHOD.md)。研究用CLIは `.venv/bin/python -m blokus.reply_experiment play`。
+
+## 終局rolloutへの逐次配分（実験）
+
+共通乱数で候補から終局まで試し打ちし、均等配分と16＋8＋8完走の逐次絞り込みを比較しました。25msでは標本不足だったため、開発・validationで上位8候補/逐次配分/100msを固定し、fresh96prefixを先後交換しています。
+
+- 同100ms旧2plyに **71勝113敗8分、−3.031点 [95%CI −4.516,−1.547]**。
+- 均等配分への直接対照は **101勝84敗7分、+1.125点 [+0.375,+1.891]**。
+
+配分改善は見られましたが、方式全体は旧2plyを下回り、**既存value/2ply推奨を維持**します。主比較の実平均73.28ms対旧55.42ms、fallback15.7%。時間超過は57.2%で主比較最大100.97msのため、hard deadline保証はありません。固定相手方策の平均rolloutは、相手が最悪応手へ適応する値とは異なります。
+
+学習0、512局1073.90秒、全68テスト・終局ラベル/全対局監査PASS。[詳細・原因と次案](artifacts/terminal-rollouts/conclusions.md)／[再現手順](artifacts/terminal-rollouts/METHOD.md)。研究用CLI: `.venv/bin/python -m blokus.rollout_experiment play`。

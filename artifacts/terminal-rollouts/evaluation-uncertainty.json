@@ -1,0 +1,114 @@
+[
+  {
+    "name": "selected-vs-old",
+    "raw_win_rate": {
+      "mean": 0.3697916666666667,
+      "ci95": [
+        0.3020833333333333,
+        0.4375
+      ],
+      "unit": "prefix pair",
+      "count": 96
+    },
+    "phases": {
+      "0/early": {
+        "calls": 1342,
+        "mean_ms": 100.10489324967023,
+        "mean_completed": 10.429210134128168,
+        "mean_committed": 6.769001490312966,
+        "fallbacks": 472
+      },
+      "0/mid": {
+        "calls": 1607,
+        "mean_ms": 53.29878727762052,
+        "mean_completed": 23.326695706285005,
+        "mean_committed": 23.079029247044183,
+        "fallbacks": 0
+      },
+      "0/late": {
+        "calls": 54,
+        "mean_ms": 1.0570394807911254,
+        "mean_completed": 1.7592592592592593,
+        "mean_committed": 1.7592592592592593,
+        "fallbacks": 0
+      },
+      "1/early": {
+        "calls": 1342,
+        "mean_ms": 92.48480504631459,
+        "mean_completed": 0.0,
+        "mean_committed": 0.0,
+        "fallbacks": 0
+      },
+      "1/mid": {
+        "calls": 1625,
+        "mean_ms": 26.755551206212168,
+        "mean_completed": 0.0,
+        "mean_committed": 0.0,
+        "fallbacks": 0
+      },
+      "1/late": {
+        "calls": 58,
+        "mean_ms": 0.764477568611318,
+        "mean_completed": 0.0,
+        "mean_committed": 0.0,
+        "fallbacks": 0
+      }
+    }
+  },
+  {
+    "name": "halving-vs-uniform",
+    "raw_win_rate": {
+      "mean": 0.5260416666666666,
+      "ci95": [
+        0.4739583333333333,
+        0.578125
+      ],
+      "unit": "prefix pair",
+      "count": 96
+    },
+    "phases": {
+      "0/early": {
+        "calls": 1342,
+        "mean_ms": 100.16967802675529,
+        "mean_completed": 10.685543964232489,
+        "mean_committed": 7.068554396423249,
+        "fallbacks": 473
+      },
+      "0/mid": {
+        "calls": 1606,
+        "mean_ms": 52.27002955664242,
+        "mean_completed": 26.25280199252802,
+        "mean_committed": 26.056662515566625,
+        "fallbacks": 0
+      },
+      "0/late": {
+        "calls": 81,
+        "mean_ms": 1.4947039510136366,
+        "mean_completed": 5.111111111111111,
+        "mean_committed": 5.111111111111111,
+        "fallbacks": 0
+      },
+      "1/early": {
+        "calls": 1342,
+        "mean_ms": 100.14345295537579,
+        "mean_completed": 10.69672131147541,
+        "mean_committed": 6.819672131147541,
+        "fallbacks": 472
+      },
+      "1/mid": {
+        "calls": 1600,
+        "mean_ms": 51.437229397620285,
+        "mean_completed": 25.211875,
+        "mean_committed": 24.475,
+        "fallbacks": 0
+      },
+      "1/late": {
+        "calls": 78,
+        "mean_ms": 1.2904340125178584,
+        "mean_completed": 4.0,
+        "mean_committed": 4.0,
+        "fallbacks": 0
+      }
+    }
+  }
+]

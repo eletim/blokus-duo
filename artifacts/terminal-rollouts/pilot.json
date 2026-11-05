@@ -1,0 +1,98 @@
+{
+  "seconds": 127.93599347300187,
+  "resumed_states": 0,
+  "eligible": [
+    {
+      "diverse": false,
+      "method": "uniform"
+    },
+    {
+      "diverse": false,
+      "method": "halving"
+    },
+    {
+      "diverse": true,
+      "method": "uniform"
+    },
+    {
+      "diverse": true,
+      "method": "halving"
+    }
+  ],
+  "timing_summary": [
+    {
+      "diverse": false,
+      "method": "uniform",
+      "budget_ms": 25,
+      "initial_coverage": 0.08333333333333333,
+      "median_completed": 4.5,
+      "mean_ms": 25.100395666716697,
+      "overruns": 12
+    },
+    {
+      "diverse": false,
+      "method": "uniform",
+      "budget_ms": 100,
+      "initial_coverage": 1.0,
+      "median_completed": 20.0,
+      "mean_ms": 98.9428135023142,
+      "overruns": 11
+    },
+    {
+      "diverse": false,
+      "method": "halving",
+      "budget_ms": 25,
+      "initial_coverage": 0.08333333333333333,
+      "median_completed": 4.5,
+      "mean_ms": 25.100586250725126,
+      "overruns": 12
+    },
+    {
+      "diverse": false,
+      "method": "halving",
+      "budget_ms": 100,
+      "initial_coverage": 1.0,
+      "median_completed": 20.0,
+      "mean_ms": 99.05128183345369,
+      "overruns": 11
+    },
+    {
+      "diverse": true,
+      "method": "uniform",
+      "budget_ms": 25,
+      "initial_coverage": 0.08333333333333333,
+      "median_completed": 4.5,
+      "mean_ms": 25.127449166878552,
+      "overruns": 12
+    },
+    {
+      "diverse": true,
+      "method": "uniform",
+      "budget_ms": 100,
+      "initial_coverage": 1.0,
+      "median_completed": 20.0,
+      "mean_ms": 98.95815016595104,
+      "overruns": 11
+    },
+    {
+      "diverse": true,
+      "method": "halving",
+      "budget_ms": 25,
+      "initial_coverage": 0.08333333333333333,
+      "median_completed": 4.5,
+      "mean_ms": 25.134392249431887,
+      "overruns": 12
+    },
+    {
+      "diverse": true,
+      "method": "halving",
+      "budget_ms": 100,
+      "initial_coverage": 1.0,
+      "median_completed": 20.0,
+      "mean_ms": 99.12115716664023,
+      "overruns": 11
+    }
+  ],
+  "stop": false,
+  "training_updates": 0
+}

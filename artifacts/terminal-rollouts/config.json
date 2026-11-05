@@ -1,0 +1,57 @@
+{
+  "games": 12,
+  "game_seed": 720000,
+  "sample_seeds": [
+    731000,
+    732000,
+    733000
+  ],
+  "reference_seed": 750000,
+  "reference_per_candidate": 64,
+  "candidates": 8,
+  "fixed_samples": 32,
+  "methods": [
+    "uniform",
+    "halving"
+  ],
+  "budgets": [
+    25,
+    100
+  ],
+  "criterion": "100ms mid initial coverage>=.8 and median completed>=16 required",
+  "checkpoint": "artifacts/value-search/compact/seed-201/predictive-best.pt",
+  "checkpoint_sha256": "8a5795a2e4fe73e4055ce94d11f761fddbc7a66db7ec0863b39df8ba195bf2ad",
+  "training_updates": 0,
+  "source_hashes": {
+    "/home/eletim/blokus-duo-ai/blokus/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/eletim/blokus-duo-ai/blokus/__main__.py": "ea1bf3aa69bdb8bafa2f845569a3cd5ec09f832f7b4888db55c3ae05a239d9d0",
+    "/home/eletim/blokus-duo-ai/blokus/ai.py": "b0f452781d1d81b7ca1990b74948373886e27b50ab0e4c619b5cb22690c6b45c",
+    "/home/eletim/blokus-duo-ai/blokus/aligned_data.py": "331f0eb9611627148603920116a11c6612a0bc741a67d01eeb35a43da4902db3",
+    "/home/eletim/blokus-duo-ai/blokus/aligned_experiment.py": "fff49bd442418b12252c675f381f6f49f82c6f717e08237d111e4f4a66f5e528",
+    "/home/eletim/blokus-duo-ai/blokus/aligned_train.py": "c575ac1e98cfe5859c2de86451e1ec2093f2c84bedfd29f1cec97683aa449ec2",
+    "/home/eletim/blokus-duo-ai/blokus/cem.py": "6fc7c59bae5759bc56845266b70e25760c7112ae5112b0736ef1259402647266",
+    "/home/eletim/blokus-duo-ai/blokus/deep_experiment.py": "8095d280e0144774d10021a769632b192058cbb81d134c0735ea92f65984d068",
+    "/home/eletim/blokus-duo-ai/blokus/deep_search.py": "e481beef6dc742de9dfb9317d1b742f35a2df568178413819c2de20d44874826",
+    "/home/eletim/blokus-duo-ai/blokus/engine.py": "b7ee646d45cfeba355f60b37ec927accde4ad859b91567c4b0b8db3715a8827b",
+    "/home/eletim/blokus-duo-ai/blokus/experiment.py": "649cd59b1587f005b28d5c12be832ebb9d9e4c577e00c590da15c723644c2771",
+    "/home/eletim/blokus-duo-ai/blokus/node_diagnostic.py": "5ab8b0dcc00386ee1c52893630d86abc5bf8f6926e8c639f1af21921cc9fb275",
+    "/home/eletim/blokus-duo-ai/blokus/ranking_data.py": "e519e8debcde5a763985b58519203a91d708cd561bacec9bf6ffbb654189c699",
+    "/home/eletim/blokus-duo-ai/blokus/ranking_experiment.py": "2cd8fd048d34f7e90799820bb312dc4b7a4e15356be6fe61ad7d7941b6ff3458",
+    "/home/eletim/blokus-duo-ai/blokus/ranking_train.py": "eca992222335c055112da2b526cb45b841b4b2a20955a1ca4176bf59fa76602c",
+    "/home/eletim/blokus-duo-ai/blokus/reply_experiment.py": "d7b8c35116600e77d7ded6d7b34ac5c0359a614bbf0e088a32fbb563e5a2ea8c",
+    "/home/eletim/blokus-duo-ai/blokus/reply_search.py": "46bd4e919831c5b1207cb61decbf396c89f8b2816f8295ac9462009970fe78e4",
+    "/home/eletim/blokus-duo-ai/blokus/research.py": "ebb9f20786882e6b408cb5655b5500ac0488992300e20e3689968b9d8dee85dc",
+    "/home/eletim/blokus-duo-ai/blokus/research_train.py": "d923d0e92f086b74e7675d5bd76464e4e49b7e951eb1a4ee2c712b13c186c3f6",
+    "/home/eletim/blokus-duo-ai/blokus/rollout_experiment.py": "657be087b24dd6f30f96c4d715c4c0086b4eadc6df2e4ff59d6b707dc41285a0",
+    "/home/eletim/blokus-duo-ai/blokus/rollout_search.py": "64a35f246e5a240dbf79765ac7e547f4dd24605aa0e019d51ca01e21e62881e6",
+    "/home/eletim/blokus-duo-ai/blokus/tournament.py": "ff55d36be085c9af407ffc5f2ed1a5ebfcdcc7f9730a9a0eb6a9231dd8baaba8",
+    "/home/eletim/blokus-duo-ai/blokus/value_data.py": "c76dd07cd94d331bca433843b26768217a6a2474acfe0f93a556500673873617",
+    "/home/eletim/blokus-duo-ai/blokus/value_experiment.py": "84e727553e9247517ca7fdc37fd455e13a952acd7f7dd13252872d936b2d7e30",
+    "/home/eletim/blokus-duo-ai/blokus/value_search.py": "2f0d021f702d8776ae676a23e45d1f108f02b0afee0bdce4c346db8d208719ac",
+    "/home/eletim/blokus-duo-ai/blokus/value_train.py": "d160482b43b978787b2b834311852220c41b49f797a08f754b855d071e0586e9",
+    "/home/eletim/blokus-duo-ai/blokus/visited_data.py": "6cf3aa6665935d172b7c8b175f25fe0adb31cdfc56d22613173b728a67313342",
+    "/home/eletim/blokus-duo-ai/blokus/visited_eval.py": "c082be0da0af6352cd835fea40dd62be906453df0aa8baeeb57bfd987f7d5f45",
+    "/home/eletim/blokus-duo-ai/blokus/visited_experiment.py": "41ae29a2d629369c331beb91b886e6ac3a896d3bf9421d5bb64b2eec715a6061",
+    "/home/eletim/blokus-duo-ai/blokus/visited_train.py": "7389543e3d480cc34015663e1bb353478d372f77d1a1cc4dd06295ac830170fc"
+  }
+}

@@ -1,0 +1,20 @@
+......F                                                                  [100%]
+=================================== FAILURES ===================================
+______________________ test_halving_counts_and_cold_reset ______________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7a386e221e20>
+
+    def test_halving_counts_and_cold_reset(monkeypatch):
+        def fake(s,m,seed,*args,**kwargs):return dict(value=m.row*100+m.col,plies=1,moves=None,scores=[0,0])
+        monkeypatch.setattr('blokus.rollout_search.terminal_rollout',fake)
+        s=State();ms=candidates(s);z=allocate(s,ms,7,32,'halving')
+>       assert sorted(map(len,z['values']))==[2,2,2,2,4,4,8,8] and z['completed']==32
+E       assert ([1, 1, 1, 1, 4, 4, ...] == [2, 2, 2, 2, 4, 4, ...]
+E         
+E         At index 0 diff: 1 != 2
+E         Use -v to get more diff)
+
+tests/test_rollout_search.py:54: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_rollout_search.py::test_halving_counts_and_cold_reset - ass...
+1 failed, 6 passed in 0.86s
