@@ -443,3 +443,16 @@ GPU主学習は54,000更新・87.47秒。全44テスト、別process CUDA保存�
 **学生の学習改善は未確認、既存低予算value/2ply推奨を維持**します。区間は3seed・先後をprefix内でまとめて算出。教師の成績を学生へ流用せず、holdout再選択もしていません。一致率+5ptの当初目安は未達でしたが、実戦validationの信号を根拠にfresh確認へ進めた判断変更は事前に記録しています。
 
 dev診断では25ms時に教師手を全て評価対象へ含めても、最後の2ply値で別手を選ぶ例が多く、順位変更だけの限界が見えました。追加学習は3seed計8.05秒、全78テスト・CUDA別process再開・1856評価対局監査PASS。main統合は行っていません。[詳細結果・原因・次案](artifacts/root-policy-distillation/conclusions.md)／[設計と再現CLI](artifacts/root-policy-distillation/METHOD.md)を参照してください。
+
+## 最終root値への補正学習（研究限定）
+
+depth4−depth2を全盤面＋候補の小型CNNで学び、完了したrootの最終値に加える経路を追加しました。固定value本体と相手上位3応手を維持し、未知ラベルはmask、同値候補は許容集合として評価します。240ゲーム477局面、3更新seed、ゼロ補正推論対照を用意しました。
+
+新validationで3000更新/強度0.5/25msを固定後、fresh96prefix・先後交換で評価。3seed平均の得点差は旧value/2plyへ **+0.036 [95% prefix CI −1.005,+1.031]**、同じモデルを推論するゼロ補正へ **−0.057 [−1.038,+0.912]**。学習改善は確認できず、既存低予算推奨を維持します。devでの教師選択損失は改善しましたが、別ゲームでの予測・選択誤差が改善せず、過学習と小規模validation選択の分散が課題です。[結果・原因分析・計算量](artifacts/root-value-correction/conclusions.md)、[設計・再現手順](artifacts/root-value-correction/METHOD.md)を参照してください。
+
+```bash
+# 研究用補正学生 vs 旧value/2ply（採用モデルではありません）
+.venv/bin/python -m blokus.correction_experiment play --seed 1001
+```
+
+82 tests、CUDA別process再開、477局面と評価1,632局の実装側再生・算術監査PASS。GPU主学習は3seed計9,000更新/10.31秒。検証済み100ms教師はmain **cbe3b91**に追加オプションとして統合済みで、mainでは `python -m blokus.teacher_play` で起動できます。教師は共通100ms上限の2標本で正の平均得点差があり、実消費時間は旧探索より長く、勝率優越は未確定です。教師の成果を学生の改善とは扱いません。

@@ -386,3 +386,18 @@ fresh920000/96prefix・192局:98勝89敗5分、平均+1.40625点 CI[0.23424,2.62
 教師trace24局面を完了深度どおりに再計算、1192root候補/mask監査、300生成ゲームと1856評価対局の再生・算術・選択hash監査PASS。全78tests7.30秒。CUDA別process40対20+20、model/optimizer/Python/NumPy/Torch/CUDA RNG bit一致。shared初期weightsも3seed bit一致。CLI完走(-68,-8)。
 原因診断はdev30game59rootのみ、holdout再選択なし。25msでteacher手の探索対象包含100%でも最終一致約44%、teacherが初期2ply最大から反転30/59。順序だけで固定2ply最終値の誤差を直せない場合がある。3000更新でtrain改善/dev悪化、same-depth同値候補複数133/571というラベル曖昧さも記録。次案はroot値補正を最終選択へ渡す学習interfaceの上限診断から。現runでは変更せず秘書判断へ返す。
 README、METHOD、conclusions、全checkpoint/config/log/raw data、compute-summary、verificationを保存。大きなJSONは空白圧縮のみ、parse同一確認。研究branchのみcommit/push予定、main未統合。
+
+## root-value-correction 着手
+d3c4698から研究branch作成。main eb96a90への教師統合は別worktreeで依存を限定して行う。補正学習の段階/gate/新seedは artifacts/root-value-correction/METHOD.md に事前保存。最終root値に補正を加え、2ply上書きを防ぐ。ゼロ補正推論対照を必須とする。
+
+### 教師統合と補正pilot
+mainへcbe3b91を通常fast-forward push済み（53 testsと教師/旧2plyのCUDA CLI完走）。研究枝はmainへ入れない。
+新24ゲーム48局面の上限診断は同候補mask内で28局面のdepth4選択損失を改善、平均0.753→0。ただし教師情報を直接使った限定集合上の診断であり、棋力や低予算での実現を示さない。事前基準10%を満たしたため240ゲームへ進行。
+240ゲームの477局面（重複1を除去）、train381/dev48/validation48。初期値上位4と残候補一様2を同depth4で完了評価。GPU3seed各3000更新を完了。別process40連続 vs20+保存再開40のmodel/optimizer/Python/NumPy/Torch/CUDA RNG bit一致。devの補正選択損失には改善傾向があるが、更新増で予測誤差が悪化するため予定外の増量はしない。
+
+### validation選択固定（holdout前）
+新seed1021000/16prefixの15比較480局完了。3seed共通step3000/alpha0.5/25msを平均得点差最大で固定。旧探索へ+1.7708（prefix CI[-0.5734,4.0836]）、同じモデル推論を実行するゼロ補正へ+2.2396（[-0.0208,4.4065]）。平均推論0.4003ms。事前gateの5条件すべてtrue、例外変更なし。推奨変更はしない。新seed1022000/96prefixへ進む。選択ハッシュはselection.json、全結果はvalidation-results.json。主学習/生成/テスト/監査は停止し対局単独計測。
+
+### 最終結果・監査
+fresh96prefix×先後×3seed×2対照=1152局完走。対旧は254勝293敗29分、平均+0.03646 CI[-1.00525,1.03129]。対zeroは259勝291敗26分、-0.05729 CI[-1.03819,0.91150]。改善なし、既存value/2ply推奨維持。設定再選択なし。
+82 tests、CUDA別process再開、3seed初期重みbit一致。源240ゲーム/477局面/教師24局面再計算/評価1632局再生・算術監査PASS。全源状態と評価状態hash重複0。devでは教師最良候補の評価範囲coverage100%ながら教師保持50–54%、未使用ゲームのMSE/選択regretはzeroより悪化し、汎化が主な課題。結果・次案・再現CLIはconclusions.mdとMETHOD.md。追加学習せず研究branchへ保存する。
