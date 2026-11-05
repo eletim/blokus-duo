@@ -290,3 +290,22 @@ GPU主学習54,000更新/87.47秒、準備＋run3437.48秒。CPUラベル生成�
 README、artifacts/visited-diversity/{METHOD.md,conclusions.md,compute-summary.json,audit.json,verification.json,diagnostics.json}に結果・限界・コマンドを保存。研究branchのみcommit/pushし、mainの既存value推奨は変更しない。学習/評価の残存runなし。
 
 保存時に1MB超のJSONのみ空白を除去し、再decode値の完全一致を確認。元/保存後hashとサイズをartifact-storage.jsonに記録した。checkpoint/NPZのbytesは変更していない。成果全体は約90MB、checkpoint合計約4.2MB。監査後の差分はレポート生成・文書・この意味保存のJSON整形のみで、engine/学習/探索コードは検証時から不変。
+
+## 固定重み探索強化（基点a88905e）設計
+追加学習なし。既存value（compact/seed-201/predictive-best.pt、alpha=.5、gate24）とengineを固定。新規blokus/deep_search.pyへnegamax alpha-beta、深さ2/4/6…の反復深化、heuristicによる固定候補幅、TTのEXACT/LOWER/UPPERを実装する。候補を絞った探索は選択探索と呼び、厳密探索とは区別する。少残駒時は全合法手・終局までの探索を試み、完了した場合だけ厳密解と記録する。期限内に完了した反復だけを採用し、中断中の値は使わない。最初の反復も完了しなければ合法heuristic fallback。passも1plyとして符号反転し、相手pass後の同色再着手は2回の符号反転で扱う。
+
+TTは盤面/残駒/実得点/手番/passesと探索mode・深さを区別。選択集合をheuristicで固定してからTT手を順序付けし、TTで枝集合が変わることを避ける。終局評価はボーナス込み得点差。小終盤で別実装の全探索と値/最善手を照合し、bound・中断fallback・入力不変性・pass連続手をテストする。
+
+新規開発prefix seed510000/32以上で25ms・100msの旧2ply対新探索を評価、6msは8prefixの補助比較。開発で幅/厳密切替条件を調整した場合は新validation seed520000/32で方式と主要予算を固定し、その後fresh530000/96prefixで同予算旧探索と先後交換比較する。全て既存学習重みを固定。prefix単位CI、実ms/超過率、完了深さ、node、TT hit、厳密解割合を保存。計測中に生成/監査を並行しない。全体2時間を目安に有限run、改善なしでも原因を保存して研究branchへpushする。
+
+Deep development selected config=late; next newvalidation520000.
+
+### 開発途中の観測と追加候補（初回holdoutを見る前に記録）
+deep設定は25ms −0.547点、100ms −0.641点、late設定25ms +0.172点。deepは候補幅8へ絞る損失と未完了反復の費用が疑われる。厳密探索は残駒8以下という条件のため3〜6回/約1000手しか発動しない。置けない残駒が多い終盤を除外している可能性がある。
+初回runは変更せず完走。追加する場合の仮説は「残駒24以下、両者合法手合計6または10以下だけ厳密探索し、それ以外は旧2plyを使う」。対象rootでは旧同等の全root×上位3応手の2plyを先に完了し、厳密探索が未完了ならその値へfallback。追加学習なし。候補6/10を新開発seed511000/32で25/100ms比較、新validation521000/32で固定、fresh531000/96を最終評価とする。初回holdout530000の結果を設定選択には使わない。
+追加候補の最終評価では、選択したhybrid対旧2plyを主比較、対初回validation選択方式（同じ新主要予算）を副比較として同じfresh531000/96prefixで保存する。副比較による再選択はしない。新方式の学習効果ではなく、固定重みでの探索方法の差として扱う。
+
+Deep final selection frozen: {'kind': 'deep', 'budget_ms': 25, 'root_width': 12, 'width': 3, 'deep_gate': 14, 'exact_pieces': 8}, validation mean=0.640625; fresh530000 begins.
+
+### 初回完了
+validationでlate/25msを固定。fresh530000/96prefix・192局: 94勝91敗7分、得点差+0.10417、CI[-0.15104,+0.33867]。新18.772ms/手、旧17.329ms/手。選択探索平均完了深さ6.13、厳密解12/3009呼出（試行12/12）。超過9/3009対旧0/3008。安定した改善は未確認。全50tests（独立小終盤13局面を含む）PASS、全対局再生・算術・prefix分離・厳密解12標本の独立再証明PASS。開発段階で事前記録した低mobility厳密探索を別seed群で継続する。初回holdoutを再選択に使わない。
