@@ -356,3 +356,14 @@ GPU学習は9モデル計24,000更新・約30.67秒（smoke/再開検証別）�
 独立prefix集合96件×先後交換の2標本で平均得点差は +2.479 [95% prefix CI 1.422,3.620] と +1.406 [0.234,2.625]。2標本目98勝89敗5分で、勝率優越は確定していません。実消費は教師70.68/68.55ms、旧51.61/49.50msで等しくなく、共通100ms上限の比較です。優先配分が均等配分より優れる証拠も未確認。2標本目は同一実装の独立標本再確認で、独立実装監査ではありません。
 
 [固定設定・結果要約](artifacts/teacher-100ms/)を同梱。完全な再現・監査・生ログは [初回研究branch](https://github.com/eletim/blokus-duo/tree/research/minimax-refinement/artifacts/minimax-refinement) と [再確認branch](https://github.com/eletim/blokus-duo/tree/research/root-policy-distillation/artifacts/root-policy-distillation) を参照。不要な研究データの複製を避けています。
+
+## 追加選択肢：終局PPO（2048iteration）
+
+[CPU/GPUの導入・人間対戦・評価範囲](PPO.md)。全合法手を評価する学習済みpolicyを3seed同梱しました。訓練履歴sidecarは不要で、推論モデルは各約276KiBです。既存低予算AIと100ms教師を残し、デフォルトは変更しません。
+
+```bash
+.venv/bin/python -m blokus.ppo_play --model-seed 1401 --device auto --human-seat 1
+.venv/bin/python -m blokus.ppo_play --model-seed 1402 --device cpu --opponent heuristic
+```
+
+seed1401の例は評価前に固定。2回目の新96prefixでは旧6ms探索へpoint56.1%ですが平均得点差+0.70のCIは0を含み、100ms教師には平均−2.03点でした。実時間も異なるため一般的最強とは呼びません。詳細なseed差・CI・実時間はPPO.mdと評価要約を参照してください。新規cloneのCPU専用環境・CUDAで動作確認し、main全57テストPASSです。

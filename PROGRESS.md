@@ -214,3 +214,5 @@ main統合レビュー: origin/main=69065fcに対する1b5cf87/3dc3eb6の差分�
 
 ## 100ms教師の限定統合
 main eb96a90とd3c4698の依存差分を確認。engine/ai/research/value_searchと固定checkpointは同一。deep_search/refinement_searchを原本のまま追加し、独立終盤oracleを含む関連テストを追加（テストのBASE importのみ定数化）。研究用生成/学習/評価モジュールと巨大生データは取り込まず、専用teacher_play CLIと固定設定/2標本要約を追加。53 tests PASS、CUDA CLI対局完走 scores -22/-29、教師超過0。低予算デフォルト変更なし。生結果は保存済み研究branchを参照。
+
+PPO2048推論追加: 3seedの固定モデルを履歴不要へexport、CPU/CUDA出力bit一致。新96prefix再確認/1344対局を監査。新clone CPU専用2.7.1+cpu/人間先後/各seed/既存探索対戦とCUDAを確認、main57tests PASS。既定例1401固定、既存デフォルト維持。研究履歴はresearch/ppo-4096参照。
