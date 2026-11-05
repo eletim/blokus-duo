@@ -1,0 +1,650 @@
+{
+  "frozen_selection": {
+    "1401": {
+      "path": "artifacts/ppo-4096/seed-1401/iteration-3072.pt",
+      "sha256": "434fea1882ab986a2783ae88685067897c662de29a3a623c53ebcbb5a0d82442",
+      "iteration": 3072,
+      "criterion": [
+        0.623046875,
+        2.0,
+        -3072
+      ],
+      "label": "iteration-3072"
+    },
+    "1402": {
+      "path": "artifacts/ppo-4096/seed-1402/iteration-4096.pt",
+      "sha256": "e4aa7476b74942343a12109424ee1f86f90235245af256ac795ed3ec086b40fe",
+      "iteration": 4096,
+      "criterion": [
+        0.64453125,
+        3.48046875,
+        -4096
+      ],
+      "label": "iteration-4096"
+    },
+    "1403": {
+      "path": "artifacts/ppo-4096/seed-1403/iteration-4096.pt",
+      "sha256": "d0e68ca6cd0d32abf499f4c00a84fa4dd538232f0b185a6b4209ef1a8d9309e1",
+      "iteration": 4096,
+      "criterion": [
+        0.673828125,
+        5.19921875,
+        -4096
+      ],
+      "label": "iteration-4096"
+    }
+  },
+  "prefix_sha256": "0b8a20364b5cc2b6c06ce7588f02cf1878762857ee89469f1d2464c78e61699e",
+  "aggregate": {
+    "previous": {
+      "point": 0.6371527777777778,
+      "difference": 3.9583333333333335,
+      "point_ci95": [
+        0.6067708333333334,
+        0.6666666666666669
+      ],
+      "difference_ci95": [
+        3.2030815972222233,
+        4.6649739583333325
+      ],
+      "per_seed_mean": [
+        [
+          0.5572916666666666,
+          1.5677083333333333
+        ],
+        [
+          0.6067708333333334,
+          3.1197916666666665
+        ],
+        [
+          0.7473958333333334,
+          7.1875
+        ]
+      ],
+      "timing": [
+        {
+          "calls": 9140,
+          "mean_ms": 1.4420271195553822,
+          "p95_ms": 2.940894506900804,
+          "max_ms": 5.125192998093553,
+          "budget_ms": null,
+          "over_budget_rate": null
+        },
+        {
+          "calls": 9058,
+          "mean_ms": 1.2714704946226871,
+          "p95_ms": 2.6815449949936006,
+          "max_ms": 4.5621809986187145,
+          "budget_ms": null,
+          "over_budget_rate": null
+        }
+      ]
+    },
+    "oldvalue": {
+      "point": 0.6336805555555555,
+      "difference": 2.9184027777777772,
+      "point_ci95": [
+        0.5963541666666664,
+        0.6692708333333331
+      ],
+      "difference_ci95": [
+        2.095486111111111,
+        3.7048611111111107
+      ],
+      "per_seed_mean": [
+        [
+          0.6171875,
+          2.5677083333333335
+        ],
+        [
+          0.5885416666666666,
+          2.3333333333333335
+        ],
+        [
+          0.6953125,
+          3.8541666666666665
+        ]
+      ],
+      "timing": [
+        {
+          "calls": 9051,
+          "mean_ms": 1.2855876523870629,
+          "p95_ms": 2.655041498655919,
+          "max_ms": 4.4457309995777905,
+          "budget_ms": null,
+          "over_budget_rate": null
+        },
+        {
+          "calls": 8991,
+          "mean_ms": 4.582728983112743,
+          "p95_ms": 5.730048993427772,
+          "max_ms": 6.294644990703091,
+          "budget_ms": 6,
+          "over_budget_rate": 0.000667334000667334
+        }
+      ]
+    },
+    "teacher100": {
+      "point": 0.521701388888889,
+      "difference": 0.7673611111111112,
+      "point_ci95": [
+        0.4791666666666667,
+        0.5633680555555555
+      ],
+      "difference_ci95": [
+        -0.23658854166666635,
+        1.7483940972222234
+      ],
+      "per_seed_mean": [
+        [
+          0.5078125,
+          0.5729166666666666
+        ],
+        [
+          0.5,
+          0.296875
+        ],
+        [
+          0.5572916666666666,
+          1.4322916666666667
+        ]
+      ],
+      "timing": [
+        {
+          "calls": 8964,
+          "mean_ms": 1.4141667261895676,
+          "p95_ms": 3.0050394911086187,
+          "max_ms": 4.704341990873218,
+          "budget_ms": null,
+          "over_budget_rate": null
+        },
+        {
+          "calls": 8966,
+          "mean_ms": 69.58761361973411,
+          "p95_ms": 94.35603849487961,
+          "max_ms": 95.10840600705706,
+          "budget_ms": 100,
+          "over_budget_rate": 0.0
+        }
+      ]
+    }
+  },
+  "individual": {
+    "1401-previous": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 103,
+        "losses": 81,
+        "draws": 8,
+        "mean_difference": 1.5677083333333333,
+        "difference_ci95": [
+          0.4791666666666667,
+          2.6773437500000012
+        ],
+        "point_rate": 0.5572916666666666,
+        "point_rate_ci95": [
+          0.4973958333333333,
+          0.6171875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.5572916666666666,
+        "difference": 1.5677083333333333,
+        "point_ci95": [
+          0.4973958333333333,
+          0.6171875
+        ],
+        "difference_ci95": [
+          0.46875,
+          2.7033854166666678
+        ]
+      },
+      "timing": [
+        {
+          "calls": 3069,
+          "mean_ms": 1.3778971482882183,
+          "p95_ms": 2.8333629976259544,
+          "max_ms": 4.497871006606147
+        },
+        {
+          "calls": 3056,
+          "mean_ms": 1.3220326782984604,
+          "p95_ms": 2.649981001013657,
+          "max_ms": 4.5621809986187145
+        }
+      ]
+    },
+    "1402-previous": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 112,
+        "losses": 71,
+        "draws": 9,
+        "mean_difference": 3.1197916666666665,
+        "difference_ci95": [
+          1.895703125,
+          4.375
+        ],
+        "point_rate": 0.6067708333333334,
+        "point_rate_ci95": [
+          0.5442708333333334,
+          0.6692708333333334
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.6067708333333334,
+        "difference": 3.1197916666666665,
+        "point_ci95": [
+          0.5442708333333334,
+          0.6666666666666666
+        ],
+        "difference_ci95": [
+          1.8854166666666667,
+          4.302213541666667
+        ]
+      },
+      "timing": [
+        {
+          "calls": 3048,
+          "mean_ms": 1.4396975308484743,
+          "p95_ms": 2.8883474929898516,
+          "max_ms": 5.125192998093553
+        },
+        {
+          "calls": 3025,
+          "mean_ms": 1.255116025548744,
+          "p95_ms": 2.6592489943141113,
+          "max_ms": 4.242151000653394
+        }
+      ]
+    },
+    "1403-previous": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 140,
+        "losses": 45,
+        "draws": 7,
+        "mean_difference": 7.1875,
+        "difference_ci95": [
+          5.755078125,
+          8.770833333333334
+        ],
+        "point_rate": 0.7473958333333334,
+        "point_rate_ci95": [
+          0.6927083333333334,
+          0.8020833333333334
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.7473958333333334,
+        "difference": 7.1875,
+        "point_ci95": [
+          0.6927083333333334,
+          0.8046875
+        ],
+        "difference_ci95": [
+          5.708333333333333,
+          8.666796875
+        ]
+      },
+      "timing": [
+        {
+          "calls": 3023,
+          "mean_ms": 1.5094817898159119,
+          "p95_ms": 3.0986199912149464,
+          "max_ms": 5.076323010143824
+        },
+        {
+          "calls": 2977,
+          "mean_ms": 1.2361847155281338,
+          "p95_ms": 2.696987002855167,
+          "max_ms": 4.317730999900959
+        }
+      ]
+    },
+    "1401-oldvalue": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 115,
+        "losses": 70,
+        "draws": 7,
+        "mean_difference": 2.5677083333333335,
+        "difference_ci95": [
+          1.4790364583333335,
+          3.671875
+        ],
+        "point_rate": 0.6171875,
+        "point_rate_ci95": [
+          0.5546875,
+          0.6796875
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.6171875,
+        "difference": 2.5677083333333335,
+        "point_ci95": [
+          0.5546223958333334,
+          0.6770833333333334
+        ],
+        "difference_ci95": [
+          1.4375,
+          3.6773437500000012
+        ]
+      },
+      "timing": [
+        {
+          "calls": 3033,
+          "mean_ms": 1.2932305648111737,
+          "p95_ms": 2.6664725941373035,
+          "max_ms": 4.4457309995777905
+        },
+        {
+          "calls": 3015,
+          "mean_ms": 4.624184254317693,
+          "p95_ms": 5.73122599744238,
+          "max_ms": 6.294644990703091
+        }
+      ]
+    },
+    "1402-oldvalue": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 106,
+        "losses": 72,
+        "draws": 14,
+        "mean_difference": 2.3333333333333335,
+        "difference_ci95": [
+          0.958203125,
+          3.7760416666666665
+        ],
+        "point_rate": 0.5885416666666666,
+        "point_rate_ci95": [
+          0.5208333333333334,
+          0.65625
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.5885416666666666,
+        "difference": 2.3333333333333335,
+        "point_ci95": [
+          0.515625,
+          0.6588541666666666
+        ],
+        "difference_ci95": [
+          0.9010416666666666,
+          3.8023437500000012
+        ]
+      },
+      "timing": [
+        {
+          "calls": 2991,
+          "mean_ms": 1.2746461621504022,
+          "p95_ms": 2.644602005602792,
+          "max_ms": 3.7967699900036678
+        },
+        {
+          "calls": 2978,
+          "mean_ms": 4.589489212007234,
+          "p95_ms": 5.731469994498184,
+          "max_ms": 5.923425997025333
+        }
+      ]
+    },
+    "1403-oldvalue": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 132,
+        "losses": 57,
+        "draws": 3,
+        "mean_difference": 3.8541666666666665,
+        "difference_ci95": [
+          2.5885416666666665,
+          5.109375
+        ],
+        "point_rate": 0.6953125,
+        "point_rate_ci95": [
+          0.6354166666666666,
+          0.7552083333333334
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.6953125,
+        "difference": 3.8541666666666665,
+        "point_ci95": [
+          0.6354166666666666,
+          0.7526041666666666
+        ],
+        "difference_ci95": [
+          2.5675781250000003,
+          5.104296875000001
+        ]
+      },
+      "timing": [
+        {
+          "calls": 3027,
+          "mean_ms": 1.28874095397792,
+          "p95_ms": 2.6481850014533848,
+          "max_ms": 3.656979009974748
+        },
+        {
+          "calls": 2998,
+          "mean_ms": 4.534323511354664,
+          "p95_ms": 5.726944497291697,
+          "max_ms": 6.131875998107716
+        }
+      ]
+    },
+    "1401-teacher100": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 94,
+        "losses": 91,
+        "draws": 7,
+        "mean_difference": 0.5729166666666666,
+        "difference_ci95": [
+          -1.0364583333333333,
+          2.161588541666667
+        ],
+        "point_rate": 0.5078125,
+        "point_rate_ci95": [
+          0.4375,
+          0.5807291666666666
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.5078125,
+        "difference": 0.5729166666666666,
+        "point_ci95": [
+          0.4375,
+          0.578125
+        ],
+        "difference_ci95": [
+          -1.026171875,
+          2.0835937500000012
+        ]
+      },
+      "timing": [
+        {
+          "calls": 3004,
+          "mean_ms": 1.4222198164722737,
+          "p95_ms": 3.021147154504433,
+          "max_ms": 4.177490001893602
+        },
+        {
+          "calls": 3005,
+          "mean_ms": 70.60299304457007,
+          "p95_ms": 94.35116139939055,
+          "max_ms": 95.10840600705706
+        }
+      ]
+    },
+    "1402-teacher100": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 94,
+        "losses": 94,
+        "draws": 4,
+        "mean_difference": 0.296875,
+        "difference_ci95": [
+          -1.0260416666666667,
+          1.6721354166666675
+        ],
+        "point_rate": 0.5,
+        "point_rate_ci95": [
+          0.4401041666666667,
+          0.5625
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.5,
+        "difference": 0.296875,
+        "point_ci95": [
+          0.4348958333333333,
+          0.5598958333333334
+        ],
+        "difference_ci95": [
+          -1.0313802083333332,
+          1.6251302083333339
+        ]
+      },
+      "timing": [
+        {
+          "calls": 2977,
+          "mean_ms": 1.4072038289307744,
+          "p95_ms": 2.986286001396365,
+          "max_ms": 4.704341990873218
+        },
+        {
+          "calls": 2987,
+          "mean_ms": 69.88221709692482,
+          "p95_ms": 94.38753630820429,
+          "max_ms": 94.8986270086607
+        }
+      ]
+    },
+    "1403-teacher100": {
+      "summary": {
+        "prefixes": 96,
+        "games": 192,
+        "wins": 104,
+        "losses": 82,
+        "draws": 6,
+        "mean_difference": 1.4322916666666667,
+        "difference_ci95": [
+          -0.24492187499999996,
+          3.109375
+        ],
+        "point_rate": 0.5572916666666666,
+        "point_rate_ci95": [
+          0.4895833333333333,
+          0.6223958333333334
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "clustered": {
+        "point": 0.5572916666666666,
+        "difference": 1.4322916666666667,
+        "point_ci95": [
+          0.4895833333333333,
+          0.6223958333333334
+        ],
+        "difference_ci95": [
+          -0.22929687499999996,
+          3.083463541666667
+        ]
+      },
+      "timing": [
+        {
+          "calls": 2983,
+          "mean_ms": 1.4130058351168822,
+          "p95_ms": 3.0132600048091267,
+          "max_ms": 4.489131999434903
+        },
+        {
+          "calls": 2974,
+          "mean_ms": 68.26575896001631,
+          "p95_ms": 94.3249748517701,
+          "max_ms": 94.89828700316139
+        }
+      ]
+    }
+  },
+  "games": 1728,
+  "training_actual_overlap": 0,
+  "default_generation": "gen2",
+  "clear_regression": false,
+  "prior_evidence": "research/ppo-4096 fd527ca; independent 96prefix previous +3.5625 CI[2.7430,4.3769], oldvalue +2.5625 CI[1.8263,3.2691]",
+  "result_hashes": {
+    "1402-teacher100.json": "fa86dd49052c8ef2982475c48747ddcdd3af29ff25eb079867528d55cd9f4a9d",
+    "1401-previous.json": "b3ad862a77173620e3fd8d6e7fa0b73bd4ed197bfb388f531b333edaadda37f5",
+    "1402-previous.json": "b6a108a0ba0da5d086686b6d3b1a20d96ee231137d6ac86b157ea32f5eac599a",
+    "1403-oldvalue.json": "771ec2627dcf31f96339d19e0477693ef37c611756d00b98f01eab41728f6300",
+    "1403-teacher100.json": "247e807df6b332caf29ef3614e6fb6322f4c1340c0a2b903ff297b2ada9e9c12",
+    "1401-oldvalue.json": "a4ca10a67e5b270a8d8ab30c3af70fd5543135e8069db4732ff3228472d8dfa8",
+    "1402-oldvalue.json": "b8bc0e5a07f749cd8886c3218ed882d8ec187aa4e3e59c3c2513a2bd52dbc10f",
+    "1403-previous.json": "7c165284c7a43f0e51733c878d603fb52cee84e656d584d7fd21d180970d124d",
+    "1401-teacher100.json": "d84dd24bcf3d2b8249903273754d6a4e89ed35fec6bb38d1980f03437152555f"
+  },
+  "scope": "Frozen models and fixed shared prefix sample; no seed reselection, no independent implementation claim."
+}

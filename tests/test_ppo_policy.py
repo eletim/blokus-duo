@@ -7,12 +7,13 @@ from blokus.ai import seed_all
 from blokus.ppo_policy import PPOAgent,observe,collate
 from blokus.ppo_play import human_move
 
-def test_exported_three_seeds_cpu_without_history():
+@pytest.mark.parametrize("generation",["2048","gen2"])
+def test_exported_three_seeds_cpu_without_history(generation):
  seed_all(1)
  for seed in (1401,1402,1403):
-  a=PPOAgent(seed,'cpu');s=State();rng=random.Random(17)
+  a=PPOAgent(seed,'cpu',generation=generation);s=State();rng=random.Random(17)
   for _ in range(6):play(s,a.act(s,rng))
-  assert a.metadata['iteration']==2048 and 'history' not in a.metadata
+  assert a.metadata['iteration']==(2048 if generation=='2048' else 3072 if seed==1401 else 4096) and 'history' not in a.metadata
 
 def test_legal_mask_and_exact_cells():
  s=State();o,qs=observe(s);assert len(qs)==414
@@ -28,3 +29,9 @@ def test_human_input_bounds_and_forced_pass():
 
 def test_cpu_device_explicit():
  assert PPOAgent(1401,'cpu').device=='cpu'
+
+
+def test_generation_default_and_validation():
+ from blokus.ppo_policy import DEFAULT_GENERATION
+ assert PPOAgent(1401,'cpu').generation==DEFAULT_GENERATION
+ with pytest.raises(ValueError,match='generation'):PPOAgent(generation='unknown')
