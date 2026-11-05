@@ -8,17 +8,14 @@ import torch
 from torch import nn
 from .engine import State,legal_moves
 from .ai import features
+from .placement_geometry import geometry
 from .value_search import encode
 EXTRA=27
 DEFAULT_GENERATION="gen2"
 GENERATIONS=("gen2","2048")
 def _candidate_inputs(s,qs,x=None,st=None):
     if x is None:x,st=features(s,qs)
-    extra=np.zeros((len(qs),EXTRA),np.float32)
-    for i,q in enumerate(qs):
-        cells=q.move.cells;rs=[r for r,c in cells];cs=[c for r,c in cells]
-        extra[i,q.move.piece]=1
-        extra[i,21:]=[sum(rs)/len(rs)/13,sum(cs)/len(cs)/13,min(rs)/13,min(cs)/13,(max(rs)-min(rs))/4,(max(cs)-min(cs))/4]
+    extra=np.asarray([geometry(q.move)[2] for q in qs],dtype=np.float32).reshape(-1,EXTRA)
     state=np.r_[st,np.array([s.score(s.turn)/89,s.score(1-s.turn)/89,s.passes/2],np.float32)]
     return np.concatenate((x,extra),axis=1),state.astype(np.float32)
 
@@ -26,9 +23,7 @@ def observe(s,qs=None):
  if s.done:raise ValueError('terminal has no policy actions')
  qs=legal_moves(s) if qs is None else qs;b,st=encode(s)
  if qs:
-  x,_=_candidate_inputs(s,qs);cells=np.full((len(qs),5),196,np.int64)
-  for i,q in enumerate(qs):
-   for j,(y,col) in enumerate(q.move.cells):cells[i,j]=14*y+col
+  x,_=_candidate_inputs(s,qs);cells=np.asarray([geometry(q.move)[3] for q in qs],dtype=np.int64)
  else:x=np.zeros((1,39),np.float32);cells=np.full((1,5),196,np.int64)
  return (b,st,x,cells),qs
 

@@ -381,3 +381,17 @@ PPO専用CLIは新世代を既定にしました。seed既定1401は維持し、
 固定3072/4096/4096を新96prefixで再確認し、対2048得点差+3.96 [95%CI 3.20,4.66]、旧6msに+2.92 [2.10,3.70]。100ms教師には+0.77 [-0.24,1.75]で優位未確定です。教師戦の実平均はPPO1.41ms/教師69.59msで、同時間比較ではありません。seedを選び直さず、全3seedと旧2048を提供します。
 
 [世代選択・CPU/GPU導入・評価範囲](PPO.md)。新cloneのCPU専用環境とCUDAで、両世代の人間先後・AI対戦・旧探索対戦を各13局完走、main全59テストPASS。推論checkpointは各約276KiBで学習履歴を参照しません。研究記録は [research/ppo-generation2](https://github.com/eletim/blokus-duo/tree/research/ppo-generation2/artifacts/ppo-generation2) にあります。
+
+### CPU候補処理の等価高速化候補
+
+配置の不変な幾何情報を最大32768件のtuple cacheで再利用する。ルール・合法手順・特徴値・ネット重み・既定世代は変更しない。状態依存cacheやnative依存はなく、出力配列は毎回新規所有。固定重みのネット単体は同入力・同着手を維持するが、時間制御探索は高速化で展開数と着手が変わり得る。棋力改善ではない。
+
+研究branch `research/ppo-cpu-throughput` に全比較と短いPPO更新のbit一致検証を保存。モデル初期化とwarmupを除いた同一保存局面での交互ベンチ:
+
+```bash
+PYTHONPATH=. python scripts/bench_ppo_cpu.py --device cpu
+PYTHONPATH=. python scripts/bench_ppo_cpu.py --device cuda
+python -m pytest -q
+```
+
+推論ベンチ・テストは訓練履歴を必要としない。CPU-only PyTorchでも利用できる。

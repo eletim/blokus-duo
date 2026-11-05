@@ -3,6 +3,7 @@ import numpy as np
 import torch
 from torch import nn
 from .engine import *
+from .placement_geometry import geometry
 # Candidate features are interpreted in current player's frame, not absolute colour.
 DIM=12
 STATE_DIM=46
@@ -14,18 +15,17 @@ def candidates(s):
 def features(s,qs):
     t=time.perf_counter(); p=s.turn; own=s.boards[p]; occ=own|s.boards[1-p]
     f,e=frontier(s,p); of,oe=frontier(s,1-p)
-    rows=[]
+    rows=[];fc=f.bit_count();remaining=s.remaining[p].bit_count()/21
+    difference=(s.boards[p].bit_count()-s.boards[1-p].bit_count())/89
     for q in qs:
-        cs=q.move.cells; size=SIZES[q.move.piece]
+        size=SIZES[q.move.piece];center,reach,_,_=geometry(q.move)
         nf=(f|q.corners)&~(occ|q.bits|e|q.edges)
-        freed=nf.bit_count()-f.bit_count()
-        center=sum(13-abs(x-6.5)-abs(y-6.5) for x,y in cs)/size/13
-        reach=sum(abs(x-START[p][0])+abs(y-START[p][1]) for x,y in cs)/size/26
-        rows.append([size/5,freed/10,(q.bits&of).bit_count()/5,center,reach,
-                     (q.edges&of).bit_count()/10, nf.bit_count()/40,
+        nfc=nf.bit_count();freed=nfc-fc
+        rows.append([size/5,freed/10,(q.bits&of).bit_count()/5,center,reach[p],
+                     (q.edges&of).bit_count()/10, nfc/40,
                      (q.corners&~occ&~q.bits).bit_count()/20,
-                     float(size==1),s.remaining[p].bit_count()/21,
-                     (s.boards[p].bit_count()-s.boards[1-p].bit_count())/89,
+                     float(size==1),remaining,
+                     difference,
                      (q.edges&s.boards[1-p]).bit_count()/10])
     st=np.array([float(s.remaining[a]>>i&1) for a in (p,1-p) for i in range(21)]+[own.bit_count()/89,s.boards[1-p].bit_count()/89,f.bit_count()/40,of.bit_count()/40],dtype=np.float32)
     x=np.asarray(rows,dtype=np.float32).reshape(-1,DIM)
