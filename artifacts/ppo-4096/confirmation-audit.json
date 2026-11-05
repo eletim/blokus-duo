@@ -1,0 +1,204 @@
+{
+  "pass_": true,
+  "games": 1344,
+  "prefixes": 96,
+  "train_actual_overlap": 0,
+  "aggregate": {
+    "oldvalue": {
+      "point": 0.5607638888888888,
+      "difference": 0.6961805555555555,
+      "point_ci95": [
+        0.5182291666666669,
+        0.6015625
+      ],
+      "difference_ci95": [
+        -0.1946180555555556,
+        1.590277777777777
+      ],
+      "mean_ms": [
+        1.2179757188664813,
+        4.689589875622353
+      ]
+    },
+    "teacher100": {
+      "point": 0.44965277777777785,
+      "difference": -2.0260416666666665,
+      "point_ci95": [
+        0.4114583333333332,
+        0.4887152777777777
+      ],
+      "difference_ci95": [
+        -3.086805555555555,
+        -0.9878038194444444
+      ],
+      "mean_ms": [
+        1.346184904110251,
+        70.38801416149997
+      ]
+    }
+  },
+  "individual": {
+    "confirmation-1403-teacher100": {
+      "prefixes": 96,
+      "games": 192,
+      "wins": 83,
+      "losses": 104,
+      "draws": 5,
+      "mean_difference": -2.75,
+      "difference_ci95": [
+        -4.828255208333333,
+        -0.734375
+      ],
+      "point_rate": 0.4453125,
+      "point_rate_ci95": [
+        0.3776041666666667,
+        0.5130859375000003
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "confirmation-1402-teacher100": {
+      "prefixes": 96,
+      "games": 192,
+      "wins": 95,
+      "losses": 93,
+      "draws": 4,
+      "mean_difference": -0.78125,
+      "difference_ci95": [
+        -2.682552083333333,
+        1.0783854166666675
+      ],
+      "point_rate": 0.5052083333333334,
+      "point_rate_ci95": [
+        0.4270833333333333,
+        0.5859375
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "confirmation-1403-oldvalue": {
+      "prefixes": 96,
+      "games": 192,
+      "wins": 116,
+      "losses": 71,
+      "draws": 5,
+      "mean_difference": 1.3125,
+      "difference_ci95": [
+        -0.16679687499999996,
+        2.8020833333333335
+      ],
+      "point_rate": 0.6171875,
+      "point_rate_ci95": [
+        0.5520833333333334,
+        0.6848958333333334
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "confirmation-1401-resume512": {
+      "prefixes": 96,
+      "games": 192,
+      "wins": 147,
+      "losses": 36,
+      "draws": 9,
+      "mean_difference": 7.536458333333333,
+      "difference_ci95": [
+        6.135286458333334,
+        8.937760416666668
+      ],
+      "point_rate": 0.7890625,
+      "point_rate_ci95": [
+        0.7291666666666666,
+        0.84375
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "confirmation-1402-oldvalue": {
+      "prefixes": 96,
+      "games": 192,
+      "wins": 106,
+      "losses": 80,
+      "draws": 6,
+      "mean_difference": 1.7291666666666667,
+      "difference_ci95": [
+        0.09882812500000004,
+        3.2552083333333335
+      ],
+      "point_rate": 0.5677083333333334,
+      "point_rate_ci95": [
+        0.4973958333333333,
+        0.6354166666666666
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "confirmation-1401-oldvalue": {
+      "prefixes": 96,
+      "games": 192,
+      "wins": 90,
+      "losses": 91,
+      "draws": 11,
+      "mean_difference": -0.953125,
+      "difference_ci95": [
+        -2.6302083333333335,
+        0.661718750000001
+      ],
+      "point_rate": 0.4973958333333333,
+      "point_rate_ci95": [
+        0.4244791666666667,
+        0.5703776041666669
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    },
+    "confirmation-1401-teacher100": {
+      "prefixes": 96,
+      "games": 192,
+      "wins": 72,
+      "losses": 111,
+      "draws": 9,
+      "mean_difference": -2.546875,
+      "difference_ci95": [
+        -3.9740885416666667,
+        -1.15625
+      ],
+      "point_rate": 0.3984375,
+      "point_rate_ci95": [
+        0.33587239583333334,
+        0.4609375
+      ],
+      "bootstrap": {
+        "unit": "prefix pair, not individual game",
+        "samples": 4000,
+        "seed": 9817
+      },
+      "provisional": true
+    }
+  },
+  "model_reselection": false
+}

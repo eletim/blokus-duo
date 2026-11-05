@@ -32,3 +32,22 @@ def test_continuation_never_overwrites_existing_output(tmp_path):
  marker=tmp_path/'config.json';marker.write_text('preserve')
  with pytest.raises(FileExistsError):train(1401,'unused',tmp_path)
  assert marker.read_text()=='preserve'
+
+def test_history_chain_and_missing_segment(tmp_path):
+ p=tmp_path/'part.json.gz';p.write_bytes(gzip.compress(b'[{"id":3}]'))
+ c={'history_chain':[dict(path=p.name,sha256=sha(p),games=1)]}
+ assert history(c,tmp_path/'ck.pt')==[{'id':3}]
+ p.unlink()
+ with pytest.raises(FileNotFoundError):history(c,tmp_path/'ck.pt')
+
+def test_prefix_exclusion_does_not_change_other_games(monkeypatch):
+ from blokus import terminal_ppo as p
+ from blokus.tournament import prefix_state
+ from blokus.visited_data import state_hash
+ monkeypatch.setattr(p,'sample_batch',lambda model,obs:([0]*len(obs),[0.]*len(obs),[0.]*len(obs)))
+ _,first,_=p.collect(None,None,0,1401,8)
+ banned={state_hash(prefix_state({'moves':first[0]['prefix']}))}
+ _,second,_=p.collect(None,None,0,1401,8,forbidden_starts=banned)
+ assert second[0]['prefix_rejections']>=1 and second[0]['prefix']!=first[0]['prefix']
+ assert all(state_hash(prefix_state({'moves':g['prefix']})) not in banned for g in second)
+ assert [g['prefix'] for g in first[1:]]==[g['prefix'] for g in second[1:]]

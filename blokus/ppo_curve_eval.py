@@ -19,7 +19,8 @@ def audit_train():
  from .engine import is_legal,legal_moves
  prefixes=set();states=set();report=[]
  for seed in (1401,1402,1403):
-  path=paths(seed)[-1];c=torch.load(path,map_location='cpu',weights_only=False);hp=path.parent/c['history'];assert sha(hp)==c['history_sha256'];games=json.load(gzip.open(hp,'rt'));ids=set();counts={};seen_targets=0
+  path=paths(seed)[-1];c=torch.load(path,map_location='cpu',weights_only=False);from .ppo_scale import history
+  games=history(c,path);ids=set();counts={};seen_targets=0
   for g in games:
    assert g['id'] not in ids;ids.add(g['id']);s=State();prefixes.add(digest(g['prefix']));targets={r['ply']:r for r in g['targets']}
    for ply,row in enumerate(g['prefix']+g['moves']):
@@ -35,7 +36,7 @@ def audit_train():
   assert counts['current']==2*counts['past']==2*counts['heuristic'];assert len(games)==c['iteration']*16
   for l in c['logs']:
    assert all(np.isfinite(v) for v in l['update'].values());assert l['update']['grad_norm']>0
-  report.append(dict(seed=seed,games=len(games),targets=seen_targets,opponents=counts,checkpoint_sha256=sha(path),history_sha256=sha(hp)))
+  report.append(dict(seed=seed,games=len(games),targets=seen_targets,opponents=counts,checkpoint_sha256=sha(path),history_sha256=c.get('history_sha256'),history_chain=c.get('history_chain'),prefix_rejections=sum(g.get('prefix_rejections',0) for g in games)))
   del games,c
   print('training audit',report[-1],flush=True)
  # Compact sorted binary hashes for exact reproducible membership audit.
@@ -79,8 +80,8 @@ def cached(path,left,right,f):
   r=json.loads(path.read_text());assert r['prefix_sha256']==f['sha256'] and r['left_sha256']==sha(left);return r
  r=e.match(str(left),str(right),f);write(path,r);print(path,r['summary'],flush=True);return r
 
-def validation():
- f=fixture('validation',1530000,32);old=previous();selected={}
+def validation(prefix_seed=1530000):
+ f=fixture('validation',prefix_seed,32);old=previous();selected={}
  for seed in (1401,1402,1403):
   prior=old[str(seed)];assert sha(prior['path'])==prior['sha256'];options=[Path(prior['path'])]+paths(seed);candidates=[]
   for ck in options:
@@ -92,12 +93,14 @@ def validation():
   selected[str(seed)]=max(candidates,key=lambda c:c['criterion']);write(R/f'seed-{seed}/candidates.json',candidates)
  write(R/'selection.json',selected)
 
-def holdout():
- selected=json.loads((R/'selection.json').read_text());f=fixture('holdout',1540000,96);old=previous()
+def holdout(prefix_seed=1540000,opponents=('previous','heuristic','oldvalue')):
+ selected=json.loads((R/'selection.json').read_text());f=fixture('holdout',prefix_seed,96);old=previous()
  assert json.loads((R/'holdout-preflight.json').read_text())['selection_sha256']==sha(R/'selection.json')
  for seed,c in selected.items():
   assert sha(c['path'])==c['sha256']
-  for name,spec in [('previous',old[seed]['path']),('heuristic','heuristic'),('oldvalue','oldvalue')]:cached(R/f'seed-{seed}/holdout-{name}.json',c['path'],spec,f)
+  for name,spec in [('previous',old[seed]['path']),('heuristic','heuristic'),('oldvalue','oldvalue')]:
+   if name not in opponents:continue
+   cached(R/f'seed-{seed}/holdout-{name}.json',c['path'],spec,f)
 
 class Stochastic(e.TerminalAgent):
  def act(self,s,rng):
@@ -123,10 +126,11 @@ def dev():
     r=e.match(('stoch:' if stochastic else '')+str(ck),'heuristic',f);r['checkpoint_sha256']=sha(ck);write(dest,r)
  e.agent=original
 
-def audit_eval():
+def audit_eval(opponents=('previous','heuristic','oldvalue')):
  from .engine import is_legal,legal_moves
  training=hashes('training-states');reports={};all_states=set()
  for phase in ('dev','validation','holdout'):
+  if not (R/f'{phase}-prefixes.json').exists():continue
   f=read_prefixes(R/f'{phase}-prefixes.json');assert f['count']=={'dev':8,'validation':32,'holdout':96}[phase];preflight=json.loads((R/f'{phase}-preflight.json').read_text());assert preflight['prefix_sha256']==f['sha256'] and preflight['training_states_sha256']==sha(R/'training-states/index.json');lookup={p['id']:p for p in f['prefixes']};starts={state_hash(prefix_state(p)) for p in f['prefixes']};assert not starts&training
   count=0;visited=set()
   for path in R.glob(f'seed-*/{phase}-*.json'):
@@ -154,7 +158,7 @@ def audit_eval():
    expected=[sum(w*r['summary'][k] for w,r in zip((.5,.25,.25),rows)) for k in ('point_rate','mean_difference')]+[-candidate['iteration']]
    assert candidate['criterion']==expected
  aggregate={}
- for opponent in ('previous','heuristic','oldvalue'):
+ for opponent in opponents:
   arrays=[]
   for seed in (1401,1402,1403):
    r=json.loads((R/f'seed-{seed}/holdout-{opponent}.json').read_text());groups={}

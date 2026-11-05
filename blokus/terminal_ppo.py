@@ -50,14 +50,21 @@ def sample_batch(model,obs):
   logits,values=model(*collate(obs));dist=torch.distributions.Categorical(logits=logits);actions=dist.sample();lp=dist.log_prob(actions)
  return actions.cpu().tolist(),lp.cpu().tolist(),values.cpu().tolist()
 
-def collect(model,past,iteration,seed,batch=16):
+def collect(model,past,iteration,seed,batch=16,forbidden_starts=None):
  assert batch%8==0
- states=[State() for _ in range(batch)];hist=[[] for _ in states];traces=[[] for _ in states];records=[];modes=['current','current','past','heuristic']*(batch//4);seats=[(i//4)%2 for i in range(batch)];tally=dict(cpu_generation_pack=0.,gpu_inference_sync=0.,other=0.);start=time.perf_counter();rngs=[];prefixes=[]
+ states=[State() for _ in range(batch)];hist=[[] for _ in states];traces=[[] for _ in states];records=[];modes=['current','current','past','heuristic']*(batch//4);seats=[(i//4)%2 for i in range(batch)];tally=dict(cpu_generation_pack=0.,gpu_inference_sync=0.,other=0.);start=time.perf_counter();rngs=[];prefixes=[];prefix_rejections=[]
  for i,s in enumerate(states):
-  rng=random.Random(seed*100000+(iteration*batch+i));rngs.append(rng);prefix=[]
-  for _ in range(rng.randint(2,6)):
-   qs=legal_moves(s);m=rng.choice(qs).move if qs else None;play(s,m,validate=False);prefix.append(None if m is None else [m.piece,m.orientation,m.row,m.col])
-  prefixes.append(prefix)
+  rng=random.Random(seed*100000+(iteration*batch+i));rngs.append(rng);rejected=0
+  while True:
+   prefix=[];blocked=False
+   for _ in range(rng.randint(2,6)):
+    qs=legal_moves(s);m=rng.choice(qs).move if qs else None;play(s,m,validate=False);prefix.append(None if m is None else [m.piece,m.orientation,m.row,m.col])
+    if forbidden_starts and state_hash(s) in forbidden_starts:blocked=True
+   if not blocked:break
+   rejected+=1
+   if rejected>100:raise RuntimeError('prefix rejection pool exhausted')
+   s=State();states[i]=s
+  prefix_rejections.append(rejected);prefixes.append(prefix)
  while not all(s.done for s in states):
   groups={'current':[],'past':[]};prepared={}
   for i,s in enumerate(states):
@@ -79,6 +86,8 @@ def collect(model,past,iteration,seed,batch=16):
  for i,s in enumerate(states):
   for r in traces[i]:r['return']=terminal_return(s,r['player']);records.append(r)
   games.append(dict(id=seed*100000+iteration*batch+i,opponent=modes[i],learner_seat=seats[i],prefix=prefixes[i],moves=hist[i],scores=[s.score(0),s.score(1)],targets=[{k:r[k] for k in ['ply','player','return','state_hash','action','log_prob','value']} for r in traces[i]]))
+ if forbidden_starts is not None:
+  for g,rejected in zip(games,prefix_rejections):g['prefix_rejections']=rejected
  tally['seconds']=time.perf_counter()-start;tally['other']=tally['seconds']-tally['cpu_generation_pack']-tally['gpu_inference_sync'];return records,games,tally
 
 def update(model,opt,records,epochs=2):

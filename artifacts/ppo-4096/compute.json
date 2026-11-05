@@ -1,0 +1,68 @@
+{
+  "seeds": [
+    {
+      "seed": 1401,
+      "initial_iteration": 2048,
+      "iteration": 4096,
+      "games": 65536,
+      "additional_seconds": 1327.7152629439952,
+      "complete": true,
+      "generation_seconds": 1034.2946233400726,
+      "cpu_generation_pack_seconds": 895.5987614469923,
+      "gpu_inference_sync_seconds": 112.68415760177595,
+      "update_seconds": 280.4055259708548,
+      "updates": 90512,
+      "new_games": 32768,
+      "last64": {
+        "entropy": 0.8116704306271407,
+        "approx_kl": 0.005032299544078887,
+        "value_mse": 0.6863770198360543,
+        "clip_fraction": 0.05393895472643229
+      }
+    },
+    {
+      "seed": 1402,
+      "initial_iteration": 2048,
+      "iteration": 4096,
+      "games": 65536,
+      "additional_seconds": 1334.8267459339986,
+      "complete": true,
+      "generation_seconds": 1044.68567457702,
+      "cpu_generation_pack_seconds": 908.4864016268402,
+      "gpu_inference_sync_seconds": 111.11234864166181,
+      "update_seconds": 277.1276188364136,
+      "updates": 88362,
+      "new_games": 32768,
+      "last64": {
+        "entropy": 0.7997505485694696,
+        "approx_kl": 0.005435078939587109,
+        "value_mse": 0.6162672977309858,
+        "clip_fraction": 0.05586913600304194
+      }
+    },
+    {
+      "seed": 1403,
+      "initial_iteration": 2048,
+      "iteration": 4096,
+      "games": 65536,
+      "additional_seconds": 1318.1626087860059,
+      "complete": true,
+      "generation_seconds": 1024.0153029881767,
+      "cpu_generation_pack_seconds": 889.6087205544609,
+      "gpu_inference_sync_seconds": 109.49374902299314,
+      "update_seconds": 281.18125918389705,
+      "updates": 88495,
+      "new_games": 32768,
+      "last64": {
+        "entropy": 0.8905892089360735,
+        "approx_kl": 0.0051163076649226695,
+        "value_mse": 0.6325258518310539,
+        "clip_fraction": 0.054173159728368954
+      }
+    }
+  ],
+  "additional_wall_seconds": 3980.7046176639997,
+  "additional_games": 98304,
+  "additional_updates": 267369,
+  "scope": "generation+update+loading/IO; CUDA sync regions include host work and are not pure kernel timings"
+}

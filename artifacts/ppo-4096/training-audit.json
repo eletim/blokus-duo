@@ -1,0 +1,99 @@
+{
+  "pass_": true,
+  "seeds": [
+    {
+      "seed": 1401,
+      "games": 65536,
+      "targets": 1539863,
+      "opponents": {
+        "current": 32768,
+        "past": 16384,
+        "heuristic": 16384
+      },
+      "checkpoint_sha256": "687edb5172e24b83250f7416040c68d66caf7392f6dc0117cb61c21a63b8104e",
+      "history_sha256": null,
+      "history_chain": [
+        {
+          "path": "../../ppo-learning-curve/seed-1401/history-2048.json.gz",
+          "sha256": "e26b8499045607ac32b8c81e9ada194a1a6b756a1fa4d166f8b50085adc64b11",
+          "games": 32768
+        },
+        {
+          "path": "history-32768-49152.json.gz",
+          "sha256": "8111888469cdabb0c1372c2e0b154d245b8bd0fdced3e5646c3dd75ee4c90762",
+          "games": 16384
+        },
+        {
+          "path": "history-49152-65536.json.gz",
+          "sha256": "197c0cc5b93873e00d5024d31d53e413060983c8d3b2d2bdf4b056ef0840c8a8",
+          "games": 16384
+        }
+      ],
+      "prefix_rejections": 3
+    },
+    {
+      "seed": 1402,
+      "games": 65536,
+      "targets": 1539074,
+      "opponents": {
+        "current": 32768,
+        "past": 16384,
+        "heuristic": 16384
+      },
+      "checkpoint_sha256": "e4aa7476b74942343a12109424ee1f86f90235245af256ac795ed3ec086b40fe",
+      "history_sha256": null,
+      "history_chain": [
+        {
+          "path": "../../ppo-learning-curve/seed-1402/history-2048.json.gz",
+          "sha256": "427918f38268bb5858156c27d29d9485782fe2d2e11642d8c5c2155c1e075679",
+          "games": 32768
+        },
+        {
+          "path": "history-32768-49152.json.gz",
+          "sha256": "aae184d3894e0cdf697da11ed84cb47b931d352fe7bd66628a027178829a5b9d",
+          "games": 16384
+        },
+        {
+          "path": "history-49152-65536.json.gz",
+          "sha256": "e307c0c0a114d6ba660d7defd0a90fc98aed227044e490bc424cbf609b526f9d",
+          "games": 16384
+        }
+      ],
+      "prefix_rejections": 2
+    },
+    {
+      "seed": 1403,
+      "games": 65536,
+      "targets": 1528584,
+      "opponents": {
+        "current": 32768,
+        "past": 16384,
+        "heuristic": 16384
+      },
+      "checkpoint_sha256": "d0e68ca6cd0d32abf499f4c00a84fa4dd538232f0b185a6b4209ef1a8d9309e1",
+      "history_sha256": null,
+      "history_chain": [
+        {
+          "path": "../../ppo-learning-curve/seed-1403/history-2048.json.gz",
+          "sha256": "f714fd5643df13af79c045c23e10c71b249d363e9674989f132884fb636b5d9b",
+          "games": 32768
+        },
+        {
+          "path": "history-32768-49152.json.gz",
+          "sha256": "2d23d860f8e173b7768be1258a6b3a10421e0604c9b8b2e8e648d415e18f55f5",
+          "games": 16384
+        },
+        {
+          "path": "history-49152-65536.json.gz",
+          "sha256": "f1fce51c8159c8765427d309b7fbda1c34cabb845d6ac05197e53f9248e8b186",
+          "games": 16384
+        }
+      ],
+      "prefix_rejections": 1
+    }
+  ],
+  "unique_states": 6658084,
+  "unique_prefixes": 192292,
+  "includes_opponent_turns": true,
+  "includes_prefix_and_terminal": true
+}
