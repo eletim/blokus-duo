@@ -1,0 +1,55 @@
+{
+  "budget_ms": 25,
+  "step": 1000,
+  "seeds": [
+    901,
+    902,
+    903
+  ],
+  "criterion": "mean score difference across all three update seeds on new validation; no seed selection",
+  "criteria": {
+    "6/1000": -0.19791666666666666,
+    "6/3000": -2.0,
+    "25/1000": 1.15625,
+    "25/3000": -0.052083333333333336
+  },
+  "prefix_sha256": "c8a8287fa92f1575f2931632c70ee274a6d102c33cca4c42b0fdcce9f7c913e5",
+  "policies": {
+    "901": {
+      "path": "artifacts/root-policy-distillation/seed-901/step-1000.pt",
+      "sha256": "4ca55ac2c2d2c1f8dd46ef80e586e15d6336206dde2bb37417c4856b00de1e3a"
+    },
+    "902": {
+      "path": "artifacts/root-policy-distillation/seed-902/step-1000.pt",
+      "sha256": "ebed0474ef5a8e833163915e60e4d68c2d0f3aa2fc37387786ed58e48f4b9939"
+    },
+    "903": {
+      "path": "artifacts/root-policy-distillation/seed-903/step-1000.pt",
+      "sha256": "ca9f1651aab596e8fd6c681ea66b003eb321f3d3dc7008bda7f6447017cb5bd2"
+    }
+  },
+  "validation_pooled": {
+    "prefixes": 16,
+    "games": 96,
+    "mean_difference": 1.1562499999999996,
+    "difference_ci95": [
+      -1.8440104166666669,
+      3.84375
+    ],
+    "win_rate": 0.5520833333333334,
+    "win_ci95": [
+      0.41666666666666663,
+      0.6875
+    ],
+    "point_rate": 0.578125,
+    "point_ci95": [
+      0.44270833333333337,
+      0.7135416666666667
+    ],
+    "unit": "prefix: average paired seats and all shared-data update seeds before bootstrap"
+  },
+  "advance": true,
+  "agreement_pilot_gain_pp": 2.824858757062147,
+  "agreement_5pp_gate_pass": false,
+  "protocol_deviation_before_holdout": "No additional data or updates. Proceed with already planned fresh game evaluation because all three update seeds have positive new-validation score differences at25ms/1000; teacher-agreement-only 5pp pilot criterion was not met. No holdout consulted."
+}

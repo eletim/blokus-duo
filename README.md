@@ -430,3 +430,16 @@ GPU主学習は54,000更新・87.47秒。全44テスト、別process CUDA保存�
 ```bash
 .venv/bin/python -m blokus.refinement_experiment play --budget 100
 ```
+
+## 教師の再確認と低予算root policy蒸留（実験）
+
+教師の設定・重みを固定し、別のfresh96prefix・先後交換・共通100msで旧2plyへの得点差を再確認しました。**98勝89敗5分、+1.406点 [95% prefix CI +0.234,+2.625]**。同じ実装の独立標本再確認であり、独立実装監査とは呼びません。実68.552ms対49.497msで、実時間完全一致でもありません。
+
+新規300ゲームから、同深度比較が可能な571rootを用いてroot順位policyを3更新seedで蒸留。相手応手とvalue/2plyは固定しました。新validationで25ms・1000更新を固定後、fresh96prefix・先後交換・全3seedでは:
+
+- 旧2plyへ **+0.203点 [−0.832,+1.325]**、261勝276敗39分。
+- 未学習順位モデルへ **+0.321点 [−0.821,+1.526]**、269勝270敗37分。
+
+**学生の学習改善は未確認、既存低予算value/2ply推奨を維持**します。区間は3seed・先後をprefix内でまとめて算出。教師の成績を学生へ流用せず、holdout再選択もしていません。一致率+5ptの当初目安は未達でしたが、実戦validationの信号を根拠にfresh確認へ進めた判断変更は事前に記録しています。
+
+dev診断では25ms時に教師手を全て評価対象へ含めても、最後の2ply値で別手を選ぶ例が多く、順位変更だけの限界が見えました。追加学習は3seed計8.05秒、全78テスト・CUDA別process再開・1856評価対局監査PASS。main統合は行っていません。[詳細結果・原因・次案](artifacts/root-policy-distillation/conclusions.md)／[設計と再現CLI](artifacts/root-policy-distillation/METHOD.md)を参照してください。

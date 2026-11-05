@@ -1,0 +1,64 @@
+{
+  "eligible": 571,
+  "multiple_tie_rows": 133,
+  "dev_multiple_tie_rows": 16,
+  "dev_rows": 59,
+  "mean_same_depth_ties": 1.394045534150613,
+  "metrics": [
+    {
+      "seed": 901,
+      "step": 0,
+      "dev_exact": 0.288135593220339,
+      "dev_same_depth_teacher_tie": 0.3559322033898305
+    },
+    {
+      "seed": 902,
+      "step": 0,
+      "dev_exact": 0.288135593220339,
+      "dev_same_depth_teacher_tie": 0.3559322033898305
+    },
+    {
+      "seed": 903,
+      "step": 0,
+      "dev_exact": 0.288135593220339,
+      "dev_same_depth_teacher_tie": 0.3559322033898305
+    },
+    {
+      "seed": 901,
+      "step": 1000,
+      "dev_exact": 0.3389830508474576,
+      "dev_same_depth_teacher_tie": 0.3898305084745763
+    },
+    {
+      "seed": 902,
+      "step": 1000,
+      "dev_exact": 0.3220338983050847,
+      "dev_same_depth_teacher_tie": 0.3728813559322034
+    },
+    {
+      "seed": 903,
+      "step": 1000,
+      "dev_exact": 0.288135593220339,
+      "dev_same_depth_teacher_tie": 0.3559322033898305
+    },
+    {
+      "seed": 901,
+      "step": 3000,
+      "dev_exact": 0.2711864406779661,
+      "dev_same_depth_teacher_tie": 0.3050847457627119
+    },
+    {
+      "seed": 902,
+      "step": 3000,
+      "dev_exact": 0.23728813559322035,
+      "dev_same_depth_teacher_tie": 0.288135593220339
+    },
+    {
+      "seed": 903,
+      "step": 3000,
+      "dev_exact": 0.2711864406779661,
+      "dev_same_depth_teacher_tie": 0.3050847457627119
+    }
+  ],
+  "note": "Post-evaluation diagnosis only; no model/checkpoint change. Equal same-depth teacher values are not proven equal true game values."
+}

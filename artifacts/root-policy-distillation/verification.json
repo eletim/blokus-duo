@@ -1,0 +1,20 @@
+{
+  "tests": 78,
+  "test_seconds": 7.3,
+  "test_pass": true,
+  "cuda_resume": "cuda-resume.json",
+  "audit": "audit.json",
+  "cli_help": true,
+  "cli_completed_scores": [
+    -68,
+    -8
+  ],
+  "shared_initial_weights_bit_equal": true,
+  "source_hashes": {
+    "scripts/audit_root_distillation.py": "b6a3267f9ed1bc1fe5a5bb9664169fe35e8dc8d4bf7a7161a4b838c0edabd9d5",
+    "scripts/check_root_resume.py": "863fb326df588bd48840555f247f3c2de683c1198609c0066c736e72b5235b49",
+    "scripts/diagnose_root_labels.py": "6f08e4d004e9fa6ddf7ab2cbd4a627ad1cde8b28f506ad915857117267b7da9d",
+    "scripts/diagnose_root_policy.py": "0a63cf54f7f0ab23d2fe18122e1dd4273a02bc1b8ac29fc3d89eed5000f6814a",
+    "scripts/profile_root_policy.py": "19b72226dc3ea5d53292a5aa472873eb70b6d3d6f61ba66df3b7aa1af811a001"
+  }
+}

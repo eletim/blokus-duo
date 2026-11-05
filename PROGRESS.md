@@ -366,3 +366,23 @@ Rollout final selection {'method': 'halving', 'budget_ms': 100, 'diverse': False
 fresh96prefix/192局の同初期処理control対照も111勝70敗11分/+2.48958 CI[1.40104,3.625]。共通100ms下の追加探索には正の差、priority配分そのもののuniformに対する優位は未確認。主対照実70.679/旧51.612ms、追加13319/13320root、初期fallback0/3001、超過0/3001、最大95.091ms。実消費時間同一や学習重み改善とは主張しない。main推奨維持。
 全74tests7.46秒PASS、480対局全再生/得点/独立CI算術/時間/hash監査PASS、独立小終盤12件再照合PASS、保存状態hashのvalidation/holdout重複0。CLI play完走(-68,-7)、help確認。RTX5090・既存CUDA value実推論、学習0更新・checkpoint新規0。pilot27.657秒、validation192.367秒、holdout727.266秒、主要実験計947.291秒。実装込みレポート時26.4分。時間計測中の監査・テスト重畳なし。
 README/METHOD/conclusions/run-manifest/verificationへ設計・条件・全成績・計算量・再現コマンドを保存。JSONは大きな2ファイルのみ空白圧縮、parse同一確認。次案は実対戦で改善を示した探索を教師とする低予算policy学習の小規模検証（学習成功は未検証）。今回は追加開発せず秘書へ判断を返す。
+
+## Root policy蒸留 — 2026-11-05 事前計画
+基点12a9963、branch research/root-policy-distillation。まず固定priority100ms/幅128・内部3/value alpha=.5 gate24をfresh seed920000/96prefix先後交換で旧100ms2plyへ再確認。設定は結果で変更しない。同じ実装の独立標本再確認であり独立実装監査とは呼ばない。時間対局中は収集・学習・監査を実行しない。
+収集は新規ゲーム単位にtrain/dev/validation分割。root候補は従来heuristic上位128に固定、相手応手は従来上位3のまま。教師の選択・初期値・追加完了root/深度・値差・候補hashを保存。学習は教師の最終選択の分類だけ（教師の判断を再現するラベルであって厳密最善手ではない）、値回帰はせず、未評価候補はloss maskから除外。深度混在値の差を正解順位として使わない。教師に追加探索完了がある局面を主学習とし、初期2plyだけの局面は保存するが学習ラベルには混ぜない。
+学生は軽量root特徴+state MLP、候補ごとの順位のみ変更。初期モデル・データ共有、更新seedは901/902/903（shuffle等のみ独立）。同候補集合/固定value/2ply/相手3でheuristic順・未学習順・学習順を比較。GPU同期/推論/合法生成を手番予算に含む。
+pilotはまず約300独立ゲーム、各最大4局面。学習信号基準: dev top1が未学習より5ポイント以上改善、top5も改善、25msで順位推論中央値<2.5ms。満たさなければ大規模化せず停止理由を保存。達成時3seedを同程度更新予算で学習、新validation921000/16prefixで6/25ms予算とcheckpointを選択。validation対旧平均得点差>=-1かつCI上端>=0なら選択固定後fresh922000/96prefixを先後交換、旧value/2ply対照。原則各seedを評価しseed選択による過大評価を避ける。低予算推奨維持、追加GPU主学習上限30分、全体2時間。
+
+### 教師の独立標本再確認
+fresh920000/96prefix・192局:98勝89敗5分、平均+1.40625点 CI[0.23424,2.625]。point-rate .52344 CI[.47917,.57031]。得点差は正、勝率の明確な優位は未確認。設定調整なし。同じ実装であり独立実装監査ではない。時間計測終了後、root蒸留収集へ進む。候補特徴39（既存12+駒one-hot21+位置/幅6）とstate49。未学習はheuristic prior+zero residualで同順位。3seed×3000更新、1000/3000のcheckpointをvalidation比較候補とし、seedは選ばず共通予算/stepを選択して全3seedを報告する。
+
+### pilot・停止基準の扱い（holdout前）
+収集300game/1192root、追加完了587、同深度比較可能571（train463/dev59/validation49）。採用rootのsplit間hash重複0、未採用rootには7種類のsplit間重複あり。初回品質assertが全収集rootへ広すぎて失敗したが、検査範囲を確認し学習採用データに漏洩なしを確認（重複を隠さずauditへ保存）。3seed×3000更新のGPU主学習計8.047秒。3000更新でdev悪化、1000更新の平均top1は31.64%（未学習28.81%）、top5は68.93%（67.80%）。事前5pt目安に不達。推論中央値は約0.28msで費用基準は達成。
+小規模実戦validationでは25ms/1000が全3seed正（+0.59375,+0.65625,+2.21875）、平均+1.15625 CI[-1.84401,3.84375]。6ms/1000 -0.19792、6ms/3000 -2、25ms/3000 -0.05208。このためデータ増量・更新追加は停止し、元依頼の「一致率だけで採用しない」に従い実戦信号を優先して既定のfresh評価のみ実施する。これは5ptを必須とした事前簡易gateからの変更であり、基準達成とは記載しない。holdout未参照の時点で判断を記録。checkpointは全seed1000、25msを固定、seed選択なし。以後設定/学習を変更しない。
+
+### 最終結果
+教師再確認は+1.406点 CI[0.234,2.625]。学生fresh922000/96prefix×先後×3seed、対旧25msは261勝276敗39分/+0.203125 CI[-0.831771,1.324696]、対未学習順位は269勝270敗37分/+0.321181 CI[-0.821267,1.526128]。3seed/先後をprefix内で平均するCIで独立標本の水増しなし。改善未確認、教師の成績を学生へ流用せず、既存低予算推奨・main維持。
+主比較実17.592ms対旧17.501ms。学生超過3/8940手、初期fallback0。data collection132.763秒、教師再確認356.562秒、GPU主学習8.047秒、validation181.946秒、holdout629.540秒。主要処理計1308.858秒、レポート時実経過38.8分。学習の無根拠な延長・追加データ生成なし。
+教師trace24局面を完了深度どおりに再計算、1192root候補/mask監査、300生成ゲームと1856評価対局の再生・算術・選択hash監査PASS。全78tests7.30秒。CUDA別process40対20+20、model/optimizer/Python/NumPy/Torch/CUDA RNG bit一致。shared初期weightsも3seed bit一致。CLI完走(-68,-8)。
+原因診断はdev30game59rootのみ、holdout再選択なし。25msでteacher手の探索対象包含100%でも最終一致約44%、teacherが初期2ply最大から反転30/59。順序だけで固定2ply最終値の誤差を直せない場合がある。3000更新でtrain改善/dev悪化、same-depth同値候補複数133/571というラベル曖昧さも記録。次案はroot値補正を最終選択へ渡す学習interfaceの上限診断から。現runでは変更せず秘書判断へ返す。
+README、METHOD、conclusions、全checkpoint/config/log/raw data、compute-summary、verificationを保存。大きなJSONは空白圧縮のみ、parse同一確認。研究branchのみcommit/push予定、main未統合。

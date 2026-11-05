@@ -1,0 +1,13 @@
+{
+  "seed": 902,
+  "shared_init_seed": 900,
+  "steps": 3000,
+  "device": "cuda",
+  "lr": 0.001,
+  "batch_size": 32,
+  "loss": "masked teacher-choice cross entropy; no value regression",
+  "torch": "2.7.1+cu128",
+  "data_sha256": "fad3bb9410f3ca7490a52d8582f6007b751d3edffdfbc1a1b8f1cb5bfc142176",
+  "resume": "None",
+  "gpu_training_cap_seconds": 1800
+}

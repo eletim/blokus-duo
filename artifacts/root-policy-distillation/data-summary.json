@@ -1,0 +1,18 @@
+{
+  "games": 300,
+  "records": 1192,
+  "eligible": 571,
+  "split_rows": {
+    "0": 463,
+    "1": 59,
+    "2": 49
+  },
+  "seconds": 132.76275157900818,
+  "sha256": "fad3bb9410f3ca7490a52d8582f6007b751d3edffdfbc1a1b8f1cb5bfc142176",
+  "teacher_checkpoint_sha256": "8a5795a2e4fe73e4055ce94d11f761fddbc7a66db7ec0863b39df8ba195bf2ad",
+  "label": "teacher action classification over evaluated candidates, NOT mixed-depth value regression",
+  "trace": "same frozen teacher, logging completed top-level searches adds small measured overhead",
+  "shared": "all update seeds share game split, labels, features, initial model",
+  "eligible_before_same_depth": 587,
+  "loss_mask": "Only candidates of the same completed requested depth as the teacher choice; unknown and other-depth candidates excluded. Full candidate mask used for agreement."
+}

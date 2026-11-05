@@ -1,0 +1,18 @@
+{
+  "pass_": true,
+  "separate_process": true,
+  "checks": {
+    "model": true,
+    "optimizer": true,
+    "step": true,
+    "python_rng": true,
+    "numpy_rng": true,
+    "torch_rng": true,
+    "cuda_rng": true,
+    "data_sha256": true
+  },
+  "full_sha256": "4d51711bb35ce9cf9b77b3b6d430ef073fcedbdf15b13d543dc0976eb4284bfe",
+  "resumed_sha256": "2a2acd7573b5d4edb541540cfeaddb551226a4d0163a7e8ed9b372e0cc0fc34f",
+  "steps": 40,
+  "note": "file hashes differ because timings/paths metadata differ; tensors/optimizer/RNG bit equal"
+}
