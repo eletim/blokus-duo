@@ -1,0 +1,8 @@
+{
+  "allow_extension": true,
+  "original_gate": "extension-gate.json",
+  "original_gate_passed": false,
+  "scope": "data size extension only; battle gate unchanged",
+  "reason": "MSE improved 15-17% at 960 versus 240 while decision regret slightly worsened. User permits early stop when curve only deteriorates; that sufficient condition is not met. Requested 2400 point is computationally feasible. Our extra nonworse-on-both extension gate was stricter than this condition. Preserve its failure and explicitly override only generation, never battle selection.",
+  "timestamp": "2026-11-05T14:36:26.307789"
+}

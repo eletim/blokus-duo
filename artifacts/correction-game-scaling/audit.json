@@ -1,0 +1,32 @@
+{
+  "pass_": true,
+  "unique_source_game_ids": 3960,
+  "unique_complete_move_sequences": 3960,
+  "roots": 7424,
+  "root_hash_duplicates": 0,
+  "teacher_replayed_states": 75,
+  "bias_replayed_states": 36,
+  "datasets": [
+    {
+      "size": 240,
+      "data_sha256": "57ac6046e976dc0d85efdab05d8cdc47085ed41e5b744d191f9d8a16650a7ac7",
+      "rows": 1347,
+      "split_hash": "159646af9449be08336d45b86a80ef38055afa02fbda689aecc4d1e11f0aeb71"
+    },
+    {
+      "size": 960,
+      "data_sha256": "792428e4276d6ef2cabb43e7b799df54bfb57221e17302a93f60c67781b7fbc7",
+      "rows": 3369,
+      "split_hash": "5dffb2d962d4e88f06ab4abe240749380da9ba022324da56502f709ca1bf0d2c"
+    },
+    {
+      "size": 2400,
+      "data_sha256": "712aaf5c4efc0405291a58ba2e41e8921ae50a4d1a670828364d1e3f8bc982e0",
+      "rows": 7424,
+      "split_hash": "6a6c7c1d5c32a53bcc33ad9e8e9789657433a6147de9a8a12cfa4f6a916cb296"
+    }
+  ],
+  "shared_initial_hash": "e602c139ee756201b8a5fad02325f63ed9c5e65290603c7205ff0d34f68a30f5",
+  "seconds": 29.23106998599542,
+  "note": "Implementation-side replay and arithmetic checks; no external independent audit claimed."
+}

@@ -1,0 +1,243 @@
+{
+  "size": 2400,
+  "roots": 7424,
+  "roots_with_full_candidate_collision": 1037,
+  "full_candidate_collision_groups": 1605,
+  "labeled_collision_groups": 76,
+  "groups_with_different_targets": 59,
+  "irreducible_empirical_mse_lower_bound_from_collisions": 0.0003493064581112334,
+  "max_target_range": 3.241995334625244,
+  "examples": [
+    {
+      "game": 100135,
+      "state_hash": "0b22a9da231a9a9bd45e1d0d40b71d10242296d95b1dbfa7f14b8604e6c22c1d",
+      "moves": [
+        [
+          19,
+          2,
+          10,
+          2
+        ],
+        [
+          19,
+          3,
+          10,
+          2
+        ]
+      ],
+      "target_delta": [
+        0.17500273883342743,
+        0.042739152908325195
+      ],
+      "same_candidate_input": true
+    },
+    {
+      "game": 100226,
+      "state_hash": "cb04663617d278ddedc2333b1bcfc279ffc9e181c93c9bedfc0c8d27d6691cfa",
+      "moves": [
+        [
+          19,
+          2,
+          10,
+          1
+        ],
+        [
+          19,
+          3,
+          10,
+          1
+        ]
+      ],
+      "target_delta": [
+        1.2370585203170776,
+        1.3100837469100952
+      ],
+      "same_candidate_input": true
+    },
+    {
+      "game": 100238,
+      "state_hash": "8bd7af4df94a21ec778a207904afc4262d2bfda61b2bb1f7775b80e555b8b0dc",
+      "moves": [
+        [
+          19,
+          0,
+          9,
+          1
+        ],
+        [
+          19,
+          1,
+          9,
+          1
+        ]
+      ],
+      "target_delta": [
+        0.6489858031272888,
+        1.0619970560073853
+      ],
+      "same_candidate_input": true
+    },
+    {
+      "game": 100258,
+      "state_hash": "41e09ea2a8ba4aac8be46d4eb24e5d79d809a9449eeef583d539866a11be7d28",
+      "moves": [
+        [
+          19,
+          0,
+          1,
+          1
+        ],
+        [
+          19,
+          1,
+          1,
+          1
+        ]
+      ],
+      "target_delta": [
+        2.534907579421997,
+        2.610297441482544
+      ],
+      "same_candidate_input": true
+    },
+    {
+      "game": 100259,
+      "state_hash": "7a176766c0cd1318aaf242df1fd34065d197d25c9a078f3efbeefb6ff63878f2",
+      "moves": [
+        [
+          19,
+          0,
+          1,
+          7
+        ],
+        [
+          19,
+          1,
+          1,
+          7
+        ]
+      ],
+      "target_delta": [
+        1.1962926387786865,
+        0.9305342435836792
+      ],
+      "same_candidate_input": true
+    },
+    {
+      "game": 100266,
+      "state_hash": "564839caf871feb923ee011d173bc5dea4e9e3a130749aea839c7568331529a8",
+      "moves": [
+        [
+          19,
+          1,
+          10,
+          2
+        ],
+        [
+          19,
+          3,
+          10,
+          2
+        ]
+      ],
+      "target_delta": [
+        -2.8806281089782715,
+        -2.963717460632324
+      ],
+      "same_candidate_input": true
+    },
+    {
+      "game": 100279,
+      "state_hash": "f543ed9f230ecf824985d3ac4c8a1066639f5089aff809600ca68d8126025cb6",
+      "moves": [
+        [
+          19,
+          0,
+          10,
+          10
+        ],
+        [
+          19,
+          1,
+          10,
+          10
+        ]
+      ],
+      "target_delta": [
+        5.288005352020264,
+        4.675872802734375
+      ],
+      "same_candidate_input": true
+    },
+    {
+      "game": 108,
+      "state_hash": "e75f530a476911da1e2f5539928fb901a533b01e011222ab3a614f2d7138a961",
+      "moves": [
+        [
+          19,
+          2,
+          1,
+          1
+        ],
+        [
+          19,
+          3,
+          1,
+          1
+        ]
+      ],
+      "target_delta": [
+        -2.6438560485839844,
+        -2.1716325283050537
+      ],
+      "same_candidate_input": true
+    },
+    {
+      "game": 139,
+      "state_hash": "509d25422adf8b2e18a26ace36cf8142be24a9320dd370da4a9a29becb058099",
+      "moves": [
+        [
+          19,
+          2,
+          1,
+          1
+        ],
+        [
+          19,
+          3,
+          1,
+          1
+        ]
+      ],
+      "target_delta": [
+        -0.21609100699424744,
+        -0.051480866968631744
+      ],
+      "same_candidate_input": true
+    },
+    {
+      "game": 238,
+      "state_hash": "197e0207d939e9be057aad773db50b1aa312984c47e4155f38cd3213df0af262",
+      "moves": [
+        [
+          19,
+          1,
+          10,
+          1
+        ],
+        [
+          19,
+          3,
+          10,
+          1
+        ]
+      ],
+      "target_delta": [
+        -2.3583152294158936,
+        -3.9481887817382812
+      ],
+      "same_candidate_input": true
+    }
+  ],
+  "note": "Identical whole board/state and candidate feature bytes force identical model prediction. Candidate summary omits explicit orientation/cell mask. This lower bound covers only observed collisions and is not proof of the dominant failure cause. Diagnostic only, never used to select a checkpoint."
+}

@@ -1,0 +1,1121 @@
+{
+  "size": 2400,
+  "checkpoints": {
+    "plain": {
+      "path": "artifacts/correction-game-scaling/n2400-f0-s1101-plain/step-1000.pt",
+      "sha256": "b8da4daba280fb2d2eeee8270dc4faee3e5be3342819a2f671a0a7c058d0d50a"
+    },
+    "decay": {
+      "path": "artifacts/correction-game-scaling/n2400-f0-s1101-decay/step-1000.pt",
+      "sha256": "b4fe0e5d3a2099c079c20606b381133f51ea70e451b974e357f63d07bab79bab"
+    }
+  },
+  "rows": [
+    {
+      "game": 100000,
+      "state_hash": "2c6b17ae8ad36d30cb98608e23fda489224a0f5d571a653bb5912a7e22402fcd",
+      "picks": {
+        "zero": 105,
+        "teacher": 105,
+        "plain": 105,
+        "decay": 105
+      },
+      "random": [
+        0,
+        59
+      ],
+      "depth": 4,
+      "truth": {
+        "0": 20.773455262184143,
+        "59": 25.2,
+        "105": 32.599999999999994
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100000,
+      "state_hash": "d92c708e49ef9571a97216af857561bdbd406a06c1c6e2b7c069eb2167993a18",
+      "picks": {
+        "zero": 1,
+        "teacher": 1,
+        "plain": 1,
+        "decay": 1
+      },
+      "random": [
+        43,
+        86
+      ],
+      "depth": 4,
+      "truth": {
+        "1": 34.41597051620483,
+        "43": 32.41527667045594,
+        "86": 30.892501974105834
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100001,
+      "state_hash": "feccdcfc61b6c79eba0ca6013ca524ee181f3af534b72d45aebefee6cb7c1f06",
+      "picks": {
+        "zero": 6,
+        "teacher": 3,
+        "plain": 12,
+        "decay": 6
+      },
+      "random": [
+        45,
+        70
+      ],
+      "depth": 4,
+      "truth": {
+        "3": -6.222853970527648,
+        "6": -6.280475270748138,
+        "12": -6.929530525207519,
+        "45": -9.486951303482057,
+        "70": -12.233313131332398
+      },
+      "regret": {
+        "zero": 0.0576213002204895,
+        "teacher": 0.0,
+        "plain": 0.7066765546798708,
+        "decay": 0.0576213002204895
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100001,
+      "state_hash": "c0cf5c543441386c2af51841771ad4d0b2d1b4cb12e9a2a778d3d6d3eba50159",
+      "picks": {
+        "zero": 4,
+        "teacher": 17,
+        "plain": 4,
+        "decay": 4
+      },
+      "random": [
+        3,
+        1
+      ],
+      "depth": 4,
+      "truth": {
+        "1": -8.29238452911377,
+        "3": -7.821076107025147,
+        "4": -4.733169507980347,
+        "17": -4.008375644683838
+      },
+      "regret": {
+        "zero": 0.724793863296509,
+        "teacher": 0.0,
+        "plain": 0.724793863296509,
+        "decay": 0.724793863296509
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100002,
+      "state_hash": "cc90477ba64e3f33770b027d1f5e2a8e6c659b2b6189e99d0304b70dd77d5f9d",
+      "picks": {
+        "zero": 0,
+        "teacher": 0,
+        "plain": 0,
+        "decay": 0
+      },
+      "random": [
+        90,
+        40
+      ],
+      "depth": 4,
+      "truth": {
+        "0": 2.0617397665977477,
+        "40": 2.51574330329895,
+        "90": 0.7166533768177032
+      },
+      "regret": {
+        "zero": 0.4540035367012023,
+        "teacher": 0.4540035367012023,
+        "plain": 0.4540035367012023,
+        "decay": 0.4540035367012023
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100002,
+      "state_hash": "1bbfc9acb1ada0e5f9fc7a31b10f861f9c3c736aa073be3d5eab06849615fea9",
+      "picks": {
+        "zero": 0,
+        "teacher": 0,
+        "plain": 0,
+        "decay": 0
+      },
+      "random": [
+        2,
+        16
+      ],
+      "depth": 4,
+      "truth": {
+        "0": -5.34097237586975,
+        "2": -6.849219667911529,
+        "16": -9.361622381210328
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100003,
+      "state_hash": "b5b0fb9e75f39040759ea9b827141d5c5bdf12a88bada891a1b42b5ee6a3617a",
+      "picks": {
+        "zero": 3,
+        "teacher": 1,
+        "plain": 3,
+        "decay": 3
+      },
+      "random": [
+        2,
+        0
+      ],
+      "depth": 4,
+      "truth": {
+        "0": -21.934238338470458,
+        "1": -20.344082355499268,
+        "2": -28.50826072692871,
+        "3": -27.79705958366394
+      },
+      "regret": {
+        "zero": 7.452977228164674,
+        "teacher": 0.0,
+        "plain": 7.452977228164674,
+        "decay": 7.452977228164674
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100004,
+      "state_hash": "288d23a90f1336ffa6f6f430ef7ec247cb8375261d3146d20e2d125f476f5c43",
+      "picks": {
+        "zero": 3,
+        "teacher": 3,
+        "plain": 3,
+        "decay": 3
+      },
+      "random": [
+        108,
+        43
+      ],
+      "depth": 4,
+      "truth": {
+        "3": 8.185749888420105,
+        "43": 5.2992494106292725,
+        "108": 0.983573353290558
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100004,
+      "state_hash": "91bbd8b05b67e673895655e865dae801e90004161462cb8ca001b61381c7bae6",
+      "picks": {
+        "zero": 8,
+        "teacher": 2,
+        "plain": 8,
+        "decay": 8
+      },
+      "random": [
+        11,
+        1
+      ],
+      "depth": 4,
+      "truth": {
+        "1": 0.17093118429183957,
+        "2": 1.3707949936389925,
+        "8": -0.18510284423828127,
+        "11": -0.2882904052734375
+      },
+      "regret": {
+        "zero": 1.5558978378772736,
+        "teacher": 0.0,
+        "plain": 1.5558978378772736,
+        "decay": 1.5558978378772736
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100005,
+      "state_hash": "5be0543c226e9a1e74e65700fb5cf9d0e8198d7640ee71a1118a7b4e443de287",
+      "picks": {
+        "zero": 6,
+        "teacher": 6,
+        "plain": 6,
+        "decay": 6
+      },
+      "random": [
+        20,
+        32
+      ],
+      "depth": 4,
+      "truth": {
+        "6": 0.6887701630592347,
+        "20": -0.2229329347610473,
+        "32": -2.8969601690769196
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100005,
+      "state_hash": "f81ac313722f6d31e37b75298c8a024e684aeb8fad890786e139abf257f1fa43",
+      "picks": {
+        "zero": 0,
+        "teacher": 0,
+        "plain": 0,
+        "decay": 0
+      },
+      "random": [
+        12,
+        13
+      ],
+      "depth": 4,
+      "truth": {
+        "0": -9.156598806381226,
+        "12": -11.171944856643677,
+        "13": -11.274159669876099
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100018,
+      "state_hash": "e05fae2eae73a151946ecfdf6989f1b447ad3cfc86583dca0af08d26124019d4",
+      "picks": {
+        "zero": 0,
+        "teacher": 5,
+        "plain": 0,
+        "decay": 0
+      },
+      "random": [
+        6,
+        4
+      ],
+      "depth": 4,
+      "truth": {
+        "0": -25.990714073181152,
+        "4": -29.16551322937012,
+        "5": -21.052457809448242,
+        "6": -26.46574430465698
+      },
+      "regret": {
+        "zero": 4.93825626373291,
+        "teacher": 0.0,
+        "plain": 4.93825626373291,
+        "decay": 4.93825626373291
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100018,
+      "state_hash": "5710fb6ec5484d03d62bfd15390dc25d170b2add3a34c3e91f33e4362ed5cbf9",
+      "picks": {
+        "zero": 0,
+        "teacher": 0,
+        "plain": 0,
+        "decay": 0
+      },
+      "random": [
+        25,
+        9
+      ],
+      "depth": 4,
+      "truth": {
+        "0": 41.579918479919435,
+        "9": 41.961786079406735,
+        "25": 40.53279275894165
+      },
+      "regret": {
+        "zero": 0.3818675994873004,
+        "teacher": 0.3818675994873004,
+        "plain": 0.3818675994873004,
+        "decay": 0.3818675994873004
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100019,
+      "state_hash": "ff80b224dd15648ca66ece86ef69b74f1262f6c8a7986f8d9e1e7e82d5a150a0",
+      "picks": {
+        "zero": 2,
+        "teacher": 2,
+        "plain": 2,
+        "decay": 2
+      },
+      "random": [
+        103,
+        67
+      ],
+      "depth": 4,
+      "truth": {
+        "2": 4.070990556478501,
+        "67": -0.07129822671413419,
+        "103": -0.17219604253768922
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100019,
+      "state_hash": "4faf85fa7d51ab6fd318a1c0f8e8a93d36eef8e37ae260d3854a492f773188b2",
+      "picks": {
+        "zero": 10,
+        "teacher": 10,
+        "plain": 6,
+        "decay": 6
+      },
+      "random": [
+        12,
+        4
+      ],
+      "depth": 4,
+      "truth": {
+        "4": -7.30000272989273,
+        "6": -6.555628633499145,
+        "10": -6.2681351661682125,
+        "12": -9.14493224620819
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.2874934673309326,
+        "decay": 0.2874934673309326
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100020,
+      "state_hash": "9353729bc80363c2d5f4b044959cc10eab9906939b64262284f836703c7748a4",
+      "picks": {
+        "zero": 0,
+        "teacher": 1,
+        "plain": 0,
+        "decay": 0
+      },
+      "random": [
+        21,
+        106
+      ],
+      "depth": 4,
+      "truth": {
+        "0": -3.7760902762413022,
+        "1": -2.3191940963268283,
+        "21": -5.54345965385437,
+        "106": -7.667792081832886
+      },
+      "regret": {
+        "zero": 1.456896179914474,
+        "teacher": 0.0,
+        "plain": 1.456896179914474,
+        "decay": 1.456896179914474
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100020,
+      "state_hash": "a61455379b175ce47009c6f38f4087266ca63f63a74532987a2979c70289325f",
+      "picks": {
+        "zero": 24,
+        "teacher": 1,
+        "plain": 24,
+        "decay": 24
+      },
+      "random": [
+        55,
+        9
+      ],
+      "depth": 4,
+      "truth": {
+        "1": -1.3250439882278442,
+        "9": -3.542995625734329,
+        "24": -1.7186347365379335,
+        "55": -6.005194902420044
+      },
+      "regret": {
+        "zero": 0.39359074831008933,
+        "teacher": 0.0,
+        "plain": 0.39359074831008933,
+        "decay": 0.39359074831008933
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100021,
+      "state_hash": "b70dd9ead9becce40d9e3f459163ce98509149a5eac8b012f0200fe6d4445ee3",
+      "picks": {
+        "zero": 5,
+        "teacher": 97,
+        "plain": 105,
+        "decay": 105
+      },
+      "random": [
+        42,
+        121
+      ],
+      "depth": 4,
+      "truth": {
+        "5": -0.20000000000000018,
+        "42": -0.20000000000000018,
+        "97": 8.0,
+        "105": 7.4,
+        "121": -2.6
+      },
+      "regret": {
+        "zero": 8.2,
+        "teacher": 0.0,
+        "plain": 0.5999999999999996,
+        "decay": 0.5999999999999996
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100021,
+      "state_hash": "d1473753f184473eac31e65eb4bc70df9ce3a6ddb28f02dd61c0778d67e5a4f8",
+      "picks": {
+        "zero": 1,
+        "teacher": 1,
+        "plain": 1,
+        "decay": 1
+      },
+      "random": [
+        3,
+        0
+      ],
+      "depth": 4,
+      "truth": {
+        "0": -5.248137378692626,
+        "1": -5.108969473838806,
+        "3": -9.871766781806945
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100022,
+      "state_hash": "3e2cce3da91b1715f884da53e4dbced85bdcfd2a209368c2eaf8200d66818e0f",
+      "picks": {
+        "zero": 7,
+        "teacher": 7,
+        "plain": 7,
+        "decay": 7
+      },
+      "random": [
+        66,
+        27
+      ],
+      "depth": 4,
+      "truth": {
+        "7": -0.7672790050506593,
+        "27": -6.3403603553771966,
+        "66": -4.510316741466522
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100022,
+      "state_hash": "a43a97333cd6d5e8c2e61ec2b109572c11a3ff5f8db442ea0ab465c0a10feb70",
+      "picks": {
+        "zero": 5,
+        "teacher": 0,
+        "plain": 5,
+        "decay": 5
+      },
+      "random": [
+        3,
+        0
+      ],
+      "depth": 4,
+      "truth": {
+        "0": 6.3933387994766235,
+        "3": 6.070518851280212,
+        "5": 6.3933387994766235
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100023,
+      "state_hash": "170c685b06168dd17c998007478e3fe3863696baac93bda019a824169b1b1a41",
+      "picks": {
+        "zero": 28,
+        "teacher": 56,
+        "plain": 28,
+        "decay": 28
+      },
+      "random": [
+        66,
+        27
+      ],
+      "depth": 4,
+      "truth": {
+        "27": 10.350587987899779,
+        "28": 12.288781118392944,
+        "56": 12.311070871353149,
+        "66": 9.709134459495544
+      },
+      "regret": {
+        "zero": 0.022289752960205078,
+        "teacher": 0.0,
+        "plain": 0.022289752960205078,
+        "decay": 0.022289752960205078
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100023,
+      "state_hash": "1b3255f130cd5afcdc1a9036944c4b78b5b95855fe6fe115595864790a5c9b6a",
+      "picks": {
+        "zero": 4,
+        "teacher": 0,
+        "plain": 4,
+        "decay": 4
+      },
+      "random": [
+        22,
+        31
+      ],
+      "depth": 4,
+      "truth": {
+        "0": -10.21083174943924,
+        "4": -10.370414423942567,
+        "22": -12.21283509731293,
+        "31": -15.922160649299622
+      },
+      "regret": {
+        "zero": 0.15958267450332642,
+        "teacher": 0.0,
+        "plain": 0.15958267450332642,
+        "decay": 0.15958267450332642
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100036,
+      "state_hash": "e2791bd163c35400b590fd29eaa52cf79e94fe8acacc77dd381f3cfae41398c4",
+      "picks": {
+        "zero": 7,
+        "teacher": 28,
+        "plain": 7,
+        "decay": 7
+      },
+      "random": [
+        45,
+        3
+      ],
+      "depth": 4,
+      "truth": {
+        "3": 22.35626487731934,
+        "7": 22.942094516754153,
+        "28": 23.149831008911136,
+        "45": 23.065705919265746
+      },
+      "regret": {
+        "zero": 0.20773649215698242,
+        "teacher": 0.0,
+        "plain": 0.20773649215698242,
+        "decay": 0.20773649215698242
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100036,
+      "state_hash": "f96612d4c37561d69efd22bee944e9695935eed893585d9c74635305525e4e40",
+      "picks": {
+        "zero": 0,
+        "teacher": 0,
+        "plain": 0,
+        "decay": 0
+      },
+      "random": [
+        1,
+        0
+      ],
+      "depth": 4,
+      "truth": {
+        "0": -28.911858701705935,
+        "1": -30.542107009887694
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100037,
+      "state_hash": "c5f3e03d024f83888c2257aa534fe3a10b7e781b6d8c895a22a199606cad660c",
+      "picks": {
+        "zero": 0,
+        "teacher": 0,
+        "plain": 4,
+        "decay": 4
+      },
+      "random": [
+        45,
+        3
+      ],
+      "depth": 4,
+      "truth": {
+        "0": 2.0192552149295806,
+        "3": -0.5690901577472687,
+        "4": -0.26619783043861395,
+        "45": -2.72878021299839
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 2.2854530453681945,
+        "decay": 2.2854530453681945
+      },
+      "student_originally_labeled": {
+        "plain": false,
+        "decay": false
+      }
+    },
+    {
+      "game": 100037,
+      "state_hash": "f4ae81f42f5c6a91d23c993ff40aeff5a115d3629cd364278542696ded7998cc",
+      "picks": {
+        "zero": 1,
+        "teacher": 1,
+        "plain": 1,
+        "decay": 1
+      },
+      "random": [
+        18,
+        37
+      ],
+      "depth": 4,
+      "truth": {
+        "1": -1.4389304667711256,
+        "18": -1.8867482781410216,
+        "37": -4.661718583106995
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100038,
+      "state_hash": "5fa63e63c989147e935998c9b2fad9da3bec1b08149c55bfe4f5d42c7e1ce56a",
+      "picks": {
+        "zero": 1,
+        "teacher": 2,
+        "plain": 2,
+        "decay": 2
+      },
+      "random": [
+        45,
+        3
+      ],
+      "depth": 4,
+      "truth": {
+        "1": 2.199924576282501,
+        "2": 2.2302906215190887,
+        "3": 0.9315360218286515,
+        "45": 0.5166949570178986
+      },
+      "regret": {
+        "zero": 0.030366045236587702,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100038,
+      "state_hash": "21117c9299a88171044823d5ac832cfa07de5b5b852b000814a58046d8208305",
+      "picks": {
+        "zero": 0,
+        "teacher": 0,
+        "plain": 0,
+        "decay": 0
+      },
+      "random": [
+        18,
+        37
+      ],
+      "depth": 4,
+      "truth": {
+        "0": -1.6676849901676176,
+        "18": -7.105570685863495,
+        "37": -6.132376456260681
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100039,
+      "state_hash": "646544a3139377f5891244219975439952d2b6325a8c5c1ec4b6b5574b51ea8d",
+      "picks": {
+        "zero": 9,
+        "teacher": 9,
+        "plain": 9,
+        "decay": 9
+      },
+      "random": [
+        44,
+        11
+      ],
+      "depth": 4,
+      "truth": {
+        "9": -5.611400151252747,
+        "11": -10.132244110107422,
+        "44": -14.915238332748412
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100040,
+      "state_hash": "749956e34e06cdb99e2ef7c9789cc2010559f416abd35d9bc7baf0003cc76c40",
+      "picks": {
+        "zero": 0,
+        "teacher": 0,
+        "plain": 20,
+        "decay": 20
+      },
+      "random": [
+        12,
+        69
+      ],
+      "depth": 4,
+      "truth": {
+        "0": -8.6,
+        "12": -9.8,
+        "20": -9.8,
+        "69": -9.8
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 1.200000000000001,
+        "decay": 1.200000000000001
+      },
+      "student_originally_labeled": {
+        "plain": false,
+        "decay": false
+      }
+    },
+    {
+      "game": 100040,
+      "state_hash": "5db9723cfc85f9bbf32b64d6aadfaef6a36eff9753cc03d39971e640f8001206",
+      "picks": {
+        "zero": 0,
+        "teacher": 2,
+        "plain": 0,
+        "decay": 0
+      },
+      "random": [
+        1,
+        7
+      ],
+      "depth": 4,
+      "truth": {
+        "0": -9.357597494125367,
+        "1": -6.23876461982727,
+        "2": -5.945220685005188,
+        "7": -15.083692860603332
+      },
+      "regret": {
+        "zero": 3.412376809120179,
+        "teacher": 0.0,
+        "plain": 3.412376809120179,
+        "decay": 3.412376809120179
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100041,
+      "state_hash": "9fc8e9b0a1a8afee3b8c758f69d2d1ce55d5b6d403045a98ad14fd41c5fc8371",
+      "picks": {
+        "zero": 0,
+        "teacher": 3,
+        "plain": 0,
+        "decay": 0
+      },
+      "random": [
+        76,
+        56
+      ],
+      "depth": 4,
+      "truth": {
+        "0": -6.5807015061378475,
+        "3": -6.428001546859741,
+        "56": -7.916952288150787,
+        "76": -8.565899598598481
+      },
+      "regret": {
+        "zero": 0.15269995927810687,
+        "teacher": 0.0,
+        "plain": 0.15269995927810687,
+        "decay": 0.15269995927810687
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100041,
+      "state_hash": "698ee7c5f60a89dfa3369703be20e5cf48d907cef326485b68c09c19b50b4c00",
+      "picks": {
+        "zero": 0,
+        "teacher": 0,
+        "plain": 0,
+        "decay": 0
+      },
+      "random": [
+        12,
+        33
+      ],
+      "depth": 4,
+      "truth": {
+        "0": 20.425654411315918,
+        "12": 17.801136684417724,
+        "33": 16.683085083961487
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100057,
+      "state_hash": "f4d838be1208d2d3b413c5d6086c992fed6e0eb8a97f8be9e6112b4665977dee",
+      "picks": {
+        "zero": 3,
+        "teacher": 3,
+        "plain": 3,
+        "decay": 3
+      },
+      "random": [
+        4,
+        7
+      ],
+      "depth": 4,
+      "truth": {
+        "3": -9.590603637695311,
+        "4": -17.21523780822754,
+        "7": -18.728499603271484
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    },
+    {
+      "game": 100075,
+      "state_hash": "2f153f8066b33bbeb7e7f9b91e172dabc9958704c1261be911075a6e2b924292",
+      "picks": {
+        "zero": 0,
+        "teacher": 0,
+        "plain": 0,
+        "decay": 0
+      },
+      "random": [
+        0,
+        20
+      ],
+      "depth": 4,
+      "truth": {
+        "0": 17.075509309768677,
+        "20": 12.69848906993866
+      },
+      "regret": {
+        "zero": 0.0,
+        "teacher": 0.0,
+        "plain": 0.0,
+        "decay": 0.0
+      },
+      "student_originally_labeled": {
+        "plain": true,
+        "decay": true
+      }
+    }
+  ],
+  "unique_games": 20,
+  "roots": 36,
+  "mean_regret": {
+    "zero": 0.8222487858600086,
+    "teacher": 0.023218642671902854,
+    "plain": 0.7331275559133953,
+    "decay": 0.7150982432895236
+  },
+  "note": "Fixed seed1101 fold0, post-selection diagnostic only. Teacher is best among original completed labels; union reference is selective depth4, not true game value. Unknown student/random choices completed at same depth."
+}

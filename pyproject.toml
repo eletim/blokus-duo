@@ -7,6 +7,7 @@ dependencies = ["numpy", "torch==2.7.1"]
 
 [project.optional-dependencies]
 test = ["pytest"]
+analysis = ["matplotlib==3.11.2"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

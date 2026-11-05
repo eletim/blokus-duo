@@ -456,3 +456,11 @@ depth4−depth2を全盤面＋候補の小型CNNで学び、完了したrootの�
 ```
 
 82 tests、CUDA別process再開、477局面と評価1,632局の実装側再生・算術監査PASS。GPU主学習は3seed計9,000更新/10.31秒。検証済み100ms教師はmain **cbe3b91**に追加オプションとして統合済みで、mainでは `python -m blokus.teacher_play` で起動できます。教師は共通100ms上限の2標本で正の平均得点差があり、実消費時間は旧探索より長く、勝率優越は未確定です。教師の成果を学生の改善とは扱いません。
+
+## 独立ゲーム数による補正学習曲線（対戦へ進まず）
+
+新しいゲームで、予定訓練240/960/2400ゲームの入れ子集合・3分割・3更新seed・正則化2条件を比較しました。固定評価は356有効ゲーム。2400条件で教師補正の平均MSEはzero7.304から6.909–6.928へ改善傾向がある一方、候補選択損失の改善は分割をまたいで再現せず、CIも0を含みました。**事前固定の対戦gate未達により、対戦validation/holdoutは生成していません。既存value/2ply推奨を維持し、mainは変更していません。**
+
+[学習曲線と結論](artifacts/correction-game-scaling/conclusions.md) ／ [学習曲線PNG](artifacts/correction-game-scaling/learning-curves.png) ／ [設計・再現](artifacts/correction-game-scaling/METHOD.md)
+
+3,960ユニーク元ゲーム・7,424root、54run/162,000更新、GPU主学習176.53秒。85 tests、CUDA別process再開、ラベル再生・分割hash・CI監査PASS。追加生成gateだけはMSE改善を根拠に例外を記録して2400まで測定しましたが、対戦gateは変更していません。前回の再開表記は「40連続 vs20＋追加20＝通算40」が正確です。候補入力の情報欠落も診断しましたが、観測分だけで全体の失敗を説明できるとは主張していません。

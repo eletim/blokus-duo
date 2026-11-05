@@ -401,3 +401,19 @@ mainへcbe3b91を通常fast-forward push済み（53 testsと教師/旧2plyのCUD
 ### 最終結果・監査
 fresh96prefix×先後×3seed×2対照=1152局完走。対旧は254勝293敗29分、平均+0.03646 CI[-1.00525,1.03129]。対zeroは259勝291敗26分、-0.05729 CI[-1.03819,0.91150]。改善なし、既存value/2ply推奨維持。設定再選択なし。
 82 tests、CUDA別process再開、3seed初期重みbit一致。源240ゲーム/477局面/教師24局面再計算/評価1632局再生・算術監査PASS。全源状態と評価状態hash重複0。devでは教師最良候補の評価範囲coverage100%ながら教師保持50–54%、未使用ゲームのMSE/選択regretはzeroより悪化し、汎化が主な課題。結果・次案・再現CLIはconclusions.mdとMETHOD.md。追加学習せず研究branchへ保存する。
+
+## correction-game-scaling 着手
+c46a180から新branch。学習/実戦の偶然の最大値選択を止め、固定評価ゲームで240/960/2400訓練ゲームの曲線を先に検証する。3fold×3更新seed、正則化2条件、1000更新gate固定。詳細と打切り基準はartifacts/correction-game-scaling/METHOD.md。旧再開の正確な比較は40連続 vs20+追加20（総40）であり、前表記を訂正する。
+
+### 240ゲーム条件
+生成720源ゲーム（bank360+pool360）、有効root1347。実訓練237–239ゲーム/fold、固定評価117–120ゲーム/fold。3fold×3seed×2条件の各3000更新完走。1000更新時plain MSE9.418対zero7.304、regret0.53193対zero0.53711。decayもMSE9.562で悪化。対戦gateは未達。960ゲームへの予定比較を進める。
+84 tests PASS。新optimizer2条件とも別process40連続 vs20+追加20=総40のmodel/optimizer/全RNG bit一致。旧表記は通算目標stepの曖昧な書き方だったと確認。
+
+### 960結果と追加生成だけの例外（2400生成前）
+1000更新のMSEはplain9.418→7.967、decay9.562→7.954と改善。一方regretはplain0.53193→0.54018、decay0.53736→0.54429で非改善（zero0.53711）。対戦gateはすべて未達。
+独自の追加生成gate「両指標非悪化」は未達のままextension-gate.jsonに保存した。ユーザーの早期打切り許可は『学習曲線が悪化のみ』であり、今回はMSE改善があるため、その条件に当たらない。計算予算にも余裕がある。独自gateが依頼の条件より厳しすぎたため、追加生成のみの例外をextension-exception.jsonに事前記録し、依頼された2400点まで測る。対戦の1000更新・全fold5%・CI gateは変更せず、validationの勝ちで覆すこともしない。
+
+### 学習曲線完了・対戦gate未達
+2400条件まで54run/162000更新を完走、GPU主学習176.534秒。1000更新plainはMSE6.92786（zero7.30425）、regret0.522586（zero0.537114）。decayは6.90906/0.523928。平均改善傾向はあるが、両条件ともfold1はMSE/選択損失悪化、fold2も選択損失悪化、CIに0を含む。固定した対戦gate未達で、validation/holdoutを作らず終了。生成gate例外は記録済み、対戦gate変更なし。
+85 tests、2条件CUDA別process40 vs20+追加20=総40、3960源ゲーム全再生、7424root入力/候補/mask、入れ子配列・分割hash・CI/gate算術、教師75root+偏り診断36root再計算PASS。源ゲームは完全手順hashも3960unique。候補入力衝突は1037root、異なる教師値を持つ衝突群59件だが観測MSE下限0.000349で主因と断定しない。
+学習曲線PNG/SVG、日本語conclusions.md、再現METHOD.md保存。旧再開表記を正確に訂正。main変更なし、研究branchへcommit/pushする。

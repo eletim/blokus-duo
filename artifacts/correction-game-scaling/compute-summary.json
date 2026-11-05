@@ -1,0 +1,106 @@
+{
+  "models": 54,
+  "updates": 162000,
+  "gpu_main_seconds": 176.53406614999403,
+  "generation_seconds": 1286.2032986099948,
+  "datasets": [
+    {
+      "size": 240,
+      "pool_games": 360,
+      "bank_games": 360,
+      "unique_generated_games": 720,
+      "rows": 1347,
+      "seconds": 218.9396110050002,
+      "duplicates_removed_this_extension": 1,
+      "data_sha256": "57ac6046e976dc0d85efdab05d8cdc47085ed41e5b744d191f9d8a16650a7ac7",
+      "value_sha256": "8a5795a2e4fe73e4055ce94d11f761fddbc7a66db7ec0863b39df8ba195bf2ad",
+      "folds": {
+        "0": {
+          "train_games": 237,
+          "test_games": 119,
+          "train_rows": 447,
+          "test_rows": 225
+        },
+        "1": {
+          "train_games": 239,
+          "test_games": 117,
+          "train_rows": 450,
+          "test_rows": 222
+        },
+        "2": {
+          "train_games": 238,
+          "test_games": 120,
+          "train_rows": 449,
+          "test_rows": 227
+        }
+      }
+    },
+    {
+      "size": 960,
+      "pool_games": 1440,
+      "bank_games": 360,
+      "unique_generated_games": 1800,
+      "rows": 3369,
+      "seconds": 343.9174490029982,
+      "duplicates_removed_this_extension": 5,
+      "data_sha256": "792428e4276d6ef2cabb43e7b799df54bfb57221e17302a93f60c67781b7fbc7",
+      "value_sha256": "8a5795a2e4fe73e4055ce94d11f761fddbc7a66db7ec0863b39df8ba195bf2ad",
+      "folds": {
+        "0": {
+          "train_games": 952,
+          "test_games": 119,
+          "train_rows": 1793,
+          "test_rows": 225
+        },
+        "1": {
+          "train_games": 954,
+          "test_games": 117,
+          "train_rows": 1799,
+          "test_rows": 222
+        },
+        "2": {
+          "train_games": 952,
+          "test_games": 120,
+          "train_rows": 1798,
+          "test_rows": 227
+        }
+      }
+    },
+    {
+      "size": 2400,
+      "pool_games": 3600,
+      "bank_games": 360,
+      "unique_generated_games": 3960,
+      "rows": 7424,
+      "seconds": 723.3462386019964,
+      "duplicates_removed_this_extension": 9,
+      "data_sha256": "712aaf5c4efc0405291a58ba2e41e8921ae50a4d1a670828364d1e3f8bc982e0",
+      "value_sha256": "8a5795a2e4fe73e4055ce94d11f761fddbc7a66db7ec0863b39df8ba195bf2ad",
+      "folds": {
+        "0": {
+          "train_games": 2380,
+          "test_games": 119,
+          "train_rows": 4489,
+          "test_rows": 225
+        },
+        "1": {
+          "train_games": 2388,
+          "test_games": 117,
+          "train_rows": 4508,
+          "test_rows": 222
+        },
+        "2": {
+          "train_games": 2384,
+          "test_games": 120,
+          "train_rows": 4503,
+          "test_rows": 227
+        }
+      }
+    }
+  ],
+  "matplotlib": "3.11.2",
+  "note": "Fixed update budget, effective epochs in per-run logs. Each data-generation timing is incremental. Bank+pool game IDs unique; independent sequence count in audit.",
+  "branch_created_at": "2026-11-05T14:20:09+09:00",
+  "report_at": "2026-11-05T15:05:02.493972+09:00",
+  "elapsed_since_branch_creation_seconds": 2693.493972
+}
