@@ -1,0 +1,60 @@
+[
+  {
+    "command": [
+      "/tmp/blokus-cpu-only-venv312/bin/python",
+      "-m",
+      "blokus.tuple_play",
+      "--checkpoint",
+      "artifacts/linear-tuple/T-3101.json",
+      "--backend",
+      "native"
+    ],
+    "wall": 1.4206876259995624,
+    "scores": [
+      -16,
+      -27
+    ],
+    "moves": 35,
+    "human_input_validated": false
+  },
+  {
+    "command": [
+      "/tmp/blokus-cpu-only-venv312/bin/python",
+      "-m",
+      "blokus.tuple_play",
+      "--checkpoint",
+      "artifacts/linear-tuple/T-3101.json",
+      "--backend",
+      "python",
+      "--human-seat",
+      "0"
+    ],
+    "wall": 2.090713728990522,
+    "scores": [
+      -40,
+      -21
+    ],
+    "moves": 34,
+    "human_input_validated": true
+  },
+  {
+    "command": [
+      "/tmp/blokus-cpu-only-venv312/bin/python",
+      "-m",
+      "blokus.tuple_play",
+      "--checkpoint",
+      "artifacts/linear-tuple/T-3101.json",
+      "--backend",
+      "python",
+      "--human-seat",
+      "1"
+    ],
+    "wall": 2.182914413002436,
+    "scores": [
+      -16,
+      -40
+    ],
+    "moves": 35,
+    "human_input_validated": true
+  }
+]

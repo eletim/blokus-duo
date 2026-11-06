@@ -256,3 +256,9 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 確認128prefix×3seed先後が完了。B/A 450勝45分273敗、point61.523%、Bonferroni2 CI[57.813,65.169]%、得点差+2.092。B/gen3 231勝30分507敗、32.031%、補正CI[28.646,35.482]%、得点差−4.863。非NN狭幅からの改善は確認、gen3未達・main推奨維持。全2688対局座標oracle/算術/hash監査PASS、108testsPASS。元訓練3,478,157状態と重複0、追加事後PPO indexとも重複0。warm B約20ms、cold初回606–625ms、warmでも単発157ms超過1件を保持。CPU-only CLI完走。REPORT/最小候補patchを仕上げ、研究branchのみpush予定。
 
 最小候補をintegration/linear-search-candidate 4276c8af50461f13110b329973359604a22d07a0として保存。元export3本はbyte一致。main未適用。新対戦24ファイル2688局はraw SHAを保存したgzip化で約13MB、可逆性/再実行時のarchive冪等性も確認。
+
+## 非NN局所表残差（2026-11-06、新規実験）
+research/linear-tuple-value、5776630基点。F元24係数凍結、L線形再学習、T局所表残差4374係数。旧30係数方策、幅24x8/2ply/100ms固定。PLAN.mdを事前保存しpilot各4game後に各seed1024games・8epoch・batch256・Adam.01へ固定。3CPU独立processで凍結B固定木(ms=0)の同一終局データを生成中。T/Lの初期予測/対局/局面/target/更新順は共通。追加学習値を生成へ戻さない。初期5テストPASS、main/Web/gen3保持。
+
+2026-11-06 局所表サイクル完了: 3seed×1024新規ゲームをL/Tで共用（94,794局面）、8epoch、992/1000/984更新。生成+学習+校正wall698.89秒/累積CPU2038.78秒。全更新bit再生と別process4 vs2+2 PASS。新validation32prefix×3seed×先後×6組=1152局、T/L48.70%・得点差−1.29、T/F64.84%、T/gen3 50.26%（主比較family3補正CI41.41–59.11%）。T/L gate未達で確認128prefixを起動せず、追加条件/学習/seed選択なし。L/gen3 51.04%も選択用の示唆で独立採用根拠にしない。
+全114tests、3180生成棋譜と1152評価棋譜の座標oracle/報酬/算術/hash/分離PASS。CPU-only native AI対戦・Python人間先後完走。CLIの最終JSONが入力promptと同じ行になる不具合を改行追加で修正、失敗ログも保存。推論/学習/評価コードとモデルは研究branchのみ。main/Web/公開gen3は保全。詳細/次判断材料はartifacts/linear-tuple/REPORT.md、再現はREPRODUCE.md。

@@ -1,0 +1,82 @@
+{
+  "pass_": true,
+  "rows": [
+    {
+      "kind": "pilot",
+      "seed": 3101,
+      "games": 4,
+      "states": 131,
+      "visits": 135,
+      "full_coordinate_replay": true
+    },
+    {
+      "kind": "pilot",
+      "seed": 3102,
+      "games": 4,
+      "states": 124,
+      "visits": 128,
+      "full_coordinate_replay": true
+    },
+    {
+      "kind": "pilot",
+      "seed": 3103,
+      "games": 4,
+      "states": 115,
+      "visits": 119,
+      "full_coordinate_replay": true
+    },
+    {
+      "kind": "train",
+      "seed": 3101,
+      "games": 1024,
+      "states": 31640,
+      "visits": 32664,
+      "full_coordinate_replay": true
+    },
+    {
+      "kind": "train",
+      "seed": 3102,
+      "games": 1024,
+      "states": 31849,
+      "visits": 32873,
+      "full_coordinate_replay": true
+    },
+    {
+      "kind": "train",
+      "seed": 3103,
+      "games": 1024,
+      "states": 31305,
+      "visits": 32329,
+      "full_coordinate_replay": true
+    },
+    {
+      "kind": "calibration",
+      "seed": 3101,
+      "games": 32,
+      "states": 995,
+      "visits": 1027,
+      "full_coordinate_replay": true
+    },
+    {
+      "kind": "calibration",
+      "seed": 3102,
+      "games": 32,
+      "states": 979,
+      "visits": 1011,
+      "full_coordinate_replay": true
+    },
+    {
+      "kind": "calibration",
+      "seed": 3103,
+      "games": 32,
+      "states": 986,
+      "visits": 1018,
+      "full_coordinate_replay": true
+    }
+  ],
+  "update_replay_bit_exact": true,
+  "policy_frozen": true,
+  "terminal_wdl": true,
+  "all_data_replayed": true,
+  "game_splits_disjoint": true
+}

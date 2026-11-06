@@ -465,3 +465,13 @@ python -m blokus.ppo_runtime --output artifacts/my-gen3-training --channels 4 --
 python -m blokus.linear_play2 --checkpoint artifacts/linear-hybrid/exports/seed-3101.json --backend native --completed-search --search-ms 100 --root-width 24 --reply-width 8 --depth 2 --human-seat 0
 ```
 `native`は既存ビルドが必要、純Python経路は`--backend python`。完成狭幅2plyを保持し、広幅が全root完成した場合だけ上書きします。詳細は[REPORT](artifacts/linear-search/REPORT.md)、[再現手順](artifacts/linear-search/REPRODUCE.md)、[最小統合候補](artifacts/linear-search/INTEGRATION.md)を参照。
+
+### 研究：非NN局所表価値の同経験量対照
+
+[局所表実験REPORT](artifacts/linear-tuple/REPORT.md)：凍結した広幅Bの実終局WDLから3seed各1,024ゲームを共用して、線形再学習Lと6セル局所表残差Tを学習しました。新32prefix・先後・3seedの192局/組でT/Lは48.70%、T/gen3は50.26%（補正CI41.41–59.11%）となり、事前gate未達。大規模確認や条件追加はせず、公開推奨の置換ではありません。L/Tとも元価値より良い示唆はありますが、表方式の上積みは未確認です。
+
+CPU研究用CLI（訓練履歴不要）:
+```bash
+python -m blokus.tuple_play --checkpoint artifacts/linear-tuple/T-3101.json --backend python --human-seat 0
+```
+`--human-seat 1`で後手、nativeビルド済みなら`--backend native`。100ms上限・幅24×8・2plyで、gen3単体約0.4msと同時間の比較ではありません。表は34,992byte、新価値の計算/更新にNN層/autogradを使いませんが、既存基盤の依存パッケージは必要です。[再現手順](artifacts/linear-tuple/REPRODUCE.md)を参照。main/Webは変更しません。
