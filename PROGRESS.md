@@ -558,3 +558,8 @@ loss/勝敗終局報酬/モデル/LR .0003/16並行ゲーム/相手比率current
 - CPU高速化: 不変Moveのgeometry tupleを最大32768件LRUで共有、featuresの局面内定数hoistとinputs/observe pack再利用のみ実装。13729全配置×両手番bit一致、ゲーム状態・乱数・配列所有維持。全126tests PASS。PPO2iter×16gamesを旧新3組、観測/軌跡/model/past/optimizer/Python NumPy Torch CUDA RNG完全一致。更新warmup補正再測定も一致し、旧結果をtraining-initialへ保全。
 - 交互測定: observe .708→.451ms、CPU推論.925→.666ms、CUDA1.200→.929ms。32ゲーム収集更新wall1.305→1.024秒、生成30.93→41.19games/sec。cache全配置保持約11.1MB。追加本学習0（有限検証計416ゲーム）、棋力改善とは呼ばない。時間制御探索の着手同一は保証対象外。
 - main用候補integration/ppo-cpu-throughput c901d09をa96d280から別worktreeに準備。公開ppo_policyへ最小移植、モデル/既定変更なし。CUDA全64PASS、新規clone CPU-only torch2.7.1+cpu全63PASS/1CUDA skip、人間先後/AI対戦完走。main未変更、通常cherry-pick/merge判断を秘書へ返す。REPORT/再現bench/監査を保存しbranch pushを仕上げる。
+- 新依頼cee06286、a011c78からresearch/ppo-four-channel-runtime。4chは新モデル専用、旧6ch形式/公開gen2を保持。PLAN.mdへ同16games/更新量のnative合法手+pack/rollout一括転送比較、4ch効果分離、64iter有限pilotと60分GPUwall上限を記録。START/engineルール変更なし。
+
+4ch/runtime完了段階: native融合走査で同量16games+更新は6ch 0.512→0.238秒、4ch 0.458→0.218秒。参照と軌跡/入力/重み/RNG一致。134 tests、CPU/CUDA別process再開PASS。64iteration/1024game pilot完了、棋力未評価。詳細 artifacts/ppo-four-channel-runtime/REPORT.md。main変更なし、最小統合候補を別branchへ準備。
+
+最終: 統合候補 integration/ppo-four-channel-runtime 8c40e42 をpush。候補72 tests、新規CPU-only clone67 PASS/5 skip。公開gen2/2048と4ch CLI完走、export CPU/CUDA出力一致。main c901d09維持。追加本学習なし。

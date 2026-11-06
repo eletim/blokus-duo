@@ -1,0 +1,37 @@
+{
+  "import_seconds": 0.6293889420048799,
+  "table_initialization_seconds": 0.10635252799693262,
+  "CUDA_model_optimizer_initialization_seconds": 0.6324265590010327,
+  "first_iteration_seconds": 0.549938033997023,
+  "whole_process_through_first_iteration": 1.9181060629998683,
+  "save_seconds": 0.0028158759960206226,
+  "generation": {
+    "cpu_generation_pack": 0.03218241206923267,
+    "gpu_inference_sync": 0.241883822985983,
+    "other": 0.006240923947189003,
+    "legal": 0.0,
+    "legal_and_native_features": 0.016912686071009375,
+    "pack": 0.012160481011960655,
+    "transfer_pack_sync": 0.007868127999245189,
+    "inference_and_output_sync": 0.23325194499193458,
+    "candidates": 72254,
+    "seconds": 0.28030715900240466
+  },
+  "update": {
+    "loss": 0.4664280499952535,
+    "policy_loss": 0.0029449465801008046,
+    "value_mse": 0.9799187009533247,
+    "entropy": 2.6476245696345964,
+    "approx_kl": 2.879893330032246e-06,
+    "grad_norm": 0.7446432020515203,
+    "clip_fraction": 0.0,
+    "updates": 48,
+    "records": 375,
+    "early_kl": false,
+    "seconds": 0.26956944500125246,
+    "rollout_pack_transfer_seconds": 1.2270000297576189e-05,
+    "packed": false
+  },
+  "warmup": false,
+  "torch_compile": false
+}
