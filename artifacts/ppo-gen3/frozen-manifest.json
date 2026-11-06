@@ -1,0 +1,95 @@
+{
+  "schema": "blokus-frozen-inference-v1",
+  "generation": "gen3",
+  "tag": "gen3-frozen-2026-11-06",
+  "baseline_commit": "bc1d7df4a0397c69d09e89b9aa9e1d3d9fff5a9b",
+  "default_seed": 1751401,
+  "algorithm": "neural PPO with fixed heuristic prior; not non-neural L",
+  "checkpoint_format": "terminal-ppo-inference-v2",
+  "checkpoint_use": "inference only; no optimizer, past policy, or training RNG",
+  "input": {
+    "board": [
+      4,
+      14,
+      14
+    ],
+    "board_channels": [
+      "own occupancy",
+      "opponent occupancy",
+      "own connectable corners (START before first move)",
+      "opponent connectable corners (START before first move)"
+    ],
+    "state": 49,
+    "candidate_features": 39,
+    "candidate_cells": 5,
+    "padding_cell": 196,
+    "legal_mask": true
+  },
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.7.1+cpu",
+    "numpy": "2.5.4",
+    "os": "Linux x86_64",
+    "backend": "python",
+    "cuda_alternative": "torch 2.7.1+cu128; not required for restoration"
+  },
+  "models": [
+    {
+      "seed": 1751401,
+      "path": "artifacts/ppo-gen3/seed-1751401.pt",
+      "sha256": "5e5d66569a8690d711a4f5d04a627cb70130e055d18000a1b9ee3fd3a5cecdb7",
+      "size_bytes": 281805,
+      "git_blob": "c8aae3da807bd14de195f4afa8344217e0856845",
+      "source": {
+        "path": "artifacts/ppo-lr64/B-seed-1751401/inference-5120.pt",
+        "sha256": "5e5d66569a8690d711a4f5d04a627cb70130e055d18000a1b9ee3fd3a5cecdb7",
+        "public_path": "artifacts/ppo-gen3/seed-1751401.pt",
+        "source_commit": "67482585",
+        "confirmation_commit": "16e3baa",
+        "iteration": 5120,
+        "channels": 4,
+        "games": 81920,
+        "minibatch": 64,
+        "learning_rate": 0.0003
+      }
+    },
+    {
+      "seed": 1751402,
+      "path": "artifacts/ppo-gen3/seed-1751402.pt",
+      "sha256": "07988be520e729f8da64f5ef884b3b9515ad19ce0b02ee5e4338b3e60a688c44",
+      "size_bytes": 281805,
+      "git_blob": "9d79d16a8d13abb5cc7cd64ab62160515608f0ca",
+      "source": {
+        "path": "artifacts/ppo-lr64/B-seed-1751402/inference-5120.pt",
+        "sha256": "07988be520e729f8da64f5ef884b3b9515ad19ce0b02ee5e4338b3e60a688c44",
+        "public_path": "artifacts/ppo-gen3/seed-1751402.pt",
+        "source_commit": "67482585",
+        "confirmation_commit": "16e3baa",
+        "iteration": 5120,
+        "channels": 4,
+        "games": 81920,
+        "minibatch": 64,
+        "learning_rate": 0.0003
+      }
+    },
+    {
+      "seed": 1751403,
+      "path": "artifacts/ppo-gen3/seed-1751403.pt",
+      "sha256": "d8f49048eca64a6d7954b97f9cd657dce2696c7030b1bada9a13f8e312a8df9a",
+      "size_bytes": 281805,
+      "git_blob": "6fc08b7cbd81af375a2759e777a12a8251c15931",
+      "source": {
+        "path": "artifacts/ppo-lr64/B-seed-1751403/inference-5120.pt",
+        "sha256": "d8f49048eca64a6d7954b97f9cd657dce2696c7030b1bada9a13f8e312a8df9a",
+        "public_path": "artifacts/ppo-gen3/seed-1751403.pt",
+        "source_commit": "67482585",
+        "confirmation_commit": "16e3baa",
+        "iteration": 5120,
+        "channels": 4,
+        "games": 81920,
+        "minibatch": 64,
+        "learning_rate": 0.0003
+      }
+    }
+  ]
+}
