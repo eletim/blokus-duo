@@ -1,0 +1,13 @@
+/tmp/blokus-cpu-only-venv312/bin/python: No module named ziglang
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/blokus-value-leaf-E-clone/blokus/ppo_native.py", line 64, in <module>
+    p=argparse.ArgumentParser();p.add_argument('mode',choices=['build']);p.parse_args();build()
+                                                                                        ^^^^^^^
+  File "/tmp/blokus-value-leaf-E-clone/blokus/ppo_native.py", line 16, in build
+    start=time.perf_counter();subprocess.run(cmd+['-O3','-fPIC','-shared','-std=c11','-march=native',str(SOURCE),'-o',str(BUILD/'backend.so')],check=True)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/tmp/blokus-cpu-only-venv312/bin/python', '-m', 'ziglang', 'cc', '-O3', '-fPIC', '-shared', '-std=c11', '-march=native', '/tmp/blokus-value-leaf-E-clone/blokus/ppo_native.c', '-o', '/tmp/blokus-value-leaf-E-clone/.native/ppo/backend.so']' returned non-zero exit status 1.

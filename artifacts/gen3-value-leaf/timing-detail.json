@@ -1,0 +1,431 @@
+{
+  "match_wall_seconds": 1949.9773819889815,
+  "rows": {
+    "validation2000/D-A/D": {
+      "nonpass": 586,
+      "forced_pass": 77,
+      "timeout_fallback": 0,
+      "depths": {
+        "4": 586
+      },
+      "root_widths": {
+        "12": 510,
+        "9": 4,
+        "10": 4,
+        "7": 10,
+        "2": 13,
+        "3": 9,
+        "11": 10,
+        "6": 4,
+        "8": 6,
+        "5": 4,
+        "1": 4,
+        "4": 8
+      },
+      "nodes": 505301,
+      "calls_policy": 127820,
+      "calls_value": 375010,
+      "cache_hits": 9069,
+      "cold_load_seconds": [
+        0.002701427001738921,
+        0.002782137002213858,
+        0.002974367991555482
+      ],
+      "warmup_seconds": [
+        0.001021582997054793,
+        0.0010553930042078719,
+        0.0010413929994683713
+      ],
+      "moves": 663,
+      "mean_ms": 193.65623786291414,
+      "p99_ms": 478.4834209588007,
+      "max_ms": 526.131972001167,
+      "over_budget": 0,
+      "over_budget_fraction": 0.0
+    },
+    "validation2000/D-A/A": {
+      "nonpass": 608,
+      "forced_pass": 61,
+      "timeout_fallback": 0,
+      "depths": {
+        "4": 608
+      },
+      "root_widths": {
+        "0": 608
+      },
+      "nodes": 179597,
+      "calls_policy": 0,
+      "calls_value": 0,
+      "cache_hits": 0,
+      "cold_load_seconds": [
+        0.002701427001738921,
+        0.002782137002213858,
+        0.002974367991555482
+      ],
+      "warmup_seconds": [
+        0.001021582997054793,
+        0.0010553930042078719,
+        0.0010413929994683713
+      ],
+      "moves": 669,
+      "mean_ms": 193.34234374124446,
+      "p99_ms": 562.4113358312754,
+      "max_ms": 633.0821070005186,
+      "over_budget": 0,
+      "over_budget_fraction": 0.0
+    },
+    "validation500/A-policy/A": {
+      "nonpass": 1245,
+      "forced_pass": 135,
+      "timeout_fallback": 0,
+      "depths": {
+        "2": 14,
+        "4": 1231
+      },
+      "root_widths": {
+        "0": 1245
+      },
+      "nodes": 354587,
+      "calls_policy": 0,
+      "calls_value": 0,
+      "cache_hits": 0,
+      "cold_load_seconds": [
+        0.005813705996843055,
+        0.0027822169940918684,
+        0.002676607997273095
+      ],
+      "warmup_seconds": [
+        0.0011669539962895215,
+        0.0010525529942242429,
+        0.0010238920076517388
+      ],
+      "moves": 1380,
+      "mean_ms": 179.66612893240222,
+      "p99_ms": 497.7399512899866,
+      "max_ms": 501.5622299979441,
+      "over_budget": 14,
+      "over_budget_fraction": 0.010144927536231883
+    },
+    "validation500/A-policy/policy": {
+      "nonpass": 1171,
+      "forced_pass": 198,
+      "timeout_fallback": 0,
+      "depths": {
+        "0": 1171
+      },
+      "root_widths": {
+        "0": 1171
+      },
+      "nodes": 0,
+      "calls_policy": 0,
+      "calls_value": 0,
+      "cache_hits": 0,
+      "cold_load_seconds": [
+        0.005813705996843055,
+        0.0027822169940918684,
+        0.002676607997273095
+      ],
+      "warmup_seconds": [
+        0.0011669539962895215,
+        0.0010525529942242429,
+        0.0010238920076517388
+      ],
+      "moves": 1369,
+      "mean_ms": 0.7676561796941459,
+      "p99_ms": 1.9040277157910128,
+      "max_ms": 3.9236209995578974,
+      "over_budget": 0,
+      "over_budget_fraction": 0.0
+    },
+    "validation500/D-A/D": {
+      "nonpass": 1202,
+      "forced_pass": 159,
+      "timeout_fallback": 0,
+      "depths": {
+        "4": 1202
+      },
+      "root_widths": {
+        "12": 1028,
+        "9": 13,
+        "4": 12,
+        "1": 18,
+        "6": 13,
+        "3": 24,
+        "10": 13,
+        "2": 10,
+        "8": 16,
+        "7": 13,
+        "5": 22,
+        "11": 20
+      },
+      "nodes": 1024167,
+      "calls_policy": 259696,
+      "calls_value": 759441,
+      "cache_hits": 18577,
+      "cold_load_seconds": [
+        0.0025876669969875365,
+        0.0028312680078670382,
+        0.002693367001484148
+      ],
+      "warmup_seconds": [
+        0.0010203429992543533,
+        0.0010312630038242787,
+        0.0010227829916402698
+      ],
+      "moves": 1361,
+      "mean_ms": 187.97423285001696,
+      "p99_ms": 450.53869340335956,
+      "max_ms": 500.50975900376216,
+      "over_budget": 1,
+      "over_budget_fraction": 0.0007347538574577516
+    },
+    "validation500/D-A/A": {
+      "nonpass": 1219,
+      "forced_pass": 140,
+      "timeout_fallback": 0,
+      "depths": {
+        "2": 18,
+        "4": 1201
+      },
+      "root_widths": {
+        "0": 1219
+      },
+      "nodes": 363771,
+      "calls_policy": 0,
+      "calls_value": 0,
+      "cache_hits": 0,
+      "cold_load_seconds": [
+        0.0025876669969875365,
+        0.0028312680078670382,
+        0.002693367001484148
+      ],
+      "warmup_seconds": [
+        0.0010203429992543533,
+        0.0010312630038242787,
+        0.0010227829916402698
+      ],
+      "moves": 1359,
+      "mean_ms": 187.65757192670904,
+      "p99_ms": 500.24401362170465,
+      "max_ms": 501.6183920088224,
+      "over_budget": 18,
+      "over_budget_fraction": 0.013245033112582781
+    },
+    "validation500/D-E/D": {
+      "nonpass": 1201,
+      "forced_pass": 157,
+      "timeout_fallback": 0,
+      "depths": {
+        "4": 1201
+      },
+      "root_widths": {
+        "12": 1015,
+        "9": 16,
+        "4": 13,
+        "1": 18,
+        "6": 14,
+        "3": 24,
+        "10": 13,
+        "7": 15,
+        "2": 10,
+        "8": 18,
+        "5": 23,
+        "11": 22
+      },
+      "nodes": 1019069,
+      "calls_policy": 258417,
+      "calls_value": 755605,
+      "cache_hits": 18550,
+      "cold_load_seconds": [
+        0.002622576997964643,
+        0.002698267999221571,
+        0.002941957995062694
+      ],
+      "warmup_seconds": [
+        0.00105357299617026,
+        0.0010431629925733432,
+        0.001081132999388501
+      ],
+      "moves": 1358,
+      "mean_ms": 188.00902525378362,
+      "p99_ms": 442.89454513767873,
+      "max_ms": 501.602151998668,
+      "over_budget": 2,
+      "over_budget_fraction": 0.0014727540500736377
+    },
+    "validation500/D-E/E": {
+      "nonpass": 1218,
+      "forced_pass": 137,
+      "timeout_fallback": 0,
+      "depths": {
+        "4": 1218
+      },
+      "root_widths": {
+        "4": 1170,
+        "2": 13,
+        "3": 19,
+        "1": 16
+      },
+      "nodes": 363313,
+      "calls_policy": 95084,
+      "calls_value": 267882,
+      "cache_hits": 0,
+      "cold_load_seconds": [
+        0.002622576997964643,
+        0.002698267999221571,
+        0.002941957995062694
+      ],
+      "warmup_seconds": [
+        0.00105357299617026,
+        0.0010431629925733432,
+        0.001081132999388501
+      ],
+      "moves": 1355,
+      "mean_ms": 67.67086832660827,
+      "p99_ms": 155.71765206084822,
+      "max_ms": 196.54370298667345,
+      "over_budget": 0,
+      "over_budget_fraction": 0.0
+    },
+    "validation500/D-policy/D": {
+      "nonpass": 1215,
+      "forced_pass": 157,
+      "timeout_fallback": 0,
+      "depths": {
+        "4": 1215
+      },
+      "root_widths": {
+        "12": 1037,
+        "6": 16,
+        "11": 20,
+        "9": 26,
+        "4": 16,
+        "3": 17,
+        "1": 16,
+        "5": 13,
+        "8": 8,
+        "7": 18,
+        "2": 14,
+        "10": 14
+      },
+      "nodes": 1012843,
+      "calls_policy": 258867,
+      "calls_value": 748871,
+      "cache_hits": 18820,
+      "cold_load_seconds": [
+        0.002700008000829257,
+        0.0027590779936872423,
+        0.002774417996988632
+      ],
+      "warmup_seconds": [
+        0.0010169320012209937,
+        0.0010299830028088763,
+        0.0010630330070853233
+      ],
+      "moves": 1372,
+      "mean_ms": 183.37026914949612,
+      "p99_ms": 450.06159200085665,
+      "max_ms": 500.4804719937965,
+      "over_budget": 1,
+      "over_budget_fraction": 0.0007288629737609329
+    },
+    "validation500/D-policy/policy": {
+      "nonpass": 1214,
+      "forced_pass": 155,
+      "timeout_fallback": 0,
+      "depths": {
+        "0": 1214
+      },
+      "root_widths": {
+        "0": 1214
+      },
+      "nodes": 0,
+      "calls_policy": 0,
+      "calls_value": 0,
+      "cache_hits": 0,
+      "cold_load_seconds": [
+        0.002700008000829257,
+        0.0027590779936872423,
+        0.002774417996988632
+      ],
+      "warmup_seconds": [
+        0.0010169320012209937,
+        0.0010299830028088763,
+        0.0010630330070853233
+      ],
+      "moves": 1369,
+      "mean_ms": 0.8031833852104533,
+      "p99_ms": 2.0325153938028944,
+      "max_ms": 2.5194370100507513,
+      "over_budget": 0,
+      "over_budget_fraction": 0.0
+    },
+    "validation500/E-A/E": {
+      "nonpass": 1203,
+      "forced_pass": 153,
+      "timeout_fallback": 0,
+      "depths": {
+        "4": 1203
+      },
+      "root_widths": {
+        "4": 1151,
+        "1": 15,
+        "3": 14,
+        "2": 23
+      },
+      "nodes": 355242,
+      "calls_policy": 93195,
+      "calls_value": 261728,
+      "cache_hits": 0,
+      "cold_load_seconds": [
+        0.0028352179942885414,
+        0.002706257000681944,
+        0.00259883698890917
+      ],
+      "warmup_seconds": [
+        0.0010455029987497255,
+        0.0010357730061514303,
+        0.0010252329957438633
+      ],
+      "moves": 1356,
+      "mean_ms": 65.14829428880928,
+      "p99_ms": 149.57212939916653,
+      "max_ms": 170.61477300012484,
+      "over_budget": 0,
+      "over_budget_fraction": 0.0
+    },
+    "validation500/E-A/A": {
+      "nonpass": 1197,
+      "forced_pass": 157,
+      "timeout_fallback": 0,
+      "depths": {
+        "2": 13,
+        "4": 1184
+      },
+      "root_widths": {
+        "0": 1197
+      },
+      "nodes": 354780,
+      "calls_policy": 0,
+      "calls_value": 0,
+      "cache_hits": 0,
+      "cold_load_seconds": [
+        0.0028352179942885414,
+        0.002706257000681944,
+        0.00259883698890917
+      ],
+      "warmup_seconds": [
+        0.0010455029987497255,
+        0.0010357730061514303,
+        0.0010252329957438633
+      ],
+      "moves": 1354,
+      "mean_ms": 180.3613070193746,
+      "p99_ms": 495.5147304464481,
+      "max_ms": 501.3242890127003,
+      "over_budget": 13,
+      "over_budget_fraction": 0.009601181683899557
+    }
+  },
+  "unrecorded_old_A_calls": "not available, zero fields are not measured calls"
+}

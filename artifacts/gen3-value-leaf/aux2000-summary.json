@@ -1,0 +1,109 @@
+{
+  "point": 0.45833333333333326,
+  "point_ci95": [
+    0.35416666666666663,
+    0.5416666666666666
+  ],
+  "point_ci_bonferroni2": [
+    0.3333333333333333,
+    0.5625
+  ],
+  "difference": -1.75,
+  "difference_ci95": [
+    -3.020833333333333,
+    -0.14583333333333337
+  ],
+  "by_seed": {
+    "1751401": {
+      "games": 16,
+      "wins": 7,
+      "draws": 0,
+      "losses": 9,
+      "point": 0.4375,
+      "difference": -1.8125
+    },
+    "1751402": {
+      "games": 16,
+      "wins": 6,
+      "draws": 1,
+      "losses": 9,
+      "point": 0.40625,
+      "difference": -2.25
+    },
+    "1751403": {
+      "games": 16,
+      "wins": 8,
+      "draws": 1,
+      "losses": 7,
+      "point": 0.53125,
+      "difference": -1.1875
+    }
+  },
+  "by_seat": {
+    "0": {
+      "games": 24,
+      "wins": 11,
+      "draws": 2,
+      "losses": 11,
+      "point": 0.5,
+      "difference": -0.8333333333333334
+    },
+    "1": {
+      "games": 24,
+      "wins": 10,
+      "draws": 0,
+      "losses": 14,
+      "point": 0.4166666666666667,
+      "difference": -2.6666666666666665
+    }
+  },
+  "time": {
+    "D": {
+      "mean_ms": 193.65623786291414,
+      "p99_ms": 478.4834209588007,
+      "max_ms": 526.131972001167,
+      "over_budget": 0,
+      "moves": 663,
+      "fallback": 0.11613876319758673,
+      "depths": {
+        "0": 77,
+        "2": 0,
+        "4": 586
+      },
+      "widths": {
+        "0": 77,
+        "4": 8,
+        "8": 6,
+        "12": 510
+      },
+      "nonpass_wide_fraction": 0.9112627986348123,
+      "nn_policy_calls": 127820,
+      "nn_value_calls": 375010,
+      "cache_hits": 9069
+    },
+    "A": {
+      "mean_ms": 193.34234374124446,
+      "p99_ms": 562.4113358312754,
+      "max_ms": 633.0821070005186,
+      "over_budget": 0,
+      "moves": 669,
+      "fallback": 0.09118086696562033,
+      "depths": {
+        "0": 61,
+        "2": 0,
+        "4": 608
+      },
+      "widths": {
+        "0": 669,
+        "4": 0,
+        "8": 0,
+        "12": 0
+      },
+      "nonpass_wide_fraction": 0.0,
+      "nn_policy_calls": 0,
+      "nn_value_calls": 0,
+      "cache_hits": 0
+    }
+  },
+  "wall_seconds": 257.75420319901605
+}
