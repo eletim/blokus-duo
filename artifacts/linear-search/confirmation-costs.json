@@ -1,0 +1,96 @@
+{
+  "B/gen3": {
+    "left": {
+      "moves": 10358,
+      "target_complete": 1.0,
+      "greedy_fallback": 0.0,
+      "ms_quantiles": [
+        23.25662999646738,
+        37.949563705478795,
+        42.46497950254707,
+        45.232346004922874
+      ],
+      "overshoots": 0,
+      "depths": {
+        "0": 0,
+        "2": 10358,
+        "4": 0
+      },
+      "mean_nodes": 204.48561498358757,
+      "stage_fallback": 0.0,
+      "overshoot_fraction": 0.0,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_completed_roots": 20.733635837034175,
+      "mean_reply_edges": 177.9071249275922,
+      "mean_input_ms": 0.9730932573639803,
+      "mean_value_ms": 20.078398325793263
+    }
+  },
+  "B/A": {
+    "left": {
+      "moves": 11036,
+      "target_complete": 0.9998187749184487,
+      "greedy_fallback": 9.061254077564335e-05,
+      "ms_quantiles": [
+        22.17660850874381,
+        37.929073499981314,
+        42.52644499647431,
+        157.27124799741432
+      ],
+      "overshoots": 1,
+      "depths": {
+        "0": 1,
+        "2": 11035,
+        "4": 0
+      },
+      "mean_nodes": 201.80518303733237,
+      "stage_fallback": 9.061254077564335e-05,
+      "overshoot_fraction": 9.061254077564335e-05,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        57.27124799741432
+      ],
+      "mean_completed_roots": 20.713845596230517,
+      "mean_reply_edges": 175.26812250815513,
+      "mean_input_ms": 0.8859418257783916,
+      "mean_value_ms": 19.442194797928007
+    },
+    "right": {
+      "moves": 10714,
+      "target_complete": 0.9999066641777115,
+      "greedy_fallback": 9.333582228859437e-05,
+      "ms_quantiles": [
+        2.175711008021608,
+        3.68688629969256,
+        4.309811472485314,
+        107.607686004485
+      ],
+      "overshoots": 1,
+      "depths": {
+        "0": 1,
+        "2": 10713,
+        "4": 0
+      },
+      "mean_nodes": 22.83274220645884,
+      "stage_fallback": 0.0,
+      "overshoot_fraction": 9.333582228859437e-05,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        7.607686004485004
+      ],
+      "mean_completed_roots": 5.853089415717752,
+      "mean_reply_edges": 16.979652790741085,
+      "mean_input_ms": 0.2327920109932636,
+      "mean_value_ms": 1.8489201003137743
+    }
+  }
+}

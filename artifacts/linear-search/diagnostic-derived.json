@@ -1,0 +1,442 @@
+{
+  "independent_games": 24,
+  "active_states": 68,
+  "rates": {
+    "root_change": 0.5441176470588235,
+    "reply_change": 0.16176470588235295,
+    "both_change": 0.5735294117647058,
+    "outside": 0.5588235294117647,
+    "root_value_gain": 0.05609503131659139,
+    "reply_value_drop": 0.013660023937563758,
+    "any_reply_changes": 0.6029411764705882,
+    "strict_root_gain": 0.5294117647058824,
+    "changed_without_root_gain": 0.014705882352941176,
+    "narrow_all_tied": 0.0
+  },
+  "by_phase": {
+    "8": {
+      "root_change": 0.6666666666666666,
+      "reply_change": 0.16666666666666666,
+      "both_change": 0.7916666666666666,
+      "outside": 0.75,
+      "root_value_gain": 0.013692149454949334,
+      "reply_value_drop": 0.012504848541302682,
+      "any_reply_changes": 0.7083333333333334,
+      "strict_root_gain": 0.6666666666666666,
+      "changed_without_root_gain": 0.0,
+      "narrow_all_tied": 0.0
+    },
+    "18": {
+      "root_change": 0.7083333333333334,
+      "reply_change": 0.2916666666666667,
+      "both_change": 0.6666666666666666,
+      "outside": 0.6666666666666666,
+      "root_value_gain": 0.10556527317274116,
+      "reply_value_drop": 0.02303423453600137,
+      "any_reply_changes": 0.7916666666666666,
+      "strict_root_gain": 0.6666666666666666,
+      "changed_without_root_gain": 0.041666666666666664,
+      "narrow_all_tied": 0.0
+    },
+    "28": {
+      "root_change": 0.2,
+      "reply_change": 0.0,
+      "both_change": 0.2,
+      "outside": 0.2,
+      "root_value_gain": 0.04761419932318216,
+      "reply_value_drop": 0.003797181694951917,
+      "any_reply_changes": 0.25,
+      "strict_root_gain": 0.2,
+      "changed_without_root_gain": 0.0,
+      "narrow_all_tied": 0.0
+    }
+  },
+  "costs": {
+    "25/A/instance-cold": {
+      "moves": 68,
+      "target_complete": 1.0,
+      "greedy_fallback": 0.0,
+      "ms_quantiles": [
+        2.114075999998022,
+        3.57741299958434,
+        3.8707767934829462,
+        3.9359410002361983
+      ],
+      "overshoots": 0,
+      "depths": {
+        "0": 0,
+        "2": 68,
+        "4": 0
+      },
+      "mean_nodes": 23.279411764705884,
+      "stage_fallback": 0.0,
+      "overshoot_fraction": 0.0,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_completed_roots": 6.0,
+      "mean_reply_edges": 17.279411764705884,
+      "mean_input_ms": 0.21642283536493778,
+      "mean_value_ms": 1.8640336726521662
+    },
+    "25/A/warm": {
+      "moves": 68,
+      "target_complete": 1.0,
+      "greedy_fallback": 0.0,
+      "ms_quantiles": [
+        2.0877310016658157,
+        3.490410999802407,
+        3.798943932924885,
+        3.8973810005700216
+      ],
+      "overshoots": 0,
+      "depths": {
+        "0": 0,
+        "2": 68,
+        "4": 0
+      },
+      "mean_nodes": 23.279411764705884,
+      "stage_fallback": 0.0,
+      "overshoot_fraction": 0.0,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_completed_roots": 6.0,
+      "mean_reply_edges": 17.279411764705884,
+      "mean_input_ms": 0.2114301164778333,
+      "mean_value_ms": 1.842955705583068
+    },
+    "25/B/instance-cold": {
+      "moves": 68,
+      "target_complete": 0.6470588235294118,
+      "greedy_fallback": 0.0,
+      "ms_quantiles": [
+        22.104707997641526,
+        24.7012149906368,
+        24.733383599086665,
+        24.752090001129545
+      ],
+      "overshoots": 0,
+      "depths": {
+        "0": 0,
+        "2": 68,
+        "4": 0
+      },
+      "mean_nodes": 184.39705882352942,
+      "stage_fallback": 0.35294117647058826,
+      "overshoot_fraction": 0.0,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_completed_roots": 15.176470588235293,
+      "mean_reply_edges": 159.47058823529412,
+      "mean_input_ms": 0.769006262999028,
+      "mean_value_ms": 16.594439792457063
+    },
+    "25/B/warm": {
+      "moves": 68,
+      "target_complete": 0.6470588235294118,
+      "greedy_fallback": 0.0,
+      "ms_quantiles": [
+        22.08354299364146,
+        24.726133300282527,
+        24.7492563247215,
+        24.756761005846784
+      ],
+      "overshoots": 0,
+      "depths": {
+        "0": 0,
+        "2": 68,
+        "4": 0
+      },
+      "mean_nodes": 184.5,
+      "stage_fallback": 0.35294117647058826,
+      "overshoot_fraction": 0.0,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_completed_roots": 15.176470588235293,
+      "mean_reply_edges": 159.55882352941177,
+      "mean_input_ms": 0.7707219314504661,
+      "mean_value_ms": 16.589740216766266
+    },
+    "25/C/instance-cold": {
+      "moves": 68,
+      "target_complete": 0.6470588235294118,
+      "greedy_fallback": 0.0,
+      "ms_quantiles": [
+        19.61008099897299,
+        24.709278298541903,
+        24.753025226091268,
+        24.755391001235694
+      ],
+      "overshoots": 0,
+      "depths": {
+        "0": 0,
+        "2": 24,
+        "4": 44
+      },
+      "mean_nodes": 213.6764705882353,
+      "stage_fallback": 0.35294117647058826,
+      "overshoot_fraction": 0.0,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_completed_roots": 6.0,
+      "mean_reply_edges": 202.0735294117647,
+      "mean_input_ms": 1.9896766207239125,
+      "mean_value_ms": 14.059469618480174
+    },
+    "25/C/warm": {
+      "moves": 68,
+      "target_complete": 0.6470588235294118,
+      "greedy_fallback": 0.0,
+      "ms_quantiles": [
+        19.609285503975116,
+        24.70503899967298,
+        24.74732980102999,
+        24.747570991166867
+      ],
+      "overshoots": 0,
+      "depths": {
+        "0": 0,
+        "2": 24,
+        "4": 44
+      },
+      "mean_nodes": 214.11764705882354,
+      "stage_fallback": 0.35294117647058826,
+      "overshoot_fraction": 0.0,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_completed_roots": 6.0,
+      "mean_reply_edges": 202.48529411764707,
+      "mean_input_ms": 1.9830342126250102,
+      "mean_value_ms": 14.046570269034847
+    },
+    "100/A/instance-cold": {
+      "moves": 68,
+      "target_complete": 1.0,
+      "greedy_fallback": 0.0,
+      "ms_quantiles": [
+        2.0803255029022694,
+        3.523591005068738,
+        3.7040739312942605,
+        3.777051009819843
+      ],
+      "overshoots": 0,
+      "depths": {
+        "0": 0,
+        "2": 68,
+        "4": 0
+      },
+      "mean_nodes": 23.279411764705884,
+      "stage_fallback": 0.0,
+      "overshoot_fraction": 0.0,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_completed_roots": 6.0,
+      "mean_reply_edges": 17.279411764705884,
+      "mean_input_ms": 0.21379333830897368,
+      "mean_value_ms": 1.8439117486516754
+    },
+    "100/A/warm": {
+      "moves": 68,
+      "target_complete": 1.0,
+      "greedy_fallback": 0.0,
+      "ms_quantiles": [
+        2.1027910042903386,
+        3.511192003497854,
+        3.654412666510325,
+        3.6620500031858683
+      ],
+      "overshoots": 0,
+      "depths": {
+        "0": 0,
+        "2": 68,
+        "4": 0
+      },
+      "mean_nodes": 23.279411764705884,
+      "stage_fallback": 0.0,
+      "overshoot_fraction": 0.0,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_completed_roots": 6.0,
+      "mean_reply_edges": 17.279411764705884,
+      "mean_input_ms": 0.2105601190979702,
+      "mean_value_ms": 1.8431915456911905
+    },
+    "100/B/instance-cold": {
+      "moves": 68,
+      "target_complete": 1.0,
+      "greedy_fallback": 0.0,
+      "ms_quantiles": [
+        22.240888501983136,
+        36.67582430934999,
+        38.039705128903734,
+        38.13548899779562
+      ],
+      "overshoots": 0,
+      "depths": {
+        "0": 0,
+        "2": 68,
+        "4": 0
+      },
+      "mean_nodes": 209.05882352941177,
+      "stage_fallback": 0.0,
+      "overshoot_fraction": 0.0,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_completed_roots": 21.529411764705884,
+      "mean_reply_edges": 181.52941176470588,
+      "mean_input_ms": 0.8914812777434503,
+      "mean_value_ms": 19.9483247460568
+    },
+    "100/B/warm": {
+      "moves": 68,
+      "target_complete": 1.0,
+      "greedy_fallback": 0.0,
+      "ms_quantiles": [
+        22.131598001578823,
+        36.60636029817397,
+        38.4602172972518,
+        38.625579996732995
+      ],
+      "overshoots": 0,
+      "depths": {
+        "0": 0,
+        "2": 68,
+        "4": 0
+      },
+      "mean_nodes": 209.05882352941177,
+      "stage_fallback": 0.0,
+      "overshoot_fraction": 0.0,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_completed_roots": 21.529411764705884,
+      "mean_reply_edges": 181.52941176470588,
+      "mean_input_ms": 0.893917111277594,
+      "mean_value_ms": 19.911627565306844
+    },
+    "100/C/instance-cold": {
+      "moves": 68,
+      "target_complete": 1.0,
+      "greedy_fallback": 0.0,
+      "ms_quantiles": [
+        19.914056996640284,
+        34.01609230786562,
+        35.562053677858785,
+        36.70118500303943
+      ],
+      "overshoots": 0,
+      "depths": {
+        "0": 0,
+        "2": 0,
+        "4": 68
+      },
+      "mean_nodes": 236.11764705882354,
+      "stage_fallback": 0.0,
+      "overshoot_fraction": 0.0,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_completed_roots": 6.0,
+      "mean_reply_edges": 224.11764705882354,
+      "mean_input_ms": 2.296401444790022,
+      "mean_value_ms": 16.307307999822488
+    },
+    "100/C/warm": {
+      "moves": 68,
+      "target_complete": 1.0,
+      "greedy_fallback": 0.0,
+      "ms_quantiles": [
+        19.547635507478844,
+        33.65630499756662,
+        35.333416351350024,
+        36.51147399796173
+      ],
+      "overshoots": 0,
+      "depths": {
+        "0": 0,
+        "2": 0,
+        "4": 68
+      },
+      "mean_nodes": 236.11764705882354,
+      "stage_fallback": 0.0,
+      "overshoot_fraction": 0.0,
+      "overshoot_ms_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_completed_roots": 6.0,
+      "mean_reply_edges": 224.11764705882354,
+      "mean_input_ms": 2.286438509626725,
+      "mean_value_ms": 16.232264602020972
+    }
+  },
+  "micro": {
+    "8": {
+      "legal_python_ms": 0.6533202479962105,
+      "features_python_ms": 0.7299632482803039,
+      "native_fused_ms": 0.06390491701798358,
+      "value_ms": 0.18863199875340797,
+      "candidates": 474.9166666666667
+    },
+    "18": {
+      "legal_python_ms": 0.8717057911174683,
+      "features_python_ms": 0.19475087538012303,
+      "native_fused_ms": 0.03760429171961732,
+      "value_ms": 0.1296213734652459,
+      "candidates": 114.54166666666667
+    },
+    "28": {
+      "legal_python_ms": 0.47774183258297853,
+      "features_python_ms": 0.030210458135115914,
+      "native_fused_ms": 0.02167341760165679,
+      "value_ms": 0.08119429003272671,
+      "candidates": 13.333333333333334
+    }
+  },
+  "cold_definition": "new search instance; native module/model already warm; process cold separately measured",
+  "micro_note": "Python legal/feature alternatives and native fused legal+feature are overlapping measurements; value includes two scans and region features",
+  "wall": 14.898485291007091
+}

@@ -1,0 +1,32 @@
+{
+  "format": "frozen-linear-completed-search-candidate-v1",
+  "status": "confirmed stronger than narrow hybrid; below gen3; research CPU candidate only",
+  "base_commit": "ec64667df3259b677ad31b95383012df946ec002",
+  "ms": 100,
+  "base_root": 6,
+  "base_reply": 3,
+  "target_root": 24,
+  "target_reply": 8,
+  "depth": 2,
+  "seeds": [
+    3101,
+    3102,
+    3103
+  ],
+  "models": [
+    {
+      "path": "artifacts/linear-hybrid/exports/seed-3101.json",
+      "sha256": "3905f6b7ed5cf04caf2f3caecc73e25eea86f19f87bc0f4eaa41399726b6ff17"
+    },
+    {
+      "path": "artifacts/linear-hybrid/exports/seed-3102.json",
+      "sha256": "14c620fef96259d13cb56426b65515ee251f1ab341563e82431e7bb54f42981b"
+    },
+    {
+      "path": "artifacts/linear-hybrid/exports/seed-3103.json",
+      "sha256": "2149be7551bcd9ac28bee667de850651595b407079b4052c29d52f6067aed76b"
+    }
+  ],
+  "fallback": "last all-root-completed stage; otherwise policy greedy",
+  "learned_this_experiment": false
+}

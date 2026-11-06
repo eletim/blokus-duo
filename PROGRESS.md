@@ -247,3 +247,12 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 - 混成/前回探索52.60%、補正CI49.09–56.05%、改善確証なし。/gen3 34.31%、得点差−4.43、公開AI未達。/旧単体79.36%。混成2.02ms、前回探索2.37ms、gen3 .323ms。
 - 全3840評価局を再生・算術・分離監査。全101tests、CPU-only export/人間先後CLI確認。今回追加学習0、再学習条件はvalidationで未成立。確認で再選択しない。
 - main/Web/最小統合候補abc41cf維持。詳細 artifacts/linear-hybrid/REPORT.md。
+
+## 非NN探索の幅・深さ（新規研究、2026-11-06）
+研究branch research/linear-search-width-depth、元混成ec64667固定。artifacts/linear-search/PLAN.mdにA6x3/2ply、B24x8/2ply、C6x3/4ply、段階完了fallback、費用pilotから25/100ms決定、validation gateと2主比較family CIを事前記録。学習なし。main/Webは変更しない。初回pilotの保存state参照共有をhash照合で発見し、無効出力を保全してdeepcopy修正、validation前に再測定中。
+
+幅/深さpilot有効版は24独立ゲーム72保存局面。25msの追加段階完成率B/C各66.7%、100ms各100%、事前規則で100ms固定。探索テスト4件初回PASS（追加回帰テストは最終全体テストで実行）。validation32prefix×3seed先後、各192局: A/gen3 .29948、B/gen3 .36719、C/gen3 .30729、B/A .578125、C/A .572917。旧6ms/gen3 .29948。両候補gate通過、gen3 point優先でB一つを固定しfresh128prefix確認を開始。これは同一100ms上限で実時間同等ではない。学習/モデル変更0。
+
+確認128prefix×3seed先後が完了。B/A 450勝45分273敗、point61.523%、Bonferroni2 CI[57.813,65.169]%、得点差+2.092。B/gen3 231勝30分507敗、32.031%、補正CI[28.646,35.482]%、得点差−4.863。非NN狭幅からの改善は確認、gen3未達・main推奨維持。全2688対局座標oracle/算術/hash監査PASS、108testsPASS。元訓練3,478,157状態と重複0、追加事後PPO indexとも重複0。warm B約20ms、cold初回606–625ms、warmでも単発157ms超過1件を保持。CPU-only CLI完走。REPORT/最小候補patchを仕上げ、研究branchのみpush予定。
+
+最小候補をintegration/linear-search-candidate 4276c8af50461f13110b329973359604a22d07a0として保存。元export3本はbyte一致。main未適用。新対戦24ファイル2688局はraw SHAを保存したgzip化で約13MB、可逆性/再実行時のarchive冪等性も確認。

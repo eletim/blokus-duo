@@ -1,0 +1,447 @@
+diff --git a/blokus/linear_play2.py b/blokus/linear_play2.py
+index c8eeff3..4768a15 100644
+--- a/blokus/linear_play2.py
++++ b/blokus/linear_play2.py
+@@ -1,11 +1,12 @@
+ """CPU-only non-neural policy/value inference, optional bounded minimax."""
+ import argparse,json,random
+ from .linear_value import Agent,Search
++from .linear_tree import CompletedSearch
+ from .engine import State,play
+ 
+ def main():
+- p=argparse.ArgumentParser();p.add_argument('--checkpoint',required=True);p.add_argument('--opponent-checkpoint');p.add_argument('--value-checkpoint',help='explicit v2 value source; policy weights remain from --checkpoint');p.add_argument('--backend',choices=['python','native'],default='python');p.add_argument('--search-ms',type=float,default=0);p.add_argument('--human-seat',type=int,choices=[0,1]);p.add_argument('--seed',type=int,default=1);a=p.parse_args()
+- model=Agent.load_pair(a.checkpoint,a.value_checkpoint,a.backend) if a.value_checkpoint else Agent.load(a.checkpoint,a.backend);bot=Search(model,ms=a.search_ms) if a.search_ms else model;other=Agent.load(a.opponent_checkpoint,a.backend) if a.opponent_checkpoint else Agent('old',backend=a.backend);s=State();rng=random.Random(a.seed);moves=[]
++ p=argparse.ArgumentParser();p.add_argument('--checkpoint',required=True);p.add_argument('--opponent-checkpoint');p.add_argument('--value-checkpoint',help='explicit v2 value source; policy weights remain from --checkpoint');p.add_argument('--backend',choices=['python','native'],default='python');p.add_argument('--search-ms',type=float,default=0);p.add_argument('--human-seat',type=int,choices=[0,1]);p.add_argument('--seed',type=int,default=1);p.add_argument('--completed-search',action='store_true');p.add_argument('--root-width',type=int,default=6);p.add_argument('--reply-width',type=int,default=3);p.add_argument('--depth',type=int,choices=[2,4],default=2);a=p.parse_args()
++ model=Agent.load_pair(a.checkpoint,a.value_checkpoint,a.backend) if a.value_checkpoint else Agent.load(a.checkpoint,a.backend);bot=(CompletedSearch(model,ms=a.search_ms,width=a.root_width,replies=a.reply_width,depth=a.depth) if a.completed_search else Search(model,ms=a.search_ms)) if a.search_ms else model;other=Agent.load(a.opponent_checkpoint,a.backend) if a.opponent_checkpoint else Agent('old',backend=a.backend);s=State();rng=random.Random(a.seed);moves=[]
+  try:
+   while not s.done:
+    if s.turn==a.human_seat:
+diff --git a/blokus/linear_tree.py b/blokus/linear_tree.py
+new file mode 100644
+index 0000000..4a861aa
+--- /dev/null
++++ b/blokus/linear_tree.py
+@@ -0,0 +1,65 @@
++"""Completed-stage selective negamax; frozen non-neural policy and WDL value."""
++import copy,time
++import numpy as np
++from .engine import play
++from .linear_value import Search,outcome
++
++class CompletedSearch(Search):
++ def __init__(self,agent,ms=25,width=6,replies=3,depth=2,base_width=6,base_replies=3,node_limit=None):
++  super().__init__(agent,ms,width,replies,depth)
++  if depth not in (2,4):raise ValueError('completed search depth must be 2 or 4')
++  for n in (base_width,base_replies):
++   if n is not None and (not isinstance(n,int) or n<1):raise ValueError('invalid base width')
++  self.base_width=base_width;self.base_replies=base_replies;self.node_limit=node_limit
++ def act(self,s,rng):
++  begin=time.perf_counter();deadline=begin+self.ms/1000 if self.ms else float('inf')
++  nodes=0;input_s=0.;value_s=0.;input_max=.0002;value_max=.0002;reply_count=0
++  def guard(cost=0.):
++   if time.perf_counter()+cost+.0002>=deadline:raise TimeoutError
++  def inputs(t):
++   nonlocal input_s,input_max
++   q=time.perf_counter();r=self.agent.inputs(t);dt=time.perf_counter()-q;input_s+=dt;input_max=max(input_max,dt);return r
++  x,qs,p=inputs(s)
++  if not qs:
++   self.stats.append(dict(ms=(time.perf_counter()-begin)*1000,forced_pass=True,complete=True,fallback=False,depth=0,nodes=0));return None
++  scores=x@self.agent.weights[p];baseline=qs[int(rng.choice(np.flatnonzero(scores>=scores.max()-1e-7)))].move
++  ordered=[qs[i].move for i in np.argsort(-scores,kind='stable')]
++  def roots(width):
++   r=ordered[:width] if width else ordered[:]
++   if baseline not in r:r[-1]=baseline
++   assert len(set(r))==len(r)
++   return r
++  def visit(t,d,replies):
++   nonlocal nodes,value_s,value_max,reply_count
++   guard()
++   if self.node_limit is not None and nodes>=self.node_limit:raise TimeoutError
++   nodes+=1
++   if t.done:return outcome(t,t.turn)
++   if d==0:
++    guard(value_max);q=time.perf_counter();v=self.agent.value(t);dt=time.perf_counter()-q;value_s+=dt;value_max=max(value_max,dt);return v
++   guard(input_max);a,c,k=inputs(t)
++   ids=np.argsort(-(a@self.agent.weights[k]),kind='stable') if c else []
++   moves=[c[i].move for i in (ids[:replies] if replies else ids)] if c else [None]
++   best=-float('inf')
++   for m in moves:
++    guard();child=copy.deepcopy(t);play(child,m,validate=False);reply_count+=1;best=max(best,-visit(child,d-1,replies))
++   return best
++  stages=[(self.base_width,self.base_replies,2)]
++  if (self.width,self.replies,self.depth)!=stages[0]:stages.append((self.width,self.replies,self.depth))
++  completed=[];attempts=[];move=baseline;chosen_values=[];chosen_roots=[]
++  for width,replies,depth in stages:
++   rr=roots(width);values=[];ok=False
++   try:
++    for m in rr:
++     guard();child=copy.deepcopy(s);play(child,m,validate=False);values.append(-visit(child,depth-1,replies))
++    if time.perf_counter()>deadline:raise TimeoutError
++    ok=True
++   except TimeoutError:pass
++   attempts.append(dict(depth=depth,width=width,replies=replies,roots=len(rr),completed_roots=len(values),complete=ok))
++   if not ok:break
++   # Consume a selection draw only once, after final completed stage.
++   completed.append(attempts[-1]);chosen_values=values;chosen_roots=rr
++  if completed:move=chosen_roots[int(rng.choice(np.flatnonzero(np.asarray(chosen_values)>=max(chosen_values)-1e-12)))]
++  elapsed=(time.perf_counter()-begin)*1000;last=completed[-1] if completed else {}
++  self.stats.append(dict(ms=elapsed,nodes=nodes,fallback=not completed,complete=bool(completed),depth=last.get('depth',0),root_width=last.get('width'),reply_width=last.get('replies'),root_candidates=len(chosen_roots),completed_roots=len(chosen_values),legal_candidates=len(qs),values=chosen_values,roots=[[m.piece,m.orientation,m.row,m.col] for m in chosen_roots],attempts=attempts,target_complete=len(completed)==len(stages),overshoot=self.ms>0 and elapsed>self.ms,overshoot_ms=max(0.,elapsed-self.ms) if self.ms else 0.,input_ms=input_s*1000,value_ms=value_s*1000,replies_evaluated=reply_count,baseline=[baseline.piece,baseline.orientation,baseline.row,baseline.col]))
++  return move
+diff --git a/tests/test_linear_tree.py b/tests/test_linear_tree.py
+new file mode 100644
+index 0000000..f3cffc5
+--- /dev/null
++++ b/tests/test_linear_tree.py
+@@ -0,0 +1,84 @@
++import copy,random
++import numpy as np
++import pytest
++from blokus.engine import State,play,legal_moves
++from blokus.linear_value import Agent,Search,outcome
++from blokus.linear_tree import CompletedSearch
++
++def exact(s):
++ # Independent coordinate-set exhaustive solver for monomino-only endings.
++ # These tests deliberately do not use engine legal_moves, play, or score here.
++ from blokus.engine import Move,cells_of
++ assert all(b in (0,1) for b in s.remaining)
++ def solve(boards,left,last,turn,passes):
++  if passes>=2:
++   scores=[(20 if last[p]==0 else 15) if left[p]==0 else -1 for p in (0,1)]
++   d=scores[turn]-scores[1-turn];return float((d>0)-(d<0)),{None}
++  own,opp=boards[turn],boards[1-turn];moves=[]
++  if left[turn]:
++   for r in range(14):
++    for c in range(14):
++     if (r,c) in own|opp:continue
++     if any((r+dr,c+dc) in own for dr,dc in ((1,0),(-1,0),(0,1),(0,-1))):continue
++     if (not own and (r,c)==((4,4),(9,9))[turn]) or (own and any((r+dr,c+dc) in own for dr,dc in ((1,1),(1,-1),(-1,1),(-1,-1)))):moves.append(Move(0,0,r,c))
++  if not moves:moves=[None]
++  values=[]
++  for m in moves:
++   b=[set(x) for x in boards];l=left.copy();la=last.copy();pa=passes+1
++   if m is not None:b[turn].add((m.row,m.col));l[turn]=0;la[turn]=0;pa=0
++   values.append(-solve(b,l,la,1-turn,pa)[0])
++  return max(values),{m for m,v in zip(moves,values) if v==max(values)}
++ return solve([set(cells_of(x)) for x in s.boards],s.remaining.copy(),s.last.copy(),s.turn,s.passes)
++
++def test_exact_terminal_pass_and_same_player_continuation():
++ a=Agent('old')
++ for s in [State(remaining=[1,1]),State(remaining=[1,0],last=[None,1]),State(remaining=[0,0],last=[0,1])]:
++  before=copy.deepcopy(s)
++  if not legal_moves(s):
++   b=CompletedSearch(a,ms=0,width=None,replies=None,depth=4,base_width=None,base_replies=None);assert b.act(s,random.Random(1)) is None
++   t=copy.deepcopy(s);play(t,None);assert t.turn!=s.turn
++   if not t.done:play(t,None) if not legal_moves(t) else None
++  else:
++   v,best=exact(s);b=CompletedSearch(a,ms=0,width=None,replies=None,depth=4,base_width=None,base_replies=None);m=b.act(s,random.Random(1));assert m in best and max(b.stats[-1]['values'])==v
++  assert s==before
++ s=State(remaining=[0,0],last=[0,1],passes=2);assert a.value(s)==1; s.turn=1;assert a.value(s)==-1
++
++def test_completed_stage_fallback_and_no_state_mutation():
++ s=State();a=Agent('old');before=copy.deepcopy(s)
++ base=CompletedSearch(a,ms=0);m=base.act(s,random.Random(4));n=base.stats[-1]['nodes']
++ deeper=CompletedSearch(a,ms=0,depth=4,node_limit=n);assert deeper.act(s,random.Random(4))==m
++ stat=deeper.stats[-1];assert stat['depth']==2 and not stat['target_complete'] and stat['values']==base.stats[-1]['values']
++ tiny=CompletedSearch(a,ms=.000001);assert tiny.act(s,random.Random(4))==a.act(s,random.Random(4));assert tiny.stats[-1]['fallback'] and tiny.stats[-1]['values']==[]
++ assert s==before
++
++def test_fixed_tree_matches_legacy_without_pruning():
++ s=State();a=Agent('old');rng=random.Random(123)
++ for _ in range(20):play(s,a.act(s,rng))
++ for w,r in [(6,3),(24,8)]:
++  old=Search(a,ms=0,width=w,replies=r);new=CompletedSearch(a,ms=0,width=w,replies=r,base_width=w,base_replies=r)
++  old.act(s,random.Random(0));new.act(s,random.Random(0));assert old.stats[-1]['values']==new.stats[-1]['values']
++  stat=new.stats[-1];assert stat['baseline'] in stat['roots'] and len({tuple(x) for x in stat['roots']})==len(stat['roots'])
++
++def test_greedy_near_tie_not_dropped():
++ a=Agent('old');a.weights[:]=0;s=State();b=CompletedSearch(a,ms=0,width=1,replies=1,base_width=1,base_replies=1);b.act(s,random.Random(89));assert b.stats[-1]['baseline'] in b.stats[-1]['roots']
++ with pytest.raises(ValueError):CompletedSearch(a,depth=3)
++
++def test_wide_stage_partial_results_are_discarded():
++ a=Agent('old');s=State();base=CompletedSearch(a,ms=0);m=base.act(s,random.Random(7))
++ wide=CompletedSearch(a,ms=0,width=24,replies=8,node_limit=base.stats[-1]['nodes']+10)
++ assert wide.act(s,random.Random(7))==m
++ assert wide.stats[-1]['values']==base.stats[-1]['values'] and wide.stats[-1]['root_width']==6 and not wide.stats[-1]['target_complete']
++
++def test_saved_position_deepcopy_regression():
++ from blokus.linear_train2 import state_hash
++ s=State();saved=copy.deepcopy([s.boards,s.remaining,s.last,s.turn,s.passes]);h=state_hash(s)
++ play(s,Agent('old').act(s,random.Random(4)))
++ assert state_hash(State(*saved))==h and state_hash(s)!=h
++
++def test_depth_four_matches_separate_legacy_fixed_tree():
++ s=State();a=Agent('old');rng=random.Random(409)
++ for _ in range(20):play(s,a.act(s,rng))
++ old=Search(a,ms=0,width=2,replies=2,depth=4)
++ new=CompletedSearch(a,ms=0,width=2,replies=2,depth=4,base_width=2,base_replies=2)
++ old.act(s,random.Random(2));new.act(s,random.Random(2))
++ assert new.stats[-1]['depth']==4 and new.stats[-1]['values']==old.stats[-1]['values']
+diff --git a/artifacts/linear-hybrid/exports/seed-3101.json b/artifacts/linear-hybrid/exports/seed-3101.json
+new file mode 100644
+index 0000000..0077280
+--- /dev/null
++++ b/artifacts/linear-hybrid/exports/seed-3101.json
+@@ -0,0 +1,83 @@
++{
++  "format": "linear-outcome-v2",
++  "mode": "old",
++  "weights": [
++    [
++      15.974420780881672,
++      7.185184948012914,
++      4.131815501873548,
++      -1.8753303200056264,
++      3.4920671821190936,
++      1.0929661455926922,
++      4.185183515126121,
++      -3.0623906631528692,
++      -0.4731610328910352,
++      -0.22717113022447247
++    ],
++    [
++      20.808735136908247,
++      8.434636245838071,
++      2.9251839308923535,
++      1.0709467744941183,
++      3.2710559209572816,
++      1.397477477672102,
++      5.434633660151476,
++      0.31922560426010294,
++      -1.6070705374125798,
++      0.9769918637684656
++    ],
++    [
++      15.486773942635361,
++      7.490982436214161,
++      2.358020122851568,
++      1.8557082135933423,
++      1.0374065785097,
++      -1.1664846507939608,
++      4.49097527069925,
++      4.140677808731842,
++      -0.8099422943517582,
++      1.591610841644878
++    ]
++  ],
++  "value": [
++    [
++      1.4269443270141737,
++      0.3116043318921005,
++      0.10267779898490662,
++      0.11939219586043585,
++      0.8733923509878737,
++      -1.068981817449201,
++      0.36818562663553317,
++      0.29926726392155484
++    ],
++    [
++      2.8765258032762424,
++      0.9373273168745638,
++      -0.7246008378895891,
++      1.1488371282900196,
++      2.147644692803604,
++      -1.3328506615705606,
++      1.0568181993402095,
++      0.07115100636720892
++    ],
++    [
++      3.54555509024699,
++      2.7280847243004125,
++      -0.5761290186527446,
++      1.1015420101977267,
++      3.5109755918293857,
++      -0.9167179470413223,
++      1.153178102511348,
++      0.01715530375914433
++    ]
++  ],
++  "metadata": {
++    "policy_sha256": "46147be0f75889421f246cc7594324349d117c7beb391945e50f555a1935b3fe",
++    "value_sha256": "5daeaf5daa9ce5ba34cb36c648ad6a4d1230dba50b033c30e85979f3cc3f72e7",
++    "value_schema": "linear-outcome-v2/3x8/player-antisymmetric-mean-piece-phase",
++    "seed": 3101,
++    "policy_iteration": 1024,
++    "value_iteration": 1024,
++    "experimental": true
++  }
++}
+diff --git a/artifacts/linear-hybrid/exports/seed-3102.json b/artifacts/linear-hybrid/exports/seed-3102.json
+new file mode 100644
+index 0000000..db20472
+--- /dev/null
++++ b/artifacts/linear-hybrid/exports/seed-3102.json
+@@ -0,0 +1,83 @@
++{
++  "format": "linear-outcome-v2",
++  "mode": "old",
++  "weights": [
++    [
++      16.603781660169425,
++      5.642623972803563,
++      1.4842587036767458,
++      -3.3694441709291567,
++      2.8410577466183566,
++      -1.5077978941017012,
++      2.6426236721385883,
++      -4.848021231785031,
++      1.2999374212426618,
++      -1.1951753673312944
++    ],
++    [
++      20.354478658452805,
++      10.103775517059127,
++      1.6007389957093967,
++      0.607934786949294,
++      2.0417844695081064,
++      0.8093239384464118,
++      7.103772252887035,
++      0.1366202999021915,
++      -0.7119439245764585,
++      1.1214001928497745
++    ],
++    [
++      14.438805466536802,
++      8.352209065028298,
++      3.631059904857531,
++      0.18723479749063765,
++      3.6907953128518383,
++      -1.068961468471882,
++      5.352201410407336,
++      1.7751921347512456,
++      0.38419797647117965,
++      0.5689076591820644
++    ]
++  ],
++  "value": [
++    [
++      1.4943391683186753,
++      0.2553087564613312,
++      0.1951270105001431,
++      0.0826550922558539,
++      1.0921462528990722,
++      -1.2356020581220775,
++      0.35026780176358635,
++      0.09292977310918886
++    ],
++    [
++      2.8938274044089907,
++      1.0275205125544025,
++      -0.5501171260023301,
++      1.233634008208708,
++      2.290479062094847,
++      -1.2902784519403547,
++      1.272511961561832,
++      -0.006766112526495253
++    ],
++    [
++      3.7447180670450844,
++      2.8270964730138415,
++      -0.455167021427103,
++      1.029842328549914,
++      3.5454953537680947,
++      -1.2045163942788812,
++      1.0824897404261071,
++      -0.008750437683722093
++    ]
++  ],
++  "metadata": {
++    "policy_sha256": "7c3d645dadaa072857d7b26c972cde2e8fcbfab23e22c73fa5e1c97e7751e6f6",
++    "value_sha256": "f9f58fff07a6fcbb49ff91d8fd2f531a7bb69cb7fbb240b8b5f4bca50b50d5a7",
++    "value_schema": "linear-outcome-v2/3x8/player-antisymmetric-mean-piece-phase",
++    "seed": 3102,
++    "policy_iteration": 1024,
++    "value_iteration": 1024,
++    "experimental": true
++  }
++}
+diff --git a/artifacts/linear-hybrid/exports/seed-3103.json b/artifacts/linear-hybrid/exports/seed-3103.json
+new file mode 100644
+index 0000000..a06dfec
+--- /dev/null
++++ b/artifacts/linear-hybrid/exports/seed-3103.json
+@@ -0,0 +1,83 @@
++{
++  "format": "linear-outcome-v2",
++  "mode": "old",
++  "weights": [
++    [
++      17.137226628871097,
++      5.12755442744249,
++      1.5409807488180138,
++      -3.710994367794939,
++      5.780569709863244,
++      -0.3697476814516345,
++      2.1275540948413068,
++      -5.884835469443703,
++      0.6769488814700724,
++      -1.7376282514279102
++    ],
++    [
++      19.976585603932012,
++      8.002641147199741,
++      2.7981372330355625,
++      -1.1604705834474662,
++      3.314138001888569,
++      3.324362862090765,
++      5.00263936777069,
++      0.982708211896704,
++      -0.694729991772077,
++      -0.1253217509637139
++    ],
++    [
++      14.509307104699388,
++      8.485933159585642,
++      2.7298226608024505,
++      1.8929615985250505,
++      2.950712947850073,
++      0.6125737004795024,
++      5.485923675310532,
++      4.26367257337397,
++      0.472198934069556,
++      2.5247518714045496
++    ]
++  ],
++  "value": [
++    [
++      1.2430599196822452,
++      0.3057594683476202,
++      0.03859085414576989,
++      -0.010233515867282269,
++      0.8295301041946291,
++      -1.1209286078145544,
++      0.5355366428083401,
++      0.22295667713837233
++    ],
++    [
++      2.7826732474977813,
++      1.0539074144478473,
++      -0.609950457049692,
++      1.2378212308848733,
++      2.294353611276576,
++      -1.3138044627576102,
++      1.2861425648135538,
++      0.07465527850752135
++    ],
++    [
++      3.824442206116181,
++      2.843759363139464,
++      -0.6270805260649527,
++      1.2057021619304875,
++      3.6386692776348353,
++      -1.2359796337566982,
++      0.8455715328674664,
++      -0.042909952528381486
++    ]
++  ],
++  "metadata": {
++    "policy_sha256": "daf17ced0e6d11fd0f7008bb0b15c16eb59c855890225c9c4c10d6b744a94073",
++    "value_sha256": "f669bb3095c653beb768b14f45338df63c7ac3d71f8a1e50a0a92729eda4a91e",
++    "value_schema": "linear-outcome-v2/3x8/player-antisymmetric-mean-piece-phase",
++    "seed": 3103,
++    "policy_iteration": 1024,
++    "value_iteration": 1024,
++    "experimental": true
++  }
++}

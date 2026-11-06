@@ -1,0 +1,93 @@
+{
+  "cpu_only": true,
+  "rows": [
+    {
+      "command": [
+        "/tmp/blokus-cpu-only-venv312/bin/python",
+        "-m",
+        "blokus.linear_play2",
+        "--checkpoint",
+        "artifacts/linear-hybrid/exports/seed-3101.json",
+        "--completed-search",
+        "--search-ms",
+        "100",
+        "--root-width",
+        "24",
+        "--reply-width",
+        "8",
+        "--depth",
+        "2",
+        "--backend",
+        "native"
+      ],
+      "seconds": 1.3259750889992574,
+      "returncode": 0,
+      "scores": [
+        -18,
+        -23
+      ],
+      "moves": 35,
+      "invalid_input_reprompt": null
+    },
+    {
+      "command": [
+        "/tmp/blokus-cpu-only-venv312/bin/python",
+        "-m",
+        "blokus.linear_play2",
+        "--checkpoint",
+        "artifacts/linear-hybrid/exports/seed-3101.json",
+        "--completed-search",
+        "--search-ms",
+        "100",
+        "--root-width",
+        "24",
+        "--reply-width",
+        "8",
+        "--depth",
+        "2",
+        "--backend",
+        "python",
+        "--human-seat",
+        "0"
+      ],
+      "seconds": 2.3122513509879354,
+      "returncode": 0,
+      "scores": [
+        -58,
+        -16
+      ],
+      "moves": 36,
+      "invalid_input_reprompt": true
+    },
+    {
+      "command": [
+        "/tmp/blokus-cpu-only-venv312/bin/python",
+        "-m",
+        "blokus.linear_play2",
+        "--checkpoint",
+        "artifacts/linear-hybrid/exports/seed-3101.json",
+        "--completed-search",
+        "--search-ms",
+        "100",
+        "--root-width",
+        "24",
+        "--reply-width",
+        "8",
+        "--depth",
+        "2",
+        "--backend",
+        "python",
+        "--human-seat",
+        "1"
+      ],
+      "seconds": 2.4584296789980726,
+      "returncode": 0,
+      "scores": [
+        -18,
+        -55
+      ],
+      "moves": 35,
+      "invalid_input_reprompt": true
+    }
+  ]
+}

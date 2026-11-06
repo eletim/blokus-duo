@@ -455,3 +455,13 @@ python -m blokus.ppo_runtime --output artifacts/my-gen3-training --channels 4 --
 このbranchの[実験報告](artifacts/linear-value/REPORT.md)に、NumPyの線形方策/価値学習と候補限定探索を保存しています。ニューラル教師は使わず終局勝敗から学習します。学習前には改善しましたが公開gen3には届かず、公開推奨の置換ではありません。`python -m blokus.linear_play2 --checkpoint artifacts/linear-value/new-3101/policy.json --backend python --human-seat 0`でCPU対戦できます。`--search-ms 6 --backend native`は学習価値による探索です（native要ビルド、soft deadline）。履歴不要のJSONモデルで、既存グローバルdefault/Webは変えません。
 
 固定した旧30係数方策＋学習価値の混成は、[次サイクル報告](artifacts/linear-hybrid/REPORT.md)に保存しています。`python -m blokus.linear_play2 --checkpoint artifacts/linear-hybrid/exports/seed-3101.json --backend python --search-ms 6 --human-seat 0`で試せます。対前回探索52.60%は改善未確定、対gen3は34.31%で未達。旧公開モデル/default/Webの置換ではありません。
+
+### 研究：固定非NNモデルの候補幅・深さ
+
+`research/linear-search-width-depth` は元の旧30係数方策＋24係数価値を固定し、候補幅24×8の2plyを追加した研究です。新128prefix・3seed先後768局で狭幅6×3に61.52% point（2比較補正CI57.81–65.17%、得点差+2.09）、公開gen3には32.03%（−4.86）でした。新たな学習成果でも、gen3超えでもありません。実時間は約20ms対狭幅2msで同wall比較ではなく、cold初回には約0.6秒の依存読込があります。main/Web/公開推奨は変更しません。
+
+研究用CPU対戦:
+```bash
+python -m blokus.linear_play2 --checkpoint artifacts/linear-hybrid/exports/seed-3101.json --backend native --completed-search --search-ms 100 --root-width 24 --reply-width 8 --depth 2 --human-seat 0
+```
+`native`は既存ビルドが必要、純Python経路は`--backend python`。完成狭幅2plyを保持し、広幅が全root完成した場合だけ上書きします。詳細は[REPORT](artifacts/linear-search/REPORT.md)、[再現手順](artifacts/linear-search/REPRODUCE.md)、[最小統合候補](artifacts/linear-search/INTEGRATION.md)を参照。
