@@ -1,5 +1,7 @@
 # Blokus Duo AI
 
+公開PPOの既定は **4ch gen3 / seed1751401**。`python -m blokus.ppo_play --device cpu --human-seat 0` で対戦できます。旧gen2/2048も選択可能。初期条件・固定確認結果・新学習コマンドは [PPO.md](PPO.md) を参照してください。
+
 Blokus Duoのルールエンジン、CLI対戦、3系統のGPU学習・評価、およびCPUによる評価重み最適化を実装しています。開発・学習環境はE-frontierの `/home/eletim/blokus-duo-ai`。
 
 ```bash
@@ -368,7 +370,7 @@ GPU学習は9モデル計24,000更新・約30.67秒（smoke/再開検証別）�
 
 seed1401の例は評価前に固定。2回目の新96prefixでは旧6ms探索へpoint56.1%ですが平均得点差+0.70のCIは0を含み、100ms教師には平均−2.03点でした。実時間も異なるため一般的最強とは呼びません。詳細なseed差・CI・実時間はPPO.mdと評価要約を参照してください。新規cloneのCPU専用環境・CUDAで動作確認し、main全57テストPASSです。
 
-## 新世代PPO（gen2）
+## 旧世代PPO（gen2）
 
 PPO専用CLIは新世代を既定にしました。seed既定1401は維持し、旧グローバルAIデフォルトは変更しません。旧2048も明示的に選べます。
 
