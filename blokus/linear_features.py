@@ -32,5 +32,3 @@ def probabilities(x, weights):
     logits = x @ weights
     p = np.exp(logits-logits.max())
     return p/p.sum()
-
-
