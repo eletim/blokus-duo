@@ -230,3 +230,4 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 
 ## 2026-11-07 H Web公開仕上げ
 0740f31のH探索をそのまま使用。Web専用deepモード500ms/幅4/max6を追加、既存モードとFrozen重みは維持。履歴に各AI完成深さ/消費時間を追加。CPU全テスト102PASS/4skip、固定木/打切り/小終盤一致を含む。棋力の再計測・学習なし。ブラウザ/新clone検証後、通常main統合と既存サービス更新を実施する。
+2026-11-07 公開完了: main8dc4613へFF/push、既存blokus-web.serviceを更新。現URLでdeep/policy/search/linear×人間先後PASS。新clone CPU102PASS/4skip、棋譜再生PASS、Frozen不変。詳細artifacts/gen3-deep-web/DEPLOYMENT.md。強化の数値は前段の独立確認結果を引用し今回再計測していない。
