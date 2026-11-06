@@ -1,0 +1,17 @@
+{
+  "seeds": [
+    3101,
+    3102,
+    3103
+  ],
+  "iterations": 256,
+  "games_per_iteration": 16,
+  "lr": 0.03,
+  "initial": "fixed handcrafted weights; not random actions",
+  "algorithm": "terminal WDL REINFORCE; phase-specific 30 weights; Adam ascent; gradient norm cap5",
+  "opponents": "50% frozen batch-start learner,25% past64iteration,25% greedy initial, balanced seats",
+  "evaluation": "final only;64 fresh 4-ply prefixes x2 seats x3 models, against initial and gen3; exploratory, no model promotion",
+  "eval_prefix_seed": 1800000000,
+  "backend": "native",
+  "search": false
+}
