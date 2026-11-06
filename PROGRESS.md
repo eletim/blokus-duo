@@ -236,3 +236,8 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 - 新/初期point64.71%、新/旧45.25%。学習効果はあるが特徴追加の改善なし。
 - 学習価値6ms上限探索/単体77.02%、/静的葉探索78.84%、/gen3 35.87%。実2.4ms対gen3約.3ms、公開モデル超え未達。
 - 全訓練/評価棋譜・算術・分離監査PASS、別process66 vs63+3再開一致、CPU-only CLI確認。REPORT.md参照。main/Webは不変更。
+
+## 固定旧方策＋固定学習価値の次サイクル開始
+- research/linear-hybrid-value、基点a7baba3。前回の特徴追加は不採用。旧30係数の1024iteration終点と新24係数valueをSHA固定し、候補順だけ交換する。
+- artifacts/linear-hybrid/PLAN.mdに64prefix validation、root6/reply3/depth2/6ms、進行gate、必要時のみvalue再学習、128prefix確認family2補正を事前記録。
+- main/Web/公開gen3は保持。過去学習索引はSHA参照し複製しない。

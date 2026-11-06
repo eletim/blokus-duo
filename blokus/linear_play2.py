@@ -4,8 +4,8 @@ from .linear_value import Agent,Search
 from .engine import State,play
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--checkpoint',required=True);p.add_argument('--opponent-checkpoint');p.add_argument('--backend',choices=['python','native'],default='python');p.add_argument('--search-ms',type=float,default=0);p.add_argument('--human-seat',type=int,choices=[0,1]);p.add_argument('--seed',type=int,default=1);a=p.parse_args()
- model=Agent.load(a.checkpoint,a.backend);bot=Search(model,ms=a.search_ms) if a.search_ms else model;other=Agent.load(a.opponent_checkpoint,a.backend) if a.opponent_checkpoint else Agent('old',backend=a.backend);s=State();rng=random.Random(a.seed);moves=[]
+ p=argparse.ArgumentParser();p.add_argument('--checkpoint',required=True);p.add_argument('--opponent-checkpoint');p.add_argument('--value-checkpoint',help='explicit v2 value source; policy weights remain from --checkpoint');p.add_argument('--backend',choices=['python','native'],default='python');p.add_argument('--search-ms',type=float,default=0);p.add_argument('--human-seat',type=int,choices=[0,1]);p.add_argument('--seed',type=int,default=1);a=p.parse_args()
+ model=Agent.load_pair(a.checkpoint,a.value_checkpoint,a.backend) if a.value_checkpoint else Agent.load(a.checkpoint,a.backend);bot=Search(model,ms=a.search_ms) if a.search_ms else model;other=Agent.load(a.opponent_checkpoint,a.backend) if a.opponent_checkpoint else Agent('old',backend=a.backend);s=State();rng=random.Random(a.seed);moves=[]
  try:
   while not s.done:
    if s.turn==a.human_seat:

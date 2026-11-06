@@ -1,5 +1,5 @@
 """Non-neural candidate features, terminal-outcome linear value and bounded search."""
-import copy,json,random,time
+import copy,json,random,time,hashlib
 from functools import lru_cache
 from pathlib import Path
 import numpy as np
@@ -92,6 +92,18 @@ class Agent:
   x=json.loads(Path(path).read_text())
   if x.get('format')!=FORMAT:raise ValueError('unknown non-neural model format')
   return cls(x['mode'],x['weights'],x['value'],backend)
+
+
+ @classmethod
+ def load_pair(cls,policy_path,value_path,backend='native',policy_sha256=None,value_sha256=None):
+  # Both inputs must be the explicit v2 schema (same phase/value semantics).
+  paths=[Path(policy_path),Path(value_path)];hashes=[hashlib.sha256(p.read_bytes()).hexdigest() for p in paths]
+  for actual,expected in zip(hashes,(policy_sha256,value_sha256)):
+   if expected is not None and actual!=expected:raise ValueError('linear source SHA256 mismatch')
+  policy=cls.load(paths[0],backend);value=cls.load(paths[1],backend)
+  agent=cls(policy.mode,policy.weights,value.value_weights,backend)
+  agent.provenance=dict(policy_sha256=hashes[0],value_sha256=hashes[1],value_schema='linear-outcome-v2/3x8/player-antisymmetric-mean-piece-phase')
+  return agent
 
 class Search:
  def __init__(self,agent,ms=6,width=6,replies=3,depth=2,learned=True):
