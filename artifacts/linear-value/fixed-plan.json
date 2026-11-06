@@ -1,0 +1,79 @@
+{
+  "pilot": [
+    {
+      "mode": "old",
+      "iterations": 32,
+      "games": 512,
+      "seconds": 1.524288020998938,
+      "last": {
+        "iteration": 32,
+        "mean_reward": 0.125,
+        "gradient_norm": 0.29118171945342985,
+        "entropy": 2.532774508380855,
+        "value_mse": null,
+        "opponents": {
+          "current": {
+            "games": 8,
+            "learner_states": 124,
+            "reward": 0.0
+          },
+          "past": {
+            "games": 4,
+            "learner_states": 63,
+            "reward": 0.5
+          },
+          "initial": {
+            "games": 4,
+            "learner_states": 63,
+            "reward": 0.0
+          }
+        }
+      }
+    },
+    {
+      "mode": "new",
+      "iterations": 32,
+      "games": 512,
+      "seconds": 2.5032051450034487,
+      "last": {
+        "iteration": 32,
+        "mean_reward": -0.1875,
+        "gradient_norm": 0.2828679791973869,
+        "entropy": 2.585733875360502,
+        "value_mse": 0.8388039816787757,
+        "opponents": {
+          "current": {
+            "games": 8,
+            "learner_states": 112,
+            "reward": -0.5
+          },
+          "past": {
+            "games": 4,
+            "learner_states": 60,
+            "reward": 0.0
+          },
+          "initial": {
+            "games": 4,
+            "learner_states": 61,
+            "reward": 0.25
+          }
+        }
+      }
+    }
+  ],
+  "expected_training_seconds": 386.6393439362291,
+  "iterations": 1024,
+  "seeds": [
+    3101,
+    3102,
+    3103
+  ],
+  "modes": [
+    "old",
+    "new"
+  ],
+  "total_games": 98304,
+  "training_cap_seconds": 5400,
+  "selection": "fixed final endpoint; no validation-based checkpoint selection",
+  "created_before_training": true
+}

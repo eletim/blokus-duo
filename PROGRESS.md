@@ -227,3 +227,12 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 ## gen3公開統合
 最新origin/main6be347fからintegration/ppo-gen3作成。研究全体はmergeせず、固定B/5120/1751401-3のinference exportを確認16e3baa models.jsonとSHA完全一致で追加。gen3既定、旧世代/seed別名互換、global AI default維持。640bd3f由来dense同期集約update＋minibatch指定のみ抽出、raggedなし。LR/batch再開継承、明示変更履歴を実装。79tests PASS、CPU/CUDA 4vs2+2別process再開bit一致（past交換含む）、設定変更拒否/履歴確認。新clone公開CLI検証へ進む。
 新clone: CPU-only 76passed/4CUDA skipped、CUDA80passed。gen3/gen2/2048のCPU/CUDA AI対戦・人間先後18経路PASS。旧metadataなしcheckpoint互換追加試験でPath型resume config JSON問題を修正。公開gen3は同じSHA、旧globaldefault差分なし。INTEGRATION.mdに依存/検証/再現/時間の読み方を保存。通常FF統合へ。
+
+## 非NN特徴・価値学習対照開始
+研究worktree /home/eletim/blokus-linear-value、research/linear-value-features、基点6dd4a63。PLAN.md事前固定。旧30係数REINFORCEと新39係数を同経験量対照、追加3特徴、終局WDLから別線形価値を学習（方策更新に使わない）。native512games pilot旧1.52s/新2.50sにより本学習を各3seed/条件1024iteration=16384games、全98304gamesに固定。予測約387秒、90分上限。main/Web未変更。初期・終点固定、validationで延長しない。
+
+## 非NN方策/終局価値・確認完了
+- 旧30係数対照と新39係数×3seed、各16384games固定、本学習372.38秒。新規128prefix先後3seed確認4608局完了。
+- 新/初期point64.71%、新/旧45.25%。学習効果はあるが特徴追加の改善なし。
+- 学習価値6ms上限探索/単体77.02%、/静的葉探索78.84%、/gen3 35.87%。実2.4ms対gen3約.3ms、公開モデル超え未達。
+- 全訓練/評価棋譜・算術・分離監査PASS、別process66 vs63+3再開一致、CPU-only CLI確認。REPORT.md参照。main/Webは不変更。

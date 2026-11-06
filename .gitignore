@@ -15,3 +15,6 @@ artifacts/secretary-review/resume/**
 !artifacts/secretary-review/resume/result.json
 
 .native/
+
+# Rebuildable state index; training replay and SHA audit are versioned.
+artifacts/linear-value/training-states.bin.gz

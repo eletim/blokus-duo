@@ -1,0 +1,16 @@
+{
+  "branch": "integration/linear-value-candidate",
+  "commit": "abc41cfadce8a55173c992bfd916067953e2c119",
+  "files_identical": [
+    "blokus/linear_rl.py",
+    "blokus/linear_value.py",
+    "blokus/linear_train2.py",
+    "blokus/linear_play2.py",
+    "tests/test_linear_value.py"
+  ],
+  "model_export_identical": true,
+  "tests": "93 passed in 16.73s",
+  "cpu_only_cli_completed": true,
+  "native_build": "requires cc or ziglang; built using development venv ziglang after CPU-only venv lacked compiler",
+  "main_changed": false
+}

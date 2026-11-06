@@ -449,3 +449,7 @@ python -m blokus.ppo_runtime --output artifacts/my-gen3-training --channels 4 --
 ## ブラウザでAIと対戦
 
 `python -m blokus.web_play --device cpu` で起動し、http://127.0.0.1:8765 を開きます。駒をクリックして回転・反転・配置でき、即決gen3と時間指定の先読み実験モードを選べます。[操作・起動方法と検証範囲](WEB_PLAY.md)。
+
+### 非ニューラル終局学習の研究用CLI
+
+このbranchの[実験報告](artifacts/linear-value/REPORT.md)に、NumPyの線形方策/価値学習と候補限定探索を保存しています。ニューラル教師は使わず終局勝敗から学習します。学習前には改善しましたが公開gen3には届かず、公開推奨の置換ではありません。`python -m blokus.linear_play2 --checkpoint artifacts/linear-value/new-3101/policy.json --backend python --human-seat 0`でCPU対戦できます。`--search-ms 6 --backend native`は学習価値による探索です（native要ビルド、soft deadline）。履歴不要のJSONモデルで、既存グローバルdefault/Webは変えません。
