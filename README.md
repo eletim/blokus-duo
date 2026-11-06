@@ -464,3 +464,11 @@ python -m scripts.audit_ppo_lr64_results
 再開ではcondition/LR/minibatch/系列seedとoptimizer実LRを照合する。CUDA/native学習、推論はCPU/CUDA。main/public gen2/2048・既定seedは変更しない。結果・曲線・費用は [LR対照REPORT](artifacts/ppo-lr64/REPORT.md)、未実装の次の等価GPU最適化案は [NEXT-GPU](artifacts/ppo-lr64/NEXT-GPU.md) を参照。
 
 LR対照のvalidationではC対gen2 point55.47%［95% CI51.43–59.38］、C対Bは48.96%［43.75–54.04］。事前のC/B非劣性gate未達で独立holdoutは実施せず、LR増の効果と公開gen2への最終的な優位は未確定。追加147,456gamesを26分で完走し、main推奨は維持した。
+
+### 固定4ch Bモデル確認と実候補GPU更新（研究限定）
+`research/ppo-fixed-confirmation` の256prefix確認では、固定B64/LR3e-4/5120の3seed集約が公開gen2へ54.13% point（3比較補正CI 51.37–56.87%）、得点差+1.20。旧LR実験のgate未達は変更せず、別事前計画の確認試験。Cの優越は未確認。main/公開既定は変更しない。詳細は `artifacts/ppo-confirmation/REPORT.md` と全seedの `models.json`。
+例（学習履歴不要の既存inference checkpoint）:
+```bash
+.venv/bin/python -m blokus.ppo_play --checkpoint artifacts/ppo-lr64/B-seed-1751401/inference-5120.pt --device cuda --backend native --opponent heuristic
+```
+`research/ppo-ragged-update` は更新時だけ実候補をflattenし、embedding/gather/MLPのpadding計算を省く実験。loss/entropyは元の局面単位平均、収集・サンプリング・公開推論経路は変更しない。`update_fast(..., compact=True, packed=False)` は明示指定のみ。重みキー/4ch・6ch形式は同じだが、浮動加算順とAdam更新はbit一致せず事前許容誤差も一部未達のため、等価最適化としてのmain採用は推奨しない。詳細と速度の分布依存性は `artifacts/ppo-ragged/REPORT.md`。固定Bの対戦結果はこの変更前に測定したもので、新更新実装の棋力を示すものではない。

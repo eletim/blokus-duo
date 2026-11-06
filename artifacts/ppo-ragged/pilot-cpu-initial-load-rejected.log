@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/eletim/blokus-duo-ai/scripts/pilot_ppo_ragged.py", line 25, in <module>
+    a=argparse.ArgumentParser();a.add_argument('--mode',choices=['dense','compact'],required=True);a.add_argument('--until',type=int,required=True);a.add_argument('--out',required=True);a.add_argument('--resume');a.add_argument('--device',default='cuda');k=a.parse_args();run(k.mode,k.until,k.out,k.resume,k.device)
+                                                                                                                                                                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/scripts/pilot_ppo_ragged.py", line 10, in run
+    r.seed_all(178200);m,p,o,ck=r.restore(resume or BASE,device);start=ck['iteration'];out=Path(out);out.mkdir(parents=True,exist_ok=True)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/blokus/ppo_runtime.py", line 113, in restore
+    if not str(device).startswith('cuda'):raise ValueError('exact CUDA resume requires CUDA')
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: exact CUDA resume requires CUDA
+Traceback (most recent call last):
+  File "/home/eletim/blokus-duo-ai/scripts/run_ppo_ragged_checks.py", line 10, in <module>
+    subprocess.run(cmd,check=True)
+  File "/home/eletim/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['.venv/bin/python', '-m', 'scripts.pilot_ppo_ragged', '--device', 'cpu', '--mode', 'dense', '--out', 'artifacts/ppo-ragged/cpu-dense', '--until', '4100']' returned non-zero exit status 1.

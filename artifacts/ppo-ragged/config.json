@@ -1,0 +1,24 @@
+{
+  "torch": "2.7.1+cu128",
+  "device": "NVIDIA GeForce RTX 5090",
+  "dtype": "float32",
+  "deterministic": true,
+  "cudnn_deterministic": false,
+  "tf32": false,
+  "threads": 1,
+  "loss": "unchanged PPO state mean, entropy0.01 value0.5 clip0.2 KL0.03",
+  "epochs": 2,
+  "minibatches": [
+    16,
+    64
+  ],
+  "compile": false,
+  "collection": "unchanged native16games",
+  "files": {
+    "blokus/ppo_ragged.py": "f645b649b1d8754a74ec323f16c2fab77743f89a9f517555d5b9b3491bcbb2d9",
+    "blokus/ppo_gpu.py": "85d42e3fd0b86dca4ad4c26f8fd38a145d96c138ad0479c2ceefe1e749afd5dc",
+    "artifacts/ppo-minibatch/benchmark-rollout.pt": "775713914ce862217955fee02ca4d2f0c5fb39431364893d9e674d2b62e346bc",
+    "artifacts/ppo-four-gpu/seed-1751401/iteration-4096.pt": "7a93585fd39279f05e24e74765ea066941fe7030b0629ed74d8f502feeedccb5",
+    "artifacts/ppo-gen2/seed-1401.pt": "7e111fd012868d9cd6f489b48f03ca2c8ab8d761935baeeaad29af94dd09bb1f"
+  }
+}

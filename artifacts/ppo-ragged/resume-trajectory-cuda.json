@@ -1,0 +1,59 @@
+{
+  "resume_bit_equal": true,
+  "keys": [
+    "model",
+    "past",
+    "optimizer",
+    "python_rng",
+    "numpy_rng",
+    "torch_rng",
+    "cuda_rng"
+  ],
+  "comparison": "4096+4 vs 4096+2+separate process+2, past exchange at4100",
+  "trajectory": [
+    {
+      "iteration": 4097,
+      "same_input": true,
+      "same_games": true,
+      "dense_updates": 12,
+      "compact_updates": 12,
+      "dense_collect": 0.36714475100598065,
+      "compact_collect": 0.37445024000044214,
+      "dense_update": 0.1605838399991626,
+      "compact_update": 0.15824430400243727
+    },
+    {
+      "iteration": 4098,
+      "same_input": false,
+      "same_games": false,
+      "dense_updates": 12,
+      "compact_updates": 12,
+      "dense_collect": 0.09833518699451815,
+      "compact_collect": 0.10588395700324327,
+      "dense_update": 0.05398975100251846,
+      "compact_update": 0.03974370400101179
+    },
+    {
+      "iteration": 4099,
+      "same_input": false,
+      "same_games": false,
+      "dense_updates": 14,
+      "compact_updates": 14,
+      "dense_collect": 0.09406794700043974,
+      "compact_collect": 0.09613254199939547,
+      "dense_update": 0.06405398799688555,
+      "compact_update": 0.053003788998466916
+    },
+    {
+      "iteration": 4100,
+      "same_input": false,
+      "same_games": false,
+      "dense_updates": 12,
+      "compact_updates": 12,
+      "dense_collect": 0.09440343700407539,
+      "compact_collect": 0.09470770799816819,
+      "dense_update": 0.05680670899891993,
+      "compact_update": 0.04404311499820324
+    }
+  ]
+}

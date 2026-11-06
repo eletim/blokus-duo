@@ -1,0 +1,97 @@
+{
+  "pass_": true,
+  "rows": [
+    {
+      "device": "cpu",
+      "resume_bit_equal": true,
+      "checked_keys": [
+        "model",
+        "past",
+        "optimizer",
+        "python_rng",
+        "numpy_rng",
+        "torch_rng",
+        "cuda_rng"
+      ],
+      "trajectories": [
+        {
+          "iteration": 4097,
+          "moves_and_scores_equal": true,
+          "input_bit_equal": true,
+          "steps_equal": true
+        },
+        {
+          "iteration": 4098,
+          "moves_and_scores_equal": true,
+          "input_bit_equal": false,
+          "steps_equal": true
+        },
+        {
+          "iteration": 4099,
+          "moves_and_scores_equal": true,
+          "input_bit_equal": false,
+          "steps_equal": true
+        },
+        {
+          "iteration": 4100,
+          "moves_and_scores_equal": true,
+          "input_bit_equal": false,
+          "steps_equal": true
+        }
+      ],
+      "replayed_games": 128,
+      "model_hashes": {
+        "dense": "3518040d629b2d1bc4e42296dc94ce14f8af1c28d4c46ae1adb8438adc85d2da",
+        "full": "143b0d89283c93341b442f07b0ce5d657d1eb0cd045dca36f9038cabb7429475",
+        "split": "3f20d9e390a2bb364c83c19b38d4bb518afcb4a6700c0f01a0200abaa1f8e187"
+      }
+    },
+    {
+      "device": "cuda",
+      "resume_bit_equal": true,
+      "checked_keys": [
+        "model",
+        "past",
+        "optimizer",
+        "python_rng",
+        "numpy_rng",
+        "torch_rng",
+        "cuda_rng"
+      ],
+      "trajectories": [
+        {
+          "iteration": 4097,
+          "moves_and_scores_equal": true,
+          "input_bit_equal": true,
+          "steps_equal": true
+        },
+        {
+          "iteration": 4098,
+          "moves_and_scores_equal": true,
+          "input_bit_equal": false,
+          "steps_equal": true
+        },
+        {
+          "iteration": 4099,
+          "moves_and_scores_equal": true,
+          "input_bit_equal": false,
+          "steps_equal": true
+        },
+        {
+          "iteration": 4100,
+          "moves_and_scores_equal": true,
+          "input_bit_equal": false,
+          "steps_equal": true
+        }
+      ],
+      "replayed_games": 128,
+      "model_hashes": {
+        "dense": "e22468de4c0b1a06e3a4c3491d92cb1a9f5474adb8ca06848fc030e43563fb1d",
+        "full": "a104ba84f28457cb60b8be7598dc68dc789776c4760f724b4f265fc800c1bd50",
+        "split": "b013c219c7c122ac87330eaccf9536c771b9dc24dd91c18a5c111d40db5badc2"
+      }
+    }
+  ],
+  "matched_steps_all_benchmarks": true,
+  "notes": "Floating equivalence tolerance not passed; this audit does not override that gate."
+}

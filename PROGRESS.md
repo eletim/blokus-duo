@@ -245,3 +245,5 @@ CUDA別process再開は両batchでbit一致。新driverの決定的設定漏れ�
 
 ## 固定B/C確認試験・GPU padding最適化（2026-11-06）
 research/ppo-fixed-confirmation、基点67482585。artifacts/ppo-confirmation/PLAN.mdへ事前基準を固定。旧gate未達は変更せず、別確認試験で5120 B/C全seedを256新prefixで評価中。モデルhash、全27,533,566訓練状態index hash、既存評価開始状態除外、新bankを固定済み。main変更なし。評価・全再生監査が終わってから別branchで実候補GPU処理を検証する。
+固定確認を16e3baaとしてpush。B/gen2 point54.13%（3比較補正CI51.37–56.87）、得点差+1.20。C/gen2/C/B未確定。全4608局合法再生、開始/以後訓練状態重複0、model hash一致。モデル変更/seed選別なし。
+別branch research/ppo-ragged-updateで実候補のみGPU updateを実装、最小コード87b9af0。保存rollout MB64 update1.26倍、peak311→93MB、同量16games収集込み1.09倍。MB16は改善ほぼなし。embedding backward7.08→1.26ms。93→95tests（追加KL/非有限test含む）PASS、CPU/CUDA4iterationの着手/得点一致、新経路2+2別process再開bit一致。旧新のCUDA重み/勾配は事前2e-5許容を一部超えたため等価採用gate未達、旧default維持。固定Bの棋力と後続実装の速度は別成果。詳細REPORT/全profile/算術/報酬監査はartifacts/ppo-ragged。追加本学習0、計測/短期pilotは実装待ちを含む上限でも30分未満。main unchanged。
