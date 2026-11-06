@@ -20,3 +20,5 @@ PLAYWRIGHT_MODULE=/path/to/playwright node scripts/check_linear_web.cjs http://1
 ```
 
 rollback SHA・元起動コマンド・unitは rollback.json に再起動前に保存。サービス設定とURLを保った通常FF統合・再起動を行う。反映後の確認はdeployment.json/live-browser.jsonに記録する。
+
+反映完了: mainを69c3379へ通常FF/push後、元unitのまま再起動。HTTP200/activeを確認し、現Tailscale URLで同じChromium操作試験が全項目PASS。検証専用8766/8767サーバは終了。最終コミットではこの反映記録のみ追加しコード・モデルは変更しない。
