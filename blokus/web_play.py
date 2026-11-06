@@ -11,6 +11,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from .engine import State, Move, ORIENTS, START, cells_of, legal_moves, play
 from .ppo_search import SearchAgent
+from .ppo_search_deeper import DeepSearch
 
 
 class Games:
@@ -22,8 +23,10 @@ class Games:
         self.worker = ThreadPoolExecutor(max_workers=1)
 
     def create(self, seat, mode, budget):
-        if type(seat) is not int or seat not in (0, 1) or mode not in ('policy', 'search', 'linear') or type(budget) is not int or budget not in (100, 500, 2000):
+        if type(seat) is not int or seat not in (0, 1) or mode not in ('policy', 'search', 'deep', 'linear') or type(budget) is not int or budget not in (100, 500, 2000):
             raise ValueError('対局設定が不正です')
+        if mode == 'deep' and budget != 500:
+            raise ValueError('深い先読みは500msを指定してください')
         if mode == 'linear' and self.linear_factory is None:
             raise ValueError('非NN AIを利用できません')
         if mode == 'linear':
@@ -36,7 +39,7 @@ class Games:
             if len(self.games) >= 32:
                 raise ValueError('対局数が上限です。サーバーを再起動してください')
             key = secrets.token_urlsafe(24)
-            self.games[key] = dict(state=State(), seat=seat, mode=mode, budget=budget, history=[], busy=False, error=None, stats={}, touched=time.monotonic(), rng=random.Random(1))
+            self.games[key] = dict(state=State(), seat=seat, mode=mode, budget=budget, history=[], move_stats=[], busy=False, error=None, stats={}, touched=time.monotonic(), rng=random.Random(1))
             self.advance(key)
             return self.snapshot(key)
 
@@ -47,6 +50,7 @@ class Games:
         while not s.done and not legal_moves(s):
             play(s, None, validate=False)
             g['history'].append(None)
+            g['move_stats'].append(dict(forced_pass=True, elapsed_ms=0))
         if not s.done and s.turn != g['seat'] and not g['busy']:
             g['busy'] = True
             self.worker.submit(self.think, key, copy.deepcopy(s))
@@ -57,7 +61,7 @@ class Games:
             with self.lock:
                 g = self.games[key]
                 revision = len(g['history'])
-            agent = self.linear_factory() if g['mode']=='linear' else SearchAgent(self.bot, g['budget']) if g['mode']=='search' else self.bot
+            agent = self.linear_factory() if g['mode']=='linear' else DeepSearch(self.bot, budget_ms=500, width=4, max_depth=6) if g['mode']=='deep' else SearchAgent(self.bot, g['budget']) if g['mode']=='search' else self.bot
             start = time.perf_counter()
             move = agent.act(state, g['rng'])
             elapsed = (time.perf_counter()-start)*1000
@@ -65,12 +69,15 @@ class Games:
                 detail = agent.stats[-1]
                 stats = dict(elapsed_ms=elapsed, depth=detail.get('depth', 0), fallback=detail.get('fallback', False), target_complete=detail.get('target_complete', True))
             else:
-                stats = agent.stats if g['mode']=='search' else dict(elapsed_ms=elapsed)
+                stats = copy.deepcopy(agent.stats) if g['mode'] in ('search', 'deep') else dict(elapsed_ms=elapsed)
+                stats.pop('root_scores', None)
+                stats['elapsed_ms'] = elapsed
             with self.lock:
                 if self.games.get(key) is not g or len(g['history']) != revision or g['state'] != state:
                     return  # Never apply a result to a replaced/advanced session.
                 play(g['state'], move, validate=True)
                 g['history'].append(None if move is None else [move.piece, move.orientation, move.row, move.col])
+                g['move_stats'].append(copy.deepcopy(stats))
                 g['stats'] = stats
                 g['busy'] = False
                 self.advance(key)
@@ -89,7 +96,8 @@ class Games:
                 raise ValueError('配置が不正です')
             move = Move(*values)
             play(g['state'], move, validate=True)
-            g['history'].append(values)
+            g['history'].append(list(values))
+            g['move_stats'].append(None)
             self.advance(key)
             return self.snapshot(key)
 
@@ -99,7 +107,7 @@ class Games:
             g['touched'] = time.monotonic()
             s = g['state']
             qs = legal_moves(s) if s.turn==g['seat'] and not g['busy'] else []
-            return dict(id=key, revision=len(g['history']), boards=[list(cells_of(b)) for b in s.boards], remaining=[[i for i in range(21) if s.remaining[p]>>i&1] for p in (0,1)], scores=[s.score(p) for p in (0,1)], turn=s.turn, seat=g['seat'], done=s.done, busy=g['busy'], error=g['error'], mode=g['mode'], budget=g['budget'], generation='linear-L' if g['mode']=='linear' else 'gen3', model_seed=3101 if g['mode']=='linear' else 1751401, stats=g['stats'], legal=[[q.move.piece,q.move.orientation,q.move.row,q.move.col] for q in qs], history=g['history'])
+            return dict(id=key, revision=len(g['history']), boards=[list(cells_of(b)) for b in s.boards], remaining=[[i for i in range(21) if s.remaining[p]>>i&1] for p in (0,1)], scores=[s.score(p) for p in (0,1)], turn=s.turn, seat=g['seat'], done=s.done, busy=g['busy'], error=g['error'], mode=g['mode'], budget=g['budget'], generation='linear-L' if g['mode']=='linear' else 'gen3', model_seed=3101 if g['mode']=='linear' else 1751401, stats=g['stats'], legal=[[q.move.piece,q.move.orientation,q.move.row,q.move.col] for q in qs], history=copy.deepcopy(g['history']), move_stats=copy.deepcopy(g['move_stats']))
 
 
 def handler(games):

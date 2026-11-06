@@ -453,3 +453,7 @@ python -m blokus.ppo_runtime --output artifacts/my-gen3-training --channels 4 --
 ### 非NN線形価値Lで対戦
 
 公開gen3と既存defaultを維持し、Webの「AIの考え方」で「非NN・学習済み線形評価＋先読み」を選べます。「新しい対局」で適用します。CPU CLIも利用可能です：[LINEAR-L.md](LINEAR-L.md)。研究履歴は推論に不要です。
+
+### NN・深い先読み（最大6手）
+
+WebでAIの考え方を選び「新しい対局」を押すと利用できます。目安0.5秒、時間内に完成した深さまで読みます。通常gen3・従来4手先探索・非NNも残しています。新モデルではなく同じFrozen gen3を使う探索の変更です。独立32prefix・全3seed・先後交換192局で従来探索へのpoint62.76%（2比較補正CI57.29–68.23%）、平均263msでした。人間への強さは未検証です。[CLI・詳細と限界](DEEP_SEARCH.md)。

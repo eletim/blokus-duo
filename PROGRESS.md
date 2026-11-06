@@ -227,3 +227,6 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 ## gen3公開統合
 最新origin/main6be347fからintegration/ppo-gen3作成。研究全体はmergeせず、固定B/5120/1751401-3のinference exportを確認16e3baa models.jsonとSHA完全一致で追加。gen3既定、旧世代/seed別名互換、global AI default維持。640bd3f由来dense同期集約update＋minibatch指定のみ抽出、raggedなし。LR/batch再開継承、明示変更履歴を実装。79tests PASS、CPU/CUDA 4vs2+2別process再開bit一致（past交換含む）、設定変更拒否/履歴確認。新clone公開CLI検証へ進む。
 新clone: CPU-only 76passed/4CUDA skipped、CUDA80passed。gen3/gen2/2048のCPU/CUDA AI対戦・人間先後18経路PASS。旧metadataなしcheckpoint互換追加試験でPath型resume config JSON問題を修正。公開gen3は同じSHA、旧globaldefault差分なし。INTEGRATION.mdに依存/検証/再現/時間の読み方を保存。通常FF統合へ。
+
+## 2026-11-07 H Web公開仕上げ
+0740f31のH探索をそのまま使用。Web専用deepモード500ms/幅4/max6を追加、既存モードとFrozen重みは維持。履歴に各AI完成深さ/消費時間を追加。CPU全テスト102PASS/4skip、固定木/打切り/小終盤一致を含む。棋力の再計測・学習なし。ブラウザ/新clone検証後、通常main統合と既存サービス更新を実施する。
