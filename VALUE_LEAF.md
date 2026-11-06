@@ -1,4 +1,4 @@
-# PPO探索の葉value専用経路（統合候補E）
+# PPO探索の葉value専用経路（公開済みE）
 
 Frozen gen3の重みは変更せず、探索木の葉ではpolicy候補配置・特徴・logitを作らずvalueだけを計算します。4ch/6chの盤面と49次元state、conv/global/valueの演算は元モデルと同じです。残駒・両者の面積/frontier・得点・passも保持します。terminalは実得点の勝敗符号です。
 
@@ -15,4 +15,4 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m pytest -q tests/test_value_le
 python -m blokus.ppo_play --help
 ```
 
-追加学習なし。mainや稼働Webへの適用判断は別途行います。
+追加学習なし。2026-11-07、mainへ統合し稼働Webへ反映しました（統合・smoke記録8fb3e9d、artifacts/value-leaf-deployment）。重み・既定単体gen3・非NNモードは維持しています。
