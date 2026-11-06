@@ -11,8 +11,15 @@ from .ai import features
 from .placement_geometry import geometry
 from .value_search import encode
 EXTRA=27
-DEFAULT_GENERATION="gen2"
-GENERATIONS=("gen2","2048")
+DEFAULT_GENERATION="gen3"
+GENERATIONS=("gen3","gen2","2048")
+GENERATION_SEEDS={"gen3":(1751401,1751402,1751403),"gen2":(1401,1402,1403),"2048":(1401,1402,1403)}
+def resolve_seed(generation,seed=None):
+ if generation not in GENERATION_SEEDS:raise ValueError(f"unknown generation {generation}; choose {GENERATIONS}")
+ if seed is None:return GENERATION_SEEDS[generation][0]
+ if generation=="gen3" and seed in (1401,1402,1403):seed+=1750000 # documented legacy aliases
+ if seed not in GENERATION_SEEDS[generation]:raise ValueError(f"generation {generation} requires model seed {GENERATION_SEEDS[generation]}, got {seed}")
+ return seed
 def _candidate_inputs(s,qs,x=None,st=None):
     if x is None:x,st=features(s,qs)
     extra=np.asarray([geometry(q.move)[2] for q in qs],dtype=np.float32).reshape(-1,EXTRA)
@@ -49,11 +56,10 @@ class TerminalNet(nn.Module):
 
 
 class PPOAgent:
- def __init__(self,model_seed=1401,device='auto',checkpoint=None,generation=DEFAULT_GENERATION,backend="python"):
-  if generation not in GENERATIONS:raise ValueError('generation must be gen2 or 2048')
+ def __init__(self,model_seed=None,device='auto',checkpoint=None,generation=DEFAULT_GENERATION,backend="python"):
+  model_seed=resolve_seed(generation,model_seed);self.model_seed=model_seed
   if backend not in ("python","native","auto"):raise ValueError("unknown backend")
   self.backend=backend;self.generation=generation
-  if model_seed not in (1401,1402,1403):raise ValueError('model seed must be 1401,1402,1403')
   self.device=('cuda' if torch.cuda.is_available() else 'cpu') if device=='auto' else device
   path=Path(checkpoint) if checkpoint else Path(__file__).resolve().parents[1]/f'artifacts/ppo-{generation}/seed-{model_seed}.pt'
   ck=torch.load(path,map_location='cpu',weights_only=True)

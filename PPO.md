@@ -1,6 +1,6 @@
 # 終局PPO：世代を選べる学習AI
 
-既存の低予算value/2plyと100ms教師は残し、既存コマンドのデフォルトは変更しません。PPO専用CLIの世代既定は `gen2`、旧世代は `--generation 2048` で選べます。PPOは盤面・残駒・正確な配置セルから全合法手を直接評価するネット単体です。終局勝敗で自己対戦学習し、探索を付けていません。固定heuristic事前値も使います。3seedは同じ初期重みと学習条件を共有し、訓練乱数が異なります。
+既存の低予算value/2plyと100ms教師は残し、既存コマンドのデフォルトは変更しません。当時のPPO専用CLIの世代既定は `gen2`、旧世代は `--generation 2048` で選べます。PPOは盤面・残駒・正確な配置セルから全合法手を直接評価するネット単体です。終局勝敗で自己対戦学習し、探索を付けていません。固定heuristic事前値も使います。3seedは同じ初期重みと学習条件を共有し、訓練乱数が異なります。
 
 ## 新しいcloneから実行
 
@@ -55,7 +55,7 @@ uv pip install --python .venv/bin/python numpy pytest
 
 ## 新世代gen2（固定3072/4096/4096）
 
-PPO CLIの既定世代は `gen2`、seed既定は1401です。旧グローバルAIデフォルトは変更しません。`gen2` は1401=3072、1402/1403=4096で、今回の評価からモデルを選び直していません。上の2048評価は旧世代の記録として保持します。
+gen2公開時のPPO CLI既定は `gen2`、seed1401でした。現在の既定は下記gen3です。旧グローバルAIデフォルトは変更しません。`gen2` は1401=3072、1402/1403=4096で、今回の評価からモデルを選び直していません。上の2048評価は旧世代の記録として保持します。
 
 ```bash
 # 新世代の人間対戦（人間後手）
@@ -75,3 +75,30 @@ PPO CLIの既定世代は `gen2`、seed既定は1401です。旧グローバルA
 |teacher100|0.522 [0.4791666666666667, 0.5633680555555555]|+0.767 [-0.23658854166666635, 1.7483940972222234]|1.414/69.588|
 
 全1728局の再生・算術・SHA・分離監査を実施。評価実訪問状態の訓練重複0。CIはprefix単位で、同一prefix内の座席とseedを独立標本扱いしません。固定モデル条件での再確認であり、同時間比較でも一般的最強の主張でもありません。教師は試合cold、学習や監査と時間計測を分離。詳細は [research/ppo-generation2](https://github.com/eletim/blokus-duo/tree/research/ppo-generation2/artifacts/ppo-generation2) と `artifacts/ppo-gen2/evaluation-summary.json`。今回追加学習はありません。
+
+## 公開gen3: 4ch PPO、固定B64/LR3e-4/5120
+PPO専用CLIの新しい既定は **gen3 / seed1751401**。このseedは成績から選ばず先頭を固定した。旧グローバルAI defaultは変更しない。旧gen2/2048は引き続き選択可能。
+
+gen3は盤面の両者占有と両者の接続可能点の4チャネルを入力する。初手の接続可能点は元の開始点(4,4)/(9,9)であり、開始点専用入力はない。残駒と正確な候補配置も用いる。heuristic priorを持つPPOを終局勝敗で自己対戦学習したネット単体で、先読み探索なし。完全ランダム初期方策とは呼ばない。
+
+採用元は研究commit67482585の **B**（minibatch64、LR3e-4、5120iteration）、3seed1751401/2/3。累積各81920gamesに対し、比較相手gen2は対応seed1401/2/3が49152/65536/65536games、6ch入力である。学習量・入力・batchが異なるので、性能差を4ch化だけの効果としない。
+
+旧LR実験のgate未達は維持した後、別の事前計画で固定モデルを確認した（16e3baa）。新256prefix×3seed×先後交換のB対対応gen2は **point54.13%**（勝1/分0.5/敗0）、通常95%CI51.86–56.35%、3比較補正CI **51.37–56.87%**、平均得点差 **+1.20** [0.77,1.63]。prefix内の3seed/両席をまとめたCIであり、未知seed母集団への一般化や外部強豪への優越を証明しない。Cは採用しない。確認結果でcheckpoint/seedを選び直していない。推論CUDA/nativeは約0.5ms/手（各対戦の実測は公開audit参照）、CPUは環境依存で同速度とはしない。
+
+```bash
+python -m blokus.ppo_play --generation gen3 --model-seed 1751401 --device cpu --human-seat 0
+python -m blokus.ppo_play --generation gen3 --device cuda --backend native --human-seat 1
+python -m blokus.ppo_play --generation gen3 --opponent ppo --opponent-generation gen2 --device cpu
+python -m blokus.ppo_play --generation 2048 --model-seed 1403 --device cpu --opponent heuristic
+```
+gen3のseedは1751401/2/3。旧指定1401/2/3もgen3ではそれぞれの別名として受け付ける。gen2/2048は1401/2/3のみ。seed省略時は各世代の先頭。推論exportは確認時models.jsonのSHAとbyte一致し、訓練履歴、研究module、大型状態indexを必要としない。manifestは `artifacts/ppo-gen3/manifest.json`。
+
+### 新4ch学習と安全な再開
+任意native backendのbuildは `python -m blokus.ppo_native build`（C11 compiler、なければ既存手順のziglang）。未buildでは `--backend auto` はPython fallback、`native` は明示エラー。高速化計測と同条件を使うにはnative buildが必要。
+```bash
+python -m blokus.ppo_runtime --output artifacts/my-gen3-training --channels 4 --backend native --device cuda --minibatch 64 --learning-rate 0.0003 --packed --iterations 64 --cap 600
+python -m blokus.ppo_runtime --output artifacts/my-gen3-training --channels 4 --backend native --device cuda --packed --resume artifacts/my-gen3-training/latest.pt --iterations 128 --cap 600
+```
+1iterationは16games収集。minibatchは1 optimizer stepに使う局面数。新規CLIの省略値は従来16/3e-4を保持するため、推奨64は明示する。再開時は保存batch/LRを自動継承し、旧metadataなしcheckpointは16とoptimizer内LRを継承する。明示変更には `--allow-training-change` が必要で、変更前後とiterationを保存する。seed/channels/backend/packedも再開元と合わせる。CPU-onlyは `--device cpu --backend python`。
+
+同期集約のupdate_fast/常駐packは従来16とのbit一致検証に基づく実装改善。**16→64の約1.42倍はoptimizer step数/KL停止が変わる学習条件変更であり、等価最適化ではない。** 公開Bはこのdense経路で学習・確認した。後続raggedは64で更新1.26倍/収集込み1.09倍だったが数値許容差未達のためmain未採用で、Bの棋力と混同しない。研究全体はbranch参照し巨大履歴をmainへ追加しない。

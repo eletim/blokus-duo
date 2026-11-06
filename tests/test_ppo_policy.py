@@ -19,7 +19,7 @@ def test_legal_mask_and_exact_cells():
  s=State();o,qs=observe(s);assert len(qs)==414
  for q,cs in zip(qs,o[3]):assert {int(x) for x in cs if x!=196}=={r*14+c for r,c in q.move.cells}
  small=(o[0],o[1],o[2][:1],o[3][:1]);batch=collate([o,small],'cpu');assert batch[-1][1].sum()==1
- a=PPOAgent(1401,'cpu')
+ a=PPOAgent(1401,'cpu',generation='gen2')
  with torch.no_grad():logits,_=a.model(*batch)
  assert torch.isneginf(logits[1,1:]).all()
 

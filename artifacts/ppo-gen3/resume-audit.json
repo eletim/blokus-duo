@@ -1,0 +1,36 @@
+[
+  {
+    "device": "cpu",
+    "bit_equal": true,
+    "keys": [
+      "model",
+      "past",
+      "optimizer",
+      "python_rng",
+      "numpy_rng",
+      "torch_rng",
+      "cuda_rng"
+    ],
+    "settings_inherited": true,
+    "implicit_change_rejected": true,
+    "explicit_change_recorded": true,
+    "comparison": "4 vs 2 + separate process resume2; past swap4"
+  },
+  {
+    "device": "cuda",
+    "bit_equal": true,
+    "keys": [
+      "model",
+      "past",
+      "optimizer",
+      "python_rng",
+      "numpy_rng",
+      "torch_rng",
+      "cuda_rng"
+    ],
+    "settings_inherited": true,
+    "implicit_change_rejected": true,
+    "explicit_change_recorded": true,
+    "comparison": "4 vs 2 + separate process resume2; past swap4"
+  }
+]

@@ -39,7 +39,7 @@ def test_python_fallback(monkeypatch):
  with pytest.raises(ValueError):n.observe(State(passes=2))
 
 def test_formats_preserve_six_and_reject_silent_conversion(tmp_path):
- agent=PPOAgent(1401,'cpu');assert agent.channels==6
+ agent=PPOAgent(1401,'cpu',generation='gen2');assert agent.channels==6
  m=TerminalNet(4);ck=dict(format='terminal-ppo-inference-v2',channels=4,model=m.state_dict(),iteration=0,seed=1);path=tmp_path/'four.pt';torch.save(ck,path)
  assert PPOAgent(1401,'cpu',checkpoint=path).channels==4
  ck['format']='terminal-ppo-inference-v1';torch.save(ck,path)
@@ -65,7 +65,7 @@ def test_public_inference_native_matches_python(device,tmp_path):
   path=None
   if channels==4:
    path=tmp_path/'inference.pt';torch.save(dict(format='terminal-ppo-inference-v2',channels=4,model=TerminalNet(4).state_dict(),iteration=0,seed=1),path)
-  a=PPOAgent(device=device,checkpoint=path,backend='python');b=PPOAgent(device=device,checkpoint=path,backend='native');s=State()
+  a=PPOAgent(device=device,checkpoint=path,generation='gen2',backend='python');b=PPOAgent(device=device,checkpoint=path,generation='gen2',backend='native');s=State()
   for i in range(6):
    ma=a.act(s,random.Random(i));mb=b.act(s,random.Random(i));assert ma==mb;play(s,ma)
 

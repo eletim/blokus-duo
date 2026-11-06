@@ -398,7 +398,7 @@ python -m pytest -q
 
 ## 4チャネル学習と任意native生成経路
 
-新しい `python -m blokus.ppo_runtime` は4チャネル（両者占有＋両者接続可能点）を既定とする。初手の接続可能点は既存STARTで、開始点専用平面は不要。公開gen2/2048は6チャネルのまま、既定seed1401も維持する。新旧checkpointは形式/チャネルを識別し暗黙変換しない。
+新しい `python -m blokus.ppo_runtime` は4チャネル（両者占有＋両者接続可能点）を既定とする。初手の接続可能点は既存STARTで、開始点専用平面は不要。旧公開gen2/2048は6チャネルのまま、各世代の既定seed1401を維持する。現在のPPO既定は4ch gen3。新旧checkpointは形式/チャネルを識別し暗黙変換しない。
 
 `python -m blokus.ppo_native build` で任意C11 backendを作成できる。compilerがない場合は専用venvへ `ziglang==0.13.0` を追加する。未buildなら `--backend auto` は純Pythonへfallbackする。公開対戦例: `python -m blokus.ppo_play --generation gen2 --device cpu --backend auto --human-seat 0`。新モデルは `--checkpoint PATH` で明示指定する。
 
@@ -416,3 +416,30 @@ python -m blokus.ppo_runtime --output artifacts/my-four-channel-cpu --channels 4
 ```
 
 `--backend native` はbuild済みであることを要求する。`--backend auto` は未buildならPythonへ戻り、その場合は報告した約2.1倍の高速化は有効にならない。高速化の主因はCPU合法手生成・候補特徴packで、GPU更新自体はほぼ不変。測定は短いpilotの局面分布・16games batchであり、長期学習や別環境で同じ速度比を保証しない。4ch pilotは棋力未評価で既定公開モデルにはしない。
+
+## 公開gen3: 4ch PPO、固定B64/LR3e-4/5120
+PPO専用CLIの新しい既定は **gen3 / seed1751401**。このseedは成績から選ばず先頭を固定した。旧グローバルAI defaultは変更しない。旧gen2/2048は引き続き選択可能。
+
+gen3は盤面の両者占有と両者の接続可能点の4チャネルを入力する。初手の接続可能点は元の開始点(4,4)/(9,9)であり、開始点専用入力はない。残駒と正確な候補配置も用いる。heuristic priorを持つPPOを終局勝敗で自己対戦学習したネット単体で、先読み探索なし。完全ランダム初期方策とは呼ばない。
+
+採用元は研究commit67482585の **B**（minibatch64、LR3e-4、5120iteration）、3seed1751401/2/3。累積各81920gamesに対し、比較相手gen2は対応seed1401/2/3が49152/65536/65536games、6ch入力である。学習量・入力・batchが異なるので、性能差を4ch化だけの効果としない。
+
+旧LR実験のgate未達は維持した後、別の事前計画で固定モデルを確認した（16e3baa）。新256prefix×3seed×先後交換のB対対応gen2は **point54.13%**（勝1/分0.5/敗0）、通常95%CI51.86–56.35%、3比較補正CI **51.37–56.87%**、平均得点差 **+1.20** [0.77,1.63]。prefix内の3seed/両席をまとめたCIであり、未知seed母集団への一般化や外部強豪への優越を証明しない。Cは採用しない。確認結果でcheckpoint/seedを選び直していない。推論CUDA/nativeは約0.5ms/手（各対戦の実測は公開audit参照）、CPUは環境依存で同速度とはしない。
+
+```bash
+python -m blokus.ppo_play --generation gen3 --model-seed 1751401 --device cpu --human-seat 0
+python -m blokus.ppo_play --generation gen3 --device cuda --backend native --human-seat 1
+python -m blokus.ppo_play --generation gen3 --opponent ppo --opponent-generation gen2 --device cpu
+python -m blokus.ppo_play --generation 2048 --model-seed 1403 --device cpu --opponent heuristic
+```
+gen3のseedは1751401/2/3。旧指定1401/2/3もgen3ではそれぞれの別名として受け付ける。gen2/2048は1401/2/3のみ。seed省略時は各世代の先頭。推論exportは確認時models.jsonのSHAとbyte一致し、訓練履歴、研究module、大型状態indexを必要としない。manifestは `artifacts/ppo-gen3/manifest.json`。
+
+### 新4ch学習と安全な再開
+任意native backendのbuildは `python -m blokus.ppo_native build`（C11 compiler、なければ既存手順のziglang）。未buildでは `--backend auto` はPython fallback、`native` は明示エラー。高速化計測と同条件を使うにはnative buildが必要。
+```bash
+python -m blokus.ppo_runtime --output artifacts/my-gen3-training --channels 4 --backend native --device cuda --minibatch 64 --learning-rate 0.0003 --packed --iterations 64 --cap 600
+python -m blokus.ppo_runtime --output artifacts/my-gen3-training --channels 4 --backend native --device cuda --packed --resume artifacts/my-gen3-training/latest.pt --iterations 128 --cap 600
+```
+1iterationは16games収集。minibatchは1 optimizer stepに使う局面数。新規CLIの省略値は従来16/3e-4を保持するため、推奨64は明示する。再開時は保存batch/LRを自動継承し、旧metadataなしcheckpointは16とoptimizer内LRを継承する。明示変更には `--allow-training-change` が必要で、変更前後とiterationを保存する。seed/channels/backend/packedも再開元と合わせる。CPU-onlyは `--device cpu --backend python`。
+
+同期集約のupdate_fast/常駐packは従来16とのbit一致検証に基づく実装改善。**16→64の約1.42倍はoptimizer step数/KL停止が変わる学習条件変更であり、等価最適化ではない。** 公開Bはこのdense経路で学習・確認した。後続raggedは64で更新1.26倍/収集込み1.09倍だったが数値許容差未達のためmain未採用で、Bの棋力と混同しない。研究全体はbranch参照し巨大履歴をmainへ追加しない。

@@ -99,9 +99,10 @@ def update(model,opt,records,epochs=2,packed=False):
   if early:break
  sync(device);return dict(zip(['loss','policy_loss','value_mse','entropy','approx_kl','grad_norm','clip_fraction'],np.mean(logs,0).tolist()),updates=len(logs),records=len(records),early_kl=early,seconds=time.perf_counter()-start,rollout_pack_transfer_seconds=pack_seconds,packed=packed)
 
-def save(path,model,past,opt,iteration,seed,backend,packed,logs):
+def save(path,model,past,opt,iteration,seed,backend,packed,logs,training_settings=None):
  device=next(model.parameters()).device;sync(device);t=time.perf_counter()
  ck=dict(format='terminal-ppo-runtime-v1',channels=model.channels,model=model.state_dict(),past=past.state_dict(),optimizer=opt.state_dict(),iteration=iteration,seed=seed,backend=backend,packed=packed,logs=logs,python_rng=random.getstate(),numpy_rng=np.random.get_state(),torch_rng=torch.get_rng_state(),cuda_rng=torch.cuda.get_rng_state_all() if device.type=='cuda' else [],workers=None,checkpoint_boundary='completed iteration; no in-flight games')
+ if training_settings is not None:ck.update(training_settings)
  path=Path(path);path.parent.mkdir(parents=True,exist_ok=True);torch.save(ck,str(path)+'.tmp');os.replace(str(path)+'.tmp',path);return time.perf_counter()-t
 
 def restore(path,device):
@@ -119,26 +120,38 @@ def export(source,dest):
  if ck.get('format')!='terminal-ppo-runtime-v1':raise ValueError('not runtime checkpoint')
  torch.save(dict(format='terminal-ppo-inference-v2',channels=ck['channels'],model=ck['model'],iteration=ck['iteration'],seed=ck['seed'],experimental=True),dest)
 
-def train(output,iterations=64,seed=1741000,channels=4,device='cuda',backend='auto',packed=False,resume=None,cap=600):
+def train(output,iterations=64,seed=1741000,channels=4,device='cuda',backend='auto',packed=False,resume=None,cap=600,minibatch=None,learning_rate=None,allow_training_change=False):
  output=Path(output)
  if not resume and (output/'latest.pt').exists():raise FileExistsError('output already has a checkpoint; use --resume or a new directory')
  output.mkdir(parents=True,exist_ok=True);seed_all(seed)
  if resume:
   model,past,opt,ck=restore(resume,device);assert ck['channels']==channels and ck['seed']==seed and ck['backend']==backend and ck['packed']==packed;step=ck['iteration'];logs=ck['logs']
  else:
-  model=TerminalNet(channels).to(device);past=copy.deepcopy(model);opt=torch.optim.Adam(model.parameters(),lr=.0003);step=0;logs=[];save(output/'untrained.pt',model,past,opt,0,seed,backend,packed,logs)
+  model=TerminalNet(channels).to(device);past=copy.deepcopy(model);opt=torch.optim.Adam(model.parameters(),lr=.0003);step=0;logs=[];ck={}
+ old_mb=ck.get('minibatch',16);old_lr=float(opt.param_groups[0]['lr'])
+ if 'learning_rate' in ck and any(g['lr']!=ck['learning_rate'] for g in opt.param_groups):raise ValueError('checkpoint learning_rate metadata disagrees with optimizer')
+ mb=old_mb if minibatch is None else minibatch;lr=old_lr if learning_rate is None else learning_rate
+ if not isinstance(mb,int) or mb<=0 or not np.isfinite(lr) or lr<=0:raise ValueError('minibatch and learning-rate must be positive finite values')
+ history=list(ck.get('training_changes',[]))
+ if resume and (mb!=old_mb or lr!=old_lr):
+  if not allow_training_change:raise ValueError('resume minibatch/LR change requires --allow-training-change; omitted values preserve checkpoint settings')
+  history.append(dict(iteration=step,old_minibatch=old_mb,new_minibatch=mb,old_learning_rate=old_lr,new_learning_rate=lr,explicit=True))
+ for group in opt.param_groups:group['lr']=lr
+ settings=dict(minibatch=mb,learning_rate=lr,training_changes=history,update_implementation='consolidated-dense-v1')
+ if not resume:save(output/'untrained.pt',model,past,opt,0,seed,backend,packed,logs,settings)
  start_step=step
  if (output/'games.jsonl').exists():
   lines=(output/'games.jsonl').read_text().splitlines()
   if lines and json.loads(lines[-1])['iteration']>step:raise ValueError('output game log is ahead of resume checkpoint')
- config=dict(seed=seed,channels=channels,iterations=iterations,backend=backend,packed=packed,device=device,batch_games=16,cap_seconds=cap,resume=resume,torch=torch.__version__,loss='unchanged terminal WDL PPO',workers=0,compile=False);(output/'config.json').write_text(json.dumps(config,indent=2));start=time.perf_counter()
+ config=dict(seed=seed,channels=channels,iterations=iterations,backend=backend,packed=packed,device=device,batch_games=16,cap_seconds=cap,resume=resume,torch=torch.__version__,loss='unchanged terminal WDL PPO',workers=0,compile=False,**settings);(output/'config.json').write_text(json.dumps(config,indent=2));start=time.perf_counter()
  while step<iterations and time.perf_counter()-start<cap:
-  records,games,timing=collect(model,past,step,seed,backend=backend);metrics=update(model,opt,records,packed=packed);step+=1
+  records,games,timing=collect(model,past,step,seed,backend=backend);from .ppo_gpu import update_fast
+  metrics=update_fast(model,opt,records,packed=packed,minibatch=mb);step+=1
   if step%4==0:past.load_state_dict(model.state_dict())
   logs.append(dict(iteration=step,generation=timing,update=metrics,games_sha256=hashlib.sha256(json.dumps(games,sort_keys=True).encode()).hexdigest(),opponent_results={mode:float(np.mean([np.sign(g['scores'][g['learner_seat']]-g['scores'][1-g['learner_seat']]) for g in games if g['opponent']==mode])) for mode in ('current','past','heuristic')}))
   with (output/'games.jsonl').open('a') as stream:stream.write(json.dumps(dict(iteration=step,games=games))+'\n')
   print(step,round(time.perf_counter()-start,3),metrics,flush=True)
- seconds=time.perf_counter()-start;saving=save(output/'latest.pt',model,past,opt,step,seed,backend,packed,logs);export(output/'latest.pt',output/'inference.pt');(output/'result.json').write_text(json.dumps(dict(complete=step==iterations,iteration=step,games=step*16,games_this_run=(step-start_step)*16,seconds_this_run=seconds,save_seconds=saving,logs=logs),indent=2));return model
+ seconds=time.perf_counter()-start;saving=save(output/'latest.pt',model,past,opt,step,seed,backend,packed,logs,settings);export(output/'latest.pt',output/'inference.pt');(output/'result.json').write_text(json.dumps(dict(complete=step==iterations,iteration=step,games=step*16,games_this_run=(step-start_step)*16,seconds_this_run=seconds,save_seconds=saving,logs=logs),indent=2));return model
 
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--output',required=True);p.add_argument('--iterations',type=int,default=64);p.add_argument('--seed',type=int,default=1741000);p.add_argument('--channels',type=int,choices=[4,6],default=4);p.add_argument('--device',choices=['cpu','cuda'],default='cuda');p.add_argument('--backend',choices=['python','native','auto'],default='auto');p.add_argument('--packed',action='store_true');p.add_argument('--resume');p.add_argument('--cap',type=float,default=600);a=p.parse_args();train(**vars(a))
+ p=argparse.ArgumentParser();p.add_argument('--output',required=True);p.add_argument('--iterations',type=int,default=64);p.add_argument('--seed',type=int,default=1741000);p.add_argument('--channels',type=int,choices=[4,6],default=4);p.add_argument('--device',choices=['cpu','cuda'],default='cuda');p.add_argument('--backend',choices=['python','native','auto'],default='auto');p.add_argument('--packed',action='store_true');p.add_argument('--resume');p.add_argument('--cap',type=float,default=600);p.add_argument('--minibatch',type=int);p.add_argument('--learning-rate',type=float);p.add_argument('--allow-training-change',action='store_true');a=p.parse_args();train(**vars(a))

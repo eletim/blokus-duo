@@ -30,7 +30,7 @@ def test_ownership_and_cache_state_independence():
 @pytest.mark.parametrize('device',['cpu','cuda'])
 def test_network_and_rng_exact(device):
  if device=='cuda' and not torch.cuda.is_available():pytest.skip('no CUDA')
- ai.seed_all(1730000);agent=p.PPOAgent(1401,device)
+ ai.seed_all(1730000);agent=p.PPOAgent(1401,device,generation="gen2")
  for s in states()[::8]:
   with backend(True):old=p.observe(s)[0];rng=random.Random(9);m=agent.act(s,rng);r=rng.getstate()
   with backend(False):new=p.observe(s)[0];rng=random.Random(9);assert agent.act(s,rng)==m and rng.getstate()==r

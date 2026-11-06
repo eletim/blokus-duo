@@ -223,3 +223,6 @@ PPO2048推論追加: 3seedの固定モデルを履歴不要へexport、CPU/CUDA�
 - 3seed×CPU/CUDA×26局面export bit一致。新cloneでCPU専用torch2.7.1+cpu、6推論テストPASS、人間先後・AI・世代対戦/旧探索をCPU/CUDA各13局再生PASS、main全59tests PASS。今回は追加学習なし。
 
 main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既存72テスト/CPU clone67 PASSを引用。main上4ch/native CUDA学習CLIを1iteration16gamesだけsmoke完了。gen2 CUDA/2048 CPU対戦完走。READMEへnative build必須・Python fallback・CPU生成由来の短期測定速度比を明記。公開モデル/既定維持。本学習・重い再ベンチなし。
+
+## gen3公開統合
+最新origin/main6be347fからintegration/ppo-gen3作成。研究全体はmergeせず、固定B/5120/1751401-3のinference exportを確認16e3baa models.jsonとSHA完全一致で追加。gen3既定、旧世代/seed別名互換、global AI default維持。640bd3f由来dense同期集約update＋minibatch指定のみ抽出、raggedなし。LR/batch再開継承、明示変更履歴を実装。79tests PASS、CPU/CUDA 4vs2+2別process再開bit一致（past交換含む）、設定変更拒否/履歴確認。新clone公開CLI検証へ進む。
