@@ -448,8 +448,8 @@ python -m blokus.ppo_runtime --output artifacts/my-gen3-training --channels 4 --
 
 ## ブラウザでAIと対戦
 
-`python -m blokus.web_play --device cpu` で起動し、http://127.0.0.1:8765 を開きます。駒をクリックして回転・反転・配置でき、即決gen3と時間指定の先読み実験モードを選べます。[操作・起動方法と検証範囲](WEB_PLAY.md)。
+`python -m blokus.web_play --device cpu` で起動し、http://127.0.0.1:8765 を開きます。駒をクリックして回転・反転・配置でき、即決gen3、gen3の先読み実験モード、非NNの学習済み線形評価＋先読みを選べます。[操作・起動方法と検証範囲](WEB_PLAY.md)。
 
-### 非NN線形価値Lの追加候補
+### 非NN線形価値Lで対戦
 
-公開gen3/default/Webは変更しません。CPUで遊べる固定線形方策・価値＋24×8/2ply探索の追加候補は[LINEAR-L.md](LINEAR-L.md)を参照。研究履歴は推論に不要です。
+公開gen3と既存defaultを維持し、Webの「AIの考え方」で「非NN・学習済み線形評価＋先読み」を選べます。「新しい対局」で適用します。CPU CLIも利用可能です：[LINEAR-L.md](LINEAR-L.md)。研究履歴は推論に不要です。

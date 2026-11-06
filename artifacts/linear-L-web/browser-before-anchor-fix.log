@@ -1,0 +1,10 @@
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: '11行6列', exact: true })[22m
+
+    at /tmp/blokus-linear-web/scripts/check_linear_web.cjs:38:90 {
+  log: [
+    "  - waiting for getByRole('button', { name: '11行6列', exact: true })"
+  ],
+  name: 'TimeoutError'
+}

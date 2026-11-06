@@ -1,0 +1,13 @@
+{
+  "rollback_sha": "86d9e512a81ebde9e72c3a1fec519a1ce29dbcbc",
+  "service": "blokus-web.service",
+  "url": "http://100.95.30.96:8765",
+  "working_directory": "/home/eletim/blokus-duo-ppo-main",
+  "start_command": "/home/eletim/blokus-duo-ai/.venv/bin/python -u -m blokus.web_play --host 100.95.30.96 --port 8765 --device cpu",
+  "unit_before": "# /run/user/1000/systemd/transient/blokus-web.service\n# This is a transient unit file, created programmatically via the systemd API. Do not edit.\n[Unit]\nDescription=[systemd-run] /home/eletim/blokus-duo-ai/.venv/bin/python -u -m blokus.web_play --host 100.95.30.96 --port 8765 --device cpu\nCollectMode=inactive-or-failed\n\n[Service]\nWorkingDirectory=/home/eletim/blokus-duo-ppo-main\nExecStart=\nExecStart=\"/home/eletim/blokus-duo-ai/.venv/bin/python\" \"-u\" \"-m\" \"blokus.web_play\" \"--host\" \"100.95.30.96\" \"--port\" \"8765\" \"--device\" \"cpu\"\n",
+  "rollback_procedure": [
+    "git -C /home/eletim/blokus-duo-ppo-main switch --detach ROLLBACK_SHA",
+    "systemctl --user restart blokus-web.service"
+  ],
+  "restart_preserves_unit_settings": true
+}

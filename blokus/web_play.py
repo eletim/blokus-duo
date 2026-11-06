@@ -14,15 +14,20 @@ from .ppo_search import SearchAgent
 
 
 class Games:
-    def __init__(self, bot):
+    def __init__(self, bot, linear_factory=None):
         self.bot = bot
+        self.linear_factory = linear_factory
         self.games = {}
         self.lock = threading.RLock()
         self.worker = ThreadPoolExecutor(max_workers=1)
 
     def create(self, seat, mode, budget):
-        if type(seat) is not int or seat not in (0, 1) or mode not in ('policy', 'search') or type(budget) is not int or budget not in (100, 500, 2000):
+        if type(seat) is not int or seat not in (0, 1) or mode not in ('policy', 'search', 'linear') or type(budget) is not int or budget not in (100, 500, 2000):
             raise ValueError('対局設定が不正です')
+        if mode == 'linear' and self.linear_factory is None:
+            raise ValueError('非NN AIを利用できません')
+        if mode == 'linear':
+            budget = 100
         with self.lock:
             # Bounded local sessions; evict only inactive old sessions.
             for key, g in list(self.games.items()):
@@ -47,14 +52,23 @@ class Games:
             self.worker.submit(self.think, key, copy.deepcopy(s))
 
     def think(self, key, state):
+        g = None
         try:
             with self.lock:
                 g = self.games[key]
-            agent = SearchAgent(self.bot, g['budget']) if g['mode']=='search' else self.bot
+                revision = len(g['history'])
+            agent = self.linear_factory() if g['mode']=='linear' else SearchAgent(self.bot, g['budget']) if g['mode']=='search' else self.bot
             start = time.perf_counter()
             move = agent.act(state, g['rng'])
-            stats = agent.stats if g['mode']=='search' else dict(elapsed_ms=(time.perf_counter()-start)*1000)
+            elapsed = (time.perf_counter()-start)*1000
+            if g['mode'] == 'linear':
+                detail = agent.stats[-1]
+                stats = dict(elapsed_ms=elapsed, depth=detail.get('depth', 0), fallback=detail.get('fallback', False), target_complete=detail.get('target_complete', True))
+            else:
+                stats = agent.stats if g['mode']=='search' else dict(elapsed_ms=elapsed)
             with self.lock:
+                if self.games.get(key) is not g or len(g['history']) != revision or g['state'] != state:
+                    return  # Never apply a result to a replaced/advanced session.
                 play(g['state'], move, validate=True)
                 g['history'].append(None if move is None else [move.piece, move.orientation, move.row, move.col])
                 g['stats'] = stats
@@ -62,8 +76,9 @@ class Games:
                 self.advance(key)
         except Exception as error:
             with self.lock:
-                g['busy'] = False
-                g['error'] = str(error)
+                if g is not None and self.games.get(key) is g:
+                    g['busy'] = False
+                    g['error'] = str(error)
 
     def move(self, key, revision, values):
         with self.lock:
@@ -84,7 +99,7 @@ class Games:
             g['touched'] = time.monotonic()
             s = g['state']
             qs = legal_moves(s) if s.turn==g['seat'] and not g['busy'] else []
-            return dict(id=key, revision=len(g['history']), boards=[list(cells_of(b)) for b in s.boards], remaining=[[i for i in range(21) if s.remaining[p]>>i&1] for p in (0,1)], scores=[s.score(p) for p in (0,1)], turn=s.turn, seat=g['seat'], done=s.done, busy=g['busy'], error=g['error'], mode=g['mode'], budget=g['budget'], stats=g['stats'], legal=[[q.move.piece,q.move.orientation,q.move.row,q.move.col] for q in qs], history=g['history'])
+            return dict(id=key, revision=len(g['history']), boards=[list(cells_of(b)) for b in s.boards], remaining=[[i for i in range(21) if s.remaining[p]>>i&1] for p in (0,1)], scores=[s.score(p) for p in (0,1)], turn=s.turn, seat=g['seat'], done=s.done, busy=g['busy'], error=g['error'], mode=g['mode'], budget=g['budget'], generation='linear-L' if g['mode']=='linear' else 'gen3', model_seed=3101 if g['mode']=='linear' else 1751401, stats=g['stats'], legal=[[q.move.piece,q.move.orientation,q.move.row,q.move.col] for q in qs], history=g['history'])
 
 
 def handler(games):
@@ -147,7 +162,19 @@ def main():
     import torch
     from .ppo_policy import PPOAgent
     torch.set_num_threads(1)
-    games = Games(PPOAgent(device=args.device, backend='auto'))
+    from .linear_inference import load_search, make_search
+    load_start = time.perf_counter()
+    bot = PPOAgent(device=args.device, backend='auto')
+    linear = load_search()
+    print(f'Model load: {(time.perf_counter()-load_start)*1000:.1f} ms', flush=True)
+    # Load/feature initialization is done before accepting games; log cold cost.
+    for name, agent in [('gen3', bot), ('linear-L', linear)]:
+        begin = time.perf_counter()
+        agent.act(State(), random.Random(0))
+        if name == 'linear-L':
+            agent.agent.value(State())
+        print(f'Warmup {name}: {(time.perf_counter()-begin)*1000:.1f} ms', flush=True)
+    games = Games(bot, lambda: make_search(linear.agent))
     server = ThreadingHTTPServer((args.host, args.port), handler(games))
     print(f'Blokus: http://{args.host}:{args.port}', flush=True)
     try:
