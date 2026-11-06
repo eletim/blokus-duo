@@ -247,3 +247,8 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 - 混成/前回探索52.60%、補正CI49.09–56.05%、改善確証なし。/gen3 34.31%、得点差−4.43、公開AI未達。/旧単体79.36%。混成2.02ms、前回探索2.37ms、gen3 .323ms。
 - 全3840評価局を再生・算術・分離監査。全101tests、CPU-only export/人間先後CLI確認。今回追加学習0、再学習条件はvalidationで未成立。確認で再選択しない。
 - main/Web/最小統合候補abc41cf維持。詳細 artifacts/linear-hybrid/REPORT.md。
+
+## 固定旧方策に対する価値再学習：新実験
+- research/linear-value-retrain、基点ec64667。前回gate/結果を保持。PLAN.mdを先に保存し元混成/旧方策/gen3をSHA固定。
+- 新診断72対局・144root。自己対戦の訪問MSE .695、実探索葉の固定旧方策完走ラベルMSE .722。比1.039で追加S armの1.10基準未達、必須Pのみ。
+- Pは旧方策固定・元value継続・新規Adam、3seed各4096games/256updatesへ速度pilotで固定。NN教師なし、gen3は診断/対戦のみ。今後validation64prefix→gate/選択→fresh128prefix確認。

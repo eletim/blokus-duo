@@ -1,0 +1,24 @@
+{
+  "arms": [
+    "P"
+  ],
+  "seeds": [
+    3101,
+    3102,
+    3103
+  ],
+  "games_per_seed_arm": 4096,
+  "updates": 256,
+  "expected_seconds": 517.744431361556,
+  "pilot": [
+    {
+      "arm": "P",
+      "seconds": 0.6741463950020261
+    }
+  ],
+  "diagnostic_seconds": 4.181718779997027,
+  "cap_seconds": 1800,
+  "initialization": "continue frozen original value, fresh Adam",
+  "policy": "frozen old greedy",
+  "selection": "fixed endpoint"
+}
