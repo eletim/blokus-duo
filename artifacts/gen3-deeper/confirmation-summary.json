@@ -1,0 +1,224 @@
+{
+  "H-E": {
+    "point": 0.6276041666666666,
+    "point_ci95": [
+      0.578125,
+      0.6744791666666667
+    ],
+    "point_ci_bonferroni2": [
+      0.5729166666666666,
+      0.6822916666666666
+    ],
+    "difference": 2.416666666666667,
+    "difference_ci95": [
+      1.5625,
+      3.302083333333333
+    ],
+    "by_seed": {
+      "1751401": {
+        "games": 64,
+        "wins": 40,
+        "draws": 2,
+        "losses": 22,
+        "point": 0.640625,
+        "difference": 2.484375
+      },
+      "1751402": {
+        "games": 64,
+        "wins": 38,
+        "draws": 4,
+        "losses": 22,
+        "point": 0.625,
+        "difference": 3.046875
+      },
+      "1751403": {
+        "games": 64,
+        "wins": 39,
+        "draws": 1,
+        "losses": 24,
+        "point": 0.6171875,
+        "difference": 1.71875
+      }
+    },
+    "by_seat": {
+      "0": {
+        "games": 96,
+        "wins": 64,
+        "draws": 3,
+        "losses": 29,
+        "point": 0.6822916666666666,
+        "difference": 2.6875
+      },
+      "1": {
+        "games": 96,
+        "wins": 53,
+        "draws": 4,
+        "losses": 39,
+        "point": 0.5729166666666666,
+        "difference": 2.1458333333333335
+      }
+    },
+    "time": {
+      "H": {
+        "mean_ms": 262.6911140217731,
+        "p99_ms": 501.1876142981055,
+        "max_ms": 550.089473996195,
+        "over_budget": 637,
+        "moves": 2742,
+        "fallback": 0.09299781181619256,
+        "depths": {
+          "0": 255,
+          "2": 0,
+          "4": 637,
+          "6": 1850
+        },
+        "widths": {
+          "0": 2742,
+          "4": 0,
+          "8": 0,
+          "12": 0
+        },
+        "nonpass_wide_fraction": 0.0,
+        "nn_policy_calls": 840406,
+        "nn_value_calls": 1401810,
+        "cache_hits": 218599
+      },
+      "E": {
+        "mean_ms": 68.92432075974813,
+        "p99_ms": 164.5887332885467,
+        "max_ms": 218.7642499920912,
+        "over_budget": 0,
+        "moves": 2718,
+        "fallback": 0.1254598969830758,
+        "depths": {
+          "0": 341,
+          "2": 0,
+          "4": 2377,
+          "6": 0
+        },
+        "widths": {
+          "0": 2718,
+          "4": 0,
+          "8": 0,
+          "12": 0
+        },
+        "nonpass_wide_fraction": 0.0,
+        "nn_policy_calls": 0,
+        "nn_value_calls": 0,
+        "cache_hits": 0
+      }
+    },
+    "wall_seconds": 907.6884403729928
+  },
+  "H-policy": {
+    "point": 0.6875,
+    "point_ci95": [
+      0.6223958333333333,
+      0.7473958333333335
+    ],
+    "point_ci_bonferroni2": [
+      0.6119791666666667,
+      0.7578125
+    ],
+    "difference": 4.6875,
+    "difference_ci95": [
+      3.322916666666667,
+      6.109375
+    ],
+    "by_seed": {
+      "1751401": {
+        "games": 64,
+        "wins": 42,
+        "draws": 2,
+        "losses": 20,
+        "point": 0.671875,
+        "difference": 3.859375
+      },
+      "1751402": {
+        "games": 64,
+        "wins": 44,
+        "draws": 2,
+        "losses": 18,
+        "point": 0.703125,
+        "difference": 5.40625
+      },
+      "1751403": {
+        "games": 64,
+        "wins": 42,
+        "draws": 4,
+        "losses": 18,
+        "point": 0.6875,
+        "difference": 4.796875
+      }
+    },
+    "by_seat": {
+      "0": {
+        "games": 96,
+        "wins": 64,
+        "draws": 5,
+        "losses": 27,
+        "point": 0.6927083333333334,
+        "difference": 5.78125
+      },
+      "1": {
+        "games": 96,
+        "wins": 64,
+        "draws": 3,
+        "losses": 29,
+        "point": 0.6822916666666666,
+        "difference": 3.59375
+      }
+    },
+    "time": {
+      "H": {
+        "mean_ms": 254.99518224253129,
+        "p99_ms": 501.2041708006291,
+        "max_ms": 551.5418709983351,
+        "over_budget": 661,
+        "moves": 2763,
+        "fallback": 0.09229098805646037,
+        "depths": {
+          "0": 255,
+          "2": 0,
+          "4": 661,
+          "6": 1847
+        },
+        "widths": {
+          "0": 2763,
+          "4": 0,
+          "8": 0,
+          "12": 0
+        },
+        "nonpass_wide_fraction": 0.0,
+        "nn_policy_calls": 817545,
+        "nn_value_calls": 1372219,
+        "cache_hits": 203350
+      },
+      "policy": {
+        "mean_ms": 0.8743338179149863,
+        "p99_ms": 2.4585324962390587,
+        "max_ms": 3.3645980001892895,
+        "over_budget": 0,
+        "moves": 2730,
+        "fallback": 0.0,
+        "depths": {
+          "0": 2730,
+          "2": 0,
+          "4": 0,
+          "6": 0
+        },
+        "widths": {
+          "0": 2730,
+          "4": 0,
+          "8": 0,
+          "12": 0
+        },
+        "nonpass_wide_fraction": 0.0,
+        "nn_policy_calls": 0,
+        "nn_value_calls": 0,
+        "cache_hits": 0
+      }
+    },
+    "wall_seconds": 706.9905683960096
+  }
+}

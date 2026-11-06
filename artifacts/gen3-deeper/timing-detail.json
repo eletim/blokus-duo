@@ -1,0 +1,242 @@
+{
+  "match_wall_seconds": 2416.8569912870007,
+  "rows": {
+    "confirmation500/H-E/H": {
+      "nonpass": 2487,
+      "forced_pass": 255,
+      "timeout_fallback": 0,
+      "depths": {
+        "4": 637,
+        "6": 1850
+      },
+      "cutoffs": 484601,
+      "nodes": 2381251,
+      "calls_policy": 840406,
+      "calls_value": 1401810,
+      "cache_hits": 218599,
+      "cold_load_seconds": [
+        0.0032861590007087216,
+        0.0025588169955881312,
+        0.002802396993502043
+      ],
+      "warmup_seconds": [
+        0.0011396330082789063,
+        0.0010186629951931536,
+        0.0010498129995539784
+      ],
+      "moves": 2742,
+      "mean_ms": 262.6911140217731,
+      "p99_ms": 501.1876142981055,
+      "max_ms": 550.089473996195,
+      "over_budget": 637,
+      "over_budget_fraction": 0.2323121808898614
+    },
+    "confirmation500/H-E/E": {
+      "nonpass": 2377,
+      "forced_pass": 341,
+      "timeout_fallback": 0,
+      "depths": {
+        "4": 2377
+      },
+      "cutoffs": 0,
+      "nodes": 718803,
+      "calls_policy": 0,
+      "calls_value": 0,
+      "cache_hits": 0,
+      "cold_load_seconds": [
+        0.0032861590007087216,
+        0.0025588169955881312,
+        0.002802396993502043
+      ],
+      "warmup_seconds": [
+        0.0011396330082789063,
+        0.0010186629951931536,
+        0.0010498129995539784
+      ],
+      "moves": 2718,
+      "mean_ms": 68.92432075974813,
+      "p99_ms": 164.5887332885467,
+      "max_ms": 218.7642499920912,
+      "over_budget": 0,
+      "over_budget_fraction": 0.0
+    },
+    "confirmation500/H-policy/H": {
+      "nonpass": 2508,
+      "forced_pass": 255,
+      "timeout_fallback": 0,
+      "depths": {
+        "4": 661,
+        "6": 1847
+      },
+      "cutoffs": 472325,
+      "nodes": 2323486,
+      "calls_policy": 817545,
+      "calls_value": 1372219,
+      "cache_hits": 203350,
+      "cold_load_seconds": [
+        0.002623487001983449,
+        0.002550766002968885,
+        0.0027456270036054775
+      ],
+      "warmup_seconds": [
+        0.0010362030006945133,
+        0.0010282330040354282,
+        0.0010536730114836246
+      ],
+      "moves": 2763,
+      "mean_ms": 254.99518224253129,
+      "p99_ms": 501.2041708006291,
+      "max_ms": 551.5418709983351,
+      "over_budget": 661,
+      "over_budget_fraction": 0.23923271806007962
+    },
+    "confirmation500/H-policy/policy": {
+      "nonpass": 2314,
+      "forced_pass": 416,
+      "timeout_fallback": 0,
+      "depths": {
+        "0": 2314
+      },
+      "cutoffs": 0,
+      "nodes": 0,
+      "calls_policy": 0,
+      "calls_value": 0,
+      "cache_hits": 0,
+      "cold_load_seconds": [
+        0.002623487001983449,
+        0.002550766002968885,
+        0.0027456270036054775
+      ],
+      "warmup_seconds": [
+        0.0010362030006945133,
+        0.0010282330040354282,
+        0.0010536730114836246
+      ],
+      "moves": 2730,
+      "mean_ms": 0.8743338179149863,
+      "p99_ms": 2.4585324962390587,
+      "max_ms": 3.3645980001892895,
+      "over_budget": 0,
+      "over_budget_fraction": 0.0
+    },
+    "validation500/H-E/H": {
+      "nonpass": 1245,
+      "forced_pass": 139,
+      "timeout_fallback": 0,
+      "depths": {
+        "6": 973,
+        "4": 272
+      },
+      "cutoffs": 247291,
+      "nodes": 1207181,
+      "calls_policy": 425939,
+      "calls_value": 712349,
+      "cache_hits": 107565,
+      "cold_load_seconds": [
+        0.00551751499006059,
+        0.002753277003648691,
+        0.002601827000034973
+      ],
+      "warmup_seconds": [
+        0.0011158630077261478,
+        0.0010529029968893155,
+        0.0010432520066387951
+      ],
+      "moves": 1384,
+      "mean_ms": 254.19804191509462,
+      "p99_ms": 501.0955409074086,
+      "max_ms": 551.22313699394,
+      "over_budget": 272,
+      "over_budget_fraction": 0.19653179190751446
+    },
+    "validation500/H-E/E": {
+      "nonpass": 1175,
+      "forced_pass": 195,
+      "timeout_fallback": 0,
+      "depths": {
+        "4": 1175
+      },
+      "cutoffs": 0,
+      "nodes": 360005,
+      "calls_policy": 0,
+      "calls_value": 0,
+      "cache_hits": 0,
+      "cold_load_seconds": [
+        0.00551751499006059,
+        0.002753277003648691,
+        0.002601827000034973
+      ],
+      "warmup_seconds": [
+        0.0011158630077261478,
+        0.0010529029968893155,
+        0.0010432520066387951
+      ],
+      "moves": 1370,
+      "mean_ms": 65.58187900864804,
+      "p99_ms": 155.8786044915905,
+      "max_ms": 180.9725079947384,
+      "over_budget": 0,
+      "over_budget_fraction": 0.0
+    },
+    "validation500/H-policy/H": {
+      "nonpass": 1283,
+      "forced_pass": 127,
+      "timeout_fallback": 0,
+      "depths": {
+        "6": 975,
+        "4": 308
+      },
+      "cutoffs": 250486,
+      "nodes": 1227126,
+      "calls_policy": 431778,
+      "calls_value": 724475,
+      "cache_hits": 110039,
+      "cold_load_seconds": [
+        0.00254985700303223,
+        0.0025704669969854876,
+        0.0025610470038373023
+      ],
+      "warmup_seconds": [
+        0.0010306920012226328,
+        0.0010496430040802807,
+        0.0010533919994486496
+      ],
+      "moves": 1410,
+      "mean_ms": 254.81980942814704,
+      "p99_ms": 501.2893580039963,
+      "max_ms": 522.4423190084053,
+      "over_budget": 308,
+      "over_budget_fraction": 0.21843971631205675
+    },
+    "validation500/H-policy/policy": {
+      "nonpass": 1202,
+      "forced_pass": 193,
+      "timeout_fallback": 0,
+      "depths": {
+        "0": 1202
+      },
+      "cutoffs": 0,
+      "nodes": 0,
+      "calls_policy": 0,
+      "calls_value": 0,
+      "cache_hits": 0,
+      "cold_load_seconds": [
+        0.00254985700303223,
+        0.0025704669969854876,
+        0.0025610470038373023
+      ],
+      "warmup_seconds": [
+        0.0010306920012226328,
+        0.0010496430040802807,
+        0.0010533919994486496
+      ],
+      "moves": 1395,
+      "mean_ms": 0.8397556359021787,
+      "p99_ms": 2.3293512049713163,
+      "max_ms": 3.8311800017254427,
+      "over_budget": 0,
+      "over_budget_fraction": 0.0
+    }
+  },
+  "unrecorded_E_calls": "not available, zero fields are not measured calls"
+}
