@@ -455,3 +455,5 @@ python -m blokus.ppo_runtime --output artifacts/my-gen3-training --channels 4 --
 このbranchの[実験報告](artifacts/linear-value/REPORT.md)に、NumPyの線形方策/価値学習と候補限定探索を保存しています。ニューラル教師は使わず終局勝敗から学習します。学習前には改善しましたが公開gen3には届かず、公開推奨の置換ではありません。`python -m blokus.linear_play2 --checkpoint artifacts/linear-value/new-3101/policy.json --backend python --human-seat 0`でCPU対戦できます。`--search-ms 6 --backend native`は学習価値による探索です（native要ビルド、soft deadline）。履歴不要のJSONモデルで、既存グローバルdefault/Webは変えません。
 
 固定した旧30係数方策＋学習価値の混成は、[次サイクル報告](artifacts/linear-hybrid/REPORT.md)に保存しています。`python -m blokus.linear_play2 --checkpoint artifacts/linear-hybrid/exports/seed-3101.json --backend python --search-ms 6 --human-seat 0`で試せます。対前回探索52.60%は改善未確定、対gen3は34.31%で未達。旧公開モデル/default/Webの置換ではありません。
+
+固定旧方策の価値だけを再学習した[診断・対照結果](artifacts/linear-value-retrain/REPORT.md)も保存しています。新validationで対gen3が元混成34.38%→再学習26.43%となり事前gate未達、不採用です。コードとCPU推論モデルは研究用として残し、公開gen3やWebの既定を変更しません。

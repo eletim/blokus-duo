@@ -29,7 +29,9 @@ def main():
  import torch
  torch.set_num_threads(1)
  from blokus.ppo_policy import PPOAgent
- R.mkdir(exist_ok=True,parents=True);start=time.perf_counter();records=[];roots=[];visit_rows=[];leaf_rows=[]
+ R.mkdir(exist_ok=True,parents=True)
+ if (R/'diagnostic.json.gz').exists():raise FileExistsError('preserve diagnostic bank; choose a new output root for another experiment')
+ start=time.perf_counter();records=[];roots=[];visit_rows=[];leaf_rows=[]
  oldindex=np.load('/tmp/linear-value-training.npy',mmap_mode='r')
  from scripts.linear_value_eval import contains
  for seed in SEEDS:

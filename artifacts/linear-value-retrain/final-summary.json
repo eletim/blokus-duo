@@ -1,0 +1,40 @@
+{
+  "training": [
+    {
+      "seed": 3101,
+      "seconds": 17.72067156999401,
+      "first16_mse": 0.7304614017766268,
+      "last16_mse": 0.711378700336045,
+      "policy_sha256": "602e6fb5df8677ce096aa48161c15524732a9fc1b44f48cf6470c35f57be33fe"
+    },
+    {
+      "seed": 3102,
+      "seconds": 17.587588246999076,
+      "first16_mse": 0.7670969750819671,
+      "last16_mse": 0.6992710778076198,
+      "policy_sha256": "cbbe3460ce6f1384ee590f9b6ad026deda538302ac74227b030db6f042f0094f"
+    },
+    {
+      "seed": 3103,
+      "seconds": 17.23341476800124,
+      "first16_mse": 0.7405281647481278,
+      "last16_mse": 0.7237139165229677,
+      "policy_sha256": "fadb14714bc3e404b610007aa64b2d5d466f7889e840fe1897f8889399dfb8ef"
+    }
+  ],
+  "paired_gen3_difference": {
+    "point": -0.07942708333333334,
+    "point_ci95": [
+      -0.13802083333333334,
+      -0.02083333333333334
+    ],
+    "score": -2.682291666666666,
+    "score_ci95": [
+      -3.828125,
+      -1.5416666666666667
+    ],
+    "note": "diagnostic paired validation difference; not independent confirmation, no family correction"
+  },
+  "selection_recomputed": true,
+  "confirmation_run": false
+}

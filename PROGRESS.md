@@ -252,3 +252,9 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 - research/linear-value-retrain、基点ec64667。前回gate/結果を保持。PLAN.mdを先に保存し元混成/旧方策/gen3をSHA固定。
 - 新診断72対局・144root。自己対戦の訪問MSE .695、実探索葉の固定旧方策完走ラベルMSE .722。比1.039で追加S armの1.10基準未達、必須Pのみ。
 - Pは旧方策固定・元value継続・新規Adam、3seed各4096games/256updatesへ速度pilotで固定。NN教師なし、gen3は診断/対戦のみ。今後validation64prefix→gate/選択→fresh128prefix確認。
+
+## 固定旧方策のvalue-only再学習完了・gate未達
+- Pのみ3seed各4096games/256updates、方策SHA不変。本学習54.44秒。Sの事前追加条件未達でS本学習なし。
+- 新validation64prefix×先後×3seed：再学習/元混成53.78%（CI49.35–58.20）、再学習/gen3 26.43%、元混成/gen3 34.38%。対gen3基準未達、selected=null、新128prefix確認は実施せず停止。
+- 103tests PASS、P/S別process4 vs2+2再開一致、全学習更新再計算bit一致。独立座標oracleで学習/診断/評価を再生、訓練3478157状態と診断/評価の重複0。
+- main/Web/gen3/統合候補は維持。詳細 artifacts/linear-value-retrain/REPORT.md。追加条件や延長なし。
