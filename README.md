@@ -445,3 +445,7 @@ python -m blokus.ppo_runtime --output artifacts/my-gen3-training --channels 4 --
 1iterationは16games収集。minibatchは1 optimizer stepに使う局面数。新規CLIの省略値は従来16/3e-4を保持するため、推奨64は明示する。再開時は保存batch/LRを自動継承し、旧metadataなしcheckpointは16とoptimizer内LRを継承する。明示変更には `--allow-training-change` が必要で、変更前後とiterationを保存する。seed/channels/backend/packedも再開元と合わせる。CPU-onlyは `--device cpu --backend python`。
 
 同期集約のupdate_fast/常駐packは従来16とのbit一致検証に基づく実装改善。**16→64の約1.42倍はoptimizer step数/KL停止が変わる学習条件変更であり、等価最適化ではない。** 公開Bはこのdense経路で学習・確認した。後続raggedは64で更新1.26倍/収集込み1.09倍だったが数値許容差未達のためmain未採用で、Bの棋力と混同しない。研究全体はbranch参照し巨大履歴をmainへ追加しない。
+
+## ブラウザでAIと対戦
+
+`python -m blokus.web_play --device cpu` で起動し、http://127.0.0.1:8765 を開きます。駒をクリックして回転・反転・配置でき、即決gen3と時間指定の先読み実験モードを選べます。[操作・起動方法と検証範囲](WEB_PLAY.md)。
