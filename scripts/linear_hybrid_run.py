@@ -108,7 +108,16 @@ def audit():
   for k,matches in allmatches.items():
    matches.sort(key=lambda x:x['seed']);assert cluster(matches)==expected[k]
  val={x['hash'] for x in json.loads((R/'validation-prefixes.json').read_text())['prefixes']};conf={x['hash'] for x in json.loads((R/'confirmation-prefixes.json').read_text())['prefixes']};assert not val&conf
- write('audit.json',dict(pass_=True,rows=rows,all_games_replayed=True,arithmetic=True,model_hashes=True,training_overlap=0,selection_confirmation_disjoint=True));print('AUDIT PASS',sum(x['games'] for x in rows),flush=True)
+ oldstarts=set(json.loads((OLD/'exclusions.json').read_text())['states'])
+ for phase in ('validation','confirmation'):oldstarts.update(x['hash'] for x in json.loads((OLD/f'{phase}-prefixes.json').read_text())['prefixes'])
+ oldstarts.update(state_hash(prefix(g['prefix_seed'])) for g in json.loads((OLD/'value-calibration.json').read_text())['games'])
+ assert not (val|conf)&oldstarts
+ validation=json.loads((R/'validation-summary.json').read_text());selection=json.loads((R/'selection.json').read_text())
+ assert selection['selected']=='hybrid' and selection['proceed'] and validation['hybrid/previous']['point']>=.5
+ assert validation['hybrid/gen3']['point']>=validation['previous/gen3']['point']-.03
+ stats=sum([json.loads((R/f'validation-hybrid-previous-{s}.json').read_text())['left_search'] for s in SEEDS],[]);assert np.mean([x['fallback'] for x in stats])<.1
+ assert all(model_sha(label,int(seed))==h for label,hashes in selection['hashes'].items() for seed,h in hashes.items())
+ write('audit.json',dict(pass_=True,rows=rows,all_games_replayed=True,arithmetic=True,model_hashes=True,training_overlap=0,selection_confirmation_disjoint=True,old_starts_excluded=True,selection_gate_recomputed=True));print('AUDIT PASS',sum(x['games'] for x in rows),flush=True)
 
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('mode',choices=['validation','select','confirmation','audit']);args=p.parse_args()

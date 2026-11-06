@@ -241,3 +241,9 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 - research/linear-hybrid-value、基点a7baba3。前回の特徴追加は不採用。旧30係数の1024iteration終点と新24係数valueをSHA固定し、候補順だけ交換する。
 - artifacts/linear-hybrid/PLAN.mdに64prefix validation、root6/reply3/depth2/6ms、進行gate、必要時のみvalue再学習、128prefix確認family2補正を事前記録。
 - main/Web/公開gen3は保持。過去学習索引はSHA参照し複製しない。
+
+## 混成確認試験完了
+- validation64prefixで事前gate通過、重み/設定を固定して新128prefix・3seed先後の確認2304局。
+- 混成/前回探索52.60%、補正CI49.09–56.05%、改善確証なし。/gen3 34.31%、得点差−4.43、公開AI未達。/旧単体79.36%。混成2.02ms、前回探索2.37ms、gen3 .323ms。
+- 全3840評価局を再生・算術・分離監査。全101tests、CPU-only export/人間先後CLI確認。今回追加学習0、再学習条件はvalidationで未成立。確認で再選択しない。
+- main/Web/最小統合候補abc41cf維持。詳細 artifacts/linear-hybrid/REPORT.md。

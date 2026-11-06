@@ -31,6 +31,21 @@ def test_hybrid_independent_small_end_and_deadline():
    u=copy.deepcopy(t);play(u,m);ans.append(-solve(u))
   return max(ans)
  a.value_weights=b.value_weights.copy();search=Search(a,ms=0,width=None,replies=None,depth=10)
+ # Guarantee a nonterminal exhaustive case even if the random game stopped earlier.
+ s=State(remaining=[1,1])
  if not s.done:
   m=search.act(s,random.Random(1));t=copy.deepcopy(s);play(t,m);assert -solve(t)==solve(s)
  opening=State();fallback=Search(a,ms=1e-8);before=copy.deepcopy(opening);m=fallback.act(opening,random.Random(3));assert m==a.act(opening,random.Random(3));assert fallback.stats[-1]['fallback'];assert opening==before
+
+
+def test_hybrid_pass_terminal_and_view(tmp_path):
+ from blokus.linear_value import value_features
+ a=Agent('old');b=Agent('new',value=np.arange(24).reshape(3,8)/100)
+ p=tmp_path/'p.json';v=tmp_path/'v.json';a.save(p);b.save(v);mixed=Agent.load_pair(p,v)
+ s=State();play(s,legal_moves(s)[0].move);t=copy.deepcopy(s);t.turn=1-t.turn
+ assert mixed.value(s)==b.value(s) and np.array_equal(value_features(s),-value_features(t))
+ assert abs(mixed.value(s)+mixed.value(t))<1e-12
+ s=State(remaining=[0,1]);assert Search(mixed).act(s,random.Random(1)) is None;play(s,None)
+ assert s.turn==1 and not s.done
+ s=State(remaining=[0,0],last=[0,1]);play(s,None);play(s,None)
+ assert s.score(0)==20 and s.score(1)==15 and mixed.value(s)==outcome(s,s.turn)
