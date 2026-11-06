@@ -1,0 +1,32 @@
+F..                                                                      [100%]
+=================================== FAILURES ===================================
+_________________ test_pruned_fixed_tree_and_completed_4_match _________________
+
+    def test_pruned_fixed_tree_and_completed_4_match():
+     torch.set_num_threads(1);p=PPOAgent(1751401,'cpu');s=State();states=[copy.deepcopy(s)]
+     for i in range(18):play(s,p.act(s,random.Random(i)),validate=False)
+     states.append(s)
+     for z in states:
+      for depth in (4,6):
+       a=DeepSearch(p,20000,width=2,max_depth=depth,prune=False);b=DeepSearch(p,20000,width=2,max_depth=depth)
+       assert a.act(z,random.Random(2))==b.act(z,random.Random(2));assert a.stats['depth']==b.stats['depth']==depth
+       np.testing.assert_allclose(a.stats['root_scores'],b.stats['root_scores'],atol=1e-7,rtol=0)
+>     a=ValueLeafSearch(p,20000);b=DeepSearch(p,20000,max_depth=4)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ppo_deeper.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <blokus.ppo_search_staged.ValueLeafSearch object at 0x73614861bfb0>
+policy = <blokus.ppo_policy.PPOAgent object at 0x736164fd6300>
+budget_ms = 20000, width = 4, max_depth = 4, root_stages = (), reuse = False
+
+    def __init__(self,policy,budget_ms=500,width=4,max_depth=4,root_stages=(),reuse=False):
+>       if not 10<=budget_ms<=5000 or width<1 or max_depth not in (2,4):raise ValueError('invalid limits')
+                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       ValueError: invalid limits
+
+blokus/ppo_search_staged.py:14: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_ppo_deeper.py::test_pruned_fixed_tree_and_completed_4_match
+1 failed, 2 passed in 1.16s
