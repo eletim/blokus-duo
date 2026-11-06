@@ -56,3 +56,9 @@ PYTHONPATH=. .venv/bin/python scripts/profile_ppo_cold_start.py
 ```
 
 native build前でも--backend python/autoと--device cpuは利用可能。CPU-only環境はCPU版PyTorchを入れる。main統合候補には本実装・参照・テスト・再現bench・本要約だけを含め、pilot訓練履歴は研究branchを参照する。処理高速化であり棋力改善ではない。時間制御探索では探索量が変わるため着手同一を保証しない。
+
+## 統合候補の最終確認
+
+main c901d09からの候補branchは integration/ppo-four-channel-runtime。学習履歴・pilot重みは含めず、公開gen2/2048を維持。候補全72 tests PASS。新規clone＋CPU専用PyTorchでは67 PASS/5 skip（CUDA/native未導入）。gen2/2048/実験4chのCPU対戦、4ch native CUDA対戦が完走。人間両座席はEOF終了まで確認した。runtime checkpointとexportのCPU/CUDA logits/valueはbit一致。mainのremote SHAはc901d09のまま。
+
+再開検証の比較はCUDA連続4iteration対2＋再開後追加2、CPU連続2対1＋追加1。例: `--iterations 2 --output /tmp/first` で保存し、同じseed/channels/backend/deviceを指定して `--iterations 4 --resume /tmp/first/latest.pt --output /tmp/restored`。iterationsは追加量ではなく累積終了iteration。学習checkpointは完了iteration境界で保存し、実行中のworkerはない。
