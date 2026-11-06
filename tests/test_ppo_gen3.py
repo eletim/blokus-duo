@@ -27,3 +27,17 @@ def test_gen3_frozen_exports_and_outputs(device):
    scores=x[0][0].cpu().numpy();import numpy as np
    index=random.Random(i).choice(np.flatnonzero(scores>=scores.max()-1e-7));expected=qs[index].move if qs else None
    assert a.act(s,random.Random(i))==expected;play(s,expected)
+
+def test_legacy_training_settings_and_explicit_change(tmp_path):
+ from blokus import ppo_runtime as r
+ r.train(tmp_path/'first',iterations=0,seed=9,device='cpu',backend='python')
+ path=tmp_path/'first/latest.pt';ck=torch.load(path,weights_only=False)
+ for k in ('minibatch','learning_rate','training_changes','update_implementation'):ck.pop(k,None)
+ for g in ck['optimizer']['param_groups']:g['lr']=.0007
+ torch.save(ck,path)
+ r.train(tmp_path/'legacy',iterations=0,seed=9,device='cpu',backend='python',resume=path)
+ old=torch.load(tmp_path/'legacy/latest.pt',weights_only=False);assert old['minibatch']==16 and old['learning_rate']==.0007
+ with pytest.raises(ValueError,match='allow-training-change'):r.train(tmp_path/'bad',iterations=0,seed=9,device='cpu',backend='python',resume=path,minibatch=64)
+ r.train(tmp_path/'change',iterations=0,seed=9,device='cpu',backend='python',resume=path,minibatch=64,learning_rate=.0003,allow_training_change=True)
+ new=torch.load(tmp_path/'change/latest.pt',weights_only=False);assert new['training_changes'][0]['old_learning_rate']==.0007 and new['minibatch']==64
+ assert all(g['lr']==.0003 for g in new['optimizer']['param_groups'])

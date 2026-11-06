@@ -1,0 +1,170 @@
+{
+  "source_commit": "16e3baa",
+  "prefix_sha256": "49bebd9fd3489c235f61d92576a250b1c48a4fb743cdc456bd45b3f5e799bee5",
+  "prefix_count": 256,
+  "fixed_models": true,
+  "selection": false,
+  "training_union_sha256": "cdd1f0f1ac7a0e722a670fb541ce904187949c6982cd03fda1fa7acad30f7b4c",
+  "audit": {
+    "pass_": true,
+    "rows": [
+      {
+        "path": "artifacts/ppo-confirmation/validation-B-gen2-1751401.json",
+        "start_overlap": 0,
+        "later_state_overlap": 0,
+        "later_visits": 0,
+        "games": 512
+      },
+      {
+        "path": "artifacts/ppo-confirmation/validation-B-gen2-1751402.json",
+        "start_overlap": 0,
+        "later_state_overlap": 0,
+        "later_visits": 0,
+        "games": 512
+      },
+      {
+        "path": "artifacts/ppo-confirmation/validation-B-gen2-1751403.json",
+        "start_overlap": 0,
+        "later_state_overlap": 0,
+        "later_visits": 0,
+        "games": 512
+      },
+      {
+        "path": "artifacts/ppo-confirmation/validation-C-B-1751401.json",
+        "start_overlap": 0,
+        "later_state_overlap": 0,
+        "later_visits": 0,
+        "games": 512
+      },
+      {
+        "path": "artifacts/ppo-confirmation/validation-C-B-1751402.json",
+        "start_overlap": 0,
+        "later_state_overlap": 0,
+        "later_visits": 0,
+        "games": 512
+      },
+      {
+        "path": "artifacts/ppo-confirmation/validation-C-B-1751403.json",
+        "start_overlap": 0,
+        "later_state_overlap": 0,
+        "later_visits": 0,
+        "games": 512
+      },
+      {
+        "path": "artifacts/ppo-confirmation/validation-C-gen2-1751401.json",
+        "start_overlap": 0,
+        "later_state_overlap": 0,
+        "later_visits": 0,
+        "games": 512
+      },
+      {
+        "path": "artifacts/ppo-confirmation/validation-C-gen2-1751402.json",
+        "start_overlap": 0,
+        "later_state_overlap": 0,
+        "later_visits": 0,
+        "games": 512
+      },
+      {
+        "path": "artifacts/ppo-confirmation/validation-C-gen2-1751403.json",
+        "start_overlap": 0,
+        "later_state_overlap": 0,
+        "later_visits": 0,
+        "games": 512
+      }
+    ],
+    "all_games_replayed": true,
+    "post_visit_overlap_reported": true
+  },
+  "by_seed": {
+    "1751401": {
+      "checkpoint_sha256": "5e5d66569a8690d711a4f5d04a627cb70130e055d18000a1b9ee3fd3a5cecdb7",
+      "opponent_sha256": "7e111fd012868d9cd6f489b48f03ca2c8ab8d761935baeeaad29af94dd09bb1f",
+      "summary": {
+        "prefixes": 256,
+        "games": 512,
+        "wins": 281,
+        "losses": 204,
+        "draws": 27,
+        "mean_difference": 2.05859375,
+        "difference_ci95": [
+          1.318359375,
+          2.8634277343750005
+        ],
+        "point_rate": 0.5751953125,
+        "point_rate_ci95": [
+          0.53515625,
+          0.6162109375
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "left_ms": 0.5298052867102596,
+      "right_ms": 0.5305132651381923,
+      "wall": 8.635336493003706
+    },
+    "1751402": {
+      "checkpoint_sha256": "07988be520e729f8da64f5ef884b3b9515ad19ce0b02ee5e4338b3e60a688c44",
+      "opponent_sha256": "d09a39986cb4832ac9752c1fb35a5f351e66069e1045612a5df2a0f34be3ce9d",
+      "summary": {
+        "prefixes": 256,
+        "games": 512,
+        "wins": 255,
+        "losses": 236,
+        "draws": 21,
+        "mean_difference": 0.947265625,
+        "difference_ci95": [
+          0.19916992187500002,
+          1.6876464843750005
+        ],
+        "point_rate": 0.5185546875,
+        "point_rate_ci95": [
+          0.478515625,
+          0.55859375
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "left_ms": 0.5291979679792297,
+      "right_ms": 0.5284564785411212,
+      "wall": 8.571520625999256
+    },
+    "1751403": {
+      "checkpoint_sha256": "d8f49048eca64a6d7954b97f9cd657dce2696c7030b1bada9a13f8e312a8df9a",
+      "opponent_sha256": "846e15564e99688c46d1137b860da87e00d7aa073c717678f497571a2f86cf9d",
+      "summary": {
+        "prefixes": 256,
+        "games": 512,
+        "wins": 262,
+        "losses": 231,
+        "draws": 19,
+        "mean_difference": 0.591796875,
+        "difference_ci95": [
+          -0.158203125,
+          1.4004394531250002
+        ],
+        "point_rate": 0.5302734375,
+        "point_rate_ci95": [
+          0.490234375,
+          0.5712890625
+        ],
+        "bootstrap": {
+          "unit": "prefix pair, not individual game",
+          "samples": 4000,
+          "seed": 9817
+        },
+        "provisional": true
+      },
+      "left_ms": 0.5297870157065862,
+      "right_ms": 0.5360802750870238,
+      "wall": 8.55903646400111
+    }
+  }
+}
