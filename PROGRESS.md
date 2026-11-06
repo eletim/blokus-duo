@@ -226,3 +226,4 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 
 ## gen3公開統合
 最新origin/main6be347fからintegration/ppo-gen3作成。研究全体はmergeせず、固定B/5120/1751401-3のinference exportを確認16e3baa models.jsonとSHA完全一致で追加。gen3既定、旧世代/seed別名互換、global AI default維持。640bd3f由来dense同期集約update＋minibatch指定のみ抽出、raggedなし。LR/batch再開継承、明示変更履歴を実装。79tests PASS、CPU/CUDA 4vs2+2別process再開bit一致（past交換含む）、設定変更拒否/履歴確認。新clone公開CLI検証へ進む。
+新clone: CPU-only 76passed/4CUDA skipped、CUDA80passed。gen3/gen2/2048のCPU/CUDA AI対戦・人間先後18経路PASS。旧metadataなしcheckpoint互換追加試験でPath型resume config JSON問題を修正。公開gen3は同じSHA、旧globaldefault差分なし。INTEGRATION.mdに依存/検証/再現/時間の読み方を保存。通常FF統合へ。
