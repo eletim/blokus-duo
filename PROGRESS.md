@@ -262,3 +262,7 @@ research/linear-tuple-value、5776630基点。F元24係数凍結、L線形再学
 
 2026-11-06 局所表サイクル完了: 3seed×1024新規ゲームをL/Tで共用（94,794局面）、8epoch、992/1000/984更新。生成+学習+校正wall698.89秒/累積CPU2038.78秒。全更新bit再生と別process4 vs2+2 PASS。新validation32prefix×3seed×先後×6組=1152局、T/L48.70%・得点差−1.29、T/F64.84%、T/gen3 50.26%（主比較family3補正CI41.41–59.11%）。T/L gate未達で確認128prefixを起動せず、追加条件/学習/seed選択なし。L/gen3 51.04%も選択用の示唆で独立採用根拠にしない。
 全114tests、3180生成棋譜と1152評価棋譜の座標oracle/報酬/算術/hash/分離PASS。CPU-only native AI対戦・Python人間先後完走。CLIの最終JSONが入力promptと同じ行になる不具合を改行追加で修正、失敗ログも保存。推論/学習/評価コードとモデルは研究branchのみ。main/Web/公開gen3は保全。詳細/次判断材料はartifacts/linear-tuple/REPORT.md、再現はREPRODUCE.md。
+
+2026-11-06 固定L確認へ着手。b32b89cからresearch/linear-L-confirm、旧T gateは保持。新PLANでL/F・L/gen3の256prefix×先後×3seed、2比較Bonferroni CI判定を固定。追加学習/seed選択なし。モデルとbankを先にSHA固定し、単独計測後に全棋譜を監査する。
+2026-11-06 固定L確認完了: 新256prefix×先後×3seed、L/FとL/gen3各1536局、計3072局。主計測1456.09秒、追加訓練0。L/F63.509%（2比較補正CI60.710–66.243、差+2.809）で元非NN超え確認、L/gen3 48.861%（46.224–51.465、差−1.507）でgen3優越未確認。同wall比較ではない。全座標oracle/得点/CI/モデルSHA/訓練・旧評価状態非重複PASS。旧32prefix/旧T gate未変更。
+候補integration/linear-L-candidate aa50302772302c6d8c5044d1bdc16ab02eeb22fcをmain86d9e51直系に用意（main未適用、14files、推論JSON3本SHA一致、研究履歴不要）。新clone CPU-only88PASS/4skip、3seed出力/固定木一致、AI2件と人間先後完走。REPORT/REPRODUCE/clone-auditに保存。main/Web/gen3 defaultを維持し、有限確認で終了。

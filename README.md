@@ -475,3 +475,9 @@ CPU研究用CLI（訓練履歴不要）:
 python -m blokus.tuple_play --checkpoint artifacts/linear-tuple/T-3101.json --backend python --human-seat 0
 ```
 `--human-seat 1`で後手、nativeビルド済みなら`--backend native`。100ms上限・幅24×8・2plyで、gen3単体約0.4msと同時間の比較ではありません。表は34,992byte、新価値の計算/更新にNN層/autogradを使いませんが、既存基盤の依存パッケージは必要です。[再現手順](artifacts/linear-tuple/REPRODUCE.md)を参照。main/Webは変更しません。
+
+### 固定線形Lの独立確認と非NN推論候補
+
+[新256prefix確認REPORT](artifacts/linear-L-confirm/REPORT.md)：旧T gateを変更せず、固定Lの3seedを追加学習なしで別計画確認しました。各1,536局でL/F point63.51%（2比較補正CI60.71–66.24%、得点差+2.81）、L/gen3 48.86%（46.22–51.47%、−1.51）。元非NNへの改善は確認、gen3超えは未確認です。非NN約20ms対gen3約0.42msで同wall比較ではありません。
+
+最新main86d9e51に適用可能な履歴不要候補は `integration/linear-L-candidate`（aa50302772302c6d8c5044d1bdc16ab02eeb22fc）。そのbranchでは `python -m blokus.non_neural_play --model-seed 3101 --backend python --human-seat 0` でCPU対戦できます。main/Web/defaultは変更していません。新clone CPU-only88PASS/4skip、3モデルの元export一致・AI対戦・人間先後を確認。詳細と再現は[REPRODUCE](artifacts/linear-L-confirm/REPRODUCE.md)を参照。
