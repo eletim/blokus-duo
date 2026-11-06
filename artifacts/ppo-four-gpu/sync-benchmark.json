@@ -1,0 +1,203 @@
+{
+  "rows": [
+    {
+      "rep": 0,
+      "mode": "baseline",
+      "wall": 0.25159265699767275,
+      "generation": {
+        "cpu_generation_pack": 0.031415891040524,
+        "gpu_inference_sync": 0.23856428598082857,
+        "other": 0.1118486739724176,
+        "legal": 0.0,
+        "legal_and_native_features": 0.016209812885790598,
+        "pack": 0.012044301060086582,
+        "transfer_pack_sync": 0.0077204580084071495,
+        "inference_and_output_sync": 0.23011039700941183,
+        "candidates": 71400,
+        "seconds": 0.3818288509937702
+      },
+      "update": {
+        "loss": 0.46832790063775104,
+        "policy_loss": 0.0005561654334482939,
+        "value_mse": 0.9863735346690469,
+        "entropy": 2.541503372399703,
+        "approx_kl": 2.0007354202749887e-06,
+        "grad_norm": 0.6619912198056346,
+        "clip_fraction": 0.0,
+        "updates": 46,
+        "records": 366,
+        "early_kl": false,
+        "seconds": 0.25155111699859845,
+        "rollout_pack_transfer_seconds": 3.7730002077296376e-05,
+        "packed": false
+      },
+      "states": 366
+    },
+    {
+      "rep": 0,
+      "mode": "sync",
+      "wall": 0.1386462109949207,
+      "generation": {
+        "cpu_generation_pack": 0.031415891040524,
+        "gpu_inference_sync": 0.23856428598082857,
+        "other": 0.1118486739724176,
+        "legal": 0.0,
+        "legal_and_native_features": 0.016209812885790598,
+        "pack": 0.012044301060086582,
+        "transfer_pack_sync": 0.0077204580084071495,
+        "inference_and_output_sync": 0.23011039700941183,
+        "candidates": 71400,
+        "seconds": 0.3818288509937702
+      },
+      "update": {
+        "loss": 0.46832790063775104,
+        "policy_loss": 0.0005561654334482939,
+        "value_mse": 0.9863735346690469,
+        "entropy": 2.541503372399703,
+        "approx_kl": 2.0007354202749887e-06,
+        "grad_norm": 0.6619912198056346,
+        "clip_fraction": 0.0,
+        "updates": 46,
+        "records": 366,
+        "early_kl": false,
+        "seconds": 0.1386015409952961,
+        "rollout_pack_transfer_seconds": 1.1080002877861261e-05,
+        "packed": false
+      },
+      "states": 366
+    },
+    {
+      "rep": 1,
+      "mode": "sync",
+      "wall": 0.13930238299508346,
+      "generation": {
+        "cpu_generation_pack": 0.029816120979376137,
+        "gpu_inference_sync": 0.05878666198987048,
+        "other": 0.006009853030263912,
+        "legal": 0.0,
+        "legal_and_native_features": 0.015259021914971527,
+        "pack": 0.011587179062189534,
+        "transfer_pack_sync": 0.008550760001526214,
+        "inference_and_output_sync": 0.04931556999508757,
+        "candidates": 66929,
+        "seconds": 0.09461263599951053
+      },
+      "update": {
+        "loss": 0.4666928647328978,
+        "policy_loss": 0.007581552652561147,
+        "value_mse": 0.9706598468448805,
+        "entropy": 2.6218615070633264,
+        "approx_kl": 3.2182458950125654e-06,
+        "grad_norm": 0.7644265294075012,
+        "clip_fraction": 0.0,
+        "updates": 46,
+        "records": 356,
+        "early_kl": false,
+        "seconds": 0.1392622829953325,
+        "rollout_pack_transfer_seconds": 1.1529999028425664e-05,
+        "packed": false
+      },
+      "states": 356
+    },
+    {
+      "rep": 1,
+      "mode": "baseline",
+      "wall": 0.1450919960043393,
+      "generation": {
+        "cpu_generation_pack": 0.029816120979376137,
+        "gpu_inference_sync": 0.05878666198987048,
+        "other": 0.006009853030263912,
+        "legal": 0.0,
+        "legal_and_native_features": 0.015259021914971527,
+        "pack": 0.011587179062189534,
+        "transfer_pack_sync": 0.008550760001526214,
+        "inference_and_output_sync": 0.04931556999508757,
+        "candidates": 66929,
+        "seconds": 0.09461263599951053
+      },
+      "update": {
+        "loss": 0.4666928647328978,
+        "policy_loss": 0.007581552652561147,
+        "value_mse": 0.9706598468448805,
+        "entropy": 2.6218615070633264,
+        "approx_kl": 3.2182458950125654e-06,
+        "grad_norm": 0.7644265294075012,
+        "clip_fraction": 0.0,
+        "updates": 46,
+        "records": 356,
+        "early_kl": false,
+        "seconds": 0.14505297600408085,
+        "rollout_pack_transfer_seconds": 1.0720003047026694e-05,
+        "packed": false
+      },
+      "states": 356
+    },
+    {
+      "rep": 2,
+      "mode": "baseline",
+      "wall": 0.1661387419953826,
+      "generation": {
+        "cpu_generation_pack": 0.030321674967126455,
+        "gpu_inference_sync": 0.055411096996976994,
+        "other": 0.005776387035439257,
+        "legal": 0.0,
+        "legal_and_native_features": 0.015410971049277578,
+        "pack": 0.011834819939394947,
+        "transfer_pack_sync": 0.007795478028128855,
+        "inference_and_output_sync": 0.04666081798495725,
+        "candidates": 70448,
+        "seconds": 0.0915091589995427
+      },
+      "update": {
+        "loss": 0.4200104047777131,
+        "policy_loss": -0.00401317320453624,
+        "value_mse": 0.8994951707621416,
+        "entropy": 2.572401193281015,
+        "approx_kl": 6.489378089706103e-06,
+        "grad_norm": 0.8044630382210016,
+        "clip_fraction": 0.0,
+        "updates": 48,
+        "records": 369,
+        "early_kl": false,
+        "seconds": 0.16609854200214613,
+        "rollout_pack_transfer_seconds": 1.1380005162209272e-05,
+        "packed": false
+      },
+      "states": 369
+    },
+    {
+      "rep": 2,
+      "mode": "sync",
+      "wall": 0.1448363750023418,
+      "generation": {
+        "cpu_generation_pack": 0.030321674967126455,
+        "gpu_inference_sync": 0.055411096996976994,
+        "other": 0.005776387035439257,
+        "legal": 0.0,
+        "legal_and_native_features": 0.015410971049277578,
+        "pack": 0.011834819939394947,
+        "transfer_pack_sync": 0.007795478028128855,
+        "inference_and_output_sync": 0.04666081798495725,
+        "candidates": 70448,
+        "seconds": 0.0915091589995427
+      },
+      "update": {
+        "loss": 0.4200104047777131,
+        "policy_loss": -0.00401317320453624,
+        "value_mse": 0.8994951707621416,
+        "entropy": 2.572401193281015,
+        "approx_kl": 6.489378089706103e-06,
+        "grad_norm": 0.8044630382210016,
+        "clip_fraction": 0.0,
+        "updates": 48,
+        "records": 369,
+        "early_kl": false,
+        "seconds": 0.14479689500149107,
+        "rollout_pack_transfer_seconds": 1.0020004992838949e-05,
+        "packed": false
+      },
+      "states": 369
+    }
+  ],
+  "bit_equal": true
+}

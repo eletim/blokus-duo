@@ -223,3 +223,7 @@ PPO2048推論追加: 3seedの固定モデルを履歴不要へexport、CPU/CUDA�
 - 3seed×CPU/CUDA×26局面export bit一致。新cloneでCPU専用torch2.7.1+cpu、6推論テストPASS、人間先後・AI・世代対戦/旧探索をCPU/CUDA各13局再生PASS、main全59tests PASS。今回は追加学習なし。
 
 main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既存72テスト/CPU clone67 PASSを引用。main上4ch/native CUDA学習CLIを1iteration16gamesだけsmoke完了。gen2 CUDA/2048 CPU対戦完走。READMEへnative build必須・Python fallback・CPU生成由来の短期測定速度比を明記。公開モデル/既定維持。本学習・重い再ベンチなし。
+
+新依頼 c7366f0b: research/ppo-four-channel-gpu (main6be347f基点)。PLANを先に固定。native収集＋従来PPOのupdate profile: 46stepsでstream同期1108、D2H506。同期集約+device常駐は469/46へ削減。同入力bit一致、update中央値0.1362→0.1246秒、16iteration小pilot収集込み0.2191→0.2133秒。CUDA graphはdeterministic backward capture不可で不採用。3seed各4096iteration=65536gamesを有限実行中、wall合計5400秒上限。全過去評価開始状態3046件を生成prefixから除外。main変更なし。
+
+4ch本学習完了: 3seed×4096iteration=196608games、2774.18秒（46.24分）。全76tests/別process再開/全履歴合法・報酬監査PASS。validation固定4096/2048/4096、fresh96prefix×先後×3seedのholdoutで対未学習/heuristic point80.56%、対gen2 48.00% CI[43.75,52.34]、得点差-0.39 CI[-1.17,+0.41]。gen2上回る目標未達、main維持。19677312訓練状態unionに対する開始/評価実訪問重複0。最適化単独候補640bd3f、モデル候補はppo-four-gpu-models。詳細REPORTを更新。

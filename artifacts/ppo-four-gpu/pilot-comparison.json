@@ -1,0 +1,1229 @@
+{
+  "bit_equal": [
+    "model",
+    "past",
+    "optimizer",
+    "python_rng",
+    "numpy_rng",
+    "torch_rng",
+    "cuda_rng",
+    "games"
+  ],
+  "results": {
+    "baseline": {
+      "seed": 1750500,
+      "mode": "baseline",
+      "start": 0,
+      "until": 16,
+      "iteration": 16,
+      "games_this_run": 256,
+      "wall_with_save": 4.029472385998815,
+      "complete": true,
+      "checkpoint": "/tmp/ppo-gpu-pilot-baseline/iteration-16.pt",
+      "checkpoint_sha256": "5cbad718e8faeeee581bcc5fd7edb3691fea023b0d8510eedc763725dfab9382",
+      "exclusion_count": 0,
+      "logs": [
+        {
+          "iteration": 1,
+          "generation": {
+            "cpu_generation_pack": 0.028861662060080562,
+            "gpu_inference_sync": 0.24841588100389345,
+            "other": 0.08390855193283642,
+            "legal": 0.0,
+            "legal_and_native_features": 0.014965058995585423,
+            "pack": 0.010977130004903302,
+            "transfer_pack_sync": 0.008974942975328304,
+            "inference_and_output_sync": 0.23845383500156458,
+            "candidates": 65132,
+            "seconds": 0.3611860949968104
+          },
+          "update": {
+            "loss": 0.46916779333894904,
+            "policy_loss": 0.0007183072580532594,
+            "value_mse": 0.9884629940444772,
+            "entropy": 2.5782013725150716,
+            "approx_kl": 3.41456722129475e-06,
+            "grad_norm": 0.7506368194114078,
+            "clip_fraction": 0.0,
+            "updates": 44,
+            "records": 338,
+            "early_kl": false,
+            "seconds": 0.24102111499814782,
+            "rollout_pack_transfer_seconds": 1.0949996067211032e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.005421971996838693,
+          "games_sha256": "0697243e1590ddddd15f82165f091a4680a53b409ea291f22f5b02194a53b90b",
+          "opponent_wdl": {
+            "current": 0.5,
+            "past": -0.5,
+            "heuristic": 0.5
+          }
+        },
+        {
+          "iteration": 2,
+          "generation": {
+            "cpu_generation_pack": 0.03028763506154064,
+            "gpu_inference_sync": 0.05847067994181998,
+            "other": 0.005703399998310488,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015796655003214255,
+            "pack": 0.011522162989422213,
+            "transfer_pack_sync": 0.008938390004914254,
+            "inference_and_output_sync": 0.04848980904353084,
+            "candidates": 73469,
+            "seconds": 0.09446171500167111
+          },
+          "update": {
+            "loss": 0.41666640325084975,
+            "policy_loss": -0.0017663600814083347,
+            "value_mse": 0.8906504356342814,
+            "entropy": 2.689246281333592,
+            "approx_kl": 4.740980137324621e-06,
+            "grad_norm": 0.8744578931642615,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 365,
+            "early_kl": false,
+            "seconds": 0.14051685600134078,
+            "rollout_pack_transfer_seconds": 1.241999416379258e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.0010730120047810487,
+          "games_sha256": "418715fffb1afa15cb77fce47ad00062ced8505c4619082bf2c5f72f95ff15ce",
+          "opponent_wdl": {
+            "current": -0.25,
+            "past": 0.5,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 3,
+          "generation": {
+            "cpu_generation_pack": 0.02866067500144709,
+            "gpu_inference_sync": 0.05392316698998911,
+            "other": 0.006017311003233772,
+            "legal": 0.0,
+            "legal_and_native_features": 0.014807352978095878,
+            "pack": 0.011045692961488385,
+            "transfer_pack_sync": 0.0074786260520340875,
+            "inference_and_output_sync": 0.04551110795000568,
+            "candidates": 66742,
+            "seconds": 0.08860115299466997
+          },
+          "update": {
+            "loss": 0.3067522526041351,
+            "policy_loss": -0.0007488443939523263,
+            "value_mse": 0.6679262627254833,
+            "entropy": 2.6462032307278025,
+            "approx_kl": 4.904011663339506e-06,
+            "grad_norm": 0.961615417491306,
+            "clip_fraction": 0.0,
+            "updates": 44,
+            "records": 351,
+            "early_kl": false,
+            "seconds": 0.13250025799789,
+            "rollout_pack_transfer_seconds": 1.168000017059967e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.0010340030057705007,
+          "games_sha256": "c03b386aec588f68fd25a90360e91974e87b3a0fad8d37e988852bda62df7ddd",
+          "opponent_wdl": {
+            "current": 0.0,
+            "past": 0.5,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 4,
+          "generation": {
+            "cpu_generation_pack": 0.03077265200408874,
+            "gpu_inference_sync": 0.055808597018767614,
+            "other": 0.005879541975446045,
+            "legal": 0.0,
+            "legal_and_native_features": 0.01567798002361087,
+            "pack": 0.012031853962980676,
+            "transfer_pack_sync": 0.007757484003377613,
+            "inference_and_output_sync": 0.04706836100376677,
+            "candidates": 70381,
+            "seconds": 0.0924607909983024
+          },
+          "update": {
+            "loss": 0.25284821540117264,
+            "policy_loss": -0.0017870185167893119,
+            "value_mse": 0.5597114624536556,
+            "entropy": 2.5220500956410947,
+            "approx_kl": 2.2689509809543265e-06,
+            "grad_norm": 1.0745777500712352,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 365,
+            "early_kl": false,
+            "seconds": 0.1326056179968873,
+            "rollout_pack_transfer_seconds": 1.2150005204603076e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.001000292002572678,
+          "games_sha256": "e5153297e29a3dd890dc8b169da5b994c1c3c7119a6c4960df0bce8d8f3e28fc",
+          "opponent_wdl": {
+            "current": -0.625,
+            "past": 0.0,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 5,
+          "generation": {
+            "cpu_generation_pack": 0.029865377953683492,
+            "gpu_inference_sync": 0.052354311948874965,
+            "other": 0.005803602092782967,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015248745046847034,
+            "pack": 0.011642897057754453,
+            "transfer_pack_sync": 0.007445023984473664,
+            "inference_and_output_sync": 0.04397704503935529,
+            "candidates": 68666,
+            "seconds": 0.08802329199534142
+          },
+          "update": {
+            "loss": 0.2807057411612376,
+            "policy_loss": 0.0010060859115227408,
+            "value_mse": 0.6112294061028439,
+            "entropy": 2.5915050143780918,
+            "approx_kl": 1.0734318174815163e-06,
+            "grad_norm": 1.3968478920667067,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 365,
+            "early_kl": false,
+            "seconds": 0.13090894500055583,
+            "rollout_pack_transfer_seconds": 1.184999564429745e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.0009867819971987046,
+          "games_sha256": "8e6d7372c48fd9c6a8bfd70570fc88b6d746e1e45f6592df8634116ec1a8917a",
+          "opponent_wdl": {
+            "current": -0.25,
+            "past": -0.5,
+            "heuristic": -0.5
+          }
+        },
+        {
+          "iteration": 6,
+          "generation": {
+            "cpu_generation_pack": 0.028791813987481873,
+            "gpu_inference_sync": 0.052036581000720616,
+            "other": 0.005640293013129849,
+            "legal": 0.0,
+            "legal_and_native_features": 0.014851048996206373,
+            "pack": 0.011100890988018364,
+            "transfer_pack_sync": 0.007482528977561742,
+            "inference_and_output_sync": 0.04363242894760333,
+            "candidates": 67691,
+            "seconds": 0.08646868800133234
+          },
+          "update": {
+            "loss": 0.36773723979359085,
+            "policy_loss": -0.010416363244471342,
+            "value_mse": 0.8114265546850536,
+            "entropy": 2.7559677958488464,
+            "approx_kl": 2.958350200327439e-06,
+            "grad_norm": 1.4550609018491663,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 357,
+            "early_kl": false,
+            "seconds": 0.13197371699789073,
+            "rollout_pack_transfer_seconds": 1.1490003089420497e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.0009613419970264658,
+          "games_sha256": "65ebd68c1a4c6edfb35b88a3e9745a1ade215c3cd79a7ea9e33816d53c29214b",
+          "opponent_wdl": {
+            "current": 0.0,
+            "past": 0.5,
+            "heuristic": -0.5
+          }
+        },
+        {
+          "iteration": 7,
+          "generation": {
+            "cpu_generation_pack": 0.028781435030396096,
+            "gpu_inference_sync": 0.04428557101346087,
+            "other": 0.00584157595585566,
+            "legal": 0.0,
+            "legal_and_native_features": 0.014750020047358703,
+            "pack": 0.011179331013408955,
+            "transfer_pack_sync": 0.006543941985000856,
+            "inference_and_output_sync": 0.036964757047826424,
+            "candidates": 65874,
+            "seconds": 0.07890858199971262
+          },
+          "update": {
+            "loss": 0.3420494130772093,
+            "policy_loss": 0.01531643137011839,
+            "value_mse": 0.7066083064545756,
+            "entropy": 2.6571175792942876,
+            "approx_kl": 6.289018884949062e-06,
+            "grad_norm": 1.3713900356189064,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 354,
+            "early_kl": false,
+            "seconds": 0.13034248299663886,
+            "rollout_pack_transfer_seconds": 1.1809999705292284e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.000983142999757547,
+          "games_sha256": "0766be985d9652d19888000fcbf954874dbe0a124e9943de692ab5fe0ee90069",
+          "opponent_wdl": {
+            "current": 0.125,
+            "past": 0.0,
+            "heuristic": -1.0
+          }
+        },
+        {
+          "iteration": 8,
+          "generation": {
+            "cpu_generation_pack": 0.029020520989433862,
+            "gpu_inference_sync": 0.051315685057488736,
+            "other": 0.005545040956349112,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015024388871097472,
+            "pack": 0.011288777175650466,
+            "transfer_pack_sync": 0.007263330015121028,
+            "inference_and_output_sync": 0.043152483012818266,
+            "candidates": 71443,
+            "seconds": 0.08588124700327171
+          },
+          "update": {
+            "loss": 0.34749964572003356,
+            "policy_loss": 0.008768600695159124,
+            "value_mse": 0.7329659614226093,
+            "entropy": 2.775193699028181,
+            "approx_kl": 2.449151615426514e-06,
+            "grad_norm": 1.3498984989912615,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 357,
+            "early_kl": false,
+            "seconds": 0.13064114499866264,
+            "rollout_pack_transfer_seconds": 1.191999763250351e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.0009547619993099943,
+          "games_sha256": "60d3aa9115cb6ce6d967db701d3f9aa14367df372d5a6993852758d117010732",
+          "opponent_wdl": {
+            "current": -0.25,
+            "past": 0.5,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 9,
+          "generation": {
+            "cpu_generation_pack": 0.030032003072847147,
+            "gpu_inference_sync": 0.1238566329702735,
+            "other": 0.005628340957628097,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015329337904404383,
+            "pack": 0.01169700211903546,
+            "transfer_pack_sync": 0.007572228991193697,
+            "inference_and_output_sync": 0.1153236129830475,
+            "candidates": 65826,
+            "seconds": 0.15951697700074874
+          },
+          "update": {
+            "loss": 0.30834257019602734,
+            "policy_loss": 0.00024119416332763174,
+            "value_mse": 0.6669060840554859,
+            "entropy": 2.5351663180019544,
+            "approx_kl": 3.3581980401124936e-06,
+            "grad_norm": 1.1498813946609912,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 367,
+            "early_kl": false,
+            "seconds": 0.13928623300307663,
+            "rollout_pack_transfer_seconds": 1.1249998351559043e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.0008690720060258172,
+          "games_sha256": "bbc99c20a63101bf513038fc836958a431585dbfe94b33a1ca57ad6c986816b0",
+          "opponent_wdl": {
+            "current": -0.375,
+            "past": 1.0,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 10,
+          "generation": {
+            "cpu_generation_pack": 0.029726706932706293,
+            "gpu_inference_sync": 0.05654260000301292,
+            "other": 0.005741853063227609,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015306919936847407,
+            "pack": 0.011534392026078422,
+            "transfer_pack_sync": 0.00797364502795972,
+            "inference_and_output_sync": 0.047564571010298096,
+            "candidates": 70197,
+            "seconds": 0.09201115999894682
+          },
+          "update": {
+            "loss": 0.2548124103847405,
+            "policy_loss": -0.0057028896458770914,
+            "value_mse": 0.5735878618838994,
+            "entropy": 2.627863171307937,
+            "approx_kl": 4.1580718644858594e-06,
+            "grad_norm": 1.2738636693228846,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 358,
+            "early_kl": false,
+            "seconds": 0.13741601899528177,
+            "rollout_pack_transfer_seconds": 1.1310003174003214e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.001111942001443822,
+          "games_sha256": "11ed3ce49798e40f782d252f4fbcdb0f844e35d93b11114b400f0046d3a37782",
+          "opponent_wdl": {
+            "current": 0.375,
+            "past": 0.0,
+            "heuristic": -1.0
+          }
+        },
+        {
+          "iteration": 11,
+          "generation": {
+            "cpu_generation_pack": 0.03183555089344736,
+            "gpu_inference_sync": 0.05590878002112731,
+            "other": 0.006204183089721482,
+            "legal": 0.0,
+            "legal_and_native_features": 0.016674751066602767,
+            "pack": 0.012113380915252492,
+            "transfer_pack_sync": 0.00817234099667985,
+            "inference_and_output_sync": 0.046717534998606425,
+            "candidates": 67694,
+            "seconds": 0.09394851400429616
+          },
+          "update": {
+            "loss": 0.3178637106700436,
+            "policy_loss": -0.00031779220570688665,
+            "value_mse": 0.6889173109894213,
+            "entropy": 2.6277151885239975,
+            "approx_kl": 2.9354477706162827e-06,
+            "grad_norm": 1.5364091474076975,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 368,
+            "early_kl": false,
+            "seconds": 0.1331132500054082,
+            "rollout_pack_transfer_seconds": 1.1579999409150332e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.0011038119992008433,
+          "games_sha256": "b6ead6ec1952047776841d8c1b4d4751d259b0ee0e01197884ed20aa9224300e",
+          "opponent_wdl": {
+            "current": 0.0,
+            "past": 0.5,
+            "heuristic": -0.5
+          }
+        },
+        {
+          "iteration": 12,
+          "generation": {
+            "cpu_generation_pack": 0.030140662944177166,
+            "gpu_inference_sync": 0.05193610199785326,
+            "other": 0.005623745055345353,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015794827973877545,
+            "pack": 0.011378181072359439,
+            "transfer_pack_sync": 0.0074836910353042185,
+            "inference_and_output_sync": 0.04352068100706674,
+            "candidates": 70938,
+            "seconds": 0.08770050999737578
+          },
+          "update": {
+            "loss": 0.21046400247988375,
+            "policy_loss": -0.0004671014506708492,
+            "value_mse": 0.4744483230804855,
+            "entropy": 2.6293061592362146,
+            "approx_kl": 4.049221223050898e-06,
+            "grad_norm": 1.4094329246065833,
+            "clip_fraction": 0.0,
+            "updates": 44,
+            "records": 352,
+            "early_kl": false,
+            "seconds": 0.12561685400578426,
+            "rollout_pack_transfer_seconds": 1.1819996871054173e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.0010376219943282194,
+          "games_sha256": "b2ac19ff889f188c27ef335fbfac935054ec6022266f44b4636c8973bb3f5e86",
+          "opponent_wdl": {
+            "current": -0.25,
+            "past": 0.0,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 13,
+          "generation": {
+            "cpu_generation_pack": 0.029580623071524315,
+            "gpu_inference_sync": 0.05336157800775254,
+            "other": 0.006023301924869884,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015092521956830751,
+            "pack": 0.011547222995432094,
+            "transfer_pack_sync": 0.007588738000777084,
+            "inference_and_output_sync": 0.044823457013990264,
+            "candidates": 66585,
+            "seconds": 0.08896550300414674
+          },
+          "update": {
+            "loss": 0.40030576051636174,
+            "policy_loss": -0.0006282417611642318,
+            "value_mse": 0.8521548489278014,
+            "entropy": 2.5143423568118703,
+            "approx_kl": 1.5971053425222304e-06,
+            "grad_norm": 1.8862877312031658,
+            "clip_fraction": 0.0,
+            "updates": 44,
+            "records": 348,
+            "early_kl": false,
+            "seconds": 0.1286568199939211,
+            "rollout_pack_transfer_seconds": 1.1389995052013546e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.0010559619986452162,
+          "games_sha256": "75ee33b15f016d58cfe5dd4bde6ba156fa4624d892a94786488eae3f664e74f1",
+          "opponent_wdl": {
+            "current": -0.125,
+            "past": -0.75,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 14,
+          "generation": {
+            "cpu_generation_pack": 0.030505818998790346,
+            "gpu_inference_sync": 0.0529860300157452,
+            "other": 0.00547483498667134,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015646381973056123,
+            "pack": 0.011848374007968232,
+            "transfer_pack_sync": 0.007658344955416396,
+            "inference_and_output_sync": 0.04437506299291272,
+            "candidates": 72976,
+            "seconds": 0.08896668400120689
+          },
+          "update": {
+            "loss": 0.4183575802523157,
+            "policy_loss": -0.00026561481797176856,
+            "value_mse": 0.8911606747171154,
+            "entropy": 2.695714587750642,
+            "approx_kl": 3.3330010380624393e-06,
+            "grad_norm": 1.9130046121452167,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 365,
+            "early_kl": false,
+            "seconds": 0.13044388400157914,
+            "rollout_pack_transfer_seconds": 1.1529999028425664e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.0009826420064200647,
+          "games_sha256": "96f94c50578faa018c586b6a4e8fe40cce69a9773c4c98fe5c6025ab2df632d6",
+          "opponent_wdl": {
+            "current": 0.125,
+            "past": -0.5,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 15,
+          "generation": {
+            "cpu_generation_pack": 0.028669891973549966,
+            "gpu_inference_sync": 0.05477414901542943,
+            "other": 0.0053673420115956105,
+            "legal": 0.0,
+            "legal_and_native_features": 0.014778141005081125,
+            "pack": 0.011054206064727623,
+            "transfer_pack_sync": 0.007762178967823274,
+            "inference_and_output_sync": 0.04603725898778066,
+            "candidates": 67431,
+            "seconds": 0.088811383000575
+          },
+          "update": {
+            "loss": 0.3082681939175183,
+            "policy_loss": -0.00021632777696306056,
+            "value_mse": 0.6690673780712214,
+            "entropy": 2.604916290803389,
+            "approx_kl": 3.6529337111543017e-06,
+            "grad_norm": 1.511655799367211,
+            "clip_fraction": 0.0,
+            "updates": 44,
+            "records": 349,
+            "early_kl": false,
+            "seconds": 0.12560249299713178,
+            "rollout_pack_transfer_seconds": 1.1229996744077653e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.0009507120048510842,
+          "games_sha256": "ad757d91e98106ac64511c45905a476c7f54d3a4dc131637ee454e06f8b91002",
+          "opponent_wdl": {
+            "current": 0.25,
+            "past": -0.5,
+            "heuristic": -0.5
+          }
+        },
+        {
+          "iteration": 16,
+          "generation": {
+            "cpu_generation_pack": 0.029830986008164473,
+            "gpu_inference_sync": 0.05334608395060059,
+            "other": 0.005139972039614804,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015320837010222021,
+            "pack": 0.011582195918890648,
+            "transfer_pack_sync": 0.007713617007539142,
+            "inference_and_output_sync": 0.044665984030871186,
+            "candidates": 69681,
+            "seconds": 0.08831704199837986
+          },
+          "update": {
+            "loss": 0.314090215317581,
+            "policy_loss": -0.0003802511517120444,
+            "value_mse": 0.6803517924702686,
+            "entropy": 2.5705434239428975,
+            "approx_kl": 5.713056610978168e-06,
+            "grad_norm": 1.7696908258873483,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 368,
+            "early_kl": false,
+            "seconds": 0.13078526400204282,
+            "rollout_pack_transfer_seconds": 1.1430005542933941e-05,
+            "packed": false
+          },
+          "history_write_seconds": 0.0009873720046016388,
+          "games_sha256": "eb817e952b1df7af0cb028f38a98fb35a062358300e63eac800a0d680f49baf8",
+          "opponent_wdl": {
+            "current": -0.625,
+            "past": 0.0,
+            "heuristic": 0.0
+          }
+        }
+      ]
+    },
+    "fast": {
+      "seed": 1750500,
+      "mode": "fast",
+      "start": 0,
+      "until": 16,
+      "iteration": 16,
+      "games_this_run": 256,
+      "wall_with_save": 3.9250153079992742,
+      "complete": true,
+      "checkpoint": "/tmp/ppo-gpu-pilot-fast/iteration-16.pt",
+      "checkpoint_sha256": "3c1386fe8bb337ea56326b48a9e84cdeb9f6534fc5fce0b97d726ea15fab7b6d",
+      "exclusion_count": 0,
+      "logs": [
+        {
+          "iteration": 1,
+          "generation": {
+            "cpu_generation_pack": 0.0291231059745769,
+            "gpu_inference_sync": 0.2476551749787177,
+            "other": 0.08257849104847992,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015117385039047804,
+            "pack": 0.011075015987444203,
+            "transfer_pack_sync": 0.008948476010118611,
+            "inference_and_output_sync": 0.23773546797747258,
+            "candidates": 65132,
+            "seconds": 0.3593567720017745
+          },
+          "update": {
+            "loss": 0.46916779333894904,
+            "policy_loss": 0.0007183072580532594,
+            "value_mse": 0.9884629940444772,
+            "entropy": 2.5782013725150716,
+            "approx_kl": 3.41456722129475e-06,
+            "grad_norm": 0.7506368194114078,
+            "clip_fraction": 0.0,
+            "updates": 44,
+            "records": 338,
+            "early_kl": false,
+            "seconds": 0.23744659600197338,
+            "rollout_pack_transfer_seconds": 0.0059275329986121505,
+            "packed": true
+          },
+          "history_write_seconds": 0.0006931219977559522,
+          "games_sha256": "0697243e1590ddddd15f82165f091a4680a53b409ea291f22f5b02194a53b90b",
+          "opponent_wdl": {
+            "current": 0.5,
+            "past": -0.5,
+            "heuristic": 0.5
+          }
+        },
+        {
+          "iteration": 2,
+          "generation": {
+            "cpu_generation_pack": 0.03016606807068456,
+            "gpu_inference_sync": 0.057630734037957154,
+            "other": 0.005515300887054764,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015783005954290275,
+            "pack": 0.011427990088122897,
+            "transfer_pack_sync": 0.008923859983042348,
+            "inference_and_output_sync": 0.04771759203867987,
+            "candidates": 73469,
+            "seconds": 0.09331210299569648
+          },
+          "update": {
+            "loss": 0.41666640325084975,
+            "policy_loss": -0.0017663600814083347,
+            "value_mse": 0.8906504356342814,
+            "entropy": 2.689246281333592,
+            "approx_kl": 4.740980137324621e-06,
+            "grad_norm": 0.8744578931642615,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 365,
+            "early_kl": false,
+            "seconds": 0.12763379699754296,
+            "rollout_pack_transfer_seconds": 0.0069521949990303256,
+            "packed": true
+          },
+          "history_write_seconds": 0.0009787929957383312,
+          "games_sha256": "418715fffb1afa15cb77fce47ad00062ced8505c4619082bf2c5f72f95ff15ce",
+          "opponent_wdl": {
+            "current": -0.25,
+            "past": 0.5,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 3,
+          "generation": {
+            "cpu_generation_pack": 0.02848051200271584,
+            "gpu_inference_sync": 0.052812156987783965,
+            "other": 0.00587715001165634,
+            "legal": 0.0,
+            "legal_and_native_features": 0.014767086016945541,
+            "pack": 0.010958801001834217,
+            "transfer_pack_sync": 0.007484134031983558,
+            "inference_and_output_sync": 0.044435860007070005,
+            "candidates": 66742,
+            "seconds": 0.08716981900215615
+          },
+          "update": {
+            "loss": 0.3067522526041351,
+            "policy_loss": -0.0007488443939523263,
+            "value_mse": 0.6679262627254833,
+            "entropy": 2.6462032307278025,
+            "approx_kl": 4.904011663339506e-06,
+            "grad_norm": 0.961615417491306,
+            "clip_fraction": 0.0,
+            "updates": 44,
+            "records": 351,
+            "early_kl": false,
+            "seconds": 0.12249702699773479,
+            "rollout_pack_transfer_seconds": 0.006356474004860502,
+            "packed": true
+          },
+          "history_write_seconds": 0.00101334200007841,
+          "games_sha256": "c03b386aec588f68fd25a90360e91974e87b3a0fad8d37e988852bda62df7ddd",
+          "opponent_wdl": {
+            "current": 0.0,
+            "past": 0.5,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 4,
+          "generation": {
+            "cpu_generation_pack": 0.03126575599890202,
+            "gpu_inference_sync": 0.05574131397588644,
+            "other": 0.005966372023976874,
+            "legal": 0.0,
+            "legal_and_native_features": 0.016234356960922014,
+            "pack": 0.011997581023024395,
+            "transfer_pack_sync": 0.007955462002428249,
+            "inference_and_output_sync": 0.04683099002431845,
+            "candidates": 70381,
+            "seconds": 0.09297344199876534
+          },
+          "update": {
+            "loss": 0.25284821540117264,
+            "policy_loss": -0.0017870185167893119,
+            "value_mse": 0.5597114624536556,
+            "entropy": 2.5220500956410947,
+            "approx_kl": 2.2689509809543265e-06,
+            "grad_norm": 1.0745777500712352,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 365,
+            "early_kl": false,
+            "seconds": 0.1287412800011225,
+            "rollout_pack_transfer_seconds": 0.007313485999475233,
+            "packed": true
+          },
+          "history_write_seconds": 0.0010612920013954863,
+          "games_sha256": "e5153297e29a3dd890dc8b169da5b994c1c3c7119a6c4960df0bce8d8f3e28fc",
+          "opponent_wdl": {
+            "current": -0.625,
+            "past": 0.0,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 5,
+          "generation": {
+            "cpu_generation_pack": 0.03062414896703558,
+            "gpu_inference_sync": 0.05242204200476408,
+            "other": 0.005894102025195025,
+            "legal": 0.0,
+            "legal_and_native_features": 0.0157777870335849,
+            "pack": 0.011873364979692269,
+            "transfer_pack_sync": 0.007564274026663043,
+            "inference_and_output_sync": 0.043944953969912603,
+            "candidates": 68666,
+            "seconds": 0.08894029299699469
+          },
+          "update": {
+            "loss": 0.2807057411612376,
+            "policy_loss": 0.0010060859115227408,
+            "value_mse": 0.6112294061028439,
+            "entropy": 2.5915050143780918,
+            "approx_kl": 1.0734318174815163e-06,
+            "grad_norm": 1.3968478920667067,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 365,
+            "early_kl": false,
+            "seconds": 0.12431721000029938,
+            "rollout_pack_transfer_seconds": 0.005271811998682097,
+            "packed": true
+          },
+          "history_write_seconds": 0.0010837029985850677,
+          "games_sha256": "8e6d7372c48fd9c6a8bfd70570fc88b6d746e1e45f6592df8634116ec1a8917a",
+          "opponent_wdl": {
+            "current": -0.25,
+            "past": -0.5,
+            "heuristic": -0.5
+          }
+        },
+        {
+          "iteration": 6,
+          "generation": {
+            "cpu_generation_pack": 0.030156169006659184,
+            "gpu_inference_sync": 0.05275425298168557,
+            "other": 0.005965342010313179,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015659555050660856,
+            "pack": 0.011582986939174589,
+            "transfer_pack_sync": 0.007678524976654444,
+            "inference_and_output_sync": 0.044176015981065575,
+            "candidates": 67691,
+            "seconds": 0.08887576399865793
+          },
+          "update": {
+            "loss": 0.36773723979359085,
+            "policy_loss": -0.010416363244471342,
+            "value_mse": 0.8114265546850536,
+            "entropy": 2.7559677958488464,
+            "approx_kl": 2.958350200327439e-06,
+            "grad_norm": 1.4550609018491663,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 357,
+            "early_kl": false,
+            "seconds": 0.14563849700061837,
+            "rollout_pack_transfer_seconds": 0.005404832001659088,
+            "packed": true
+          },
+          "history_write_seconds": 0.0009958329974324442,
+          "games_sha256": "65ebd68c1a4c6edfb35b88a3e9745a1ade215c3cd79a7ea9e33816d53c29214b",
+          "opponent_wdl": {
+            "current": 0.0,
+            "past": 0.5,
+            "heuristic": -0.5
+          }
+        },
+        {
+          "iteration": 7,
+          "generation": {
+            "cpu_generation_pack": 0.029460474012012128,
+            "gpu_inference_sync": 0.044482806013547815,
+            "other": 0.006056743979570456,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015175572967564221,
+            "pack": 0.011442916045780294,
+            "transfer_pack_sync": 0.006618374020035844,
+            "inference_and_output_sync": 0.037104461014678236,
+            "candidates": 65874,
+            "seconds": 0.0800000240051304
+          },
+          "update": {
+            "loss": 0.3420494130772093,
+            "policy_loss": 0.01531643137011839,
+            "value_mse": 0.7066083064545756,
+            "entropy": 2.6571175792942876,
+            "approx_kl": 6.289018884949062e-06,
+            "grad_norm": 1.3713900356189064,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 354,
+            "early_kl": false,
+            "seconds": 0.12440952999895671,
+            "rollout_pack_transfer_seconds": 0.005358880996936932,
+            "packed": true
+          },
+          "history_write_seconds": 0.000987981999060139,
+          "games_sha256": "0766be985d9652d19888000fcbf954874dbe0a124e9943de692ab5fe0ee90069",
+          "opponent_wdl": {
+            "current": 0.125,
+            "past": 0.0,
+            "heuristic": -1.0
+          }
+        },
+        {
+          "iteration": 8,
+          "generation": {
+            "cpu_generation_pack": 0.029273734020534903,
+            "gpu_inference_sync": 0.051299688981089275,
+            "other": 0.005664014002832118,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015224851005768869,
+            "pack": 0.011344840924721211,
+            "transfer_pack_sync": 0.007319491021917202,
+            "inference_and_output_sync": 0.043101844981720205,
+            "candidates": 71443,
+            "seconds": 0.0862374370044563
+          },
+          "update": {
+            "loss": 0.34749964572003356,
+            "policy_loss": 0.008768600695159124,
+            "value_mse": 0.7329659614226093,
+            "entropy": 2.775193699028181,
+            "approx_kl": 2.449151615426514e-06,
+            "grad_norm": 1.3498984989912615,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 357,
+            "early_kl": false,
+            "seconds": 0.12650386500172317,
+            "rollout_pack_transfer_seconds": 0.0053420519980136305,
+            "packed": true
+          },
+          "history_write_seconds": 0.0009962019976228476,
+          "games_sha256": "60d3aa9115cb6ce6d967db701d3f9aa14367df372d5a6993852758d117010732",
+          "opponent_wdl": {
+            "current": -0.25,
+            "past": 0.5,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 9,
+          "generation": {
+            "cpu_generation_pack": 0.030382508026377764,
+            "gpu_inference_sync": 0.1251408500247635,
+            "other": 0.005788922950159758,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015645370061974972,
+            "pack": 0.011714738953742199,
+            "transfer_pack_sync": 0.00767218697728822,
+            "inference_and_output_sync": 0.11652416096330853,
+            "candidates": 65826,
+            "seconds": 0.16131228100130102
+          },
+          "update": {
+            "loss": 0.30834257019602734,
+            "policy_loss": 0.00024119416332763174,
+            "value_mse": 0.6669060840554859,
+            "entropy": 2.5351663180019544,
+            "approx_kl": 3.3581980401124936e-06,
+            "grad_norm": 1.1498813946609912,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 367,
+            "early_kl": false,
+            "seconds": 0.12295125800301321,
+            "rollout_pack_transfer_seconds": 0.005608813000435475,
+            "packed": true
+          },
+          "history_write_seconds": 0.0008740120028960519,
+          "games_sha256": "bbc99c20a63101bf513038fc836958a431585dbfe94b33a1ca57ad6c986816b0",
+          "opponent_wdl": {
+            "current": -0.375,
+            "past": 1.0,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 10,
+          "generation": {
+            "cpu_generation_pack": 0.02998888600995997,
+            "gpu_inference_sync": 0.056509190988435876,
+            "other": 0.005816493998281658,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015433529086294584,
+            "pack": 0.011643469966656994,
+            "transfer_pack_sync": 0.008023954986128956,
+            "inference_and_output_sync": 0.0475015450065257,
+            "candidates": 70197,
+            "seconds": 0.0923145709966775
+          },
+          "update": {
+            "loss": 0.2548124103847405,
+            "policy_loss": -0.0057028896458770914,
+            "value_mse": 0.5735878618838994,
+            "entropy": 2.627863171307937,
+            "approx_kl": 4.1580718644858594e-06,
+            "grad_norm": 1.2738636693228846,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 358,
+            "early_kl": false,
+            "seconds": 0.12585218399908626,
+            "rollout_pack_transfer_seconds": 0.0066452539977035485,
+            "packed": true
+          },
+          "history_write_seconds": 0.0010572920000413433,
+          "games_sha256": "11ed3ce49798e40f782d252f4fbcdb0f844e35d93b11114b400f0046d3a37782",
+          "opponent_wdl": {
+            "current": 0.375,
+            "past": 0.0,
+            "heuristic": -1.0
+          }
+        },
+        {
+          "iteration": 11,
+          "generation": {
+            "cpu_generation_pack": 0.029939784995804075,
+            "gpu_inference_sync": 0.054042446972744074,
+            "other": 0.005830814036016818,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015376000977994408,
+            "pack": 0.011625365950749256,
+            "transfer_pack_sync": 0.007809907976479735,
+            "inference_and_output_sync": 0.045290687994565815,
+            "candidates": 67694,
+            "seconds": 0.08981304600456497
+          },
+          "update": {
+            "loss": 0.3178637106700436,
+            "policy_loss": -0.00031779220570688665,
+            "value_mse": 0.6889173109894213,
+            "entropy": 2.6277151885239975,
+            "approx_kl": 2.9354477706162827e-06,
+            "grad_norm": 1.5364091474076975,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 368,
+            "early_kl": false,
+            "seconds": 0.12387160999787739,
+            "rollout_pack_transfer_seconds": 0.005938403002801351,
+            "packed": true
+          },
+          "history_write_seconds": 0.001048231999448035,
+          "games_sha256": "b6ead6ec1952047776841d8c1b4d4751d259b0ee0e01197884ed20aa9224300e",
+          "opponent_wdl": {
+            "current": 0.0,
+            "past": 0.5,
+            "heuristic": -0.5
+          }
+        },
+        {
+          "iteration": 12,
+          "generation": {
+            "cpu_generation_pack": 0.02928032400814118,
+            "gpu_inference_sync": 0.051038500023423694,
+            "other": 0.005407201970228925,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015364588900411036,
+            "pack": 0.011044338032661472,
+            "transfer_pack_sync": 0.007398866968287621,
+            "inference_and_output_sync": 0.042752669025503565,
+            "candidates": 70938,
+            "seconds": 0.0857260260017938
+          },
+          "update": {
+            "loss": 0.21046400247988375,
+            "policy_loss": -0.0004671014506708492,
+            "value_mse": 0.4744483230804855,
+            "entropy": 2.6293061592362146,
+            "approx_kl": 4.049221223050898e-06,
+            "grad_norm": 1.4094329246065833,
+            "clip_fraction": 0.0,
+            "updates": 44,
+            "records": 352,
+            "early_kl": false,
+            "seconds": 0.11796730700007174,
+            "rollout_pack_transfer_seconds": 0.004931880997901317,
+            "packed": true
+          },
+          "history_write_seconds": 0.0010617320003802888,
+          "games_sha256": "b2ac19ff889f188c27ef335fbfac935054ec6022266f44b4636c8973bb3f5e86",
+          "opponent_wdl": {
+            "current": -0.25,
+            "past": 0.0,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 13,
+          "generation": {
+            "cpu_generation_pack": 0.03037555402261205,
+            "gpu_inference_sync": 0.05468912197102327,
+            "other": 0.006270012010645587,
+            "legal": 0.0,
+            "legal_and_native_features": 0.01570033198368037,
+            "pack": 0.011703243966621812,
+            "transfer_pack_sync": 0.007807544054230675,
+            "inference_and_output_sync": 0.045917366005596705,
+            "candidates": 66585,
+            "seconds": 0.0913346880042809
+          },
+          "update": {
+            "loss": 0.40030576051636174,
+            "policy_loss": -0.0006282417611642318,
+            "value_mse": 0.8521548489278014,
+            "entropy": 2.5143423568118703,
+            "approx_kl": 1.5971053425222304e-06,
+            "grad_norm": 1.8862877312031658,
+            "clip_fraction": 0.0,
+            "updates": 44,
+            "records": 348,
+            "early_kl": false,
+            "seconds": 0.12041167099960148,
+            "rollout_pack_transfer_seconds": 0.005280990997562185,
+            "packed": true
+          },
+          "history_write_seconds": 0.001076061998901423,
+          "games_sha256": "75ee33b15f016d58cfe5dd4bde6ba156fa4624d892a94786488eae3f664e74f1",
+          "opponent_wdl": {
+            "current": -0.125,
+            "past": -0.75,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 14,
+          "generation": {
+            "cpu_generation_pack": 0.030753960956644733,
+            "gpu_inference_sync": 0.05310446002113167,
+            "other": 0.005588544023339637,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015830740907404106,
+            "pack": 0.011895273157279007,
+            "transfer_pack_sync": 0.007658290989638772,
+            "inference_and_output_sync": 0.044486735001555644,
+            "candidates": 72976,
+            "seconds": 0.08944696500111604
+          },
+          "update": {
+            "loss": 0.4183575802523157,
+            "policy_loss": -0.00026561481797176856,
+            "value_mse": 0.8911606747171154,
+            "entropy": 2.695714587750642,
+            "approx_kl": 3.3330010380624393e-06,
+            "grad_norm": 1.9130046121452167,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 365,
+            "early_kl": false,
+            "seconds": 0.12579975300468504,
+            "rollout_pack_transfer_seconds": 0.005646482000884134,
+            "packed": true
+          },
+          "history_write_seconds": 0.0011323930011712946,
+          "games_sha256": "96f94c50578faa018c586b6a4e8fe40cce69a9773c4c98fe5c6025ab2df632d6",
+          "opponent_wdl": {
+            "current": 0.125,
+            "past": -0.5,
+            "heuristic": 0.0
+          }
+        },
+        {
+          "iteration": 15,
+          "generation": {
+            "cpu_generation_pack": 0.029975787962030154,
+            "gpu_inference_sync": 0.055693509937555064,
+            "other": 0.005772881100710947,
+            "legal": 0.0,
+            "legal_and_native_features": 0.015672002991777845,
+            "pack": 0.011402350100979675,
+            "transfer_pack_sync": 0.00801821497589117,
+            "inference_and_output_sync": 0.04671200198936276,
+            "candidates": 67431,
+            "seconds": 0.09144217900029616
+          },
+          "update": {
+            "loss": 0.3082681939175183,
+            "policy_loss": -0.00021632777696306056,
+            "value_mse": 0.6690673780712214,
+            "entropy": 2.604916290803389,
+            "approx_kl": 3.6529337111543017e-06,
+            "grad_norm": 1.511655799367211,
+            "clip_fraction": 0.0,
+            "updates": 44,
+            "records": 349,
+            "early_kl": false,
+            "seconds": 0.11963864999415819,
+            "rollout_pack_transfer_seconds": 0.0060551130009116605,
+            "packed": true
+          },
+          "history_write_seconds": 0.001016082998830825,
+          "games_sha256": "ad757d91e98106ac64511c45905a476c7f54d3a4dc131637ee454e06f8b91002",
+          "opponent_wdl": {
+            "current": 0.25,
+            "past": -0.5,
+            "heuristic": -0.5
+          }
+        },
+        {
+          "iteration": 16,
+          "generation": {
+            "cpu_generation_pack": 0.03046015994186746,
+            "gpu_inference_sync": 0.05338193398347357,
+            "other": 0.005403620074503124,
+            "legal": 0.0,
+            "legal_and_native_features": 0.01575378001871286,
+            "pack": 0.011754673003451899,
+            "transfer_pack_sync": 0.007755416016152594,
+            "inference_and_output_sync": 0.04469103505834937,
+            "candidates": 69681,
+            "seconds": 0.08924571399984416
+          },
+          "update": {
+            "loss": 0.314090215317581,
+            "policy_loss": -0.0003802511517120444,
+            "value_mse": 0.6803517924702686,
+            "entropy": 2.5705434239428975,
+            "approx_kl": 5.713056610978168e-06,
+            "grad_norm": 1.7696908258873483,
+            "clip_fraction": 0.0,
+            "updates": 46,
+            "records": 368,
+            "early_kl": false,
+            "seconds": 0.12406724000175018,
+            "rollout_pack_transfer_seconds": 0.006004302995279431,
+            "packed": true
+          },
+          "history_write_seconds": 0.0010582030008663423,
+          "games_sha256": "eb817e952b1df7af0cb028f38a98fb35a062358300e63eac800a0d680f49baf8",
+          "opponent_wdl": {
+            "current": -0.625,
+            "past": 0.0,
+            "heuristic": 0.0
+          }
+        }
+      ]
+    }
+  },
+  "warmup_note": "first iteration initialization separately visible in curve; compare iterations2-16"
+}

@@ -1,0 +1,44 @@
+
+class GraphRunner:
+ """Static padded forward/backward graphs; optimizer and stepwise KL remain outside capture."""
+ def __init__(self,model):self.model=model;self.cache={};self.capture_seconds=0.;self.replays=0
+ def run(self,batch,targets):
+  n=batch[2].shape[1];bucket=next((k for k in (128,256,512,1024,2048,4096) if n<=k),None)
+  if bucket is None:raise ValueError('candidate bucket overflow')
+  key=(batch[0].shape[0],bucket)
+  padded=list(batch)
+  for i,value in enumerate(batch):
+   if i<2:continue
+   shape=list(value.shape);shape[1]=bucket
+   z=torch.full(shape,196 if i==3 else 0,dtype=value.dtype,device=value.device);z[:,:n].copy_(value);padded[i]=z
+  if key not in self.cache:
+   t=time.perf_counter();static=[x.clone() for x in padded];ys=[x.clone() for x in targets];model=self.model
+   def calculate():
+    logits,v=model(*static);dist=torch.distributions.Categorical(logits=logits,validate_args=False);lp=dist.log_prob(ys[0]);ratio=(lp-ys[1]).exp();pl=-torch.minimum(ratio*ys[2],ratio.clamp(.8,1.2)*ys[2]).mean();vl=(v-ys[3]).square().mean();entropy=dist.entropy().mean();loss=pl+.5*vl-.01*entropy
+    loss.backward();norm=nn.utils.clip_grad_norm_(model.parameters(),.5)
+    return torch.stack((loss,pl,vl,entropy,((ratio-1)-(lp-ys[1])).mean(),norm,((ratio-1).abs()>.2).float().mean()))
+   stream=torch.cuda.Stream();stream.wait_stream(torch.cuda.current_stream())
+   with torch.cuda.stream(stream):
+    for _ in range(3):model.zero_grad(set_to_none=True);calculate()
+   torch.cuda.current_stream().wait_stream(stream);model.zero_grad(set_to_none=True);graph=torch.cuda.CUDAGraph()
+   with torch.cuda.graph(graph):row=calculate()
+   grads=[p.grad for p in model.parameters()];self.cache[key]=(graph,static,ys,row,grads);self.capture_seconds+=time.perf_counter()-t
+  graph,static,ys,row,grads=self.cache[key]
+  for x,y in zip(static,padded):x.copy_(y)
+  for x,y in zip(ys,targets):x.copy_(y)
+  for p,g in zip(self.model.parameters(),grads):p.grad=g
+  graph.replay();self.replays+=1
+  return row.detach().cpu().tolist()
+
+def update_graph(model,opt,records,runner,epochs=2):
+ start=time.perf_counter();device=next(model.parameters()).device
+ ret=torch.tensor([r['return'] for r in records],device=device);oldv=torch.tensor([r['value'] for r in records],device=device);adv=ret-oldv;adv=(adv-adv.mean())/adv.std(unbiased=False).clamp_min(1e-6);oldlp=torch.tensor([r['log_prob'] for r in records],device=device);actions=torch.tensor([r['action'] for r in records],device=device);logs=[];early=False;capture=runner.capture_seconds
+ for epoch in range(epochs):
+  order=torch.randperm(len(records)).tolist()
+  for offset in range(0,len(records),16):
+   ix=order[offset:offset+16];batch=collate([records[i]['obs'] for i in ix],device);row=runner.run(batch,(actions[ix],oldlp[ix],adv[ix],ret[ix]))
+   if not np.isfinite(row).all():raise FloatingPointError('nonfinite graph metrics')
+   opt.step();logs.append(row)
+   if row[4]>.03:early=True;break
+  if early:break
+ sync(device);return dict(zip(['loss','policy_loss','value_mse','entropy','approx_kl','grad_norm','clip_fraction'],np.mean(logs,0).tolist()),updates=len(logs),records=len(records),early_kl=early,seconds=time.perf_counter()-start,capture_seconds=runner.capture_seconds-capture,graph_buckets=len(runner.cache))

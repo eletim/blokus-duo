@@ -1,0 +1,350 @@
+{
+  "update": {
+    "baseline": 0.13620349599659676,
+    "sync": 0.13339679000273463,
+    "sync-resident": 0.12462051100010285
+  },
+  "end_to_end": [
+    {
+      "mode": "baseline",
+      "iterations": 15,
+      "games_per_iteration": 16,
+      "median_iteration_wall": 0.2191023060004227,
+      "games_per_second": 73.02524693632907,
+      "learner_states_per_second": 1592.7515093572529,
+      "optimizer_steps_per_second": 201.56922051988244,
+      "total_optimizer_steps": 682,
+      "median_collection": 0.088811383000575,
+      "median_update": 0.13090894500055583
+    },
+    {
+      "mode": "fast",
+      "iterations": 15,
+      "games_per_iteration": 16,
+      "median_iteration_wall": 0.21331295400159433,
+      "games_per_second": 75.00716529330147,
+      "learner_states_per_second": 1638.7683605558752,
+      "optimizer_steps_per_second": 207.3928413247554,
+      "total_optimizer_steps": 682,
+      "median_collection": 0.08944696500111604,
+      "median_update": 0.12431721000029938
+    }
+  ],
+  "training_curve": [
+    {
+      "seed": 1751401,
+      "iteration": 512,
+      "games": 8192,
+      "chunk_wall": 114.8714558779975,
+      "cumulative_wall": 114.8714558779975,
+      "entropy": 2.3880244814190386,
+      "kl": 0.0007881924573697322,
+      "value_mse": 0.6042165642034917,
+      "optimizer_steps": 23676,
+      "learner_states": 185629,
+      "collection_cpu": 15.71716030844982,
+      "collection_inference_sync": 26.684673179974197,
+      "update_wall": 67.95146529300837,
+      "history_write": 0.5782007030284149,
+      "opponent_wdl": {
+        "current": 0.006591796875,
+        "past": -0.0185546875,
+        "heuristic": -0.19775390625
+      }
+    },
+    {
+      "seed": 1751401,
+      "iteration": 1024,
+      "games": 16384,
+      "chunk_wall": 116.23131384200678,
+      "cumulative_wall": 231.1027697200043,
+      "entropy": 1.7618788987028147,
+      "kl": 0.0025642118098227035,
+      "value_mse": 0.6502904081306587,
+      "optimizer_steps": 23743,
+      "learner_states": 187354,
+      "collection_cpu": 16.274781850050204,
+      "collection_inference_sync": 26.8998679464421,
+      "update_wall": 68.63079930602544,
+      "history_write": 0.5940460970523418,
+      "opponent_wdl": {
+        "current": -0.01123046875,
+        "past": 0.0029296875,
+        "heuristic": 0.15185546875
+      }
+    },
+    {
+      "seed": 1751401,
+      "iteration": 2048,
+      "games": 32768,
+      "chunk_wall": 231.89548293400003,
+      "cumulative_wall": 462.9982526540043,
+      "entropy": 1.3799036191543776,
+      "kl": 0.003992326613470812,
+      "value_mse": 0.6348428739280516,
+      "optimizer_steps": 47349,
+      "learner_states": 381888,
+      "collection_cpu": 33.13843372117117,
+      "collection_inference_sync": 54.8775860536407,
+      "update_wall": 134.89763907005545,
+      "history_write": 1.2085130398118054,
+      "opponent_wdl": {
+        "current": 0.018310546875,
+        "past": 0.003662109375,
+        "heuristic": 0.340087890625
+      }
+    },
+    {
+      "seed": 1751401,
+      "iteration": 3072,
+      "games": 49152,
+      "chunk_wall": 232.9368764729952,
+      "cumulative_wall": 695.9351291269995,
+      "entropy": 1.1576680091146427,
+      "kl": 0.004861064818798248,
+      "value_mse": 0.6338749917129574,
+      "optimizer_steps": 45732,
+      "learner_states": 389220,
+      "collection_cpu": 34.35376876976079,
+      "collection_inference_sync": 55.90389005882025,
+      "update_wall": 133.37753629792132,
+      "history_write": 1.2383197179296985,
+      "opponent_wdl": {
+        "current": -0.0074462890625,
+        "past": 0.0205078125,
+        "heuristic": 0.54150390625
+      }
+    },
+    {
+      "seed": 1751401,
+      "iteration": 4096,
+      "games": 65536,
+      "chunk_wall": 231.93997586200567,
+      "cumulative_wall": 927.8751049890052,
+      "entropy": 1.1686545074464347,
+      "kl": 0.004951045167373963,
+      "value_mse": 0.6456099426492975,
+      "optimizer_steps": 45652,
+      "learner_states": 390846,
+      "collection_cpu": 34.3748901332001,
+      "collection_inference_sync": 55.94587236406369,
+      "update_wall": 132.29179993011348,
+      "history_write": 1.2470510000639479,
+      "opponent_wdl": {
+        "current": 0.0103759765625,
+        "past": 0.000244140625,
+        "heuristic": 0.588623046875
+      }
+    },
+    {
+      "seed": 1751402,
+      "iteration": 512,
+      "games": 8192,
+      "chunk_wall": 115.26732292099769,
+      "cumulative_wall": 115.26732292099769,
+      "entropy": 2.3400297762114812,
+      "kl": 0.0006063880225765871,
+      "value_mse": 0.6012195111271256,
+      "optimizer_steps": 23720,
+      "learner_states": 185882,
+      "collection_cpu": 15.763503019305062,
+      "collection_inference_sync": 26.575952245751978,
+      "update_wall": 68.55126750402997,
+      "history_write": 0.5856242119916715,
+      "opponent_wdl": {
+        "current": 0.00146484375,
+        "past": -0.06103515625,
+        "heuristic": -0.1416015625
+      }
+    },
+    {
+      "seed": 1751402,
+      "iteration": 1024,
+      "games": 16384,
+      "chunk_wall": 117.81450562200189,
+      "cumulative_wall": 233.08182854299957,
+      "entropy": 1.7560130772748788,
+      "kl": 0.0020838007407990157,
+      "value_mse": 0.6228716377475695,
+      "optimizer_steps": 24035,
+      "learner_states": 189251,
+      "collection_cpu": 16.402632273035124,
+      "collection_inference_sync": 27.241967005305924,
+      "update_wall": 69.72537852593814,
+      "history_write": 0.5975067730032606,
+      "opponent_wdl": {
+        "current": -0.010498046875,
+        "past": -0.02099609375,
+        "heuristic": 0.109375
+      }
+    },
+    {
+      "seed": 1751402,
+      "iteration": 2048,
+      "games": 32768,
+      "chunk_wall": 232.39096112499828,
+      "cumulative_wall": 465.47278966799786,
+      "entropy": 1.2942807276660355,
+      "kl": 0.0037393938270895806,
+      "value_mse": 0.6237703219827742,
+      "optimizer_steps": 47054,
+      "learner_states": 380224,
+      "collection_cpu": 33.34958962974633,
+      "collection_inference_sync": 54.85123756129906,
+      "update_wall": 135.055274064056,
+      "history_write": 1.2073494988217135,
+      "opponent_wdl": {
+        "current": -0.0074462890625,
+        "past": 0.02392578125,
+        "heuristic": 0.35009765625
+      }
+    },
+    {
+      "seed": 1751402,
+      "iteration": 3072,
+      "games": 49152,
+      "chunk_wall": 232.6382712640043,
+      "cumulative_wall": 698.1110609320021,
+      "entropy": 1.1017440739214974,
+      "kl": 0.004139218917298114,
+      "value_mse": 0.6448284292125271,
+      "optimizer_steps": 46799,
+      "learner_states": 384796,
+      "collection_cpu": 33.4596565399479,
+      "collection_inference_sync": 55.248047640081495,
+      "update_wall": 134.71682032487297,
+      "history_write": 1.2234837689611595,
+      "opponent_wdl": {
+        "current": 0.020751953125,
+        "past": 0.001953125,
+        "heuristic": 0.479248046875
+      }
+    },
+    {
+      "seed": 1751402,
+      "iteration": 4096,
+      "games": 65536,
+      "chunk_wall": 229.53818439599854,
+      "cumulative_wall": 927.6492453280007,
+      "entropy": 0.9835074009407784,
+      "kl": 0.004569800056858395,
+      "value_mse": 0.631883855362479,
+      "optimizer_steps": 45382,
+      "learner_states": 387468,
+      "collection_cpu": 33.72383229139814,
+      "collection_inference_sync": 55.43534847658884,
+      "update_wall": 131.1197172479151,
+      "history_write": 1.2338975559032406,
+      "opponent_wdl": {
+        "current": 0.017822265625,
+        "past": 0.01318359375,
+        "heuristic": 0.593994140625
+      }
+    },
+    {
+      "seed": 1751403,
+      "iteration": 512,
+      "games": 8192,
+      "chunk_wall": 115.1348241559972,
+      "cumulative_wall": 115.1348241559972,
+      "entropy": 2.298827007441159,
+      "kl": 0.0006888390731072894,
+      "value_mse": 0.5979388556438008,
+      "optimizer_steps": 23754,
+      "learner_states": 186097,
+      "collection_cpu": 15.87739520608011,
+      "collection_inference_sync": 26.818193573933968,
+      "update_wall": 68.02966635789926,
+      "history_write": 0.5973917730152607,
+      "opponent_wdl": {
+        "current": -0.011474609375,
+        "past": -0.02783203125,
+        "heuristic": -0.11767578125
+      }
+    },
+    {
+      "seed": 1751403,
+      "iteration": 1024,
+      "games": 16384,
+      "chunk_wall": 115.77970800099865,
+      "cumulative_wall": 230.91453215699585,
+      "entropy": 1.5700040973269913,
+      "kl": 0.0022925693301376108,
+      "value_mse": 0.6249217714390629,
+      "optimizer_steps": 23923,
+      "learner_states": 188187,
+      "collection_cpu": 16.468112347567512,
+      "collection_inference_sync": 27.192738158228167,
+      "update_wall": 67.66774075109424,
+      "history_write": 0.5943963879180956,
+      "opponent_wdl": {
+        "current": -0.002197265625,
+        "past": -0.0029296875,
+        "heuristic": 0.11865234375
+      }
+    },
+    {
+      "seed": 1751403,
+      "iteration": 2048,
+      "games": 32768,
+      "chunk_wall": 231.8779197709955,
+      "cumulative_wall": 462.79245192799135,
+      "entropy": 1.2827268347312117,
+      "kl": 0.003938773876153155,
+      "value_mse": 0.6476199135908065,
+      "optimizer_steps": 46295,
+      "learner_states": 378658,
+      "collection_cpu": 33.602977088143234,
+      "collection_inference_sync": 54.80793618244206,
+      "update_wall": 134.39077484811423,
+      "history_write": 1.2058073041334865,
+      "opponent_wdl": {
+        "current": 0.0107421875,
+        "past": 0.0009765625,
+        "heuristic": 0.33154296875
+      }
+    },
+    {
+      "seed": 1751403,
+      "iteration": 3072,
+      "games": 49152,
+      "chunk_wall": 230.79990958900453,
+      "cumulative_wall": 693.5923615169959,
+      "entropy": 1.0276391131158749,
+      "kl": 0.004686484651298222,
+      "value_mse": 0.6468610693610397,
+      "optimizer_steps": 44395,
+      "learner_states": 388330,
+      "collection_cpu": 34.200115600389836,
+      "collection_inference_sync": 55.84360087604,
+      "update_wall": 131.41628570199828,
+      "history_write": 1.23952022085723,
+      "opponent_wdl": {
+        "current": 0.01513671875,
+        "past": 0.011474609375,
+        "heuristic": 0.52734375
+      }
+    },
+    {
+      "seed": 1751403,
+      "iteration": 4096,
+      "games": 65536,
+      "chunk_wall": 225.0633272949999,
+      "cumulative_wall": 918.6556888119958,
+      "entropy": 0.9962084891660994,
+      "kl": 0.004967614736624792,
+      "value_mse": 0.6324738768641113,
+      "optimizer_steps": 42986,
+      "learner_states": 386838,
+      "collection_cpu": 33.75221654453344,
+      "collection_inference_sync": 55.75855353772204,
+      "update_wall": 126.43086432911514,
+      "history_write": 1.236845627092407,
+      "opponent_wdl": {
+        "current": -0.000244140625,
+        "past": 0.01953125,
+        "heuristic": 0.57763671875
+      }
+    }
+  ]
+}

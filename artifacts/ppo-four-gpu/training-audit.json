@@ -1,0 +1,98 @@
+{
+  "pass_": true,
+  "rows": [
+    {
+      "seed": 1751401,
+      "games": 65536,
+      "checkpoint_sha256": "7a93585fd39279f05e24e74765ea066941fe7030b0629ed74d8f502feeedccb5",
+      "opponent_games": {
+        "current": 32768,
+        "past": 16384,
+        "heuristic": 16384
+      },
+      "learner_states": {
+        "current": 1019025,
+        "past": 255058,
+        "heuristic": 260854
+      },
+      "incidental_old_eval_start_overlap": 0
+    },
+    {
+      "seed": 1751402,
+      "games": 65536,
+      "checkpoint_sha256": "38f779406da83e3546bec8bde54df94df2fbb2248745d2576235e524720746ef",
+      "opponent_games": {
+        "current": 32768,
+        "past": 16384,
+        "heuristic": 16384
+      },
+      "learner_states": {
+        "current": 1014422,
+        "past": 253557,
+        "heuristic": 259642
+      },
+      "incidental_old_eval_start_overlap": 2
+    },
+    {
+      "seed": 1751403,
+      "games": 65536,
+      "checkpoint_sha256": "ca93a50d10830a3af4b783d890127304291b9dd0d04a9619ec47e82303059fee",
+      "opponent_games": {
+        "current": 32768,
+        "past": 16384,
+        "heuristic": 16384
+      },
+      "learner_states": {
+        "current": 1014780,
+        "past": 253664,
+        "heuristic": 259666
+      },
+      "incidental_old_eval_start_overlap": 0
+    }
+  ],
+  "new_and_auxiliary_unique_states": 6677060,
+  "auxiliary_sources": [
+    {
+      "source": "69e4c7b:artifacts/ppo-four-channel-runtime/pilot/games.jsonl",
+      "uncompressed_sha256": "a957715713b483b410d5d645bff4b26da25f8a3e4f7d61d89ce22b21509c49b9",
+      "games": 1024
+    },
+    {
+      "source": "artifacts/ppo-four-gpu/optimization-pilot-history.jsonl.gz",
+      "uncompressed_sha256": "af526e6b703077f144b0187c8fa5aa2c79b4a3b271c20bee9038b55d02cff6b0",
+      "games": 256
+    }
+  ],
+  "union_states": 19677312,
+  "union_sha256": "101b447ba8c2a9437460005b6d892ac86b6ad554bb6675d82eedf59840ba51c4",
+  "historical_indices": [
+    {
+      "ref": "a011c78",
+      "path": "artifacts/ppo-short-search/training-states/index.json",
+      "sha256": "b0b687338753b4ad6048ce6e0b7710db28949bec194d8eb878b9590e3b87d1e2",
+      "count": 13101265
+    },
+    {
+      "ref": "a011c78",
+      "path": "artifacts/ppo-generation-pool/training-states/index.json",
+      "sha256": "6d086bafa235a5a57922272a09ac0a899dbf039497dc8409fed76ff8261394af",
+      "count": 13101265
+    },
+    {
+      "ref": "a011c78",
+      "path": "artifacts/ppo-6144/training-states/index.json",
+      "sha256": "e58f720f18a6b58d8faad533daa6fafaa4c132a160f1ae922c109bf7d7305ea9",
+      "count": 9978544
+    },
+    {
+      "ref": "a011c78",
+      "path": "artifacts/ppo-4096/training-states/index.json",
+      "sha256": "0fbf5118fe6c26dd3f78f96f9941d0c302f26ed9a804bcd363449cfe6c718b73",
+      "count": 6658084
+    }
+  ],
+  "cache": "/tmp/ppo-four-gpu-all-training.npy",
+  "seconds": 428.64466533100494,
+  "action_indices_sample_stride": 256,
+  "all_moves_legally_replayed": true
+}

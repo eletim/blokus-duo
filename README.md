@@ -416,3 +416,18 @@ python -m blokus.ppo_runtime --output artifacts/my-four-channel-cpu --channels 4
 ```
 
 `--backend native` はbuild済みであることを要求する。`--backend auto` は未buildならPythonへ戻り、その場合は報告した約2.1倍の高速化は有効にならない。高速化の主因はCPU合法手生成・候補特徴packで、GPU更新自体はほぼ不変。測定は短いpilotの局面分布・16games batchであり、長期学習や別環境で同じ速度比を保証しない。4ch pilotは棋力未評価で既定公開モデルにはしない。
+
+## 4ch GPU更新・本学習の研究経路
+
+`research/ppo-four-channel-gpu` では、PPOの更新条件を維持してCPU同期を集約し、rollout tensorをGPU常駐させる `blokus.ppo_gpu.update_fast` を追加した。基準 `ppo_runtime.update` は保持する。同一更新の約9%短縮に対し、収集込みの短いpilotでは約3%の改善であり、GPU計算が大幅に速くなったとは扱わない。
+
+```bash
+python -m blokus.ppo_native build
+python -m blokus.ppo_gpu_train --output artifacts/new-four-run --seed 1751401 --until 512 --mode fast --cap 600
+# 累積1024iterationまで再開（新規初期化ではない）
+python -m blokus.ppo_gpu_train --output artifacts/new-four-run --seed 1751401 --until 1024 --mode fast --resume artifacts/new-four-run/iteration-512.pt --cap 600
+```
+
+このCLIは4ch・native収集・16games/iterationを用いる。既存heuristic priorを保持した新規初期化で、6ch重みを切り捨てて流用しない。公開gen2/2048と既定seed1401は変更しない。学習・独立評価・費用・制約は [研究レポート](artifacts/ppo-four-gpu/REPORT.md) に記録する。
+
+今回の4ch本学習は各seed65,536gamesを完走。独立96prefix評価で学習前/heuristicには改善したが、gen2比point48.00%（95% CI43.75–52.34%）で改善未確認。公開推奨はgen2のまま。履歴不要の4ch候補3モデルと明示CLIは [モデル候補](artifacts/ppo-four-gpu-models/README.md) を参照。

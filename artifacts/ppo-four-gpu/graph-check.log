@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "/home/eletim/blokus-duo-ai/blokus/ppo_gpu.py", line 53, in run
+    with torch.cuda.graph(graph):row=calculate()
+                                     ^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/blokus/ppo_gpu.py", line 47, in calculate
+    loss.backward();norm=nn.utils.clip_grad_norm_(model.parameters(),.5)
+    ^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/_tensor.py", line 648, in backward
+    torch.autograd.backward(
+  File "/home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/autograd/__init__.py", line 353, in backward
+    _engine_run_backward(
+  File "/home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/autograd/graph.py", line 824, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: operation not permitted when stream is capturing
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/eletim/blokus-duo-ai/scripts/check_ppo_graph.py", line 9, in <module>
+    r.seed_all(400+i);x=r.update(a,oa,rec);r.seed_all(400+i);y=update_graph(b,ob,rec,runner)
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/blokus/ppo_gpu.py", line 68, in update_graph
+    ix=order[offset:offset+16];batch=collate([records[i]['obs'] for i in ix],device);row=runner.run(batch,(actions[ix],oldlp[ix],adv[ix],ret[ix]))
+                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/blokus/ppo_gpu.py", line 53, in run
+    with torch.cuda.graph(graph):row=calculate()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/cuda/graphs.py", line 186, in __exit__
+    self.cuda_graph.capture_end()
+  File "/home/eletim/blokus-duo-ai/.venv/lib/python3.12/site-packages/torch/cuda/graphs.py", line 84, in capture_end
+    super().capture_end()
+RuntimeError: CUDA error: operation failed due to a previous error during capture
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+

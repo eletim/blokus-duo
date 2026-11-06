@@ -1,0 +1,11 @@
+import copy,json,time
+from pathlib import Path
+import torch
+from blokus import ppo_runtime as r
+from blokus.ppo_gpu import GraphRunner,update_graph
+from blokus.ppo_policy import TerminalNet
+r.seed_all(1750300);base=TerminalNet(4).cuda();rec,_,_=r.collect(base,copy.deepcopy(base),0,1750300,backend='native');a=copy.deepcopy(base);b=copy.deepcopy(base);oa=torch.optim.Adam(a.parameters(),lr=.0003);ob=torch.optim.Adam(b.parameters(),lr=.0003);runner=GraphRunner(b);rows=[]
+for i in range(3):
+ r.seed_all(400+i);x=r.update(a,oa,rec);r.seed_all(400+i);y=update_graph(b,ob,rec,runner)
+ err=max((a.state_dict()[k]-b.state_dict()[k]).abs().max().item() for k in a.state_dict());print(i,x['seconds'],y['seconds'],y['capture_seconds'],err,flush=True);rows.append(dict(reference=x,graph=y,max_weight_error=err));assert err<1e-5
+Path('artifacts/ppo-four-gpu/graph-check.json').write_text(json.dumps(rows,indent=2))

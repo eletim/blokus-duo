@@ -1,0 +1,24 @@
+{
+  "pass_": true,
+  "separate_process": true,
+  "continuous": 16,
+  "first": 2,
+  "additional": 14,
+  "past_swaps": [
+    4,
+    8,
+    12,
+    16
+  ],
+  "bit_equal": [
+    "model",
+    "past",
+    "optimizer",
+    "python_rng",
+    "numpy_rng",
+    "torch_rng",
+    "cuda_rng",
+    "games"
+  ],
+  "workers": null
+}
