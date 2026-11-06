@@ -3,7 +3,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const fs=require('fs');
 const assert=require('assert/strict');
 (async()=>{
- const url=process.argv[2]||'http://127.0.0.1:8766', out=process.argv[3]||'/tmp/linear-web-browser';fs.mkdirSync(out,{recursive:true});fs.rmSync(out+'/result.json',{force:true});
+ const url=process.argv[2]||'http://127.0.0.1:8766', out=process.argv[3]||'/tmp/deep-web-browser';fs.mkdirSync(out,{recursive:true});fs.rmSync(out+'/result.json',{force:true});
  const browser=await chromium.launch({headless:true,args:['--no-sandbox']});const page=await browser.newPage({viewport:{width:1100,height:900},acceptDownloads:true});const errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('dialog',d=>d.accept());
  async function state(){return page.evaluate(()=>game)}
  async function ready(mode,seat){await page.waitForFunction(([m,s])=>game?.mode===m&&game.seat===s&&!game.busy&&!waiting&&!game.error,[mode,seat]);}
@@ -47,6 +47,6 @@ const assert=require('assert/strict');
   // A separate browser context gets an isolated game.
   const context=await browser.newContext();const other=await context.newPage();await other.goto(url);await other.waitForFunction(()=>game&&!game.busy);assert.notEqual(await other.evaluate(()=>game.id),(await state()).id);await context.close();
   await newGame('deep',0);await page.setViewportSize({width:390,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.screenshot({path:out+'/mobile.png',fullPage:true});
-  assert.deepEqual(errors,[]);fs.writeFileSync(out+'/result.json',JSON.stringify({pass:true,url,default_gen3:true,linear_both_seats:true,rotation_flip:true,legal_anchors:true,ai_moves:true,mode_switch:true,stale_response_discard:true,download_metadata:true,terminal_pass_and_scores:true,session_isolation:true,page_errors:errors},null,2));
+  assert.deepEqual(errors,[]);fs.writeFileSync(out+'/result.json',JSON.stringify({pass:true,url,default_gen3:true,deep_both_seats:true,rotation_flip:true,legal_anchors:true,ai_moves:true,mode_switch:true,stale_response_discard:true,download_metadata:true,terminal_pass_and_scores:true,session_isolation:true,page_errors:errors},null,2));
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exit(1)});
