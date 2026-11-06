@@ -143,7 +143,7 @@ def train(output,iterations=64,seed=1741000,channels=4,device='cuda',backend='au
  if (output/'games.jsonl').exists():
   lines=(output/'games.jsonl').read_text().splitlines()
   if lines and json.loads(lines[-1])['iteration']>step:raise ValueError('output game log is ahead of resume checkpoint')
- config=dict(seed=seed,channels=channels,iterations=iterations,backend=backend,packed=packed,device=device,batch_games=16,cap_seconds=cap,resume=resume,torch=torch.__version__,loss='unchanged terminal WDL PPO',workers=0,compile=False,**settings);(output/'config.json').write_text(json.dumps(config,indent=2));start=time.perf_counter()
+ config=dict(seed=seed,channels=channels,iterations=iterations,backend=backend,packed=packed,device=device,batch_games=16,cap_seconds=cap,resume=str(resume) if resume is not None else None,torch=torch.__version__,loss='unchanged terminal WDL PPO',workers=0,compile=False,**settings);(output/'config.json').write_text(json.dumps(config,indent=2));start=time.perf_counter()
  while step<iterations and time.perf_counter()-start<cap:
   records,games,timing=collect(model,past,step,seed,backend=backend);from .ppo_gpu import update_fast
   metrics=update_fast(model,opt,records,packed=packed,minibatch=mb);step+=1
