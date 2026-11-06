@@ -1,0 +1,37 @@
+F.......                                                                 [100%]
+=================================== FAILURES ===================================
+_____________________ test_batch_outputs_and_complete_tree _____________________
+
+    def test_batch_outputs_and_complete_tree():
+     torch.set_num_threads(1);p=PPOAgent(1751401,'cpu');s=State();r=random.Random(94);states=[]
+     for _ in range(4):
+      states.append(copy.deepcopy(s));play(s,p.act(s,r),validate=False)
+     obs=[p._observation(s)[0] for s in states]
+     with torch.inference_mode():
+      l,v=p.model(*collate(obs,'cpu'))
+      for i,o in enumerate(obs):
+>      a,b=p.model(*collate([o],'cpu'));np.testing.assert_allclose(l[i,:len(o[2])],a[0],atol=2e-6,rtol=0);np.testing.assert_allclose(v[i],b[0],atol=2e-6,rtol=0)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E      AssertionError: 
+E      Not equal to tolerance rtol=0, atol=2e-06
+E      
+E      Mismatched elements: 15 / 414 (3.62%)
+E      First 5 mismatches are at indices:
+E       [8]: -3.015805244445801 (ACTUAL), -3.01580810546875 (DESIRED)
+E       [19]: -5.7145233154296875 (ACTUAL), -5.714519500732422 (DESIRED)
+E       [70]: 3.919375419616699 (ACTUAL), 3.9193782806396484 (DESIRED)
+E       [74]: 5.263877868652344 (ACTUAL), 5.263880729675293 (DESIRED)
+E       [78]: 5.707942962646484 (ACTUAL), 5.707945823669434 (DESIRED)
+E      Max absolute difference among violations: 3.8146973e-06
+E      Max relative difference among violations: 9.486754e-07
+E       ACTUAL: array([-2.441266, -4.603326, -8.467384, -9.399475, -8.909357,  0.470001,
+E              0.772707, -2.317132, -3.015805, -2.982773, -3.047801, -3.000427,
+E             -0.957474, -4.491655, -5.089379, -1.882505, -5.203823, -1.877679,...
+E       DESIRED: array([-2.441266, -4.603326, -8.467384, -9.399477, -8.909357,  0.470002,
+E              0.772706, -2.317134, -3.015808, -2.982773, -3.047799, -3.000427,
+E             -0.957474, -4.491655, -5.089379, -1.882504, -5.203822, -1.877678,...
+
+tests/test_ppo_search_batch.py:18: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ppo_search_batch.py::test_batch_outputs_and_complete_tree
+1 failed, 7 passed in 1.37s

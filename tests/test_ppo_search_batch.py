@@ -35,3 +35,36 @@ def test_timeout_fallback_and_cache_cold():
  torch.set_num_threads(1);p=PPOAgent(1751401,'cpu');s=State();a=BatchSearch(p,.001);r=random.Random(3)
  assert a.act(s,r)==p.act(s,r);assert a.stats['fallback'] and a.stats['depth']==0
  assert a.act(s,r)==p.act(s,r);assert a.stats['nn_calls']==0
+
+def test_partial_deeper_iteration_cannot_overwrite_completed_result(monkeypatch):
+ torch.set_num_threads(1);p=PPOAgent(1751401,'cpu');s=State();r=random.Random(9)
+ baseline=BatchSearch(p,5000,root_width=2,width=2,max_depth=2);expected=baseline.act(s,r)
+ forward=p.model.forward;calls=0
+ def limited(*args):
+  nonlocal calls
+  calls+=1
+  if calls==5:raise TimeoutError('simulated deeper iteration cutoff')
+  return forward(*args)
+ monkeypatch.setattr(p.model,'forward',limited)
+ a=BatchSearch(p,5000,root_width=2,width=2,max_depth=4)
+ assert a.act(s,r)==expected and a.stats['depth']==2 and not a.stats['fallback']
+
+
+def test_web_budget_reaches_search(monkeypatch):
+ import time
+ from blokus import web_play
+ seen=[]
+ class Spy:
+  def __init__(self,bot,budget):seen.append(budget);self.stats={}
+  def act(self,s,rng):return legal_moves(s)[0].move
+ monkeypatch.setattr(web_play,'SearchAgent',Spy)
+ class Bot:
+  def act(self,s,rng):return legal_moves(s)[0].move
+ games=web_play.Games(Bot())
+ try:
+  for budget in (500,2000):
+   g=games.create(1,'search',budget);end=time.monotonic()+3
+   while games.snapshot(g['id'])['busy']:
+    assert time.monotonic()<end;time.sleep(.005)
+  assert seen==[500,2000]
+ finally:games.worker.shutdown()

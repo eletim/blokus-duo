@@ -1,0 +1,86 @@
+{
+  "python": "3.12.14",
+  "torch": "2.7.1+cpu",
+  "numpy": "2.5.4",
+  "fresh_process_import_seconds": 0.5475029919907684,
+  "model_load_seconds": 0.005815487005747855,
+  "rows": [
+    {
+      "method": "old",
+      "trial": "first_call",
+      "depth": 2,
+      "nodes": 229,
+      "elapsed_ms": 500.2575020043878,
+      "fallback": false
+    },
+    {
+      "method": "old",
+      "trial": "warm_repeat",
+      "depth": 2,
+      "nodes": 256,
+      "elapsed_ms": 500.70456400862895,
+      "fallback": false
+    },
+    {
+      "method": "B",
+      "trial": "first_call",
+      "depth": 2,
+      "nodes": 1021,
+      "nn_states": 253,
+      "nn_calls": 17,
+      "exact_nodes": 0,
+      "exact_solved": false,
+      "fallback": false,
+      "completed_roots": 12,
+      "observation_ms": 363.3266860124422,
+      "nn_ms": 113.40198598918505,
+      "root_scores": [
+        0.19369597733020782,
+        0.21303315460681915,
+        0.20243558287620544,
+        0.08867771923542023,
+        0.12029489874839783,
+        0.10645641386508942,
+        0.16877642273902893,
+        0.12380709499120712,
+        0.21414344012737274,
+        0.11840604990720749,
+        0.07553112506866455,
+        0.18599635362625122
+      ],
+      "elapsed_ms": 492.45807899569627,
+      "changed": true
+    },
+    {
+      "method": "B",
+      "trial": "warm_repeat",
+      "depth": 2,
+      "nodes": 1021,
+      "nn_states": 253,
+      "nn_calls": 17,
+      "exact_nodes": 0,
+      "exact_solved": false,
+      "fallback": false,
+      "completed_roots": 12,
+      "observation_ms": 359.6976650151191,
+      "nn_ms": 107.09703598695341,
+      "root_scores": [
+        0.19369597733020782,
+        0.21303315460681915,
+        0.20243558287620544,
+        0.08867771923542023,
+        0.12029489874839783,
+        0.10645641386508942,
+        0.16877642273902893,
+        0.12380709499120712,
+        0.21414344012737274,
+        0.11840604990720749,
+        0.07553112506866455,
+        0.18599635362625122
+      ],
+      "elapsed_ms": 482.14054900745396,
+      "changed": true
+    }
+  ],
+  "warning": "OS file cache not flushed; B measured after old; first-call is not a fair algorithm speed comparison"
+}

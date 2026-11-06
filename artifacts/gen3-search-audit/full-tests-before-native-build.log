@@ -1,0 +1,297 @@
+.......s....................FFFFFFF..s..s.........s...sss............... [ 70%]
+....................FF........                                           [100%]
+=================================== FAILURES ===================================
+_______________________ test_exports_and_source_outputs ________________________
+
+    def test_exports_and_source_outputs():
+     for d in json.loads((ROOT/'models/linear-L/manifest.json').read_text()):assert hashlib.sha256((ROOT/d['path']).read_bytes()).hexdigest()==d['sha256']
+     for r in json.loads((ROOT/'models/linear-L/reference.json').read_text()):
+>     a=Agent.load(ROOT/f"models/linear-L/seed-{r['seed']}.json",r['backend']);s=State(*r['state']);x,qs,p=a.inputs(s)
+                                                                                                           ^^^^^^^^^^^
+
+tests/test_linear_L_export.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+blokus/linear_value.py:78: in inputs
+    def inputs(self,s):return enriched_inputs(s,self.backend) if self.mode=='new' else old_inputs(s,self.backend)
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+blokus/linear_features.py:18: in inputs
+    ids, x = scan(s)
+             ^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = State(boards=[0, 0], remaining=[2097151, 2097151], last=[None, None], turn=0, passes=0)
+pack = True
+
+    def scan(s,pack=True):
+     lib=library()
+>    if lib is None:raise RuntimeError('native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    RuntimeError: native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)
+
+blokus/ppo_native.py:38: RuntimeError
+____________ test_exact_terminal_pass_and_same_player_continuation _____________
+
+    def test_exact_terminal_pass_and_same_player_continuation():
+     a=Agent('old')
+     for s in [State(remaining=[1,1]),State(remaining=[1,0],last=[None,1]),State(remaining=[0,0],last=[0,1])]:
+      before=copy.deepcopy(s)
+      if not legal_moves(s):
+       b=CompletedSearch(a,ms=0,width=None,replies=None,depth=4,base_width=None,base_replies=None);assert b.act(s,random.Random(1)) is None
+       t=copy.deepcopy(s);play(t,None);assert t.turn!=s.turn
+       if not t.done:play(t,None) if not legal_moves(t) else None
+      else:
+>      v,best=exact(s);b=CompletedSearch(a,ms=0,width=None,replies=None,depth=4,base_width=None,base_replies=None);m=b.act(s,random.Random(1));assert m in best and max(b.stats[-1]['values'])==v
+                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_linear_tree.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+blokus/linear_tree.py:22: in act
+    x,qs,p=inputs(s)
+           ^^^^^^^^^
+blokus/linear_tree.py:21: in inputs
+    q=time.perf_counter();r=self.agent.inputs(t);dt=time.perf_counter()-q;input_s+=dt;input_max=max(input_max,dt);return r
+                            ^^^^^^^^^^^^^^^^^^^^
+blokus/linear_value.py:78: in inputs
+    def inputs(self,s):return enriched_inputs(s,self.backend) if self.mode=='new' else old_inputs(s,self.backend)
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+blokus/linear_features.py:18: in inputs
+    ids, x = scan(s)
+             ^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = State(boards=[0, 0], remaining=[1, 1], last=[None, None], turn=0, passes=0)
+pack = True
+
+    def scan(s,pack=True):
+     lib=library()
+>    if lib is None:raise RuntimeError('native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    RuntimeError: native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)
+
+blokus/ppo_native.py:38: RuntimeError
+_____________ test_completed_stage_fallback_and_no_state_mutation ______________
+
+    def test_completed_stage_fallback_and_no_state_mutation():
+     s=State();a=Agent('old');before=copy.deepcopy(s)
+>    base=CompletedSearch(a,ms=0);m=base.act(s,random.Random(4));n=base.stats[-1]['nodes']
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_linear_tree.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+blokus/linear_tree.py:22: in act
+    x,qs,p=inputs(s)
+           ^^^^^^^^^
+blokus/linear_tree.py:21: in inputs
+    q=time.perf_counter();r=self.agent.inputs(t);dt=time.perf_counter()-q;input_s+=dt;input_max=max(input_max,dt);return r
+                            ^^^^^^^^^^^^^^^^^^^^
+blokus/linear_value.py:78: in inputs
+    def inputs(self,s):return enriched_inputs(s,self.backend) if self.mode=='new' else old_inputs(s,self.backend)
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+blokus/linear_features.py:18: in inputs
+    ids, x = scan(s)
+             ^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = State(boards=[0, 0], remaining=[2097151, 2097151], last=[None, None], turn=0, passes=0)
+pack = True
+
+    def scan(s,pack=True):
+     lib=library()
+>    if lib is None:raise RuntimeError('native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    RuntimeError: native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)
+
+blokus/ppo_native.py:38: RuntimeError
+________________ test_fixed_tree_matches_legacy_without_pruning ________________
+
+    def test_fixed_tree_matches_legacy_without_pruning():
+     s=State();a=Agent('old');rng=random.Random(123)
+>    for _ in range(20):play(s,a.act(s,rng))
+                               ^^^^^^^^^^^^
+
+tests/test_linear_tree.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+blokus/linear_value.py:80: in act
+    x,qs,p=self.inputs(s)
+           ^^^^^^^^^^^^^^
+blokus/linear_value.py:78: in inputs
+    def inputs(self,s):return enriched_inputs(s,self.backend) if self.mode=='new' else old_inputs(s,self.backend)
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+blokus/linear_features.py:18: in inputs
+    ids, x = scan(s)
+             ^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = State(boards=[0, 0], remaining=[2097151, 2097151], last=[None, None], turn=0, passes=0)
+pack = True
+
+    def scan(s,pack=True):
+     lib=library()
+>    if lib is None:raise RuntimeError('native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    RuntimeError: native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)
+
+blokus/ppo_native.py:38: RuntimeError
+_______________________ test_greedy_near_tie_not_dropped _______________________
+
+    def test_greedy_near_tie_not_dropped():
+>    a=Agent('old');a.weights[:]=0;s=State();b=CompletedSearch(a,ms=0,width=1,replies=1,base_width=1,base_replies=1);b.act(s,random.Random(89));assert b.stats[-1]['baseline'] in b.stats[-1]['roots']
+                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_linear_tree.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+blokus/linear_tree.py:22: in act
+    x,qs,p=inputs(s)
+           ^^^^^^^^^
+blokus/linear_tree.py:21: in inputs
+    q=time.perf_counter();r=self.agent.inputs(t);dt=time.perf_counter()-q;input_s+=dt;input_max=max(input_max,dt);return r
+                            ^^^^^^^^^^^^^^^^^^^^
+blokus/linear_value.py:78: in inputs
+    def inputs(self,s):return enriched_inputs(s,self.backend) if self.mode=='new' else old_inputs(s,self.backend)
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+blokus/linear_features.py:18: in inputs
+    ids, x = scan(s)
+             ^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = State(boards=[0, 0], remaining=[2097151, 2097151], last=[None, None], turn=0, passes=0)
+pack = True
+
+    def scan(s,pack=True):
+     lib=library()
+>    if lib is None:raise RuntimeError('native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    RuntimeError: native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)
+
+blokus/ppo_native.py:38: RuntimeError
+________________ test_wide_stage_partial_results_are_discarded _________________
+
+    def test_wide_stage_partial_results_are_discarded():
+>    a=Agent('old');s=State();base=CompletedSearch(a,ms=0);m=base.act(s,random.Random(7))
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_linear_tree.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+blokus/linear_tree.py:22: in act
+    x,qs,p=inputs(s)
+           ^^^^^^^^^
+blokus/linear_tree.py:21: in inputs
+    q=time.perf_counter();r=self.agent.inputs(t);dt=time.perf_counter()-q;input_s+=dt;input_max=max(input_max,dt);return r
+                            ^^^^^^^^^^^^^^^^^^^^
+blokus/linear_value.py:78: in inputs
+    def inputs(self,s):return enriched_inputs(s,self.backend) if self.mode=='new' else old_inputs(s,self.backend)
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+blokus/linear_features.py:18: in inputs
+    ids, x = scan(s)
+             ^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = State(boards=[0, 0], remaining=[2097151, 2097151], last=[None, None], turn=0, passes=0)
+pack = True
+
+    def scan(s,pack=True):
+     lib=library()
+>    if lib is None:raise RuntimeError('native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    RuntimeError: native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)
+
+blokus/ppo_native.py:38: RuntimeError
+______________ test_depth_four_matches_separate_legacy_fixed_tree ______________
+
+    def test_depth_four_matches_separate_legacy_fixed_tree():
+     s=State();a=Agent('old');rng=random.Random(409)
+>    for _ in range(20):play(s,a.act(s,rng))
+                               ^^^^^^^^^^^^
+
+tests/test_linear_tree.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+blokus/linear_value.py:80: in act
+    x,qs,p=self.inputs(s)
+           ^^^^^^^^^^^^^^
+blokus/linear_value.py:78: in inputs
+    def inputs(self,s):return enriched_inputs(s,self.backend) if self.mode=='new' else old_inputs(s,self.backend)
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+blokus/linear_features.py:18: in inputs
+    ids, x = scan(s)
+             ^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = State(boards=[0, 0], remaining=[2097151, 2097151], last=[None, None], turn=0, passes=0)
+pack = True
+
+    def scan(s,pack=True):
+     lib=library()
+>    if lib is None:raise RuntimeError('native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    RuntimeError: native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)
+
+blokus/ppo_native.py:38: RuntimeError
+____________ test_linear_full_session_seats_metadata_and_replay[0] _____________
+
+seat = 0
+
+    @pytest.mark.parametrize('seat',[0,1])
+    def test_linear_full_session_seats_metadata_and_replay(seat):
+     model=load_search(backend='native').agent;games=Games(First(),lambda:make_search(model))
+     try:
+      g=games.create(seat,'linear',2000)
+      assert g['budget']==100 and g['generation']=='linear-L' and g['model_seed']==3101
+      while not g['done']:
+>      g=wait(games,g['id'])
+         ^^^^^^^^^^^^^^^^^^^
+
+tests/test_web_linear.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+games = <blokus.web_play.Games object at 0x7c07d802dd30>
+key = 'GwdFQbtIehWQbEt-8H165NXi-cXwJP8R'
+
+    def wait(games,key):
+     end=time.monotonic()+15
+     while True:
+      g=games.snapshot(key)
+>     assert not g['error'],g['error']
+E     AssertionError: native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)
+E     assert not 'native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)'
+
+tests/test_web_linear.py:13: AssertionError
+____________ test_linear_full_session_seats_metadata_and_replay[1] _____________
+
+seat = 1
+
+    @pytest.mark.parametrize('seat',[0,1])
+    def test_linear_full_session_seats_metadata_and_replay(seat):
+     model=load_search(backend='native').agent;games=Games(First(),lambda:make_search(model))
+     try:
+      g=games.create(seat,'linear',2000)
+      assert g['budget']==100 and g['generation']=='linear-L' and g['model_seed']==3101
+      while not g['done']:
+>      g=wait(games,g['id'])
+         ^^^^^^^^^^^^^^^^^^^
+
+tests/test_web_linear.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+games = <blokus.web_play.Games object at 0x7c07d8056720>
+key = 'q8QI8DxHPpyjNZ-M4bEKbrktZjg6iMKH'
+
+    def wait(games,key):
+     end=time.monotonic()+15
+     while True:
+      g=games.snapshot(key)
+>     assert not g['error'],g['error']
+E     AssertionError: native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)
+E     assert not 'native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)'
+
+tests/test_web_linear.py:13: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_linear_L_export.py::test_exports_and_source_outputs - Runti...
+FAILED tests/test_linear_tree.py::test_exact_terminal_pass_and_same_player_continuation
+FAILED tests/test_linear_tree.py::test_completed_stage_fallback_and_no_state_mutation
+FAILED tests/test_linear_tree.py::test_fixed_tree_matches_legacy_without_pruning
+FAILED tests/test_linear_tree.py::test_greedy_near_tie_not_dropped - RuntimeE...
+FAILED tests/test_linear_tree.py::test_wide_stage_partial_results_are_discarded
+FAILED tests/test_linear_tree.py::test_depth_four_matches_separate_legacy_fixed_tree
+FAILED tests/test_web_linear.py::test_linear_full_session_seats_metadata_and_replay[0]
+FAILED tests/test_web_linear.py::test_linear_full_session_seats_metadata_and_replay[1]
+9 failed, 86 passed, 7 skipped in 13.43s

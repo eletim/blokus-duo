@@ -229,3 +229,5 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 新clone: CPU-only 76passed/4CUDA skipped、CUDA80passed。gen3/gen2/2048のCPU/CUDA AI対戦・人間先後18経路PASS。旧metadataなしcheckpoint互換追加試験でPath型resume config JSON問題を修正。公開gen3は同じSHA、旧globaldefault差分なし。INTEGRATION.mdに依存/検証/再現/時間の読み方を保存。通常FF統合へ。
 
 2026-11-07 NN Web探索監査開始。Frozen gen3/main保持、research/gen3-search-audit。設定伝達とWDL符号をコード確認、5局面費用pilot保存。PLANに最大2候補・事前gate・有限標本を固定。追加学習なし。人間棋譜は未取得。
+NN探索: 訓練index 27,533,566状態（SHA cdd1f0f1...）と過去評価開始3558件から新bank分離。validation開始。新候補はroot12/internal4、深さ2/4同完成条件。CPU batch logit差3.8147e-6を記録しatol例外をPLANへ明示（棋力gate不変）。8件の対象テストPASS。追加学習0。
+2026-11-07 NN探索有限比較完了。validation240局、対戦実wall1112.7秒。B対旧point52.08%/得点差−1.917、C対旧47.92%/−2.562で事前gate未達。独立確認・main更新なし。全棋譜/得点/終局含む訓練分離監査PASS（重複0）、CPU-only98testsPASS/4skip。CLI人間先後完走。診断root再生一致、Frozen SHA不変。詳細artifacts/gen3-search-audit/REPORT.md。追加学習0、計測run終了。

@@ -105,6 +105,7 @@ def audit():
     assert not contains(idx,state_hash(s))
     for m in g['moves']:
      overlap+=int(contains(idx,state_hash(s)));move=Move(*m) if m else None;assert is_legal(s,move);play(s,move,validate=False)
+    overlap+=int(contains(idx,state_hash(s)))
     assert s.done and g['scores']==[s.score(0),s.score(1)] and g['difference']==s.score(g['seat'])-s.score(1-g['seat'])
    assert row['summary']==summarize(row['games']);out.append(dict(file=str(path),games=len(row['games']),later_training_overlap=overlap))
  write(R/'audit.json',dict(pass_=True,rows=out))

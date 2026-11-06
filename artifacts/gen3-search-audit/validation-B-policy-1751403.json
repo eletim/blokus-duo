@@ -1,0 +1,6721 @@
+{
+  "left": "B",
+  "right": "policy",
+  "seed": 1751403,
+  "model_sha256": "d8f49048eca64a6d7954b97f9cd657dce2696c7030b1bada9a13f8e312a8df9a",
+  "bank_sha256": "ac78c5d2916668cd4472b1fd5f124aa0953d48a3827c63c7724013b3316076f3",
+  "cold_load_seconds": 0.0025161570083582774,
+  "warmup_seconds": 0.0010361629974795505,
+  "wall_seconds": 65.13200757499726,
+  "games": [
+    {
+      "prefix": 0,
+      "seat": 0,
+      "moves": [
+        [
+          20,
+          0,
+          2,
+          9
+        ],
+        [
+          16,
+          2,
+          6,
+          12
+        ],
+        [
+          15,
+          3,
+          8,
+          5
+        ],
+        [
+          17,
+          2,
+          10,
+          4
+        ],
+        [
+          18,
+          2,
+          10,
+          2
+        ],
+        [
+          11,
+          7,
+          12,
+          1
+        ],
+        [
+          12,
+          6,
+          4,
+          11
+        ],
+        [
+          18,
+          1,
+          7,
+          2
+        ],
+        [
+          16,
+          5,
+          9,
+          0
+        ],
+        [
+          5,
+          0,
+          5,
+          3
+        ],
+        [
+          13,
+          0,
+          2,
+          0
+        ],
+        [
+          6,
+          3,
+          11,
+          12
+        ],
+        [
+          5,
+          7,
+          8,
+          10
+        ],
+        [
+          8,
+          0,
+          7,
+          4
+        ],
+        [
+          9,
+          0,
+          0,
+          9
+        ],
+        null,
+        [
+          8,
+          3,
+          10,
+          8
+        ],
+        null,
+        [
+          10,
+          1,
+          0,
+          0
+        ],
+        null,
+        [
+          0,
+          0,
+          4,
+          7
+        ],
+        null,
+        [
+          14,
+          3,
+          11,
+          9
+        ],
+        null,
+        [
+          1,
+          0,
+          0,
+          6
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -10,
+        -36
+      ],
+      "difference": 26,
+      "timings": [
+        {
+          "side": 0,
+          "elapsed_ms": 500.80737100506667,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 525,
+          "nn_calls": 34,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 423.2334699918283,
+          "nn_ms": 65.0105279928539,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.1643129982985556
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 498.32141399383545,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 573,
+          "nn_calls": 37,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 423.4034380351659,
+          "nn_ms": 62.2978099854663,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0538229980738834
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 499.17986600485165,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 589,
+          "nn_calls": 38,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 438.1213309825398,
+          "nn_ms": 49.884475985891186,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.9553830022923648
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 497.829952990287,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 733,
+          "nn_calls": 47,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 439.15639094484504,
+          "nn_ms": 48.51263202726841,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7019220065558329
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 492.3817780072568,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 813,
+          "nn_calls": 52,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 438.2858819881221,
+          "nn_ms": 44.03154004830867,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8897119987523183
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 493.02759001147933,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 941,
+          "nn_calls": 60,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 444.42547706421465,
+          "nn_ms": 38.011524971807376,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8156919939210638
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 174.65845801052637,
+          "depth": 4,
+          "nodes": 445,
+          "nn_states": 445,
+          "nn_calls": 29,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 157.221670015133,
+          "nn_ms": 13.179035027860664,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6189620035002008
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 44.15144100494217,
+          "depth": 4,
+          "nodes": 121,
+          "nn_states": 121,
+          "nn_calls": 9,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 38.80500700324774,
+          "nn_ms": 3.5335199936525896,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.48016099026426673
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 41.93015499913599,
+          "depth": 4,
+          "nodes": 121,
+          "nn_states": 121,
+          "nn_calls": 9,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 36.162416989100166,
+          "nn_ms": 3.90306998451706,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.9003919985843822
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 38.2509249902796,
+          "depth": 4,
+          "nodes": 121,
+          "nn_states": 121,
+          "nn_calls": 9,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 33.261530013987795,
+          "nn_ms": 3.131048972136341,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5096120003145188
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 36.72738000750542,
+          "depth": 4,
+          "nodes": 121,
+          "nn_states": 121,
+          "nn_calls": 9,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 32.493590013473295,
+          "nn_ms": 2.712068016990088,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.48087199684232473
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 22.816411990788765,
+          "depth": 4,
+          "nodes": 81,
+          "nn_states": 81,
+          "nn_calls": 7,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 9,
+          "observation_ms": 19.746664984268136,
+          "nn_ms": 1.8612339772516862,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.4560009983833879
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 8.695733995409682,
+          "depth": 4,
+          "nodes": 31,
+          "nn_states": 29,
+          "nn_calls": 5,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 6,
+          "observation_ms": 6.730897002853453,
+          "nn_ms": 1.1028529988834634,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.44466099643614143
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 0.9154630097327754,
+          "depth": 4,
+          "nodes": 2,
+          "nn_states": 1,
+          "nn_calls": 1,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.289039991912432,
+          "nn_ms": 0.1295910042244941,
+          "changed": false
+        }
+      ]
+    },
+    {
+      "prefix": 0,
+      "seat": 1,
+      "moves": [
+        [
+          20,
+          0,
+          2,
+          9
+        ],
+        [
+          11,
+          5,
+          6,
+          12
+        ],
+        [
+          13,
+          2,
+          8,
+          6
+        ],
+        [
+          20,
+          0,
+          3,
+          11
+        ],
+        [
+          15,
+          3,
+          11,
+          3
+        ],
+        [
+          17,
+          2,
+          0,
+          10
+        ],
+        [
+          16,
+          4,
+          7,
+          0
+        ],
+        [
+          16,
+          4,
+          0,
+          6
+        ],
+        [
+          12,
+          1,
+          0,
+          3
+        ],
+        [
+          9,
+          0,
+          2,
+          1
+        ],
+        [
+          10,
+          2,
+          0,
+          0
+        ],
+        [
+          18,
+          3,
+          11,
+          11
+        ],
+        [
+          18,
+          1,
+          11,
+          8
+        ],
+        [
+          1,
+          1,
+          1,
+          13
+        ],
+        [
+          14,
+          2,
+          11,
+          0
+        ],
+        null,
+        [
+          5,
+          7,
+          8,
+          10
+        ],
+        null,
+        [
+          8,
+          2,
+          9,
+          1
+        ],
+        null,
+        [
+          1,
+          1,
+          1,
+          12
+        ],
+        null,
+        [
+          0,
+          0,
+          6,
+          12
+        ],
+        null,
+        [
+          3,
+          0,
+          11,
+          11
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -12,
+        -36
+      ],
+      "difference": -24,
+      "timings": [
+        {
+          "side": 1,
+          "elapsed_ms": 1.7344850057270378
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 497.2905210015597,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 637,
+          "nn_calls": 41,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 421.1454460019013,
+          "nn_ms": 64.71299703116529,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.623014992219396
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 495.24796499463264,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 797,
+          "nn_calls": 51,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 429.22960402211174,
+          "nn_ms": 54.919877016800456,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 2.023125998675823
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 442.8235420054989,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 378.5974699858343,
+          "nn_ms": 52.54881098517217,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 2.1260259964037687
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 418.8924769987352,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 368.6199880030472,
+          "nn_ms": 40.46123394800816,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.3423729978967458
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 397.3825669963844,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 355.5676740943454,
+          "nn_ms": 32.91635097411927,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0418029996799305
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 102.9966019996209,
+          "depth": 4,
+          "nodes": 361,
+          "nn_states": 361,
+          "nn_calls": 24,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 90.70044798136223,
+          "nn_ms": 9.042255012900569,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.9222230000887066
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 8.055122001678683,
+          "depth": 4,
+          "nodes": 26,
+          "nn_states": 26,
+          "nn_calls": 5,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 6.1896270053694025,
+          "nn_ms": 1.1480230023153126,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8431019959971309
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 7.634631008841097,
+          "depth": 4,
+          "nodes": 26,
+          "nn_states": 26,
+          "nn_calls": 5,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 5.884526981390081,
+          "nn_ms": 1.0994830226991326,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7697120017837733
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 7.346489990595728,
+          "depth": 4,
+          "nodes": 26,
+          "nn_states": 26,
+          "nn_calls": 5,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 5.65544499841053,
+          "nn_ms": 1.0501340148039162,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7294719980563968
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 6.77806900057476,
+          "depth": 4,
+          "nodes": 24,
+          "nn_states": 24,
+          "nn_calls": 5,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 5.132945007062517,
+          "nn_ms": 1.0134510084753856,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6385019951267168
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 4.927522997604683,
+          "depth": 4,
+          "nodes": 14,
+          "nn_states": 14,
+          "nn_calls": 5,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 3.460229985648766,
+          "nn_ms": 0.9082609903998673,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.614771997788921
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 2.0828749984502792,
+          "depth": 4,
+          "nodes": 5,
+          "nn_states": 4,
+          "nn_calls": 4,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 1.1167229968123138,
+          "nn_ms": 0.49294102063868195,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5419420049292967
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 1.1973329965258017,
+          "depth": 4,
+          "nodes": 3,
+          "nn_states": 2,
+          "nn_calls": 2,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.5421520036179572,
+          "nn_ms": 0.24215999292209744,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.49066200153902173
+        }
+      ]
+    },
+    {
+      "prefix": 1,
+      "seat": 0,
+      "moves": [
+        [
+          18,
+          1,
+          2,
+          10
+        ],
+        [
+          18,
+          2,
+          4,
+          0
+        ],
+        [
+          16,
+          5,
+          8,
+          4
+        ],
+        [
+          19,
+          1,
+          7,
+          1
+        ],
+        [
+          17,
+          2,
+          11,
+          5
+        ],
+        [
+          17,
+          4,
+          10,
+          1
+        ],
+        [
+          20,
+          0,
+          11,
+          8
+        ],
+        [
+          10,
+          3,
+          1,
+          12
+        ],
+        [
+          9,
+          0,
+          13,
+          0
+        ],
+        [
+          20,
+          0,
+          11,
+          11
+        ],
+        [
+          19,
+          2,
+          5,
+          8
+        ],
+        [
+          4,
+          0,
+          0,
+          8
+        ],
+        [
+          13,
+          0,
+          3,
+          6
+        ],
+        [
+          0,
+          0,
+          9,
+          0
+        ],
+        [
+          12,
+          2,
+          0,
+          0
+        ],
+        null,
+        [
+          2,
+          1,
+          6,
+          11
+        ],
+        null,
+        [
+          1,
+          0,
+          9,
+          12
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -25,
+        -38
+      ],
+      "difference": 13,
+      "timings": [
+        {
+          "side": 0,
+          "elapsed_ms": 493.57468099333346,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 493,
+          "nn_calls": 32,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 386.50971597235184,
+          "nn_ms": 60.20435597747564,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.7081749974749982
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 490.6283030140912,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 573,
+          "nn_calls": 37,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 425.3985120449215,
+          "nn_ms": 54.69593701127451,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.137852988904342
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 495.47542599611916,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 717,
+          "nn_calls": 46,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 430.5315780657111,
+          "nn_ms": 54.04380298568867,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.3060040073469281
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 496.2255179998465,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 861,
+          "nn_calls": 55,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 439.2135030066129,
+          "nn_ms": 45.82638503052294,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.864993009599857
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 496.17049799417146,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 1005,
+          "nn_calls": 64,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 449.4666649989085,
+          "nn_ms": 37.62231903965585,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8455019997199997
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 383.10015900060534,
+          "depth": 4,
+          "nodes": 973,
+          "nn_states": 973,
+          "nn_calls": 62,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 347.68298000562936,
+          "nn_ms": 25.927132010110654,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6999719917075709
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 162.75883599882945,
+          "depth": 4,
+          "nodes": 510,
+          "nn_states": 510,
+          "nn_calls": 34,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 146.0349620465422,
+          "nn_ms": 11.623168960795738,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6559620087500662
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 33.022200004779734,
+          "depth": 4,
+          "nodes": 121,
+          "nn_states": 121,
+          "nn_calls": 9,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 28.665759004070424,
+          "nn_ms": 2.7434980584075674,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.43757101229857653
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 20.002175006084144,
+          "depth": 4,
+          "nodes": 73,
+          "nn_states": 73,
+          "nn_calls": 7,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 9,
+          "observation_ms": 16.88234599714633,
+          "nn_ms": 1.9305259775137529,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.4423810023581609
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 24.706878000870347,
+          "depth": 4,
+          "nodes": 107,
+          "nn_states": 105,
+          "nn_calls": 9,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 20.93927802343387,
+          "nn_ms": 2.399285978754051,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.40823100425768644
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 0.8753920119488612,
+          "depth": 4,
+          "nodes": 2,
+          "nn_states": 1,
+          "nn_calls": 1,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.2656209981068969,
+          "nn_ms": 0.1333299878751859,
+          "changed": false
+        }
+      ]
+    },
+    {
+      "prefix": 1,
+      "seat": 1,
+      "moves": [
+        [
+          16,
+          5,
+          5,
+          0
+        ],
+        [
+          20,
+          0,
+          10,
+          2
+        ],
+        [
+          18,
+          1,
+          2,
+          10
+        ],
+        [
+          17,
+          5,
+          5,
+          8
+        ],
+        [
+          20,
+          0,
+          9,
+          0
+        ],
+        [
+          18,
+          1,
+          2,
+          6
+        ],
+        [
+          13,
+          3,
+          12,
+          0
+        ],
+        [
+          9,
+          1,
+          0,
+          13
+        ],
+        [
+          17,
+          1,
+          7,
+          2
+        ],
+        [
+          12,
+          2,
+          0,
+          3
+        ],
+        [
+          12,
+          2,
+          0,
+          0
+        ],
+        [
+          19,
+          2,
+          11,
+          6
+        ],
+        [
+          1,
+          0,
+          9,
+          5
+        ],
+        [
+          8,
+          3,
+          11,
+          9
+        ],
+        [
+          3,
+          3,
+          9,
+          7
+        ],
+        [
+          14,
+          3,
+          11,
+          11
+        ],
+        [
+          19,
+          3,
+          11,
+          4
+        ],
+        [
+          2,
+          0,
+          2,
+          0
+        ],
+        [
+          14,
+          3,
+          6,
+          9
+        ],
+        [
+          3,
+          1,
+          2,
+          8
+        ],
+        [
+          6,
+          3,
+          8,
+          12
+        ],
+        [
+          7,
+          0,
+          0,
+          10
+        ],
+        [
+          7,
+          0,
+          11,
+          11
+        ],
+        [
+          5,
+          7,
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          12
+        ],
+        [
+          0,
+          0,
+          9,
+          4
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -14,
+        -14
+      ],
+      "difference": 0,
+      "timings": [
+        {
+          "side": 1,
+          "elapsed_ms": 1.5209749981295317
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 495.5711360089481,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 573,
+          "nn_calls": 37,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 422.9552780161612,
+          "nn_ms": 59.8945450183237,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.491054004873149
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 494.67370500497054,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 685,
+          "nn_calls": 44,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 427.38471302436665,
+          "nn_ms": 56.70768201525789,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.2635429884539917
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 496.5081789996475,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 685,
+          "nn_calls": 44,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 436.1629240302136,
+          "nn_ms": 49.74455403862521,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.3397139991866425
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 500.66692000837065,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 717,
+          "nn_calls": 46,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 407.84406395687256,
+          "nn_ms": 44.23305300588254,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.1480030079837888
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 496.33040800108574,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 1005,
+          "nn_calls": 64,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 451.01713901385665,
+          "nn_ms": 36.13758993742522,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.819531996967271
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 404.3775070022093,
+          "depth": 4,
+          "nodes": 877,
+          "nn_states": 877,
+          "nn_calls": 56,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 370.6314269511495,
+          "nn_ms": 26.40001304098405,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6419620040105656
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 296.56080099812243,
+          "depth": 4,
+          "nodes": 733,
+          "nn_states": 733,
+          "nn_calls": 47,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 272.6808159641223,
+          "nn_ms": 17.873227974632755,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6330420001177117
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 383.48535999830347,
+          "depth": 4,
+          "nodes": 990,
+          "nn_states": 990,
+          "nn_calls": 64,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 352.9426750028506,
+          "nn_ms": 22.944676005863585,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6812920037191361
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 156.03953700338025,
+          "depth": 4,
+          "nodes": 444,
+          "nn_states": 444,
+          "nn_calls": 30,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 142.7188919915352,
+          "nn_ms": 9.433445942704566,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6222220108611509
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 242.2095630026888,
+          "depth": 4,
+          "nodes": 759,
+          "nn_states": 759,
+          "nn_calls": 49,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 221.21445700759068,
+          "nn_ms": 15.192071019555442,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7568919972982258
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 93.72661700763274,
+          "depth": 4,
+          "nodes": 287,
+          "nn_states": 287,
+          "nn_calls": 20,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 84.54326100763865,
+          "nn_ms": 6.158897944260389,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7939320057630539
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 15.164101001573727,
+          "depth": 4,
+          "nodes": 47,
+          "nn_states": 46,
+          "nn_calls": 5,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 10,
+          "observation_ms": 12.797224000678398,
+          "nn_ms": 1.3017940073041245,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5950420018052682
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 6.542697999975644,
+          "depth": 4,
+          "nodes": 28,
+          "nn_states": 19,
+          "nn_calls": 3,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 9,
+          "observation_ms": 5.0313040119362995,
+          "nn_ms": 0.6799709954066202,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5333809967851266
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 0.848083000164479,
+          "depth": 4,
+          "nodes": 2,
+          "nn_states": 1,
+          "nn_calls": 1,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.25885099603328854,
+          "nn_ms": 0.13404998753685504,
+          "changed": false
+        }
+      ]
+    },
+    {
+      "prefix": 2,
+      "seat": 0,
+      "moves": [
+        [
+          17,
+          1,
+          8,
+          4
+        ],
+        [
+          16,
+          1,
+          10,
+          2
+        ],
+        [
+          16,
+          1,
+          3,
+          6
+        ],
+        [
+          20,
+          0,
+          11,
+          6
+        ],
+        [
+          19,
+          0,
+          5,
+          1
+        ],
+        [
+          19,
+          3,
+          1,
+          5
+        ],
+        [
+          15,
+          0,
+          0,
+          7
+        ],
+        [
+          11,
+          4,
+          12,
+          9
+        ],
+        [
+          11,
+          3,
+          1,
+          0
+        ],
+        [
+          9,
+          0,
+          3,
+          8
+        ],
+        [
+          9,
+          0,
+          0,
+          1
+        ],
+        [
+          18,
+          3,
+          4,
+          11
+        ],
+        [
+          12,
+          7,
+          7,
+          12
+        ],
+        [
+          10,
+          1,
+          1,
+          10
+        ],
+        [
+          1,
+          0,
+          10,
+          7
+        ],
+        [
+          13,
+          3,
+          12,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          14,
+          3,
+          5,
+          7
+        ],
+        null,
+        [
+          0,
+          0,
+          8,
+          10
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -23,
+        -34
+      ],
+      "difference": 11,
+      "timings": [
+        {
+          "side": 1,
+          "elapsed_ms": 1.5087940118974075
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 495.3947060130304,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 605,
+          "nn_calls": 39,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 419.47471504681744,
+          "nn_ms": 63.10049795138184,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.3718139962293208
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 497.17473100463394,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 749,
+          "nn_calls": 48,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 437.9630930197891,
+          "nn_ms": 48.99532301351428,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.2426930043147877
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 492.9629300022498,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 781,
+          "nn_calls": 50,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 435.6518869899446,
+          "nn_ms": 46.60278497613035,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.3839640014339238
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 498.2820840086788,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 829,
+          "nn_calls": 53,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 440.57231905753724,
+          "nn_ms": 46.72105101053603,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.5189339901553467
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 497.4584320007125,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 813,
+          "nn_calls": 52,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 416.06704995501786,
+          "nn_ms": 36.131270026089624,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.060413007508032
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 486.9974229950458,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 444.2811929329764,
+          "nn_ms": 33.98225897399243,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8469320018775761
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 407.15863500372507,
+          "depth": 4,
+          "nodes": 1013,
+          "nn_states": 1013,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 371.68270799156744,
+          "nn_ms": 27.55762495507952,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7228419999592006
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 152.70682799746282,
+          "depth": 4,
+          "nodes": 445,
+          "nn_states": 445,
+          "nn_calls": 29,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 138.84566200431436,
+          "nn_ms": 10.094536002725363,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6263010000111535
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 39.0178170055151,
+          "depth": 4,
+          "nodes": 121,
+          "nn_states": 121,
+          "nn_calls": 9,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 34.831684999517165,
+          "nn_ms": 2.6868180138990283,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5247419903753325
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 35.872427994036116,
+          "depth": 4,
+          "nodes": 114,
+          "nn_states": 113,
+          "nn_calls": 9,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 32.007518981117755,
+          "nn_ms": 2.4258760386146605,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5222510080784559
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 1.0407829977339134,
+          "depth": 4,
+          "nodes": 2,
+          "nn_states": 1,
+          "nn_calls": 1,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.35038100031670183,
+          "nn_ms": 0.12946000788360834,
+          "changed": false
+        }
+      ]
+    },
+    {
+      "prefix": 2,
+      "seat": 1,
+      "moves": [
+        [
+          17,
+          2,
+          9,
+          4
+        ],
+        [
+          18,
+          0,
+          10,
+          2
+        ],
+        [
+          20,
+          0,
+          2,
+          8
+        ],
+        [
+          9,
+          0,
+          13,
+          5
+        ],
+        [
+          15,
+          1,
+          3,
+          5
+        ],
+        [
+          19,
+          0,
+          0,
+          4
+        ],
+        [
+          12,
+          2,
+          0,
+          6
+        ],
+        [
+          16,
+          1,
+          12,
+          10
+        ],
+        [
+          16,
+          6,
+          1,
+          12
+        ],
+        [
+          11,
+          6,
+          4,
+          0
+        ],
+        [
+          19,
+          2,
+          10,
+          6
+        ],
+        [
+          20,
+          0,
+          11,
+          0
+        ],
+        [
+          9,
+          1,
+          5,
+          13
+        ],
+        [
+          14,
+          3,
+          5,
+          7
+        ],
+        [
+          14,
+          1,
+          0,
+          9
+        ],
+        [
+          13,
+          3,
+          8,
+          10
+        ],
+        [
+          0,
+          0,
+          8,
+          4
+        ],
+        [
+          10,
+          2,
+          0,
+          0
+        ],
+        [
+          10,
+          5,
+          4,
+          2
+        ],
+        [
+          3,
+          3,
+          3,
+          10
+        ],
+        [
+          1,
+          1,
+          1,
+          4
+        ],
+        [
+          5,
+          2,
+          0,
+          12
+        ],
+        [
+          8,
+          2,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          10,
+          9
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -16,
+        -20
+      ],
+      "difference": -4,
+      "timings": [
+        {
+          "side": 0,
+          "elapsed_ms": 498.58248500095215,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 621,
+          "nn_calls": 40,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 422.1185869828332,
+          "nn_ms": 64.84887699480169,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.336683999397792
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 488.2419970090268,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 653,
+          "nn_calls": 42,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 426.0722980106948,
+          "nn_ms": 52.032181061804295,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0968720016535372
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 494.352373003494,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 717,
+          "nn_calls": 46,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 439.46465097542387,
+          "nn_ms": 45.131048012990505,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8737820025999099
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 493.91016199660953,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 829,
+          "nn_calls": 53,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 439.5905569253955,
+          "nn_ms": 44.16565800784156,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.1523040011525154
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 498.63765499321744,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 989,
+          "nn_calls": 63,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 444.4659040600527,
+          "nn_ms": 42.72372099512722,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0420629987493157
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 406.4146019954933,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 365.28001408441924,
+          "nn_ms": 31.668164025177248,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7335720001719892
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 291.162406996591,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 258.05081697762944,
+          "nn_ms": 25.08527197642252,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.566032002097927
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 306.8095700000413,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 272.9211899568327,
+          "nn_ms": 25.88095901592169,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8081319974735379
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 207.15763699263334,
+          "depth": 4,
+          "nodes": 711,
+          "nn_states": 711,
+          "nn_calls": 47,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 10,
+          "observation_ms": 152.25990406179335,
+          "nn_ms": 15.134561966988258,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6800019909860566
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 34.6612150024157,
+          "depth": 4,
+          "nodes": 125,
+          "nn_states": 125,
+          "nn_calls": 11,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 5,
+          "observation_ms": 29.86860301462002,
+          "nn_ms": 3.255788004025817,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5625509948004037
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 44.31693199148867,
+          "depth": 4,
+          "nodes": 160,
+          "nn_states": 160,
+          "nn_calls": 14,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 5,
+          "observation_ms": 38.518166009453125,
+          "nn_ms": 4.033888995763846,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7571019959868863
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 6.438886994146742,
+          "depth": 4,
+          "nodes": 27,
+          "nn_states": 19,
+          "nn_calls": 4,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 2,
+          "observation_ms": 4.768614016938955,
+          "nn_ms": 0.8756810129852965,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5358810012694448
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 1.3045740051893517,
+          "depth": 4,
+          "nodes": 3,
+          "nn_states": 2,
+          "nn_calls": 2,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.5635120032820851,
+          "nn_ms": 0.2619300066726282,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.4620809922926128
+        }
+      ]
+    },
+    {
+      "prefix": 3,
+      "seat": 0,
+      "moves": [
+        [
+          17,
+          6,
+          8,
+          5
+        ],
+        [
+          20,
+          0,
+          10,
+          6
+        ],
+        [
+          20,
+          0,
+          10,
+          2
+        ],
+        [
+          11,
+          7,
+          12,
+          3
+        ],
+        [
+          15,
+          0,
+          3,
+          7
+        ],
+        [
+          17,
+          5,
+          1,
+          9
+        ],
+        [
+          19,
+          3,
+          3,
+          10
+        ],
+        [
+          19,
+          0,
+          0,
+          11
+        ],
+        [
+          16,
+          2,
+          6,
+          11
+        ],
+        [
+          9,
+          0,
+          1,
+          4
+        ],
+        [
+          13,
+          0,
+          0,
+          1
+        ],
+        [
+          13,
+          3,
+          9,
+          11
+        ],
+        [
+          12,
+          2,
+          12,
+          0
+        ],
+        [
+          18,
+          0,
+          5,
+          11
+        ],
+        [
+          10,
+          5,
+          5,
+          0
+        ],
+        [
+          15,
+          3,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          8,
+          10
+        ],
+        [
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          18,
+          3,
+          11,
+          7
+        ],
+        [
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          11
+        ],
+        [
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          9,
+          0,
+          0,
+          6
+        ],
+        null,
+        [
+          0,
+          0,
+          4,
+          1
+        ],
+        null,
+        [
+          14,
+          1,
+          11,
+          11
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -16,
+        -28
+      ],
+      "difference": 12,
+      "timings": [
+        {
+          "side": 0,
+          "elapsed_ms": 491.9930969917914,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 429,
+          "nn_calls": 28,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 401.88946801936254,
+          "nn_ms": 75.06410600035451,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 2.1171959961066023
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 488.74270799569786,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 493,
+          "nn_calls": 32,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 410.1519570394885,
+          "nn_ms": 65.84329799807165,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.6121740045491606
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 499.92824900255073,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 573,
+          "nn_calls": 37,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 427.1387430053437,
+          "nn_ms": 61.170568980742246,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.2494330003391951
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 489.78874100430403,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 637,
+          "nn_calls": 41,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 422.0906359987566,
+          "nn_ms": 56.70185505005065,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.3505039969459176
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 500.1998689986067,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 717,
+          "nn_calls": 46,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 434.8641490068985,
+          "nn_ms": 53.35517998901196,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8955119992606342
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 493.057610001415,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 877,
+          "nn_calls": 56,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 436.7579459794797,
+          "nn_ms": 45.69793202972505,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8864620031090453
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 443.69792500219774,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 400.02086602908093,
+          "nn_ms": 34.87218504596967,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5614719993900508
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 383.5402900003828,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 344.33854698727373,
+          "nn_ms": 31.046721021994017,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5096409877296537
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 344.91156399599276,
+          "depth": 4,
+          "nodes": 983,
+          "nn_states": 983,
+          "nn_calls": 63,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 310.5995699734194,
+          "nn_ms": 26.04153094580397,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6657119956798851
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 283.0798649956705,
+          "depth": 4,
+          "nodes": 764,
+          "nn_states": 764,
+          "nn_calls": 49,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 253.92620303318836,
+          "nn_ms": 21.468788996571675,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5735320009989664
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 93.8831170060439,
+          "depth": 4,
+          "nodes": 337,
+          "nn_states": 337,
+          "nn_calls": 23,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 83.46110899583437,
+          "nn_ms": 7.173759018769488,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.45676100126001984
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 31.66580699326005,
+          "depth": 4,
+          "nodes": 121,
+          "nn_states": 121,
+          "nn_calls": 9,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 27.36086600634735,
+          "nn_ms": 2.705386999878101,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.3109909885097295
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 28.49428800982423,
+          "depth": 4,
+          "nodes": 121,
+          "nn_states": 121,
+          "nn_calls": 9,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 24.496199024724774,
+          "nn_ms": 2.4717950145713985,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.30667000100947917
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 3.55422000575345,
+          "depth": 4,
+          "nodes": 13,
+          "nn_states": 9,
+          "nn_calls": 3,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 4,
+          "observation_ms": 2.1730649896198884,
+          "nn_ms": 0.5839119985466823,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.3045109915547073
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 1.0813330009113997,
+          "depth": 4,
+          "nodes": 2,
+          "nn_states": 1,
+          "nn_calls": 1,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.3627310070442036,
+          "nn_ms": 0.13349000073503703,
+          "changed": false
+        }
+      ]
+    },
+    {
+      "prefix": 3,
+      "seat": 1,
+      "moves": [
+        [
+          19,
+          0,
+          8,
+          6
+        ],
+        [
+          15,
+          0,
+          11,
+          6
+        ],
+        [
+          16,
+          6,
+          9,
+          4
+        ],
+        [
+          17,
+          5,
+          1,
+          6
+        ],
+        [
+          12,
+          0,
+          0,
+          5
+        ],
+        [
+          20,
+          0,
+          1,
+          9
+        ],
+        [
+          11,
+          3,
+          6,
+          0
+        ],
+        [
+          18,
+          0,
+          7,
+          11
+        ],
+        [
+          18,
+          2,
+          0,
+          8
+        ],
+        [
+          13,
+          3,
+          12,
+          3
+        ],
+        [
+          20,
+          0,
+          9,
+          1
+        ],
+        [
+          11,
+          6,
+          1,
+          12
+        ],
+        [
+          17,
+          1,
+          3,
+          0
+        ],
+        [
+          14,
+          2,
+          3,
+          5
+        ],
+        [
+          6,
+          1,
+          11,
+          0
+        ],
+        [
+          9,
+          1,
+          6,
+          4
+        ],
+        [
+          10,
+          1,
+          0,
+          0
+        ],
+        [
+          10,
+          3,
+          2,
+          2
+        ],
+        [
+          8,
+          2,
+          0,
+          11
+        ],
+        [
+          1,
+          0,
+          5,
+          11
+        ],
+        [
+          1,
+          1,
+          12,
+          6
+        ],
+        [
+          8,
+          1,
+          9,
+          11
+        ],
+        [
+          0,
+          0,
+          3,
+          9
+        ],
+        [
+          3,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          0,
+          4,
+          10
+        ],
+        [
+          0,
+          0,
+          1,
+          4
+        ],
+        [
+          15,
+          3,
+          5,
+          11
+        ],
+        null,
+        [
+          3,
+          0,
+          7,
+          9
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -15,
+        -20
+      ],
+      "difference": -5,
+      "timings": [
+        {
+          "side": 1,
+          "elapsed_ms": 1.5209039993351325
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 495.83224799425807,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 429,
+          "nn_calls": 28,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 379.6225139667513,
+          "nn_ms": 67.06140402820893,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.6777639975771308
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 485.93532099039294,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 525,
+          "nn_calls": 34,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 409.543191010016,
+          "nn_ms": 64.15019299311098,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.2874129897681996
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 491.6776259924518,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 621,
+          "nn_calls": 40,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 416.62772704148665,
+          "nn_ms": 63.351186021463946,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.6218150121858343
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 498.69680500705726,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 765,
+          "nn_calls": 49,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 424.89247796765994,
+          "nn_ms": 62.134734995197505,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.1382630036678165
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 496.82761999429204,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 973,
+          "nn_calls": 62,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 436.13774303230457,
+          "nn_ms": 50.55026488844305,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.1543029977474362
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 374.2283449973911,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 329.98229005897883,
+          "nn_ms": 35.096572028123774,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8853519975673407
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 343.3400299982168,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 305.481321978732,
+          "nn_ms": 29.828136059222743,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7215219957288355
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 321.2344089988619,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 286.23466192220803,
+          "nn_ms": 27.383204957004637,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7281919970409945
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 299.42466999636963,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 264.9950429331511,
+          "nn_ms": 26.648656057659537,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5081220006104559
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 244.970950006973,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 214.60888894216623,
+          "nn_ms": 22.69786201941315,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5808720015920699
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 242.00271200970747,
+          "depth": 4,
+          "nodes": 1010,
+          "nn_states": 1010,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 166.2440760701429,
+          "nn_ms": 66.43218302633613,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6490719970315695
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 45.94451599405147,
+          "depth": 4,
+          "nodes": 242,
+          "nn_states": 242,
+          "nn_calls": 18,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 9,
+          "observation_ms": 36.773961008293554,
+          "nn_ms": 6.486386002507061,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7841619953978807
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 18.597880989545956,
+          "depth": 4,
+          "nodes": 108,
+          "nn_states": 101,
+          "nn_calls": 9,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 7,
+          "observation_ms": 14.80347101460211,
+          "nn_ms": 2.399848002824001,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.4375610005808994
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 2.904028006014414,
+          "depth": 4,
+          "nodes": 14,
+          "nn_states": 10,
+          "nn_calls": 4,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 1.6864640056155622,
+          "nn_ms": 0.7053830049699172,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.42760100041050464
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 1.016242997138761,
+          "depth": 4,
+          "nodes": 3,
+          "nn_states": 2,
+          "nn_calls": 2,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.3817919932771474,
+          "nn_ms": 0.2487500023562461,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.3907609934685752
+        }
+      ]
+    },
+    {
+      "prefix": 4,
+      "seat": 0,
+      "moves": [
+        [
+          16,
+          7,
+          7,
+          1
+        ],
+        [
+          20,
+          0,
+          1,
+          7
+        ],
+        [
+          12,
+          3,
+          5,
+          0
+        ],
+        [
+          18,
+          0,
+          3,
+          10
+        ],
+        [
+          19,
+          2,
+          11,
+          6
+        ],
+        [
+          9,
+          1,
+          8,
+          0
+        ],
+        [
+          20,
+          0,
+          11,
+          3
+        ],
+        [
+          19,
+          3,
+          6,
+          11
+        ],
+        [
+          13,
+          2,
+          9,
+          12
+        ],
+        [
+          15,
+          2,
+          11,
+          1
+        ],
+        [
+          17,
+          5,
+          8,
+          4
+        ],
+        [
+          8,
+          0,
+          9,
+          2
+        ],
+        [
+          7,
+          0,
+          2,
+          5
+        ],
+        [
+          12,
+          1,
+          0,
+          9
+        ],
+        [
+          11,
+          7,
+          0,
+          1
+        ],
+        [
+          6,
+          2,
+          4,
+          8
+        ],
+        [
+          6,
+          0,
+          0,
+          6
+        ],
+        [
+          14,
+          2,
+          6,
+          7
+        ],
+        [
+          10,
+          4,
+          12,
+          9
+        ],
+        [
+          1,
+          0,
+          11,
+          5
+        ],
+        [
+          8,
+          1,
+          3,
+          2
+        ],
+        [
+          5,
+          6,
+          0,
+          12
+        ],
+        [
+          0,
+          0,
+          1,
+          9
+        ],
+        [
+          0,
+          0,
+          8,
+          4
+        ],
+        [
+          1,
+          0,
+          2,
+          10
+        ],
+        null,
+        [
+          3,
+          1,
+          3,
+          12
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -21,
+        -17
+      ],
+      "difference": -4,
+      "timings": [
+        {
+          "side": 1,
+          "elapsed_ms": 2.2713069920428097
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 493.83158099954017,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 573,
+          "nn_calls": 37,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 408.65682197909337,
+          "nn_ms": 72.2964250453515,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.9435760041233152
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 500.3413399972487,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 605,
+          "nn_calls": 39,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 425.36635002761614,
+          "nn_ms": 62.96807003673166,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.98484500288032
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 492.79450900212396,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 669,
+          "nn_calls": 43,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 426.2929859542055,
+          "nn_ms": 55.20390998572111,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.8883050070144236
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 493.9612029993441,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 829,
+          "nn_calls": 53,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 431.3419960089959,
+          "nn_ms": 52.476069948170334,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.3524330133805051
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 470.4666180041386,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 412.785531123518,
+          "nn_ms": 48.365673050284386,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.9908329957397655
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 371.10559598659165,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 327.4852160247974,
+          "nn_ms": 35.19722894998267,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6920220039319247
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 320.702787998016,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 279.792385030305,
+          "nn_ms": 30.73895700799767,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0379620071034878
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 274.7108629991999,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 236.46039204322733,
+          "nn_ms": 28.59076193999499,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.836121995234862
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 234.03171099198516,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 202.61542202206329,
+          "nn_ms": 23.351644005742855,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6017310079187155
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 180.45220400381368,
+          "depth": 4,
+          "nodes": 1001,
+          "nn_states": 1001,
+          "nn_calls": 64,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 154.4006109033944,
+          "nn_ms": 19.099095021374524,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.4463910008780658
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 87.42974000051618,
+          "depth": 4,
+          "nodes": 322,
+          "nn_states": 316,
+          "nn_calls": 23,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 10,
+          "observation_ms": 42.23907695268281,
+          "nn_ms": 7.050277010421269,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.4583709960570559
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 5.018903990276158,
+          "depth": 4,
+          "nodes": 21,
+          "nn_states": 21,
+          "nn_calls": 5,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 5,
+          "observation_ms": 3.344989017932676,
+          "nn_ms": 1.011044005281292,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.3599210031097755
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 1.6558040078962222,
+          "depth": 4,
+          "nodes": 5,
+          "nn_states": 4,
+          "nn_calls": 4,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.7454900041921064,
+          "nn_ms": 0.48092201177496463,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.36985099723096937
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 0.9979130118153989,
+          "depth": 4,
+          "nodes": 3,
+          "nn_states": 2,
+          "nn_calls": 2,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.36758198984898627,
+          "nn_ms": 0.2511000056983903,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.3114509891020134
+        }
+      ]
+    },
+    {
+      "prefix": 4,
+      "seat": 1,
+      "moves": [
+        [
+          20,
+          0,
+          10,
+          6
+        ],
+        [
+          18,
+          2,
+          2,
+          6
+        ],
+        [
+          17,
+          7,
+          2,
+          8
+        ],
+        [
+          12,
+          0,
+          0,
+          9
+        ],
+        [
+          19,
+          2,
+          7,
+          2
+        ],
+        [
+          6,
+          1,
+          8,
+          0
+        ],
+        [
+          15,
+          1,
+          10,
+          1
+        ],
+        [
+          14,
+          1,
+          10,
+          2
+        ],
+        [
+          9,
+          0,
+          13,
+          2
+        ],
+        [
+          20,
+          0,
+          8,
+          5
+        ],
+        [
+          16,
+          6,
+          2,
+          11
+        ],
+        [
+          10,
+          3,
+          1,
+          12
+        ],
+        [
+          12,
+          7,
+          5,
+          12
+        ],
+        [
+          19,
+          1,
+          6,
+          7
+        ],
+        [
+          10,
+          3,
+          9,
+          12
+        ],
+        [
+          8,
+          0,
+          0,
+          1
+        ],
+        [
+          6,
+          2,
+          12,
+          8
+        ],
+        [
+          13,
+          3,
+          4,
+          8
+        ],
+        [
+          2,
+          1,
+          2,
+          5
+        ],
+        [
+          1,
+          1,
+          5,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          3
+        ],
+        [
+          4,
+          1,
+          6,
+          11
+        ],
+        [
+          13,
+          1,
+          2,
+          2
+        ],
+        [
+          15,
+          3,
+          10,
+          10
+        ],
+        [
+          1,
+          1,
+          5,
+          1
+        ],
+        [
+          0,
+          0,
+          10,
+          8
+        ],
+        [
+          0,
+          0,
+          7,
+          0
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -16,
+        -17
+      ],
+      "difference": -1,
+      "timings": [
+        {
+          "side": 0,
+          "elapsed_ms": 494.96112499036826,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 477,
+          "nn_calls": 31,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 407.56140497978777,
+          "nn_ms": 73.21214801049791,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.2617440079338849
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 493.76691099314485,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 509,
+          "nn_calls": 33,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 413.6650019645458,
+          "nn_ms": 67.01126194093376,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.1013729963451624
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 492.479099004413,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 605,
+          "nn_calls": 39,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 423.5665350133786,
+          "nn_ms": 57.34634803957306,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.9933020046446472
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 499.0110060025472,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 685,
+          "nn_calls": 44,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 431.3435789808864,
+          "nn_ms": 55.4053019877756,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.9871229995042086
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 493.8736319891177,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 813,
+          "nn_calls": 52,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 433.2031880185241,
+          "nn_ms": 49.34295294515323,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.9659930074121803
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 485.6368890032172,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 431.1821599549148,
+          "nn_ms": 44.96649302018341,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7342720055021346
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 401.9462210126221,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 357.83001501113176,
+          "nn_ms": 35.46171206107829,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7296619878616184
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 308.890974993119,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 272.7804540336365,
+          "nn_ms": 27.412918978370726,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0713230003602803
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 320.7028379983967,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 249.3662849883549,
+          "nn_ms": 26.389741091406904,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.959202996455133
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 215.64732000115328,
+          "depth": 4,
+          "nodes": 816,
+          "nn_states": 816,
+          "nn_calls": 53,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 191.2586299731629,
+          "nn_ms": 17.463627038523555,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6638220074819401
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 218.07093700044788,
+          "depth": 4,
+          "nodes": 861,
+          "nn_states": 861,
+          "nn_calls": 55,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 194.15671200840734,
+          "nn_ms": 17.550927950651385,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5624610057566315
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 203.4109369997168,
+          "depth": 4,
+          "nodes": 841,
+          "nn_states": 841,
+          "nn_calls": 54,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 180.8405769552337,
+          "nn_ms": 16.68035391776357,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.52840200078208
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 66.95516299805604,
+          "depth": 4,
+          "nodes": 285,
+          "nn_states": 285,
+          "nn_calls": 19,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 59.180110998568125,
+          "nn_ms": 5.273964983643964,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.49329099419992417
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 6.318387997453101,
+          "depth": 4,
+          "nodes": 34,
+          "nn_states": 23,
+          "nn_calls": 3,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 11,
+          "observation_ms": 4.763212986290455,
+          "nn_ms": 0.68483198992908,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.404311009333469
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 0.8683119958732277,
+          "depth": 4,
+          "nodes": 2,
+          "nn_states": 1,
+          "nn_calls": 1,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.2637410070747137,
+          "nn_ms": 0.12957000581081957,
+          "changed": false
+        }
+      ]
+    },
+    {
+      "prefix": 5,
+      "seat": 0,
+      "moves": [
+        [
+          19,
+          1,
+          0,
+          8
+        ],
+        [
+          16,
+          5,
+          7,
+          3
+        ],
+        [
+          12,
+          1,
+          11,
+          2
+        ],
+        [
+          20,
+          0,
+          6,
+          0
+        ],
+        [
+          20,
+          0,
+          5,
+          2
+        ],
+        [
+          9,
+          1,
+          9,
+          0
+        ],
+        [
+          9,
+          0,
+          13,
+          5
+        ],
+        [
+          1,
+          1,
+          8,
+          8
+        ],
+        [
+          8,
+          1,
+          3,
+          0
+        ],
+        [
+          18,
+          2,
+          9,
+          9
+        ],
+        [
+          18,
+          3,
+          5,
+          11
+        ],
+        [
+          13,
+          3,
+          12,
+          10
+        ],
+        [
+          10,
+          6,
+          8,
+          12
+        ],
+        [
+          5,
+          2,
+          0,
+          3
+        ],
+        [
+          13,
+          1,
+          2,
+          6
+        ],
+        [
+          0,
+          0,
+          8,
+          12
+        ],
+        [
+          15,
+          0,
+          0,
+          11
+        ],
+        [
+          12,
+          2,
+          11,
+          6
+        ],
+        [
+          14,
+          3,
+          1,
+          2
+        ],
+        null,
+        [
+          0,
+          0,
+          13,
+          2
+        ],
+        null,
+        [
+          1,
+          1,
+          9,
+          1
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -29,
+        -19
+      ],
+      "difference": -10,
+      "timings": [
+        {
+          "side": 1,
+          "elapsed_ms": 1.9281159911770374
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 496.64402900089044,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 749,
+          "nn_calls": 48,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 427.60757899668533,
+          "nn_ms": 58.013852991280146,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.537415009806864
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 438.897761006956,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 384.22397297108546,
+          "nn_ms": 44.79645102401264,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.629824997507967
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 430.9291090030456,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 366.36396797257476,
+          "nn_ms": 52.63109999941662,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.8741249950835481
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 386.18092800606973,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 325.76736802002415,
+          "nn_ms": 50.23615702521056,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.3623129925690591
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 383.5257800092222,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 339.58575400174595,
+          "nn_ms": 35.11908197833691,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0490330023458228
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 363.9898469991749,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 289.4783619703958,
+          "nn_ms": 29.394988974672742,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.1591829970711842
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 319.2002840078203,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 283.52960996562615,
+          "nn_ms": 26.02700005809311,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0722029983298853
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 250.38716499693692,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 220.80599899345543,
+          "nn_ms": 21.275022023473866,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7964519900269806
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 36.17250900424551,
+          "depth": 4,
+          "nodes": 151,
+          "nn_states": 151,
+          "nn_calls": 12,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 6,
+          "observation_ms": 31.192101028864272,
+          "nn_ms": 3.373222003574483,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6706920103169978
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 6.628137998632155,
+          "depth": 4,
+          "nodes": 25,
+          "nn_states": 25,
+          "nn_calls": 5,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 4.9830140196718276,
+          "nn_ms": 1.0310730140190572,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6180719938129187
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 3.2128089951584116,
+          "depth": 4,
+          "nodes": 11,
+          "nn_states": 8,
+          "nn_calls": 4,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 2.0023760007461533,
+          "nn_ms": 0.6924719928065315,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.559861000510864
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 1.2231939908815548,
+          "depth": 4,
+          "nodes": 3,
+          "nn_states": 2,
+          "nn_calls": 2,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.5377320048864931,
+          "nn_ms": 0.2564109890954569,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.47763099428266287
+        }
+      ]
+    },
+    {
+      "prefix": 5,
+      "seat": 1,
+      "moves": [
+        [
+          20,
+          0,
+          5,
+          2
+        ],
+        [
+          16,
+          5,
+          5,
+          0
+        ],
+        [
+          18,
+          2,
+          8,
+          0
+        ],
+        [
+          19,
+          3,
+          1,
+          10
+        ],
+        [
+          10,
+          6,
+          3,
+          12
+        ],
+        [
+          18,
+          3,
+          7,
+          2
+        ],
+        [
+          19,
+          1,
+          10,
+          2
+        ],
+        [
+          12,
+          7,
+          10,
+          0
+        ],
+        [
+          9,
+          0,
+          13,
+          5
+        ],
+        [
+          6,
+          2,
+          12,
+          2
+        ],
+        [
+          12,
+          7,
+          3,
+          5
+        ],
+        [
+          5,
+          2,
+          0,
+          3
+        ],
+        [
+          6,
+          3,
+          10,
+          9
+        ],
+        [
+          4,
+          0,
+          0,
+          8
+        ],
+        [
+          14,
+          3,
+          11,
+          11
+        ],
+        [
+          10,
+          0,
+          11,
+          5
+        ],
+        [
+          13,
+          3,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          8,
+          8
+        ],
+        [
+          1,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          10,
+          9
+        ],
+        [
+          0,
+          0,
+          9,
+          11
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -26,
+        -24
+      ],
+      "difference": 2,
+      "timings": [
+        {
+          "side": 0,
+          "elapsed_ms": 484.9417479999829,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 509,
+          "nn_calls": 33,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 406.87311001238413,
+          "nn_ms": 65.17331197392195,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0730229987530038
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 496.566558998893,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 589,
+          "nn_calls": 38,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 426.9529399316525,
+          "nn_ms": 57.637968988274224,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8287520031444728
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 495.27862601098605,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 781,
+          "nn_calls": 50,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 420.6864449661225,
+          "nn_ms": 63.1392830691766,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8824429969536141
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 494.698224007152,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 925,
+          "nn_calls": 59,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 425.6158259086078,
+          "nn_ms": 57.711306973942555,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.9055120026459917
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 452.36690899764653,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 387.8049859777093,
+          "nn_ms": 54.71581494202837,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8616319973953068
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 370.5793350090971,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 319.9137439223705,
+          "nn_ms": 41.75697703612968,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6335209909593686
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 356.34075599955395,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 280.2558030671207,
+          "nn_ms": 33.68194399808999,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7290119974641129
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 250.53628599562217,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 217.94744100770913,
+          "nn_ms": 24.656453970237635,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6439709977712482
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 192.49905800097622,
+          "depth": 4,
+          "nodes": 877,
+          "nn_states": 877,
+          "nn_calls": 56,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 164.85715201997664,
+          "nn_ms": 20.130384975345805,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7850819965824485
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 91.64863100158982,
+          "depth": 4,
+          "nodes": 477,
+          "nn_states": 477,
+          "nn_calls": 32,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 77.46965902333613,
+          "nn_ms": 9.881249978207052,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6362910062307492
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 39.20600800483953,
+          "depth": 4,
+          "nodes": 216,
+          "nn_states": 212,
+          "nn_calls": 16,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 11,
+          "observation_ms": 31.266763020539656,
+          "nn_ms": 5.53763700008858,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.9768320014700294
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 1.5251250006258488,
+          "depth": 4,
+          "nodes": 2,
+          "nn_states": 1,
+          "nn_calls": 1,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.37732099008280784,
+          "nn_ms": 0.2731300046434626,
+          "changed": false
+        }
+      ]
+    },
+    {
+      "prefix": 6,
+      "seat": 0,
+      "moves": [
+        [
+          20,
+          0,
+          3,
+          8
+        ],
+        [
+          16,
+          2,
+          2,
+          10
+        ],
+        [
+          16,
+          6,
+          5,
+          0
+        ],
+        [
+          20,
+          0,
+          10,
+          6
+        ],
+        [
+          9,
+          0,
+          1,
+          6
+        ],
+        [
+          18,
+          0,
+          0,
+          10
+        ],
+        [
+          18,
+          0,
+          9,
+          1
+        ],
+        [
+          11,
+          7,
+          12,
+          3
+        ],
+        [
+          13,
+          3,
+          12,
+          0
+        ],
+        [
+          19,
+          1,
+          8,
+          3
+        ],
+        [
+          15,
+          3,
+          6,
+          3
+        ],
+        [
+          15,
+          1,
+          5,
+          2
+        ],
+        [
+          11,
+          2,
+          1,
+          0
+        ],
+        [
+          13,
+          3,
+          4,
+          5
+        ],
+        [
+          14,
+          2,
+          6,
+          8
+        ],
+        [
+          10,
+          5,
+          0,
+          3
+        ],
+        [
+          8,
+          3,
+          8,
+          11
+        ],
+        [
+          8,
+          2,
+          12,
+          8
+        ],
+        [
+          12,
+          6,
+          11,
+          11
+        ],
+        [
+          2,
+          1,
+          3,
+          13
+        ],
+        [
+          1,
+          1,
+          6,
+          13
+        ],
+        [
+          5,
+          1,
+          2,
+          6
+        ],
+        [
+          3,
+          0,
+          0,
+          4
+        ],
+        [
+          7,
+          0,
+          7,
+          6
+        ],
+        [
+          2,
+          1,
+          3,
+          12
+        ],
+        [
+          1,
+          1,
+          3,
+          1
+        ],
+        [
+          5,
+          3,
+          0,
+          12
+        ],
+        [
+          0,
+          0,
+          1,
+          5
+        ],
+        [
+          0,
+          0,
+          10,
+          0
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -17,
+        -21
+      ],
+      "difference": 4,
+      "timings": [
+        {
+          "side": 0,
+          "elapsed_ms": 484.91042699606624,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 285,
+          "nn_calls": 19,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 372.04288798966445,
+          "nn_ms": 94.5252199890092,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 2.1656460012309253
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 489.40317999222316,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 365,
+          "nn_calls": 24,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 402.02890895307064,
+          "nn_ms": 72.71318799757864,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.9210949976695701
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 489.6546310046688,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 397,
+          "nn_calls": 26,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 407.2315669909585,
+          "nn_ms": 68.76705295871943,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.9140450021950528
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 490.8607139950618,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 509,
+          "nn_calls": 33,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 411.3736810104456,
+          "nn_ms": 66.38341602229048,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.8057849956676364
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 492.75618900719564,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 701,
+          "nn_calls": 45,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 428.74887902871706,
+          "nn_ms": 52.30076801672112,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.4982540014898404
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 496.6257690102793,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 877,
+          "nn_calls": 56,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 433.797606950975,
+          "nn_ms": 52.85523801285308,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.1240530002396554
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 419.54409900063183,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 373.8420559820952,
+          "nn_ms": 37.02915798930917,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0638530075084418
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 429.9840470048366,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 352.7887859236216,
+          "nn_ms": 34.434023982612416,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.1895029892912135
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 403.9731560042128,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 362.1000600105617,
+          "nn_ms": 32.605022031930275,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.1276130098849535
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 412.0935780083528,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 372.28544300887734,
+          "nn_ms": 30.1708879560465,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8745930099394172
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 364.23256700800266,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 330.48079202126246,
+          "nn_ms": 25.20239196019247,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.8303920039907098
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 296.40014200413134,
+          "depth": 4,
+          "nodes": 881,
+          "nn_states": 881,
+          "nn_calls": 57,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 270.8571099647088,
+          "nn_ms": 18.968064003274776,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5955609958618879
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 100.51931500493083,
+          "depth": 4,
+          "nodes": 344,
+          "nn_states": 344,
+          "nn_calls": 23,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 90.59247697587125,
+          "nn_ms": 6.978547971812077,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5203519976930693
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 55.483371994341724,
+          "depth": 4,
+          "nodes": 203,
+          "nn_states": 203,
+          "nn_calls": 15,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 49.01496595994104,
+          "nn_ms": 4.343152992078103,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.4864209913648665
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 7.826911998563446,
+          "depth": 4,
+          "nodes": 37,
+          "nn_states": 25,
+          "nn_calls": 3,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 6.104166983277537,
+          "nn_ms": 0.75510200986173,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.44342099863570184
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 0.9818129910854623,
+          "depth": 4,
+          "nodes": 2,
+          "nn_states": 1,
+          "nn_calls": 1,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.3215809992980212,
+          "nn_ms": 0.16172000323422253,
+          "changed": false
+        }
+      ]
+    },
+    {
+      "prefix": 6,
+      "seat": 1,
+      "moves": [
+        [
+          16,
+          5,
+          5,
+          0
+        ],
+        [
+          20,
+          0,
+          10,
+          6
+        ],
+        [
+          20,
+          0,
+          9,
+          0
+        ],
+        [
+          9,
+          0,
+          13,
+          2
+        ],
+        [
+          9,
+          0,
+          9,
+          3
+        ],
+        [
+          18,
+          0,
+          3,
+          11
+        ],
+        [
+          15,
+          3,
+          1,
+          8
+        ],
+        [
+          16,
+          4,
+          10,
+          2
+        ],
+        [
+          18,
+          2,
+          4,
+          7
+        ],
+        [
+          19,
+          1,
+          0,
+          11
+        ],
+        [
+          6,
+          2,
+          4,
+          10
+        ],
+        [
+          13,
+          3,
+          7,
+          5
+        ],
+        [
+          11,
+          6,
+          6,
+          12
+        ],
+        [
+          15,
+          0,
+          6,
+          2
+        ],
+        [
+          12,
+          5,
+          9,
+          11
+        ],
+        [
+          11,
+          4,
+          12,
+          8
+        ],
+        [
+          13,
+          1,
+          0,
+          0
+        ],
+        [
+          8,
+          1,
+          4,
+          5
+        ],
+        [
+          10,
+          0,
+          0,
+          6
+        ],
+        [
+          10,
+          6,
+          0,
+          3
+        ],
+        [
+          3,
+          3,
+          12,
+          12
+        ],
+        [
+          6,
+          3,
+          0,
+          1
+        ],
+        [
+          8,
+          3,
+          6,
+          8
+        ],
+        [
+          7,
+          0,
+          3,
+          0
+        ],
+        [
+          5,
+          7,
+          11,
+          2
+        ],
+        [
+          3,
+          0,
+          12,
+          0
+        ],
+        [
+          1,
+          1,
+          7,
+          2
+        ],
+        [
+          0,
+          0,
+          7,
+          1
+        ],
+        [
+          0,
+          0,
+          10,
+          8
+        ],
+        null,
+        [
+          2,
+          1,
+          0,
+          3
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -13,
+        -18
+      ],
+      "difference": -5,
+      "timings": [
+        {
+          "side": 1,
+          "elapsed_ms": 2.360946004046127
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 492.23937799979467,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 269,
+          "nn_calls": 18,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 383.2136669807369,
+          "nn_ms": 92.85105502931401,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 3.153368001221679
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 496.2511690100655,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 365,
+          "nn_calls": 24,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 405.6372210034169,
+          "nn_ms": 74.64601196988951,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 2.7250370039837435
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 497.70219300989993,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 445,
+          "nn_calls": 29,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 419.53160996490624,
+          "nn_ms": 64.59813400579151,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 2.139656004146673
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 495.3398360084975,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 573,
+          "nn_calls": 37,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 421.50549608049914,
+          "nn_ms": 62.17752203519922,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.8423349974909797
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 495.8756970008835,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 701,
+          "nn_calls": 45,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 427.07534693181515,
+          "nn_ms": 57.32691394223366,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.6847250080900267
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 494.7178339934908,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 829,
+          "nn_calls": 53,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 427.3885000438895,
+          "nn_ms": 56.58040504204109,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.3029339897911996
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 495.9870369930286,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 893,
+          "nn_calls": 57,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 411.1395069921855,
+          "nn_ms": 41.54310091689695,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.3616940123029053
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 428.67098400893155,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 383.21743097912986,
+          "nn_ms": 36.796921922359616,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0113930038642138
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 381.38429399987217,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 340.72796496911906,
+          "nn_ms": 31.954524005413987,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.9685820114100352
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 353.7742390035419,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 319.90879196382593,
+          "nn_ms": 26.101165887666866,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7877119933255017
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 334.94668699859176,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 302.8772810503142,
+          "nn_ms": 24.598564952611923,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7231719937408343
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 276.9214879954234,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 248.0384710652288,
+          "nn_ms": 21.68367702688556,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5918419919908047
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 205.19113099726383,
+          "depth": 4,
+          "nodes": 845,
+          "nn_states": 845,
+          "nn_calls": 54,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 182.52743895573076,
+          "nn_ms": 16.723762048059143,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5480320105561987
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 47.99872099829372,
+          "depth": 4,
+          "nodes": 206,
+          "nn_states": 206,
+          "nn_calls": 15,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 8,
+          "observation_ms": 41.77812300622463,
+          "nn_ms": 4.251131977071054,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.4757819988299161
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 1.8638350011315197,
+          "depth": 4,
+          "nodes": 5,
+          "nn_states": 4,
+          "nn_calls": 4,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.8817799971438944,
+          "nn_ms": 0.5012540059396997,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.4037910111946985
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 1.0831430117832497,
+          "depth": 4,
+          "nodes": 3,
+          "nn_states": 2,
+          "nn_calls": 2,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.41427998803555965,
+          "nn_ms": 0.23967199376784265,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.3501109895296395
+        }
+      ]
+    },
+    {
+      "prefix": 7,
+      "seat": 0,
+      "moves": [
+        [
+          20,
+          0,
+          1,
+          9
+        ],
+        [
+          18,
+          1,
+          3,
+          9
+        ],
+        [
+          9,
+          1,
+          3,
+          12
+        ],
+        [
+          16,
+          6,
+          6,
+          12
+        ],
+        [
+          18,
+          0,
+          8,
+          3
+        ],
+        [
+          13,
+          0,
+          5,
+          4
+        ],
+        [
+          16,
+          6,
+          1,
+          2
+        ],
+        [
+          15,
+          0,
+          2,
+          6
+        ],
+        [
+          19,
+          2,
+          11,
+          2
+        ],
+        [
+          10,
+          0,
+          0,
+          9
+        ],
+        [
+          14,
+          1,
+          8,
+          6
+        ],
+        [
+          12,
+          0,
+          12,
+          9
+        ],
+        [
+          10,
+          7,
+          10,
+          9
+        ],
+        [
+          8,
+          0,
+          0,
+          3
+        ],
+        [
+          13,
+          1,
+          0,
+          0
+        ],
+        [
+          6,
+          3,
+          1,
+          12
+        ],
+        [
+          7,
+          0,
+          12,
+          5
+        ],
+        [
+          1,
+          0,
+          7,
+          10
+        ],
+        [
+          8,
+          3,
+          11,
+          0
+        ],
+        [
+          4,
+          1,
+          10,
+          13
+        ],
+        [
+          6,
+          1,
+          7,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          3
+        ],
+        [
+          1,
+          1,
+          3,
+          8
+        ],
+        [
+          19,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          9,
+          11
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -19,
+        -21
+      ],
+      "difference": 2,
+      "timings": [
+        {
+          "side": 0,
+          "elapsed_ms": 481.6078779986128,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 397,
+          "nn_calls": 26,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 399.43065503030084,
+          "nn_ms": 68.21278003917541,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.8434149969834834
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 492.6710689906031,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 461,
+          "nn_calls": 30,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 412.9584439797327,
+          "nn_ms": 65.91201901028398,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.7342049977742136
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 487.00463298882823,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 509,
+          "nn_calls": 33,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 413.20158302551135,
+          "nn_ms": 60.87949298671447,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0896830062847584
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 492.66626899770927,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 509,
+          "nn_calls": 33,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 395.967752992874,
+          "nn_ms": 50.69826704857405,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0843130003195256
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 494.55916399892885,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 653,
+          "nn_calls": 42,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 430.72476900124457,
+          "nn_ms": 53.01085390965454,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.6501339996466413
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 493.00140999548603,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 701,
+          "nn_calls": 45,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 426.7348879802739,
+          "nn_ms": 54.26114797592163,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0874730069190264
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 492.23200700362213,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 797,
+          "nn_calls": 51,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 436.69755799055565,
+          "nn_ms": 45.078795970766805,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7675320084672421
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 499.37571700138506,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 861,
+          "nn_calls": 55,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 444.7677180141909,
+          "nn_ms": 44.56548410234973,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7084719982231036
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 461.514463997446,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 414.7715390281519,
+          "nn_ms": 38.212359955650754,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6779620016459376
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 371.30739600979723,
+          "depth": 4,
+          "nodes": 991,
+          "nn_states": 991,
+          "nn_calls": 64,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 328.1896390253678,
+          "nn_ms": 32.66149605042301,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.7338419964071363
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 277.77561100083403,
+          "depth": 4,
+          "nodes": 853,
+          "nn_states": 853,
+          "nn_calls": 55,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 247.04871092399117,
+          "nn_ms": 22.337698974297382,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6840220012236387
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 134.40358800289687,
+          "depth": 4,
+          "nodes": 469,
+          "nn_states": 469,
+          "nn_calls": 31,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 120.8341999881668,
+          "nn_ms": 9.618917043553665,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5253309936961159
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 29.061389999696985,
+          "depth": 4,
+          "nodes": 115,
+          "nn_states": 114,
+          "nn_calls": 9,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 25.133268980425783,
+          "nn_ms": 2.4715069885132834,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.48085101298056543
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 1.3749439967796206,
+          "depth": 4,
+          "nodes": 3,
+          "nn_states": 2,
+          "nn_calls": 2,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.5552410002565011,
+          "nn_ms": 0.25841999740805477,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.3718109946930781
+        }
+      ]
+    },
+    {
+      "prefix": 7,
+      "seat": 1,
+      "moves": [
+        [
+          18,
+          1,
+          2,
+          9
+        ],
+        [
+          20,
+          0,
+          2,
+          6
+        ],
+        [
+          20,
+          0,
+          5,
+          11
+        ],
+        [
+          13,
+          0,
+          5,
+          4
+        ],
+        [
+          13,
+          3,
+          8,
+          11
+        ],
+        [
+          18,
+          3,
+          2,
+          2
+        ],
+        [
+          16,
+          0,
+          0,
+          1
+        ],
+        [
+          16,
+          5,
+          7,
+          2
+        ],
+        [
+          19,
+          1,
+          1,
+          0
+        ],
+        [
+          15,
+          2,
+          11,
+          2
+        ],
+        [
+          11,
+          2,
+          7,
+          0
+        ],
+        [
+          19,
+          3,
+          8,
+          4
+        ],
+        [
+          8,
+          2,
+          11,
+          0
+        ],
+        [
+          12,
+          4,
+          11,
+          12
+        ],
+        [
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          8,
+          0,
+          12,
+          9
+        ],
+        [
+          9,
+          0,
+          0,
+          9
+        ],
+        [
+          0,
+          0,
+          7,
+          5
+        ],
+        [
+          6,
+          3,
+          2,
+          12
+        ],
+        [
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          1,
+          1,
+          9,
+          3
+        ],
+        [
+          1,
+          0,
+          7,
+          10
+        ],
+        [
+          14,
+          1,
+          11,
+          4
+        ],
+        null,
+        [
+          0,
+          0,
+          5,
+          9
+        ],
+        null,
+        null
+      ],
+      "scores": [
+        -20,
+        -29
+      ],
+      "difference": -9,
+      "timings": [
+        {
+          "side": 1,
+          "elapsed_ms": 2.015055011725053
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 498.96052600524854,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 413,
+          "nn_calls": 27,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 418.2314630743349,
+          "nn_ms": 67.71154502348509,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 2.0909659942844883
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 498.7937850091839,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 493,
+          "nn_calls": 32,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 415.806654971675,
+          "nn_ms": 70.04052503907587,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 2.0877859933534637
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 496.3485390035203,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 541,
+          "nn_calls": 35,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 424.4772310194094,
+          "nn_ms": 60.74225198244676,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.576564012793824
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 499.9488890025532,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 653,
+          "nn_calls": 42,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 434.0209090296412,
+          "nn_ms": 55.61743103316985,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.216563003254123
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 495.85948800086044,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 717,
+          "nn_calls": 46,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 439.6818369568791,
+          "nn_ms": 46.10814597981516,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.1181229929206893
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 499.2263460007962,
+          "depth": 2,
+          "nodes": 1021,
+          "nn_states": 957,
+          "nn_calls": 61,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 445.50319404515903,
+          "nn_ms": 44.4071169331437,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.9149129909928888
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 400.8396070130402,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 354.6837220201269,
+          "nn_ms": 35.12796405993868,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.1030229943571612
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 325.2395010058535,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 291.1347509798361,
+          "nn_ms": 24.9604129785439,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 1.0157129872823134
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 270.3424999926938,
+          "depth": 4,
+          "nodes": 1021,
+          "nn_states": 1021,
+          "nn_calls": 65,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 12,
+          "observation_ms": 240.96497100254055,
+          "nn_ms": 21.81123901391402,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.6027810013620183
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 46.59774799074512,
+          "depth": 4,
+          "nodes": 193,
+          "nn_states": 193,
+          "nn_calls": 15,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 6,
+          "observation_ms": 40.49720095645171,
+          "nn_ms": 4.195842033368535,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.52160098857712
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 21.041947999037802,
+          "depth": 4,
+          "nodes": 90,
+          "nn_states": 87,
+          "nn_calls": 8,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 4,
+          "observation_ms": 17.736786991008557,
+          "nn_ms": 2.1081269660498947,
+          "changed": true
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.5070109909866005
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 3.3502799924463034,
+          "depth": 4,
+          "nodes": 14,
+          "nn_states": 10,
+          "nn_calls": 4,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 2.047635003691539,
+          "nn_ms": 0.7050929998513311,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.43610100692603737
+        },
+        {
+          "side": 0,
+          "elapsed_ms": 1.1579029960557818,
+          "depth": 4,
+          "nodes": 3,
+          "nn_states": 2,
+          "nn_calls": 2,
+          "exact_nodes": 0,
+          "exact_solved": false,
+          "fallback": false,
+          "completed_roots": 1,
+          "observation_ms": 0.4345799970906228,
+          "nn_ms": 0.2505120210116729,
+          "changed": false
+        },
+        {
+          "side": 1,
+          "elapsed_ms": 0.34694100031629205
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "games": 16,
+    "wins": 7,
+    "draws": 1,
+    "losses": 8,
+    "point": 0.46875,
+    "difference": 0.5
+  }
+}

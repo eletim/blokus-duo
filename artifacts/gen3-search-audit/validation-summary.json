@@ -1,0 +1,467 @@
+{
+  "old-policy": {
+    "point": 0.6875,
+    "point_ci95": [
+      0.5416666666666666,
+      0.8333333333333333
+    ],
+    "point_ci_bonferroni2": [
+      0.5208333333333333,
+      0.8541666666666666
+    ],
+    "difference": 2.9791666666666665,
+    "difference_ci95": [
+      -0.8541666666666667,
+      6.520833333333334
+    ],
+    "by_seed": {
+      "1751401": {
+        "games": 16,
+        "wins": 11,
+        "draws": 1,
+        "losses": 4,
+        "point": 0.71875,
+        "difference": 4.25
+      },
+      "1751402": {
+        "games": 16,
+        "wins": 12,
+        "draws": 0,
+        "losses": 4,
+        "point": 0.75,
+        "difference": 4.1875
+      },
+      "1751403": {
+        "games": 16,
+        "wins": 9,
+        "draws": 1,
+        "losses": 6,
+        "point": 0.59375,
+        "difference": 0.5
+      }
+    },
+    "by_seat": {
+      "0": {
+        "games": 24,
+        "wins": 16,
+        "draws": 1,
+        "losses": 7,
+        "point": 0.6875,
+        "difference": 4.291666666666667
+      },
+      "1": {
+        "games": 24,
+        "wins": 16,
+        "draws": 1,
+        "losses": 7,
+        "point": 0.6875,
+        "difference": 1.6666666666666667
+      }
+    },
+    "time": {
+      "old": {
+        "mean_ms": 169.6135017712324,
+        "p99_ms": 498.9574293990154,
+        "max_ms": 501.44966298830695,
+        "over500": 7,
+        "moves": 665,
+        "fallback": 0.12030075187969924,
+        "depths": {
+          "0": 80,
+          "2": 7,
+          "4": 578
+        },
+        "exact_solved": 0,
+        "nn_calls": 0
+      },
+      "policy": {
+        "mean_ms": 0.7877576498601625,
+        "p99_ms": 2.144468602782578,
+        "max_ms": 2.5944469962269068,
+        "over500": 0,
+        "moves": 659,
+        "fallback": 0.0,
+        "depths": {
+          "0": 659,
+          "2": 0,
+          "4": 0
+        },
+        "exact_solved": 0,
+        "nn_calls": 0
+      }
+    },
+    "wall_seconds": 113.32337467701291
+  },
+  "B-old": {
+    "point": 0.5208333333333333,
+    "point_ci95": [
+      0.40625,
+      0.6458333333333333
+    ],
+    "point_ci_bonferroni2": [
+      0.3958333333333333,
+      0.6666666666666666
+    ],
+    "difference": -1.9166666666666665,
+    "difference_ci95": [
+      -3.7296875,
+      -0.1453125000000454
+    ],
+    "by_seed": {
+      "1751401": {
+        "games": 16,
+        "wins": 10,
+        "draws": 0,
+        "losses": 6,
+        "point": 0.625,
+        "difference": 2.25
+      },
+      "1751402": {
+        "games": 16,
+        "wins": 7,
+        "draws": 2,
+        "losses": 7,
+        "point": 0.5,
+        "difference": -3.6875
+      },
+      "1751403": {
+        "games": 16,
+        "wins": 7,
+        "draws": 0,
+        "losses": 9,
+        "point": 0.4375,
+        "difference": -4.3125
+      }
+    },
+    "by_seat": {
+      "0": {
+        "games": 24,
+        "wins": 12,
+        "draws": 2,
+        "losses": 10,
+        "point": 0.5416666666666666,
+        "difference": -0.25
+      },
+      "1": {
+        "games": 24,
+        "wins": 12,
+        "draws": 0,
+        "losses": 12,
+        "point": 0.5,
+        "difference": -3.5833333333333335
+      }
+    },
+    "time": {
+      "B": {
+        "mean_ms": 288.67441556922466,
+        "p99_ms": 500.55773399290047,
+        "max_ms": 503.8987190055195,
+        "over500": 23,
+        "moves": 652,
+        "fallback": 0.0,
+        "depths": {
+          "0": 0,
+          "2": 223,
+          "4": 429
+        },
+        "exact_solved": 0,
+        "nn_calls": 24317
+      },
+      "old": {
+        "mean_ms": 177.1601503321528,
+        "p99_ms": 497.46525367925653,
+        "max_ms": 501.3858220045222,
+        "over500": 7,
+        "moves": 654,
+        "fallback": 0.11926605504587157,
+        "depths": {
+          "0": 78,
+          "2": 7,
+          "4": 569
+        },
+        "exact_solved": 0,
+        "nn_calls": 0
+      }
+    },
+    "wall_seconds": 304.09487977600656
+  },
+  "B-policy": {
+    "point": 0.5520833333333333,
+    "point_ci95": [
+      0.48958333333333337,
+      0.625
+    ],
+    "point_ci_bonferroni2": [
+      0.4791666666666667,
+      0.6354166666666667
+    ],
+    "difference": 1.3125,
+    "difference_ci95": [
+      -0.75,
+      3.1458333333333335
+    ],
+    "by_seed": {
+      "1751401": {
+        "games": 16,
+        "wins": 11,
+        "draws": 2,
+        "losses": 3,
+        "point": 0.75,
+        "difference": 4.0
+      },
+      "1751402": {
+        "games": 16,
+        "wins": 7,
+        "draws": 0,
+        "losses": 9,
+        "point": 0.4375,
+        "difference": -0.5625
+      },
+      "1751403": {
+        "games": 16,
+        "wins": 7,
+        "draws": 1,
+        "losses": 8,
+        "point": 0.46875,
+        "difference": 0.5
+      }
+    },
+    "by_seat": {
+      "0": {
+        "games": 24,
+        "wins": 15,
+        "draws": 1,
+        "losses": 8,
+        "point": 0.6458333333333334,
+        "difference": 3.0
+      },
+      "1": {
+        "games": 24,
+        "wins": 10,
+        "draws": 2,
+        "losses": 12,
+        "point": 0.4583333333333333,
+        "difference": -0.375
+      }
+    },
+    "time": {
+      "B": {
+        "mean_ms": 297.06586322360846,
+        "p99_ms": 500.4178972047521,
+        "max_ms": 502.827846998116,
+        "over500": 16,
+        "moves": 653,
+        "fallback": 0.0,
+        "depths": {
+          "0": 0,
+          "2": 231,
+          "4": 422
+        },
+        "exact_solved": 0,
+        "nn_calls": 24732
+      },
+      "policy": {
+        "mean_ms": 0.9766858818668288,
+        "p99_ms": 2.35939599951962,
+        "max_ms": 3.552149995812215,
+        "over500": 0,
+        "moves": 651,
+        "fallback": 0.0,
+        "depths": {
+          "0": 651,
+          "2": 0,
+          "4": 0
+        },
+        "exact_solved": 0,
+        "nn_calls": 0
+      }
+    },
+    "wall_seconds": 194.63550639500318
+  },
+  "C-old": {
+    "point": 0.4791666666666667,
+    "point_ci95": [
+      0.35416666666666663,
+      0.6145833333333334
+    ],
+    "point_ci_bonferroni2": [
+      0.33333333333333337,
+      0.6354166666666667
+    ],
+    "difference": -2.5625,
+    "difference_ci95": [
+      -4.416666666666666,
+      -0.7708333333333333
+    ],
+    "by_seed": {
+      "1751401": {
+        "games": 16,
+        "wins": 9,
+        "draws": 0,
+        "losses": 7,
+        "point": 0.5625,
+        "difference": 0.6875
+      },
+      "1751402": {
+        "games": 16,
+        "wins": 7,
+        "draws": 2,
+        "losses": 7,
+        "point": 0.5,
+        "difference": -3.6875
+      },
+      "1751403": {
+        "games": 16,
+        "wins": 6,
+        "draws": 0,
+        "losses": 10,
+        "point": 0.375,
+        "difference": -4.6875
+      }
+    },
+    "by_seat": {
+      "0": {
+        "games": 24,
+        "wins": 11,
+        "draws": 2,
+        "losses": 11,
+        "point": 0.5,
+        "difference": -0.5
+      },
+      "1": {
+        "games": 24,
+        "wins": 11,
+        "draws": 0,
+        "losses": 13,
+        "point": 0.4583333333333333,
+        "difference": -4.625
+      }
+    },
+    "time": {
+      "C": {
+        "mean_ms": 288.51453870136714,
+        "p99_ms": 500.3619515954051,
+        "max_ms": 516.5234699961729,
+        "over500": 14,
+        "moves": 653,
+        "fallback": 0.0,
+        "depths": {
+          "0": 0,
+          "2": 222,
+          "4": 431
+        },
+        "exact_solved": 1,
+        "nn_calls": 24142
+      },
+      "old": {
+        "mean_ms": 178.17767852811176,
+        "p99_ms": 499.49234012106893,
+        "max_ms": 501.4383660018211,
+        "over500": 7,
+        "moves": 657,
+        "fallback": 0.1171993911719939,
+        "depths": {
+          "0": 77,
+          "2": 7,
+          "4": 573
+        },
+        "exact_solved": 0,
+        "nn_calls": 0
+      }
+    },
+    "wall_seconds": 305.47914008799125
+  },
+  "C-policy": {
+    "point": 0.5208333333333334,
+    "point_ci95": [
+      0.46875,
+      0.59375
+    ],
+    "point_ci_bonferroni2": [
+      0.46875,
+      0.59375
+    ],
+    "difference": 0.8958333333333334,
+    "difference_ci95": [
+      -1.0833333333333335,
+      2.7083333333333335
+    ],
+    "by_seed": {
+      "1751401": {
+        "games": 16,
+        "wins": 10,
+        "draws": 1,
+        "losses": 5,
+        "point": 0.65625,
+        "difference": 2.625
+      },
+      "1751402": {
+        "games": 16,
+        "wins": 7,
+        "draws": 0,
+        "losses": 9,
+        "point": 0.4375,
+        "difference": -0.4375
+      },
+      "1751403": {
+        "games": 16,
+        "wins": 7,
+        "draws": 1,
+        "losses": 8,
+        "point": 0.46875,
+        "difference": 0.5
+      }
+    },
+    "by_seat": {
+      "0": {
+        "games": 24,
+        "wins": 16,
+        "draws": 0,
+        "losses": 8,
+        "point": 0.6666666666666666,
+        "difference": 3.0833333333333335
+      },
+      "1": {
+        "games": 24,
+        "wins": 8,
+        "draws": 2,
+        "losses": 14,
+        "point": 0.375,
+        "difference": -1.2916666666666667
+      }
+    },
+    "time": {
+      "C": {
+        "mean_ms": 296.91479614791854,
+        "p99_ms": 500.30688133003423,
+        "max_ms": 501.7897870129673,
+        "over500": 15,
+        "moves": 655,
+        "fallback": 0.0,
+        "depths": {
+          "0": 0,
+          "2": 239,
+          "4": 416
+        },
+        "exact_solved": 2,
+        "nn_calls": 24623
+      },
+      "policy": {
+        "mean_ms": 0.9806205441156012,
+        "p99_ms": 2.5798319684690827,
+        "max_ms": 3.105638999841176,
+        "over500": 0,
+        "moves": 654,
+        "fallback": 0.0,
+        "depths": {
+          "0": 654,
+          "2": 0,
+          "4": 0
+        },
+        "exact_solved": 0,
+        "nn_calls": 0
+      }
+    },
+    "wall_seconds": 195.13611499899707
+  }
+}
