@@ -1,0 +1,511 @@
+{
+  "delta_parts": [
+    {
+      "path": "training-state-delta-00.part",
+      "sha256": "83b65c073d5960341f8431bd4a0417060c968bc9494260e79df2c0ef58c8e0d8",
+      "bytes": 25000000
+    },
+    {
+      "path": "training-state-delta-01.part",
+      "sha256": "41f8de5d043defd91841f8df6e9139b6ce8f3dfa514e958a7fb4d5cd8ff22ab2",
+      "bytes": 25000000
+    },
+    {
+      "path": "training-state-delta-02.part",
+      "sha256": "af3bae474e3498dfdf71c8b2b504fcf34145bbf91a0878d58f30d3c73d75168a",
+      "bytes": 25000000
+    },
+    {
+      "path": "training-state-delta-03.part",
+      "sha256": "21ba163287e29997f41ded6a2c8a0c4ef6acd34c765e64ea8dc0144ddf81bb3e",
+      "bytes": 25000000
+    },
+    {
+      "path": "training-state-delta-04.part",
+      "sha256": "d98dfe9022ff6cbba23f6c1c35d3ca850e429cd6889a7eaf24a27d3fb290ab8a",
+      "bytes": 25000000
+    },
+    {
+      "path": "training-state-delta-05.part",
+      "sha256": "6c34a1445e10a294963cf8ebd59196ccbcffcecbe8ba7da8a78aea66e93f296d",
+      "bytes": 24715460
+    }
+  ],
+  "delta_encoding": "concatenate parts in order, then gzip decompress into S32 array",
+  "pass_": true,
+  "rows": [
+    {
+      "path": "artifacts/ppo-lr64/A-seed-1751401/history-4097-4608.jsonl.gz",
+      "sha256": "06695af36517bebe1542d765c76989cd36cd6e30a59072c40b3bdf63066f444f",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 128526,
+        "past": 32040,
+        "heuristic": 33285
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/A-seed-1751401/history-4609-5120.jsonl.gz",
+      "sha256": "7bced9457c34ece37e79330d91fd81c9a14e45b935ed9d388eab35e5dd8ad747",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 127999,
+        "past": 31936,
+        "heuristic": 33234
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/A-seed-1751402/history-4097-4608.jsonl.gz",
+      "sha256": "82a7db803a73546fe93359aada2b2f35b41548ab33b7c8f474c5580750b833fa",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 128894,
+        "past": 32246,
+        "heuristic": 33355
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/A-seed-1751402/history-4609-5120.jsonl.gz",
+      "sha256": "3adf882cb3bacdf72e067eb16ed0708887cde1e270891552600469d3a6c1cf3f",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 127744,
+        "past": 31886,
+        "heuristic": 33339
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/A-seed-1751403/history-4097-4608.jsonl.gz",
+      "sha256": "304e765e1c4cf7d268697967dbc675398ff0e0ebb8f2382729be90a8bb3a3d16",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 127745,
+        "past": 31842,
+        "heuristic": 33158
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/A-seed-1751403/history-4609-5120.jsonl.gz",
+      "sha256": "670b484f520e4971891eadc86f1099a111cdba150699f24b81198f2ba921533e",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 128804,
+        "past": 32148,
+        "heuristic": 33238
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/B-seed-1751401/history-4097-4608.jsonl.gz",
+      "sha256": "7238d54523e8d8891380b9eb8ceed40bd768a3dab6f5b5562fe368f45dbab1eb",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 128509,
+        "past": 32061,
+        "heuristic": 33277
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/B-seed-1751401/history-4609-5120.jsonl.gz",
+      "sha256": "f59fb5ac3d943234c29e1df9133ca678f520f0c28ab4c1fb1522f85603007d8b",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 128965,
+        "past": 32278,
+        "heuristic": 33215
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/B-seed-1751402/history-4097-4608.jsonl.gz",
+      "sha256": "0cd6ac896a61b65ee646f50148b713cfd8f97ed3430432d341529852cdb36e42",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 128644,
+        "past": 32142,
+        "heuristic": 33416
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/B-seed-1751402/history-4609-5120.jsonl.gz",
+      "sha256": "f98232e54a97e394a306b24b01fa9f57b6e631cd759bf2ef2fdc8d995e038692",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 127846,
+        "past": 31940,
+        "heuristic": 33272
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/B-seed-1751403/history-4097-4608.jsonl.gz",
+      "sha256": "328b27aa3069dd4812f0850f7ce9da4e5e5271f2b9e2437135523516c7dc8f8a",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 128684,
+        "past": 32146,
+        "heuristic": 33211
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/B-seed-1751403/history-4609-5120.jsonl.gz",
+      "sha256": "10be7cac80bc9203f3a3155b0fc53f0b7c8e94b21b97fd4a599c5f845765e749",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 127284,
+        "past": 31713,
+        "heuristic": 33081
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/C-seed-1751401/history-4097-4608.jsonl.gz",
+      "sha256": "d4fb948d2d1f60bb5790dcef89112f65e78114ba18580806e45b04e23d4e9491",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 128646,
+        "past": 32134,
+        "heuristic": 33126
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/C-seed-1751401/history-4609-5120.jsonl.gz",
+      "sha256": "b3aba25879538ed563139a022ed18e7e5ba26aec6f398cdad18bc2fb48aba02e",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 128592,
+        "past": 32225,
+        "heuristic": 33218
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/C-seed-1751402/history-4097-4608.jsonl.gz",
+      "sha256": "ff293244845d8c1d9a4151bb198a1358f2782aac2f64ce46bf771d3ee7ca1a45",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 127254,
+        "past": 31776,
+        "heuristic": 33105
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/C-seed-1751402/history-4609-5120.jsonl.gz",
+      "sha256": "258763c8d9cb87c2d1ceb76d7d4ecde3d38648613f71389bf4c322487508567a",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 128179,
+        "past": 31946,
+        "heuristic": 33298
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/C-seed-1751403/history-4097-4608.jsonl.gz",
+      "sha256": "21610893873dac4b0581e76dc9a33df39a24780c517e3cb1aab777bf0e912378",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 127100,
+        "past": 31785,
+        "heuristic": 32762
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/C-seed-1751403/history-4609-5120.jsonl.gz",
+      "sha256": "6f0fc1565917b2a678d02a92d1c330ca807b481ba402ba4c30dc6c45befa1dc1",
+      "games": 8192,
+      "main": true,
+      "opponent_games": {
+        "current": 4096,
+        "past": 2048,
+        "heuristic": 2048
+      },
+      "learner_states": {
+        "current": 127527,
+        "past": 31923,
+        "heuristic": 33193
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/pilot-A-full/history-4097-4104.jsonl.gz",
+      "sha256": "fe13683963bb9296b3521ce2b6fb4334d51e55a1dc910853f3f8f2bbccaa5a84",
+      "games": 128,
+      "main": false,
+      "opponent_games": {
+        "current": 64,
+        "past": 32,
+        "heuristic": 32
+      },
+      "learner_states": {
+        "current": 2029,
+        "past": 497,
+        "heuristic": 527
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/pilot-A-split/history-4097-4100.jsonl.gz",
+      "sha256": "aae0ddf44c8555d4a82c8ae637f0959b0b2e74160f7e15a87d67525b54eb60b0",
+      "games": 64,
+      "main": false,
+      "opponent_games": {
+        "current": 32,
+        "past": 16,
+        "heuristic": 16
+      },
+      "learner_states": {
+        "current": 995,
+        "past": 249,
+        "heuristic": 265
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/pilot-A-split/history-4101-4104.jsonl.gz",
+      "sha256": "ae606511eab8ce14f0a1534e11799629c2a46c9a4df53edc9a294d4ee2f13714",
+      "games": 64,
+      "main": false,
+      "opponent_games": {
+        "current": 32,
+        "past": 16,
+        "heuristic": 16
+      },
+      "learner_states": {
+        "current": 1034,
+        "past": 248,
+        "heuristic": 262
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/pilot-B-full/history-4097-4104.jsonl.gz",
+      "sha256": "1dc5e8a7573a2e811ba4455de1aad2723d51ac5064c973f2d0dabd648e5826a8",
+      "games": 128,
+      "main": false,
+      "opponent_games": {
+        "current": 64,
+        "past": 32,
+        "heuristic": 32
+      },
+      "learner_states": {
+        "current": 2027,
+        "past": 512,
+        "heuristic": 520
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/pilot-B-split/history-4097-4100.jsonl.gz",
+      "sha256": "c2e0a479d10d08367a811792a49625efd6cc06f074f3a526e86bf6eb4eada7a4",
+      "games": 64,
+      "main": false,
+      "opponent_games": {
+        "current": 32,
+        "past": 16,
+        "heuristic": 16
+      },
+      "learner_states": {
+        "current": 999,
+        "past": 254,
+        "heuristic": 261
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/pilot-B-split/history-4101-4104.jsonl.gz",
+      "sha256": "37e69e5fc9ec87da7256725eff7045d7b702fb53252255d6e5fbe8f1329a6fee",
+      "games": 64,
+      "main": false,
+      "opponent_games": {
+        "current": 32,
+        "past": 16,
+        "heuristic": 16
+      },
+      "learner_states": {
+        "current": 1028,
+        "past": 258,
+        "heuristic": 259
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/pilot-C-full/history-4097-4104.jsonl.gz",
+      "sha256": "41f77b22fc691d527d63119340c81e17c2b40a25ed11fe8ac8b87c1f2ab17a11",
+      "games": 128,
+      "main": false,
+      "opponent_games": {
+        "current": 64,
+        "past": 32,
+        "heuristic": 32
+      },
+      "learner_states": {
+        "current": 2020,
+        "past": 499,
+        "heuristic": 522
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/pilot-C-split/history-4097-4100.jsonl.gz",
+      "sha256": "030d13aa788af888b8c4ae958b8dfef76321266c273608ca88b8c9ad25dc7aee",
+      "games": 64,
+      "main": false,
+      "opponent_games": {
+        "current": 32,
+        "past": 16,
+        "heuristic": 16
+      },
+      "learner_states": {
+        "current": 1000,
+        "past": 254,
+        "heuristic": 265
+      },
+      "incidental_old_start_overlap": 0
+    },
+    {
+      "path": "artifacts/ppo-lr64/pilot-C-split/history-4101-4104.jsonl.gz",
+      "sha256": "2e37046e7e99b11b2a68454250de9a0816a6b9cb003a9af5f558d17a567d4d92",
+      "games": 64,
+      "main": false,
+      "opponent_games": {
+        "current": 32,
+        "past": 16,
+        "heuristic": 16
+      },
+      "learner_states": {
+        "current": 1020,
+        "past": 245,
+        "heuristic": 257
+      },
+      "incidental_old_start_overlap": 0
+    }
+  ],
+  "shared_external_prefixes": 49152,
+  "all_main_prefixes_identical_between_conditions": true,
+  "union_sha256": "cdd1f0f1ac7a0e722a670fb541ce904187949c6982cd03fda1fa7acad30f7b4c",
+  "union_states": 27533566,
+  "delta_count": 4722551,
+  "delta_sha256": "d91470d01ccaa5bcad397556c2bf7726580f80551c4493cdc02ba677f57eb2fc",
+  "prior": {
+    "path": "artifacts/ppo-minibatch/training-audit.json",
+    "sha256": "32f082f31ed0afde8f0bf956ba7433082bf0d9c41f457be9afd9488a46e13186",
+    "index_sha256": "9bdfd552576e2c9d8d356534abbed92050af59b67fda2f8beb13c4a73a1b2e49"
+  },
+  "seconds": 214.3351153199983,
+  "all_moves_legally_replayed": true,
+  "action_index_stride": 256
+}

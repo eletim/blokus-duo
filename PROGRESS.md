@@ -242,3 +242,6 @@ CUDA別process再開は両batchでbit一致。新driverの決定的設定漏れ�
 ## LR対照完了
 9run追加147456games、全条件5120固定、生成更新保存1560.262s（26.00分）。各49152gamesのwall A652.958s/B453.978s/C453.327s。CはBとほぼ同速、KLは約.0012→.0032–.0040へ増加、崩壊なし。新validation64prefix/3seed/両座席でC/gen2 point55.47% CI[51.43,59.38]、得点差+1.448。C/B point48.96% CI[43.75,54.04]、差+0.005。非劣性gate（CI下限>.45）が未達でholdoutなし。旧gateと新gateの救済変更なし、seed/checkpoint選択なし。Cの明確な退行とも、LR増による改善とも断定しない。main維持。
 全87test、ABC各CUDA別process8 vs4+4 model/past/optimizer/RNG bit一致、LR実値とmetadata照合。全新学習の合法性/報酬/learner側/共有prefix監査PASS、統合27533566訪問状態から分離。validation3840games全再生/算術PASS、開始/実訪問訓練重複0。CPU/CUDA export一致・CLI完走。追加LR候補なし。REPORT/NEXT-GPU/モデル/新履歴delta/再現CLIをartifacts/ppo-lr64へ保存。公開gen2への独立再確認とpaddingを計算しない等価GPU経路を次案として記録（未実施）。
+
+## 固定B/C確認試験・GPU padding最適化（2026-11-06）
+research/ppo-fixed-confirmation、基点67482585。artifacts/ppo-confirmation/PLAN.mdへ事前基準を固定。旧gate未達は変更せず、別確認試験で5120 B/C全seedを256新prefixで評価中。モデルhash、全27,533,566訓練状態index hash、既存評価開始状態除外、新bankを固定済み。main変更なし。評価・全再生監査が終わってから別branchで実候補GPU処理を検証する。
