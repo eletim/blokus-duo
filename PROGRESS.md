@@ -227,3 +227,11 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 新依頼 c7366f0b: research/ppo-four-channel-gpu (main6be347f基点)。PLANを先に固定。native収集＋従来PPOのupdate profile: 46stepsでstream同期1108、D2H506。同期集約+device常駐は469/46へ削減。同入力bit一致、update中央値0.1362→0.1246秒、16iteration小pilot収集込み0.2191→0.2133秒。CUDA graphはdeterministic backward capture不可で不採用。3seed各4096iteration=65536gamesを有限実行中、wall合計5400秒上限。全過去評価開始状態3046件を生成prefixから除外。main変更なし。
 
 4ch本学習完了: 3seed×4096iteration=196608games、2774.18秒（46.24分）。全76tests/別process再開/全履歴合法・報酬監査PASS。validation固定4096/2048/4096、fresh96prefix×先後×3seedのholdoutで対未学習/heuristic point80.56%、対gen2 48.00% CI[43.75,52.34]、得点差-0.39 CI[-1.17,+0.41]。gen2上回る目標未達、main維持。19677312訓練状態unionに対する開始/評価実訪問重複0。最適化単独候補640bd3f、モデル候補はppo-four-gpu-models。詳細REPORTを更新。
+
+## Minibatch対照開始
+12809f3からresearch/ppo-minibatch-64。artifacts/ppo-minibatch/PLAN.mdに先に固定。最新4096からA16/B64、等ゲーム数/異なるstep数、5120固定。main不変更。保存rollout profile→pilot再開→有限6run→64prefix validation gateの順。旧訓練を重複実行しない。
+CUDA別process再開は両batchでbit一致。新driverの決定的設定漏れは本実験開始前に修正、失敗記録保持。固定rollout更新114→51ms、padding増加あり。生成込み速度/棋力は未確定。6run追加1024iterationを同量で開始。
+
+## Minibatch対照完了
+追加98304games、生成更新保存1113.456s（18.56分）、同ゲーム数A16 653.991s / B64 459.466s、1.42倍。GPU更新単体114→51msはstep数37→12の学習条件差を含む。最新4096から両条件5120固定。validation64prefix/3seed/両座席: B対A point52.08% CI[48.05,56.25]、B対gen2 53.65% CI[48.83,57.94]、A対gen2 54.04%。Bのgen2 point>=Aという事前gate未達（差0.39pp）。明確な劣化とはしないが途中4608へ再選択せずholdoutなし。main/gen2維持。
+全82test、両batch CUDA別process8 vs4+4 bit一致（past交換含む）。新学習全対局/報酬/learner側/共有prefix監査、評価3840局再生・算術監査PASS。統合22854366訓練訪問状態に対し評価開始/実訪問重複0。CPU/CUDA export一致、CLI完走、学習run終了。REPORT/PLAN/profile/曲線/再現CLIをartifacts/ppo-minibatchへ保存。旧巨大履歴は参照のみ、新状態deltaは転送上限を避け25MB部品に分割。

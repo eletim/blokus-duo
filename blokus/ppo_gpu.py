@@ -6,13 +6,14 @@ from torch import nn
 from .ppo_policy import collate
 from .ppo_runtime import sync
 
-def update_fast(model,opt,records,epochs=2,packed=False):
+def update_fast(model,opt,records,epochs=2,packed=False,minibatch=16):
+ if not isinstance(minibatch,int) or minibatch<=0:raise ValueError("minibatch must be a positive integer")
  start=time.perf_counter();device=next(model.parameters()).device;pack_start=time.perf_counter();resident=collate([r['obs'] for r in records],device) if packed else None;sync(device);pack_seconds=time.perf_counter()-pack_start
  ret=torch.tensor([r['return'] for r in records],device=device);oldv=torch.tensor([r['value'] for r in records],device=device);adv=ret-oldv;adv=(adv-adv.mean())/adv.std(unbiased=False).clamp_min(1e-6);oldlp=torch.tensor([r['log_prob'] for r in records],device=device);actions=torch.tensor([r['action'] for r in records],device=device);logs=[];early=False
  for epoch in range(epochs):
   order=torch.randperm(len(records)).tolist()
-  for offset in range(0,len(records),16):
-   ix=order[offset:offset+16]
+  for offset in range(0,len(records),minibatch):
+   ix=order[offset:offset+minibatch]
    if resident is None:batch=collate([records[i]['obs'] for i in ix],device)
    else:
     indices=torch.tensor(ix,device=device);n=max(len(records[i]['obs'][2]) for i in ix);batch=tuple(a.index_select(0,indices) if j<2 else a.index_select(0,indices)[:,:n].contiguous() for j,a in enumerate(resident))

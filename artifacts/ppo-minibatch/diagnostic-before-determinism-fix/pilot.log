@@ -1,0 +1,8 @@
+dict_keys(['format', 'channels', 'model', 'past', 'optimizer', 'iteration', 'seed', 'backend', 'packed', 'logs', 'python_rng', 'numpy_rng', 'torch_rng', 'cuda_rng', 'workers', 'checkpoint_boundary', 'minibatch', 'update_mode', 'base_checkpoint', 'history_segment', 'exclusion_sha256'])
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/eletim/blokus-duo-ai/scripts/check_ppo_minibatch.py", line 16, in <module>
+    assert all(equal(a[k],b[k]) for k in keys);assert a['minibatch']==b['minibatch']==mb
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

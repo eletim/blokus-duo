@@ -1,0 +1,90 @@
+{
+  "pass_": true,
+  "rows": [
+    {
+      "minibatch": 16,
+      "seed": 1751401,
+      "device": "cpu",
+      "states": 8,
+      "bit_equal": true
+    },
+    {
+      "minibatch": 16,
+      "seed": 1751401,
+      "device": "cuda",
+      "states": 8,
+      "bit_equal": true
+    },
+    {
+      "minibatch": 16,
+      "seed": 1751402,
+      "device": "cpu",
+      "states": 8,
+      "bit_equal": true
+    },
+    {
+      "minibatch": 16,
+      "seed": 1751402,
+      "device": "cuda",
+      "states": 8,
+      "bit_equal": true
+    },
+    {
+      "minibatch": 16,
+      "seed": 1751403,
+      "device": "cpu",
+      "states": 8,
+      "bit_equal": true
+    },
+    {
+      "minibatch": 16,
+      "seed": 1751403,
+      "device": "cuda",
+      "states": 8,
+      "bit_equal": true
+    },
+    {
+      "minibatch": 64,
+      "seed": 1751401,
+      "device": "cpu",
+      "states": 8,
+      "bit_equal": true
+    },
+    {
+      "minibatch": 64,
+      "seed": 1751401,
+      "device": "cuda",
+      "states": 8,
+      "bit_equal": true
+    },
+    {
+      "minibatch": 64,
+      "seed": 1751402,
+      "device": "cpu",
+      "states": 8,
+      "bit_equal": true
+    },
+    {
+      "minibatch": 64,
+      "seed": 1751402,
+      "device": "cuda",
+      "states": 8,
+      "bit_equal": true
+    },
+    {
+      "minibatch": 64,
+      "seed": 1751403,
+      "device": "cpu",
+      "states": 8,
+      "bit_equal": true
+    },
+    {
+      "minibatch": 64,
+      "seed": 1751403,
+      "device": "cuda",
+      "states": 8,
+      "bit_equal": true
+    }
+  ],
+  "comparison": "training checkpoint vs inference export within each device; not CPU-vs-CUDA bit equality"
+}

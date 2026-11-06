@@ -1,0 +1,5 @@
+# プロファイルの読み方
+同一4096 checkpoint・保存rolloutを各回restoreし、2 warmup/6反復、順序を交互に測定。CUDA eventはhost dispatch待ちも含むstream上のspanであり、純kernel実行時間とは呼ばない。profiler JSONは別の1更新でoverheadを含み、速度比には用いない。profileのearlyKL停止は測定用固定RNGのbenchmarkとは異なる（16は35steps、64は12steps）。
+ランダムminibatchの各行を最大候補数までpaddingするため、序盤の多数合法手と中終盤の少数合法手が混ざる。バッチ64では最大値を引きやすく、padding/実候補比3.600→4.070。16でも一括rolloutを保持するため、更新時は各minibatch最大長へsliceする。shapeはupdateごと変化する。compileで再compile/動的shapeを避けるにはbucket等が必要になり得るが、今回は別最適化を追加せず未検証。
+profilingでstream sync359→129、D2H35→12、Adam35→12。embedding_dense_backwardは約6.19ms→6.99ms（profiler一更新内合計）で64化だけでは軽くならない。決定的indexing backwardとembedding gather/scatter、paddingが次の候補。前runのCUDA graph capture失敗をcompile全般不可能と解釈しない。torch.compileそのものの追加実験は今回は未実施。
+この比較は等ゲーム数の学習条件変更。GPU単体速度やstep数減少だけで強化成功としない。

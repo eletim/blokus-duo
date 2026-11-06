@@ -1,0 +1,18 @@
+{
+  "pass_": true,
+  "comparison": "4096+8 vs 4096+4+separate-process-resume+4",
+  "past_swap_iterations": [
+    4100,
+    4104
+  ],
+  "keys": [
+    "model",
+    "past",
+    "optimizer",
+    "python_rng",
+    "numpy_rng",
+    "torch_rng",
+    "cuda_rng"
+  ],
+  "minibatch": 16
+}

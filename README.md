@@ -431,3 +431,21 @@ python -m blokus.ppo_gpu_train --output artifacts/new-four-run --seed 1751401 --
 このCLIは4ch・native収集・16games/iterationを用いる。既存heuristic priorを保持した新規初期化で、6ch重みを切り捨てて流用しない。公開gen2/2048と既定seed1401は変更しない。学習・独立評価・費用・制約は [研究レポート](artifacts/ppo-four-gpu/REPORT.md) に記録する。
 
 今回の4ch本学習は各seed65,536gamesを完走。独立96prefix評価で学習前/heuristicには改善したが、gen2比point48.00%（95% CI43.75–52.34%）で改善未確認。公開推奨はgen2のまま。履歴不要の4ch候補3モデルと明示CLIは [モデル候補](artifacts/ppo-four-gpu-models/README.md) を参照。
+
+## Minibatch 16 / 64の有限対照（研究branch）
+
+`research/ppo-minibatch-64` は1回のoptimizer更新に使う局面数だけを16から64へ変更して比較する。収集は共通16games/iteration。最新4096iterationの同じmodel/past/optimizer/RNGから分岐し、各条件を5120まで進める。optimizer step数とKL早期停止が変わるため、等価実装の高速化とは呼ばない。mainのgen2/2048・既定seed・推奨は変更しない。
+
+```bash
+# 必要なら初回のみ native backendをbuild
+python -m blokus.ppo_native build
+# 保存基点からB64を同経験量まで再現（既存成果を上書きしない出力先）
+python -m blokus.ppo_minibatch --output artifacts/reproduce-b64-1751401 --resume artifacts/ppo-four-gpu/seed-1751401/iteration-4096.pt --until 5120 --minibatch 64 --exclusions artifacts/ppo-minibatch/excluded-starts.json --cap 600
+# A16は同じ基点で --minibatch 16、別の --output を指定
+python -m blokus.ppo_minibatch_eval audit
+python -m scripts.audit_ppo_minibatch_results
+```
+
+学習CLIはCUDA/native用。推論モデルはCPU/CUDAで利用可能。再開時には保存したminibatchを維持する。速度・同ゲーム数の棋力・gate・限界は [対照実験レポート](artifacts/ppo-minibatch/REPORT.md) を参照。padding/shape診断は [プロファイルメモ](artifacts/ppo-minibatch/PROFILE-NOTES.md) に保存。過去の巨大な訓練履歴は複製せず、基点checkpointと状態indexのSHAを参照する。
+
+この対照の結果は収集込み約1.42倍、固定5120のgen2比pointはB64 53.65%対A16 54.04%。B対AもCIが50%をまたぎ、改善効率の優位は未確認。事前gate未達で新holdoutを実施せず、公開推奨と既定batchを維持した。
