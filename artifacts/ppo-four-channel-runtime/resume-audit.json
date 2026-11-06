@@ -1,0 +1,30 @@
+{
+  "pass_": true,
+  "device": "cuda",
+  "separate_processes": true,
+  "continuous_iterations": 4,
+  "split_before_save": 2,
+  "additional_after_restore": 2,
+  "past_exchange_at": 4,
+  "bit_equal": [
+    "model",
+    "past",
+    "optimizer",
+    "python_rng",
+    "numpy_rng",
+    "torch_rng",
+    "cuda_rng",
+    "channels",
+    "iteration",
+    "seed",
+    "backend",
+    "packed",
+    "workers",
+    "game hashes"
+  ],
+  "source_sha256": [
+    "0235cb8123427c4a50ddf1abe28f99d6590168e1c4154105f5ffd5f63218ea14",
+    "6c8bf721e3da5ac591e03a00d7e1cfdb84a36f807ca87e2c138a16894c58d9fd"
+  ],
+  "worker_state": "none: synchronous collection; completed iteration boundaries"
+}

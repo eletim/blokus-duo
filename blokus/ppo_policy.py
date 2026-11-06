@@ -19,9 +19,10 @@ def _candidate_inputs(s,qs,x=None,st=None):
     state=np.r_[st,np.array([s.score(s.turn)/89,s.score(1-s.turn)/89,s.passes/2],np.float32)]
     return np.concatenate((x,extra),axis=1),state.astype(np.float32)
 
-def observe(s,qs=None):
+def observe(s,qs=None,channels=6):
  if s.done:raise ValueError('terminal has no policy actions')
- qs=legal_moves(s) if qs is None else qs;b,st=encode(s)
+ if channels not in (4,6):raise ValueError('channels must be 4 or 6')
+ qs=legal_moves(s) if qs is None else qs;b,st=encode(s);b=b[:channels].copy()
  if qs:
   x,_=_candidate_inputs(s,qs);cells=np.asarray([geometry(q.move)[3] for q in qs],dtype=np.int64)
  else:x=np.zeros((1,39),np.float32);cells=np.full((1,5),196,np.int64)
@@ -33,8 +34,9 @@ def collate(obs,device='cuda'):
  return tuple(torch.as_tensor(a,device=device) for a in (np.stack([o[0] for o in obs]),np.stack([o[1] for o in obs]),x,cells,mask))
 
 class TerminalNet(nn.Module):
- def __init__(self):
-  super().__init__();self.conv=nn.Sequential(nn.Conv2d(6,8,3,padding=1),nn.ReLU(),nn.Conv2d(8,8,3,padding=1),nn.ReLU());self.global_net=nn.Sequential(nn.Flatten(),nn.Linear(8*196,32),nn.Tanh());self.position=nn.Embedding(197,16,padding_idx=196)
+ def __init__(self,channels=6):
+  if channels not in (4,6):raise ValueError('channels must be 4 or 6')
+  super().__init__();self.channels=channels;self.conv=nn.Sequential(nn.Conv2d(channels,8,3,padding=1),nn.ReLU(),nn.Conv2d(8,8,3,padding=1),nn.ReLU());self.global_net=nn.Sequential(nn.Flatten(),nn.Linear(8*196,32),nn.Tanh());self.position=nn.Embedding(197,16,padding_idx=196)
   self.policy=nn.Sequential(nn.Linear(32+49+39+16+8,64),nn.Tanh(),nn.Linear(64,1));self.value=nn.Sequential(nn.Linear(32+49,64),nn.Tanh(),nn.Linear(64,1),nn.Tanh())
   nn.init.zeros_(self.policy[-1].weight);nn.init.zeros_(self.policy[-1].bias);nn.init.zeros_(self.value[-2].weight);nn.init.zeros_(self.value[-2].bias)
   self.register_buffer('prior',torch.tensor([12,4,2,1.2,2,.3,1,.2,-.6,0,0,.2],dtype=torch.float32))
@@ -47,19 +49,25 @@ class TerminalNet(nn.Module):
 
 
 class PPOAgent:
- def __init__(self,model_seed=1401,device='auto',checkpoint=None,generation=DEFAULT_GENERATION):
+ def __init__(self,model_seed=1401,device='auto',checkpoint=None,generation=DEFAULT_GENERATION,backend="python"):
   if generation not in GENERATIONS:raise ValueError('generation must be gen2 or 2048')
-  self.generation=generation
+  if backend not in ("python","native","auto"):raise ValueError("unknown backend")
+  self.backend=backend;self.generation=generation
   if model_seed not in (1401,1402,1403):raise ValueError('model seed must be 1401,1402,1403')
   self.device=('cuda' if torch.cuda.is_available() else 'cpu') if device=='auto' else device
   path=Path(checkpoint) if checkpoint else Path(__file__).resolve().parents[1]/f'artifacts/ppo-{generation}/seed-{model_seed}.pt'
   ck=torch.load(path,map_location='cpu',weights_only=True)
-  if ck.get('format')!='terminal-ppo-inference-v1':raise ValueError('not an exported PPO inference checkpoint')
-  self.model=TerminalNet().to(self.device);self.model.load_state_dict(ck['model']);self.model.eval();self.metadata={k:v for k,v in ck.items() if k!='model'};self.times=[]
-  with torch.no_grad():self.model(*collate([observe(State())[0]],self.device))
+  fmt=ck.get('format');channels=6 if fmt=='terminal-ppo-inference-v1' else ck.get('channels') if fmt=='terminal-ppo-inference-v2' else None
+  if channels not in (4,6) or ck.get('channels',channels)!=channels or ck['model']['conv.0.weight'].shape[1]!=channels:raise ValueError('checkpoint format/channel mismatch')
+  self.channels=channels;self.model=TerminalNet(channels).to(self.device);self.model.load_state_dict(ck['model']);self.model.eval();self.metadata={k:v for k,v in ck.items() if k!='model'};self.times=[]
+  with torch.no_grad():self.model(*collate([self._observation(State())[0]],self.device))
   if self.device.startswith('cuda'):torch.cuda.synchronize()
+ def _observation(self,s):
+  if self.backend=="python":return observe(s) if self.channels==6 else observe(s,channels=4)
+  from .ppo_native import observe as native_observe
+  return native_observe(s,self.channels,self.backend)
  def act(self,s,rng):
-  start=time.perf_counter();obs,qs=observe(s)
+  start=time.perf_counter();obs,qs=self._observation(s)
   with torch.no_grad():logits,_=self.model(*collate([obs],self.device));scores=logits[0].cpu().numpy()
   ix=int(rng.choice(np.flatnonzero(scores>=scores.max()-1e-7)));self.times.append(time.perf_counter()-start)
   return qs[ix].move if qs else None

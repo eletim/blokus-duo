@@ -1,0 +1,16 @@
+{
+  "pass_": true,
+  "continuous_iterations": 2,
+  "split_first": 1,
+  "additional": 1,
+  "backend": "python",
+  "bit_equal": [
+    "model",
+    "past",
+    "optimizer",
+    "python_rng",
+    "numpy_rng",
+    "torch_rng",
+    "cuda_rng"
+  ]
+}
