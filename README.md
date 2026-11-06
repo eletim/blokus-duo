@@ -449,3 +449,18 @@ python -m scripts.audit_ppo_minibatch_results
 学習CLIはCUDA/native用。推論モデルはCPU/CUDAで利用可能。再開時には保存したminibatchを維持する。速度・同ゲーム数の棋力・gate・限界は [対照実験レポート](artifacts/ppo-minibatch/REPORT.md) を参照。padding/shape診断は [プロファイルメモ](artifacts/ppo-minibatch/PROFILE-NOTES.md) に保存。過去の巨大な訓練履歴は複製せず、基点checkpointと状態indexのSHAを参照する。
 
 この対照の結果は収集込み約1.42倍、固定5120のgen2比pointはB64 53.65%対A16 54.04%。B対AもCIが50%をまたぎ、改善効率の優位は未確認。事前gate未達で新holdoutを実施せず、公開推奨と既定batchを維持した。
+
+## Minibatch64の学習率対照（研究branch）
+
+`research/ppo-lr-64` は最新4ch4096から新しい外生系列でA=(16,3e-4)、B=(64,3e-4)、C=(64,6e-4)を各3seed、累積5120まで比較する。前回A/Bを流用せず、LR以外の新GPU最適化は混ぜない。旧gate/結果はそのまま保持。
+
+```bash
+python -m blokus.ppo_lr64 --output artifacts/reproduce-c-1751401 --resume artifacts/ppo-four-gpu/seed-1751401/iteration-4096.pt --until 5120 --condition C --exclusions artifacts/ppo-lr64/excluded-starts.json --cap 600
+# A/Bは同じ基点、別output、--condition A または B
+python -m blokus.ppo_lr64_eval audit
+python -m scripts.audit_ppo_lr64_results
+```
+
+再開ではcondition/LR/minibatch/系列seedとoptimizer実LRを照合する。CUDA/native学習、推論はCPU/CUDA。main/public gen2/2048・既定seedは変更しない。結果・曲線・費用は [LR対照REPORT](artifacts/ppo-lr64/REPORT.md)、未実装の次の等価GPU最適化案は [NEXT-GPU](artifacts/ppo-lr64/NEXT-GPU.md) を参照。
+
+LR対照のvalidationではC対gen2 point55.47%［95% CI51.43–59.38］、C対Bは48.96%［43.75–54.04］。事前のC/B非劣性gate未達で独立holdoutは実施せず、LR増の効果と公開gen2への最終的な優位は未確定。追加147,456gamesを26分で完走し、main推奨は維持した。

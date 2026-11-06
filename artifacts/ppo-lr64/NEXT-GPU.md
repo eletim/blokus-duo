@@ -1,0 +1,8 @@
+# 次の等価GPU最適化候補（今回は未実装）
+現forwardは[B,max候補,5]のcellsからpadding候補を含めembedding/local gather/MLPを実行し、最後だけmaskする。前実験のpadding/実候補比は16で3.60、64で4.07。B64の速さにはoptimizer step減少が含まれ、ハードウェア最適化済みとは呼ばない。
+
+第一候補: update入力のみを実候補Nc個へflattenし、owner[Nc]とoffsets[B+1]を保持する。board CNN/valueはB局面で1回、policyのstate_gをownerで参照、正確な5cell配置を実候補だけgather/embedding/MLPへ渡す。各局面のsegment logsumexpから選択logprob/entropyを計算する（passは1候補）。旧dense出力へ戻すwrapperを用意し、候補順/マスク/終局returnを変えない。rollout収集時のCategorical.sampleを変えるとRNG消費が変わり得るため、まずupdate限定の等価性を検証する。勾配の加算順は変わり得るのでbit一致を前提にせずlogit/value/loss/grad/weight誤差と同軌跡更新を検証する。
+
+第二候補: position embeddingの5cell加算を候補×196の固定配置係数（セル数で正規化）とposition.weightの積へ書き換え、embedding backwardの多数scatterをGEMMへ置換。local conv特徴の集約にも同じ配置係数を利用できる。dense係数のメモリ/転送量が増えるため、現5cell gatherより速いとは未確認。immutable geometryから一括生成/device再利用し、Nc・進行度別に比較、board/piece/orientationを落とさない。数値加算順とdeterminism、passのゼロ係数を検証する。
+
+この2案を同時に採用せず、まず1の実候補処理について同じ保存rollout/同じminibatch/steps/earlyKLでforward+backwardと収集込みwall・memoryを測る。LR対照の成績へ混ぜない。shape bucket/torch.compileはragged化後の形状再compile数と初期費用を測ってから判断し、現時点で最適とは主張しない。

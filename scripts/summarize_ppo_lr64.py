@@ -1,0 +1,8 @@
+import json,statistics
+from blokus.ppo_lr64 import R,write
+completion=json.loads((R/'training-complete.json').read_text());rows=[]
+for result in completion['results']:
+ d=json.loads((R/f"{result['condition']}-seed-{result['seed']}"/f"result-{result['iteration']}.json").read_text());logs=d['logs'];wall=d['wall'];states=sum(x['update']['records'] for x in logs);steps=sum(x['update']['updates'] for x in logs)
+ rows.append(dict(condition=d['condition'],learning_rate=d['learning_rate'],seed=d['seed'],minibatch=d['minibatch'],start=d['start'],iteration=d['iteration'],games=d['games'],wall=wall,states=states,steps=steps,games_per_second=d['games']/wall,states_per_second=states/wall,steps_per_second=steps/wall,generation_seconds=sum(x['generation']['seconds'] for x in logs),cpu_pack_seconds=sum(x['generation']['cpu_generation_pack'] for x in logs),inference_sync_seconds=sum(x['generation']['gpu_inference_sync'] for x in logs),update_seconds=sum(x['update']['seconds'] for x in logs),early_kl_fraction=statistics.mean(x['update']['early_kl'] for x in logs),clip_fraction=statistics.mean(x['update']['clip_fraction'] for x in logs[-64:]),entropy=statistics.mean(x['update']['entropy'] for x in logs[-64:]),kl=statistics.mean(x['update']['approx_kl'] for x in logs[-64:]),value_mse=statistics.mean(x['update']['value_mse'] for x in logs[-64:]),opponent_wdl={k:statistics.mean(x['opponent_wdl'][k] for x in logs[-64:]) for k in ('current','past','heuristic')}))
+write(R/'learning-curves.json',dict(rows=rows,wall_observed_only=True,no_equal_wall_strength_extrapolation=True))
+print(json.dumps(rows,indent=2))

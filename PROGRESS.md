@@ -235,3 +235,10 @@ CUDA別process再開は両batchでbit一致。新driverの決定的設定漏れ�
 ## Minibatch対照完了
 追加98304games、生成更新保存1113.456s（18.56分）、同ゲーム数A16 653.991s / B64 459.466s、1.42倍。GPU更新単体114→51msはstep数37→12の学習条件差を含む。最新4096から両条件5120固定。validation64prefix/3seed/両座席: B対A point52.08% CI[48.05,56.25]、B対gen2 53.65% CI[48.83,57.94]、A対gen2 54.04%。Bのgen2 point>=Aという事前gate未達（差0.39pp）。明確な劣化とはしないが途中4608へ再選択せずholdoutなし。main/gen2維持。
 全82test、両batch CUDA別process8 vs4+4 bit一致（past交換含む）。新学習全対局/報酬/learner側/共有prefix監査、評価3840局再生・算術監査PASS。統合22854366訓練訪問状態に対し評価開始/実訪問重複0。CPU/CUDA export一致、CLI完走、学習run終了。REPORT/PLAN/profile/曲線/再現CLIをartifacts/ppo-minibatchへ保存。旧巨大履歴は参照のみ、新状態deltaは転送上限を避け25MB部品に分割。
+
+## LR対照開始
+旧結果eedfa345を保持、新branch research/ppo-lr-64。artifacts/ppo-lr64/PLAN.mdへ新gateと終点を事前固定。最新4096からA16/3e-4 B64/3e-4 C64/6e-4、新外生系列1771401/2/3、全条件再実行。LR以外の新最適化なし、main不変更。
+
+## LR対照完了
+9run追加147456games、全条件5120固定、生成更新保存1560.262s（26.00分）。各49152gamesのwall A652.958s/B453.978s/C453.327s。CはBとほぼ同速、KLは約.0012→.0032–.0040へ増加、崩壊なし。新validation64prefix/3seed/両座席でC/gen2 point55.47% CI[51.43,59.38]、得点差+1.448。C/B point48.96% CI[43.75,54.04]、差+0.005。非劣性gate（CI下限>.45）が未達でholdoutなし。旧gateと新gateの救済変更なし、seed/checkpoint選択なし。Cの明確な退行とも、LR増による改善とも断定しない。main維持。
+全87test、ABC各CUDA別process8 vs4+4 model/past/optimizer/RNG bit一致、LR実値とmetadata照合。全新学習の合法性/報酬/learner側/共有prefix監査PASS、統合27533566訪問状態から分離。validation3840games全再生/算術PASS、開始/実訪問訓練重複0。CPU/CUDA export一致・CLI完走。追加LR候補なし。REPORT/NEXT-GPU/モデル/新履歴delta/再現CLIをartifacts/ppo-lr64へ保存。公開gen2への独立再確認とpaddingを計算しない等価GPU経路を次案として記録（未実施）。
