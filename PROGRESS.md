@@ -221,3 +221,5 @@ PPO2048推論追加: 3seedの固定モデルを履歴不要へexport、CPU/CUDA�
 - 固定3072/4096/4096を凍結、新96prefix×3seed×3対照×先後=1728局を単独計測。対2048 +3.9583 [3.2031,4.6650]、旧6ms +2.9184 [2.0955,3.7049]。教師100ms +0.7674 [-0.2366,1.7484]、優位未確定。実訪問訓練重複0、合法性/算術/SHA/過去prefix分離PASS。
 - 公開コードは80a5179を通常cherry-pickした22801aa。PPO CLI世代gen2既定、seed1401維持、旧2048は--generation 2048。旧グローバルAIデフォルトと100ms教師維持。学習履歴なし。
 - 3seed×CPU/CUDA×26局面export bit一致。新cloneでCPU専用torch2.7.1+cpu、6推論テストPASS、人間先後・AI・世代対戦/旧探索をCPU/CUDA各13局再生PASS、main全59tests PASS。今回は追加学習なし。
+
+main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既存72テスト/CPU clone67 PASSを引用。main上4ch/native CUDA学習CLIを1iteration16gamesだけsmoke完了。gen2 CUDA/2048 CPU対戦完走。READMEへnative build必須・Python fallback・CPU生成由来の短期測定速度比を明記。公開モデル/既定維持。本学習・重い再ベンチなし。

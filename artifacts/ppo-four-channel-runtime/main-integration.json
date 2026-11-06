@@ -1,0 +1,40 @@
+{
+  "integration": "fast-forward c901d09 through a64921a,a70e866,8c40e42",
+  "code_identical_to_tested_candidate": true,
+  "prior_tests": {
+    "candidate": 72,
+    "research": 134,
+    "fresh_cpu_pass": 67,
+    "fresh_cpu_skip": 5
+  },
+  "new_training_smoke": {
+    "channels": 4,
+    "backend": "native",
+    "device": "cuda",
+    "iterations": 1,
+    "games": 16,
+    "seconds": 0.6203945390006993,
+    "complete": true
+  },
+  "cli": {
+    "cpu": {
+      "generation": "2048",
+      "plies": 31,
+      "scores": [
+        -22,
+        -27
+      ]
+    },
+    "cuda": {
+      "generation": "gen2",
+      "plies": 39,
+      "scores": [
+        -6,
+        -20
+      ]
+    }
+  },
+  "public_models_unchanged": true,
+  "main_default_gen2_seed": 1401,
+  "heavy_bench_or_training_repeated": false
+}

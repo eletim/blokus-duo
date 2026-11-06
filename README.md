@@ -396,10 +396,23 @@ python -m pytest -q
 
 推論ベンチ・テストは訓練履歴を必要としない。CPU-only PyTorchでも利用できる。
 
-## 4チャネル学習と任意native生成経路（研究・統合候補）
+## 4チャネル学習と任意native生成経路
 
 新しい `python -m blokus.ppo_runtime` は4チャネル（両者占有＋両者接続可能点）を既定とする。初手の接続可能点は既存STARTで、開始点専用平面は不要。公開gen2/2048は6チャネルのまま、既定seed1401も維持する。新旧checkpointは形式/チャネルを識別し暗黙変換しない。
 
 `python -m blokus.ppo_native build` で任意C11 backendを作成できる。compilerがない場合は専用venvへ `ziglang==0.13.0` を追加する。未buildなら `--backend auto` は純Pythonへfallbackする。公開対戦例: `python -m blokus.ppo_play --generation gen2 --device cpu --backend auto --human-seat 0`。新モデルは `--checkpoint PATH` で明示指定する。
 
 同経験量16games収集＋更新で約2.1倍の処理高速化を確認した。4ch化だけの速度改善や棋力改善を意味しない。時間制御探索の着手同一は保証しない。全量GPU packは利益がなく既定では無効。比較条件・CPU/CUDA検証・有限pilot・再現コマンドは [実測レポート](artifacts/ppo-four-channel-runtime/REPORT.md) を参照。pilotは棋力未評価で公開モデルを置換しない。
+
+新規学習の推奨例（専用venvを有効化して実行）:
+
+```bash
+# system C compilerがない場合だけ、専用venvへ追加
+python -m pip install ziglang==0.13.0
+python -m blokus.ppo_native build
+python -m blokus.ppo_runtime --output artifacts/my-four-channel-run --channels 4 --backend native --device cuda --iterations 64 --cap 600
+# CPU-only・compilerなしでも利用可能（高速化なし）
+python -m blokus.ppo_runtime --output artifacts/my-four-channel-cpu --channels 4 --backend python --device cpu --iterations 2 --cap 60
+```
+
+`--backend native` はbuild済みであることを要求する。`--backend auto` は未buildならPythonへ戻り、その場合は報告した約2.1倍の高速化は有効にならない。高速化の主因はCPU合法手生成・候補特徴packで、GPU更新自体はほぼ不変。測定は短いpilotの局面分布・16games batchであり、長期学習や別環境で同じ速度比を保証しない。4ch pilotは棋力未評価で既定公開モデルにはしない。
