@@ -4,6 +4,7 @@ import time
 import torch
 from .engine import legal_moves, play
 from .ppo_policy import collate
+from .ppo_value_leaf import value_only
 
 
 class SearchAgent:
@@ -19,7 +20,7 @@ class SearchAgent:
         deadline = start + self.budget_ms / 1000
         nodes = 0
 
-        def evaluate(s):
+        def evaluate(s, leaf=False):
             nonlocal nodes
             if time.perf_counter() >= deadline:
                 raise TimeoutError
@@ -27,6 +28,11 @@ class SearchAgent:
             if s.done:
                 difference = s.score(s.turn) - s.score(1-s.turn)
                 return [], float((difference > 0) - (difference < 0))
+            if leaf:
+                value = value_only(self.policy, s)
+                if time.perf_counter() >= deadline:
+                    raise TimeoutError
+                return [], value
             obs, qs = self.policy._observation(s)
             with torch.inference_mode():
                 logits, value = self.policy.model(*collate([obs], self.policy.device))
@@ -37,7 +43,7 @@ class SearchAgent:
             return ([qs[i].move for i in order[:self.width]] if qs else [None]), v
 
         def visit(s, depth):
-            moves, value = evaluate(s)
+            moves, value = evaluate(s, leaf=not depth)
             if not depth or s.done:
                 return value
             best = -float('inf')
