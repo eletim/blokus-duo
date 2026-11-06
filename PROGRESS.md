@@ -231,3 +231,4 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 2026-11-07 NN Web探索監査開始。Frozen gen3/main保持、research/gen3-search-audit。設定伝達とWDL符号をコード確認、5局面費用pilot保存。PLANに最大2候補・事前gate・有限標本を固定。追加学習なし。人間棋譜は未取得。
 NN探索: 訓練index 27,533,566状態（SHA cdd1f0f1...）と過去評価開始3558件から新bank分離。validation開始。新候補はroot12/internal4、深さ2/4同完成条件。CPU batch logit差3.8147e-6を記録しatol例外をPLANへ明示（棋力gate不変）。8件の対象テストPASS。追加学習0。
 2026-11-07 NN探索有限比較完了。validation240局、対戦実wall1112.7秒。B対旧point52.08%/得点差−1.917、C対旧47.92%/−2.562で事前gate未達。独立確認・main更新なし。全棋譜/得点/終局含む訓練分離監査PASS（重複0）、CPU-only98testsPASS/4skip。CLI人間先後完走。診断root再生一致、Frozen SHA不変。詳細artifacts/gen3-search-audit/REPORT.md。追加学習0、計測run終了。
+2026-11-07 新規cycle research/gen3-value-leaf（基点99cb70c）。value専用入力/forwardを実装、1188値比較で差0、102完成木着手一致。交互費用pilot192計測でPython同完成4ply A320.3ms/E97.9ms。Dは4ply保持後8→12拡幅に固定。新16prefixの500ms validationと新8prefixの2000ms補助、gate通過時のみ新32prefix確認をPLANへ事前固定。追加学習0、Frozen/main/Web保持。
