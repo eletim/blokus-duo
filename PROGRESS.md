@@ -234,3 +234,4 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 
 ## 2026-11-07 対局の自動永続保存
 SQLiteのtransactionでサーバ確定状態を保存。repo外data dir、test/human分類、モデルSHA/起動commit、各手の手番/AI統計を記録。保存失敗は警告し対局続行、次成功で全手復旧。運用CLI list/export/replayを追加。106PASS/4skip、ブラウザ/新clone/再起動確認後に公開する。棋力/モデル変更なし。
+自動保存を現Webへ公開済み。main0f6f97f、systemdのrepo外EnvironmentFile/data dir設定。実サイトの9検証セッションをtest印付きで保存・再生PASS。CPU新clone106PASS/4skip。棋譜本体はGit非保存。詳細GAME_ARCHIVE.mdとartifacts/web-game-archive。

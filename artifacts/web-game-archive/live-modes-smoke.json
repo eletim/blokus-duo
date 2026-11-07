@@ -1,0 +1,125 @@
+{
+  "pass": true,
+  "default": "policy",
+  "results": [
+    {
+      "mode": "deep",
+      "seat": 0,
+      "revision": 2,
+      "seed": 1751401,
+      "budget": 500,
+      "stats": {
+        "depth": 6,
+        "nodes": 1433,
+        "nn_policy_calls": 455,
+        "nn_value_calls": 924,
+        "cache_hits": 54,
+        "cutoffs": 249,
+        "stages": [
+          2,
+          4,
+          6
+        ],
+        "fallback": false,
+        "forced_pass": false,
+        "elapsed_ms": 300.97728900727816
+      }
+    },
+    {
+      "mode": "deep",
+      "seat": 1,
+      "revision": 1,
+      "seed": 1751401,
+      "budget": 500,
+      "stats": {
+        "depth": 6,
+        "nodes": 1275,
+        "nn_policy_calls": 409,
+        "nn_value_calls": 813,
+        "cache_hits": 53,
+        "cutoffs": 224,
+        "stages": [
+          2,
+          4,
+          6
+        ],
+        "fallback": false,
+        "forced_pass": false,
+        "elapsed_ms": 271.04337597847916
+      }
+    },
+    {
+      "mode": "policy",
+      "seat": 0,
+      "revision": 2,
+      "seed": 1751401,
+      "budget": 500,
+      "stats": {
+        "elapsed_ms": 1.1808430135715753
+      }
+    },
+    {
+      "mode": "policy",
+      "seat": 1,
+      "revision": 1,
+      "seed": 1751401,
+      "budget": 500,
+      "stats": {
+        "elapsed_ms": 1.1902730038855225
+      }
+    },
+    {
+      "mode": "search",
+      "seat": 0,
+      "revision": 2,
+      "seed": 1751401,
+      "budget": 500,
+      "stats": {
+        "depth": 4,
+        "nodes": 361,
+        "elapsed_ms": 67.44077100302093,
+        "fallback": false
+      }
+    },
+    {
+      "mode": "search",
+      "seat": 1,
+      "revision": 1,
+      "seed": 1751401,
+      "budget": 500,
+      "stats": {
+        "depth": 4,
+        "nodes": 361,
+        "elapsed_ms": 68.2224030024372,
+        "fallback": false
+      }
+    },
+    {
+      "mode": "linear",
+      "seat": 0,
+      "revision": 2,
+      "seed": 3101,
+      "budget": 100,
+      "stats": {
+        "elapsed_ms": 50.354916020296514,
+        "depth": 2,
+        "fallback": false,
+        "target_complete": true
+      }
+    },
+    {
+      "mode": "linear",
+      "seat": 1,
+      "revision": 1,
+      "seed": 3101,
+      "budget": 100,
+      "stats": {
+        "elapsed_ms": 49.51954400166869,
+        "depth": 2,
+        "fallback": false,
+        "target_complete": true
+      }
+    }
+  ],
+  "page_errors": []
+}
