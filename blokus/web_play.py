@@ -3,6 +3,8 @@ import argparse
 import copy
 import json
 import random
+import os
+from .game_archive import Archive, identity, now, record
 import secrets
 import threading
 import time
@@ -15,14 +17,18 @@ from .ppo_search_deeper import DeepSearch
 
 
 class Games:
-    def __init__(self, bot, linear_factory=None):
+    def __init__(self, bot, linear_factory=None, archive=None, metadata=None, record_kind="human", test_token=None):
+        self.archive = archive
+        self.metadata = metadata or {}
+        self.record_kind = record_kind
+        self.test_token = test_token
         self.bot = bot
         self.linear_factory = linear_factory
         self.games = {}
         self.lock = threading.RLock()
         self.worker = ThreadPoolExecutor(max_workers=1)
 
-    def create(self, seat, mode, budget):
+    def create(self, seat, mode, budget, test=False):
         if type(seat) is not int or seat not in (0, 1) or mode not in ('policy', 'search', 'deep', 'linear') or type(budget) is not int or budget not in (100, 500, 2000):
             raise ValueError('対局設定が不正です')
         if mode == 'deep' and budget != 500:
@@ -39,9 +45,21 @@ class Games:
             if len(self.games) >= 32:
                 raise ValueError('対局数が上限です。サーバーを再起動してください')
             key = secrets.token_urlsafe(24)
-            self.games[key] = dict(state=State(), seat=seat, mode=mode, budget=budget, history=[], move_stats=[], busy=False, error=None, stats={}, touched=time.monotonic(), rng=random.Random(1))
+            self.games[key] = dict(state=State(), seat=seat, mode=mode, budget=budget, started_at=now(), kind="test" if test else self.record_kind, saved_revision=None, save_error=False, history=[], move_stats=[], busy=False, error=None, stats={}, touched=time.monotonic(), rng=random.Random(1))
+            self.persist(key)
             self.advance(key)
             return self.snapshot(key)
+
+    def persist(self, key):
+        g = self.games[key]
+        if self.archive is None: return
+        try:
+            self.archive.save(record(key, g, self.metadata))
+            g["saved_revision"] = len(g["history"])
+            g["save_error"] = False
+        except Exception as error:
+            g["save_error"] = True
+            print(f"Archive write failed: {type(error).__name__}", flush=True)
 
     def advance(self, key):
         g = self.games[key]
@@ -51,6 +69,7 @@ class Games:
             play(s, None, validate=False)
             g['history'].append(None)
             g['move_stats'].append(dict(forced_pass=True, elapsed_ms=0))
+            self.persist(key)
         if not s.done and s.turn != g['seat'] and not g['busy']:
             g['busy'] = True
             self.worker.submit(self.think, key, copy.deepcopy(s))
@@ -80,6 +99,7 @@ class Games:
                 g['move_stats'].append(copy.deepcopy(stats))
                 g['stats'] = stats
                 g['busy'] = False
+                self.persist(key)
                 self.advance(key)
         except Exception as error:
             with self.lock:
@@ -98,6 +118,7 @@ class Games:
             play(g['state'], move, validate=True)
             g['history'].append(list(values))
             g['move_stats'].append(None)
+            self.persist(key)
             self.advance(key)
             return self.snapshot(key)
 
@@ -107,7 +128,7 @@ class Games:
             g['touched'] = time.monotonic()
             s = g['state']
             qs = legal_moves(s) if s.turn==g['seat'] and not g['busy'] else []
-            return dict(id=key, revision=len(g['history']), boards=[list(cells_of(b)) for b in s.boards], remaining=[[i for i in range(21) if s.remaining[p]>>i&1] for p in (0,1)], scores=[s.score(p) for p in (0,1)], turn=s.turn, seat=g['seat'], done=s.done, busy=g['busy'], error=g['error'], mode=g['mode'], budget=g['budget'], generation='linear-L' if g['mode']=='linear' else 'gen3', model_seed=3101 if g['mode']=='linear' else 1751401, stats=g['stats'], legal=[[q.move.piece,q.move.orientation,q.move.row,q.move.col] for q in qs], history=copy.deepcopy(g['history']), move_stats=copy.deepcopy(g['move_stats']))
+            return dict(id=key, archive=dict(enabled=self.archive is not None, saved_revision=g['saved_revision'], failed=g['save_error'], kind=g['kind']), revision=len(g['history']), boards=[list(cells_of(b)) for b in s.boards], remaining=[[i for i in range(21) if s.remaining[p]>>i&1] for p in (0,1)], scores=[s.score(p) for p in (0,1)], turn=s.turn, seat=g['seat'], done=s.done, busy=g['busy'], error=g['error'], mode=g['mode'], budget=g['budget'], generation='linear-L' if g['mode']=='linear' else 'gen3', model_seed=3101 if g['mode']=='linear' else 1751401, stats=g['stats'], legal=[[q.move.piece,q.move.orientation,q.move.row,q.move.col] for q in qs], history=copy.deepcopy(g['history']), move_stats=copy.deepcopy(g['move_stats']))
 
 
 def handler(games):
@@ -150,7 +171,7 @@ def handler(games):
                     raise ValueError('invalid request')
                 body = json.loads(self.rfile.read(length))
                 if self.path == '/api/new':
-                    result = games.create(body['seat'], body['mode'], body['budget'])
+                    result = games.create(body['seat'], body['mode'], body['budget'], test=bool(games.test_token and secrets.compare_digest(self.headers.get('X-Blokus-Test-Token', ''), games.test_token)))
                 elif self.path == '/api/move':
                     result = games.move(body['id'], body['revision'], body['move'])
                 else:
@@ -166,6 +187,8 @@ def main():
     parser.add_argument('--host', default='127.0.0.1')
     parser.add_argument('--port', type=int, default=8765)
     parser.add_argument('--device', choices=['cpu','cuda','auto'], default='cpu')
+    parser.add_argument('--data-dir', default=os.environ.get('BLOKUS_DATA_DIR', str(Path.home()/'.local/share/blokus-web')))
+    parser.add_argument('--record-kind', choices=['human','test'], default='human')
     args = parser.parse_args()
     import torch
     from .ppo_policy import PPOAgent
@@ -182,7 +205,7 @@ def main():
         if name == 'linear-L':
             agent.agent.value(State())
         print(f'Warmup {name}: {(time.perf_counter()-begin)*1000:.1f} ms', flush=True)
-    games = Games(bot, lambda: make_search(linear.agent))
+    games = Games(bot, lambda: make_search(linear.agent), Archive(args.data_dir), identity(), args.record_kind, os.environ.get('BLOKUS_TEST_TOKEN'))
     server = ThreadingHTTPServer((args.host, args.port), handler(games))
     print(f'Blokus: http://{args.host}:{args.port}', flush=True)
     try:

@@ -231,3 +231,6 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 ## 2026-11-07 H Web公開仕上げ
 0740f31のH探索をそのまま使用。Web専用deepモード500ms/幅4/max6を追加、既存モードとFrozen重みは維持。履歴に各AI完成深さ/消費時間を追加。CPU全テスト102PASS/4skip、固定木/打切り/小終盤一致を含む。棋力の再計測・学習なし。ブラウザ/新clone検証後、通常main統合と既存サービス更新を実施する。
 2026-11-07 公開完了: main8dc4613へFF/push、既存blokus-web.serviceを更新。現URLでdeep/policy/search/linear×人間先後PASS。新clone CPU102PASS/4skip、棋譜再生PASS、Frozen不変。詳細artifacts/gen3-deep-web/DEPLOYMENT.md。強化の数値は前段の独立確認結果を引用し今回再計測していない。
+
+## 2026-11-07 対局の自動永続保存
+SQLiteのtransactionでサーバ確定状態を保存。repo外data dir、test/human分類、モデルSHA/起動commit、各手の手番/AI統計を記録。保存失敗は警告し対局続行、次成功で全手復旧。運用CLI list/export/replayを追加。106PASS/4skip、ブラウザ/新clone/再起動確認後に公開する。棋力/モデル変更なし。
