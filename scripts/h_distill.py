@@ -38,6 +38,9 @@ def exclusions():
  write(R/'excluded.json',dict(states=sorted(forbidden),sources=files));return forbidden
 
 def generate(phase,n):
+ if (R/f'{phase}-summary.json').exists() and all((R/f'{phase}-{seed}.json').exists() for seed in SEEDS):
+  assert all(len(json.loads((R/f'{phase}-{seed}.json').read_text())['games'])==n for seed in SEEDS), 'existing run size differs; use a new output directory'
+  print('Preserved completed generation and original timing:',phase,flush=True);return
  idx=np.load(INDEX,mmap_mode='r');forbidden=exclusions();start=time.perf_counter()
  external={'pilot':38100100,'train':38200100,'dev':38300100}[phase]
  for seed in SEEDS:
