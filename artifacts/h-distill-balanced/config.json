@@ -1,0 +1,45 @@
+{
+  "base_commit": "163791f543041184217125b5fa9ebc90ad8331ce",
+  "work_id": "6b13779f-62c9-428a-bd1c-ca27b30385c4",
+  "source_generation": "gen3",
+  "source_sha256": {
+    "1751401": "5e5d66569a8690d711a4f5d04a627cb70130e055d18000a1b9ee3fd3a5cecdb7",
+    "1751402": "07988be520e729f8da64f5ef884b3b9515ad19ce0b02ee5e4338b3e60a688c44",
+    "1751403": "d8f49048eca64a6d7954b97f9cd657dce2696c7030b1bada9a13f8e312a8df9a"
+  },
+  "arms": {
+    "A": "actual turn0 only",
+    "B": "equal actual turn0/1 within each stage"
+  },
+  "generation_games_per_seed": {
+    "pilot": 4,
+    "train": 256,
+    "dev": 96
+  },
+  "train_labels_per_arm_seed": 192,
+  "dev_labels_per_seed": 96,
+  "epochs": 8,
+  "batch": 16,
+  "lr": 0.0001,
+  "optimizer_steps_per_arm_seed": 96,
+  "teacher": {
+    "width": 4,
+    "complete_depth": 6,
+    "safety_ms": 60000
+  },
+  "evaluation_ms": 500,
+  "validation_prefixes": 12,
+  "conditional_confirmation_prefixes": 32,
+  "primary_family": [
+    "B-public",
+    "B-A"
+  ],
+  "multiple_comparisons": "Bonferroni2 percentile cluster bootstrap20k",
+  "plan_sha256": "863123d98d50a00b17bac7eb41dd7ab3081b54ad30362cf64709d8e1945a6347",
+  "shuffle_seeds": {
+    "1751401": 9301,
+    "1751402": 9302,
+    "1751403": 9303
+  },
+  "torch_randomness_in_updates": "No dropout or random forward operations; data permutation uses NumPy RNG. Saved Torch/CUDA RNG verified for resume."
+}

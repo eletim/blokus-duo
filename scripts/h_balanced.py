@@ -59,14 +59,26 @@ def generate(phase,n):
    if gid%16==0:print(phase,seed,gid,len(labels),flush=True)
   write(out,dict(seed=seed,phase=phase,external_seed=external,games=games,labels=labels,dropped=dropped,teacher_model_sha256=sha(f'artifacts/ppo-gen3/seed-{seed}.pt')))
  write(R/f'{phase}-summary.json',dict(wall_seconds=time.perf_counter()-started,games_per_seed=n))
+def assert_disjoint_splits(split_hashes):
+ overlaps={f'{a}/{b}':len(split_hashes[a]&split_hashes[b]) for a,b in [('pilot','train'),('pilot','dev'),('train','dev')]}
+ assert not any(overlaps.values()),overlaps
+ return overlaps
+
 def prepare_data():
- report={}
+ report={};split_hashes={}
+ for phase in ('pilot','train','dev'):
+  split_hashes[phase]={h for seed in SEEDS for g in json.loads((R/f'{phase}-{seed}.json').read_text())['games'] for h in g['visited'][6:]}
+ overlaps=assert_disjoint_splits(split_hashes)
+ write(R/'pre-training-splits.json',dict(overlaps=overlaps,states={p:len(h) for p,h in split_hashes.items()}))
  for seed in SEEDS:
   train=json.loads((R/f'train-{seed}.json').read_text());dev=json.loads((R/f'dev-{seed}.json').read_text())
   arms,_,counts=select(train['labels'],64);_,devrows,dc=select(dev['labels'],16)
   for arm,rows in arms.items():write(R/f'{arm}-train-{seed}.json',dict(labels=rows,source_sha=sha(R/f'train-{seed}.json')))
   write(R/f'balanced-dev-{seed}.json',dict(labels=devrows,source_sha=sha(R/f'dev-{seed}.json')))
   report[str(seed)]=dict(train=counts,dev=dc,labels_per_arm=192,dev_labels=96,unique_games={arm:len({r['game'] for r in rs}) for arm,rs in arms.items()},paired_games_identical=[(r['game'],r['stage']) for r in arms['A']]==[(r['game'],r['stage']) for r in arms['B']])
+  actual={f'{st}/{turn}':sum(r['stage']==st and r['turn']==turn for r in devrows) for st in STAGES for turn in (0,1)}
+  assert all(v==16 for v in actual.values())
+  report[str(seed)]['dev_actual_stage_turn_counts']=actual
   assert report[str(seed)]['paired_games_identical']
  write(R/'pre-training-counts.json',report)
 if __name__=='__main__':

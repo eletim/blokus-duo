@@ -463,3 +463,7 @@ WebでAIの考え方を選び「新しい対局」を押すと利用できます
 今後の対局はサーバへ自動保存されます。画面の対局ID・保存状態を確認できます。ブラウザを閉じても確定済み分は残り、途中対局は未完として記録します。保存失敗時は警告します。手動downloadも維持。[保存先・一覧/export/合法性再生・検証ログの分離](GAME_ARCHIVE.md)。過去に保存されていない棋譜は復元できません。
 
 研究記録：[固定Hのpolicy蒸留pilot（不採用）](artifacts/h-policy-distill/REPORT.md)。本branchだけの実験で、公開gen3/HやWebを変更しません。再現手順・3seed研究export・事前gate・失敗診断を保存しています。
+
+### 研究: H蒸留の両席抽出対照
+
+`research/h-distill-balanced` は、元gen3から同じpolicy更新条件で「先手のみ」と「先後均等」の教師局面抽出を比較する有限実験です。公開モデル・Web既定・Frozenタグは変更しません。設定・ゲーム単位の分離・同ラベル数の定義・結果と限界は [研究レポート](artifacts/h-distill-balanced/REPORT.md) と [事前計画](artifacts/h-distill-balanced/PLAN.md) を参照してください。探索着手の蒸留であり、実終局報酬による追加強化学習とは区別します。

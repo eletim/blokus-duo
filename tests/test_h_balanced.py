@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from h_balanced import select,STAGES
+from h_balanced import select,STAGES,assert_disjoint_splits
 import pytest
 
 def rows():
@@ -21,5 +21,5 @@ def test_pass_singleton_terminal_missing_and_timeout_drop_entire_pair():
  assert not any(x['game']==1 and x['ply'] in (12,13) for x in arms['A'])
  with pytest.raises(AssertionError):select(r,6)
 def test_game_split_disjoint():
- train={('train',i) for i in range(128)};dev={('dev',i) for i in range(40)}
- assert not train&dev
+ assert_disjoint_splits({'pilot':{'p'},'train':{'a'},'dev':{'b'}})
+ with pytest.raises(AssertionError):assert_disjoint_splits({'pilot':{'p'},'train':{'same-state'},'dev':{'same-state'}})
