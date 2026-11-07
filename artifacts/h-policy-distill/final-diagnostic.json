@@ -1,0 +1,98 @@
+{
+  "dev_by_seed": {
+    "1751401": {
+      "dev_roots": 93,
+      "root_turns": {
+        "0": 93,
+        "1": 0
+      },
+      "greedy_changes": 12,
+      "teacher_chosen_dropped_from_student_top4": 1,
+      "mean_top4_overlap": 0.9489247311827957,
+      "mean_teacher_rank": [
+        2.021505376344086,
+        1.956989247311828
+      ],
+      "cached_cuda_cpu_logit_max_absolute_difference": 3.814697265625e-06
+    },
+    "1751402": {
+      "dev_roots": 88,
+      "root_turns": {
+        "0": 88,
+        "1": 0
+      },
+      "greedy_changes": 8,
+      "teacher_chosen_dropped_from_student_top4": 3,
+      "mean_top4_overlap": 0.9375,
+      "mean_teacher_rank": [
+        2.0,
+        1.9545454545454546
+      ],
+      "cached_cuda_cpu_logit_max_absolute_difference": 3.814697265625e-06
+    },
+    "1751403": {
+      "dev_roots": 94,
+      "root_turns": {
+        "0": 94,
+        "1": 0
+      },
+      "greedy_changes": 10,
+      "teacher_chosen_dropped_from_student_top4": 6,
+      "mean_top4_overlap": 0.9069148936170213,
+      "mean_teacher_rank": [
+        1.9574468085106382,
+        2.1595744680851063
+      ],
+      "cached_cuda_cpu_logit_max_absolute_difference": 3.814697265625e-06
+    }
+  },
+  "validation_by_seat": {
+    "H": {
+      "0": {
+        "games": 36,
+        "wins": 18,
+        "draws": 1,
+        "losses": 17,
+        "point": 0.5138888888888888,
+        "difference": 2.7222222222222223
+      },
+      "1": {
+        "games": 36,
+        "wins": 11,
+        "draws": 0,
+        "losses": 25,
+        "point": 0.3055555555555556,
+        "difference": -3.9444444444444446
+      }
+    },
+    "policy": {
+      "0": {
+        "games": 36,
+        "wins": 18,
+        "draws": 1,
+        "losses": 17,
+        "point": 0.5138888888888888,
+        "difference": 1.1666666666666667
+      },
+      "1": {
+        "games": 36,
+        "wins": 15,
+        "draws": 0,
+        "losses": 21,
+        "point": 0.4166666666666667,
+        "difference": -0.8888888888888888
+      }
+    }
+  },
+  "H_fallback": {
+    "0": {
+      "forced_pass": 123,
+      "nonpass_fallback": 0
+    },
+    "1": {
+      "forced_pass": 115,
+      "nonpass_fallback": 0
+    }
+  },
+  "posthoc_descriptive_only": true
+}

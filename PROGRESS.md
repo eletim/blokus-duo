@@ -235,3 +235,7 @@ main統合: c901d09→8c40e42をfast-forward。コードは候補と同一、既
 ## 2026-11-07 対局の自動永続保存
 SQLiteのtransactionでサーバ確定状態を保存。repo外data dir、test/human分類、モデルSHA/起動commit、各手の手番/AI統計を記録。保存失敗は警告し対局続行、次成功で全手復旧。運用CLI list/export/replayを追加。106PASS/4skip、ブラウザ/新clone/再起動確認後に公開する。棋力/モデル変更なし。
 自動保存を現Webへ公開済み。main0f6f97f、systemdのrepo外EnvironmentFile/data dir設定。実サイトの9検証セッションをtest印付きで保存・再生PASS。CPU新clone106PASS/4skip。棋譜本体はGit非保存。詳細GAME_ARCHIVE.mdとartifacts/web-game-archive。
+
+## 2026-11-08 固定Hの方策蒸留
+新research/h-policy-distill。Frozen/main/Web/棋譜は変更しない。12新ゲーム35rootで教師変更17/35、完全6ply平均約0.29秒。policy MLPのみ学習可能、共有conv/global・value・position・priorは凍結。固定PLAN:3seed×128train/32dev、epoch8、LR1e-4、CE+0.05KL、H500ms同士を主比較。新validation12prefix、gate通過時のみ新確認32prefix。追加強化学習ではなく探索蒸留。幅4教師の盲点と人間ログ未取得を限界として保持。
+2026-11-08 finite cycle終了: 訓練3seed/128games各、dev32games各、policy頭8epoch。主比較候補H/旧Hは29勝1分42敗・point40.97%（通常CI31.25–49.31%、2比較補正29.86–50.00%）、得点差−0.61。単体46.53%。gate未達、確認32prefixは未使用、追加条件なし。本番/Frozen不変。独立636対局再生・分離・ラベル・valueCPU/CUDA・別process再開PASS、全113testsPASS。後診断でroot全て先手という抽出偏りと後手30.56%を記録、因果断定せず次回は両席均等の同量対照を提案。REPORTとmanifestに詳細。
