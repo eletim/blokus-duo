@@ -1,0 +1,27 @@
+{
+  "pass_": true,
+  "coordinate_generation_games": 1068,
+  "label_tree_replays": 32,
+  "split_overlaps": {
+    "pilot/train": 0,
+    "pilot/dev": 0,
+    "train/dev": 0
+  },
+  "evaluation": {
+    "validation": {
+      "games": 360,
+      "overlap_training": 0,
+      "original_training_hits": 0,
+      "old_evaluation_start_hits": 0
+    },
+    "confirmation": {
+      "games": 0,
+      "overlap_training": 0,
+      "original_training_hits": 0,
+      "old_evaluation_start_hits": 0
+    }
+  },
+  "models_sha256": "20095a76668f0962049444c797d4b9cee4208512ab2870dea29dee850d219ee7",
+  "pretrain_counts_sha256": "3d3a66f35aa1205ef12f994474530b3fc09e52b1b681d485cfea4d126db48aae",
+  "old_audit_reference": "163791f:artifacts/h-policy-distill/audit.json"
+}

@@ -1,7 +1,8 @@
 """Run as separate CUDA processes; no model selection."""
 from h_distill_train import *
-R=Path("artifacts/h-distill-balanced")
-p=argparse.ArgumentParser();p.add_argument('mode',choices=['full','part','resume','audit']);a=p.parse_args();setup()
+import os
+R=Path(os.environ.get("H_BALANCED_DIR","artifacts/h-distill-balanced"))
+p=argparse.ArgumentParser();p.add_argument('mode',choices=['full','part','resume','audit']);a=p.parse_args();setup();R.mkdir(parents=True,exist_ok=True)
 path=R/'resume-test';path.mkdir(exist_ok=True)
 if a.mode=='audit':
  x=torch.load(path/'full.pt',weights_only=False,map_location='cpu');y=torch.load(path/'resume.pt',weights_only=False,map_location='cpu')

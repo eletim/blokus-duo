@@ -1,10 +1,5 @@
-# Progress
-Paired-seat control in progress. PLAN frozen before main labels/training/evaluation. Commit e6e29a0 records initial plan and pilot.
-Focused tests:6PASS. Separate-process CUDA resume12 vs5+7PASS. Pilot12games,20.135seconds,62teacherlabels.
-Main data generation:256train+96dev games perseed,3seeds. Equal A/B192labels/seed; stage×actualturn quota and game-split assertions precede learning. Nonpolicy weights and published service unchanged.
-Timing/validation starts only after generation+training complete. No retrospective gate changes.
-
-First seed train bank complete:256games; stage12/20/28 eligible pairs256/248/129, all quotas64 met. Remaining seeds in progress.
-Second seed train bank complete:256games; eligible pairs256/249/123, all quotas64 met. Third seed generation underway.
-
-Data/training complete. Each A/B:192labels/seed,96updates; unique selected games93/96/93. All split overlaps0. Export frozen tensor/value CPU/CUDA checksPASS; real-data separate-process20 vs7+13 across epoch boundary botharmsPASS;15focused/rule testsPASS. New validation12 and conditional confirmation32 banks/models fixed before timing.
+# Complete
+Finite A/B seat-extraction study finished. Equal192labels/seed and96updates/arm/seed; all6students start from original gen3. No old failed student continuation.
+Validation360games completed (216 H,144 policy-only). B/publicH34W3D35L49.31%, corrected point CI39.58–59.72%; B/A34W3D35L49.31%, corrected CI40.28–58.33%. Gate unmet; no independent confirmation played. Not proof of degradation or seat irrelevance. No substitute candidate chosen.
+1068generated games +360evaluation games independent replay/score/separation auditedPASS;32teacher-tree replaysPASS; all116testsPASS; CUDA separate-process real A/B20 vs7+13 resumePASS; CPU-only all6export loads and B+H game complete. Original value output preserved on both devices.
+Main b475e3829f823ab0b352d530fc9bbdef788fe616, public H/Frozen weights/tag and live Web unchanged. No further distillation tweak or WDL learning launched. REPORT.md contains limits and a future actual-terminal-reward hypothesis.

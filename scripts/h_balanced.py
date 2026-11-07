@@ -1,7 +1,8 @@
 """Paired-seat extraction control; unchanged original teacher/training algorithm."""
 from h_distill import *
 import h_distill as base
-R=Path('artifacts/h-distill-balanced');base.R=R
+import os
+R=Path(os.environ.get('H_BALANCED_DIR','artifacts/h-distill-balanced'));base.R=R
 STAGES=(12,20,28)
 def select(rows,quota):
  assert quota>0 and quota%2==0

@@ -1,0 +1,28 @@
+{
+  "pass_": true,
+  "cpu_only_torch": "2.7.1+cpu",
+  "cuda_build": null,
+  "exports_loaded": [
+    "A-1751401",
+    "A-1751402",
+    "A-1751403",
+    "B-1751401",
+    "B-1751402",
+    "B-1751403"
+  ],
+  "cpu_H_selfplay": {
+    "scores": [
+      -31,
+      -22
+    ],
+    "research": true,
+    "checkpoint": "artifacts/h-distill-balanced/B-1751401.pt"
+  },
+  "human_input_paths": [
+    0,
+    1
+  ],
+  "human_smoke": "EOF exit at both input paths; seat1 includes completed AI opening, not real human play",
+  "tests": "116 passed in22.89s",
+  "real_data_resume": "both A/B 20 updates vs7+save/load+13, epoch boundary crossed"
+}
