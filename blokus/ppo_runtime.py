@@ -41,9 +41,10 @@ def pool_modes(iteration,batch,kind="A"):
   for j,i in enumerate(range(2,batch,4)):modes[i]=("past","gen2","gen2048")[(iteration+j)%3]
  return modes
 
-def collect(model,past,iteration,seed,batch=16,forbidden_starts=None,fixed_pool=None,backend="auto"):
+def collect(model,past,iteration,seed,batch=16,forbidden_starts=None,fixed_pool=None,backend="auto",opponent_modes=None):
  assert batch%8==0
- states=[State() for _ in range(batch)];hist=[[] for _ in states];traces=[[] for _ in states];records=[];modes=pool_modes(iteration,batch,'B' if fixed_pool else 'A');seats=[(i//4)%2 for i in range(batch)];tally=dict(cpu_generation_pack=0.,gpu_inference_sync=0.,other=0.,legal=0.,legal_and_native_features=0.,pack=0.,transfer_pack_sync=0.,inference_and_output_sync=0.,candidates=0);start=time.perf_counter();rngs=[];prefixes=[];prefix_rejections=[]
+ states=[State() for _ in range(batch)];hist=[[] for _ in states];traces=[[] for _ in states];records=[];modes=list(opponent_modes) if opponent_modes is not None else pool_modes(iteration,batch,'B' if fixed_pool else 'A');seats=[(i//4)%2 for i in range(batch)];tally=dict(cpu_generation_pack=0.,gpu_inference_sync=0.,other=0.,legal=0.,legal_and_native_features=0.,pack=0.,transfer_pack_sync=0.,inference_and_output_sync=0.,candidates=0);start=time.perf_counter();rngs=[];prefixes=[];prefix_rejections=[]
+ assert len(modes)==batch and all(m in {'current','past','heuristic',*(fixed_pool or {})} for m in modes)
  for i,s in enumerate(states):
   rng=random.Random(seed*100000+(iteration*batch+i));rngs.append(rng);rejected=0
   while True:
