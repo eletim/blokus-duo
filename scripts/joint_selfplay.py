@@ -81,6 +81,7 @@ def audit_training():
        new.add(bytes.fromhex(state_hash(s)));assert s.done and g['scores']==[s.score(0),s.score(1)]
        if ng%256==0:assert replay(g['prefix']+g['moves'])==g['scores'];sampled+=1
        ng+=1
+       if ng%4096==0:print('audit progress',name,seed,ng,flush=True)
    assert ng==end*16;counts[f'{name}-{seed}']=ng;print('training audited',name,seed,ng,flush=True)
  a=np.array(sorted(new),dtype='S32');np.save(CACHE,a)
  write(R/'training-audit.json',dict(passed=True,games=counts,all_games_legality_labels_scores_checked=True,independent_coordinate_sample_games=sampled,action_index_sample_stride=256,targets=targets_count,visited_states=len(a),index_sha=sha(CACHE),incidental_old_evaluation_start_hits=len(old_hits),wall_seconds=time.perf_counter()-start))
