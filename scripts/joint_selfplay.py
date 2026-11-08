@@ -20,9 +20,9 @@ def train(seed,until,name='train',resume=None):
   if (out/'initial.pt').exists():raise RuntimeError('Refuse overwrite; resume explicitly')
   model,past,opt,ck=runtime.restore(base_checkpoint(seed),'cuda');assert all(torch.equal(v,anchor.state_dict()[k]) for k,v in model.state_dict().items());past.load_state_dict(model.state_dict())
   for g in opt.param_groups:g['lr']=1e-4
-  runtime.seed_all(seed+61000+(1000 if name=='pilot' else 0));step=0;logs=[];history=[]
+  runtime.seed_all(seed+61000+(1000 if name.startswith('pilot') else 0));step=0;logs=[];history=[]
   runtime.save(out/'initial.pt',model,past,opt,0,seed,'native',True,[])
- forbidden=exclusions();streamseed=seed+62000+(1000 if name=='pilot' else 0);start=time.perf_counter();initial=step
+ forbidden=exclusions();streamseed=seed+62000+(1000 if name.startswith('pilot') else 0);start=time.perf_counter();initial=step
  while step<until:
   end=min(step+256,until);first=step+1;path=out/f'history-{first}-{end}.jsonl.gz'
   if path.exists():raise RuntimeError(f'History exists: {path}')

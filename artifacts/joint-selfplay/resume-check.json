@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "keys": [
+    "model",
+    "past",
+    "optimizer",
+    "python_rng",
+    "numpy_rng",
+    "torch_rng",
+    "cuda_rng"
+  ],
+  "comparison": "8 vs 4+separate-process resume4",
+  "device": "CUDA"
+}
