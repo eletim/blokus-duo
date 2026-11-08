@@ -16,10 +16,26 @@ def exact(a,b):
  if isinstance(a,(tuple,list)):return len(a)==len(b) and all(exact(x,y) for x,y in zip(a,b))
  return a==b
 
+def saved_dataset(p):
+ # Reproduce from saved selected labels, without the external historical index.
+ rows=json.loads((R/f'learning-{p.model_seed}.json').read_text())['train_labels']
+ selected={(r['game'],r['ply']):r for r in rows};data=[]
+ for g in json.loads((R/f'train-{p.model_seed}.json').read_text())['games']:
+  s=State();local=[]
+  for ply,m in enumerate(g['moves']):
+   if (g['id'],ply) in selected:
+    label=selected[(g['id'],ply)];assert label['state_hash']==state_hash(s) and label['turn']==s.turn and label['target']==outcome(g['scores'],s.turn)
+    local.append((features(p,s),label['target']))
+   play(s,Move(*m) if m else None,validate=True)
+  assert local
+  data.extend((x,y,1/len(local)) for x,y in local)
+ assert len(data)==len(rows)
+ return data
+
 def endpoints():
- setup();idx=np.load(INDEX,mmap_mode='r');f=exclusions();checks=[]
+ setup();checks=[]
  for seed in SEEDS:
-  p=PPOAgent(seed,'cpu');data,labels,_=dataset(p,'train',idx,f);x,y,w=tensor_data(data);w/=w.mean();head=copy.deepcopy(p.model.value);opt=torch.optim.Adam(head.parameters(),lr=1e-4);rng=np.random.default_rng(seed+5100)
+  p=PPOAgent(seed,'cpu');data=saved_dataset(p);x,y,w=tensor_data(data);w/=w.mean();head=copy.deepcopy(p.model.value);opt=torch.optim.Adam(head.parameters(),lr=1e-4);rng=np.random.default_rng(seed+5100)
   with torch.no_grad():old=head(x).squeeze(-1).clone()
   for ep in range(8):
    ix=rng.permutation(len(x))
