@@ -1,0 +1,10 @@
+# Frozen H terminal-WDL value-head pilot (2026-11-08)
+Goal: test if actual terminal outcomes improve the existing H search. No human games used, no production or Frozen changes. Previous distillation failures preserved.
+
+Three original gen3 seeds 1751401/2/3. Generate 32 training and 8 held-out games per seed. First six random legal plies; remaining play by original frozen H (width4, max6, 500ms). Time-limited generation is load-sensitive; save all moves and completion statistics; generated games are the frozen dataset. Three CPU generation processes may run concurrently; no strength timing runs concurrently. Real final WDL from each state's side to move, including both seats, all nonterminal states after six plies except historical evaluation starts and known PPO training-index states. No predicted search-value labels, no search-selected actions passed to PPO.
+
+Freeze conv/global/policy/prior/position; train only existing value MLP. CPU Adam 1e-4, 8 epochs, batch64, game-uniform weighted MSE +0.1 squared drift from initial predictions; fixed endpoint, no checkpoint/seed selection. Hold-out calibration is descriptive, not the strength gate. Small sample and frozen representation are limitations.
+
+New disjoint validation 12 legal random prefixes, each paired seats x 3 fixed seeds =72 H-vs-H games, same 500ms cap. One primary comparison. Proceed only if point>=55%, score difference>0, at least2 seeds point>=50%, student p99<=750ms. If passed, fixed new32-prefix192-game independent confirmation; success requires prefix-cluster95%CI point lower>50% AND score lower>0. No rescue tuning/extra samples. Actual walltime/depth reported; equal cap is not equal consumption. No production change in this pilot.
+
+Audit generated and evaluation moves with independent coordinate checker, terminal label signs, parameter/logit preservation, splits, SHA and aggregate recomputation. Preserve negative results. Generation/training capped90min; evaluation capped90min. This pilot cannot establish strength against humans.
