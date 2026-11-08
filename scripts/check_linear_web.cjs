@@ -13,8 +13,8 @@ const assert=require('assert/strict');
   await page.getByRole('button',{name:new RegExp(`^${q[2]+1}行${q[3]+1}列(?: |$)`)}).click();assert(await page.locator('#place').isEnabled());return q;
  }
  try{
-  await page.goto(url);await ready('policy',0);assert.equal((await state()).generation,'gen3');assert(await page.locator('#budget').isDisabled());
-  await newGame('linear',0);let g=await state();assert.equal(g.budget,100);assert.equal(g.model_seed,3101);assert.equal(g.generation,'linear-L');assert(await page.locator('#budget').isDisabled());assert(g.legal.length>0);assert(await page.locator('#board circle').count()>0);
+  await page.goto(url);await ready('deep',0);assert.equal((await state()).generation,'gen3');assert(await page.locator('#budget').isEnabled());
+  await newGame('linear',0);let g=await state();assert.equal(g.budget,100);assert.equal(g.model_seed,3101);assert.equal(g.generation,'linear-L');assert(await page.locator('#budget').isEnabled());assert(g.legal.length>0);assert(await page.locator('#board circle').count()>0);
   const asymmetric=await page.evaluate(()=>game.remaining[game.seat].find(id=>pieces[id].length===8));await page.getByRole('button',{name:new RegExp(`^駒${asymmetric+1}、`)}).click();
   let ori=await page.evaluate(()=>orientation);await page.click('#rotate');assert.notEqual(await page.evaluate(()=>orientation),ori);ori=await page.evaluate(()=>orientation);await page.click('#flip');assert.notEqual(await page.evaluate(()=>orientation),ori);
   await choose();await page.click('#place');await page.waitForFunction(()=>game.revision>=2&&!game.busy&&!waiting);g=await state();assert.equal(g.turn,0);assert(g.stats.elapsed_ms>=0);assert(g.stats.depth===2||g.stats.fallback);
