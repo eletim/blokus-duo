@@ -101,13 +101,13 @@ def prepare():
 
 def evaluate():
  setup()
- for seed in SEEDS:evaluation.compare('validation','H',seed)
+ for seed in SEEDS:evaluation.compare('validation','H',seed,backend='native')
  a=evaluation.aggregate('validation','H');write(R/'validation-summary.json',a)
  gate=a['point']>=.55 and a['difference']>0 and sum(x['point']>=.5 for x in a['by_seed'].values())>=2 and a['time']['0']['p99_ms']<=750
  write(R/'selection.json',dict(gate=gate))
  if gate:
-  for seed in SEEDS:evaluation.compare('confirmation','H',seed)
-  c=evaluation.aggregate('confirmation','H');write(R/'confirmation-summary.json',c);write(R/'adoption.json',dict(improved=c['point_ci95'][0]>.5 and c['difference_ci95'][0]>0,public_change=False))
+  for seed in SEEDS:evaluation.compare('confirmation','H',seed,backend='native')
+  c=evaluation.aggregate('confirmation','H');write(R/'confirmation-summary.json',c);write(R/'adoption.json',dict(improved=c['point_ci95'][0]>.5 and c['difference_ci95'][0]>0 and c['by_seed']['1751401']['point']>.5 and c['by_seed']['1751401']['difference']>0,public_change=False))
  print('SELECTION',gate,flush=True)
 
 def audit_evaluation():

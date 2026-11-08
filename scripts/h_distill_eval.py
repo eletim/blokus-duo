@@ -24,10 +24,10 @@ def prepare():
 
 def summary(gs):
  d=np.array([g['difference'] for g in gs]);return dict(games=len(d),wins=int((d>0).sum()),draws=int((d==0).sum()),losses=int((d<0).sum()),point=float((np.sign(d)*.5+.5).mean()),difference=float(d.mean()))
-def compare(phase,method,seed):
+def compare(phase,method,seed,backend="python"):
  path=R/f'{phase}-{method}-{seed}.json'
  if path.exists():return
- bank=json.loads((R/f'{phase}-bank.json').read_text())['prefixes'];p=PPOAgent(seed,'cpu');q=PPOAgent(seed,'cpu',checkpoint=R/f'student-{seed}.pt');models=[q,p];agents=[DeepSearch(x,500) for x in models] if method=='H' else models;games=[];start=time.perf_counter()
+ bank=json.loads((R/f'{phase}-bank.json').read_text())['prefixes'];p=PPOAgent(seed,'cpu',backend=backend);q=PPOAgent(seed,'cpu',checkpoint=R/f'student-{seed}.pt',backend=backend);models=[q,p];agents=[DeepSearch(x,500) for x in models] if method=='H' else models;games=[];start=time.perf_counter()
  for prefix in bank:
   for seat in (0,1):
    s=state(prefix['moves']);ms=[];times=[];rng=random.Random(38600100+prefix['id']*2+seat)
@@ -35,7 +35,7 @@ def compare(phase,method,seed):
     side=int(s.turn!=seat);a=agents[side];t=time.perf_counter();m=a.act(s,rng);elapsed=(time.perf_counter()-t)*1000
     stat=copy.deepcopy(a.stats) if method=='H' else {};stat.pop('root_scores',None);times.append(dict(side=side,elapsed_ms=elapsed,**{k:v for k,v in stat.items() if k!='elapsed_ms'}));play(s,m,validate=True);ms.append(raw(m))
    games.append(dict(prefix=prefix['id'],seat=seat,moves=ms,scores=[s.score(0),s.score(1)],difference=s.score(seat)-s.score(1-seat),timings=times));print(phase,method,seed,prefix['id'],seat,flush=True)
- write(path,dict(seed=seed,games=games,summary=summary(games),wall_seconds=time.perf_counter()-start))
+ write(path,dict(seed=seed,backend=backend,games=games,summary=summary(games),wall_seconds=time.perf_counter()-start))
 
 def aggregate(phase,method):
  rows=[json.loads((R/f'{phase}-{method}-{s}.json').read_text()) for s in SEEDS];gs=[g for r in rows for g in r['games']];groups={}
