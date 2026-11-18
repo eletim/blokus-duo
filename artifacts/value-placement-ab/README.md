@@ -29,7 +29,7 @@ PYTHONPATH=. python scripts/restore_placement_index.py
 
 The reconstruction checks the immutable artifacts and final 27,533,566-state hash. It needs the repository's full referenced history, RAM for sorting state hashes and about881MB for the resulting numpy file.
 
-Generation and evaluation refuse to overwrite existing result files. To rerun the full experiment, use a separate checkout and move its `artifacts/value-placement-ab` result directory aside, retaining `PLAN.md` for reference. The sequence is:
+Generation and evaluation refuse to overwrite existing result files. To rerun the full experiment, use a separate checkout and move its `artifacts/value-placement-ab` result directory aside, retaining copies of `PLAN.md`, `cost-pilot.json`, and `historical-starts.json` in the new result directory. These fix the plan, excluded pilot positions, and historical exclusion set independently of checkout layout. The sequence is:
 
 ```bash
 PYTHONPATH=.:scripts python scripts/placement_experiment.py generate

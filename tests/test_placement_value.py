@@ -73,8 +73,8 @@ def test_custom_value_fixed_tree_and_internal_cache():
 
 def test_custom_timeout_keeps_completed_depth(monkeypatch):
  import blokus.ppo_search_deeper as mod
- torch.set_num_threads(1);p=PPOAgent(1751401,cpu,backend=native);s=positions()[1];before=key(s)
- evaluator=PlacementEvaluator(PlacementValue(p.model,A))
+ torch.set_num_threads(1);p=PPOAgent(1751401,'cpu',backend='native');s=positions()[1];before=key(s)
+ evaluator=PlacementEvaluator(PlacementValue(p.model,'A'))
  reference=DeepSearch(p,30000,max_depth=4,value_evaluator=evaluator);expected=reference.act(s,random.Random(7));original=mod.child;roots=0
  def interrupt(z,move):
   nonlocal roots
@@ -82,8 +82,8 @@ def test_custom_timeout_keeps_completed_depth(monkeypatch):
    roots+=1
    if roots==9:raise TimeoutError
   return original(z,move)
- monkeypatch.setattr(mod,child,interrupt)
+ monkeypatch.setattr(mod,'child',interrupt)
  search=DeepSearch(p,30000,max_depth=6,value_evaluator=evaluator)
  assert search.act(s,random.Random(7))==expected
- assert search.stats[depth]==4 and search.stats[stages]==[2,4] and not search.stats[fallback]
+ assert search.stats['depth']==4 and search.stats['stages']==[2,4] and not search.stats['fallback']
  assert key(s)==before

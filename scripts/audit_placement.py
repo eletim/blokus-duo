@@ -29,10 +29,10 @@ def audit():
     for ply,m in enumerate(g['moves']):
      if ply>=g['prefix_length']:
       h=state_hash(s);seen.add(h);r=lookup.get((seed,g['id'],ply))
-      if r:assert r['hash']==h and r['turn']==s.turn and not contains(idx,h) and h not in ex;count+=1
+      if r:assert r['hash']==h and r['turn']==s.turn and r['target']==float(np.sign(g['scores'][s.turn]-g['scores'][1-s.turn])) and not contains(idx,h) and h not in ex;count+=1
      play(s,Move(*m) if m else None,validate=False)
   assert count==len(labels['labels']) and seen==set(labels['visited']);sets[phase]=seen;print('audit',phase,games,flush=True)
- assert not sets['train']&sets['dev'];trained=sets['train']|sets['dev'];starts=set()
+ assert not sets['train']&sets['dev'];trained=sets['train']|sets['dev'];starts=set();pilot={state_hash(State(**s)) for s in json.loads((R/'cost-pilot.json').read_text())['states']};assert not trained&pilot
  for phase in ('validation','fixed','confirmation'):
   bank=json.loads((R/f'{phase}-bank.json').read_text())['prefixes'];seen=set();hits=0;count=0
   for pr in bank:
