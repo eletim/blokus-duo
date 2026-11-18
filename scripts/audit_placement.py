@@ -48,7 +48,7 @@ def audit():
      play(s,Move(*m) if m else None,validate=False);seen.add(state_hash(s))
    print('replayed',path.name,flush=True)
   for h in seen:hits+=contains(idx,h)
-  assert hits==0 and not seen&trained
+  assert hits==0 and not seen&trained and not seen&pilot
   rows[phase]=dict(games=count,original_training_hits=int(hits),new_training_hits=len(seen&trained));sets[phase]=seen
   pairs=sorted({p.name.split('-')[1] for p in R.glob(f'{phase}-??-*.json.gz')})
   rows[phase]['results']={p:aggregate(phase,p) for p in pairs}
