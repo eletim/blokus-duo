@@ -2,6 +2,8 @@
 import argparse,copy,gzip,hashlib,json,random,time,glob
 from pathlib import Path
 import numpy as np
+import os
+os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG",":4096:8")
 import torch
 from blokus.engine import State,Move,play,legal_moves
 from blokus.ppo_policy import PPOAgent
@@ -80,7 +82,7 @@ def data(phase):
      h=state_hash(s);seen.add(h)
      if h in ex or contains(idx,h):excluded+=1
      else:
-      b,st=encode(s);y=float(np.sign(g['scores'][s.turn]-g['scores'][1-s.turn]));local.append((b[:4],st,mobility(s),y,dict(seed=seed,game=g['id'],ply=ply,turn=s.turn,hash=h)))
+      b,st=encode(s);y=float(np.sign(g['scores'][s.turn]-g['scores'][1-s.turn]));local.append((b[:4],st,mobility(s),y,dict(seed=seed,game=g['id'],ply=ply,turn=s.turn,hash=h,target=y)))
     play(s,Move(*m) if m else None,validate=False)
    assert local and s.done and g['scores']==[s.score(0),s.score(1)]
    for b,st,extra,y,label in local:rows.append((b,st,extra,y,1/len(local),label))
