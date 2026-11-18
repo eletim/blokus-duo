@@ -21,12 +21,21 @@ def worker(variant,device,epochs,src,dst,fixture):
 
 def main():
  e.setup();result=[];exports=[]
+ feature_sha={p.name:e.sha(p) for p in R.glob('*-features.npz')}
+ from collections import Counter
+ for phase in ('train','dev'):
+  ar=np.load(R/f'{phase}-features.npz');labels=json.loads((R/f'{phase}-labels.json').read_text())['labels'];counts=Counter((r['seed'],r['game']) for r in labels)
+  assert all(len(ar[f'x{i}'])==len(labels) for i in range(6))
+  assert np.array_equal(ar['x3'],np.array([r['target'] for r in labels],np.float32))
+  assert np.array_equal(ar['x5'],np.array([r['game'] for r in labels],np.float32))
+  assert np.array_equal(ar['x4'],np.array([1/counts[(r['seed'],r['game'])] for r in labels],np.float32))
  for size in s.STAGES:
   bank=json.loads((R/f'n{size}'/'validation-bank.json').read_text())['prefixes']
   for seed in e.SEEDS:
    p=PPOAgent(seed,'cpu',backend='native');before=copy.deepcopy(p.model.state_dict())
    for variant in 'ABC':
-    ck=torch.load(R/f'n{size}'/f'{variant}-{seed}.pt',map_location='cpu',weights_only=True);assert ck['source_sha']==e.sha(f'artifacts/ppo-gen3/seed-{seed}.pt') and ck['train_games']==size and ck['epochs']==16
+    ck=torch.load(R/f'n{size}'/f'{variant}-{seed}.pt',map_location='cpu',weights_only=True);assert ck['source_sha']==e.sha(f'artifacts/ppo-gen3/seed-{seed}.pt') and ck['train_games']==size and ck['epochs']==16 and ck['data_shas']==feature_sha
+    rows=sum(1 for r in json.loads((R/'train-labels.json').read_text())['labels'] if r['game']<size//3);assert ck['updates']==((rows+63)//64)*16
     model=PlacementValue(p.model,variant);model.load_state_dict(ck['model']);a=DeepSearch(p,500,max_depth=2,value_evaluator=PlacementEvaluator(model));z=e.state(bank[0]['moves']);m=a.act(z,random.Random(seed));play(z,m,validate=True);assert all(torch.equal(t,before[k]) for k,t in p.model.state_dict().items());exports.append(dict(size=size,variant=variant,seed=seed,pass_=True))
  p=PPOAgent(e.SEEDS[0],'cpu',backend='native');base=PlacementValue(p.model,'C');data=np.load(R/'train-features.npz');arrays={f'x{i}':data[f'x{i}'][:137] for i in range(5)}
  arrays['x4']=arrays['x4']/float(data['x4'].mean())
