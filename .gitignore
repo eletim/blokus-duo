@@ -17,3 +17,9 @@ artifacts/secretary-review/resume/**
 .native/
 # Reconstructed union of existing research state hashes (manifest is tracked).
 artifacts/gpu-generation/excluded.json
+# Async generation archives retain full new trajectories without thousands of loose Git files.
+artifacts/gpu-async512/**/[0-9]*-*.json.gz
+artifacts/gpu-async512/*bank*.json
+artifacts/gpu-async512/final/bank.json
+artifacts/gpu-async512/final/audit-bank-*.json
+artifacts/gpu-async512/quality/bank.json

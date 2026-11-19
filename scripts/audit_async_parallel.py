@@ -1,0 +1,21 @@
+import argparse,json,subprocess,sys
+from pathlib import Path
+import frontier_generation as f
+p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--workers',type=int,default=8);a=p.parse_args();r=Path(a.root);bank=json.loads((r/'bank.json').read_text());procs=[]
+dirs=[str(r/x) for x in ('cpu-1','async-1','parallel-1','async-2','cpu-fast-1','cpu-2')]
+for i in range(a.workers):
+ b=dict(bank);b['games']=bank['games'][i::a.workers];bp=r/f'audit-bank-{i}.json';f.ref.write(bp,b)
+ log=open(r/f'audit-{i}.log','w');cmd=[sys.executable,'scripts/audit_async.py','--bank',str(bp),'--output',str(r/f'audit-{i}.json'),'--reference',str(r/'cpu-1')]+dirs
+ procs.append((subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT),log))
+for proc,log in procs:assert proc.wait()==0;log.close()
+out={};div=[]
+for i in range(a.workers):
+ d=json.loads((r/f'audit-{i}.json').read_text());div+=d['divergences']
+ for name,row in d['results'].items():
+  z=out.setdefault(name,{})
+  for k,v in row.items():
+   if k=='action_agreement':continue
+   z[k]=max(z.get(k,0),v) if k=='max_same_state_root_error' else z.get(k,0)+v
+  z['agree_count']=z.get('agree_count',0)+round(row['action_agreement']*row['same_state_moves'])
+for z in out.values():z['action_agreement']=z['agree_count']/z['same_state_moves']
+f.ref.write(r/'audit.json',dict(results=out,divergences=div,bank_sha=f.ref.e.sha(r/'bank.json'),visited_note='sum of unique states within disjoint audit shards; overlap checks examine every state'))

@@ -55,7 +55,7 @@ def worker(wid,pipe,slots,offset,count,directory,fast):
      if n:x[slot,:n]=obs[2];c[slot,:n]=obs[3]
      serial+=1;active[slot]=(g,serial,kind,n);peak=max(peak,len(active));pack+=time.perf_counter()-tick
      outbox.append(('request',slot,serial,kind,n,time.perf_counter()))
-     if len(outbox)>=8:flush()
+     if len(outbox)>=8 or time.perf_counter()-outbox[0][-1]>=.001:flush()
      return
    for slot in range(offset,offset+count):
     try:advance(slot,f.game(next(todo),p,directory),initial=True)
@@ -79,7 +79,13 @@ def bench(bank_path,out,concurrency=512,batch=128,fast=False,graphs=False):
  os.sched_setaffinity(0,{8})
  assert concurrency%8==0
  out=Path(out);out.mkdir(parents=True,exist_ok=True);assert not (out/'timing.json').exists()
- bank=json.loads(Path(bank_path).read_text());torch.set_num_threads(1);torch.use_deterministic_algorithms(True)
+ bank=json.loads(Path(bank_path).read_text())
+ assert len({(g['seed'],g['id']) for g in bank['games']})==len(bank['games'])
+ assert len({g['rng_seed'] for g in bank['games']})==len(bank['games'])
+ config=dict(bank_sha=f.ref.e.sha(bank_path),concurrency=concurrency,batch=batch,fast_encoding=fast,graphs=graphs,width=4,depth=6,torch=torch.__version__,models=bank['models'])
+ if (out/'run.json').exists():assert json.loads((out/'run.json').read_text())==config,'resume configuration mismatch'
+ else:f.ref.write(out/'run.json',config)
+ torch.set_num_threads(1);torch.use_deterministic_algorithms(True)
  assert all(f.ref.e.sha(f'artifacts/ppo-gen3/seed-{s}.pt')==h for s,h in bank['models'].items())
  ctx=mp.get_context('spawn');slots=Slots(ctx,concurrency);arrays=slots.arrays();b,st,x,c,l,v=arrays
  pairs=[ctx.Pipe() for _ in range(8)];ps=[];init=time.perf_counter();groups=[]
@@ -95,7 +101,7 @@ def bench(bank_path,out,concurrency=512,batch=128,fast=False,graphs=False):
    if graphs:
     from blokus.generation_graph import GraphEvaluator
     ev=GraphEvaluator(model)
-   pending=deque();live=set(pipes);results=[];queue_wait=[];hist={};occupancy={p:0 for p in pipes};trace=[];tick=time.perf_counter();server_cpu=time.process_time()
+   pending=deque();live=set(pipes);results=[];queue_wait=[];hist={};occupancy={p:0 for p in pipes};completed_counts={p:0 for p in pipes};trace=[];tick=time.perf_counter();server_cpu=time.process_time()
    for i,p in enumerate(pipes):p.send(('start',seed,tasks[i::8]))
    while live or pending:
     ready=wait(list(live),timeout=0 if pending else None) if live else []
@@ -105,7 +111,7 @@ def bench(bank_path,out,concurrency=512,batch=128,fast=False,graphs=False):
       msg=p.recv()
       if msg[0]=='error':raise RuntimeError(msg)
       if msg[0]=='occupancy':
-       occupancy[p]=msg[1];trace.append([time.perf_counter()-tick,sum(occupancy.values()),len(pending)])
+       occupancy[p]=msg[1];completed_counts[p]=msg[2];trace.append([time.perf_counter()-tick,sum(occupancy.values()),len(pending),sum(completed_counts.values())])
        if not p.poll():break
        continue
       if msg[0]=='done':results.append(msg[1]);live.remove(p);break
@@ -123,7 +129,7 @@ def bench(bank_path,out,concurrency=512,batch=128,fast=False,graphs=False):
      else:v[slot]=answer
      replies.setdefault(p,[]).append((slot,rid))
     for p,reply in replies.items():p.send(('reply',reply))
-   groups.append(dict(seed=seed,seconds=time.perf_counter()-tick,server_cpu_seconds=time.process_time()-server_cpu,workers=results,occupancy_trace=trace,graph_capture_seconds=getattr(ev,"capture_seconds",0),graph_count=len(getattr(ev,"graphs",{})),h2d_seconds=getattr(ev,"h2d_seconds",0),sync_dispatch_seconds=getattr(ev,"sync_dispatch_seconds",0),padding_real=getattr(ev,"padding_real",0),padding_slots=getattr(ev,"padding_slots",0),dispatch_hist=hist,batch_hist=ev.hist,pack_seconds=ev.pack_seconds,forward_seconds=ev.forward_seconds,return_seconds=ev.return_seconds,queue_wait_quantiles=np.quantile(queue_wait,[0,.5,.95,.99,1]).tolist() if queue_wait else []))
+   groups.append(dict(seed=seed,seconds=time.perf_counter()-tick,server_cpu_seconds=time.process_time()-server_cpu,workers=results,occupancy_trace=trace,graph_capture_seconds=getattr(ev,"capture_seconds",0),graph_count=len(getattr(ev,"graphs",{})),graph_shapes=[list(k) for k in getattr(ev,"graphs",{})],transfer_bytes=getattr(ev,"transfer_bytes",0),max_candidates=getattr(ev,"max_candidates",0),h2d_seconds=getattr(ev,"h2d_seconds",0),sync_dispatch_seconds=getattr(ev,"sync_dispatch_seconds",0),padding_real=getattr(ev,"padding_real",0),padding_slots=getattr(ev,"padding_slots",0),dispatch_hist=hist,batch_hist=ev.hist,pack_seconds=ev.pack_seconds,forward_seconds=ev.forward_seconds,return_seconds=ev.return_seconds,queue_wait_quantiles=np.quantile(queue_wait,[0,.5,.95,.99,1]).tolist() if queue_wait else []))
   result=dict(seconds=time.perf_counter()-start,initialization_seconds=init,concurrency=concurrency,batch_limit=batch,fast_encoding=fast,graphs=graphs,groups=groups,games=len(bank['games']),bank_sha=f.ref.e.sha(bank_path),peak_memory=torch.cuda.max_memory_allocated())
   f.ref.write(out/'timing.json',result);print(json.dumps(result),flush=True)
  finally:

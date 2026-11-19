@@ -7,7 +7,7 @@ from .ppo_frontier import FrontierEvaluator
 def bucket(n):return max(8,1<<(n-1).bit_length())
 class GraphEvaluator(FrontierEvaluator):
  def __init__(self,policy):
-  super().__init__(policy);self.graphs={};self.capture_seconds=0.;self.h2d_seconds=0.;self.padding_real=0;self.padding_slots=0;self.pool=torch.cuda.graph_pool_handle();self.transfer=torch.cuda.Event(enable_timing=True);self.end=torch.cuda.Event(enable_timing=True);self.begin=torch.cuda.Event(enable_timing=True);self.sync_dispatch_seconds=0.
+  super().__init__(policy);self.graphs={};self.capture_seconds=0.;self.h2d_seconds=0.;self.padding_real=0;self.padding_slots=0;self.pool=torch.cuda.graph_pool_handle();self.transfer=torch.cuda.Event(enable_timing=True);self.end=torch.cuda.Event(enable_timing=True);self.begin=torch.cuda.Event(enable_timing=True);self.sync_dispatch_seconds=0.;self.transfer_bytes=0;self.max_candidates=0
  def make(self,kind,b,n):
   t=time.perf_counter();spec=[((b,4,14,14),torch.uint8),((b,49),torch.float32)]
   if kind=='policy':spec += [((b,n,39),torch.float32),((b,n,5),torch.int64),((b,n),torch.bool)]
@@ -35,9 +35,10 @@ class GraphEvaluator(FrontierEvaluator):
    for j,i in enumerate(ix):
     obs=requests[i][1];arr[0][j]=obs[0];arr[1][j]=obs[1]
     if kind=='policy':
-     count=len(obs[2]);arr[2][j,:count]=obs[2];arr[3][j,:count]=obs[3];arr[4][j,:count]=True;self.padding_real+=count
+     count=len(obs[2]);self.max_candidates=max(self.max_candidates,count);arr[2][j,:count]=obs[2];arr[3][j,:count]=obs[3];arr[4][j,:count]=True;self.padding_real+=count
    if kind=='policy':self.padding_slots+=b*n
    self.pack_seconds+=time.perf_counter()-t;t=time.perf_counter()
+   self.transfer_bytes+=sum(h.numel()*h.element_size() for h in host)
    self.begin.record()
    for d,h in zip(device,host):d.copy_(h,non_blocking=True)
    # Events separate device transfer / replay without a synchronization per input.
