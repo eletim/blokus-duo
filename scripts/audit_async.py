@@ -8,6 +8,8 @@ from blokus.engine import State,Move,play
 from blokus.ppo_runtime import state_hash
 p=argparse.ArgumentParser();p.add_argument('--bank',required=True);p.add_argument('--output',required=True);p.add_argument('--reference');p.add_argument('--exclusions');p.add_argument('directories',nargs='+');a=p.parse_args()
 bank=json.loads(Path(a.bank).read_text());assert len({g['rng_seed'] for g in bank['games']})==len(bank['games']);assert len({g['prefix']['state_hash'] for g in bank['games']})==len(bank['games'])
+assert len({json.dumps(g['rng_state']) for g in bank['games']})==len(bank['games'])
+assert all(state_hash(f.ref.e.state(g['prefix']['moves']))==g['prefix']['state_hash'] for g in bank['games'])
 assert all(f.ref.e.sha(f'artifacts/ppo-gen3/seed-{s}.pt')==h for s,h in bank['models'].items())
 ex=set(json.load(gzip.open(a.exclusions,'rt'))['states']) if a.exclusions else set(json.loads(Path('artifacts/gpu-generation/excluded.json').read_text())['states']);idx=np.load(f.ref.e.INDEX,mmap_mode='r');out={};divergences=[]
 for directory in a.directories:

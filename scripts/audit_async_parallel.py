@@ -1,9 +1,15 @@
-import argparse,json,subprocess,sys,gzip
+import argparse,json,subprocess,sys,gzip,hashlib
+import numpy as np
 from blokus.engine import State,Move,play
 from blokus.ppo_runtime import state_hash
 from pathlib import Path
 import frontier_generation as f
 p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--workers',type=int,default=8);a=p.parse_args();r=Path(a.root);bank=json.loads((r/'bank.json').read_text());procs=[]
+assert len({(g['seed'],g['id']) for g in bank['games']})==len(bank['games'])
+assert len({g['rng_seed'] for g in bank['games']})==len(bank['games'])
+assert len({g['prefix']['state_hash'] for g in bank['games']})==len(bank['games'])
+assert len({json.dumps(g['rng_state']) for g in bank['games']})==len(bank['games'])
+idx=np.load(f.ref.e.INDEX,mmap_mode='r');index_sha=hashlib.sha256(memoryview(idx).cast('B')).hexdigest();assert index_sha=='cdd1f0f1ac7a0e722a670fb541ce904187949c6982cd03fda1fa7acad30f7b4c';del idx
 ex=set(json.loads(Path('artifacts/gpu-generation/excluded.json').read_text())['states']);seen_games=set()
 for path,expected in json.loads((r/'bank-exclusion-sources.json').read_text())['sources'].items():
  assert f.ref.e.sha(path)==expected,path
@@ -18,7 +24,7 @@ for bp in (Path('artifacts/gpu-async512/development-bank.json'),Path('artifacts/
 assert all(g['prefix']['state_hash'] not in ex for g in bank['games'])
 prior=r/'prior-states.json.gz'
 with gzip.open(prior,'wt') as handle:json.dump(dict(states=sorted(ex)),handle)
-f.ref.write(r/'separation-manifest.json',dict(excluded_states=len(ex),unique_source_games=len(seen_games),derived_prior_sha=f.ref.e.sha(prior),bank_sha=f.ref.e.sha(r/'bank.json')))
+f.ref.write(r/'separation-manifest.json',dict(index_array_sha256=index_sha,excluded_states=len(ex),unique_source_games=len(seen_games),derived_prior_sha=f.ref.e.sha(prior),bank_sha=f.ref.e.sha(r/'bank.json')))
 dirs=[str(r/x) for x in ('cpu-1','async-1','parallel-1','async-2','cpu-fast-1','cpu-2')]
 for i in range(a.workers):
  b=dict(bank);b['games']=bank['games'][i::a.workers];bp=r/f'audit-bank-{i}.json';f.ref.write(bp,b)

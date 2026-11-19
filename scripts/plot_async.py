@@ -6,8 +6,8 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 R=Path('artifacts/gpu-async512');points=[];series='controlled' if (R/'controlled-64/timing.json').exists() else 'curve'
 for n in (64,128,256,512):
- x=json.loads((R/f'{series}-{n}/timing.json').read_text());t=json.loads((R/f'{series}-{n}-telemetry.json').read_text());g=x['groups'][0];h=g['batch_hist'];batch=sum(int(k)*v for k,v in h.items())/sum(h.values());util=np.mean([float(s['gpu'].split(',')[0]) for s in t['samples']]);points.append((n,x['games']/x['seconds'],util,batch))
-a=np.array(points);fig,axes=plt.subplots(1,3,figsize=(13,3.7));axes[0].plot(a[:,0],a[:,1],'o-');axes[0].set_ylabel('Completed games / second');axes[1].plot(a[:,0],a[:,2],'o-',color='tab:green');axes[1].set_ylabel('GPU utilization (%)');axes[2].plot(a[:,0],a[:,3],'o-',color='tab:orange');axes[2].set_ylabel('Mean actual NN batch')
+ x=json.loads((R/f'{series}-{n}/timing.json').read_text());t=json.loads((R/f'{series}-{n}-telemetry.json').read_text());g=x['groups'][0];h=g['batch_hist'];batch=sum(int(k)*v for k,v in h.items())/sum(h.values());util=np.mean([float(s['gpu'].split(',')[0]) for s in t['samples']]);padded=sum(max(8,1<<(int(k)-1).bit_length())*v for k,v in h.items())/sum(h.values());points.append((n,x['games']/x['seconds'],util,batch,padded))
+a=np.array(points);fig,axes=plt.subplots(1,3,figsize=(13,3.7));axes[0].plot(a[:,0],a[:,1],'o-');axes[0].set_ylabel('Completed games / second');axes[1].plot(a[:,0],a[:,2],'o-',color='tab:green');axes[1].set_ylabel('GPU utilization (%)');axes[2].plot(a[:,0],a[:,3],'o-',color='tab:orange');axes[2].plot(a[:,0],a[:,4],'--',color='gray',label='Graph padded rows');axes[2].lines[0].set_label('Valid NN requests');axes[2].legend();axes[2].set_ylabel('Mean NN batch rows')
 for ax in axes:ax.set_xlabel('Active-game capacity');ax.set_xticks(a[:,0]);ax.grid(alpha=.25)
 fig.suptitle('Same-source development curve: seed1751401,512 games, one run/setting');fig.tight_layout();fig.savefig(R/'concurrency.png',dpi=160);plt.close(fig)
 if (R/'final/async-1/timing.json').exists():
