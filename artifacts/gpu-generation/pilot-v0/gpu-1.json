@@ -1,0 +1,106 @@
+{
+  "mode": "gpu",
+  "repeat": 1,
+  "seconds": 199.86810789606534,
+  "initialization_seconds": 1.4324551390018314,
+  "server_cpu_seconds": 109.379312939,
+  "workers": [
+    {
+      "worker": 5,
+      "games": 3,
+      "seconds": 168.11188629397657,
+      "cpu_seconds": 13.468692723,
+      "observation_seconds": 2.574491811101325,
+      "wait_seconds": 158.75896671740338
+    },
+    {
+      "worker": 1,
+      "games": 3,
+      "seconds": 170.21334496990312,
+      "cpu_seconds": 14.345906312999999,
+      "observation_seconds": 2.69973392796237,
+      "wait_seconds": 160.32348140946124
+    },
+    {
+      "worker": 0,
+      "games": 3,
+      "seconds": 181.36448584799655,
+      "cpu_seconds": 14.02673068,
+      "observation_seconds": 2.5626765500055626,
+      "wait_seconds": 171.75337981048506
+    },
+    {
+      "worker": 7,
+      "games": 3,
+      "seconds": 184.0737774349982,
+      "cpu_seconds": 15.818954966,
+      "observation_seconds": 3.0044185884762555,
+      "wait_seconds": 173.17614367697388
+    },
+    {
+      "worker": 3,
+      "games": 3,
+      "seconds": 184.71741190098692,
+      "cpu_seconds": 15.535588853999998,
+      "observation_seconds": 3.0419220358598977,
+      "wait_seconds": 173.9994792562211
+    },
+    {
+      "worker": 4,
+      "games": 3,
+      "seconds": 188.3062886770349,
+      "cpu_seconds": 15.402343079,
+      "observation_seconds": 2.992823401116766,
+      "wait_seconds": 177.71351920510642
+    },
+    {
+      "worker": 6,
+      "games": 3,
+      "seconds": 196.53003442799672,
+      "cpu_seconds": 16.741017160000002,
+      "observation_seconds": 3.1750487592071295,
+      "wait_seconds": 184.99934745649807
+    },
+    {
+      "worker": 2,
+      "games": 3,
+      "seconds": 199.86572033003904,
+      "cpu_seconds": 17.001840383999998,
+      "observation_seconds": 3.229238199419342,
+      "wait_seconds": 188.214392071357
+    }
+  ],
+  "server": {
+    "batch_histogram": {
+      "policy:8": 24,
+      "value:8": 1442,
+      "value:3": 11247,
+      "policy:5": 5320,
+      "value:7": 6597,
+      "policy:1": 19585,
+      "value:6": 13700,
+      "policy:2": 21949,
+      "value:4": 15495,
+      "policy:4": 12586,
+      "value:5": 17727,
+      "policy:3": 20121,
+      "value:2": 9808,
+      "policy:6": 1490,
+      "value:1": 9684,
+      "policy:7": 227
+    },
+    "requests": {
+      "policy": 211511,
+      "value": 353571
+    },
+    "times": {
+      "transfer_pack_cuda_ms": 19751.71273659356,
+      "forward_cuda_ms": 54157.78377731703,
+      "service_wall_seconds": 86.68907283432782
+    },
+    "real_candidates": 16752246,
+    "padded_candidates": 25058109,
+    "peak_cuda_bytes": 40818176
+  },
+  "bank_sha": "5787eaecdce4c0669381d28710aad25d58bc65aa6c7bb3652cf17bfb731b7392"
+}

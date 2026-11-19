@@ -1,0 +1,63 @@
+         2837621 function calls (2652465 primitive calls) in 0.916 seconds
+
+   Ordered by: cumulative time
+   List reduced from 153 to 55 due to restriction <55>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     3927    0.019    0.000    0.778    0.000 grad_mode.py:273(__exit__)
+63234/9052    0.020    0.000    0.370    0.000 module.py:1747(_wrapped_call_impl)
+63234/9052    0.032    0.000    0.367    0.000 module.py:1755(_call_impl)
+     2561    0.002    0.000    0.340    0.000 ppo_value_leaf.py:11(value_only)
+     3927    0.009    0.000    0.325    0.000 grad_mode.py:269(__enter__)
+    13159    0.015    0.000    0.255    0.000 container.py:238(forward)
+     3930    0.078    0.000    0.241    0.000 value_search.py:17(encode)
+     1369    0.035    0.000    0.231    0.000 ppo_policy.py:50(forward)
+     2561    0.002    0.000    0.162    0.000 ppo_value_leaf.py:6(value_inputs)
+     1369    0.002    0.000    0.148    0.000 ppo_policy.py:71(_observation)
+     1369    0.016    0.000    0.145    0.000 ppo_native.py:46(observe)
+   459809    0.092    0.000    0.130    0.000 engine.py:38(cells_of)
+     4238    0.003    0.000    0.130    0.000 ppo_search_deeper.py:9(child)
+80522/4238    0.046    0.000    0.107    0.000 copy.py:118(deepcopy)
+     4238    0.007    0.000    0.091    0.000 copy.py:247(_reconstruct)
+     7860    0.004    0.000    0.084    0.000 conv.py:553(forward)
+     7860    0.003    0.000    0.078    0.000 conv.py:536(_conv_forward)
+     7860    0.075    0.000    0.075    0.000 {built-in method torch.conv2d}
+     4238    0.007    0.000    0.071    0.000 copy.py:217(_deepcopy_dict)
+    14528    0.005    0.000    0.064    0.000 linear.py:124(forward)
+    14528    0.056    0.000    0.056    0.000 {built-in method torch._C._nn.linear}
+     1369    0.032    0.000    0.044    0.000 ppo_native.py:36(scan)
+     1369    0.008    0.000    0.029    0.000 ppo_policy.py:38(collate)
+    12714    0.008    0.000    0.027    0.000 copy.py:191(_deepcopy_list)
+    13159    0.003    0.000    0.026    0.000 activation.py:391(forward)
+    12098    0.010    0.000    0.024    0.000 {built-in method builtins.sum}
+    13159    0.023    0.000    0.023    0.000 {built-in method torch.tanh}
+     4238    0.005    0.000    0.021    0.000 engine.py:108(play)
+   444089    0.021    0.000    0.021    0.000 {method 'bit_length' of 'int' objects}
+     7860    0.003    0.000    0.018    0.000 engine.py:74(score)
+   444086    0.018    0.000    0.018    0.000 {built-in method builtins.divmod}
+     4107    0.014    0.000    0.014    0.000 {method 'sum' of 'torch._C.TensorBase' objects}
+     7860    0.002    0.000    0.012    0.000 activation.py:132(forward)
+     5299    0.012    0.000    0.012    0.000 {built-in method torch.cat}
+   165282    0.011    0.000    0.011    0.000 {method 'get' of 'dict' objects}
+    11967    0.011    0.000    0.011    0.000 {built-in method torch.as_tensor}
+     1369    0.001    0.000    0.010    0.000 sparse.py:189(forward)
+     1366    0.010    0.000    0.010    0.000 {method 'argsort' of 'torch._C.TensorBase' objects}
+     7860    0.003    0.000    0.010    0.000 functional.py:1693(relu)
+     1369    0.001    0.000    0.010    0.000 functional.py:2437(embedding)
+    62042    0.010    0.000    0.010    0.000 module.py:1927(__getattr__)
+     4238    0.001    0.000    0.009    0.000 engine.py:35(mask)
+    97586    0.009    0.000    0.009    0.000 engine.py:75(<genexpr>)
+    21190    0.006    0.000    0.009    0.000 copy.py:231(_keep_alive)
+    10601    0.008    0.000    0.008    0.000 engine.py:78(frontier)
+    63234    0.008    0.000    0.008    0.000 {built-in method torch._C._get_tracing_state}
+     1369    0.008    0.000    0.008    0.000 {built-in method torch.embedding}
+     8214    0.001    0.000    0.007    0.000 ppo_policy.py:41(<genexpr>)
+     1369    0.002    0.000    0.007    0.000 functional.py:5128(pad)
+   127140    0.007    0.000    0.007    0.000 {built-in method builtins.id}
+     3930    0.007    0.000    0.007    0.000 {method 'float' of 'torch._C.TensorBase' objects}
+     7860    0.007    0.000    0.007    0.000 {built-in method torch.relu}
+     2738    0.006    0.000    0.007    0.000 shape_base.py:378(stack)
+    13159    0.004    0.000    0.006    0.000 container.py:230(__iter__)
+     5299    0.006    0.000    0.006    0.000 {built-in method numpy.array}
+
+

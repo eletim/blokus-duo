@@ -1,0 +1,107 @@
+{
+  "mode": "gpu",
+  "repeat": 2,
+  "seconds": 200.74759103206452,
+  "initialization_seconds": 1.4183270850917324,
+  "server_cpu_seconds": 109.753158486,
+  "workers": [
+    {
+      "worker": 5,
+      "games": 3,
+      "seconds": 168.57679362292401,
+      "cpu_seconds": 13.394608917,
+      "observation_seconds": 2.5215053267311305,
+      "wait_seconds": 159.28648304077797
+    },
+    {
+      "worker": 1,
+      "games": 3,
+      "seconds": 170.64918688999023,
+      "cpu_seconds": 14.7204891,
+      "observation_seconds": 2.75794247421436,
+      "wait_seconds": 160.45784836367238
+    },
+    {
+      "worker": 0,
+      "games": 3,
+      "seconds": 181.6757862410741,
+      "cpu_seconds": 13.864185162,
+      "observation_seconds": 2.5361531641101465,
+      "wait_seconds": 172.17922746564727
+    },
+    {
+      "worker": 7,
+      "games": 3,
+      "seconds": 184.39431355998386,
+      "cpu_seconds": 15.719545851000001,
+      "observation_seconds": 2.999264150392264,
+      "wait_seconds": 173.54696444584988
+    },
+    {
+      "worker": 3,
+      "games": 3,
+      "seconds": 185.18328866292723,
+      "cpu_seconds": 15.755246189999998,
+      "observation_seconds": 3.0780622768215835,
+      "wait_seconds": 174.30520924401935
+    },
+    {
+      "worker": 4,
+      "games": 3,
+      "seconds": 188.77419612498488,
+      "cpu_seconds": 15.682466628,
+      "observation_seconds": 3.0239004199393094,
+      "wait_seconds": 178.05080218974035
+    },
+    {
+      "worker": 6,
+      "games": 3,
+      "seconds": 196.84188265900593,
+      "cpu_seconds": 16.7119007,
+      "observation_seconds": 3.1703535022679716,
+      "wait_seconds": 185.2678684592247
+    },
+    {
+      "worker": 2,
+      "games": 3,
+      "seconds": 200.7458940279903,
+      "cpu_seconds": 17.267600513,
+      "observation_seconds": 3.332851218408905,
+      "wait_seconds": 188.90609798429068
+    }
+  ],
+  "server": {
+    "batch_histogram": {
+      "policy:8": 19,
+      "policy:7": 233,
+      "value:7": 6506,
+      "policy:1": 19493,
+      "value:8": 1481,
+      "value:1": 9824,
+      "value:3": 11403,
+      "policy:5": 5347,
+      "value:6": 13732,
+      "policy:2": 22093,
+      "value:4": 15557,
+      "policy:4": 12684,
+      "value:5": 17672,
+      "policy:3": 20016,
+      "value:2": 9687,
+      "policy:6": 1440
+    },
+    "requests": {
+      "policy": 211621,
+      "value": 353777
+    },
+    "times": {
+      "transfer_pack_cuda_ms": 19733.334017846733,
+      "forward_cuda_ms": 54371.99855671637,
+      "service_wall_seconds": 86.79116837424226
+    },
+    "real_candidates": 16755258,
+    "padded_candidates": 25064487,
+    "peak_cuda_bytes": 40818176
+  },
+  "bank_sha": "5787eaecdce4c0669381d28710aad25d58bc65aa6c7bb3652cf17bfb731b7392",
+  "new_games": 24
+}
