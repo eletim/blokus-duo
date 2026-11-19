@@ -15,10 +15,10 @@ if (R/'final/async-1/timing.json').exists():
  for g in x['groups']:
   tr=np.array(g['occupancy_trace']);axes[0].plot(offset+tr[:,0],tr[:,1],label=str(g['seed']));axes[1].plot(offset+tr[:,0],tr[:,3]);offset+=g['seconds']
  axes[0].set_ylabel('Actually active games');axes[0].legend();axes[1].set_ylabel('Completed games in seed group');axes[1].set_xlabel('Work wall seconds');fig.suptitle('Async512 replenishment and tail (formal run1)');fig.tight_layout();fig.savefig(R/'occupancy.png',dpi=160);plt.close(fig)
- names=['cpu-1','async-1','parallel-1','async-2','cpu-2'];rates=[]
+ names=['cpu-1','async-1','parallel-1','async-2','cpu-fast-1','cpu-2'];rates=[]
  for name in names:
   t=json.loads((R/f'final/{name}-telemetry.json').read_text());rates.append(3072/t['outer_seconds'])
- fig,ax=plt.subplots(figsize=(9,4));ax.bar(names,rates,color=['gray','tab:blue','tab:orange','tab:blue','gray']);ax.set_ylabel('Games / second (outer wall incl. initialization)');ax.set_title('New3072-game identical bank: frozen width4 / complete6ply');fig.tight_layout();fig.savefig(R/'formal-throughput.png',dpi=160)
+ fig,ax=plt.subplots(figsize=(9,4));ax.bar(names,rates,color=['gray','tab:blue','tab:orange','tab:blue','tab:green','gray']);ax.set_ylabel('Games / second (outer wall incl. initialization)');ax.set_title('New3072-game identical bank: frozen width4 / complete6ply');fig.tight_layout();fig.savefig(R/'formal-throughput.png',dpi=160)
  hist={};dispatch={}
  for g in x['groups']:
   for k,v in g['batch_hist'].items():hist[int(k)]=hist.get(int(k),0)+v
