@@ -22,3 +22,13 @@ legality/score replay, numerical tolerance and model SHA checks. If failed, no l
 training. If passed, commit separate finite data/training/evaluation plan before
 strength outcomes. Record batch sizes, CPU/transfer/forward/wait, memory, utilization,
 nodes/NN requests, games/s and stage completion. New bank is not strength evidence.
+
+## Profiling-led correction, before new-bank timings
+Old24 development run: same-process frontier90.36s versus prior RPC200.6s and
+CPU8 12.55s. Root cProfile: generator advancement1.42s of2.63s, encode0.62s,
+observation0.46s, child copying0.38s (inclusive, not additive). Single CPU control
+is a bottleneck. Use eight CPU cohorts, each driving eight suspended games (64
+same-model games globally); exchange one bulk frontier per cohort via pipes. GPU
+receives all ready cohort requests per wave, no timed waiting window and no seed
+fragmentation. This is the one allowed correction. Keep same-process code/results.
+The new192 bank and two final repetitions decide adoption; no later tuning.
