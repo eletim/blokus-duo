@@ -38,7 +38,9 @@ def worker(wid,pipe,slots,offset,count,directory,fast):
    if fast:
     from blokus.generation_encoding import observe
     p._observation=lambda state:observe(state,p.channels)
-   todo=iter(tasks);active={};serial=0;completed=0;pack=0.;cpu=time.process_time();start=time.perf_counter();peak=0
+   todo=iter(tasks);active={};serial=0;completed=0;pack=0.;wait_seconds=0.;cpu=time.process_time();start=time.perf_counter();peak=0;outbox=[]
+   def flush():
+    if outbox:pipe.send(("requests",outbox.copy()));outbox.clear()
    def advance(slot,g,answer=None,initial=False):
     nonlocal serial,completed,pack,peak
     while True:
@@ -52,25 +54,29 @@ def worker(wid,pipe,slots,offset,count,directory,fast):
      b[slot]=obs[0];st[slot]=obs[1]
      if n:x[slot,:n]=obs[2];c[slot,:n]=obs[3]
      serial+=1;active[slot]=(g,serial,kind,n);peak=max(peak,len(active));pack+=time.perf_counter()-tick
-     pipe.send(('request',slot,serial,kind,n,time.perf_counter()));return
+     outbox.append(('request',slot,serial,kind,n,time.perf_counter()))
+     if len(outbox)>=8:flush()
+     return
    for slot in range(offset,offset+count):
     try:advance(slot,f.game(next(todo),p,directory),initial=True)
     except StopIteration:break
-   pipe.send(('occupancy',len(active),completed))
+   flush();pipe.send(('occupancy',len(active),completed))
    while active:
-    msg=pipe.recv()
+    wait_start=time.perf_counter();msg=pipe.recv();wait_seconds+=time.perf_counter()-wait_start
     if msg[0]!='reply':raise RuntimeError(msg)
     for slot,rid in msg[1]:
      g,expected,kind,n=active[slot];assert rid==expected
      answer=(l[slot,:n].copy(),float(v[slot])) if kind=='policy' else float(v[slot])
      previous=completed;advance(slot,g,answer)
      if completed!=previous:pipe.send(('occupancy',len(active),completed))
-   pipe.send(('done',dict(games=completed,cpu_seconds=time.process_time()-cpu,seconds=time.perf_counter()-start,pack_seconds=pack,peak_active=peak)))
+    flush()
+   pipe.send(('done',dict(games=completed,cpu_seconds=time.process_time()-cpu,seconds=time.perf_counter()-start,pack_seconds=pack,wait_seconds=wait_seconds,peak_active=peak)))
  except BaseException as exc:
   pipe.send(('error',repr(exc)));raise
  finally:pipe.close()
 
 def bench(bank_path,out,concurrency=512,batch=128,fast=False,graphs=False):
+ os.sched_setaffinity(0,{8})
  assert concurrency%8==0
  out=Path(out);out.mkdir(parents=True,exist_ok=True);assert not (out/'timing.json').exists()
  bank=json.loads(Path(bank_path).read_text());torch.set_num_threads(1);torch.use_deterministic_algorithms(True)
@@ -103,7 +109,8 @@ def bench(bank_path,out,concurrency=512,batch=128,fast=False,graphs=False):
        if not p.poll():break
        continue
       if msg[0]=='done':results.append(msg[1]);live.remove(p);break
-      assert msg[0]=='request';pending.append((p,msg))
+      assert msg[0]=='requests'
+      pending.extend((p,r) for r in msg[1])
       if not p.poll():break
     if not pending:continue
     selected=[pending.popleft() for _ in range(min(batch,len(pending)))];requests=[]
@@ -116,7 +123,7 @@ def bench(bank_path,out,concurrency=512,batch=128,fast=False,graphs=False):
      else:v[slot]=answer
      replies.setdefault(p,[]).append((slot,rid))
     for p,reply in replies.items():p.send(('reply',reply))
-   groups.append(dict(seed=seed,seconds=time.perf_counter()-tick,server_cpu_seconds=time.process_time()-server_cpu,workers=results,occupancy_trace=trace,graph_capture_seconds=getattr(ev,"capture_seconds",0),graph_count=len(getattr(ev,"graphs",{})),h2d_seconds=getattr(ev,"h2d_seconds",0),padding_real=getattr(ev,"padding_real",0),padding_slots=getattr(ev,"padding_slots",0),dispatch_hist=hist,batch_hist=ev.hist,pack_seconds=ev.pack_seconds,forward_seconds=ev.forward_seconds,return_seconds=ev.return_seconds,queue_wait_quantiles=np.quantile(queue_wait,[0,.5,.95,.99,1]).tolist() if queue_wait else []))
+   groups.append(dict(seed=seed,seconds=time.perf_counter()-tick,server_cpu_seconds=time.process_time()-server_cpu,workers=results,occupancy_trace=trace,graph_capture_seconds=getattr(ev,"capture_seconds",0),graph_count=len(getattr(ev,"graphs",{})),h2d_seconds=getattr(ev,"h2d_seconds",0),sync_dispatch_seconds=getattr(ev,"sync_dispatch_seconds",0),padding_real=getattr(ev,"padding_real",0),padding_slots=getattr(ev,"padding_slots",0),dispatch_hist=hist,batch_hist=ev.hist,pack_seconds=ev.pack_seconds,forward_seconds=ev.forward_seconds,return_seconds=ev.return_seconds,queue_wait_quantiles=np.quantile(queue_wait,[0,.5,.95,.99,1]).tolist() if queue_wait else []))
   result=dict(seconds=time.perf_counter()-start,initialization_seconds=init,concurrency=concurrency,batch_limit=batch,fast_encoding=fast,graphs=graphs,groups=groups,games=len(bank['games']),bank_sha=f.ref.e.sha(bank_path),peak_memory=torch.cuda.max_memory_allocated())
   f.ref.write(out/'timing.json',result);print(json.dumps(result),flush=True)
  finally:
