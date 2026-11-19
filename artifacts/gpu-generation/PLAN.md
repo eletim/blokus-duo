@@ -31,3 +31,11 @@ completed games/sec. Same CPU cores/worker count. No concurrent training/evaluat
 Development benchmark games are not training or strength confirmation samples.
 Exclude known prior train/dev/evaluation starts using saved exclusions/index; audit
 all generated visited states and mark any overlaps; do not turn them into labels.
+
+## Implementation correction before formal speed decision
+The first broker wiring used the custom value-evaluator slot, which suppresses
+policy/value shared-cache reuse (appropriate for a learned replacement value, not
+for the same frozen model on GPU). Preserve those runs under `pilot-v0`. Route the
+same frozen value through an optional transport in `value_only` instead; test exact
+cache/node-count equality with an identical CPU backend. Repeat the original four
+measurements with this correction. No batch/depth/model/gate change or rescue tuning.
