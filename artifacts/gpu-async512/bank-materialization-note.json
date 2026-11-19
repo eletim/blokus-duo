@@ -1,0 +1,6 @@
+{
+  "initial_check": "quality/bank.json.gz used original compact bytes, unlike canonical pretty formal banks; the first all-bank restoration check rejected the expected hash",
+  "fix": "accept only original or canonical bytes matching the requested SHA; never change source archives or measured banks",
+  "regression_tests": 3,
+  "measurement_code_changed": false
+}
