@@ -16,6 +16,7 @@ def child(s,m):
 class FrontierSearch:
  def __init__(self,policy,budget_ms=500,width=4,max_depth=6,prune=True,value_evaluator=None):
   if budget_ms<=0 or width<1 or max_depth not in (2,4,6):raise ValueError('invalid limits')
+  if value_evaluator is not None:raise ValueError('FrontierSearch supports only the frozen policy value head')
   self.value_evaluator=value_evaluator;self.policy=policy;self.budget_ms=budget_ms;self.width=width;self.max_depth=max_depth;self.prune=prune;self.stats={}
  def act(self,s,rng):
   start=time.perf_counter();deadline=start+self.budget_ms/1000;tt={};pol={};leaves={};stats=dict(depth=0,nodes=0,nn_policy_calls=0,nn_value_calls=0,cache_hits=0,cutoffs=0,stages=[],fallback=True,forced_pass=False)

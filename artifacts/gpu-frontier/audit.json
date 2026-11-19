@@ -1,0 +1,162 @@
+{
+  "results": {
+    "cpu-1": {
+      "seconds": 96.54281231004279,
+      "initialization_seconds": 5.165217521018349,
+      "games_per_second": 1.9887549927942938,
+      "nodes": 4786820,
+      "nn_policy": 1688801,
+      "nn_value": 2818142,
+      "nonpass": 4644,
+      "depth6": 4644,
+      "moves": 5263,
+      "elapsed_ms_quantiles": [
+        140.53991402033716,
+        288.92848464893177,
+        335.1049926318228,
+        432.38316907081753
+      ],
+      "visited": 5263,
+      "saved_overlap": 0,
+      "training_overlap": 0
+    },
+    "parallel-1": {
+      "seconds": 199.16626486100722,
+      "initialization_seconds": 0.9254146990133449,
+      "games_per_second": 0.9640186812460013,
+      "nodes": 4787780,
+      "nn_policy": 1689251,
+      "nn_value": 2818641,
+      "nonpass": 4644,
+      "depth6": 4644,
+      "moves": 5263,
+      "elapsed_ms_quantiles": [
+        2133.6414091056213,
+        4228.494811209383,
+        5024.220683514141,
+        6716.787317069247
+      ],
+      "visited": 5263,
+      "saved_overlap": 0,
+      "training_overlap": 0
+    },
+    "parallel-2": {
+      "seconds": 196.60742471297272,
+      "initialization_seconds": 0.9271434630500153,
+      "games_per_second": 0.9765653574899367,
+      "nodes": 4787780,
+      "nn_policy": 1689251,
+      "nn_value": 2818641,
+      "nonpass": 4644,
+      "depth6": 4644,
+      "moves": 5263,
+      "elapsed_ms_quantiles": [
+        2110.9622250078246,
+        4150.227017211727,
+        4875.929199943785,
+        6603.440807084553
+      ],
+      "visited": 5263,
+      "saved_overlap": 0,
+      "training_overlap": 0
+    },
+    "cpu-2": {
+      "seconds": 96.36859507893678,
+      "initialization_seconds": 5.2209348030155525,
+      "games_per_second": 1.9923503070967288,
+      "nodes": 4786820,
+      "nn_policy": 1688801,
+      "nn_value": 2818142,
+      "nonpass": 4644,
+      "depth6": 4644,
+      "moves": 5263,
+      "elapsed_ms_quantiles": [
+        140.92543500009924,
+        290.2917609550058,
+        338.57713514007634,
+        439.2187939956784
+      ],
+      "visited": 5263,
+      "saved_overlap": 0,
+      "training_overlap": 0
+    }
+  },
+  "ratios_including_init": [
+    0.5083071422795082,
+    0.5142873514241116
+  ],
+  "ratios_excluding_init": [
+    0.48473476357764417,
+    0.4901574557503377
+  ],
+  "games_equal": 382,
+  "paired_games": 384,
+  "same_state_moves": 10502,
+  "move_agreement": 0.9998095600837935,
+  "max_same_state_root_error": 1.1920928955078125e-06,
+  "divergences": [
+    {
+      "game": "1751402-24.json.gz",
+      "repeat": 1,
+      "ply": 27,
+      "root_error": 2.0116567611694336e-07,
+      "gpu_scores": [
+        -0.07800088822841644,
+        -0.07800062000751495,
+        -0.6289153099060059,
+        -0.6606214642524719
+      ],
+      "cpu_scores": [
+        -0.07800068706274033,
+        -0.07800068706274033,
+        -0.6289153099060059,
+        -0.6606215238571167
+      ],
+      "cpu_move": [
+        8,
+        1,
+        0,
+        8
+      ],
+      "gpu_move": [
+        3,
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "game": "1751402-24.json.gz",
+      "repeat": 2,
+      "ply": 27,
+      "root_error": 2.0116567611694336e-07,
+      "gpu_scores": [
+        -0.07800088822841644,
+        -0.07800062000751495,
+        -0.6289153099060059,
+        -0.6606214642524719
+      ],
+      "cpu_scores": [
+        -0.07800068706274033,
+        -0.07800068706274033,
+        -0.6289153099060059,
+        -0.6606215238571167
+      ],
+      "cpu_move": [
+        8,
+        1,
+        0,
+        8
+      ],
+      "gpu_move": [
+        3,
+        1,
+        3,
+        2
+      ]
+    }
+  ],
+  "quality": true,
+  "gate": false,
+  "bank_sha": "9d1da50e9b50262cef75477b7fdbab40703d150a226dd3d14faa7069fea66207"
+}

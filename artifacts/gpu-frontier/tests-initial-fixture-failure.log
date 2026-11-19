@@ -1,0 +1,22 @@
+........................................................................ [ 58%]
+...........................F........................                     [100%]
+=================================== FAILURES ===================================
+________________ test_complete_depth_fallback_and_unpruned_tree ________________
+
+    def test_complete_depth_fallback_and_unpruned_tree():
+     torch.set_num_threads(1);p=PPOAgent(1751401,'cpu',backend='native');s=State();r=random.Random(12)
+     for _ in range(30):
+      if s.done:break
+      play(s,p.act(s,r),validate=True)
+     if s.done:return
+     a=FrontierSearch(p,60000,max_depth=4,prune=True);b=FrontierSearch(p,60000,max_depth=4,prune=False)
+     ma=run_frontier([a.act(s,random.Random(5))],FrontierEvaluator(p))[0]
+     mb=run_frontier([b.act(s,random.Random(5))],FrontierEvaluator(p))[0]
+>    assert ma==mb and a.stats['root_scores']==b.stats['root_scores']
+                       ^^^^^^^^^^^^^^^^^^^^^^
+E    KeyError: 'root_scores'
+
+tests/test_suspended_frontier.py:43: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_suspended_frontier.py::test_complete_depth_fallback_and_unpruned_tree
+1 failed, 123 passed in 23.23s
