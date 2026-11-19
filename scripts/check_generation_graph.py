@@ -19,8 +19,11 @@ for seed in f.ref.e.SEEDS:
   req=requests[:n];a=ref.batch(req);b=ev.batch(req)
   for (kind,_),x,y in zip(req,a,b):
    if kind=='policy':
+    assert np.isfinite(y[0]).all() and np.isfinite(y[1])
     maxlogit=max(maxlogit,float(np.max(np.abs(x[0]-y[0]))));maxvalue=max(maxvalue,abs(x[1]-y[1]));agree+=int(np.argmax(x[0])==np.argmax(y[0]));total+=1
-   else:maxvalue=max(maxvalue,abs(x-y))
+   else:
+    assert np.isfinite(y)
+    maxvalue=max(maxvalue,abs(x-y))
  assert maxlogit<=2e-5 and maxvalue<=2e-5,(maxlogit,maxvalue)
  rows.append(dict(seed=seed,max_logit=maxlogit,max_value=maxvalue,argmax_agree=agree,total=total,graphs=len(ev.graphs),capture_seconds=ev.capture_seconds))
 f.ref.write('artifacts/gpu-async512/graph-check.json',rows)
