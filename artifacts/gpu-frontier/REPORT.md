@@ -30,10 +30,16 @@ The historical3072 games/24.98min is ~0.488s/game; old24 games/12.55s is ~0.523s
 
 ## Decision and limits
 The fixed throughput gate failed. No24576-game expansion, additional training, checkpoint selection or strength evaluation was run. This is a completed finite engineering comparison, not completion of the user’s stronger-AI goal. The previous3072-game A remains unchanged.
-Remaining costs include CPU encode/native observations/state copies and Python search advancement, small policy/value-separated GPU calls, and bulk IPC/barrier tails. A possible next bounded hypothesis is native CPU state/feature packing plus shared-buffer asynchronous cohorts; it has not been implemented or demonstrated here. No worker/window sweep or teacher-depth reduction was used to rescue results.
+Remaining costs include CPU encode/native observations/state copies and Python search advancement, small policy/value-separated GPU calls, and bulk IPC/barrier tails. The current bulk scheduler has a wave barrier: it receives one frontier from every active cohort before launching GPU work, so CPU advancement and GPU evaluation do not overlap across waves. This limitation is measured together with IPC and straggler time, not isolated causally. A possible next bounded hypothesis is native CPU state/feature packing plus shared-buffer asynchronous cohorts; it has not been implemented or demonstrated here. No worker/window sweep or teacher-depth reduction was used to rescue results.
 
 ## Restart and provenance
 Atomic complete-game gzip records include task, prefix, initial RNG, all moves/scores and search stats. Restart skips task-matching completed records and regenerates interrupted games from their saved RNG; suspended stacks/partial WDL are not checkpointed. A different CUDA batch shape after restart can change floating ties, so semantic/numerical reproducibility must not be advertised as universal bit reproducibility. See resume-check.json and batch-numerics.json.
 The new bank excludes saved historical starts/states and the referenced original training index. Old24 is development only. No bank here is a playing-strength confirmation. Historical giant indexes/data are referenced rather than duplicated.
 
 Reproduction: README.md, PLAN.md, scripts/run_frontier_comparison.py, audit_frontier.py and plot_frontier.py. throughput.png shows throughput and batching, not a learning curve.
+
+## Final validation
+124 tests passed after correcting a test-only forced-pass fixture; the initial failure log is retained. A history-free source archive at d39f0ee loaded all three frozen gen3 exports and prior3072A exports, completed CPU games and passed3 Python-fallback scheduler tests. CUDA was hidden; the installed torch build was still2.7.1+cu128, so this is a CPU-device check, not a separate CPU-only-wheel installation. No model was reserialized.
+Measured initialization includes model/process setup and warmup after Python imports; outer-process telemetry is only1Hz. Formal work plus measured initialization totals about10minutes. Resume checks passed for191 unchanged game files and one regenerated game; stack-level checkpoints are not provided.
+
+日本語要約: 64探索を中断・再開し同一モデルのfrontierをまとめる実装は完了。実batch平均25.15まで改善したが、新192局×2反復でCPU8約96秒に対しGPU約197〜199秒、速度条件未達のため不採用。追加24576局生成・学習・棋力評価は実施せず、ユーザーの強化目的は未達。CPU探索進行・IPC・全cohort待ちとGPUの小規模呼出が残る。前段の同期RPC失敗と既存候補は保持。
