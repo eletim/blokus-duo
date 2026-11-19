@@ -12,6 +12,7 @@ Run from repository root with the documented project environment and optional na
 ```bash
 export PYTHONPATH=.:scripts OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
 python -m blokus.ppo_native build
+gzip -dk artifacts/gpu-async512/final/bank.json.gz  # once in a fresh checkout
 python scripts/async_generation.py --bank artifacts/gpu-async512/final/bank.json \
   --out /path/to/new-generation --concurrency 512 --batch 128 --fast-encoding --graphs
 ```
@@ -31,3 +32,5 @@ On this machine the interpreter is `/home/eletim/blokus-duo-ai/.venv/bin/python`
 Three quantities are distinct: active game slots, valid requests in an NN call, and padded CUDA graph batch rows. The coordinator dispatch cap is128; policy/value requests are split, and graph batch rows round up to powers of two with a minimum of8. Candidate padding is recorded separately as `padding_slots/padding_real`. Graphs can save host dispatch time while doing additional padded GPU arithmetic; no claim of lower kernel FLOPs follows from faster end-to-end generation.
 
 Postprocessing uses the preregistered per-NN tolerance on matched inputs. Raw root-score array differences are diagnostic only: alpha-beta can return bounds, and float ties may change candidate ordering. They are not silently treated as paired exact minimax values. The quality gate is legal completed trajectories, disjoint states, frozen hashes, CPU exact reference checks, matched-input NN tolerance and at least99% same-state action agreement.
+
+This accelerated generator specifically requires CUDA plus the native observation backend and Frozen gen3 four-channel models. It is not a replacement for the public CPU-only CLI; `python -m blokus.ppo_play --generation gen3 --device cpu --backend python` remains available. Installation uses the repository environment/locked dependencies; measured hardware was RTX5090 and Ryzen9950X3D, Python3.12.14, torch2.7.1+cu128, NumPy2.5.4. Do not assume the measured ratio on a different CPU/GPU or candidate distribution.

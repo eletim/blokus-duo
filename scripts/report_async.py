@@ -9,6 +9,25 @@ for name in ('cpu-1','async-1','parallel-1','async-2','cpu-fast-1','cpu-2'):
  actual=sum(k*v for k,v in hist.items())/sum(hist.values()) if hist else None
  util=[float(s['gpu'].split(',')[0]) for s in tele['samples']];mem=[float(s['gpu'].split(',')[1]) for s in tele['samples']]
  row=dict(work_seconds=x['seconds'],outer_seconds=tele['outer_seconds'],init_seconds=x['initialization_seconds'],work_games_s=3072/x['seconds'],outer_games_s=3072/tele['outer_seconds'],actual_batch_mean=actual,gpu_util_mean=float(np.mean(util)),gpu_memory_max_mib=max(mem),cuda_allocated_peak=x.get('peak_memory'),capture_seconds=sum(g.get('graph_capture_seconds',0) for g in groups),pack_seconds=sum(g.get('pack_seconds',0) for g in groups),forward_seconds=sum(g.get('forward_seconds',0) for g in groups),h2d_seconds=sum(g.get('h2d_seconds',0) for g in groups),return_seconds=sum(g.get('return_seconds',0) for g in groups),sync_dispatch_seconds=sum(g.get('sync_dispatch_seconds',0) for g in groups))
+ cpu_by_pid={}
+ for sample in tele['samples']:
+  for proc in sample['processes']:cpu_by_pid[proc['pid']]=max(cpu_by_pid.get(proc['pid'],0),proc['cpu_seconds'])
+ row['sampled_cpu_seconds_lower_bound']=sum(cpu_by_pid.values())
+ worker_rows=[w for g in groups for w in g.get('workers',[])] or x.get('workers',[])
+ row['worker_cpu_seconds']=sum(w['cpu_seconds'] for w in worker_rows)
+ row['worker_wait_seconds']=sum(w.get('wait_seconds',0) for w in worker_rows)
+ row['coordinator_cpu_seconds']=sum(g.get('server_cpu_seconds',0) for g in groups) or x.get('server_cpu_seconds',0)
+ row['candidate_padding_ratio']=sum(g.get('padding_slots',0) for g in groups)/max(1,sum(g.get('padding_real',0) for g in groups))
+ row['transfer_bytes']=sum(g.get('transfer_bytes',0) for g in groups)
+ row['queue_wait_quantiles_by_seed']={str(g['seed']):g.get('queue_wait_quantiles',[]) for g in groups}
+ occupancy=[]
+ for g in groups:
+  tr=g.get('occupancy_trace',[]);duration=0.;completed=0;area=0.;full_time=0.;full_completed=0
+  for previous,current in zip(tr,tr[1:]):
+   dt=current[0]-previous[0];area+=dt*previous[1];duration+=dt
+   if previous[1]==512:full_time+=dt;full_completed+=current[3]-previous[3]
+  occupancy.append(dict(seed=g['seed'],mean_active=area/duration if duration else None,full512_seconds=full_time,full512_completed=full_completed,full512_games_s=full_completed/full_time if full_time else None,peak=max([t[1] for t in tr] or [0])))
+ row['occupancy_by_seed']=occupancy
  row['audit']=audit['results'][str(F/name)];row['evaluated_nodes_s']=row['audit']['nodes']/x['seconds'];row['actual_nn_requests']=sum(k*v for k,v in hist.items()) if hist else row['audit']['nn_policy']+row['audit']['nn_value']+row['audit']['moves'];row['nn_requests_s']=row['actual_nn_requests']/x['seconds'];rows[name]=row
 ratios=[rows[f'cpu-{i}']['outer_seconds']/rows[f'async-{i}']['outer_seconds'] for i in (1,2)]
 # Root index scores can be alpha-beta bounds or reordered ties; the predeclared

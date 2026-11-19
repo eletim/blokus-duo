@@ -19,3 +19,11 @@ if (R/'final/async-1/timing.json').exists():
  for name in names:
   t=json.loads((R/f'final/{name}-telemetry.json').read_text());rates.append(3072/t['outer_seconds'])
  fig,ax=plt.subplots(figsize=(9,4));ax.bar(names,rates,color=['gray','tab:blue','tab:orange','tab:blue','gray']);ax.set_ylabel('Games / second (outer wall incl. initialization)');ax.set_title('New3072-game identical bank: frozen width4 / complete6ply');fig.tight_layout();fig.savefig(R/'formal-throughput.png',dpi=160)
+ hist={};dispatch={}
+ for g in x['groups']:
+  for k,v in g['batch_hist'].items():hist[int(k)]=hist.get(int(k),0)+v
+  for k,v in g['dispatch_hist'].items():dispatch[int(k)]=dispatch.get(int(k),0)+v
+ fig,axes=plt.subplots(1,2,figsize=(11,3.7))
+ for ax,h,title in zip(axes,(hist,dispatch),('Valid requests per NN call','Ready requests per scheduler dispatch')):
+  keys=sorted(h);total=sum(h.values());ax.bar(keys,[100*h[k]/total for k in keys]);ax.set_xlabel('Requests');ax.set_ylabel('Calls (%)');ax.set_title(title);ax.set_xlim(0,130)
+ fig.suptitle('Async512 formal run1: batch distributions, not game-slot count');fig.tight_layout();fig.savefig(R/'batch-distribution.png',dpi=160);plt.close(fig)

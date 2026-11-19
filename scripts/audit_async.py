@@ -11,7 +11,7 @@ bank=json.loads(Path(a.bank).read_text());assert len({g['rng_seed'] for g in ban
 assert len({json.dumps(g['rng_state']) for g in bank['games']})==len(bank['games'])
 assert all(state_hash(f.ref.e.state(g['prefix']['moves']))==g['prefix']['state_hash'] for g in bank['games'])
 assert all(f.ref.e.sha(f'artifacts/ppo-gen3/seed-{s}.pt')==h for s,h in bank['models'].items())
-ex=set(json.load(gzip.open(a.exclusions,'rt'))['states']) if a.exclusions else set(json.loads(Path('artifacts/gpu-generation/excluded.json').read_text())['states']);idx=np.load(f.ref.e.INDEX,mmap_mode='r');out={};divergences=[]
+ex=set(json.load(gzip.open(a.exclusions,'rt'))['states']) if a.exclusions else set(json.loads(Path('artifacts/gpu-generation/excluded.json').read_text())['states']);idx=np.load(f.ref.e.INDEX,mmap_mode='r');out={};divergences=[];score_differences=[]
 for directory in a.directories:
  root=Path(directory);rows=[];visited=set();equal=0;paired=0;actions=0;same=0;maxerr=0.;nodes=0
  for task in bank['games']:
@@ -32,8 +32,9 @@ for directory in a.directories:
       assert x.get(key)==y.get(key),(root,name,j,key)
     xx=x.get('root_scores',[]);yy=y.get('root_scores',[]);assert len(xx)==len(yy)
     err=max([abs(u-v) for u,v in zip(xx,yy)] or [0]);maxerr=max(maxerr,err)
+    if err>2e-5:score_differences.append(dict(directory=directory,game=name,ply=prefix+j,root_error=err,reference_scores=yy,new_scores=xx,same_action=d['moves'][prefix+j]==ref['moves'][prefix+j]))
     if d['moves'][prefix+j]!=ref['moves'][prefix+j]:divergences.append(dict(directory=directory,game=name,ply=prefix+j,root_error=err,reference_scores=yy,new_scores=xx))
  out[directory]=dict(games=len(bank['games']),moves=len(rows),nodes=sum(x['nodes'] for x in rows),nn_policy=sum(x['nn_policy_calls'] for x in rows),nn_value=sum(x['nn_value_calls'] for x in rows),cutoffs=sum(x['cutoffs'] for x in rows),depth6=sum(x['depth']==6 for x in rows if not x['forced_pass']),nonpass=sum(not x['forced_pass'] for x in rows),visited=len(visited),saved_overlap=len(visited&ex),training_overlap=sum(f.ref.e.contains(idx,h) for h in visited),paired_games=paired,equal_trajectories=equal,same_state_moves=actions,action_agreement=same/actions if actions else None,max_same_state_root_error=maxerr)
  assert not out[directory]['saved_overlap'] and not out[directory]['training_overlap']
  print(directory,'audited',len(bank['games']),flush=True)
-f.ref.write(a.output,dict(results=out,divergences=divergences,bank_sha=f.ref.e.sha(a.bank)))
+f.ref.write(a.output,dict(results=out,divergences=divergences,score_differences=score_differences,bank_sha=f.ref.e.sha(a.bank)))

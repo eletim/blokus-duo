@@ -31,9 +31,9 @@ for i in range(a.workers):
  log=open(r/f'audit-{i}.log','w');cmd=[sys.executable,'scripts/audit_async.py','--bank',str(bp),'--output',str(r/f'audit-{i}.json'),'--reference',str(r/'cpu-1'),'--exclusions',str(prior)]+dirs
  procs.append((subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT),log))
 for proc,log in procs:assert proc.wait()==0;log.close()
-out={};div=[]
+out={};div=[];score_differences=[]
 for i in range(a.workers):
- d=json.loads((r/f'audit-{i}.json').read_text());div+=d['divergences']
+ d=json.loads((r/f'audit-{i}.json').read_text());div+=d['divergences'];score_differences+=d['score_differences']
  for name,row in d['results'].items():
   z=out.setdefault(name,{})
   for k,v in row.items():
@@ -41,4 +41,4 @@ for i in range(a.workers):
    z[k]=max(z.get(k,0),v) if k=='max_same_state_root_error' else z.get(k,0)+v
   z['agree_count']=z.get('agree_count',0)+round(row['action_agreement']*row['same_state_moves'])
 for z in out.values():z['action_agreement']=z['agree_count']/z['same_state_moves']
-f.ref.write(r/'audit.json',dict(results=out,divergences=div,bank_sha=f.ref.e.sha(r/'bank.json'),visited_note='sum of unique states within disjoint audit shards; overlap checks examine every state'))
+f.ref.write(r/'audit.json',dict(results=out,divergences=div,score_differences=score_differences,bank_sha=f.ref.e.sha(r/'bank.json'),visited_note='sum of unique states within disjoint audit shards; overlap checks examine every state'))
