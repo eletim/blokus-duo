@@ -30,11 +30,14 @@ def main():
  best_epoch=int(np.argmin(np.mean([[r['dev_mse'] for r in x['curve']] for x in learns],axis=0)))
  timing=validation if confirmation is None else confirmation
  times='\n'.join(f"- {p}："+'、'.join(f"{k}平均{s['mean_ms']:.1f}ms・6ply完了{100*s['depth6']:.2f}%・550ms超過{100*s['over_550']:.2f}%" for k,s in v['stats'].items()) for p,v in timing.items())
+ conclusion=('前回の3,072局版Aを含む3対照への改善条件を達成しました。' if passed else '前回の3,072局版Aを超えるための条件は未達です。前回Aの候補を維持します。')
+ if confirmation and not passed and all(confirmation[p]['point_adjusted_ci'][0]>.5 for p in ('AF','AC')) and confirmation['AQ']['point_adjusted_ci'][0]<=.5:
+  conclusion='今回の6,144局版は、現行gen3と同量再学習した従来構造には優位でしたが、前回の3,072局版Aへの上積みは確認できませんでした。増量版への差し替えは行わず、前回のAを候補として維持します。これは今回の記録に対する結論で、学習の一般的な限界の証明ではありません。'
  text=f'''# A評価器：学習対局3,072→6,144局の追加検証
 
 6,144局版Aの独立確認条件：**{'達成' if passed else '未達'}**。main・Frozen gen3・Webは変更していません。
 
-今回の6,144局版は、現行gen3と同量再学習した従来構造には優位でしたが、前回の3,072局版Aへの上積みは確認できませんでした。増量版への差し替えは行わず、前回のAを候補として維持します。これは今回の記録に対する結論で、学習の一般的な限界の証明ではありません。
+{conclusion}
 
 ## 目的と固定条件
 
