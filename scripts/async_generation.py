@@ -82,7 +82,7 @@ def bench(bank_path,out,concurrency=512,batch=128,fast=False,graphs=False):
  bank=json.loads(Path(bank_path).read_text())
  assert len({(g['seed'],g['id']) for g in bank['games']})==len(bank['games'])
  assert len({g['rng_seed'] for g in bank['games']})==len(bank['games'])
- config=dict(bank_sha=f.ref.e.sha(bank_path),concurrency=concurrency,batch=batch,fast_encoding=fast,graphs=graphs,width=4,depth=6,torch=torch.__version__,models=bank['models'])
+ config=dict(bank_sha=f.ref.e.sha(bank_path),concurrency=concurrency,batch=batch,fast_encoding=fast,graphs=graphs,width=4,depth=6,torch=torch.__version__,models=bank['models'],source_shas={path:f.ref.e.sha(path) for path in ('scripts/async_generation.py','scripts/frontier_generation.py','blokus/ppo_frontier.py','blokus/generation_encoding.py','blokus/generation_graph.py','blokus/ppo_policy.py','blokus/ppo_native.py','blokus/ppo_native.c','blokus/engine.py')})
  if (out/'run.json').exists():assert json.loads((out/'run.json').read_text())==config,'resume configuration mismatch'
  else:f.ref.write(out/'run.json',config)
  torch.set_num_threads(1);torch.use_deterministic_algorithms(True)
