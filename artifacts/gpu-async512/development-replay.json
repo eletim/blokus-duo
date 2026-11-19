@@ -1,0 +1,91 @@
+{
+  "directories": {
+    "controlled-128": {
+      "game_copies": 512,
+      "moves": 13988,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    },
+    "controlled-256": {
+      "game_copies": 512,
+      "moves": 13992,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    },
+    "controlled-512": {
+      "game_copies": 512,
+      "moves": 13990,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    },
+    "controlled-64": {
+      "game_copies": 512,
+      "moves": 14006,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    },
+    "curve-128": {
+      "game_copies": 512,
+      "moves": 13991,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    },
+    "curve-256": {
+      "game_copies": 512,
+      "moves": 13992,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    },
+    "curve-512": {
+      "game_copies": 512,
+      "moves": 13990,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    },
+    "curve-64": {
+      "game_copies": 512,
+      "moves": 13977,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    },
+    "dev24-v1": {
+      "game_copies": 24,
+      "moves": 653,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    },
+    "dev512-v2": {
+      "game_copies": 512,
+      "moves": 13990,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    },
+    "dev512-v3": {
+      "game_copies": 512,
+      "moves": 13992,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    },
+    "quality/cpu-1": {
+      "game_copies": 24,
+      "moves": 654,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    },
+    "quality/cpu-fast-1": {
+      "game_copies": 24,
+      "moves": 654,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    },
+    "restart": {
+      "game_copies": 24,
+      "moves": 654,
+      "all_legal_and_terminal": true,
+      "all_nonpass_complete6": true
+    }
+  },
+  "total_game_copies": 5216,
+  "unique_tasks": 536,
+  "note": "development banks are intentionally reused across implementations and concurrency curves, not independent training/evaluation samples; formal separation is audited separately"
+}

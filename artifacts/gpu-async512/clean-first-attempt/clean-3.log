@@ -1,0 +1,112 @@
+.....s.....F.Fs...................................s........s..s......... [ 55%]
+.....s..F................................................                [100%]
+=================================== FAILURES ===================================
+_________________ test_saved_game_order_and_coordinate_checker _________________
+
+    def test_saved_game_order_and_coordinate_checker():
+>    for s in states():
+              ^^^^^^^^
+
+tests/test_cpu_geometry.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/bench_ppo_cpu.py:21: in states
+    for game in json.loads(Path('artifacts/ppo-cpu-throughput/games.json').read_text()):
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/eletim/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('artifacts/ppo-cpu-throughput/games.json'), mode = 'r'
+buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/ppo-cpu-throughput/games.json'
+
+/home/eletim/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/pathlib.py:1013: FileNotFoundError
+_______________________ test_network_and_rng_exact[cpu] ________________________
+
+device = 'cpu'
+
+    @pytest.mark.parametrize('device',['cpu','cuda'])
+    def test_network_and_rng_exact(device):
+     if device=='cuda' and not torch.cuda.is_available():pytest.skip('no CUDA')
+     ai.seed_all(1730000);agent=p.PPOAgent(1401,device,generation="gen2")
+>    for s in states()[::8]:
+              ^^^^^^^^
+
+tests/test_cpu_geometry.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/bench_ppo_cpu.py:21: in states
+    for game in json.loads(Path('artifacts/ppo-cpu-throughput/games.json').read_text()):
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/eletim/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('artifacts/ppo-cpu-throughput/games.json'), mode = 'r'
+buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/ppo-cpu-throughput/games.json'
+
+/home/eletim/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/pathlib.py:1013: FileNotFoundError
+______________ test_candidates_and_shared_continuations_are_pure _______________
+
+    def test_candidates_and_shared_continuations_are_pure():
+>       initialize_worker();s=State();rng=random.Random(4)
+        ^^^^^^^^^^^^^^^^^^^
+
+tests/test_ranking.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+blokus/ranking_data.py:20: in initialize_worker
+    AGENTS=[Agent('heuristic:search','cpu'),Agent('artifacts/research-a2/selected.json:search','cpu')]
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+blokus/research.py:173: in __init__
+    ck = json.loads(Path(path).read_text())
+                    ^^^^^^^^^^^^^^^^^^^^^^
+/home/eletim/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('artifacts/research-a2/selected.json'), mode = 'r'
+buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/research-a2/selected.json'
+
+/home/eletim/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/pathlib.py:1013: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_cpu_geometry.py::test_saved_game_order_and_coordinate_checker
+FAILED tests/test_cpu_geometry.py::test_network_and_rng_exact[cpu] - FileNotF...
+FAILED tests/test_ranking.py::test_candidates_and_shared_continuations_are_pure
+3 failed, 120 passed, 6 skipped in 19.06s

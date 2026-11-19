@@ -12,7 +12,8 @@ Run from repository root with the documented project environment and optional na
 ```bash
 export PYTHONPATH=.:scripts OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
 python -m blokus.ppo_native build
-gzip -dk artifacts/gpu-async512/final/bank.json.gz  # once in a fresh checkout
+python scripts/materialize_async_bank.py artifacts/gpu-async512/final/bank.json.gz \
+  --expected-sha b4afbfa6626a8c6ad2c94d2353a695b7577bd067c8ffc21dc556298e6fe92e16
 python scripts/async_generation.py --bank artifacts/gpu-async512/final/bank.json \
   --out /path/to/new-generation --concurrency 512 --batch 128 --fast-encoding --graphs
 ```
@@ -25,7 +26,7 @@ The earlier24-game CPU12.5s and3072-game approximately25min are roughly1.9 and2.
 
 Timing units matter: eager/barrier `pack_seconds` includes host packing and synchronized transfer wall; its `forward_seconds` is host wall through CUDA completion. Graph packing is host packing only, while `h2d_seconds` and `forward_seconds` use CUDA stream events. `sync_dispatch_seconds` is the remaining host dispatch/wait interval and `return_seconds` includes D2H/result handling. Event spans can include stream scheduling gaps; they are not pure summed kernel durations. These component columns must not be directly treated as equivalent kernel-time measurements. The standalone profiler is collected after throughput timing. Worker CPU/wait totals overlap across workers and cannot be added to wall time. Device-wide utilization includes the existing desktop/context.
 
-For exact full-series reproduction, use measured source commit61e6eb3 in a separate checkout, build the optional native backend, decompress `final/bank.json.gz`, and run `scripts/run_async_final.py`. That commit contains the precommitted bank/plan but no completed formal timing outputs. The latest branch retains all results; use a fresh output directory when calling the generation CLI. A resumed run's elapsed time covers only remaining work: do not divide total bank size by that partial runtime to claim throughput.
+For exact full-series reproduction, use measured source commit61e6eb3 in a separate checkout, build the optional native backend, restore canonical `final/bank.json` with the latest stdlib-only `materialize_async_bank.py` (which can target a separate checkout), and run `scripts/run_async_final.py`. That commit contains the precommitted bank/plan but no completed formal timing outputs. The latest branch retains all results; use a fresh output directory when calling the generation CLI. A resumed run's elapsed time covers only remaining work: do not divide total bank size by that partial runtime to claim throughput.
 
 On this machine the interpreter is `/home/eletim/blokus-duo-ai/.venv/bin/python`. Generic `python` examples assume that environment is activated. Archived `*-games.tar.gz` files contain the original per-game gzip bytes; create the corresponding directory and extract the archive there for replay. Full old training history/index files are referenced by SHA, not copied into the generation/export path.
 
@@ -44,3 +45,9 @@ Shared slots reserve up to4096 legal candidates each. Exceeding this capacity ra
 `evaluated_nodes_s` counts the search's evaluate calls and `nn_requests_s` counts valid NN inputs, including repeated root inputs. Neither is a count of globally unique board states. Completed games per outer wall remains the primary throughput metric.
 
 Paired action agreement counts aligned states before the first trajectory divergence in each game (identical prefixes), not all possible later transpositions. Full-trajectory equality, terminal-score equality, terminal-WDL equality and maximum terminal score change are also reported so rare rounding differences are not hidden by a high per-action agreement.
+
+NN-request and padding counters describe real search-request replays. Graph warmup/capture performs extra dummy computation that is not counted as teacher nodes or valid requests; its wall cost is included in the run and separately recorded as capture time. There is no speculative sibling expansion hidden in the search-node counts.
+
+Compressed JSON is materialized using the original canonical indentation/newline before SHA checking. A plain gunzip of a compact JSON archive can have identical data but different bytes; the helper tests original and canonical bytes against the requested hash, restores the measured bank hash and refuses conflicting existing files. In a separate61e6eb3 worktree, invoke this helper from the latest checkout against the archived bank path before running the original benchmark.
+
+A separately preregistered4,096-game first-seed replenishment diagnostic is in `STEADY.md` and `steady-summary.json`. Its completion1,024→3,072 interior window measures active slots and rate; it has no paired CPU run and does not replace or enlarge the formal speed comparison.
