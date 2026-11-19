@@ -26,11 +26,15 @@ def main():
  else:ctext='選択条件未達のため、独立確認は実施していません。追加の調整・標本追加は行いません。';passed=False
  e.write(R/'report-summary.json',dict(candidate_passed=passed,validation_passed=selection['passed'],paired_curve=paired,dev_mse=devs,train_games=6144,train_states=states,updates_per_model=updates))
  pairs='\n'.join(f"- {p}：差{100*v['difference']:+.2f}ポイント、95%区間{100*v['ci95'][0]:+.2f}～{100*v['ci95'][1]:+.2f}ポイント。" for p,v in paired.items())
+ devtext='、'.join(f'{k}: {v:.4f}' for k,v in devs.items())
+ best_epoch=int(np.argmin(np.mean([[r['dev_mse'] for r in x['curve']] for x in learns],axis=0)))
  timing=validation if confirmation is None else confirmation
  times='\n'.join(f"- {p}："+'、'.join(f"{k}平均{s['mean_ms']:.1f}ms・6ply完了{100*s['depth6']:.2f}%・550ms超過{100*s['over_550']:.2f}%" for k,s in v['stats'].items()) for p,v in timing.items())
  text=f'''# A評価器：学習対局3,072→6,144局の追加検証
 
 6,144局版Aの独立確認条件：**{'達成' if passed else '未達'}**。main・Frozen gen3・Webは変更していません。
+
+今回の6,144局版は、現行gen3と同量再学習した従来構造には優位でしたが、前回の3,072局版Aへの上積みは確認できませんでした。増量版への差し替えは行わず、前回のAを候補として維持します。これは今回の記録に対する結論で、学習の一般的な限界の証明ではありません。
 
 ## 目的と固定条件
 
@@ -58,6 +62,8 @@ def main():
 
 選択条件はA/FとA/Qの勝点率50%超かつ平均得点差正、A/Cは勝点率50%以上、全3比較でAの550ms超過率1%以下。結果は**{'通過' if selection['passed'] else '未達'}**でした。誤差が広い場合、非有意を頭打ちの証明とはしません。
 
+![同じ条件で測った学習量と勝点率](learning-winrate.png)
+
 ## 独立確認
 
 {ctext}
@@ -66,7 +72,7 @@ def main():
 
 ## 誤差と時間
 
-共通開発192局に対する16epoch終点のMSE・3seed平均：{json.dumps(devs,ensure_ascii=False)}。各epochの曲線はlearning JSONに保存しています。予測誤差と棋力は区別します。
+共通開発192局に対する16epoch終点のMSE・3seed平均：{devtext}。各epochの曲線はlearning JSONに保存しています。予測誤差と棋力は区別します。6,144局版Aの平均開発誤差は{best_epoch}epochで最小になり、その後は上昇しました。同じデータをさらに周回することを、この曲線から勧める根拠は得られていません。
 
 {times}
 
