@@ -8,11 +8,12 @@ Use the same pinned native backend as the prior placement study:
 python -m blokus.ppo_native build
 export PYTHONPATH=.:scripts OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
 python scripts/check_gpu_generation.py
-python scripts/gpu_generation.py cpu --repeat 1
-python scripts/gpu_generation.py gpu --repeat 1
-python scripts/gpu_generation.py gpu --repeat 2
-python scripts/gpu_generation.py cpu --repeat 2
-python scripts/audit_gpu_generation.py
+python scripts/gpu_generation.py cpu --repeat 101
+python scripts/gpu_generation.py gpu --repeat 101
+python scripts/gpu_generation.py gpu --repeat 102
+python scripts/gpu_generation.py cpu --repeat 102
+python scripts/gpu_generation.py rebuild-exclusions
+python scripts/audit_gpu_generation.py  # audit the retained original repeats 1/2
 python -m pytest -q tests/test_batched_inference.py tests/test_ppo_deeper.py
 ```
 

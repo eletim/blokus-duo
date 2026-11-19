@@ -39,6 +39,15 @@ def prepare():
     write(R/'bank.json',dict(games=bank,models={str(s):e.sha(f'artifacts/ppo-gen3/seed-{s}.pt') for s in e.SEEDS}))
     write(R/'excluded.json',dict(states=sorted(ex-set(g['prefix']['state_hash'] for g in bank))))
 
+def rebuild_exclusions():
+    manifest=json.loads((R/'exclusion-manifest.json').read_text());ex=set()
+    for name,expected in manifest['sources'].items():
+        assert e.sha(name)==expected,name
+        d=json.loads(Path(name).read_text());ex.update(d.get('states',[]));ex.update(d.get('visited',[]))
+        ex.update(p['state_hash'] for p in d.get('prefixes',[]))
+    write(R/'excluded.json',dict(states=sorted(ex)))
+    assert e.sha(R/'excluded.json')==manifest['union_sha256']
+
 def tuples(x): return tuple(tuples(y) for y in x) if isinstance(x,list) else x
 
 def worker(wid,tasks,mode,request,replies,ready,go,finished,directory):
@@ -113,6 +122,7 @@ def benchmark(mode,repeat):
         for q in [request,ready,finished,*replies]:q.close()
 
 if __name__=='__main__':
-    ap=argparse.ArgumentParser();ap.add_argument('command',choices=['prepare','cpu','gpu']);ap.add_argument('--repeat',type=int,default=1);a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('command',choices=['prepare','rebuild-exclusions','cpu','gpu']);ap.add_argument('--repeat',type=int,default=1);a=ap.parse_args()
     if a.command=='prepare':prepare()
+    elif a.command=='rebuild-exclusions':rebuild_exclusions()
     else:benchmark(a.command,a.repeat)
