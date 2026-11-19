@@ -40,3 +40,7 @@ The development concurrency curve has512 total games at each setting and therefo
 Each formal run is a fresh process, but OS filesystem/driver caches are not forcibly flushed and unrelated desktop services remain running. Thus initialization-inclusive wall is not a cold-machine benchmark. No torch.compile was used; CUDA graph capture and its three warmup forwards per shape are included and separately counted.
 
 Shared slots reserve up to4096 legal candidates each. Exceeding this capacity raises an error rather than truncating candidates or silently changing the teacher. The measured maximum is recorded per group; this fixed capacity and fixed four-channel gen3 model are explicit constraints of the generation-only path.
+
+`evaluated_nodes_s` counts the search's evaluate calls and `nn_requests_s` counts valid NN inputs, including repeated root inputs. Neither is a count of globally unique board states. Completed games per outer wall remains the primary throughput metric.
+
+Paired action agreement counts aligned states before the first trajectory divergence in each game (identical prefixes), not all possible later transpositions. Full-trajectory equality, terminal-score equality, terminal-WDL equality and maximum terminal score change are also reported so rare rounding differences are not hidden by a high per-action agreement.

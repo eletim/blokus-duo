@@ -15,7 +15,7 @@ for directory in sorted(R.rglob('*')):
   assert d['moves'][:len(t['prefix']['moves'])]==t['prefix']['moves']
   assert replay(d['moves'])==d['scores']
   assert len(d['stats'])==len(d['moves'])-len(t['prefix']['moves'])
-  assert all(s['forced_pass'] or s['depth']==6 for s in d['stats'])
+  assert all(s['forced_pass'] or (s['depth']==6 and s['stages']==[2,4,6] and not s['fallback']) for s in d['stats'])
   assert all(np.isfinite(v) for s in d['stats'] for v in s.get('root_scores',[]))
   moves+=len(d['stats']);unique.add(hashlib.sha256(json.dumps(t,sort_keys=True).encode()).hexdigest())
  rows[str(directory.relative_to(R))]=dict(game_copies=len(files),moves=moves,all_legal_and_terminal=True,all_nonpass_complete6=True)

@@ -38,7 +38,7 @@ for i in range(a.workers):
   z=out.setdefault(name,{})
   for k,v in row.items():
    if k=='action_agreement':continue
-   z[k]=max(z.get(k,0),v) if k=='max_same_state_root_error' else z.get(k,0)+v
+   z[k]=max(z.get(k,0),v) if k.startswith('max_') else z.get(k,0)+v
   z['agree_count']=z.get('agree_count',0)+round(row['action_agreement']*row['same_state_moves'])
 for z in out.values():z['action_agreement']=z['agree_count']/z['same_state_moves']
 f.ref.write(r/'audit.json',dict(results=out,divergences=div,score_differences=score_differences,bank_sha=f.ref.e.sha(r/'bank.json'),visited_note='sum of unique states within disjoint audit shards; overlap checks examine every state'))
