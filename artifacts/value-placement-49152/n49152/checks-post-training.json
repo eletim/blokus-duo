@@ -1,0 +1,43 @@
+{
+  "pass_": true,
+  "initial_A_C_bit_equal": true,
+  "fixture_states": 137,
+  "checks": [
+    {
+      "device": "cpu",
+      "variant": "A",
+      "seed": 1751401,
+      "bit_exact_resume": true,
+      "real_weight_change": true,
+      "actual_training_checkpoint": true,
+      "optimizer_steps": 9
+    },
+    {
+      "device": "cpu",
+      "variant": "C",
+      "seed": 1751401,
+      "bit_exact_resume": true,
+      "real_weight_change": true,
+      "actual_training_checkpoint": true,
+      "optimizer_steps": 9
+    },
+    {
+      "device": "cuda",
+      "variant": "A",
+      "seed": 1751401,
+      "bit_exact_resume": true,
+      "real_weight_change": true,
+      "actual_training_checkpoint": true,
+      "optimizer_steps": 9
+    },
+    {
+      "device": "cuda",
+      "variant": "C",
+      "seed": 1751401,
+      "bit_exact_resume": true,
+      "real_weight_change": true,
+      "actual_training_checkpoint": true,
+      "optimizer_steps": 9
+    }
+  ]
+}

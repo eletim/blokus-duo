@@ -1,0 +1,30 @@
+{
+  "pass_": true,
+  "bank_restore_byte_exact": true,
+  "actual_adam_steps_verified": true,
+  "new_generation_games": 24768,
+  "old_training_games_referenced": 24576,
+  "feature_samples_reencoded": 297,
+  "evaluation_counts": {
+    "36864/validation": 96,
+    "49152/validation": 96,
+    "49152/confirmation": 1536
+  },
+  "train_dev_overlap": 0,
+  "training_evaluation_overlap": 0,
+  "original_training_overlap": 0,
+  "stage_selections": {
+    "36864": {
+      "epoch": 7,
+      "steps_per_epoch": 15793,
+      "updates_per_model": 252688
+    },
+    "49152": {
+      "epoch": 5,
+      "steps_per_epoch": 21053,
+      "updates_per_model": 336848
+    }
+  },
+  "total_real_updates": 3537216,
+  "seconds": 20.166259024990723
+}
