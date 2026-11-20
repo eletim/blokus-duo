@@ -37,13 +37,14 @@ def main():
   for key,n in sh['stage_turn_counts'].items():
    seed,turn,stage=key.split('/');counts[sh['phase']][turn,stage]+=n
  text+='\n新規ラベルの実手番・段階分布（学習対象は8ply以降。終局までの全対象局面を保持し、席別水増しはしない）：\n\n|split/手番|8–15ply|16–31ply|32ply以降|\n|---|---:|---:|---:|\n'
- for phase in ('train','dev'):
-  for turn in ('0','1'):text+=f"|{phase}/{turn}|{counts[phase][turn,'0']:,}|{counts[phase][turn,'1']:,}|{counts[phase][turn,'2']:,}|\n"
+ for split in ('train','dev'):
+  for turn in ('0','1'):text+=f"|{split}/{turn}|{counts[split][turn,'0']:,}|{counts[split][turn,'1']:,}|{counts[split][turn,'2']:,}|\n"
  for ph in ('validation','confirmation'):
   if not (R/f'{ph}-summary.json').exists():continue
   d=read(ph+'-summary.json');text+=f'\n### {ph}\n\n|比較|勝–分–敗|勝点率|通常95% CI|3比較補正CI|得点差（95% CI）|\n|---|---:|---:|---:|---:|---:|\n'
   for pair in ('AQ','AF','AC'):
    v=d[pair];ci=v['point_ci95'];adj=v['point_adjusted_ci'];sc=v['difference_ci95'];text+=f"|{pair}|{v['wins']}–{v['draws']}–{v['losses']}|{100*v['point']:.2f}%|{100*ci[0]:.2f}–{100*ci[1]:.2f}%|{100*adj[0]:.2f}–{100*adj[1]:.2f}%|{v['difference']:+.2f}（{sc[0]:+.2f}–{sc[1]:+.2f}）|\n"
+ text+='\nFrozen gen3+Hおよび同量Cへの勝点改善は補正CIでも確認できました。一方、旧3,072局Aへの上積みは補正下限49.22%で未確定です。通常95% CIは50.52–61.20%ですが、事前の3比較補正を優先し、全比較採用gateは未達のままです。旧Aの差し替えを推奨する確証とはしません。\n'
  text+='\n![新対戦の勝点と補正区間](strength-points.png)\n\nseed別・先後別値、得点差補正CIは各summary JSONに保存しています。標本を途中追加せず、全seedを保持しました。人間への強さは未検証です。\n\n### 実時間と探索\n\n|比較/手法|平均ms|最大ms|p95ms|p99ms|6ply完成率|550ms超過率|fallback数|\n|---|---:|---:|---:|---:|---:|---:|---:|\n'
  for pair in ('AQ','AF','AC'):
   for name,v in out[pair]['stats'].items():text+=f"|{pair}/{name}|{v['mean_ms']:.2f}|{v['max_ms']:.2f}|{v['p95_ms']:.2f}|{v['p99_ms']:.2f}|{100*v['depth6']:.2f}%|{100*v['over_550']:.3f}%|{v['fallback']}|\n"
@@ -52,6 +53,7 @@ def main():
   for size,count in g['batch_hist'].items():hist[int(size)]+=count
  batch_mean=sum(k*n for k,n in hist.items())/sum(hist.values());padding=sum(g['padding_slots'] for g in gen['groups'])/sum(g['padding_real'] for g in gen['groups'])
  cpu=sum(g['server_cpu_seconds']+sum(w['cpu_seconds'] for w in g['workers']) for g in gen['groups']);text+=f'''
+表のfallbackは完成探索がなく方策greedyへ戻った回数です。6ply未完で完成4plyを保持した着手は完成率に反映されます。
 同じ500ms上限でも実消費時間は同じではありません。cold/warm準備費用は各phase-time.jsonに分離。完了段階だけ採用し、深く読めたことだけを棋力改善とはしていません。
 
 ## 費用
@@ -72,7 +74,7 @@ def main():
 - 新train/dev、過去評価/速度bank、元PPO訓練index、今回対戦の実訪問状態を照合。新対戦全棋譜・得点・勝点・CIを再計算（audit.json）。旧6,144局の過去監査と元履歴はSHA参照で保持。
 - 代表seed1751401のA/CについてCPU/CUDA別processで連続3epochと1＋再開2epochの重み・Adam・全RNGがbit一致。最新の実学習checkpointからも検査。A/C初期予測一致と実重み変更、凍結policy保持を確認。
 - 新exportのCPU/CUDA値は事前絶対許容差2e-5以内。合法手と完成木を確認。生成全軌跡のCPU/GPU bit一致を意味しません。
-- クリーンGit checkoutでCUDAを隠し、全testsと全6exportのCPU対局、人間先後CLIを実行・独立再生。既存CUDA-capable torch wheelをCUDA非表示で利用しており、CPU専用wheelの新規導入試験とは区別。
+- クリーンGit checkoutでCUDAを隠し、127 tests PASS・6 skippedと全6exportのCPU対局、人間先後CLIを実行・独立再生。既存CUDA-capable torch wheelをCUDA非表示で利用しており、CPU専用wheelの新規導入試験とは区別。
 - 元gen3コード/重みを上書きせず、推論exportとAdam/RNG再開checkpointを区別。mainへのmerge/deployなし。
 
 [再現コマンドと履歴不要CPU CLI](REPRODUCE.md)。新棋譜はgame-archivesの小分けアーカイブ、同一byteのmanifest付き。旧巨大履歴は複製していません。

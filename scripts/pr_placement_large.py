@@ -30,7 +30,7 @@ The old 6,144 games used CPU time-limited teachers; new GPU games require comple
 
 - Every new generated game and every evaluation game independently replayed for coordinate legality, forced passes, terminal bonuses/scores and result arithmetic. Data/model/code hashes, real-turn targets, game weights, training/development/evaluation state separation and original training index checked.
 - Representative A/C CPU/CUDA fresh-process continuation matches uninterrupted weights, Adam and RNG bitwise, including continuation from actual trained checkpoints. Exports show real weight changes and retain the original policy.
-- All six exports pass CPU/CUDA value tolerance 2e-5. A clean history-free Git checkout with CUDA hidden passes the relevant full test suite and CPU CLI games, including scripted human seats and independent replay. This uses the installed CUDA-capable wheel with CUDA hidden, not a fresh CPU-only wheel installation.
+- All six exports pass CPU/CUDA value tolerance 2e-5. A clean history-free Git checkout with CUDA hidden passes 127 tests (6 skipped) and CPU CLI games, including scripted human seats and independent replay. This uses the installed CUDA-capable wheel with CUDA hidden, not a fresh CPU-only wheel installation.
 - New game archives preserve source bytes and hashes; previous large histories are referenced, not copied. Inference needs only code, original gen3 and one new value export, not training histories/indexes. Resume checkpoints are separate.
 
 Reports, curves and commands:
