@@ -35,6 +35,6 @@ def check():
     full=tmp/'full.pt';part=tmp/'part.pt';end=tmp/'end.pt'
     for ep,left,right in [(3,src,full),(1,src,part),(2,part,end)]:subprocess.run([sys.executable,__file__,'worker',device,variant,str(left),str(right),str(fixture),str(ep)],check=True)
     f=torch.load(full,map_location='cpu',weights_only=False);g=torch.load(end,map_location='cpu',weights_only=False);assert same(f,g);initial=torch.load(src,map_location='cpu',weights_only=False);assert any(not torch.equal(initial['model'][k],v) for k,v in f['model'].items());assert f['updates']==updates+9
-    checks.append(dict(device=device,variant=variant,bit_exact_resume=True,real_weight_change=True,actual_training_checkpoint=actual.exists(),optimizer_steps=9));print('RESUME PASS',device,variant,flush=True)
+    checks.append(dict(device=device,variant=variant,seed=t.e.SEEDS[0],bit_exact_resume=True,real_weight_change=True,actual_training_checkpoint=actual.exists(),optimizer_steps=9));print('RESUME PASS',device,variant,flush=True)
  t.e.write(R/('checks-post-training.json' if (R/'checkpoint-selection.json').exists() else 'checks-pre-training.json'),dict(pass_=True,initial_A_C_bit_equal=True,fixture_states=137,checks=checks))
 if __name__=='__main__':worker(*sys.argv[2:]) if len(sys.argv)>1 else check()
