@@ -32,6 +32,7 @@ def aggregate(phase,pair):
  for key,x in [('point',pt),('difference',df)]:
   boot=x[ix].mean(1);out[key+'_ci95']=np.quantile(boot,[.025,.975]).tolist();out[key+'_adjusted_ci']=np.quantile(boot,[.05/6,1-.05/6]).tolist()
  out['by_seat']={str(seat):dict(point=float(np.mean([g['point'] for g in rows if g['seat']==seat])),difference=float(np.mean([g['difference'] for g in rows if g['seat']==seat]))) for seat in (0,1)}
+ out['by_seed_detail']={str(seed):dict(point=float(np.mean([g['point'] for g in rows if g['seed']==seed])),difference=float(np.mean([g['difference'] for g in rows if g['seed']==seed])),wins=sum(g['difference']>0 for g in rows if g['seed']==seed),draws=sum(g['difference']==0 for g in rows if g['seed']==seed),losses=sum(g['difference']<0 for g in rows if g['seed']==seed)) for seed in e.SEEDS}
  for name in pair:
   times=[st['elapsed_ms'] for g in rows for st in g['stats'] if st['method']==name and not st['forced_pass']];out['stats'][name].update(p95_ms=float(np.quantile(times,.95)),p99_ms=float(np.quantile(times,.99)))
  return out
