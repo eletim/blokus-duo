@@ -30,11 +30,12 @@ def main():
  for n in (36864,49152):
   m=read(f'n{n}/data-manifest.json');sel=read(f'n{n}/checkpoint-selection.json');t=read(f'n{n}/training-time.json');ss=audit['stage_selections'][str(n)];text+=f"|{n:,}|{m['old_labels']+m['new_labels']:,}|{ss['updates_per_model']:,}|{6*ss['updates_per_model']:,}|{sel['epoch']}|{sel['epoch']*ss['steps_per_epoch']:,}|{t['seconds']/60:.2f}|\n"
  text+=f"\n全12モデル合計 **{audit['total_real_updates']:,} Adam更新**。各段階の6モデル平均新devMSE最小で共通epochを選択し、同点は早いepoch。新devは両段階で共用した選択データであり、独立棋力証拠ではありません。最大16epochのoptimizer/全RNGと全epoch推論exportを保持。\n\n![実学習曲線](learning-curves.png)\n"
+ text+='\n共通の新devで旧24,576/新36,864/新49,152を同じ入力で測った量別誤差はquantity-dev.jsonに保存。選択epochと固定epoch16を併記しますが、これは選択済みdevの記述比較であり追加のモデル選択や独立棋力証拠ではありません。\n\n![同じdevでの量別誤差](quantity-dev.png)\n'
  text+='\n## 新しい段階比較（探索的）\n\nCPU native1thread/core0、幅4/max6/500ms。各段階は別の新8prefix×先後×全3seed、2比較、96局。Pは直前量のA（36,864段階では24,576、49,152段階では36,864）、FはFrozen H。2比較補正97.5%CIと通常95%CI。ここで最終候補を差し替えていません。\n'
  for n in (36864,49152):text+=f'\n### {n:,}ゲーム段階\n\n'+table(read(f'n{n}/validation-summary.json'))
  text+=f"\n事前の実用差+3ppに対して、両段階の95%CI上限が53%未満という伸び鈍化条件は **{'成立' if flat else '不成立'}**。{'この固定方法・分布での鈍化の証拠であり、一般的な棋力上限ではありません。' if flat else '点推定の上下や単発の非有意だけから上限・同等性を結論しません。'}\n\n![段階別の傾向](stage-trends.png)\n"
  text+='\n## 独立確認（最終判定）\n\n事前固定の新64prefix×先後×3seed、各384局・計1,536局。Q=旧成功3,072局A16、R=前回24,576局A6、F=Frozen gen3+H、C=今回49,152局C。同一prefix内の先後/seed相関を保った20,000回bootstrap、4比較Bonferroni98.75%区間。段階試験や旧確認は合算していません。\n\n'+table(final)
- text+='\n![独立確認の勝点](confirmation-points.png)\n\n'
+ text+='\n![独立確認の勝点](confirmation-points.png)\n\nseed別・先後別・seed×先後の記述集計と通常95%CIはn49152/confirmation-strata.json。これらの小集団順位でseedを選別せず、主判定は上記4比較の集約補正CIです。\n\n'
  for pair,label in [('AQ','旧3,072局A'),('AR','前回24,576局A'),('AF','Frozen H'),('AC','同量C')]:
   v=final[pair];text+=f"- {label}：補正下限{100*v['point_adjusted_ci'][0]:.2f}%。この評価分布での優越は{'確認' if v['point_adjusted_ci'][0]>.5 and v['difference']>0 else '未確認'}。\n"
  text+=f"\n**推奨：{'新49,152局Aを統合検討候補として返します（本番未適用）。' if passed else '旧成功候補を維持します。全比較の事前採用条件は未達で、新モデルの自動採用は推奨しません。'}** 未確認は同等性や劣化の証明ではありません。人間への強さ・固定3seed以外への一般化は未検証。\n"

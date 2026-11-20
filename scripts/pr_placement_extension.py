@@ -45,6 +45,8 @@ Reports and commands:
 - [Final report and all comparisons](artifacts/value-placement-49152/REPORT.md)
 - [Reproduction, resume and CPU play](artifacts/value-placement-49152/REPRODUCE.md)
 - [Actual CUDA learning curves](artifacts/value-placement-49152/learning-curves.png)
+- [Common-development data-quantity curves](artifacts/value-placement-49152/quantity-dev.png)
+- [Seed/seat descriptive strata](artifacts/value-placement-49152/n49152/confirmation-strata.json)
 - [Exploratory data-stage trends](artifacts/value-placement-49152/stage-trends.png)
 - [Independent confirmation and adjusted CI](artifacts/value-placement-49152/confirmation-points.png)
 
