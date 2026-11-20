@@ -5,7 +5,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 import placement_large_eval as q
 
 def test_prefix_clusters_combine_seats_and_all_seeds(tmp_path,monkeypatch):
- monkeypatch.setattr(q,'R',tmp_path)
+ monkeypatch.setattr(q,'R',tmp_path);monkeypatch.setattr(q.e,'R',tmp_path)
  for si,seed in enumerate(q.e.SEEDS):
   games=[]
   for prefix in range(4):
