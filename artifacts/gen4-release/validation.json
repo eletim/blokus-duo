@@ -80,5 +80,6 @@
     "clean sparse test initially omitted gen2 model dependency; added existing gen2/2048 directories and reran"
   ],
   "notes": "No training or strength evaluation repeated. Human strength untested; old all-comparison adoption gate remains unmet. Test games are not human evidence.",
-  "restart_persistence": "both completed test archives retained and independently replayed after systemd restart"
+  "restart_persistence": "both completed test archives retained and independently replayed after systemd restart",
+  "python_fallback": "CPU-only clean clone --backend python completed; independent legal replay and terminal scores [-20,-33] matched"
 }
