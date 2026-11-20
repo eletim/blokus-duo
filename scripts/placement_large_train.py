@@ -31,7 +31,7 @@ def train():
  for p,h in manifest['file_shas'].items():assert e.sha(p)==h,p
  x=[torch.from_numpy(a).to('cuda') for a in arrays(manifest['train_files'])];v=[torch.from_numpy(a).to('cuda') for a in arrays(manifest['dev_files'])];x[4]/=x[4].mean()
  assert len(x[0])==manifest['old_labels']+manifest['new_labels'];runs=[];torch.cuda.reset_peak_memory_stats()
- cfg=dict(format='placement-large-resume-v1',plan_sha=e.sha(R/'PLAN.md'),data_manifest_sha=e.sha(R/'data-manifest.json'),model_code_sha=e.sha('blokus/placement_value.py'),lr=1e-4,batch=64,epochs=16,penalty=.1,samples=len(x[0]),train_games=24576)
+ cfg=dict(format='placement-large-resume-v1',plan_sha=e.sha(R/'PLAN.md'),data_manifest_sha=e.sha(R/'data-manifest.json'),model_code_sha=e.sha('blokus/placement_value.py'),trainer_code_sha=e.sha(__file__),lr=1e-4,batch=64,epochs=16,penalty=.1,samples=len(x[0]),train_games=24576)
  for seed in e.SEEDS:
   p=PPOAgent(seed,'cuda',backend='native');frozen=copy.deepcopy(p.model.state_dict());base=PlacementValue(p.model,'C').to('cuda')
   with torch.no_grad():old=torch.cat([base(*(a[k:k+2048] for a in x[:3])) for k in range(0,len(x[0]),2048)]).detach()

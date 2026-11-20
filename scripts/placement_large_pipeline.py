@@ -21,6 +21,7 @@ def main():
  report('全新棋譜の独立再生・分離・終局WDLラベル検査、およびCPU/CUDA別processのAdam/RNG再開検査を通過。A/C×3seed、最大16epochの実CUDA更新を開始します。')
  if not (R/'checkpoint-selection.json').exists():run('training',['scripts/monitor_generation.py','--telemetry',str(R/'training-telemetry.json'),PY,'scripts/placement_large_train.py'])
  if not (R/'checks-post-training.json').exists():run('post-training-checks',['scripts/check_placement_large.py'])
+ if not (R/'export-check.json').exists():run('export-check',['scripts/check_large_exports.py'])
  report('A/C全3seedの16epoch実CUDA学習と保存再開検査が終了。新devだけで共通epochを固定し、CPU500msの新validationへ進みます。')
  if not (R/'evaluation-manifest.json').exists():run('evaluation-bank',['scripts/placement_large_eval.py','banks'])
  if not (R/'selection.json').exists():run('validation',['scripts/placement_large_eval.py','validation'])
