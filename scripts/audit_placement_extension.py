@@ -34,7 +34,7 @@ def main():
  assert count==24768
  sets={};counts={};selections={};totalupdates=0
  with concurrent.futures.ProcessPoolExecutor(max_workers=8) as pool:
-  for stage,phase,n,pairs in [(36864,'validation',8,['AP','AF']),(49152,'validation',8,['AP','AF']),(49152,'confirmation',32,['AQ','AR','AF','AC'])]:
+  for stage,phase,n,pairs in [(36864,'validation',8,['AP','AF']),(49152,'validation',8,['AP','AF']),(49152,'confirmation',64,['AQ','AR','AF','AC'])]:
    root=R/f'n{stage}';paths=sorted(root.glob(f'{phase}-??-*.json.gz'));assert len(paths)==3*len(pairs);prefixes=json.loads((root/f'{phase}-bank.json').read_text())['prefixes'];assert len(prefixes)==n
    for p in prefixes:assert p['state_hash']==q.q.state_hash(e.state(p['moves'])) and p['state_hash'] not in excluded and not e.contains(idx,p['state_hash'])
    seen=set();games=0

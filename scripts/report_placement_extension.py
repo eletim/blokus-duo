@@ -16,7 +16,7 @@ def main():
  tele=read('generation-telemetry.json');data=read('data-audit.json');decision=read('n49152/decision.json');final=read('n49152/confirmation-summary.json');passed=decision['passed'];trend=[read(f'n{n}/validation-summary.json')['AP'] for n in (36864,49152)];flat=all(v['point_ci95'][1]<.53 for v in trend)
  text=f'''# 49,152局までの追加データ学習と独立確認
 
-**GPU生成・2段階の実CUDA学習・新960局の対戦・監査を完了。採用gate：{'通過' if passed else '未達'}。** main/Frozen gen3/Webは不変。新規24,576訓練局と192dev局を生成し、旧24,576訓練局のみへ追加しました。旧評価/速度bankや旧devを訓練へ転用していません。勝点は勝1・引分0.5。
+**GPU生成・2段階の実CUDA学習・新1,728局の対戦・監査を完了。採用gate：{'通過' if passed else '未達'}。** main/Frozen gen3/Webは不変。新規24,576訓練局と192dev局を生成し、旧24,576訓練局のみへ追加しました。旧評価/速度bankや旧devを訓練へ転用していません。勝点は勝1・引分0.5。
 
 5時間枠の事前PLANは`cdd2210`、新bankは`3701319`。段階36,864/49,152、各A/C全3seed、各16epochを事前固定。最終候補は対戦成績を見ず49,152局版Aに固定しました。前回結果・gateの変更や救済スイープはありません。
 
@@ -33,7 +33,7 @@ def main():
  text+='\n## 新しい段階比較（探索的）\n\nCPU native1thread/core0、幅4/max6/500ms。各段階は別の新8prefix×先後×全3seed、2比較、96局。Pは直前量のA（36,864段階では24,576、49,152段階では36,864）、FはFrozen H。2比較補正97.5%CIと通常95%CI。ここで最終候補を差し替えていません。\n'
  for n in (36864,49152):text+=f'\n### {n:,}ゲーム段階\n\n'+table(read(f'n{n}/validation-summary.json'))
  text+=f"\n事前の実用差+3ppに対して、両段階の95%CI上限が53%未満という伸び鈍化条件は **{'成立' if flat else '不成立'}**。{'この固定方法・分布での鈍化の証拠であり、一般的な棋力上限ではありません。' if flat else '点推定の上下や単発の非有意だけから上限・同等性を結論しません。'}\n\n![段階別の傾向](stage-trends.png)\n"
- text+='\n## 独立確認（最終判定）\n\n事前固定の新32prefix×先後×3seed、各192局・計768局。Q=旧成功3,072局A16、R=前回24,576局A6、F=Frozen gen3+H、C=今回49,152局C。同一prefix内の先後/seed相関を保った20,000回bootstrap、4比較Bonferroni98.75%区間。段階試験や旧確認は合算していません。\n\n'+table(final)
+ text+='\n## 独立確認（最終判定）\n\n事前固定の新64prefix×先後×3seed、各384局・計1,536局。Q=旧成功3,072局A16、R=前回24,576局A6、F=Frozen gen3+H、C=今回49,152局C。同一prefix内の先後/seed相関を保った20,000回bootstrap、4比較Bonferroni98.75%区間。段階試験や旧確認は合算していません。\n\n'+table(final)
  text+='\n![独立確認の勝点](confirmation-points.png)\n\n'
  for pair,label in [('AQ','旧3,072局A'),('AR','前回24,576局A'),('AF','Frozen H'),('AC','同量C')]:
   v=final[pair];text+=f"- {label}：補正下限{100*v['point_adjusted_ci'][0]:.2f}%。この評価分布での優越は{'確認' if v['point_adjusted_ci'][0]>.5 and v['difference']>0 else '未確認'}。\n"
@@ -53,7 +53,7 @@ def main():
 
 ## 正しさと再現
 
-全新生成24,768局を独立座標checkerで合法手/forcedpass/終局+15/+20/得点再生、実手番WDL・game重み・完成6plyを監査。既存train/dev/評価/速度bankと元PPOindexへの分離、新train/dev分離、3組の新評価実訪問状態の相互分離を確認。全960新対戦を独立再生し勝点・得点・CIを再計算。source/bank/code/model SHAと実更新数・epoch選択も再検算（audit.json）。初期空盤面など共通prefix途中と学習対象/評価開始は区別。
+全新生成24,768局を独立座標checkerで合法手/forcedpass/終局+15/+20/得点再生、実手番WDL・game重み・完成6plyを監査。既存train/dev/評価/速度bankと元PPOindexへの分離、新train/dev分離、3組の新評価実訪問状態の相互分離を確認。全1,728新対戦を独立再生し勝点・得点・CIを再計算。source/bank/code/model SHAと実更新数・epoch選択も再検算（audit.json）。初期空盤面など共通prefix途中と学習対象/評価開始は区別。
 
 変更していない更新式とAdam/RNG復元は前回のCPU/CUDA別process bit一致検証を参照し、新ドライバは旧式のAST一致と累積shard/対照識別をテスト。今回実学習checkpointからのCPU/CUDA別process再開も確認。全12exportのCPU/native/PythonとCUDA値は事前許容差2e-5以内、実重み変化・policy保持・合法完成木を確認。クリーンGit checkout、CUDA非表示で関連回帰・全6最終exportのCPU対局・人間先後CLI、全8棋譜の独立再生を確認。既存CUDA対応wheelを非表示で使用し、新CPU専用wheel導入とは区別。
 

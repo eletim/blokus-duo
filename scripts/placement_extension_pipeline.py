@@ -36,7 +36,7 @@ def main():
  if not (R/'n49152/confirmation-summary.json').exists():run('confirmation',['scripts/placement_extension_eval.py','confirmation'])
  if not (R/'audit.json').exists():run('audit',['scripts/audit_placement_extension.py'])
  if not (R/'n49152/checks-post-training.json').exists():run('resume-check',['scripts/check_extension_resume.py'],dict(os.environ,PLACEMENT_STAGE=str(R/'n49152')))
- report('二段階の実学習・全960局の新対戦・独立監査終了。最終推奨は補正CIで判定し、図表/CPU再現/保存/PR更新を仕上げます。')
+ report('二段階の実学習・全1728局の新対戦・独立監査終了。最終推奨は補正CIで判定し、図表/CPU再現/保存/PR更新を仕上げます。')
  (R/'pipeline-complete.json').write_text(json.dumps(dict(complete=True,finished_utc=datetime.datetime.now(datetime.timezone.utc).isoformat())))
 if __name__=='__main__':
  try:main()

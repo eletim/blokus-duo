@@ -15,7 +15,7 @@ def banks():
  for phase in ('train','dev'):ex.update(q.readgz(R/f'{phase}-visited.json.gz')['states'])
  with gzip.open(R/'evaluation-excluded.json.gz','wt') as h:json.dump(dict(states=sorted(ex)),h)
  hashes={}
- for count,phase,n,base in [(36864,'validation',8,886400000000),(49152,'validation',8,886500000000),(49152,'confirmation',32,886600000000)]:
+ for count,phase,n,base in [(36864,'validation',8,886400000000),(49152,'validation',8,886500000000),(49152,'confirmation',64,886600000000)]:
   rng=random.Random(base);bank=[]
   for i in range(n):pr=e.prefix(rng,np.load(e.INDEX,mmap_mode='r'),ex,8+i%3*2);ex.add(pr['state_hash']);bank.append(pr)
   dest=R/f'n{count}'/f'{phase}-bank.json';e.write(dest,dict(prefixes=bank));hashes[str(dest)]=e.sha(dest)
@@ -41,7 +41,7 @@ def aggregate(stage,phase,pair,family):
 def evaluate(stage,phase):
  os.sched_setaffinity(0,{0});root=R/f'n{stage}';q.R=e.R=root;e.setup();start=time.perf_counter();warmups=[];pairs=['AP','AF'] if phase=='validation' else ['AQ','AR','AF','AC'];assert phase=='validation' or stage==49152
  for p,h in json.loads((R/'evaluation-banks.json').read_text()).items():assert e.sha(p)==h
- bank=json.loads((root/f'{phase}-bank.json').read_text())['prefixes'];assert len(bank)==(8 if phase=='validation' else 32)
+ bank=json.loads((root/f'{phase}-bank.json').read_text())['prefixes'];assert len(bank)==(8 if phase=='validation' else 64)
  manifest={str(source(name,stage,s)):e.sha(source(name,stage,s)) for name in set(''.join(pairs)) for s in e.SEEDS};manifest[str(root/'checkpoint-selection.json')]=e.sha(root/'checkpoint-selection.json');manifest[str(root/f'{phase}-bank.json')]=e.sha(root/f'{phase}-bank.json')
  mp=root/f'{phase}-models.json'
  if mp.exists():assert json.loads(mp.read_text())==manifest
