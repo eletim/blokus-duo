@@ -5,7 +5,7 @@ import numpy as np
 import torch
 from torch import nn
 from .engine import PLACEMENTS,legal_moves
-from .value_search import encode
+from .value_inputs import encode
 
 @lru_cache(maxsize=1)
 def placement_table():

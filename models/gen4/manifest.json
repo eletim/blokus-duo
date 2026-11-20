@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "generation": "gen4",
+  "kind": "frozen gen3 PPO policy + terminal-WDL trained legal-placement value A + H search",
+  "source_commit": "8cc8094ca3bab12ff77ac27af369e05384ee09db",
+  "default_seed": 1751401,
+  "seed_rule": "existing first-seed convention; not selected by match outcome",
+  "epochs": 5,
+  "training_games": 49152,
+  "search": {
+    "width": 4,
+    "max_depth": 6,
+    "budget_ms": 500,
+    "completed_stages_only": true
+  },
+  "input": {
+    "board_channels": 4,
+    "state_features": 49,
+    "placement_value_features": 252
+  },
+  "models": [
+    {
+      "seed": 1751401,
+      "value": {
+        "path": "models/gen4/value-1751401.pt",
+        "sha256": "1658d365175e4eae3a7bf5a710ac86dbcbc94ceab4770940e37c9d31c4935d7d",
+        "bytes": 295280,
+        "source": "artifacts/value-placement-49152/n49152/A-1751401.pt"
+      },
+      "policy": {
+        "path": "artifacts/ppo-gen3/seed-1751401.pt",
+        "sha256": "5e5d66569a8690d711a4f5d04a627cb70130e055d18000a1b9ee3fd3a5cecdb7",
+        "bytes": 281805
+      }
+    },
+    {
+      "seed": 1751402,
+      "value": {
+        "path": "models/gen4/value-1751402.pt",
+        "sha256": "c8ea8bbbba3f40a47b890f750ef43f906319bead34d900c3f957852ab38816fc",
+        "bytes": 295280,
+        "source": "artifacts/value-placement-49152/n49152/A-1751402.pt"
+      },
+      "policy": {
+        "path": "artifacts/ppo-gen3/seed-1751402.pt",
+        "sha256": "07988be520e729f8da64f5ef884b3b9515ad19ce0b02ee5e4338b3e60a688c44",
+        "bytes": 281805
+      }
+    },
+    {
+      "seed": 1751403,
+      "value": {
+        "path": "models/gen4/value-1751403.pt",
+        "sha256": "846cc3119a9cf1ecf48a2c17b552822aae2650f54137e87f485196aafe1a40b8",
+        "bytes": 295280,
+        "source": "artifacts/value-placement-49152/n49152/A-1751403.pt"
+      },
+      "policy": {
+        "path": "artifacts/ppo-gen3/seed-1751403.pt",
+        "sha256": "d8f49048eca64a6d7954b97f9cd657dce2696c7030b1bada9a13f8e312a8df9a",
+        "bytes": 281805
+      }
+    }
+  ],
+  "tag": "gen4-frozen-2026-11-20",
+  "adoption": "Explicit user adoption; all-comparison research gate remains failed because increment vs24576 is unconfirmed"
+}

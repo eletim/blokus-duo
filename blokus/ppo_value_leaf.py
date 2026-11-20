@@ -1,7 +1,7 @@
 """Candidate-free value inference. Same board/state and value arithmetic as PPO forward."""
 import numpy as np
 import torch
-from .value_search import encode
+from .value_inputs import encode
 
 def value_inputs(state,channels):
     if channels not in (4,6):raise ValueError('channels must be 4 or 6')

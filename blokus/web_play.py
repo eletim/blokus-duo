@@ -17,22 +17,25 @@ from .ppo_search_deeper import DeepSearch
 
 
 class Games:
-    def __init__(self, bot, linear_factory=None, archive=None, metadata=None, record_kind="human", test_token=None):
+    def __init__(self, bot, linear_factory=None, archive=None, metadata=None, record_kind="human", test_token=None, gen4_factory=None):
         self.archive = archive
         self.metadata = metadata or {}
         self.record_kind = record_kind
         self.test_token = test_token
         self.bot = bot
         self.linear_factory = linear_factory
+        self.gen4_factory = gen4_factory
         self.games = {}
         self.lock = threading.RLock()
         self.worker = ThreadPoolExecutor(max_workers=1)
 
     def create(self, seat, mode, budget, test=False):
-        if type(seat) is not int or seat not in (0, 1) or mode not in ('policy', 'search', 'deep', 'linear') or type(budget) is not int or budget not in (100, 500, 2000):
+        if type(seat) is not int or seat not in (0, 1) or mode not in ('policy', 'search', 'deep', 'linear', 'gen4') or type(budget) is not int or budget not in (100, 500, 2000):
             raise ValueError('対局設定が不正です')
-        if mode == 'deep' and budget != 500:
+        if mode in ('deep', 'gen4') and budget != 500:
             raise ValueError('深い先読みは500msを指定してください')
+        if mode == 'gen4' and self.gen4_factory is None:
+            raise ValueError('gen4を利用できません')
         if mode == 'linear' and self.linear_factory is None:
             raise ValueError('非NN AIを利用できません')
         if mode == 'linear':
@@ -80,7 +83,7 @@ class Games:
             with self.lock:
                 g = self.games[key]
                 revision = len(g['history'])
-            agent = self.linear_factory() if g['mode']=='linear' else DeepSearch(self.bot, budget_ms=500, width=4, max_depth=6) if g['mode']=='deep' else SearchAgent(self.bot, g['budget']) if g['mode']=='search' else self.bot
+            agent = self.gen4_factory() if g['mode']=='gen4' else self.linear_factory() if g['mode']=='linear' else DeepSearch(self.bot, budget_ms=500, width=4, max_depth=6) if g['mode']=='deep' else SearchAgent(self.bot, g['budget']) if g['mode']=='search' else self.bot
             start = time.perf_counter()
             move = agent.act(state, g['rng'])
             elapsed = (time.perf_counter()-start)*1000
@@ -88,7 +91,7 @@ class Games:
                 detail = agent.stats[-1]
                 stats = dict(elapsed_ms=elapsed, depth=detail.get('depth', 0), fallback=detail.get('fallback', False), target_complete=detail.get('target_complete', True))
             else:
-                stats = copy.deepcopy(agent.stats) if g['mode'] in ('search', 'deep') else dict(elapsed_ms=elapsed)
+                stats = copy.deepcopy(agent.stats) if g['mode'] in ('search', 'deep', 'gen4') else dict(elapsed_ms=elapsed)
                 stats.pop('root_scores', None)
                 stats['elapsed_ms'] = elapsed
             with self.lock:
@@ -128,7 +131,7 @@ class Games:
             g['touched'] = time.monotonic()
             s = g['state']
             qs = legal_moves(s) if s.turn==g['seat'] and not g['busy'] else []
-            return dict(id=key, archive=dict(enabled=self.archive is not None, saved_revision=g['saved_revision'], failed=g['save_error'], kind=g['kind']), revision=len(g['history']), boards=[list(cells_of(b)) for b in s.boards], remaining=[[i for i in range(21) if s.remaining[p]>>i&1] for p in (0,1)], scores=[s.score(p) for p in (0,1)], turn=s.turn, seat=g['seat'], done=s.done, busy=g['busy'], error=g['error'], mode=g['mode'], budget=g['budget'], generation='linear-L' if g['mode']=='linear' else 'gen3', model_seed=3101 if g['mode']=='linear' else 1751401, stats=g['stats'], legal=[[q.move.piece,q.move.orientation,q.move.row,q.move.col] for q in qs], history=copy.deepcopy(g['history']), move_stats=copy.deepcopy(g['move_stats']))
+            return dict(id=key, archive=dict(enabled=self.archive is not None, saved_revision=g['saved_revision'], failed=g['save_error'], kind=g['kind']), revision=len(g['history']), boards=[list(cells_of(b)) for b in s.boards], remaining=[[i for i in range(21) if s.remaining[p]>>i&1] for p in (0,1)], scores=[s.score(p) for p in (0,1)], turn=s.turn, seat=g['seat'], done=s.done, busy=g['busy'], error=g['error'], mode=g['mode'], budget=g['budget'], generation='linear-L' if g['mode']=='linear' else 'gen4' if g['mode']=='gen4' else 'gen3', model_seed=3101 if g['mode']=='linear' else 1751401, stats=g['stats'], legal=[[q.move.piece,q.move.orientation,q.move.row,q.move.col] for q in qs], history=copy.deepcopy(g['history']), move_stats=copy.deepcopy(g['move_stats']))
 
 
 def handler(games):
@@ -197,15 +200,17 @@ def main():
     load_start = time.perf_counter()
     bot = PPOAgent(device=args.device, backend='auto')
     linear = load_search()
+    from .gen4 import load as load_gen4, search as gen4_search
+    gen4_pair = load_gen4()
     print(f'Model load: {(time.perf_counter()-load_start)*1000:.1f} ms', flush=True)
     # Load/feature initialization is done before accepting games; log cold cost.
-    for name, agent in [('gen3', bot), ('linear-L', linear)]:
+    for name, agent in [('gen3', bot), ('linear-L', linear), ('gen4', gen4_search(gen4_pair))]:
         begin = time.perf_counter()
         agent.act(State(), random.Random(0))
         if name == 'linear-L':
             agent.agent.value(State())
         print(f'Warmup {name}: {(time.perf_counter()-begin)*1000:.1f} ms', flush=True)
-    games = Games(bot, lambda: make_search(linear.agent), Archive(args.data_dir), identity(), args.record_kind, os.environ.get('BLOKUS_TEST_TOKEN'))
+    games = Games(bot, lambda: make_search(linear.agent), Archive(args.data_dir), identity(), args.record_kind, os.environ.get('BLOKUS_TEST_TOKEN'), gen4_factory=lambda: gen4_search(gen4_pair))
     server = ThreadingHTTPServer((args.host, args.port), handler(games))
     print(f'Blokus: http://{args.host}:{args.port}', flush=True)
     try:
