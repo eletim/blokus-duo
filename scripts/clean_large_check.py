@@ -16,4 +16,10 @@ for seat in (0,1):
  cmd=[sys.executable,'scripts/placement_value_play.py','--checkpoint',str(R/'A-1751401.pt'),'--backend','python','--max-depth','2','--human-seat',str(seat)];log=R/f'clean-human-{seat}.log'
  with log.open('w') as h:subprocess.run(cmd,cwd=target,env=env,input='0\n'*50,text=True,stdout=h,stderr=subprocess.STDOUT,check=True)
  rows.append(dict(command=cmd,log=str(log),scripted_human=True))
-(R/'clean-check.json').write_text(json.dumps(dict(pass_=True,commit=commit,commands=rows,paths=paths,cuda_hidden=True,history_free=True,environment='existing torch 2.7.1+cu128 wheel with CUDA hidden; not an isolated CPU wheel installation'),indent=2));shutil.rmtree(target)
+from audit_placement import replay
+replayed=0
+for row in rows:
+ if 'scripts/placement_value_play.py' not in row['command']:continue
+ lines=Path(row['log']).read_text().splitlines();game=json.loads(lines[-1]);assert replay(game['moves'])==game['scores'];replayed+=1
+assert replayed==8
+(R/'clean-check.json').write_text(json.dumps(dict(pass_=True,commit=commit,commands=rows,paths=paths,cuda_hidden=True,history_free=True,independently_replayed_cli_games=replayed,environment='existing torch 2.7.1+cu128 wheel with CUDA hidden; not an isolated CPU wheel installation'),indent=2));shutil.rmtree(target)
