@@ -55,7 +55,19 @@ Generation retains completed per-game records and regenerates only unfinished
 games. To inspect rather than regenerate, extract the flat game files from each
 `game-archives/*.tar.gz` into `games/`; the archive manifest verifies every byte.
 Training restores each latest Adam/RNG checkpoint and resumes at the next epoch.
-Do not discard `resume-*.pt` when resuming. A/C share one epoch selected only by
+Do not discard `resume-*.pt` when resuming. Running training against this completed
+directory does not perform new updates. To reproduce training from scratch without
+overwriting evidence, create a separate output directory and copy only PLAN.md and
+data-manifest.json there (the manifest retains the original, hashed feature paths):
+
+```bash
+mkdir -p artifacts/value-placement-24576-reproduction
+cp artifacts/value-placement-24576/{PLAN.md,data-manifest.json} artifacts/value-placement-24576-reproduction/
+$PY -c "from pathlib import Path; import placement_large_train as t; t.R=Path('artifacts/value-placement-24576-reproduction'); t.train()"
+```
+
+This optional command runs the full finite six-model training; it is not needed
+for CPU inference or for verifying the saved exports. A/C share one epoch selected only by
 mean new-dev MSE across all six models; selection and evaluation bank hashes are
 fixed before strength games. No model/seed selection uses match outcomes.
 
