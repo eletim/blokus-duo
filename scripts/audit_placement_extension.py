@@ -18,7 +18,7 @@ def main():
  for p,key in [('PLAN.md','plan_sha'),('bank.json','bank_sha'),('bank.json.gz','compressed_sha'),('exclusions.json.gz','excluded_sha')]:assert e.sha(R/p)==bm[key]
  assert hashlib.sha256(memoryview(idx).cast('B')).hexdigest()==bm['index_array_sha']
  for p,h in bm['sources'].items():assert e.sha(p)==h
- bank=readgz(R/'bank.json.gz');cfg=json.loads((R/'games/run.json').read_text());assert cfg['bank_sha']==bm['bank_sha'] and cfg['width']==4 and cfg['depth']==6
+ bank=readgz(R/'bank.json.gz');assert hashlib.sha256((json.dumps(bank,indent=2)+'\n').encode()).hexdigest()==bm['bank_sha'];cfg=json.loads((R/'games/run.json').read_text());assert cfg['bank_sha']==bm['bank_sha'] and cfg['width']==4 and cfg['depth']==6
  assert len({g['rng_seed'] for g in bank['games']})==24768
  for seed,h in bank['models'].items():assert e.sha(f'artifacts/ppo-gen3/seed-{seed}.pt')==h
  for p,h in cfg['source_shas'].items():assert e.sha(p)==h
@@ -54,6 +54,6 @@ def main():
     latest=torch.load(root/f'resume-{v}-{seed}.pt',map_location='cpu',weights_only=False);assert latest['epoch']==16 and latest['updates']==16*steps and all(g['lr']==1e-4 for g in latest['optimizer']['param_groups']);totalupdates+=latest['updates']
   selections[str(stage)]=dict(epoch=chosen,steps_per_epoch=steps,updates_per_model=16*steps)
  final=json.loads((R/'n49152/confirmation-summary.json').read_text());passed=all(v['point_adjusted_ci'][0]>.5+1e-9 and v['difference']>0 and v['stats']['A']['over_550']<=.01 for v in final.values());assert passed==json.loads((R/'n49152/decision.json').read_text())['passed']
- e.write(R/'audit.json',dict(pass_=True,new_generation_games=count,old_training_games_referenced=24576,feature_samples_reencoded=sampled,evaluation_counts=counts,train_dev_overlap=0,training_evaluation_overlap=0,original_training_overlap=0,stage_selections=selections,total_real_updates=totalupdates,seconds=time.perf_counter()-start))
+ e.write(R/'audit.json',dict(pass_=True,bank_restore_byte_exact=True,new_generation_games=count,old_training_games_referenced=24576,feature_samples_reencoded=sampled,evaluation_counts=counts,train_dev_overlap=0,training_evaluation_overlap=0,original_training_overlap=0,stage_selections=selections,total_real_updates=totalupdates,seconds=time.perf_counter()-start))
  print('EXTENSION AUDIT PASS',flush=True)
 if __name__=='__main__':main()
