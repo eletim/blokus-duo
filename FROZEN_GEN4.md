@@ -10,7 +10,7 @@
 
 ## CPUで復元して遊ぶ
 
-Python3.12、Linux x86_64。CPU依存固定例は既存の `artifacts/ppo-gen3/frozen-cpu-environment.txt`（torch2.7.1+cpu/NumPy2.5.4）。サービス検証環境は `artifacts/gen4-release/environment.json`。CUDA版torchでも推論deviceはCPUに固定する。
+Python3.12、Linux x86_64。CPU依存固定例は`artifacts/gen4-release/cpu-requirements.txt`（torch2.7.1+cpu/NumPy2.5.4）。サービス検証環境は `artifacts/gen4-release/environment.json`。CUDA版torchでも推論deviceはCPUに固定する。
 
 ```bash
 git clone --branch gen4-frozen-2026-11-20 --single-branch https://github.com/eletim/blokus-duo.git blokus-gen4
@@ -18,9 +18,9 @@ cd blokus-gen4
 git rev-parse HEAD
 python3.12 -m venv .venv
 .venv/bin/python -m pip install 'torch==2.7.1+cpu' --index-url https://download.pytorch.org/whl/cpu
-.venv/bin/python -m pip install -r artifacts/ppo-gen3/frozen-cpu-environment.txt
+.venv/bin/python -m pip install -r artifacts/gen4-release/cpu-requirements.txt
 python3.12 scripts/verify_frozen_gen4.py
-# 評価済みnative経路をビルド（Cコンパイラが必要）。未ビルドならautoはPythonへfallback。
+# 評価済みnative経路をビルド（Cコンパイラ、または上記依存のziglangを使用）。未ビルドならautoはPythonへfallback。
 .venv/bin/python -m blokus.ppo_native build
 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv/bin/python -m blokus.gen4_play --human-seat 0
 # 後手は --human-seat 1。AI完走は --human-seatを省略。

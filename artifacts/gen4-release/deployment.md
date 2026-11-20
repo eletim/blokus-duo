@@ -30,7 +30,12 @@ model/tag overwrite. To return to the exact predeployment service state, stop an
 disable the new main unit; keep the existing archive drop-in and data directory.
 
 Release checkout is detached and sparse (blokus, models, tests, scripts,
-artifacts/ppo-gen3 and docs); no training data/index required for service.
+artifacts/ppo-gen3, artifacts/ppo-gen2, artifacts/ppo-2048 and docs); no training data/index required for service.
 Build native backend once: `PYTHONPATH=. /home/eletim/blokus-duo-ai/.venv/bin/python -m blokus.ppo_native build`.
 The fixed tag/commit identifies runtime code and model bytes. Test records and
 startup timing are in validation.json; full training/evaluation was not rerun.
+
+User lingering was disabled before deployment; enabled with `loginctl enable-linger eletim`
+so the user service continues across logout and starts at boot. This changes no network
+authentication or firewall settings. If reverting the whole deployment and no other
+user services need lingering, `loginctl disable-linger eletim` restores its prior state.
