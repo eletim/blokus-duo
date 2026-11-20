@@ -1,0 +1,183 @@
+{
+  "pass_": true,
+  "commit": "59f8350feb37769c9d8802d9c31c28a8d950f0f9",
+  "commands": [
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "-m",
+        "blokus.ppo_native",
+        "build"
+      ],
+      "log": "artifacts/value-placement-49152/n49152/clean-0.log"
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "scripts/verify_frozen_gen3.py"
+      ],
+      "log": "artifacts/value-placement-49152/n49152/clean-1.log"
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_placement_extension.py",
+        "tests/test_placement_value.py",
+        "tests/test_ppo_deeper.py"
+      ],
+      "log": "artifacts/value-placement-49152/n49152/clean-2.log"
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "scripts/placement_value_play.py",
+        "--checkpoint",
+        "artifacts/value-placement-49152/n49152/A-1751401.pt",
+        "--backend",
+        "python",
+        "--max-depth",
+        "2",
+        "--budget-ms",
+        "500"
+      ],
+      "log": "artifacts/value-placement-49152/n49152/clean-3.log"
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "scripts/placement_value_play.py",
+        "--checkpoint",
+        "artifacts/value-placement-49152/n49152/C-1751401.pt",
+        "--backend",
+        "python",
+        "--max-depth",
+        "2",
+        "--budget-ms",
+        "500"
+      ],
+      "log": "artifacts/value-placement-49152/n49152/clean-4.log"
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "scripts/placement_value_play.py",
+        "--checkpoint",
+        "artifacts/value-placement-49152/n49152/A-1751402.pt",
+        "--backend",
+        "python",
+        "--max-depth",
+        "2",
+        "--budget-ms",
+        "500"
+      ],
+      "log": "artifacts/value-placement-49152/n49152/clean-5.log"
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "scripts/placement_value_play.py",
+        "--checkpoint",
+        "artifacts/value-placement-49152/n49152/C-1751402.pt",
+        "--backend",
+        "python",
+        "--max-depth",
+        "2",
+        "--budget-ms",
+        "500"
+      ],
+      "log": "artifacts/value-placement-49152/n49152/clean-6.log"
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "scripts/placement_value_play.py",
+        "--checkpoint",
+        "artifacts/value-placement-49152/n49152/A-1751403.pt",
+        "--backend",
+        "python",
+        "--max-depth",
+        "2",
+        "--budget-ms",
+        "500"
+      ],
+      "log": "artifacts/value-placement-49152/n49152/clean-7.log"
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "scripts/placement_value_play.py",
+        "--checkpoint",
+        "artifacts/value-placement-49152/n49152/C-1751403.pt",
+        "--backend",
+        "python",
+        "--max-depth",
+        "2",
+        "--budget-ms",
+        "500"
+      ],
+      "log": "artifacts/value-placement-49152/n49152/clean-8.log"
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "scripts/placement_value_play.py",
+        "--checkpoint",
+        "artifacts/value-placement-49152/n49152/A-1751401.pt",
+        "--backend",
+        "python",
+        "--max-depth",
+        "2",
+        "--human-seat",
+        "0"
+      ],
+      "log": "artifacts/value-placement-49152/n49152/clean-human-0.log",
+      "scripted_human": true
+    },
+    {
+      "command": [
+        "/home/eletim/blokus-duo-ai/.venv/bin/python",
+        "scripts/placement_value_play.py",
+        "--checkpoint",
+        "artifacts/value-placement-49152/n49152/A-1751401.pt",
+        "--backend",
+        "python",
+        "--max-depth",
+        "2",
+        "--human-seat",
+        "1"
+      ],
+      "log": "artifacts/value-placement-49152/n49152/clean-human-1.log",
+      "scripted_human": true
+    }
+  ],
+  "paths": [
+    "blokus",
+    "scripts",
+    "tests",
+    "models",
+    "pyproject.toml",
+    "requirements.lock.txt",
+    "README.md",
+    "FROZEN_GEN3.md",
+    "artifacts/ppo-gen3",
+    "artifacts/ppo-gen2",
+    "artifacts/ppo-2048",
+    "artifacts/best-trained.pt",
+    "artifacts/research-a2/selected.json",
+    "artifacts/ppo-cpu-throughput/games.json",
+    "artifacts/value-search/compact/seed-201/predictive-best.pt",
+    "artifacts/value-placement-49152/n49152/A-1751401.pt",
+    "artifacts/value-placement-49152/n49152/A-1751402.pt",
+    "artifacts/value-placement-49152/n49152/A-1751403.pt",
+    "artifacts/value-placement-49152/n49152/C-1751401.pt",
+    "artifacts/value-placement-49152/n49152/C-1751402.pt",
+    "artifacts/value-placement-49152/n49152/C-1751403.pt"
+  ],
+  "cuda_hidden": true,
+  "history_free": true,
+  "independently_replayed_cli_games": 8,
+  "environment": "existing torch 2.7.1+cu128 wheel with CUDA hidden; not an isolated CPU wheel installation"
+}
