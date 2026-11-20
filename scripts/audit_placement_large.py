@@ -1,7 +1,7 @@
 """Post-timing independent replay, exact arithmetic, selection and frozen hashes."""
 import os
 os.environ.setdefault('OPENBLAS_NUM_THREADS','1');os.environ.setdefault('OMP_NUM_THREADS','1')
-import concurrent.futures,collections,gzip,json,time
+import concurrent.futures,collections,gzip,json,time,hashlib
 from pathlib import Path
 import numpy as np
 import torch
@@ -15,6 +15,13 @@ R=q.R;e=q.e
 
 def main():
  start=time.perf_counter();e.setup();manifest=json.loads((R/'data-manifest.json').read_text());bank=json.loads((R/'bank-manifest.json').read_text());excluded=set(readgz(R/'evaluation-excluded.json.gz')['states']);idx=np.load(e.INDEX,mmap_mode='r')
+ assert e.sha(R/'PLAN.md')==bank['plan_sha'] and e.sha(R/'bank.json')==bank['bank_sha'] and e.sha(R/'bank.json.gz')==bank['compressed_sha'] and e.sha(R/'exclusions.json.gz')==bank['excluded_sha']
+ assert hashlib.sha256(memoryview(idx).cast('B')).hexdigest()==bank['index_array_sha']
+ for p,h in bank['sources'].items():assert e.sha(p)==h,p
+ run=readgz(R/'bank.json.gz');cfg=json.loads((R/'games/run.json').read_text())
+ assert cfg['bank_sha']==bank['bank_sha'] and cfg['width']==4 and cfg['depth']==6
+ for seed,h in run['models'].items():assert e.sha(f'artifacts/ppo-gen3/seed-{seed}.pt')==h
+ for p,h in cfg['source_shas'].items():assert e.sha(p)==h,p
  for p,h in manifest['file_shas'].items():assert e.sha(p)==h
  count=0;sampled=0
  for sh in manifest['shards']:
