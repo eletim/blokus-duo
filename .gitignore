@@ -26,3 +26,10 @@ artifacts/gpu-async512/quality/bank.json
 artifacts/gpu-async512/final/prior-states.json.gz
 artifacts/gpu-async512/development-one-seed.json
 artifacts/gpu-async512/steady-excluded.json.gz
+# New large learning trial: archives/features are stored in bounded shards.
+artifacts/value-placement-24576/bank.json
+artifacts/value-placement-24576/exclusions.json.gz
+artifacts/value-placement-24576/games/[0-9]*-*.json.gz
+artifacts/value-placement-24576/feature-shards/
+artifacts/value-placement-24576/evaluation-excluded.json.gz
+artifacts/value-placement-24576/audit-bank-*.json
