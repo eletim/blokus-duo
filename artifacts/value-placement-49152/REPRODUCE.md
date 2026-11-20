@@ -7,8 +7,16 @@ export PYTHONPATH=.:scripts OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
 PY=/home/eletim/blokus-duo-ai/.venv/bin/python
 $PY -m blokus.ppo_native build
 # Existing bank is fixed; do not prepare or regenerate a completed bank.
-# Restore bank.json from bank.json.gz if needed.
-gzip -dc artifacts/value-placement-49152/bank.json.gz > artifacts/value-placement-49152/bank.json
+# Restore the exact pretty-printed bank representation if needed (gzip uses compact JSON).
+$PY - <<'RESTORE'
+import gzip,json,hashlib
+from pathlib import Path
+r=Path('artifacts/value-placement-49152')
+d=json.load(gzip.open(r/'bank.json.gz','rt'))
+b=(json.dumps(d,indent=2)+'\n').encode()
+assert hashlib.sha256(b).hexdigest()==json.loads((r/'bank-manifest.json').read_text())['bank_sha']
+(r/'bank.json').write_bytes(b)
+RESTORE
 $PY scripts/monitor_generation.py --telemetry artifacts/value-placement-49152/generation-telemetry.json \
  "$PY" scripts/async_generation.py --bank artifacts/value-placement-49152/bank.json \
  --out artifacts/value-placement-49152/games --concurrency 512 --batch 128 --fast-encoding --graphs
