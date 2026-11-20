@@ -15,3 +15,28 @@ artifacts/secretary-review/resume/**
 !artifacts/secretary-review/resume/result.json
 
 .native/
+# Reconstructed union of existing research state hashes (manifest is tracked).
+artifacts/gpu-generation/excluded.json
+# Async generation archives retain full new trajectories without thousands of loose Git files.
+artifacts/gpu-async512/**/[0-9]*-*.json.gz
+artifacts/gpu-async512/*bank*.json
+artifacts/gpu-async512/final/bank.json
+artifacts/gpu-async512/final/audit-bank-*.json
+artifacts/gpu-async512/quality/bank.json
+artifacts/gpu-async512/final/prior-states.json.gz
+artifacts/gpu-async512/development-one-seed.json
+artifacts/gpu-async512/steady-excluded.json.gz
+# New large learning trial: archives/features are stored in bounded shards.
+artifacts/value-placement-24576/bank.json
+artifacts/value-placement-24576/exclusions.json.gz
+artifacts/value-placement-24576/games/[0-9]*-*.json.gz
+artifacts/value-placement-24576/feature-shards/
+artifacts/value-placement-24576/evaluation-excluded.json.gz
+artifacts/value-placement-24576/audit-bank-*.json
+
+# Five-hour expansion raw files are represented by archives/manifests.
+artifacts/value-placement-49152/bank.json
+artifacts/value-placement-49152/exclusions.json.gz
+artifacts/value-placement-49152/games/[0-9]*-*.json.gz
+artifacts/value-placement-49152/evaluation-excluded.json.gz
+artifacts/value-placement-49152/**/evaluation-excluded.json.gz

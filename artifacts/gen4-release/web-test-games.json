@@ -1,0 +1,1576 @@
+[
+  {
+    "schema_version": 1,
+    "id": "OzRZbthZHfu4C6y_XLNMc_JdivErgvdc",
+    "started_at": "2026-11-20T10:18:38.638026+00:00",
+    "updated_at": "2026-11-20T10:18:43.164825+00:00",
+    "kind": "test",
+    "rules": {
+      "name": "Blokus Duo",
+      "board": [
+        14,
+        14
+      ],
+      "starts": [
+        [
+          4,
+          4
+        ],
+        [
+          9,
+          9
+        ]
+      ],
+      "coordinates": "zero-based",
+      "all_placed_bonus": 15,
+      "last_monomino_bonus": 20
+    },
+    "human_seat": 0,
+    "mode": "gen4",
+    "model_seed": 1751401,
+    "generation": "gen4",
+    "model_sha256": "1658d365175e4eae3a7bf5a710ac86dbcbc94ceab4770940e37c9d31c4935d7d",
+    "model_components": {
+      "policy_sha256": "5e5d66569a8690d711a4f5d04a627cb70130e055d18000a1b9ee3fd3a5cecdb7",
+      "manifest_sha256": "d93c00bccc195849880a0a104ce1d04bbc07f4100f2b92116b759a6cd9a9206a",
+      "value_sha256": "1658d365175e4eae3a7bf5a710ac86dbcbc94ceab4770940e37c9d31c4935d7d"
+    },
+    "code_version": "6ef7fe5d941cf51dc8f6de03f574778a6ecac724",
+    "budget_ms": 500,
+    "revision": 40,
+    "moves": [
+      {
+        "ply": 1,
+        "turn": 0,
+        "move": [
+          0,
+          0,
+          4,
+          4
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 2,
+        "turn": 1,
+        "move": [
+          20,
+          0,
+          7,
+          8
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 4,
+          "nodes": 1686,
+          "nn_policy_calls": 546,
+          "nn_value_calls": 1089,
+          "cache_hits": 51,
+          "cutoffs": 298,
+          "stages": [
+            2,
+            4
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 500.0353549839929
+        }
+      },
+      {
+        "ply": 3,
+        "turn": 0,
+        "move": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 4,
+        "turn": 1,
+        "move": [
+          17,
+          6,
+          9,
+          6
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 4,
+          "nodes": 1735,
+          "nn_policy_calls": 572,
+          "nn_value_calls": 1099,
+          "cache_hits": 108,
+          "cutoffs": 319,
+          "stages": [
+            2,
+            4
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 500.14501600526273
+        }
+      },
+      {
+        "ply": 5,
+        "turn": 0,
+        "move": [
+          2,
+          0,
+          2,
+          4
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 6,
+        "turn": 1,
+        "move": [
+          11,
+          7,
+          12,
+          3
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 1833,
+          "nn_policy_calls": 554,
+          "nn_value_calls": 1214,
+          "cache_hits": 65,
+          "cutoffs": 296,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 489.3580839270726
+        }
+      },
+      {
+        "ply": 7,
+        "turn": 0,
+        "move": [
+          3,
+          0,
+          0,
+          3
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 8,
+        "turn": 1,
+        "move": [
+          18,
+          3,
+          5,
+          11
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 1723,
+          "nn_policy_calls": 532,
+          "nn_value_calls": 1126,
+          "cache_hits": 65,
+          "cutoffs": 290,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 479.88997504580766
+        }
+      },
+      {
+        "ply": 9,
+        "turn": 0,
+        "move": [
+          4,
+          0,
+          1,
+          7
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 10,
+        "turn": 1,
+        "move": [
+          16,
+          2,
+          1,
+          11
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 1558,
+          "nn_policy_calls": 518,
+          "nn_value_calls": 982,
+          "cache_hits": 66,
+          "cutoffs": 306,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 365.115946973674
+        }
+      },
+      {
+        "ply": 11,
+        "turn": 0,
+        "move": [
+          5,
+          0,
+          3,
+          7
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 12,
+        "turn": 1,
+        "move": [
+          15,
+          3,
+          3,
+          8
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 2006,
+          "nn_policy_calls": 674,
+          "nn_value_calls": 1262,
+          "cache_hits": 78,
+          "cutoffs": 385,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 440.9778609406203
+        }
+      },
+      {
+        "ply": 13,
+        "turn": 0,
+        "move": [
+          6,
+          0,
+          0,
+          11
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 14,
+        "turn": 1,
+        "move": [
+          9,
+          0,
+          0,
+          6
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 1466,
+          "nn_policy_calls": 495,
+          "nn_value_calls": 902,
+          "cache_hits": 102,
+          "cutoffs": 291,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 303.2899850513786
+        }
+      },
+      {
+        "ply": 15,
+        "turn": 0,
+        "move": [
+          7,
+          0,
+          1,
+          0
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 16,
+        "turn": 1,
+        "move": [
+          19,
+          3,
+          8,
+          11
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 1823,
+          "nn_policy_calls": 598,
+          "nn_value_calls": 1162,
+          "cache_hits": 63,
+          "cutoffs": 332,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 363.6263230582699
+        }
+      },
+      {
+        "ply": 17,
+        "turn": 0,
+        "move": [
+          8,
+          0,
+          4,
+          0
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 18,
+        "turn": 1,
+        "move": [
+          8,
+          0,
+          5,
+          6
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 1611,
+          "nn_policy_calls": 523,
+          "nn_value_calls": 1026,
+          "cache_hits": 62,
+          "cutoffs": 293,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 311.2518979469314
+        }
+      },
+      {
+        "ply": 19,
+        "turn": 0,
+        "move": [
+          9,
+          1,
+          5,
+          5
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 20,
+        "turn": 1,
+        "move": [
+          13,
+          2,
+          9,
+          3
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 864,
+          "nn_policy_calls": 400,
+          "nn_value_calls": 407,
+          "cache_hits": 57,
+          "cutoffs": 239,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 162.04613796435297
+        }
+      },
+      {
+        "ply": 21,
+        "turn": 0,
+        "move": [
+          10,
+          4,
+          6,
+          0
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 22,
+        "turn": 1,
+        "move": [
+          6,
+          0,
+          3,
+          4
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 273,
+          "nn_policy_calls": 127,
+          "nn_value_calls": 100,
+          "cache_hits": 67,
+          "cutoffs": 82,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 43.91320899594575
+        }
+      },
+      {
+        "ply": 23,
+        "turn": 0,
+        "move": [
+          16,
+          1,
+          5,
+          8
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 24,
+        "turn": 1,
+        "move": [
+          12,
+          4,
+          11,
+          12
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 195,
+          "nn_policy_calls": 93,
+          "nn_value_calls": 72,
+          "cache_hits": 43,
+          "cutoffs": 60,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 32.08642499521375
+        }
+      },
+      {
+        "ply": 25,
+        "turn": 0,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 26,
+        "turn": 1,
+        "move": [
+          14,
+          0,
+          10,
+          0
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 203,
+          "nn_policy_calls": 93,
+          "nn_value_calls": 72,
+          "cache_hits": 55,
+          "cutoffs": 60,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 31.81761410087347
+        }
+      },
+      {
+        "ply": 27,
+        "turn": 0,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 28,
+        "turn": 1,
+        "move": [
+          10,
+          7,
+          5,
+          1
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 183,
+          "nn_policy_calls": 85,
+          "nn_value_calls": 64,
+          "cache_hits": 57,
+          "cutoffs": 57,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 28.06328295264393
+        }
+      },
+      {
+        "ply": 29,
+        "turn": 0,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 30,
+        "turn": 1,
+        "move": [
+          2,
+          0,
+          2,
+          7
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 175,
+          "nn_policy_calls": 81,
+          "nn_value_calls": 60,
+          "cache_hits": 61,
+          "cutoffs": 58,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 27.453721035271883
+        }
+      },
+      {
+        "ply": 31,
+        "turn": 0,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 32,
+        "turn": 1,
+        "move": [
+          0,
+          0,
+          2,
+          3
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 187,
+          "nn_policy_calls": 85,
+          "nn_value_calls": 64,
+          "cache_hits": 63,
+          "cutoffs": 57,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 27.763561927713454
+        }
+      },
+      {
+        "ply": 33,
+        "turn": 0,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 34,
+        "turn": 1,
+        "move": [
+          1,
+          0,
+          4,
+          2
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 151,
+          "nn_policy_calls": 72,
+          "nn_value_calls": 51,
+          "cache_hits": 40,
+          "cutoffs": 47,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 24.59425199776888
+        }
+      },
+      {
+        "ply": 35,
+        "turn": 0,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 36,
+        "turn": 1,
+        "move": [
+          7,
+          0,
+          11,
+          9
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 60,
+          "nn_policy_calls": 23,
+          "nn_value_calls": 11,
+          "cache_hits": 19,
+          "cutoffs": 4,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 7.157291984185576
+        }
+      },
+      {
+        "ply": 37,
+        "turn": 0,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 38,
+        "turn": 1,
+        "move": [
+          5,
+          1,
+          0,
+          0
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 17,
+          "nn_policy_calls": 5,
+          "nn_value_calls": 2,
+          "cache_hits": 6,
+          "cutoffs": 0,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 2.346416935324669
+        }
+      },
+      {
+        "ply": 39,
+        "turn": 0,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 40,
+        "turn": 1,
+        "move": null,
+        "actor": "ai",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      }
+    ],
+    "status": "finished",
+    "scores": [
+      -45,
+      -7
+    ],
+    "winner": 1,
+    "result": "ai_win",
+    "state": {
+      "boards": [
+        2722425103831839281472985880535826102296,
+        50957596582568508008315374901129302981994313527004967798727
+      ],
+      "remaining": [
+        2029568,
+        24
+      ],
+      "last": [
+        16,
+        5
+      ],
+      "turn": 0,
+      "passes": 2
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "CiUHkWWBYUb69v3u0FXZRTmSD0iKGvY2",
+    "started_at": "2026-11-20T10:18:43.796499+00:00",
+    "updated_at": "2026-11-20T10:18:49.060542+00:00",
+    "kind": "test",
+    "rules": {
+      "name": "Blokus Duo",
+      "board": [
+        14,
+        14
+      ],
+      "starts": [
+        [
+          4,
+          4
+        ],
+        [
+          9,
+          9
+        ]
+      ],
+      "coordinates": "zero-based",
+      "all_placed_bonus": 15,
+      "last_monomino_bonus": 20
+    },
+    "human_seat": 1,
+    "mode": "gen4",
+    "model_seed": 1751401,
+    "generation": "gen4",
+    "model_sha256": "1658d365175e4eae3a7bf5a710ac86dbcbc94ceab4770940e37c9d31c4935d7d",
+    "model_components": {
+      "policy_sha256": "5e5d66569a8690d711a4f5d04a627cb70130e055d18000a1b9ee3fd3a5cecdb7",
+      "manifest_sha256": "d93c00bccc195849880a0a104ce1d04bbc07f4100f2b92116b759a6cd9a9206a",
+      "value_sha256": "1658d365175e4eae3a7bf5a710ac86dbcbc94ceab4770940e37c9d31c4935d7d"
+    },
+    "code_version": "6ef7fe5d941cf51dc8f6de03f574778a6ecac724",
+    "budget_ms": 500,
+    "revision": 37,
+    "moves": [
+      {
+        "ply": 1,
+        "turn": 0,
+        "move": [
+          20,
+          0,
+          3,
+          2
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 1606,
+          "nn_policy_calls": 500,
+          "nn_value_calls": 1047,
+          "cache_hits": 59,
+          "cutoffs": 275,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 466.4355159038678
+        }
+      },
+      {
+        "ply": 2,
+        "turn": 1,
+        "move": [
+          0,
+          0,
+          9,
+          9
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 3,
+        "turn": 0,
+        "move": [
+          17,
+          0,
+          5,
+          0
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 4,
+          "nodes": 1838,
+          "nn_policy_calls": 599,
+          "nn_value_calls": 1170,
+          "cache_hits": 77,
+          "cutoffs": 338,
+          "stages": [
+            2,
+            4
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 500.2754060551524
+        }
+      },
+      {
+        "ply": 4,
+        "turn": 1,
+        "move": [
+          1,
+          0,
+          8,
+          7
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 5,
+        "turn": 0,
+        "move": [
+          15,
+          1,
+          8,
+          0
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 1873,
+          "nn_policy_calls": 588,
+          "nn_value_calls": 1218,
+          "cache_hits": 67,
+          "cutoffs": 323,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 499.1834529209882
+        }
+      },
+      {
+        "ply": 6,
+        "turn": 1,
+        "move": [
+          2,
+          0,
+          7,
+          4
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 7,
+        "turn": 0,
+        "move": [
+          19,
+          0,
+          10,
+          3
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 1749,
+          "nn_policy_calls": 568,
+          "nn_value_calls": 1114,
+          "cache_hits": 67,
+          "cutoffs": 311,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 438.34603298455477
+        }
+      },
+      {
+        "ply": 8,
+        "turn": 1,
+        "move": [
+          3,
+          0,
+          5,
+          7
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 9,
+        "turn": 0,
+        "move": [
+          16,
+          7,
+          10,
+          6
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 1471,
+          "nn_policy_calls": 489,
+          "nn_value_calls": 914,
+          "cache_hits": 68,
+          "cutoffs": 290,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 361.84108804445714
+        }
+      },
+      {
+        "ply": 10,
+        "turn": 1,
+        "move": [
+          4,
+          0,
+          4,
+          9
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 11,
+        "turn": 0,
+        "move": [
+          18,
+          2,
+          7,
+          10
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 1621,
+          "nn_policy_calls": 538,
+          "nn_value_calls": 1015,
+          "cache_hits": 86,
+          "cutoffs": 304,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 364.0866349451244
+        }
+      },
+      {
+        "ply": 12,
+        "turn": 1,
+        "move": [
+          5,
+          0,
+          2,
+          8
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 13,
+        "turn": 0,
+        "move": [
+          10,
+          3,
+          3,
+          12
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 2222,
+          "nn_policy_calls": 742,
+          "nn_value_calls": 1411,
+          "cache_hits": 82,
+          "cutoffs": 421,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 476.4038260327652
+        }
+      },
+      {
+        "ply": 14,
+        "turn": 1,
+        "move": [
+          6,
+          0,
+          0,
+          6
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 15,
+        "turn": 0,
+        "move": [
+          13,
+          2,
+          0,
+          4
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 2215,
+          "nn_policy_calls": 718,
+          "nn_value_calls": 1424,
+          "cache_hits": 130,
+          "cutoffs": 414,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 461.5112110041082
+        }
+      },
+      {
+        "ply": 16,
+        "turn": 1,
+        "move": [
+          7,
+          0,
+          0,
+          11
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 17,
+        "turn": 0,
+        "move": [
+          12,
+          2,
+          3,
+          6
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 2165,
+          "nn_policy_calls": 710,
+          "nn_value_calls": 1351,
+          "cache_hits": 238,
+          "cutoffs": 401,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 468.2383610634133
+        }
+      },
+      {
+        "ply": 18,
+        "turn": 1,
+        "move": [
+          8,
+          0,
+          8,
+          2
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 19,
+        "turn": 0,
+        "move": [
+          8,
+          2,
+          11,
+          9
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 1894,
+          "nn_policy_calls": 654,
+          "nn_value_calls": 1167,
+          "cache_hits": 73,
+          "cutoffs": 393,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 348.07544702198356
+        }
+      },
+      {
+        "ply": 20,
+        "turn": 1,
+        "move": [
+          10,
+          0,
+          6,
+          9
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 21,
+        "turn": 0,
+        "move": [
+          6,
+          2,
+          8,
+          5
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 1305,
+          "nn_policy_calls": 531,
+          "nn_value_calls": 705,
+          "cache_hits": 98,
+          "cutoffs": 291,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 234.6281420905143
+        }
+      },
+      {
+        "ply": 22,
+        "turn": 1,
+        "move": [
+          9,
+          1,
+          7,
+          13
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 23,
+        "turn": 0,
+        "move": [
+          7,
+          0,
+          12,
+          12
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 790,
+          "nn_policy_calls": 394,
+          "nn_value_calls": 330,
+          "cache_hits": 76,
+          "cutoffs": 256,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 138.25215795077384
+        }
+      },
+      {
+        "ply": 24,
+        "turn": 1,
+        "move": [
+          11,
+          2,
+          10,
+          2
+        ],
+        "actor": "human",
+        "stats": null
+      },
+      {
+        "ply": 25,
+        "turn": 0,
+        "move": [
+          2,
+          0,
+          13,
+          6
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 205,
+          "nn_policy_calls": 93,
+          "nn_value_calls": 72,
+          "cache_hits": 58,
+          "cutoffs": 72,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 34.54104205593467
+        }
+      },
+      {
+        "ply": 26,
+        "turn": 1,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 27,
+        "turn": 0,
+        "move": [
+          14,
+          1,
+          0,
+          0
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 217,
+          "nn_policy_calls": 105,
+          "nn_value_calls": 84,
+          "cache_hits": 28,
+          "cutoffs": 67,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 34.14149000309408
+        }
+      },
+      {
+        "ply": 28,
+        "turn": 1,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 29,
+        "turn": 0,
+        "move": [
+          1,
+          0,
+          3,
+          0
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 201,
+          "nn_policy_calls": 97,
+          "nn_value_calls": 76,
+          "cache_hits": 36,
+          "cutoffs": 65,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 31.311832019127905
+        }
+      },
+      {
+        "ply": 30,
+        "turn": 1,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 31,
+        "turn": 0,
+        "move": [
+          0,
+          0,
+          7,
+          7
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 132,
+          "nn_policy_calls": 61,
+          "nn_value_calls": 40,
+          "cache_hits": 41,
+          "cutoffs": 36,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 18.301624106243253
+        }
+      },
+      {
+        "ply": 32,
+        "turn": 1,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 33,
+        "turn": 0,
+        "move": [
+          5,
+          6,
+          11,
+          0
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 47,
+          "nn_policy_calls": 17,
+          "nn_value_calls": 8,
+          "cache_hits": 16,
+          "cutoffs": 1,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 5.11755608022213
+        }
+      },
+      {
+        "ply": 34,
+        "turn": 1,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 35,
+        "turn": 0,
+        "move": [
+          3,
+          2,
+          5,
+          5
+        ],
+        "actor": "ai",
+        "stats": {
+          "depth": 6,
+          "nodes": 17,
+          "nn_policy_calls": 5,
+          "nn_value_calls": 2,
+          "cache_hits": 6,
+          "cutoffs": 0,
+          "stages": [
+            2,
+            4,
+            6
+          ],
+          "fallback": false,
+          "forced_pass": false,
+          "elapsed_ms": 2.3683360777795315
+        }
+      },
+      {
+        "ply": 36,
+        "turn": 1,
+        "move": null,
+        "actor": "human",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      },
+      {
+        "ply": 37,
+        "turn": 0,
+        "move": null,
+        "actor": "ai",
+        "stats": {
+          "forced_pass": true,
+          "elapsed_ms": 0
+        }
+      }
+    ],
+    "status": "finished",
+    "scores": [
+      -14,
+      -45
+    ],
+    "winner": 0,
+    "result": "ai_win",
+    "state": {
+      "boards": [
+        78095033740828355653125005509970622483672830380530211553335,
+        24521612589196283202105792908551232383622073899563358656
+      ],
+      "remaining": [
+        2576,
+        2093056
+      ],
+      "last": [
+        3,
+        11
+      ],
+      "turn": 1,
+      "passes": 2
+    }
+  }
+]

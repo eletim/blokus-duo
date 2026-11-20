@@ -1,0 +1,17 @@
+[Unit]
+Description=Blokus Duo human play (gen4 Frozen)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/eletim/blokus-gen4-frozen
+Environment=PYTHONPATH=.
+Environment=OMP_NUM_THREADS=1
+Environment=OPENBLAS_NUM_THREADS=1
+ExecStart=/home/eletim/blokus-duo-ai/.venv/bin/python -m blokus.web_play --host 100.95.30.96 --port 8765 --device cpu
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/eletim/blokus-value-placement/scripts/clean_async_check.py", line 11, in <module>
+    with log.open('w') as handle:subprocess.run(cmd,cwd=target,env=env,stdout=handle,stderr=subprocess.STDOUT,check=True)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/eletim/blokus-duo-ai/.venv/bin/python', '-m', 'pytest', '-q']' returned non-zero exit status 1.

@@ -1,0 +1,37 @@
+{
+  "results": [
+    {
+      "variant": "A",
+      "device": "cpu",
+      "pass_": true
+    },
+    {
+      "variant": "B",
+      "device": "cpu",
+      "pass_": true
+    },
+    {
+      "variant": "C",
+      "device": "cpu",
+      "pass_": true
+    },
+    {
+      "variant": "A",
+      "device": "cuda",
+      "pass_": true
+    },
+    {
+      "variant": "B",
+      "device": "cuda",
+      "pass_": true
+    },
+    {
+      "variant": "C",
+      "device": "cuda",
+      "pass_": true
+    }
+  ],
+  "fixture_states": 137,
+  "comparison": "6 epochs versus 2 + fresh-process restore + 4; actual saved Adam and RNG",
+  "pass_": true
+}

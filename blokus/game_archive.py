@@ -22,7 +22,9 @@ def identity():
     except (OSError, subprocess.CalledProcessError):
         version = 'unknown'
     paths = {'gen3': root/'artifacts/ppo-gen3/seed-1751401.pt',
-             'linear-L': root/'models/linear-L/seed-3101.json'}
+             'linear-L': root/'models/linear-L/seed-3101.json',
+             'gen4': root/'models/gen4/value-1751401.pt',
+             'gen4-manifest': root/'models/gen4/manifest.json'}
     return dict(code_version=version, model_hashes={k: hashlib.sha256(p.read_bytes()).hexdigest() for k,p in paths.items()})
 
 
@@ -60,10 +62,10 @@ class Archive:
 
 
 def record(key,g,meta):
-    s=g['state']; generation='linear-L' if g['mode']=='linear' else 'gen3'
+    s=g['state']; generation='linear-L' if g['mode']=='linear' else 'gen4' if g['mode']=='gen4' else 'gen3'
     scores=[s.score(0),s.score(1)]
     moves=[dict(ply=i+1,turn=i%2,move=m,actor='human' if i%2==g['seat'] else 'ai',stats=g['move_stats'][i]) for i,m in enumerate(g['history'])]
-    return dict(schema_version=1,id=key,started_at=g['started_at'],updated_at=now(),kind=g['kind'],rules=dict(name='Blokus Duo',board=[14,14],starts=START,coordinates='zero-based',all_placed_bonus=15,last_monomino_bonus=20),human_seat=g['seat'],mode=g['mode'],model_seed=3101 if generation=='linear-L' else 1751401,generation=generation,model_sha256=meta.get('model_hashes',{}).get(generation),code_version=meta.get('code_version','unknown'),budget_ms=g['budget'],revision=len(moves),moves=moves,status='finished' if s.done else 'unfinished',scores=scores,winner=(None if scores[0]==scores[1] else int(scores[1]>scores[0])) if s.done else None,result=('draw' if scores[0]==scores[1] else 'human_win' if scores[g['seat']]>scores[1-g['seat']] else 'ai_win') if s.done else None,state=dict(boards=s.boards,remaining=s.remaining,last=s.last,turn=s.turn,passes=s.passes))
+    return dict(schema_version=1,id=key,started_at=g['started_at'],updated_at=now(),kind=g['kind'],rules=dict(name='Blokus Duo',board=[14,14],starts=START,coordinates='zero-based',all_placed_bonus=15,last_monomino_bonus=20),human_seat=g['seat'],mode=g['mode'],model_seed=3101 if generation=='linear-L' else 1751401,generation=generation,model_sha256=meta.get('model_hashes',{}).get(generation),model_components=({'policy_sha256':meta.get('model_hashes',{}).get('gen3'),'manifest_sha256':meta.get('model_hashes',{}).get('gen4-manifest'),'value_sha256':meta.get('model_hashes',{}).get('gen4')} if generation=='gen4' else None),code_version=meta.get('code_version','unknown'),budget_ms=g['budget'],revision=len(moves),moves=moves,status='finished' if s.done else 'unfinished',scores=scores,winner=(None if scores[0]==scores[1] else int(scores[1]>scores[0])) if s.done else None,result=('draw' if scores[0]==scores[1] else 'human_win' if scores[g['seat']]>scores[1-g['seat']] else 'ai_win') if s.done else None,state=dict(boards=s.boards,remaining=s.remaining,last=s.last,turn=s.turn,passes=s.passes))
 
 
 def replay(r):

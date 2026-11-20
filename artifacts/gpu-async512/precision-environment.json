@@ -1,0 +1,10 @@
+{
+  "torch": "2.7.1+cu128",
+  "cuda": "12.8",
+  "matmul_tf32": false,
+  "cudnn_tf32": true,
+  "deterministic": true,
+  "tensor_dtype": "float32",
+  "requests": 128,
+  "note": "event intervals include stream scheduling; profiler adds overhead and is separate from throughput"
+}

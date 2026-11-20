@@ -1,0 +1,76 @@
+{
+  "passed": false,
+  "speed_ratios": [
+    0.06255691000123152,
+    0.061815245827568706
+  ],
+  "exact_game_trajectories": 47,
+  "paired_games": 48,
+  "max_same_state_root_error": 4.172325134277344e-07,
+  "numeric_passed": true,
+  "results": {
+    "cpu-1": {
+      "games": 24,
+      "seconds": 12.550682718981989,
+      "games_per_second": 1.912246571551184,
+      "moves": 653,
+      "nodes": 599296,
+      "nodes_per_second": 47750.07172268077,
+      "nn_policy_calls": 210838,
+      "nn_value_calls": 353618,
+      "completed_depth6": 574,
+      "nonpass": 574,
+      "visited": 653,
+      "prior_saved_overlap": 0,
+      "prior_training_overlap": 0
+    },
+    "gpu-1": {
+      "games": 24,
+      "seconds": 200.62823945004493,
+      "games_per_second": 0.11962423667669096,
+      "moves": 653,
+      "nodes": 599203,
+      "nodes_per_second": 2986.633395390969,
+      "nn_policy_calls": 210808,
+      "nn_value_calls": 353577,
+      "completed_depth6": 574,
+      "nonpass": 574,
+      "visited": 653,
+      "prior_saved_overlap": 0,
+      "prior_training_overlap": 0
+    },
+    "gpu-2": {
+      "games": 24,
+      "seconds": 200.74759103206452,
+      "games_per_second": 0.11955311581381112,
+      "moves": 653,
+      "nodes": 599587,
+      "nodes_per_second": 2986.7705854773153,
+      "nn_policy_calls": 210968,
+      "nn_value_calls": 353777,
+      "completed_depth6": 574,
+      "nonpass": 574,
+      "visited": 653,
+      "prior_saved_overlap": 0,
+      "prior_training_overlap": 0
+    },
+    "cpu-2": {
+      "games": 24,
+      "seconds": 12.409261688939296,
+      "games_per_second": 1.9340393168911763,
+      "moves": 653,
+      "nodes": 599296,
+      "nodes_per_second": 48294.25110231726,
+      "nn_policy_calls": 210838,
+      "nn_value_calls": 353618,
+      "completed_depth6": 574,
+      "nonpass": 574,
+      "visited": 653,
+      "prior_saved_overlap": 0,
+      "prior_training_overlap": 0
+    }
+  },
+  "bank_sha": "5787eaecdce4c0669381d28710aad25d58bc65aa6c7bb3652cf17bfb731b7392",
+  "additional_training": false,
+  "reason": "Stage2 requires both throughput repeats >=1.15x and numerical quality."
+}

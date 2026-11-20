@@ -1,0 +1,468 @@
+{
+  "results": {
+    "artifacts/gpu-async512/final/cpu-1": {
+      "games": 384,
+      "moves": 10543,
+      "nodes": 9593265,
+      "nn_policy": 3387055,
+      "nn_value": 5649546,
+      "cutoffs": 1966617,
+      "depth6": 9290,
+      "nonpass": 9290,
+      "forced_pass": 1253,
+      "fallback": 0,
+      "visited": 10927,
+      "saved_overlap": 0,
+      "training_overlap": 0,
+      "paired_games": 384,
+      "equal_trajectories": 384,
+      "equal_terminal_scores": 384,
+      "equal_terminal_wdl": 384,
+      "max_terminal_score_delta": 0,
+      "same_state_moves": 10543,
+      "action_agreement": 1.0,
+      "max_same_state_root_error": 0.0
+    },
+    "artifacts/gpu-async512/final/async-1": {
+      "games": 384,
+      "moves": 10541,
+      "nodes": 9592701,
+      "nn_policy": 3387057,
+      "nn_value": 5649159,
+      "cutoffs": 1966506,
+      "depth6": 9289,
+      "nonpass": 9289,
+      "forced_pass": 1252,
+      "fallback": 0,
+      "visited": 10925,
+      "saved_overlap": 0,
+      "training_overlap": 0,
+      "paired_games": 384,
+      "equal_trajectories": 375,
+      "equal_terminal_scores": 382,
+      "equal_terminal_wdl": 384,
+      "max_terminal_score_delta": 4,
+      "same_state_moves": 10447,
+      "action_agreement": 0.999138508662774,
+      "max_same_state_root_error": 1.2740492820739746e-06
+    },
+    "artifacts/gpu-async512/final/parallel-1": {
+      "games": 384,
+      "moves": 10543,
+      "nodes": 9595760,
+      "nn_policy": 3388214,
+      "nn_value": 5650772,
+      "cutoffs": 1967127,
+      "depth6": 9290,
+      "nonpass": 9290,
+      "forced_pass": 1253,
+      "fallback": 0,
+      "visited": 10927,
+      "saved_overlap": 0,
+      "training_overlap": 0,
+      "paired_games": 384,
+      "equal_trajectories": 381,
+      "equal_terminal_scores": 384,
+      "equal_terminal_wdl": 384,
+      "max_terminal_score_delta": 0,
+      "same_state_moves": 10512,
+      "action_agreement": 0.9997146118721462,
+      "max_same_state_root_error": 1.2740492820739746e-06
+    },
+    "artifacts/gpu-async512/final/async-2": {
+      "games": 384,
+      "moves": 10541,
+      "nodes": 9596258,
+      "nn_policy": 3388277,
+      "nn_value": 5651229,
+      "cutoffs": 1967057,
+      "depth6": 9289,
+      "nonpass": 9289,
+      "forced_pass": 1252,
+      "fallback": 0,
+      "visited": 10925,
+      "saved_overlap": 0,
+      "training_overlap": 0,
+      "paired_games": 384,
+      "equal_trajectories": 378,
+      "equal_terminal_scores": 383,
+      "equal_terminal_wdl": 384,
+      "max_terminal_score_delta": 3,
+      "same_state_moves": 10497,
+      "action_agreement": 0.9994284081166047,
+      "max_same_state_root_error": 1.2740492820739746e-06
+    },
+    "artifacts/gpu-async512/final/cpu-fast-1": {
+      "games": 384,
+      "moves": 10543,
+      "nodes": 9593265,
+      "nn_policy": 3387055,
+      "nn_value": 5649546,
+      "cutoffs": 1966617,
+      "depth6": 9290,
+      "nonpass": 9290,
+      "forced_pass": 1253,
+      "fallback": 0,
+      "visited": 10927,
+      "saved_overlap": 0,
+      "training_overlap": 0,
+      "paired_games": 384,
+      "equal_trajectories": 384,
+      "equal_terminal_scores": 384,
+      "equal_terminal_wdl": 384,
+      "max_terminal_score_delta": 0,
+      "same_state_moves": 10543,
+      "action_agreement": 1.0,
+      "max_same_state_root_error": 0.0
+    },
+    "artifacts/gpu-async512/final/cpu-2": {
+      "games": 384,
+      "moves": 10543,
+      "nodes": 9593265,
+      "nn_policy": 3387055,
+      "nn_value": 5649546,
+      "cutoffs": 1966617,
+      "depth6": 9290,
+      "nonpass": 9290,
+      "forced_pass": 1253,
+      "fallback": 0,
+      "visited": 10927,
+      "saved_overlap": 0,
+      "training_overlap": 0,
+      "paired_games": 384,
+      "equal_trajectories": 384,
+      "equal_terminal_scores": 384,
+      "equal_terminal_wdl": 384,
+      "max_terminal_score_delta": 0,
+      "same_state_moves": 10543,
+      "action_agreement": 1.0,
+      "max_same_state_root_error": 0.0
+    }
+  },
+  "divergences": [
+    {
+      "directory": "artifacts/gpu-async512/final/async-1",
+      "game": "1751401-851.json.gz",
+      "ply": 25,
+      "root_error": 1.043081283569336e-07,
+      "reference_scores": [
+        0.01849328726530075,
+        0.2879461348056793,
+        0.2879461348056793,
+        -0.6481696963310242
+      ],
+      "new_scores": [
+        0.018493182957172394,
+        0.28794607520103455,
+        0.28794610500335693,
+        -0.648169755935669
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-1",
+      "game": "1751402-339.json.gz",
+      "ply": 26,
+      "root_error": 1.4901161193847656e-07,
+      "reference_scores": [
+        -0.5920793414115906,
+        -0.3663882613182068,
+        -0.3663882613182068,
+        -0.39480116963386536
+      ],
+      "new_scores": [
+        -0.5920794010162354,
+        -0.3663884103298187,
+        -0.36638835072517395,
+        -0.39480122923851013
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-1",
+      "game": "1751402-899.json.gz",
+      "ply": 26,
+      "root_error": 1.1920928955078125e-07,
+      "reference_scores": [
+        0.7980478405952454,
+        0.8147223591804504,
+        0.8091733455657959,
+        0.8147223591804504
+      ],
+      "new_scores": [
+        0.7980477809906006,
+        0.8147222995758057,
+        0.8091734647750854,
+        0.8147224187850952
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-1",
+      "game": "1751402-1011.json.gz",
+      "ply": 27,
+      "root_error": 1.1920928955078125e-07,
+      "reference_scores": [
+        -0.7545912265777588,
+        -0.7545912265777588,
+        -0.9155179858207703,
+        -0.9004241824150085
+      ],
+      "new_scores": [
+        -0.7545912265777588,
+        -0.7545911073684692,
+        -0.9155179858207703,
+        -0.9004241228103638
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-1",
+      "game": "1751402-1019.json.gz",
+      "ply": 22,
+      "root_error": 5.960464477539063e-08,
+      "reference_scores": [
+        0.7565736770629883,
+        0.8645106554031372,
+        0.8455181121826172,
+        0.8645106554031372
+      ],
+      "new_scores": [
+        0.7565736770629883,
+        0.8645105957984924,
+        0.8455181121826172,
+        0.8645106554031372
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-1",
+      "game": "1751403-251.json.gz",
+      "ply": 26,
+      "root_error": 5.960464477539063e-08,
+      "reference_scores": [
+        0.8878416419029236,
+        0.8878416419029236,
+        0.5688412189483643,
+        0.8878416419029236
+      ],
+      "new_scores": [
+        0.8878416419029236,
+        0.8878417015075684,
+        0.5688412189483643,
+        0.8878417015075684
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-1",
+      "game": "1751403-419.json.gz",
+      "ply": 30,
+      "root_error": 1.4901161193847656e-07,
+      "reference_scores": [
+        -0.3813507854938507,
+        -0.3813507854938507,
+        -0.40071555972099304,
+        -0.39656147360801697
+      ],
+      "new_scores": [
+        -0.3813508152961731,
+        -0.38135066628456116,
+        -0.4007154107093811,
+        -0.39656147360801697
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-1",
+      "game": "1751403-851.json.gz",
+      "ply": 24,
+      "root_error": 2.8312206268310547e-07,
+      "reference_scores": [
+        0.13528238236904144,
+        0.13528238236904144,
+        -0.06013745814561844,
+        0.13379088044166565
+      ],
+      "new_scores": [
+        0.13528256118297577,
+        0.13528266549110413,
+        -0.060137175023555756,
+        0.13379110395908356
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-1",
+      "game": "1751403-907.json.gz",
+      "ply": 18,
+      "root_error": 5.960464477539063e-08,
+      "reference_scores": [
+        -0.7122910022735596,
+        -0.6831664443016052,
+        -0.6831664443016052,
+        -0.6883652806282043
+      ],
+      "new_scores": [
+        -0.7122910022735596,
+        -0.68316650390625,
+        -0.6831663846969604,
+        -0.6883653402328491
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/parallel-1",
+      "game": "1751401-851.json.gz",
+      "ply": 26,
+      "root_error": 5.960464477539063e-08,
+      "reference_scores": [
+        -0.38188111782073975,
+        -0.38188111782073975,
+        -0.648614227771759,
+        -0.38188111782073975
+      ],
+      "new_scores": [
+        -0.3818811774253845,
+        -0.38188114762306213,
+        -0.648614227771759,
+        -0.38188114762306213
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/parallel-1",
+      "game": "1751402-899.json.gz",
+      "ply": 26,
+      "root_error": 1.1920928955078125e-07,
+      "reference_scores": [
+        0.7980478405952454,
+        0.8147223591804504,
+        0.8091733455657959,
+        0.8147223591804504
+      ],
+      "new_scores": [
+        0.7980477213859558,
+        0.8147222995758057,
+        0.8091734647750854,
+        0.8147224187850952
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/parallel-1",
+      "game": "1751403-851.json.gz",
+      "ply": 28,
+      "root_error": 1.7881393432617188e-07,
+      "reference_scores": [
+        0.871626079082489,
+        0.871626079082489,
+        0.7271406054496765,
+        0.8519477844238281
+      ],
+      "new_scores": [
+        0.8716260194778442,
+        0.871626079082489,
+        0.7271404266357422,
+        0.8519477248191833
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-2",
+      "game": "1751402-91.json.gz",
+      "ply": 31,
+      "root_error": 5.960464477539063e-08,
+      "reference_scores": [
+        0.887537956237793,
+        0.887537956237793,
+        0.8737002015113831,
+        0.8858680725097656
+      ],
+      "new_scores": [
+        0.8875378966331482,
+        0.887537956237793,
+        0.8737002015113831,
+        0.8858680725097656
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-2",
+      "game": "1751402-891.json.gz",
+      "ply": 30,
+      "root_error": 1.1920928955078125e-07,
+      "reference_scores": [
+        -0.8303946256637573,
+        -0.8303946256637573,
+        -0.8492566347122192
+      ],
+      "new_scores": [
+        -0.8303946256637573,
+        -0.8303945064544678,
+        -0.8492566347122192
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-2",
+      "game": "1751403-11.json.gz",
+      "ply": 27,
+      "root_error": 1.7881393432617188e-07,
+      "reference_scores": [
+        -0.005683621857315302,
+        -0.253637433052063,
+        -0.005683621857315302,
+        -0.04519546404480934
+      ],
+      "new_scores": [
+        -0.005683584604412317,
+        -0.2536376118659973,
+        -0.005683443043380976,
+        -0.04519551247358322
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-2",
+      "game": "1751403-739.json.gz",
+      "ply": 26,
+      "root_error": 5.960464477539063e-08,
+      "reference_scores": [
+        0.5846604704856873,
+        0.5846604704856873,
+        0.39331066608428955,
+        -0.24092064797878265
+      ],
+      "new_scores": [
+        0.5846604704856873,
+        0.584660530090332,
+        0.3933107256889343,
+        -0.24092063307762146
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-2",
+      "game": "1751403-795.json.gz",
+      "ply": 31,
+      "root_error": 2.2351741790771484e-07,
+      "reference_scores": [
+        0.11005409806966782,
+        0.11005409806966782,
+        0.0531693696975708,
+        0.10343196988105774
+      ],
+      "new_scores": [
+        0.110054150223732,
+        0.11005432158708572,
+        0.05316932499408722,
+        0.10343200713396072
+      ]
+    },
+    {
+      "directory": "artifacts/gpu-async512/final/async-2",
+      "game": "1751403-907.json.gz",
+      "ply": 18,
+      "root_error": 5.960464477539063e-08,
+      "reference_scores": [
+        -0.7122910022735596,
+        -0.6831664443016052,
+        -0.6831664443016052,
+        -0.6883652806282043
+      ],
+      "new_scores": [
+        -0.7122910022735596,
+        -0.68316650390625,
+        -0.6831663846969604,
+        -0.6883653402328491
+      ]
+    }
+  ],
+  "score_differences": [],
+  "bank_sha": "f495f707ab53faf919baf32ff7765aaddd44a708fc992fdc5d2c8dc2a8d7350e"
+}

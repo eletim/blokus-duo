@@ -1,0 +1,46 @@
+import json
+from pathlib import Path
+import numpy as np
+R=Path('artifacts/gpu-async512');F=R/'final';audit=json.loads((F/'audit.json').read_text());rows={}
+for name in ('cpu-1','async-1','parallel-1','async-2','cpu-fast-1','cpu-2'):
+ path=F/name/'timing.json' if name.startswith('async') else F/f'{name}.json';x=json.loads(path.read_text());tele=json.loads((F/f'{name}-telemetry.json').read_text());groups=x.get('groups',[]);hist={}
+ for g in groups:
+  for k,v in g.get('batch_hist',g.get('batches',{})).items():hist[int(k)]=hist.get(int(k),0)+v
+ actual=sum(k*v for k,v in hist.items())/sum(hist.values()) if hist else None
+ util=[float(s['gpu'].split(',')[0]) for s in tele['samples']];mem=[float(s['gpu'].split(',')[1]) for s in tele['samples']]
+ row=dict(work_seconds=x['seconds'],outer_seconds=tele['outer_seconds'],init_seconds=x['initialization_seconds'],work_games_s=3072/x['seconds'],outer_games_s=3072/tele['outer_seconds'],actual_batch_mean=actual,gpu_util_mean=float(np.mean(util)),gpu_memory_max_mib=max(mem),cuda_allocated_peak=x.get('peak_memory'),capture_seconds=sum(g.get('graph_capture_seconds',0) for g in groups),pack_seconds=sum(g.get('pack_seconds',0) for g in groups),forward_seconds=sum(g.get('forward_seconds',0) for g in groups),h2d_seconds=sum(g.get('h2d_seconds',0) for g in groups),return_seconds=sum(g.get('return_seconds',0) for g in groups),sync_dispatch_seconds=sum(g.get('sync_dispatch_seconds',0) for g in groups))
+ cpu_by_pid={}
+ for sample in tele['samples']:
+  for proc in sample['processes']:cpu_by_pid[proc['pid']]=max(cpu_by_pid.get(proc['pid'],0),proc['cpu_seconds'])
+ row['sampled_cpu_seconds_lower_bound']=sum(cpu_by_pid.values())
+ worker_rows=[w for g in groups for w in g.get('workers',[])] or x.get('workers',[])
+ row['worker_cpu_seconds']=sum(w['cpu_seconds'] for w in worker_rows)
+ row['worker_wait_seconds']=sum(w.get('wait_seconds',0) for w in worker_rows)
+ row['coordinator_cpu_seconds']=sum(g.get('server_cpu_seconds',0) for g in groups) or x.get('server_cpu_seconds',0)
+ row['candidate_padding_ratio']=sum(g.get('padding_slots',0) for g in groups)/max(1,sum(g.get('padding_real',0) for g in groups))
+ row['transfer_bytes']=sum(g.get('transfer_bytes',0) for g in groups)
+ row['queue_wait_quantiles_by_seed']={str(g['seed']):g.get('queue_wait_quantiles',[]) for g in groups}
+ occupancy=[]
+ for g in groups:
+  tr=g.get('occupancy_trace',[]);duration=0.;completed=0;area=0.;full_time=0.;full_completed=0
+  for previous,current in zip(tr,tr[1:]):
+   dt=current[0]-previous[0];area+=dt*previous[1];duration+=dt
+   if previous[1]==512:full_time+=dt;full_completed+=current[3]-previous[3]
+  occupancy.append(dict(seed=g['seed'],mean_active=area/duration if duration else None,full512_seconds=full_time,full512_completed=full_completed,full512_games_s=full_completed/full_time if full_time else None,peak=max([t[1] for t in tr] or [0])))
+ row['occupancy_by_seed']=occupancy
+ row['audit']=audit['results'][str(F/name)];row['evaluated_nodes_s']=row['audit']['nodes']/x['seconds'];row['actual_nn_requests']=sum(k*v for k,v in hist.items()) if hist else row['audit']['nn_policy']+row['audit']['nn_value']+row['audit']['moves'];row['nn_requests_s']=row['actual_nn_requests']/x['seconds'];rows[name]=row
+ratios=[rows[f'cpu-{i}']['outer_seconds']/rows[f'async-{i}']['outer_seconds'] for i in (1,2)]
+# Each completed root uses a full window, but rounded policy ties can reorder
+# roots or change the restricted inner tree. Numeric gate uses matched NN inputs.
+graph=json.loads((R/'graph-check.json').read_text())
+quality=all(r['audit']['saved_overlap']==r['audit']['training_overlap']==0 and r['audit']['action_agreement']>=.99 for r in rows.values()) and all(max(g['max_logit'],g['max_value'])<=2e-5 for g in graph)
+result=dict(rows=rows,outer_speed_ratios=ratios,quality_gate=quality,speed_gate=all(r>=1.15 for r in ratios),gate=quality and all(r>=1.15 for r in ratios),bank_sha=audit['bank_sha']);(R/'summary.json').write_text(json.dumps(result,indent=2)+'\n')
+text=['# Async GPU self-play generation','',f"Frozen width4 / completed6ply, new3072-game bank, three fixed seeds. Speed gate: **{result['gate']}**. No learning or strength evaluation was performed.",'','|Condition|Work s|Outer s incl. init|Games/s outer|GPU mean %|Mean actual batch|','|---|---:|---:|---:|---:|---:|']
+for name,r in rows.items():
+ batch_text=f"{r['actual_batch_mean']:.2f}" if r['actual_batch_mean'] is not None else "CPU singleton"
+ text.append(f"|{name}|{r['work_seconds']:.2f}|{r['outer_seconds']:.2f}|{r['outer_games_s']:.3f}|{r['gpu_util_mean']:.1f}|{batch_text}|")
+text += ['',f"Matched initialization-inclusive CPU8/async ratios: {ratios[0]:.3f}x and {ratios[1]:.3f}x. CPU-fast is a separate one-repeat control to expose CPU encoding/copy savings; the whole ratio is not attributed solely to GPU kernels.",'','All throughput starts after fixed random8ply prefixes. Bank preparation is outside the identical measured scope; outer measurement includes Python startup, shared-buffer allocation, worker/model initialization, graph capture, full generation and shutdown. Work wall alone is also retained. GPU physical memory includes desktop/context; allocated peak is separately logged. These are generation timings, not human-play deadlines or strength improvements.','','## Correctness','']
+for name,r in rows.items():
+ a=r['audit'];text.append(f"- {name}: {a['games']} complete games; {a['depth6']}/{a['nonpass']} nonpass moves completed6ply; {a['equal_trajectories']}/{a['paired_games']} full trajectories equal CPU1; same-state action agreement {a['action_agreement']:.6%}; max index-wise root difference (candidate mapping unverified) {a['max_same_state_root_error']:.3g}; nodes {a['nodes']:,}.")
+text += ['','All saved games undergo independent coordinate legality/score replay. Forced pass is distinguished from fallback. Differences and root scores are retained in `final/audit.json`; float32 shape-dependent ties and alpha-beta node differences are not called bit-identical. CPU singleton optimized encoding/copy agrees exactly with the original tree and RNG. Per-NN CPU/CUDA graph tests use the predeclared2e-5 absolute tolerance.','','## Structure and limitations','','Eight CPU workers own independent suspended game slots;512 slots are replenished within each frozen-seed group. Shared arrays carry observations/results, bounded request IDs carry metadata, and the server dispatches arrival-ready requests without a full-cohort barrier. Up to8 descriptors are coalesced; CUDA graph buckets reuse pinned buffers. Search order, TT bounds and complete-stage selection are retained. No speculative sibling work is used.','','GPU batch size is distinct from active games and limited to128 here. Padding, coordinator dispatch, CPU legality/encoding and finite tails remain. Graph capture cost, shape counts, queue waits, occupancy and CPU process times are saved.256/512 curve proximity is not proof that512 is universally optimal;1024 was not tested. No resource exclusivity was asserted and no other services were stopped.','','Game-boundary restart retains completed files and restarts incomplete games from saved independent RNG. It does not serialize DFS stacks, and changed batch shapes can change floating-point tie decisions. Public CPU fallback and Frozen gen3 exports remain unchanged.','','Previous synchronous RPC and64-frontier failure records are retained. The approximately12.5s/24 and25min/3072 historical numbers have different banks, scopes and deadline policies; no speed ratio is inferred from them. Formal comparisons use the same new bank and complete6ply.','','## Reproduction','','See `README.md`, `PLAN.md`, `final/measurement-manifest.json`, `scripts/run_async_final.py`, `scripts/audit_async_parallel.py`, and the archived full trajectories. No main merge/deployment, Frozen tag/model replacement or additional model training is part of this change.']
+(R/'REPORT.md').write_text('\n'.join(text)+'\n')

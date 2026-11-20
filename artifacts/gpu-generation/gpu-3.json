@@ -1,0 +1,93 @@
+{
+  "mode": "gpu",
+  "repeat": 3,
+  "seconds": 35.78685567097273,
+  "initialization_seconds": 1.434400930069387,
+  "server_cpu_seconds": 11.052819365,
+  "workers": [
+    {
+      "worker": 5,
+      "games": 0,
+      "seconds": 0.0005797009216621518,
+      "cpu_seconds": 0.0005789809999999784,
+      "observation_seconds": 0.0,
+      "wait_seconds": 0.0
+    },
+    {
+      "worker": 4,
+      "games": 0,
+      "seconds": 0.0006033210083842278,
+      "cpu_seconds": 0.0006028910000001053,
+      "observation_seconds": 0.0,
+      "wait_seconds": 0.0
+    },
+    {
+      "worker": 1,
+      "games": 0,
+      "seconds": 0.0005901410477235913,
+      "cpu_seconds": 0.0005895009999999923,
+      "observation_seconds": 0.0,
+      "wait_seconds": 0.0
+    },
+    {
+      "worker": 6,
+      "games": 0,
+      "seconds": 0.0006101409671828151,
+      "cpu_seconds": 0.0006097309999999467,
+      "observation_seconds": 0.0,
+      "wait_seconds": 0.0
+    },
+    {
+      "worker": 2,
+      "games": 0,
+      "seconds": 0.0005965509917587042,
+      "cpu_seconds": 0.00059610099999996,
+      "observation_seconds": 0.0,
+      "wait_seconds": 0.0
+    },
+    {
+      "worker": 7,
+      "games": 0,
+      "seconds": 0.000598630984313786,
+      "cpu_seconds": 0.0005981910000000257,
+      "observation_seconds": 0.0,
+      "wait_seconds": 0.0
+    },
+    {
+      "worker": 3,
+      "games": 0,
+      "seconds": 0.0006050709635019302,
+      "cpu_seconds": 0.0006048610000000121,
+      "observation_seconds": 0.0,
+      "wait_seconds": 0.0
+    },
+    {
+      "worker": 0,
+      "games": 1,
+      "seconds": 35.7840237240307,
+      "cpu_seconds": 3.403015027,
+      "observation_seconds": 0.6631710126530379,
+      "wait_seconds": 33.35805740521755
+    }
+  ],
+  "server": {
+    "batch_histogram": {
+      "policy:1": 7845,
+      "value:1": 12833
+    },
+    "requests": {
+      "policy": 7845,
+      "value": 12833
+    },
+    "times": {
+      "transfer_pack_cuda_ms": 1532.5376006662846,
+      "forward_cuda_ms": 6554.9160016123205,
+      "service_wall_seconds": 9.22018494841177
+    },
+    "real_candidates": 580329,
+    "padded_candidates": 580329,
+    "peak_cuda_bytes": 35986944
+  },
+  "bank_sha": "5787eaecdce4c0669381d28710aad25d58bc65aa6c7bb3652cf17bfb731b7392",
+  "new_games": 1
+}

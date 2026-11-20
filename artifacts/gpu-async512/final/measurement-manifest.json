@@ -1,0 +1,31 @@
+{
+  "source_shas": {
+    "scripts/async_generation.py": "5ffad1521f74e38eef0b6f7496f1eb8fbe20c781f85edb284eeaa24b180cccb2",
+    "scripts/frontier_generation.py": "f20b6d4b38c1ece56cc9c9508d3cbf4c0dbfddd2a4e8006fbeb9c5c834f8c45e",
+    "scripts/frontier_parallel.py": "9b058aa8fa3fa7314e8c202b2569fffa66c4cb36650f915165d709ef84f11878",
+    "scripts/barrier_reference.py": "e9b8f632132c2f68c39a6a083291b3b2a9e97a40fa6ccd2203a1e9d7acfd781d",
+    "scripts/gpu_generation.py": "efe9132cef8f58d6e778f415adce796db453966b36314bb14bbff1df684ceb4b",
+    "scripts/cpu_fast_generation.py": "3f864def1220f452e147bb86f442bdc8d4fb8809d9cee3ce50ded86103da489f",
+    "scripts/monitor_generation.py": "caf6ed49e43a80bd28a79bebd5148b1be1ccd153c83b166869284a1ea070cdaf",
+    "scripts/run_async_final.py": "0bde1f3b7311ca7467f96100e3783e17d8560aee3361a8add3b7cb0e646dd56a",
+    "blokus/ppo_frontier.py": "2a5ec3104e114fdbc919afb491887eecb7b0bc463d63c71d70caaee45e94084b",
+    "blokus/generation_encoding.py": "58d64ce230c7f8941e35ed3caf65f1da6fea3593f18b151a826d192f36edb3e0",
+    "blokus/generation_graph.py": "063859effd4728670cbfc435cbaef97164561fcb8f0f02ef385109d58495934d",
+    "blokus/ppo_policy.py": "aa507b1595586263d6a25a9469951a09b22a0f26cdcfe520f1ff8d58a6fd9084",
+    "blokus/ppo_native.py": "828a908caa30446087e97b3fbd8afdb09c1ddd844220085f3a5e4e5efe5269a3",
+    "blokus/ppo_native.c": "fa8b7ae882360f8eab19bb390339d5505e7bc32de45106ae13b9fb2fc8c0beba",
+    "blokus/ppo_search_deeper.py": "aba11390a8da75a94203bd40e9bd58667e3d2abdfc1f94d8a1908c3423808f31",
+    "blokus/ppo_value_leaf.py": "79a34830a77b03b376c409c4dff105176d56ef5225d5142d6439033b84e28f47",
+    "blokus/engine.py": "b7ee646d45cfeba355f60b37ec927accde4ad859b91567c4b0b8db3715a8827b"
+  },
+  "bank_sha": "b4afbfa6626a8c6ad2c94d2353a695b7577bd067c8ffc21dc556298e6fe92e16",
+  "games": 3072,
+  "order": [
+    "cpu-1",
+    "async-1",
+    "parallel-1",
+    "async-2",
+    "cpu-fast-1",
+    "cpu-2"
+  ]
+}

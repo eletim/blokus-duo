@@ -6,7 +6,7 @@ import numpy as np
 from .engine import PLACEMENTS,SIZES,frontier,legal_moves
 from .placement_geometry import geometry
 from .ppo_policy import observe as python_observe
-from .value_search import encode
+from .value_inputs import encode
 ROOT=Path(__file__).resolve().parents[1];SOURCE=Path(__file__).with_suffix('.c');BUILD=ROOT/'.native/ppo'
 LOCAL=threading.local()
 def digest():return hashlib.sha256(SOURCE.read_bytes()).hexdigest()

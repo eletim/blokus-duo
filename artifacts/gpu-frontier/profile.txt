@@ -1,0 +1,53 @@
+         6943145 function calls (6564378 primitive calls) in 2.633 seconds
+
+   Ordered by: cumulative time
+   List reduced from 177 to 45 due to restriction <45>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    11772    0.003    0.000    1.421    0.000 {method 'send' of 'generator' objects}
+    11780    0.003    0.000    1.420    0.000 ppo_frontier.py:20(act)
+74123/11852    0.042    0.000    1.406    0.000 ppo_frontier.py:37(visit)
+    24015    0.027    0.000    0.981    0.000 ppo_frontier.py:24(evaluate)
+52690/6372    0.020    0.000    0.853    0.000 module.py:1747(_wrapped_call_impl)
+52690/6372    0.035    0.000    0.850    0.000 module.py:1755(_call_impl)
+    11772    0.203    0.000    0.622    0.000 value_search.py:17(encode)
+     1497    0.116    0.000    0.622    0.000 ppo_policy.py:50(forward)
+    10863    0.019    0.000    0.572    0.000 container.py:238(forward)
+     3994    0.005    0.000    0.462    0.000 ppo_policy.py:71(_observation)
+     3994    0.077    0.000    0.454    0.000 ppo_native.py:46(observe)
+     7778    0.006    0.000    0.429    0.000 ppo_value_leaf.py:6(value_inputs)
+    12346    0.007    0.000    0.378    0.000 ppo_frontier.py:13(child)
+    12360    0.006    0.000    0.337    0.000 linear.py:124(forward)
+    12360    0.328    0.000    0.328    0.000 {built-in method torch._C._nn.linear}
+  1092752    0.225    0.000    0.317    0.000 engine.py:38(cells_of)
+234574/12346    0.135    0.000    0.311    0.000 copy.py:118(deepcopy)
+    12346    0.019    0.000    0.267    0.000 copy.py:247(_reconstruct)
+    12346    0.021    0.000    0.208    0.000 copy.py:217(_deepcopy_dict)
+     3994    0.133    0.000    0.168    0.000 ppo_native.py:36(scan)
+     1497    0.015    0.000    0.128    0.000 ppo_policy.py:38(collate)
+    14721    0.124    0.000    0.124    0.000 {built-in method torch.as_tensor}
+     6244    0.004    0.000    0.101    0.000 conv.py:553(forward)
+     6244    0.003    0.000    0.095    0.000 conv.py:536(_conv_forward)
+     6244    0.093    0.000    0.093    0.000 {built-in method torch.conv2d}
+     8982    0.003    0.000    0.088    0.000 ppo_policy.py:41(<genexpr>)
+    37038    0.024    0.000    0.080    0.000 copy.py:191(_deepcopy_list)
+     6244    0.008    0.000    0.080    0.000 __init__.py:1030(synchronize)
+    35890    0.031    0.000    0.076    0.000 {built-in method builtins.sum}
+    12346    0.013    0.000    0.060    0.000 engine.py:108(play)
+    23544    0.008    0.000    0.059    0.000 engine.py:74(score)
+     6244    0.002    0.000    0.053    0.000 __init__.py:490(__init__)
+     6244    0.006    0.000    0.051    0.000 _utils.py:9(_get_device_index)
+  1045664    0.049    0.000    0.049    0.000 {method 'bit_length' of 'int' objects}
+     3986    0.043    0.000    0.043    0.000 {method 'argsort' of 'torch._C.TensorBase' objects}
+  1045656    0.043    0.000    0.043    0.000 {built-in method builtins.divmod}
+     6244    0.004    0.000    0.043    0.000 _utils.py:812(_get_device_index)
+     4619    0.042    0.000    0.042    0.000 {method 'cpu' of 'torch._C.TensorBase' objects}
+     6244    0.002    0.000    0.037    0.000 _utils.py:786(_get_current_device_index)
+     6244    0.004    0.000    0.035    0.000 _utils.py:770(_get_device_attr)
+    10863    0.003    0.000    0.034    0.000 activation.py:391(forward)
+   484616    0.034    0.000    0.034    0.000 {method 'get' of 'dict' objects}
+    10863    0.032    0.000    0.032    0.000 {built-in method torch.tanh}
+   362015    0.030    0.000    0.030    0.000 engine.py:75(<genexpr>)
+     4491    0.029    0.000    0.029    0.000 {method 'sum' of 'torch._C.TensorBase' objects}
+
+

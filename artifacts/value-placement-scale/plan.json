@@ -1,0 +1,27 @@
+{
+  "train_games": [
+    384,
+    1536,
+    3072
+  ],
+  "dev_games": 192,
+  "epochs": 16,
+  "batch_size": 64,
+  "lr": 0.0001,
+  "regularization": 0.1,
+  "seeds": [
+    1751401,
+    1751402,
+    1751403
+  ],
+  "variants": [
+    "A",
+    "B",
+    "C"
+  ],
+  "teacher": "frozen gen3 H/500ms width4 depth6",
+  "generator_workers": 8,
+  "validation_prefixes": 16,
+  "confirmation_prefixes": 32,
+  "curve_prefixes": 6
+}
