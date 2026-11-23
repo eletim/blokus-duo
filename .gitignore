@@ -43,3 +43,11 @@ artifacts/value-placement-49152/**/evaluation-excluded.json.gz
 # Reproducible historical state union, not needed for inference.
 artifacts/gen4-candidate-policy/excluded-states.json.gz
 artifacts/gen4-candidate-policy/pipeline.pid
+# Candidate-policy raw games are preserved in raw-games.tar.gz.
+artifacts/gen4-candidate-policy/diagnosis/
+artifacts/gen4-candidate-policy/train/
+artifacts/gen4-candidate-policy/dev/
+artifacts/gen4-candidate-policy/validation-H/
+artifacts/gen4-candidate-policy/validation-policy/
+artifacts/gen4-candidate-policy/confirmation-H/
+artifacts/gen4-candidate-policy/postchecks.pid

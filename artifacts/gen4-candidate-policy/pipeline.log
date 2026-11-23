@@ -1,0 +1,452 @@
+LABEL diagnosis 0 48 6
+LABEL diagnosis 24 48 31
+DIAGNOSIS {'roots': 244, 'omitted': 103, 'stable_omitted': 44, 'stable_seeds': [1751401, 1751402, 1751403], 'passed': True, 'by_stage': {'0': {'n': 96, 'omitted': 55, 'stable': 22}, '1': {'n': 94, 'omitted': 37, 'stable': 15}, '2': {'n': 54, 'omitted': 11, 'stable': 7}}}
+LABEL train 0 768 3
+LABEL train 24 768 22
+LABEL train 48 768 41
+LABEL train 72 768 61
+LABEL train 96 768 81
+LABEL train 120 768 99
+LABEL train 144 768 119
+LABEL train 168 768 137
+LABEL train 192 768 157
+LABEL train 216 768 177
+LABEL train 240 768 196
+LABEL train 264 768 216
+LABEL train 288 768 235
+LABEL train 312 768 256
+LABEL train 336 768 274
+LABEL train 360 768 294
+LABEL train 384 768 314
+LABEL train 408 768 333
+LABEL train 432 768 351
+LABEL train 456 768 371
+LABEL train 480 768 391
+LABEL train 504 768 410
+LABEL train 528 768 430
+LABEL train 552 768 450
+LABEL train 576 768 469
+LABEL train 600 768 489
+LABEL train 624 768 509
+LABEL train 648 768 530
+LABEL train 672 768 548
+LABEL train 696 768 567
+LABEL train 720 768 587
+LABEL train 744 768 607
+LABEL dev 0 96 3
+LABEL dev 24 96 23
+LABEL dev 48 96 41
+LABEL dev 72 96 62
+TRAIN 1751401 0 0 {'loss': 5.6251810147212105, 'agreement': 0.28846153846153844, 'top4': 0.5512820512820513, 'stage': {'0': {'n': 64, 'top4': 0.40625, 'agreement': 0.171875}, '1': {'n': 62, 'top4': 0.6129032258064516, 'agreement': 0.3064516129032258}, '2': {'n': 30, 'top4': 0.7333333333333333, 'agreement': 0.5}}, 'n': 156}
+TRAIN 1751401 1 80 {'loss': 4.956818128243471, 'agreement': 0.28205128205128205, 'top4': 0.5576923076923077, 'stage': {'0': {'n': 64, 'top4': 0.46875, 'agreement': 0.15625}, '1': {'n': 62, 'top4': 0.5806451612903226, 'agreement': 0.3064516129032258}, '2': {'n': 30, 'top4': 0.7, 'agreement': 0.5}}, 'n': 156}
+TRAIN 1751401 2 160 {'loss': 4.464699378380408, 'agreement': 0.27564102564102566, 'top4': 0.5576923076923077, 'stage': {'0': {'n': 64, 'top4': 0.484375, 'agreement': 0.15625}, '1': {'n': 62, 'top4': 0.5645161290322581, 'agreement': 0.2903225806451613}, '2': {'n': 30, 'top4': 0.7, 'agreement': 0.5}}, 'n': 156}
+TRAIN 1751401 3 240 {'loss': 4.148643298026843, 'agreement': 0.2692307692307692, 'top4': 0.5448717948717948, 'stage': {'0': {'n': 64, 'top4': 0.453125, 'agreement': 0.15625}, '1': {'n': 62, 'top4': 0.5645161290322581, 'agreement': 0.27419354838709675}, '2': {'n': 30, 'top4': 0.7, 'agreement': 0.5}}, 'n': 156}
+TRAIN 1751401 4 320 {'loss': 3.9543910454481077, 'agreement': 0.2564102564102564, 'top4': 0.5448717948717948, 'stage': {'0': {'n': 64, 'top4': 0.4375, 'agreement': 0.140625}, '1': {'n': 62, 'top4': 0.5806451612903226, 'agreement': 0.25806451612903225}, '2': {'n': 30, 'top4': 0.7, 'agreement': 0.5}}, 'n': 156}
+TRAIN 1751401 5 400 {'loss': 3.829548034912501, 'agreement': 0.24358974358974358, 'top4': 0.5641025641025641, 'stage': {'0': {'n': 64, 'top4': 0.4375, 'agreement': 0.140625}, '1': {'n': 62, 'top4': 0.6290322580645161, 'agreement': 0.24193548387096775}, '2': {'n': 30, 'top4': 0.7, 'agreement': 0.4666666666666667}}, 'n': 156}
+TRAIN 1751401 6 480 {'loss': 3.7513824365077872, 'agreement': 0.24358974358974358, 'top4': 0.5705128205128205, 'stage': {'0': {'n': 64, 'top4': 0.4375, 'agreement': 0.140625}, '1': {'n': 62, 'top4': 0.6451612903225806, 'agreement': 0.24193548387096775}, '2': {'n': 30, 'top4': 0.7, 'agreement': 0.4666666666666667}}, 'n': 156}
+TRAIN 1751401 7 560 {'loss': 3.692951275752141, 'agreement': 0.24358974358974358, 'top4': 0.5641025641025641, 'stage': {'0': {'n': 64, 'top4': 0.4375, 'agreement': 0.140625}, '1': {'n': 62, 'top4': 0.6290322580645161, 'agreement': 0.24193548387096775}, '2': {'n': 30, 'top4': 0.7, 'agreement': 0.4666666666666667}}, 'n': 156}
+TRAIN 1751401 8 640 {'loss': 3.64817529458266, 'agreement': 0.25, 'top4': 0.5576923076923077, 'stage': {'0': {'n': 64, 'top4': 0.4375, 'agreement': 0.15625}, '1': {'n': 62, 'top4': 0.6290322580645161, 'agreement': 0.24193548387096775}, '2': {'n': 30, 'top4': 0.6666666666666666, 'agreement': 0.4666666666666667}}, 'n': 156}
+TRAIN 1751402 0 0 {'loss': 4.856083761562001, 'agreement': 0.3465909090909091, 'top4': 0.6022727272727273, 'stage': {'0': {'n': 64, 'top4': 0.421875, 'agreement': 0.1875}, '1': {'n': 64, 'top4': 0.53125, 'agreement': 0.25}, '2': {'n': 48, 'top4': 0.9375, 'agreement': 0.6875}}, 'n': 176}
+TRAIN 1751402 1 83 {'loss': 4.257760047912598, 'agreement': 0.3352272727272727, 'top4': 0.6022727272727273, 'stage': {'0': {'n': 64, 'top4': 0.390625, 'agreement': 0.171875}, '1': {'n': 64, 'top4': 0.5625, 'agreement': 0.21875}, '2': {'n': 48, 'top4': 0.9375, 'agreement': 0.7083333333333334}}, 'n': 176}
+TRAIN 1751402 2 166 {'loss': 3.919254021211104, 'agreement': 0.3465909090909091, 'top4': 0.6022727272727273, 'stage': {'0': {'n': 64, 'top4': 0.40625, 'agreement': 0.171875}, '1': {'n': 64, 'top4': 0.546875, 'agreement': 0.25}, '2': {'n': 48, 'top4': 0.9375, 'agreement': 0.7083333333333334}}, 'n': 176}
+TRAIN 1751402 3 249 {'loss': 3.7439754009246826, 'agreement': 0.3352272727272727, 'top4': 0.6022727272727273, 'stage': {'0': {'n': 64, 'top4': 0.4375, 'agreement': 0.1875}, '1': {'n': 64, 'top4': 0.53125, 'agreement': 0.25}, '2': {'n': 48, 'top4': 0.9166666666666666, 'agreement': 0.6458333333333334}}, 'n': 176}
+TRAIN 1751402 4 332 {'loss': 3.645374363118952, 'agreement': 0.3125, 'top4': 0.6022727272727273, 'stage': {'0': {'n': 64, 'top4': 0.4375, 'agreement': 0.1875}, '1': {'n': 64, 'top4': 0.53125, 'agreement': 0.234375}, '2': {'n': 48, 'top4': 0.9166666666666666, 'agreement': 0.5833333333333334}}, 'n': 176}
+TRAIN 1751402 5 415 {'loss': 3.5770667899738657, 'agreement': 0.3068181818181818, 'top4': 0.6079545454545454, 'stage': {'0': {'n': 64, 'top4': 0.4375, 'agreement': 0.1875}, '1': {'n': 64, 'top4': 0.546875, 'agreement': 0.234375}, '2': {'n': 48, 'top4': 0.9166666666666666, 'agreement': 0.5625}}, 'n': 176}
+TRAIN 1751402 6 498 {'loss': 3.5259519056840376, 'agreement': 0.30113636363636365, 'top4': 0.6193181818181818, 'stage': {'0': {'n': 64, 'top4': 0.453125, 'agreement': 0.1875}, '1': {'n': 64, 'top4': 0.5625, 'agreement': 0.234375}, '2': {'n': 48, 'top4': 0.9166666666666666, 'agreement': 0.5416666666666666}}, 'n': 176}
+TRAIN 1751402 7 581 {'loss': 3.48357291655107, 'agreement': 0.30113636363636365, 'top4': 0.6306818181818182, 'stage': {'0': {'n': 64, 'top4': 0.484375, 'agreement': 0.1875}, '1': {'n': 64, 'top4': 0.5625, 'agreement': 0.234375}, '2': {'n': 48, 'top4': 0.9166666666666666, 'agreement': 0.5416666666666666}}, 'n': 176}
+TRAIN 1751402 8 664 {'loss': 3.4499854391271416, 'agreement': 0.3125, 'top4': 0.6363636363636364, 'stage': {'0': {'n': 64, 'top4': 0.484375, 'agreement': 0.1875}, '1': {'n': 64, 'top4': 0.578125, 'agreement': 0.25}, '2': {'n': 48, 'top4': 0.9166666666666666, 'agreement': 0.5625}}, 'n': 176}
+TRAIN 1751403 0 0 {'loss': 5.252372673579624, 'agreement': 0.34523809523809523, 'top4': 0.5952380952380952, 'stage': {'0': {'n': 64, 'top4': 0.453125, 'agreement': 0.203125}, '1': {'n': 62, 'top4': 0.5806451612903226, 'agreement': 0.3064516129032258}, '2': {'n': 42, 'top4': 0.8333333333333334, 'agreement': 0.6190476190476191}}, 'n': 168}
+TRAIN 1751403 1 83 {'loss': 4.519068559010823, 'agreement': 0.3333333333333333, 'top4': 0.6071428571428571, 'stage': {'0': {'n': 64, 'top4': 0.46875, 'agreement': 0.171875}, '1': {'n': 62, 'top4': 0.5967741935483871, 'agreement': 0.3225806451612903}, '2': {'n': 42, 'top4': 0.8333333333333334, 'agreement': 0.5952380952380952}}, 'n': 168}
+TRAIN 1751403 2 166 {'loss': 4.0446094785417825, 'agreement': 0.3333333333333333, 'top4': 0.6130952380952381, 'stage': {'0': {'n': 64, 'top4': 0.484375, 'agreement': 0.171875}, '1': {'n': 62, 'top4': 0.6129032258064516, 'agreement': 0.3064516129032258}, '2': {'n': 42, 'top4': 0.8095238095238095, 'agreement': 0.6190476190476191}}, 'n': 168}
+TRAIN 1751403 3 249 {'loss': 3.806618327186221, 'agreement': 0.32142857142857145, 'top4': 0.5952380952380952, 'stage': {'0': {'n': 64, 'top4': 0.46875, 'agreement': 0.171875}, '1': {'n': 62, 'top4': 0.5806451612903226, 'agreement': 0.3064516129032258}, '2': {'n': 42, 'top4': 0.8095238095238095, 'agreement': 0.5714285714285714}}, 'n': 168}
+TRAIN 1751403 4 332 {'loss': 3.6868464152018228, 'agreement': 0.31547619047619047, 'top4': 0.5773809523809523, 'stage': {'0': {'n': 64, 'top4': 0.4375, 'agreement': 0.171875}, '1': {'n': 62, 'top4': 0.5967741935483871, 'agreement': 0.2903225806451613}, '2': {'n': 42, 'top4': 0.7619047619047619, 'agreement': 0.5714285714285714}}, 'n': 168}
+TRAIN 1751403 5 415 {'loss': 3.607077121734619, 'agreement': 0.2976190476190476, 'top4': 0.5714285714285714, 'stage': {'0': {'n': 64, 'top4': 0.4375, 'agreement': 0.171875}, '1': {'n': 62, 'top4': 0.5806451612903226, 'agreement': 0.2903225806451613}, '2': {'n': 42, 'top4': 0.7619047619047619, 'agreement': 0.5}}, 'n': 168}
+TRAIN 1751403 6 498 {'loss': 3.5447835354577926, 'agreement': 0.32142857142857145, 'top4': 0.5654761904761905, 'stage': {'0': {'n': 64, 'top4': 0.421875, 'agreement': 0.1875}, '1': {'n': 62, 'top4': 0.5806451612903226, 'agreement': 0.3064516129032258}, '2': {'n': 42, 'top4': 0.7619047619047619, 'agreement': 0.5476190476190477}}, 'n': 168}
+TRAIN 1751403 7 581 {'loss': 3.4939700762430825, 'agreement': 0.32142857142857145, 'top4': 0.5714285714285714, 'stage': {'0': {'n': 64, 'top4': 0.4375, 'agreement': 0.203125}, '1': {'n': 62, 'top4': 0.5806451612903226, 'agreement': 0.3064516129032258}, '2': {'n': 42, 'top4': 0.7619047619047619, 'agreement': 0.5238095238095238}}, 'n': 168}
+TRAIN 1751403 8 664 {'loss': 3.4565646534874324, 'agreement': 0.32142857142857145, 'top4': 0.5773809523809523, 'stage': {'0': {'n': 64, 'top4': 0.4375, 'agreement': 0.203125}, '1': {'n': 62, 'top4': 0.5967741935483871, 'agreement': 0.3064516129032258}, '2': {'n': 42, 'top4': 0.7619047619047619, 'agreement': 0.5238095238095238}}, 'n': 168}
+EVAL validation H 1751401 0 0 6
+EVAL validation H 1751401 0 1 10
+EVAL validation H 1751401 1 0 15
+EVAL validation H 1751401 1 1 19
+EVAL validation H 1751401 2 0 22
+EVAL validation H 1751401 2 1 25
+EVAL validation H 1751401 3 0 31
+EVAL validation H 1751401 3 1 36
+EVAL validation H 1751401 4 0 40
+EVAL validation H 1751401 4 1 45
+EVAL validation H 1751401 5 0 49
+EVAL validation H 1751401 5 1 54
+EVAL validation H 1751401 6 0 60
+EVAL validation H 1751401 6 1 65
+EVAL validation H 1751401 7 0 68
+EVAL validation H 1751401 7 1 72
+EVAL validation H 1751401 8 0 76
+EVAL validation H 1751401 8 1 81
+EVAL validation H 1751401 9 0 87
+EVAL validation H 1751401 9 1 91
+EVAL validation H 1751401 10 0 95
+EVAL validation H 1751401 10 1 99
+EVAL validation H 1751401 11 0 102
+EVAL validation H 1751401 11 1 106
+EVAL validation H 1751401 12 0 111
+EVAL validation H 1751401 12 1 117
+EVAL validation H 1751401 13 0 122
+EVAL validation H 1751401 13 1 127
+EVAL validation H 1751401 14 0 130
+EVAL validation H 1751401 14 1 134
+EVAL validation H 1751401 15 0 139
+EVAL validation H 1751401 15 1 144
+EVAL validation H 1751402 0 0 149
+EVAL validation H 1751402 0 1 155
+EVAL validation H 1751402 1 0 160
+EVAL validation H 1751402 1 1 165
+EVAL validation H 1751402 2 0 169
+EVAL validation H 1751402 2 1 171
+EVAL validation H 1751402 3 0 177
+EVAL validation H 1751402 3 1 183
+EVAL validation H 1751402 4 0 186
+EVAL validation H 1751402 4 1 190
+EVAL validation H 1751402 5 0 193
+EVAL validation H 1751402 5 1 197
+EVAL validation H 1751402 6 0 202
+EVAL validation H 1751402 6 1 207
+EVAL validation H 1751402 7 0 212
+EVAL validation H 1751402 7 1 216
+EVAL validation H 1751402 8 0 220
+EVAL validation H 1751402 8 1 225
+EVAL validation H 1751402 9 0 229
+EVAL validation H 1751402 9 1 233
+EVAL validation H 1751402 10 0 237
+EVAL validation H 1751402 10 1 241
+EVAL validation H 1751402 11 0 244
+EVAL validation H 1751402 11 1 247
+EVAL validation H 1751402 12 0 253
+EVAL validation H 1751402 12 1 258
+EVAL validation H 1751402 13 0 264
+EVAL validation H 1751402 13 1 268
+EVAL validation H 1751402 14 0 271
+EVAL validation H 1751402 14 1 275
+EVAL validation H 1751402 15 0 280
+EVAL validation H 1751402 15 1 286
+EVAL validation H 1751403 0 0 292
+EVAL validation H 1751403 0 1 297
+EVAL validation H 1751403 1 0 302
+EVAL validation H 1751403 1 1 307
+EVAL validation H 1751403 2 0 309
+EVAL validation H 1751403 2 1 312
+EVAL validation H 1751403 3 0 319
+EVAL validation H 1751403 3 1 324
+EVAL validation H 1751403 4 0 330
+EVAL validation H 1751403 4 1 333
+EVAL validation H 1751403 5 0 337
+EVAL validation H 1751403 5 1 341
+EVAL validation H 1751403 6 0 346
+EVAL validation H 1751403 6 1 351
+EVAL validation H 1751403 7 0 356
+EVAL validation H 1751403 7 1 360
+EVAL validation H 1751403 8 0 363
+EVAL validation H 1751403 8 1 367
+EVAL validation H 1751403 9 0 373
+EVAL validation H 1751403 9 1 378
+EVAL validation H 1751403 10 0 382
+EVAL validation H 1751403 10 1 386
+EVAL validation H 1751403 11 0 390
+EVAL validation H 1751403 11 1 393
+EVAL validation H 1751403 12 0 399
+EVAL validation H 1751403 12 1 404
+EVAL validation H 1751403 13 0 410
+EVAL validation H 1751403 13 1 415
+EVAL validation H 1751403 14 0 419
+EVAL validation H 1751403 14 1 424
+EVAL validation H 1751403 15 0 429
+EVAL validation H 1751403 15 1 434
+EVAL validation policy 1751401 0 0 435
+EVAL validation policy 1751401 0 1 435
+EVAL validation policy 1751401 1 0 435
+EVAL validation policy 1751401 1 1 435
+EVAL validation policy 1751401 2 0 435
+EVAL validation policy 1751401 2 1 436
+EVAL validation policy 1751401 3 0 436
+EVAL validation policy 1751401 3 1 436
+EVAL validation policy 1751401 4 0 436
+EVAL validation policy 1751401 4 1 436
+EVAL validation policy 1751401 5 0 436
+EVAL validation policy 1751401 5 1 437
+EVAL validation policy 1751401 6 0 437
+EVAL validation policy 1751401 6 1 437
+EVAL validation policy 1751401 7 0 438
+EVAL validation policy 1751401 7 1 438
+EVAL validation policy 1751401 8 0 438
+EVAL validation policy 1751401 8 1 438
+EVAL validation policy 1751401 9 0 438
+EVAL validation policy 1751401 9 1 438
+EVAL validation policy 1751401 10 0 438
+EVAL validation policy 1751401 10 1 439
+EVAL validation policy 1751401 11 0 439
+EVAL validation policy 1751401 11 1 439
+EVAL validation policy 1751401 12 0 439
+EVAL validation policy 1751401 12 1 439
+EVAL validation policy 1751401 13 0 439
+EVAL validation policy 1751401 13 1 439
+EVAL validation policy 1751401 14 0 440
+EVAL validation policy 1751401 14 1 440
+EVAL validation policy 1751401 15 0 440
+EVAL validation policy 1751401 15 1 440
+EVAL validation policy 1751402 0 0 440
+EVAL validation policy 1751402 0 1 440
+EVAL validation policy 1751402 1 0 440
+EVAL validation policy 1751402 1 1 440
+EVAL validation policy 1751402 2 0 440
+EVAL validation policy 1751402 2 1 441
+EVAL validation policy 1751402 3 0 441
+EVAL validation policy 1751402 3 1 441
+EVAL validation policy 1751402 4 0 441
+EVAL validation policy 1751402 4 1 441
+EVAL validation policy 1751402 5 0 441
+EVAL validation policy 1751402 5 1 442
+EVAL validation policy 1751402 6 0 442
+EVAL validation policy 1751402 6 1 442
+EVAL validation policy 1751402 7 0 442
+EVAL validation policy 1751402 7 1 443
+EVAL validation policy 1751402 8 0 443
+EVAL validation policy 1751402 8 1 443
+EVAL validation policy 1751402 9 0 443
+EVAL validation policy 1751402 9 1 443
+EVAL validation policy 1751402 10 0 443
+EVAL validation policy 1751402 10 1 443
+EVAL validation policy 1751402 11 0 444
+EVAL validation policy 1751402 11 1 444
+EVAL validation policy 1751402 12 0 444
+EVAL validation policy 1751402 12 1 445
+EVAL validation policy 1751402 13 0 445
+EVAL validation policy 1751402 13 1 445
+EVAL validation policy 1751402 14 0 445
+EVAL validation policy 1751402 14 1 445
+EVAL validation policy 1751402 15 0 445
+EVAL validation policy 1751402 15 1 445
+EVAL validation policy 1751403 0 0 445
+EVAL validation policy 1751403 0 1 445
+EVAL validation policy 1751403 1 0 446
+EVAL validation policy 1751403 1 1 446
+EVAL validation policy 1751403 2 0 446
+EVAL validation policy 1751403 2 1 446
+EVAL validation policy 1751403 3 0 446
+EVAL validation policy 1751403 3 1 446
+EVAL validation policy 1751403 4 0 447
+EVAL validation policy 1751403 4 1 447
+EVAL validation policy 1751403 5 0 447
+EVAL validation policy 1751403 5 1 448
+EVAL validation policy 1751403 6 0 448
+EVAL validation policy 1751403 6 1 448
+EVAL validation policy 1751403 7 0 449
+EVAL validation policy 1751403 7 1 449
+EVAL validation policy 1751403 8 0 449
+EVAL validation policy 1751403 8 1 449
+EVAL validation policy 1751403 9 0 449
+EVAL validation policy 1751403 9 1 449
+EVAL validation policy 1751403 10 0 449
+EVAL validation policy 1751403 10 1 449
+EVAL validation policy 1751403 11 0 450
+EVAL validation policy 1751403 11 1 450
+EVAL validation policy 1751403 12 0 450
+EVAL validation policy 1751403 12 1 450
+EVAL validation policy 1751403 13 0 450
+EVAL validation policy 1751403 13 1 450
+EVAL validation policy 1751403 14 0 450
+EVAL validation policy 1751403 14 1 450
+EVAL validation policy 1751403 15 0 451
+EVAL validation policy 1751403 15 1 451
+GATE validation True 0.5416666666666667
+EVAL confirmation H 1751401 0 0 6
+EVAL confirmation H 1751401 0 1 10
+EVAL confirmation H 1751401 1 0 15
+EVAL confirmation H 1751401 1 1 18
+EVAL confirmation H 1751401 2 0 22
+EVAL confirmation H 1751401 2 1 26
+EVAL confirmation H 1751401 3 0 31
+EVAL confirmation H 1751401 3 1 37
+EVAL confirmation H 1751401 4 0 41
+EVAL confirmation H 1751401 4 1 45
+EVAL confirmation H 1751401 5 0 49
+EVAL confirmation H 1751401 5 1 53
+EVAL confirmation H 1751401 6 0 59
+EVAL confirmation H 1751401 6 1 65
+EVAL confirmation H 1751401 7 0 69
+EVAL confirmation H 1751401 7 1 74
+EVAL confirmation H 1751401 8 0 78
+EVAL confirmation H 1751401 8 1 81
+EVAL confirmation H 1751401 9 0 86
+EVAL confirmation H 1751401 9 1 92
+EVAL confirmation H 1751401 10 0 96
+EVAL confirmation H 1751401 10 1 99
+EVAL confirmation H 1751401 11 0 103
+EVAL confirmation H 1751401 11 1 106
+EVAL confirmation H 1751401 12 0 112
+EVAL confirmation H 1751401 12 1 117
+EVAL confirmation H 1751401 13 0 121
+EVAL confirmation H 1751401 13 1 126
+EVAL confirmation H 1751401 14 0 130
+EVAL confirmation H 1751401 14 1 133
+EVAL confirmation H 1751401 15 0 139
+EVAL confirmation H 1751401 15 1 145
+EVAL confirmation H 1751401 16 0 149
+EVAL confirmation H 1751401 16 1 154
+EVAL confirmation H 1751401 17 0 157
+EVAL confirmation H 1751401 17 1 160
+EVAL confirmation H 1751401 18 0 165
+EVAL confirmation H 1751401 18 1 170
+EVAL confirmation H 1751401 19 0 174
+EVAL confirmation H 1751401 19 1 178
+EVAL confirmation H 1751401 20 0 182
+EVAL confirmation H 1751401 20 1 186
+EVAL confirmation H 1751401 21 0 193
+EVAL confirmation H 1751401 21 1 199
+EVAL confirmation H 1751401 22 0 203
+EVAL confirmation H 1751401 22 1 207
+EVAL confirmation H 1751401 23 0 210
+EVAL confirmation H 1751401 23 1 213
+EVAL confirmation H 1751401 24 0 219
+EVAL confirmation H 1751401 24 1 225
+EVAL confirmation H 1751401 25 0 230
+EVAL confirmation H 1751401 25 1 235
+EVAL confirmation H 1751401 26 0 240
+EVAL confirmation H 1751401 26 1 244
+EVAL confirmation H 1751401 27 0 250
+EVAL confirmation H 1751401 27 1 254
+EVAL confirmation H 1751401 28 0 258
+EVAL confirmation H 1751401 28 1 262
+EVAL confirmation H 1751401 29 0 265
+EVAL confirmation H 1751401 29 1 268
+EVAL confirmation H 1751401 30 0 274
+EVAL confirmation H 1751401 30 1 279
+EVAL confirmation H 1751401 31 0 284
+EVAL confirmation H 1751401 31 1 289
+EVAL confirmation H 1751402 0 0 294
+EVAL confirmation H 1751402 0 1 298
+EVAL confirmation H 1751402 1 0 302
+EVAL confirmation H 1751402 1 1 306
+EVAL confirmation H 1751402 2 0 310
+EVAL confirmation H 1751402 2 1 313
+EVAL confirmation H 1751402 3 0 319
+EVAL confirmation H 1751402 3 1 325
+EVAL confirmation H 1751402 4 0 330
+EVAL confirmation H 1751402 4 1 333
+EVAL confirmation H 1751402 5 0 338
+EVAL confirmation H 1751402 5 1 341
+EVAL confirmation H 1751402 6 0 347
+EVAL confirmation H 1751402 6 1 353
+EVAL confirmation H 1751402 7 0 357
+EVAL confirmation H 1751402 7 1 361
+EVAL confirmation H 1751402 8 0 364
+EVAL confirmation H 1751402 8 1 367
+EVAL confirmation H 1751402 9 0 372
+EVAL confirmation H 1751402 9 1 378
+EVAL confirmation H 1751402 10 0 381
+EVAL confirmation H 1751402 10 1 384
+EVAL confirmation H 1751402 11 0 388
+EVAL confirmation H 1751402 11 1 392
+EVAL confirmation H 1751402 12 0 398
+EVAL confirmation H 1751402 12 1 404
+EVAL confirmation H 1751402 13 0 408
+EVAL confirmation H 1751402 13 1 412
+EVAL confirmation H 1751402 14 0 415
+EVAL confirmation H 1751402 14 1 419
+EVAL confirmation H 1751402 15 0 425
+EVAL confirmation H 1751402 15 1 431
+EVAL confirmation H 1751402 16 0 436
+EVAL confirmation H 1751402 16 1 439
+EVAL confirmation H 1751402 17 0 443
+EVAL confirmation H 1751402 17 1 447
+EVAL confirmation H 1751402 18 0 453
+EVAL confirmation H 1751402 18 1 457
+EVAL confirmation H 1751402 19 0 463
+EVAL confirmation H 1751402 19 1 468
+EVAL confirmation H 1751402 20 0 473
+EVAL confirmation H 1751402 20 1 477
+EVAL confirmation H 1751402 21 0 484
+EVAL confirmation H 1751402 21 1 489
+EVAL confirmation H 1751402 22 0 493
+EVAL confirmation H 1751402 22 1 499
+EVAL confirmation H 1751402 23 0 502
+EVAL confirmation H 1751402 23 1 507
+EVAL confirmation H 1751402 24 0 514
+EVAL confirmation H 1751402 24 1 519
+EVAL confirmation H 1751402 25 0 524
+EVAL confirmation H 1751402 25 1 529
+EVAL confirmation H 1751402 26 0 534
+EVAL confirmation H 1751402 26 1 539
+EVAL confirmation H 1751402 27 0 545
+EVAL confirmation H 1751402 27 1 551
+EVAL confirmation H 1751402 28 0 554
+EVAL confirmation H 1751402 28 1 558
+EVAL confirmation H 1751402 29 0 562
+EVAL confirmation H 1751402 29 1 565
+EVAL confirmation H 1751402 30 0 571
+EVAL confirmation H 1751402 30 1 577
+EVAL confirmation H 1751402 31 0 581
+EVAL confirmation H 1751402 31 1 585
+EVAL confirmation H 1751403 0 0 589
+EVAL confirmation H 1751403 0 1 593
+EVAL confirmation H 1751403 1 0 598
+EVAL confirmation H 1751403 1 1 603
+EVAL confirmation H 1751403 2 0 606
+EVAL confirmation H 1751403 2 1 608
+EVAL confirmation H 1751403 3 0 614
+EVAL confirmation H 1751403 3 1 620
+EVAL confirmation H 1751403 4 0 624
+EVAL confirmation H 1751403 4 1 628
+EVAL confirmation H 1751403 5 0 632
+EVAL confirmation H 1751403 5 1 636
+EVAL confirmation H 1751403 6 0 642
+EVAL confirmation H 1751403 6 1 648
+EVAL confirmation H 1751403 7 0 652
+EVAL confirmation H 1751403 7 1 656
+EVAL confirmation H 1751403 8 0 659
+EVAL confirmation H 1751403 8 1 663
+EVAL confirmation H 1751403 9 0 667
+EVAL confirmation H 1751403 9 1 672
+EVAL confirmation H 1751403 10 0 676
+EVAL confirmation H 1751403 10 1 681
+EVAL confirmation H 1751403 11 0 683
+EVAL confirmation H 1751403 11 1 686
+EVAL confirmation H 1751403 12 0 692
+EVAL confirmation H 1751403 12 1 698
+EVAL confirmation H 1751403 13 0 703
+EVAL confirmation H 1751403 13 1 707
+EVAL confirmation H 1751403 14 0 711
+EVAL confirmation H 1751403 14 1 715
+EVAL confirmation H 1751403 15 0 721
+EVAL confirmation H 1751403 15 1 726
+EVAL confirmation H 1751403 16 0 731
+EVAL confirmation H 1751403 16 1 735
+EVAL confirmation H 1751403 17 0 738
+EVAL confirmation H 1751403 17 1 742
+EVAL confirmation H 1751403 18 0 747
+EVAL confirmation H 1751403 18 1 752
+EVAL confirmation H 1751403 19 0 756
+EVAL confirmation H 1751403 19 1 761
+EVAL confirmation H 1751403 20 0 765
+EVAL confirmation H 1751403 20 1 769
+EVAL confirmation H 1751403 21 0 775
+EVAL confirmation H 1751403 21 1 780
+EVAL confirmation H 1751403 22 0 785
+EVAL confirmation H 1751403 22 1 789
+EVAL confirmation H 1751403 23 0 793
+EVAL confirmation H 1751403 23 1 798
+EVAL confirmation H 1751403 24 0 804
+EVAL confirmation H 1751403 24 1 810
+EVAL confirmation H 1751403 25 0 815
+EVAL confirmation H 1751403 25 1 820
+EVAL confirmation H 1751403 26 0 825
+EVAL confirmation H 1751403 26 1 829
+EVAL confirmation H 1751403 27 0 835
+EVAL confirmation H 1751403 27 1 839
+EVAL confirmation H 1751403 28 0 845
+EVAL confirmation H 1751403 28 1 849
+EVAL confirmation H 1751403 29 0 852
+EVAL confirmation H 1751403 29 1 856
+EVAL confirmation H 1751403 30 0 861
+EVAL confirmation H 1751403 30 1 867
+EVAL confirmation H 1751403 31 0 871
+EVAL confirmation H 1751403 31 1 877
+GATE confirmation False 0.515625
