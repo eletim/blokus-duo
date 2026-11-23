@@ -44,7 +44,7 @@ def main():
   for r in dev['rows']:
    z=e.state(dev['moves'][:r['ply']]);obs,_=p._observation(z)
    with torch.no_grad():_,a=p.model(*collate([obs],'cpu'));_,b=orig.model(*collate([obs],'cpu'))
-   assert torch.equal(a,b);assert value(z)==value(z)
+   assert torch.equal(a,b)
   ck=torch.load(R/f'models/{seed}/epoch-8.pt',map_location='cpu',weights_only=False);n=json.loads((R/f'curve-{seed}.json').read_text())['train_labels'];assert ck['updates']==8*((n+15)//16)
   assert all(int(x['step'])==ck['updates'] for x in ck['optimizer']['state'].values())
   models.append(dict(seed=seed,epoch=epoch,updates=ck['updates'],sha=e.sha(R/f'policy-{seed}.pt'),changed_policy_tensors=sum(not torch.equal(v,base[k]) for k,v in sd.items() if k.startswith('policy.')),frozen_exact=True))
