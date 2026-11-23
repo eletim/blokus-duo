@@ -54,3 +54,10 @@ artifacts/gen4-candidate-policy/postchecks.pid
 # Scaling supervisor IDs and reconstructed historical exclusion union.
 artifacts/gen4-candidate-scale/*.pid
 artifacts/gen4-candidate-scale/excluded-states.json.gz
+# Scaling raw trajectories and labels are content-verified in bounded archives.
+artifacts/gen4-candidate-scale/source-games/
+artifacts/gen4-candidate-scale/train/
+artifacts/gen4-candidate-scale/n*/train/
+artifacts/gen4-candidate-scale/n*/dev/
+artifacts/gen4-candidate-scale/n*/vs-Frozen/
+artifacts/gen4-candidate-scale/n*/vs-old768/
