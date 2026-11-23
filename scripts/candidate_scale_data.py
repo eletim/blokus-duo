@@ -1,5 +1,5 @@
 """Nested data-volume experiment, immutable old labels and independent new games."""
-import os,json,gzip,copy,random,time,hashlib,shutil
+import os,json,gzip,copy,random,time,hashlib,shutil,multiprocessing
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor
 import numpy as np
@@ -55,7 +55,7 @@ def prepare():
   z=e.prefix(rng,idx,ex,8+i%3*2);bank.append(z);ex.add(z['state_hash'])
  save(R/'evaluation-bank.json',dict(prefixes=bank))
  with gzip.open(R/'excluded-states.json.gz','wt') as f:json.dump(dict(states=sorted(ex)),f)
- files=[R/'PLAN.md',R/'new-bank.json',R/'evaluation-bank.json',OLD/'learning-manifest.json']+[R/f'n{n}'/f'{p}-bank.json' for n in [3072,12288] for p in ['train','dev']]
+ files=[R/'PLAN.md',R/'new-bank.json',R/'evaluation-bank.json',OLD/'learning-manifest.json',Path('scripts/candidate_scale_data.py'),Path('scripts/candidate_scale_pipeline.py'),Path('scripts/candidate_scale_eval.py')]+[R/f'n{n}'/f'{p}-bank.json' for n in [3072,12288] for p in ['train','dev']]
  manifest=dict(files={str(p):e.sha(p) for p in files},prior_excluded=initial,final_excluded=len(ex),new_games=len(games),nested_old_games=len(prior),seconds=time.perf_counter()-start)
  for n in [3072,12288]:save(R/f'n{n}'/'bank-manifest.json',manifest)
  save(R/'bank-manifest.json',manifest);print('PREPARE DONE',len(games),flush=True)
@@ -65,7 +65,7 @@ def label(g):
 
 def generate(total):
  start=time.perf_counter();games=json.loads((R/f'n{total}'/'train-bank.json').read_text())['games'];jobs=[g for g in games if g['id']>=256 and not (R/'train'/f'{g["seed"]}-{g["id"]}.json').exists()]
- with ProcessPoolExecutor(max_workers=4) as pool:
+ with ProcessPoolExecutor(max_workers=4,mp_context=multiprocessing.get_context("spawn")) as pool:
   for i,result in enumerate(pool.map(label,jobs)):
    if i%64==0:print('LABEL',total,i,len(jobs),round(time.perf_counter()-start),flush=True)
  dest=R/f'n{total}'
