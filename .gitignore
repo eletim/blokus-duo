@@ -40,3 +40,5 @@ artifacts/value-placement-49152/exclusions.json.gz
 artifacts/value-placement-49152/games/[0-9]*-*.json.gz
 artifacts/value-placement-49152/evaluation-excluded.json.gz
 artifacts/value-placement-49152/**/evaluation-excluded.json.gz
+# Reproducible historical state union, not needed for inference.
+artifacts/gen4-candidate-policy/excluded-states.json.gz
