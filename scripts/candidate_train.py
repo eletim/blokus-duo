@@ -42,6 +42,10 @@ def metrics(model,rows,device):
  return dict(loss=loss/len(rows),agreement=hit/len(rows),top4=top4/len(rows),stage=st,n=len(rows))
 
 def train():
+ files=[R/'PLAN.md',R/'bank-manifest.json',Path('scripts/candidate_train.py'),Path('scripts/candidate_data.py'),Path('blokus/candidate_teacher.py')]+[p for phase in ('train','dev') for p in sorted((R/phase).glob('*.json'))]+[Path(f'models/gen4/value-{seed}.pt') for seed in SEEDS]+[Path(f'artifacts/ppo-gen3/seed-{seed}.pt') for seed in SEEDS]
+ manifest={str(p):e.sha(p) for p in files}
+ if (R/'learning-manifest.json').exists():assert json.loads((R/'learning-manifest.json').read_text())==manifest
+ else:save(R/'learning-manifest.json',manifest)
  assert json.loads((R/'diagnostic-gate.json').read_text())['passed'];torch.set_num_threads(1);torch.use_deterministic_algorithms(True);assert torch.cuda.is_available();start=time.perf_counter()
  for seed in SEEDS:
   p,value=load(seed,'native');original=copy.deepcopy(p.model.state_dict());tr=dataset('train',seed,p);dv=dataset('dev',seed,p)
@@ -63,6 +67,7 @@ def train():
    frozen={k:t.cpu() for k,t in model.state_dict().items() if not k.startswith('policy.')};assert all(torch.equal(t,original[k]) for k,t in frozen.items())
    ck=dict(model={k:t.detach().cpu() for k,t in model.state_dict().items()},optimizer=opt.state_dict(),numpy_rng=rng.bit_generator.state,torch_rng=torch.get_rng_state(),cuda_rng=torch.cuda.get_rng_state(),updates=updates,epoch=epoch,curve_row=row)
    tmp=resumed.with_suffix('.tmp');torch.save(ck,tmp);tmp.replace(resumed);save(R/f'curve-{seed}.json',dict(seed=seed,train_labels=len(tr),dev_labels=len(dv),curve=curve));print('TRAIN',seed,epoch,updates,dev,flush=True)
+  save(R/f'curve-{seed}.json',dict(seed=seed,train_labels=len(tr),dev_labels=len(dv),curve=curve))
   # Frozen network tensors are sufficient for exact value preservation on every input.
   assert any(not torch.equal(model.state_dict()[k].cpu(),original[k]) for k in original if k.startswith('policy.'))
   del model,p,opt;torch.cuda.empty_cache()
