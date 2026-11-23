@@ -57,13 +57,14 @@ PLANを本試験前に2a5e58eで固定。診断48ゲーム244局面で、広幅�
 ## 保存・監査
 
 全新診断/訓練/dev/対戦の棋譜・完成木ラベルを保存。独立座標ルールreplayで合法性/終局得点を確認。元PPO訓練index・過去評価/速度/新生成状態との分離、集計再計算、モデルhash、実Adam更新数、各epoch凍結tensor、別process CPU/CUDA各同device次更新一致を確認。CPU/CUDA bit同値の主張はしない。新評価に人間棋譜は使用しない。原始棋譜はraw-games.tar.gzから復元でき、全epoch optimizer/RNGと3seed推論exportを保存。
-CPU CLI対局・関連4tests通過。モデル選別なし、公開gen4/タグ/main/Webを変更していない。
+CPU CLI対局・関連4tests通過。別のクリーンsparse checkoutでもCUDA_VISIBLE_DEVICESを空にしてnativeを新規build、同4testsとCPU対局完走。既存venvを共用し、新しい依存インストールまでは行っていない。初回checkout検証はnative未build/旧比較fixtureのsparse範囲不足で失敗し、文書通りbuildとfixture追加で解消。モデル選別なし、公開gen4/タグ/main/Webを変更していない。
 
 ## 再現
 
 ```bash
 export PYTHONPATH=.:scripts OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
 tar -xzf artifacts/gen4-candidate-policy/raw-games.tar.gz -C artifacts/gen4-candidate-policy
+python -m blokus.ppo_native build
 python scripts/candidate_audit.py
 python scripts/candidate_resume_check.py
 python scripts/candidate_report.py
