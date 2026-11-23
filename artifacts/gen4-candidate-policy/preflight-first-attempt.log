@@ -1,0 +1,40 @@
+F.                                                                       [100%]
+=================================== FAILURES ===================================
+_____________________ test_fixed_tree_and_root_label_order _____________________
+
+    def test_fixed_tree_and_root_label_order():
+     torch.set_num_threads(1);p,v=load(1751401,'native');s=State();rng=random.Random(9939)
+     for _ in range(28):
+      if s.done:break
+      q=legal_moves(s);play(s,rng.choice(q).move if q else None,validate=True)
+     before=key(s);a=RootWideSearch(p,60000,max_depth=4,root_width=12,value_evaluator=v);b=RootWideSearch(p,60000,max_depth=4,root_width=12,value_evaluator=v,prune=False)
+>    assert a.act(s,rng)==b.act(s,rng);assert a.stats['root_scores']==b.stats['root_scores'];assert key(s)==before
+            ^^^^^^^^^^^^
+
+tests/test_candidate_policy.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+blokus/candidate_teacher.py:51: in act
+    selected=self.policy.act(s,rng)
+             ^^^^^^^^^^^^^^^^^^^^^^
+blokus/ppo_policy.py:76: in act
+    start=time.perf_counter();obs,qs=self._observation(s)
+                                     ^^^^^^^^^^^^^^^^^^^^
+blokus/ppo_policy.py:74: in _observation
+    return native_observe(s,self.channels,self.backend)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+s = State(boards=[255242957496024947875956983822954534968, 11629452090916385416195288150050268391730529197292750110720], remaining=[1631620, 1520272], last=[1, 3], turn=0, passes=2)
+channels = 4, backend = 'native', timing = None
+
+    def observe(s,channels=4,backend='auto',timing=None):
+     if backend not in ('python','native','auto'):raise ValueError('unknown backend')
+     if channels not in (4,6):raise ValueError('channels must be 4 or 6')
+>    if s.done:raise ValueError('terminal has no actions')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    ValueError: terminal has no actions
+
+blokus/ppo_native.py:49: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_candidate_policy.py::test_fixed_tree_and_root_label_order
+1 failed, 1 passed in 1.51s
