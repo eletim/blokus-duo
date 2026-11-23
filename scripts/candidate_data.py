@@ -89,7 +89,10 @@ def label(job):
   for name,width,depth in [('wide',12,6)]+([('narrow',4,6),('shallow',12,4)] if phase=='diagnosis' else []):
    a=RootWideSearch(p,60000,width=4,max_depth=depth,value_evaluator=v,root_width=width);m=a.act(z,random.Random(0));assert a.stats['depth']==depth
    results[name]=dict(move=raw(m),**a.stats)
-  rows.append(dict(**item,roots=roots,top4=roots[:4],results=results,omitted=results['wide']['move'] not in roots[:4]))
+  top4=roots[:4];greedy=raw(p.act(z,random.Random(0)))
+  if greedy not in top4:top4[-1]=greedy
+  roots=results['wide']['root_moves'];assert results['wide']['move']==roots[max(range(len(roots)),key=results['wide']['root_scores'].__getitem__)]
+  rows.append(dict(**item,roots=roots,top4=top4,results=results,omitted=results['wide']['move'] not in top4))
  save(dest,dict(**g,rows=rows,seconds=time.perf_counter()-start));return dict(seed=g['seed'],id=g['id'],rows=len(rows),seconds=time.perf_counter()-start)
 def generate(phase):
  start=time.perf_counter();jobs=[(phase,g) for g in json.loads((R/f'{phase}-bank.json').read_text())['games']]

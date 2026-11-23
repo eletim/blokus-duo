@@ -54,6 +54,7 @@ class RootWideSearch:
    try:
     roots,_=evaluate(s,False)
     if selected not in roots:roots[-1]=selected
+    stats["root_moves"]=[None if m is None else [m.piece,m.orientation,m.row,m.col] for m in roots]
     for d in range(2,self.max_depth+1,2):
      scores=[-visit(child(s,m),d-1,-float('inf'),float('inf')) for m in roots];check()
      selected=roots[max(range(len(roots)),key=scores.__getitem__)];stats.update(depth=d,root_scores=scores,fallback=False);stats['stages'].append(d)
