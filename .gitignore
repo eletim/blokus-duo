@@ -44,3 +44,11 @@ artifacts/value-placement-49152/**/evaluation-excluded.json.gz
 artifacts/future-occupancy/*.pid
 artifacts/future-occupancy/*.lock
 artifacts/future-occupancy/historical.json.gz
+# Occupancy raw files are losslessly preserved in verified bounded archive parts.
+artifacts/future-occupancy/games/
+artifacts/future-occupancy/evaluation/
+artifacts/future-occupancy/models/
+artifacts/future-occupancy/*-data.npz
+artifacts/future-occupancy/*-labels.json
+artifacts/future-occupancy/new-exclusions.json.gz
+artifacts/future-occupancy/post-*.log
