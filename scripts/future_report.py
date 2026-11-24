@@ -23,10 +23,10 @@ def main():
   if ply>=len(g['moves'])-2:continue
   s=state(g['moves'][:ply]);b,st=encode(s);y=terminal_labels(g['boards'],s.turn)
   with torch.inference_mode():v,l,p=ev.model(torch.tensor(b[None,:4]),torch.tensor(st[None]),torch.tensor(mobility(s)[None]));probs=p[0].numpy()
-  fig,axs=plt.subplots(1,5,figsize=(15,3));axs[0].imshow(np.where(b[0],0,np.where(b[1],1,2)),vmin=0,vmax=2,cmap='viridis');axs[0].set_title(f'Current ply {ply}')
+  fig,axs=plt.subplots(1,5,figsize=(15,3.8));axs[0].imshow(np.where(b[0],0,np.where(b[1],1,2)),vmin=0,vmax=2,cmap='viridis');axs[0].set_title(f'Current ply {ply}')
   for cls,label in enumerate(['Self','Opponent','Empty']):axs[cls+1].imshow(probs[cls],vmin=0,vmax=1,cmap='magma');axs[cls+1].set_title(label+' probability')
   axs[4].imshow(y,vmin=0,vmax=2,cmap='viridis');axs[4].set_title('Actual terminal')
   for ax in axs:ax.set_xticks([]);ax.set_yticks([])
-  fig.suptitle(f'Fixed test game 0 / C seed1751401 / perspective player{s.turn}');fig.tight_layout();fig.savefig(R/f'occupancy-ply{ply}.png',dpi=150);plt.close(fig);examples.append(dict(game=0,ply=ply,turn=s.turn,predicted_value=float(v),probabilities=probs.tolist(),actual=y.tolist(),current_empty=(~b[:2].any(0)).tolist()))
+  fig.suptitle(f'Fixed test game 0 / C seed1751401 / epoch 0 (untrained map) / perspective player{s.turn}');fig.tight_layout(rect=[0,.15,1,.92]);fig.text(.5,.06,'Boards: purple = self, teal = opponent, yellow = empty. Probabilities: black = 0, pale yellow = 1. Occupied cells are clamped.',ha='center',fontsize=10);fig.savefig(R/f'occupancy-ply{ply}.png',dpi=150);plt.close(fig);examples.append(dict(game=0,ply=ply,turn=s.turn,predicted_value=float(v),probabilities=probs.tolist(),actual=y.tolist(),current_empty=(~b[:2].any(0)).tolist()))
  save(R/'heatmap-examples.json',dict(selection='fixed test game0 plies prefix/20/28; no best-case selection',examples=examples))
 if __name__=='__main__':main()
