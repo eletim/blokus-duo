@@ -1,0 +1,83 @@
+{
+  "games": {
+    "train": 1536,
+    "dev": 192,
+    "test": 192
+  },
+  "seeds": [
+    1751401,
+    1751402,
+    1751403
+  ],
+  "epochs": 8,
+  "batch": 128,
+  "adam_lr": 0.0001,
+  "aux_weight": 0.25,
+  "checkpoint": "dev value MSE per arm/seed epoch0..8 earliest tie",
+  "comparisons": [
+    "AG",
+    "BG",
+    "CG",
+    "CA",
+    "CB"
+  ],
+  "prefixes": 64,
+  "evaluation_games": 1920,
+  "family_ci": 0.99,
+  "teacher": "Frozen gen4 CPU500ms width4 max6",
+  "pilot": {
+    "passed": true,
+    "games": 12,
+    "rows": 35,
+    "arms": {
+      "A": {
+        "parameters": 139588,
+        "updates": 8,
+        "changed": 11,
+        "cuda_seconds": 0.18726003193296492,
+        "inference_ms": 0.04162242985330522
+      },
+      "B": {
+        "parameters": 139588,
+        "updates": 8,
+        "changed": 15,
+        "cuda_seconds": 0.06533412600401789,
+        "inference_ms": 0.040965129737742245
+      },
+      "C": {
+        "parameters": 139588,
+        "updates": 8,
+        "changed": 16,
+        "cuda_seconds": 0.010493179899640381,
+        "inference_ms": 0.06661637977231294
+      }
+    },
+    "peak_cuda_bytes": 71555584,
+    "generation": {
+      "games": 12,
+      "seconds": 14.546274760970846,
+      "workers": 4,
+      "settings": {
+        "budget_ms": 500,
+        "width": 4,
+        "max_depth": 6
+      }
+    }
+  },
+  "estimated_generation_minutes": 38.79006602925559,
+  "estimated_preparation_training_minutes": 25,
+  "estimated_evaluation_minutes": 170,
+  "estimated_audits_reporting_minutes": 30,
+  "expected_completion_utc": "2026-11-24T14:00:00Z",
+  "stop_budget_hours": 6,
+  "code_sha": {
+    "blokus/future_occupancy.py": "49ce0c4ebcb463e7d60cad0896cea282dac9bae890b719324f4376ab368ab8ee",
+    "scripts/future_eval.py": "bed06b7b63d4bd68a33ac2d04307947c91b73c0565689053c24111c64fc20f41",
+    "scripts/future_pipeline.py": "41289e8e308ef68e7693c76a94ce3d6daf84e4afdc79f7d2963857a4350f40bb",
+    "scripts/future_data.py": "62aebdb22ed2ce3c23470082bd7930d866ce7353074c549092b7f5480eb1e8fe",
+    "scripts/future_pilot.py": "97a6dc6d6ff5f4ed3ec906bc539852b0b7a44e3ef55fc95b33a4e69cbd9d9e98",
+    "scripts/future_generate.py": "faae917e750fa6bdf49f410a403f2b0d2e7da7df3e58f9ac3ed6065609cda033",
+    "scripts/future_common.py": "51d91cf42effd8fa3529b4ea87f7adb0b46fcdcbb6294ed48a4893c60de9fbd2",
+    "scripts/future_train.py": "7fba8805dacd64ec2c0fa154839ae9cae206c5b03325f9a969645f0e2465f207"
+  }
+}
