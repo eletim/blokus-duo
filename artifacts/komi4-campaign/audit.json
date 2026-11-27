@@ -1,0 +1,130 @@
+{
+  "komi": 4,
+  "completed_games": 188,
+  "unique_traces": 152,
+  "duplicates_not_independent": 36,
+  "datasets": {
+    "bootstrap": {
+      "positions": 19821,
+      "games": 1548,
+      "groups": 76,
+      "excluded_groups": []
+    },
+    "old-validation": {
+      "positions": 12868,
+      "games": 510,
+      "groups": 26,
+      "excluded_groups": []
+    },
+    "fresh-train": {
+      "duplicate_traces_removed": 24,
+      "positions": 2015,
+      "games": 72,
+      "groups": 48,
+      "excluded_groups": []
+    },
+    "fresh-validation": {
+      "duplicate_traces_removed": 6,
+      "positions": 496,
+      "games": 18,
+      "groups": 12,
+      "excluded_groups": []
+    },
+    "fresh-test": {
+      "duplicate_traces_removed": 6,
+      "positions": 490,
+      "games": 18,
+      "groups": 12,
+      "excluded_groups": []
+    }
+  },
+  "state_intersections": {
+    "bootstrap / old-validation": 0,
+    "bootstrap / fresh-train": 0,
+    "bootstrap / fresh-validation": 0,
+    "bootstrap / fresh-test": 0,
+    "old-validation / fresh-train": 0,
+    "old-validation / fresh-validation": 0,
+    "old-validation / fresh-test": 0,
+    "fresh-train / fresh-validation": 0,
+    "fresh-train / fresh-test": 0,
+    "fresh-validation / fresh-test": 0
+  },
+  "final_comparison_training_state_overlap": {},
+  "models": {
+    "gen0-1751401-last.pt": {
+      "sha256": "3ffcd9d11243b0efcc88fb8b716706936a19ee45b9a57d37fc379fcf1a09385f",
+      "epoch": 7,
+      "generation": "gen0",
+      "resume_optimizer": true
+    },
+    "gen0-1751401.pt": {
+      "sha256": "2d92f5bf8e07eafe06217f6a524965bd723f4ccb45a5bf6e3a69e133389b69de",
+      "epoch": 0,
+      "generation": "gen0",
+      "resume_optimizer": false
+    },
+    "gen0-1751402-last.pt": {
+      "sha256": "127b6f19853c2a6323b9cdfbeeac3abaaff5b6fe7e511a336db2f1039700ff5e",
+      "epoch": 7,
+      "generation": "gen0",
+      "resume_optimizer": true
+    },
+    "gen0-1751402.pt": {
+      "sha256": "4e7e9293c1da332395c384d980503b01ef9cbdb80a45560e5e9d700b2079c21f",
+      "epoch": 3,
+      "generation": "gen0",
+      "resume_optimizer": false
+    },
+    "gen0-1751403-last.pt": {
+      "sha256": "a6cb6ee92a5c4feaa596c81069cc1faff7d8b6ee8c753a4c7592e51485697435",
+      "epoch": 7,
+      "generation": "gen0",
+      "resume_optimizer": true
+    },
+    "gen0-1751403.pt": {
+      "sha256": "fc7f04710d808f976a79b7cb02dc2ec61212f65e37ac0292812afbadbf715457",
+      "epoch": 2,
+      "generation": "gen0",
+      "resume_optimizer": false
+    },
+    "gen1-1751401-last.pt": {
+      "sha256": "6324a4a9b0fc36e357a7fa6e09762b177a7c17c7ba5b896803c49a09255d8284",
+      "epoch": 7,
+      "generation": "gen1",
+      "resume_optimizer": true
+    },
+    "gen1-1751401.pt": {
+      "sha256": "e5cf88901b0b3d23b8dd2d9d888bf54374c0c849031ac8c8a9ace25117380163",
+      "epoch": -1,
+      "generation": "gen1",
+      "resume_optimizer": false
+    },
+    "gen1-1751402-last.pt": {
+      "sha256": "365463f949f87da78d61d71f5e7a6771d85a2a3d10f912331629df48ec06c03c",
+      "epoch": 7,
+      "generation": "gen1",
+      "resume_optimizer": true
+    },
+    "gen1-1751402.pt": {
+      "sha256": "2232b799d7ba426c6d2b1ae797fab8577d1af40b507c923485ce377cd7dadda5",
+      "epoch": -1,
+      "generation": "gen1",
+      "resume_optimizer": false
+    },
+    "gen1-1751403-last.pt": {
+      "sha256": "6ce5dfb90178c83a6706251bc6fab62f6f7fe67219f3ffeb61f92899d1f55191",
+      "epoch": 7,
+      "generation": "gen1",
+      "resume_optimizer": true
+    },
+    "gen1-1751403.pt": {
+      "sha256": "ae09e5eb6abcf4d0a6fac8d2287c77fbeb25e203a87829b309fbce189edc9d1e",
+      "epoch": 0,
+      "generation": "gen1",
+      "resume_optimizer": false
+    }
+  },
+  "bonus_difference_games": [],
+  "audit": "all saved games legal and terminal, scores/komi exact; checkpoint tensors finite; optimizer and RNG resumable"
+}
