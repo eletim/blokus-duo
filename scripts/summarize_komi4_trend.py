@@ -35,7 +35,7 @@ def run():
     metrics={}
     for agent,stats in search.items():
         names={k for s in stats for k,v in s.items() if isinstance(v,(int,float)) and k!='player'}
-        metrics[agent]={k:dict(mean=float(np.mean([s[k] for s in stats if k in s])),p95=float(np.quantile([s[k] for s in stats if k in s],.95))) for k in sorted(names)}
+        metrics[agent]={k:dict(mean=float(np.mean([s[k] for s in stats if k in s])),p95=float(np.quantile(np.asarray([s[k] for s in stats if k in s],dtype=float),.95))) for k in sorted(names)}
     training=progress['training']
     result=dict(komi=4,additional_unique_train_games=progress['additional_unique_train_games'],
         cumulative_unique_train_games=progress['cumulative_unique_train_games'],new_training_positions=progress['new_training_positions'],

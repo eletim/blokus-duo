@@ -24,7 +24,7 @@ def compute_benchmark(g):
     return dict(generation=g,cumulative_unique_train_games=11000+used,opponents=out)
 
 def data():
-    out={n:read(R/(n+'.json')) if (R/(n+'.json')).exists() else None for n in ['plan','status','learning-progress','selection','prediction-test','results']}
+    out={n:read(R/(n+'.json')) if (R/(n+'.json')).exists() else None for n in ['plan','status','learning-progress','selection','prediction-test','prediction-intervals','audit','results']}
     files=list((R/'games').glob('*.json.gz'))
     out['generated']={kind:sum(p.name.startswith(kind+'-') for p in files) for kind in ['train','validation','test','benchmark','final','standard']}
     out['benchmarks']=[benchmark(g) for g in range(5,16) if sum(p.name.startswith(f'benchmark-g{g}-') for p in files)==1536]

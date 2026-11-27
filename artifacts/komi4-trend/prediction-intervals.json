@@ -1,0 +1,64 @@
+{
+  "groups": 512,
+  "bootstrap_replicates": 4000,
+  "models": {
+    "1751401": {
+      "mae_ci95": [
+        3.707537364959717,
+        4.082734727859497
+      ],
+      "bias_ci95": [
+        0.15864448323845864,
+        0.24643984325230123
+      ],
+      "paired_mae_difference": {
+        "baseline-1751401": {
+          "mean": -0.1820182204246521,
+          "ci95": [
+            -0.22981209345161915,
+            -0.13158053085207938
+          ]
+        }
+      }
+    },
+    "1751402": {
+      "mae_ci95": [
+        3.74331790804863,
+        4.119033575057983
+      ],
+      "bias_ci95": [
+        -0.20188417099416256,
+        -0.09626497887074947
+      ],
+      "paired_mae_difference": {
+        "baseline-1751402": {
+          "mean": -0.12392755597829819,
+          "ci95": [
+            -0.17976695485413074,
+            -0.06486615575850009
+          ]
+        }
+      }
+    },
+    "1751403": {
+      "mae_ci95": [
+        3.76499827504158,
+        4.1361334204673765
+      ],
+      "bias_ci95": [
+        -0.12813083156943322,
+        -0.02128813504241406
+      ],
+      "paired_mae_difference": {
+        "baseline-1751403": {
+          "mean": -0.12251139432191849,
+          "ci95": [
+            -0.1718332961201668,
+            -0.072600263915956
+          ]
+        }
+      }
+    }
+  },
+  "meaning": "Negative paired MAE difference favors new model; fixed held-out mixed-policy outcomes, not optimal-play truth. Group resampling, no multiple-comparison correction."
+}
