@@ -3,7 +3,7 @@ import hashlib
 import json
 from pathlib import Path
 import torch
-from blokus.engine import State,Move,play,SIZES
+from blokus.engine import State,Move,play,SIZES,legal_moves
 from scripts.komi4_scale import read,sha,state_hash,write
 R=Path('artifacts/komi4-scale')
 
@@ -37,7 +37,8 @@ def run():
         assert d['moves'][:len(d['prefix'])]==d['prefix']
         for ply,m in enumerate(d['moves']):
             if t['split'] in ['comparison','standard'] and state_hash(s) in learned:hit+=1
-            play(s,Move(*m) if m is not None else None,validate=True)
+            if m is None:assert not legal_moves(s), 'illegal pass'
+            play(s,Move(*m) if m is not None else None,validate=m is not None)
         assert s.done and d['scores']==[s.score(i) for i in [0,1]]
         assert d['adjusted_first_margin']==s.score(0)-s.score(1)-4
         assert d['remaining']==[sum(SIZES[i] for i in range(21) if s.remaining[p]>>i&1) for p in [0,1]]
@@ -50,7 +51,7 @@ def run():
         all_unique_trajectories=len(alltraces),state_intersections=overlaps,
         final_comparison_training_validation_overlap=shared,models=models,
         datasets={n:{k:v for k,v in m.items() if k not in ['keys','traces','tasks','game_ids']} for n,m in metas.items()},
-        audit='All saved moves legal and terminal, scores/komi/remaining exact; finite models; resumable optimizer/RNG; validation-only selection.')
+        audit='All placements independently coordinate-checked, passes verified by empty legal-move list; all games terminal, scores/komi/remaining exact; finite models; resumable optimizer/RNG; validation-only selection.')
     write(R/'game-manifest.json',manifest);write(R/'audit.json',result)
     print(json.dumps({k:result[k] for k in ['unique_training_games','unique_training_states','counts','final_comparison_training_validation_overlap']}))
     assert not shared, 'Final comparisons overlap learned states; report contamination before using as held-out evidence.'

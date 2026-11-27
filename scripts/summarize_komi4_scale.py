@@ -74,7 +74,7 @@ def run():
     search_summary={}
     for agent, stats in search.items():
         numeric={k for s in stats for k,v in s.items() if isinstance(v,(float,int)) and k!='player'}
-        search_summary[agent]=dict(moves=len(stats), metrics={k:dict(mean=float(np.mean([s[k] for s in stats if k in s])),p95=float(np.quantile([s[k] for s in stats if k in s],.95))) for k in sorted(numeric)})
+        search_summary[agent]=dict(moves=len(stats), metrics={k:dict(mean=float(np.mean([float(s[k]) for s in stats if k in s])),p95=float(np.quantile([float(s[k]) for s in stats if k in s],.95))) for k in sorted(numeric)})
     generation_matches={}
     for generation in range(1,6):
         gs=[read(p) for p in sorted((R/'games').glob(f'selection-g{generation}-*.json.gz'))]

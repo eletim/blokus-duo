@@ -1,0 +1,248 @@
+{
+  "unique_training_games": 11000,
+  "unique_training_states": 281197,
+  "counts": {
+    "comparison": 768,
+    "selection": 320,
+    "standard": 18,
+    "test": 256,
+    "train": 11000,
+    "validation": 256
+  },
+  "all_unique_trajectories": 12616,
+  "state_intersections": {
+    "validation / train-g4": 0,
+    "validation / train-g5": 0,
+    "validation / train-g1": 0,
+    "validation / train-g2": 0,
+    "validation / train-g3": 0,
+    "validation / test": 0,
+    "train-g4 / train-g5": 0,
+    "train-g4 / train-g1": 0,
+    "train-g4 / train-g2": 0,
+    "train-g4 / train-g3": 0,
+    "train-g4 / test": 0,
+    "train-g5 / train-g1": 0,
+    "train-g5 / train-g2": 0,
+    "train-g5 / train-g3": 0,
+    "train-g5 / test": 0,
+    "train-g1 / train-g2": 0,
+    "train-g1 / train-g3": 0,
+    "train-g1 / test": 0,
+    "train-g2 / train-g3": 0,
+    "train-g2 / test": 0,
+    "train-g3 / test": 0
+  },
+  "final_comparison_training_validation_overlap": {},
+  "models": {
+    "g1-1751401.pt": {
+      "sha256": "45560639daba23956e33a4ec99f5df44ac686ae222842a94721badb98298a521",
+      "epoch": 4,
+      "generation": 1
+    },
+    "g5-1751403.pt": {
+      "sha256": "d7e96f592ef97c872cba27f2dcbcfb99f8437934d7419f12e8d997907bfa9163",
+      "epoch": 1,
+      "generation": 5
+    },
+    "g3-1751402-last.pt": {
+      "sha256": "317a4181cf206716ffca122b0ec97a9da292cb130c05e43c2f4a052f7e429d36",
+      "epoch": 7,
+      "generation": 3
+    },
+    "g5-1751402.pt": {
+      "sha256": "8aa3f66cbc0d2dce9c02973c90c83a4381364e5992d29bf2b6275e59c24e8ff7",
+      "epoch": 1,
+      "generation": 5
+    },
+    "g5-1751402-last.pt": {
+      "sha256": "704c901bbd6f0018efb673364341fa69545ee383f7f068d799248d43a7cca827",
+      "epoch": 7,
+      "generation": 5
+    },
+    "g4-1751403-last.pt": {
+      "sha256": "dc55aee28da4960d89659ac0635b09a491a83804595cd5773181180902fa282f",
+      "epoch": 7,
+      "generation": 4
+    },
+    "g5-1751401.pt": {
+      "sha256": "2797267fda83127314469fd14296bb3daa1f3158fb0b5c79e0e11bea26487e33",
+      "epoch": 0,
+      "generation": 5
+    },
+    "g2-1751402.pt": {
+      "sha256": "d7f48117da15862431c6a76cd40200a452662bc665ae6f6f685864f42fb329e7",
+      "epoch": 3,
+      "generation": 2
+    },
+    "g3-1751402.pt": {
+      "sha256": "63e01e1661f34ceb4cf6243a7c686ff3d6a1b045ebaff2adb4ed776c32718723",
+      "epoch": 0,
+      "generation": 3
+    },
+    "g1-1751402-last.pt": {
+      "sha256": "2e7bc8c081c1c759eb32d24ee2a078a301fcef1dc4b6c84bb7a1e95c60a75dc5",
+      "epoch": 10,
+      "generation": 1
+    },
+    "g2-1751401.pt": {
+      "sha256": "d927058cc483e668098df1b552b7f6b675ae2dc8142aa206b68e90717608d5d7",
+      "epoch": 2,
+      "generation": 2
+    },
+    "g2-1751401-last.pt": {
+      "sha256": "4c3850198d3459129de8f6871000e96b260e8a6696d781833df3c1cf648d5512",
+      "epoch": 8,
+      "generation": 2
+    },
+    "g4-1751402-last.pt": {
+      "sha256": "3902335a32e76d5b21d5301995322c9791765e7f1e866c5c0f03d5985e80da5b",
+      "epoch": 10,
+      "generation": 4
+    },
+    "g5-1751401-last.pt": {
+      "sha256": "852ab569a220db628186761f1458e638ec213d2fc86df58c07793bb881525d6b",
+      "epoch": 7,
+      "generation": 5
+    },
+    "g2-1751402-last.pt": {
+      "sha256": "98052c2ad24bd0ccf34a5051eec43feaa8f90bb668bf14e12553db9c25995b1c",
+      "epoch": 9,
+      "generation": 2
+    },
+    "g5-1751403-last.pt": {
+      "sha256": "0715438e8ae56912fe0120589832bd4e7ad66c375df54f44257a69a2cc30ca1c",
+      "epoch": 7,
+      "generation": 5
+    },
+    "g3-1751403.pt": {
+      "sha256": "0e4e86835e68a56b7c7930d9c23ff4ebd45ece773f42ca80a2fb3826c3a26be0",
+      "epoch": 1,
+      "generation": 3
+    },
+    "g3-1751401-last.pt": {
+      "sha256": "9c0418d1adb1ba54be67b0d93db2e343947f28ff5cc531e4d2fc8e9177423c28",
+      "epoch": 11,
+      "generation": 3
+    },
+    "g4-1751401-last.pt": {
+      "sha256": "df5e0082510020672e0c8a61b076e4e804890e9b83527b5d3f7f6fca9804793d",
+      "epoch": 7,
+      "generation": 4
+    },
+    "g4-1751401.pt": {
+      "sha256": "83afd1246bbd32fa03f56238da395bbb56e5a18c07951c485254d94257a7e120",
+      "epoch": 0,
+      "generation": 4
+    },
+    "g1-1751403.pt": {
+      "sha256": "2dbbac3947cb84fa46a2c86b5de9e88b4ae8027cc78128b7e29c09ebf7218e2a",
+      "epoch": 2,
+      "generation": 1
+    },
+    "g1-1751402.pt": {
+      "sha256": "b9f15a1d9366f74918fcf0a8fcd62bf3d1e4e530e6a17f399a34573073e09039",
+      "epoch": 4,
+      "generation": 1
+    },
+    "g4-1751402.pt": {
+      "sha256": "1386c4a96e9e50f184795d74419925e8c9fa0739ab76e3882d24d77ccc8608c9",
+      "epoch": 4,
+      "generation": 4
+    },
+    "g2-1751403-last.pt": {
+      "sha256": "680f4e950203e8f424391e77f92d480e5f2a8e5d910bfa2017d3994e356c12df",
+      "epoch": 11,
+      "generation": 2
+    },
+    "g2-1751403.pt": {
+      "sha256": "ac8fabb0ff85756c8d59b88df7db2c05394fbc0fdad9e0dc8019a69fea0ba57b",
+      "epoch": 5,
+      "generation": 2
+    },
+    "g3-1751403-last.pt": {
+      "sha256": "fb54226fa05b299203ad0b1739cfa0feb92bc81159153edae0e58ecfb8ced421",
+      "epoch": 7,
+      "generation": 3
+    },
+    "g3-1751401.pt": {
+      "sha256": "5f006413d6954caedf29c9caaf114962b012bce3009d2e95111263158be901a1",
+      "epoch": 5,
+      "generation": 3
+    },
+    "g1-1751401-last.pt": {
+      "sha256": "1f0e66461fa22c2f64a857759d3720b1876eb480976c6c74661cf327f1f43889",
+      "epoch": 10,
+      "generation": 1
+    },
+    "g1-1751403-last.pt": {
+      "sha256": "e6db413ed5ee698d32fc0d68d7176bf2a2496bfc972f6e05f7a6372a28214ec7",
+      "epoch": 8,
+      "generation": 1
+    },
+    "g4-1751403.pt": {
+      "sha256": "8185b4c6d0585ed96d4a25c9c24005a1e8765ce5e589d805a2ea7f35edce04ea",
+      "epoch": 0,
+      "generation": 4
+    }
+  },
+  "datasets": {
+    "validation": {
+      "name": "validation",
+      "unique_games": 256,
+      "positions": 6526,
+      "groups": 256,
+      "excluded": [],
+      "sha256": "f00b2023fd0421deb130bb00bbdf0da3cacdbbea5589c7511670511fe5802b0a"
+    },
+    "train-g4": {
+      "name": "train-g4",
+      "unique_games": 2200,
+      "positions": 56278,
+      "groups": 2200,
+      "excluded": [],
+      "sha256": "c82231720fd73aed185788db4b80f50cc9b18c7205ea0c2547583feb0b09e4ff"
+    },
+    "train-g5": {
+      "name": "train-g5",
+      "unique_games": 2200,
+      "positions": 56445,
+      "groups": 2200,
+      "excluded": [],
+      "sha256": "a848bf4d155bc2a7682e3dcffdaf9aeae0ae9314d57684312e5b51c13e5a1991"
+    },
+    "train-g1": {
+      "name": "train-g1",
+      "unique_games": 2200,
+      "positions": 56099,
+      "groups": 2200,
+      "excluded": [],
+      "sha256": "c87f1f94f7565f1eec969b831b87374b73ddb7447d9c83b01966dc2e0e4d566b"
+    },
+    "train-g2": {
+      "name": "train-g2",
+      "unique_games": 2200,
+      "positions": 56245,
+      "groups": 2200,
+      "excluded": [],
+      "sha256": "d0f5f3c679f18d757bddd60c904191d3f2047b880695a4596b8e06b8658e28e1"
+    },
+    "train-g3": {
+      "name": "train-g3",
+      "unique_games": 2200,
+      "positions": 56130,
+      "groups": 2200,
+      "excluded": [],
+      "sha256": "4fd255b9d45f4a98792478ddf3d1023d29011d702e648a65999fc7e26b2b1dbf"
+    },
+    "test": {
+      "name": "test",
+      "unique_games": 256,
+      "positions": 6475,
+      "groups": 256,
+      "excluded": [],
+      "sha256": "1973f28b70f2fde79170b8d86e2698fe4e16e8264f6cbb703294080de1ec65ae"
+    }
+  },
+  "audit": "All placements independently coordinate-checked, passes verified by empty legal-move list; all games terminal, scores/komi/remaining exact; finite models; resumable optimizer/RNG; validation-only selection."
+}
