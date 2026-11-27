@@ -75,13 +75,17 @@ def run():
     for agent, stats in search.items():
         numeric={k for s in stats for k,v in s.items() if isinstance(v,(float,int)) and k!='player'}
         search_summary[agent]=dict(moves=len(stats), metrics={k:dict(mean=float(np.mean([s[k] for s in stats if k in s])),p95=float(np.quantile([s[k] for s in stats if k in s],.95))) for k in sorted(numeric)})
+    generation_matches={}
+    for generation in range(1,6):
+        gs=[read(p) for p in sorted((R/'games').glob(f'selection-g{generation}-*.json.gz'))]
+        generation_matches[str(generation)]=summarize([row(g) for g in gs])
     training=progress['training']
     curve=[{k:v for k,v in t.items() if k!='history'} for t in training]
     result=dict(komi=4, unique_train_games=progress['unique_train_games'], unique_positions=progress['unique_positions'],
         generated_train_games=progress['generated_train_games'], excluded=progress['excluded_duplicates'],
         training_seconds=sum(t['seconds'] for t in training), optimizer_updates=sum(t['updates'] for t in training),
         epochs=sum(t['epochs'] for t in training), elapsed_seconds=end['at']-read(R/'plan.json')['created_at'],
-        comparisons=comparisons, search=search_summary, learning_curve=curve,
+        comparisons=comparisons, search=search_summary, learning_curve=curve, generation_matches=generation_matches,
         selected={s:{k:v for k,v in t.items() if k!='history'} for s,t in selection['models'].items()},
         prediction_test=read(R/'prediction-test.json'),
         interpretation=['Win rate counts draws as non-wins; point rate gives draws 0.5.',
