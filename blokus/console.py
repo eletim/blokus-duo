@@ -114,6 +114,8 @@ def campaign_data():
     return result
 
 
+from blokus.trend_console import data as trend_data, games as trend_games
+
 def scale_data():
     result={}
     for name in ('plan','status','learning-progress','selection','prediction-test','prediction-intervals','results','audit'):
@@ -232,11 +234,16 @@ class Sources:
         for group in [f'train-g{g}' for g in range(1,6)]+['comparison','standard','selection','validation','test']:
             files=scale_games(group)
             if files:groups.append(dict(id='scale:'+group,stage=0,phase='komi4-scale',seed='3 seeds',count=len(files),left='コミ4拡大学習',right=group))
+        for group in [f'benchmark-g{g}' for g in range(5,16)]+[f'train-g{g}' for g in range(6,16)]+['final','standard']:
+            files=trend_games(group)
+            if files:groups.append(dict(id='trend:'+group,stage=0,phase='komi4-trend',seed='3 seeds',count=len(files),left='固定条件・追加学習',right=group))
         return dict(groups=groups, evaluations=evaluations, training=training, progress=progress,
                     archive=archived, errors=errors, pieces=PIECES,
                     updated=datetime.now(timezone.utc).isoformat())
 
     def game(self, group, index):
+        if group.startswith('trend:'):
+            return self.scale_game(group.removeprefix('trend:'),index,trend=True)
         if group.startswith('scale:'):
             return self.scale_game(group.removeprefix('scale:'),index)
         if group.startswith('campaign:'):
@@ -321,6 +328,9 @@ class Sources:
         generation=1 if split=='comparison' else 0
         players=['',''];players[t['seat']]=f'非線形点差 / 世代{generation}'
         players[1-t['seat']]={'self':f'非線形点差 / 世代{generation}','ridge':'旧ridge点差','gen4':'gen4 / 凍結ヒューリスティック'}[t['opponent']]
+        if trend:
+            players[t['seat']]='固定条件点差 / '+('最終選択モデル' if t['split'] in ('final','standard') else f'世代{t["generation"]}')
+            if t['opponent']=='prior':players[1-t['seat']]='世代5凍結点差'
         evaluations=[];predictions=[None]*(len(moves)+1)
         for i,m in enumerate(moves):
             p=snapshots[i]['turn'];st=d['stats'][i-prefix] if i>=prefix else None
@@ -336,12 +346,15 @@ class Sources:
             predictions=dict(values=predictions,model=f'非線形点差 / 世代{generation} / seed {t["seed"]}',split=split,komi=4,recorded=True),
             komi=4,source='コミ4研究 / '+path.stem,index=index,count=len(files),kind='独立研究・後手+4点',budget_ms=500 if split=='comparison' else 100)
 
-    def scale_game(self,group,index):
-        files=scale_games(group)
+    def scale_game(self,group,index,trend=False):
+        files=trend_games(group) if trend else scale_games(group)
         if not 0<=index<len(files):raise KeyError('拡大学習棋譜がありません')
         path=files[index];d=read_json(path);t=d['task'];moves=d['moves'];snapshots=frames(moves,d['scores']);prefix=len(d['prefix'])
         players=['',''];players[t['seat']]='拡大学習点差 / '+('最終選択モデル' if t['split'] in ('comparison','standard') else f'第{t["generation"]}世代用データ収集')
         players[1-t['seat']]={'self':'同世代点差','prior':'前回非線形','ridge':'旧ridge','gen4':'gen4凍結評価'}[t['opponent']]
+        if trend:
+            players[t['seat']]='固定条件点差 / '+('最終選択モデル' if t['split'] in ('final','standard') else f'世代{t["generation"]}')
+            if t['opponent']=='prior':players[1-t['seat']]='世代5凍結点差'
         evaluations=[];predictions=[None]*(len(moves)+1)
         for i,m in enumerate(moves):
             player=snapshots[i]['turn'];st=d['stats'][i-prefix] if i>=prefix else None
@@ -375,6 +388,7 @@ def handler(sources):
                 if url.path == '/':
                     self.respond(200, Path(__file__).with_name('console.html').read_bytes(), 'text/html; charset=utf-8')
                 elif url.path == '/api/catalog': self.respond(200, sources.catalog())
+                elif url.path == '/api/trend': self.respond(200,trend_data())
                 elif url.path == '/api/scale': self.respond(200,scale_data())
                 elif url.path == '/api/campaign': self.respond(200,campaign_data())
                 elif url.path == '/api/research': self.respond(200,research_data())
