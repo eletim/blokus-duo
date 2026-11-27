@@ -328,9 +328,6 @@ class Sources:
         generation=1 if split=='comparison' else 0
         players=['',''];players[t['seat']]=f'非線形点差 / 世代{generation}'
         players[1-t['seat']]={'self':f'非線形点差 / 世代{generation}','ridge':'旧ridge点差','gen4':'gen4 / 凍結ヒューリスティック'}[t['opponent']]
-        if trend:
-            players[t['seat']]='固定条件点差 / '+('最終選択モデル' if t['split'] in ('final','standard') else f'世代{t["generation"]}')
-            if t['opponent']=='prior':players[1-t['seat']]='世代5凍結点差'
         evaluations=[];predictions=[None]*(len(moves)+1)
         for i,m in enumerate(moves):
             p=snapshots[i]['turn'];st=d['stats'][i-prefix] if i>=prefix else None

@@ -115,7 +115,7 @@ def run_games(tasks,models,label):
    x=f.result();done+=1;seconds.append(x['seconds']);existing+=x['existing']
    if done%32==0 or done==len(tasks):event(label,completed=done,total=len(tasks),generation=tasks[0]['generation'],seconds=time.monotonic()-start,existing=existing)
  result=dict(games=len(tasks),new=len(tasks)-existing,wall_seconds=time.monotonic()-start,worker_game_seconds=sum(seconds),workers=8)
- 
+
  timing_path=R/(label+'-timing.json')
  if result['new'] or not timing_path.exists():write(timing_path,result)
  return result
