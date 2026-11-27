@@ -91,4 +91,3 @@ ridge MAEは5.627点。前回非線形との対応付きMAE差95%区間はseed�
 
 実行入口は `PYTHONPATH=. /home/eletim/blokus-duo-ai/.venv/bin/python scripts/komi4_scale.py run`。
 再開前にservice/PIDと台帳を確認する。同時起動は `.run.lock` で拒否。既存棋譜はtask/modelハッシュ照合でスキップ。学習はoptimizer/scheduler/CPU・CUDA・NumPy RNGを含むepoch checkpointから再開する。失敗を成功とみなさず、原因確認後に必要部分だけ続行する。
-
