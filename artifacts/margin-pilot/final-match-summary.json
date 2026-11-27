@@ -1,0 +1,159 @@
+{
+  "performance": {
+    "n": 24,
+    "clusters": 12,
+    "wins": 9,
+    "draws": 0,
+    "losses": 15,
+    "win_rate": 0.375,
+    "point_rate": 0.375,
+    "mean": -2.8333333333333335,
+    "median": -3.5,
+    "quantiles": [
+      -34.0,
+      -23.7,
+      -14.25,
+      -3.5,
+      8.25,
+      14.799999999999997,
+      41.0
+    ],
+    "distribution": [
+      {
+        "margin": -34.0,
+        "count": 1
+      },
+      {
+        "margin": -30.0,
+        "count": 1
+      },
+      {
+        "margin": -24.0,
+        "count": 1
+      },
+      {
+        "margin": -23.0,
+        "count": 1
+      },
+      {
+        "margin": -16.0,
+        "count": 1
+      },
+      {
+        "margin": -15.0,
+        "count": 1
+      },
+      {
+        "margin": -14.0,
+        "count": 1
+      },
+      {
+        "margin": -10.0,
+        "count": 1
+      },
+      {
+        "margin": -7.0,
+        "count": 1
+      },
+      {
+        "margin": -6.0,
+        "count": 1
+      },
+      {
+        "margin": -5.0,
+        "count": 1
+      },
+      {
+        "margin": -4.0,
+        "count": 1
+      },
+      {
+        "margin": -3.0,
+        "count": 1
+      },
+      {
+        "margin": -2.0,
+        "count": 1
+      },
+      {
+        "margin": -1.0,
+        "count": 1
+      },
+      {
+        "margin": 2.0,
+        "count": 1
+      },
+      {
+        "margin": 6.0,
+        "count": 1
+      },
+      {
+        "margin": 8.0,
+        "count": 1
+      },
+      {
+        "margin": 9.0,
+        "count": 1
+      },
+      {
+        "margin": 10.0,
+        "count": 1
+      },
+      {
+        "margin": 12.0,
+        "count": 1
+      },
+      {
+        "margin": 16.0,
+        "count": 1
+      },
+      {
+        "margin": 22.0,
+        "count": 1
+      },
+      {
+        "margin": 41.0,
+        "count": 1
+      }
+    ],
+    "winning_margin_mean": 14.0,
+    "winning_margin_median": 10.0,
+    "mean_ci95": [
+      -6.875,
+      1.627083333333322
+    ],
+    "win_rate_ci95": [
+      0.25,
+      0.5
+    ],
+    "point_rate_ci95": [
+      0.25,
+      0.5
+    ],
+    "uncertainty": "prefix単位cluster bootstrap 2000回。seed・先後ペアは同じcluster。母集団の無作為標本とは限らない。"
+  },
+  "timing": {
+    "margin": {
+      "moves": 259,
+      "mean_ms": 109.8305156093062,
+      "p95_ms": 214.9006046587601,
+      "max_ms": 256.99213799089193,
+      "over_550": 0,
+      "depths": {
+        "6": 259
+      }
+    },
+    "gen4": {
+      "moves": 277,
+      "mean_ms": 178.80783871905575,
+      "p95_ms": 383.183655096218,
+      "max_ms": 488.0910359788686,
+      "over_550": 0,
+      "depths": {
+        "6": 277
+      }
+    }
+  },
+  "recommendation": "標準初期盤面は3固定モデルseed×先後交換の6局、独立した軌跡は3種類だけです。標準コミの本番推奨は保留。今回の再採点ではk=4点が候補中で得点率50%に最も近い（先手得点率50.0%、2分、中央値0.0点）。小標本・ほぼ決定的な同一AIなので探索候補に留め、異なる独立条件での追加検証前に固定しません。",
+  "comparison_text": "同じ500ms/幅4/最大6手、未使用12prefixの先後交換24局: 点差実験版 9勝0分15敗、勝率37.5%、得点率37.5%、平均点差-2.83。強化を断定できる規模ではありません。"
+}

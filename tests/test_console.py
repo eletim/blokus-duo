@@ -11,7 +11,8 @@ def write(path, data):
         json.dump(data, f)
 
 
-def test_missing_data_is_unknown_and_does_not_create_archive(tmp_path):
+def test_missing_data_is_unknown_and_does_not_create_archive(tmp_path, monkeypatch):
+    monkeypatch.setattr("blokus.console.RESEARCH", tmp_path/"missing-research")
     source = Sources(tmp_path/'artifacts', tmp_path/'missing/games.sqlite3')
     data = source.catalog()
     assert data['groups'] == data['evaluations'] == data['training'] == data['archive'] == []

@@ -11,7 +11,7 @@ with sync_playwright() as p:
     page.on('pageerror', lambda e: errors.append(str(e)))
     page.goto('http://100.95.30.96:8766/')
     page.wait_for_function('replay !== null && catalog !== undefined')
-    assert page.locator('#group option').count()==44
+    assert page.locator('#group option').evaluate_all('(xs)=>xs.filter(x=>!x.value.startsWith("experiment:")).length')==44
     page.click('#step'); assert page.locator('#seek').input_value()=='1'
     page.click('#back'); assert page.locator('#seek').input_value()=='0'
     page.select_option('#speed','200')

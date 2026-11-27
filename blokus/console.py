@@ -74,6 +74,33 @@ def recorded_evaluation(stats, player, model, move, *, trusted=False, reason=Non
     return result
 
 
+RESEARCH = Path(__file__).resolve().parents[1]/'artifacts/margin-pilot'
+
+
+def point_predictions(moves, scores, source='', index=0):
+    model = RESEARCH/'model.json'
+    if not model.exists(): return None
+    from .margin_value import MarginValue
+    evaluator=MarginValue(model);s=State();out=[]
+    for m in moves+[None]:
+        out.append(dict(player=s.turn, raw=evaluator.raw(s), actual=scores[s.turn]-scores[1-s.turn],
+                        exact=s.done))
+        if len(out)>len(moves):break
+        play(s,Move(*m) if m is not None else None,validate=False)
+    mapping=RESEARCH/'prediction-splits.json'
+    split=read_json(mapping).get(f'{source}#{index}', '追加実験・学習外') if mapping.exists() else '未取得'
+    return dict(values=out, split=split, model='margin-ridge-v1',
+                meaning='固定した実験モデルによる後付け推論。過去AIの当時評価ではない。')
+
+
+def research_data():
+    result={}
+    for key,name in [('existing','existing-analysis.json'),('training','training-result.json'),('matches','match-analysis.json')]:
+        path=RESEARCH/name
+        result[key]=read_json(path) if path.exists() else None
+    return result
+
+
 class Sources:
     def __init__(self, artifacts, archive):
         self.artifacts = Path(artifacts).resolve()
@@ -155,11 +182,18 @@ class Sources:
                         archived.append(dict(id=key, started=started, mode=mode, status=r['status'], plies=len(r['moves'])))
             except (sqlite3.Error, ValueError, KeyError) as error:
                 errors.append(f'人間対AI棋譜: {error}')
+        for path in sorted((RESEARCH/'matches').glob('*.json')):
+            d=read_json(path);t=d['task']
+            groups.append(dict(id='experiment:'+path.stem,stage=0,phase='experiment',seed=t['seed'],count=1,
+                left='gen4同士・初期盤面' if t['kind']=='self' else '点差実験版 vs gen4',
+                right=f"先後条件 {t['seat']} / {path.stem}"))
         return dict(groups=groups, evaluations=evaluations, training=training, progress=progress,
                     archive=archived, errors=errors, pieces=PIECES,
                     updated=datetime.now(timezone.utc).isoformat())
 
     def game(self, group, index):
+        if group.startswith('experiment:'):
+            return self.experiment(group.removeprefix('experiment:'))
         # Only indexed evaluation shards can be opened; no arbitrary paths.
         selected = next(((stage, path) for stage, path in self.shards()
                          if str(path.relative_to(self.artifacts)) == group), None)
@@ -188,7 +222,7 @@ class Sources:
                 reason='共通開始局面の評価は未記録' if ply < len(prefix) else None))
         evaluations.append(dict(value=None, reason='終局：探索評価は未記録（最終結果は実測）'))
         return dict(players=players, seed=data['seed'], prefix_plies=len(prefix), moves=moves,
-                    evaluations=evaluations,
+                    evaluations=evaluations, predictions=point_predictions(moves,game['scores'],group,index),
                     frames=snapshots, source=group, index=index,
                     count=len(data['games']), kind='AI評価対戦', budget_ms=data['budget_ms'])
 
@@ -208,9 +242,28 @@ class Sources:
                        for i, item in enumerate(r['moves'])]
         evaluations.append(dict(value=None, reason='終局または保存末尾：探索評価は未記録'))
         return dict(players=players, seed=r.get('model_seed'), prefix_plies=0, moves=moves,
-                    evaluations=evaluations,
+                    evaluations=evaluations, predictions=point_predictions(moves,r['scores']) if r['status']=='finished' else None,
                     frames=snapshots, source='人間対AI 保存棋譜', index=0,
                     count=1, kind='人間対AI', budget_ms=r.get('budget_ms'))
+
+
+    def experiment(self,key):
+        path=next((p for p in (RESEARCH/'matches').glob('*.json') if p.stem==key),None)
+        if path is None:raise KeyError('実験棋譜がありません')
+        d=read_json(path);t=d['task'];moves=d['moves'];snapshots=frames(moves,d['scores'])
+        players=['gen4 / Frozen','gen4 / Frozen']
+        if t['kind']=='paired':players[t['seat']]='点差実験版 / margin-ridge-v1'
+        evaluations=[];prefix=len(t['prefix'])
+        for i,m in enumerate(moves):
+            p=snapshots[i]['turn'];st=d['stats'][i-prefix] if i>=prefix else None
+            e=recorded_evaluation(st,p,players[p],m,trusted=i>=prefix,
+                                 reason='共通開始局面の評価は未記録' if i<prefix else None)
+            if st and st['agent']=='margin':e['unit']='points'
+            evaluations.append(e)
+        evaluations.append(dict(value=None,reason='終局：最終スコアは実測'))
+        return dict(players=players,seed=t['seed'],prefix_plies=prefix,moves=moves,frames=snapshots,
+                    evaluations=evaluations,predictions=point_predictions(moves,d['scores']),
+                    source='追加の独立実験: '+key,index=0,count=1,kind='実験対戦',budget_ms=500)
 
 
 def handler(sources):
@@ -230,6 +283,7 @@ def handler(sources):
                 if url.path == '/':
                     self.respond(200, Path(__file__).with_name('console.html').read_bytes(), 'text/html; charset=utf-8')
                 elif url.path == '/api/catalog': self.respond(200, sources.catalog())
+                elif url.path == '/api/research': self.respond(200,research_data())
                 elif url.path == '/api/replay':
                     self.respond(200, sources.game(query['group'][0], int(query.get('index', ['0'])[0])))
                 elif url.path == '/api/archive': self.respond(200, sources.human_game(query['id'][0]))
