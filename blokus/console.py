@@ -5,6 +5,7 @@ from functools import lru_cache
 import gzip
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
+import math
 from pathlib import Path
 import sqlite3
 from urllib.parse import urlsplit, parse_qs
@@ -36,6 +37,40 @@ def frames(moves, expected_scores=None):
         result.append(snapshot())
     if expected_scores is not None and result[-1]['scores'] != expected_scores:
         raise ValueError('棋譜の再生結果と保存スコアが一致しません')
+    return result
+
+
+def recorded_evaluation(stats, player, model, move, *, trusted=False, reason=None):
+    """DeepSearch chooses argmax(root_scores) of the last completed iteration.
+
+    The root scores already use the mover's perspective. Do not select by
+    piece id, average roots, or regenerate the candidate order with inference.
+    Only the indexed evaluation shards have this audited producer contract.
+    """
+    stats = stats if isinstance(stats, dict) else {}
+    result = dict(value=None, player=player, model=model, move=move,
+                  depth=stats.get('depth'), reason=reason or '選択手の評価値は未記録',
+                  meaning='勝敗符号を教師にした探索評価（勝率・予測点差ではない）')
+    values = stats.get('root_scores')
+    if not trusted:
+        return result
+    if stats.get('player') != player:
+        result['reason'] = '保存statsの手番が棋譜と不一致'
+        return result
+    if move is None or stats.get('forced_pass'):
+        result['reason'] = '強制パスの探索評価は未記録'
+    elif stats.get('fallback') is not False:
+        result['reason'] = '探索未完了・代替手の評価は未記録'
+    elif (not isinstance(values, list) or not values or
+          not all(type(v) in (float, int) and math.isfinite(v) for v in values) or
+          stats.get('depth') not in (2, 4, 6) or
+          not stats.get('stages') or stats['stages'][-1] != stats['depth']):
+        result['reason'] = '完了した探索段階の評価値は未記録'
+    else:
+        selected = max(range(len(values)), key=values.__getitem__)
+        result.update(value=values[selected], root_index=selected,
+                      candidate_count=len(values), reason=None,
+                      extraction='最後の完了深さのroot_scores最大値（同点は最初）')
     return result
 
 
@@ -141,8 +176,20 @@ class Sources:
         players = [None, None]
         players[game['seat']] = self.model(data['left'], stage)
         players[1-game['seat']] = self.model(data['right'], stage)
+        snapshots = frames(moves, game['scores'])
+        evaluations = []
+        stats = game.get('stats', [])
+        aligned = len(stats) == len(game['moves'])
+        for ply, move in enumerate(moves):
+            player = snapshots[ply]['turn']
+            recorded = stats[ply-len(prefix)] if aligned and ply >= len(prefix) else None
+            evaluations.append(recorded_evaluation(recorded, player, players[player], move,
+                trusted=aligned and ply >= len(prefix),
+                reason='共通開始局面の評価は未記録' if ply < len(prefix) else None))
+        evaluations.append(dict(value=None, reason='終局：探索評価は未記録（最終結果は実測）'))
         return dict(players=players, seed=data['seed'], prefix_plies=len(prefix), moves=moves,
-                    frames=frames(moves, game['scores']), source=group, index=index,
+                    evaluations=evaluations,
+                    frames=snapshots, source=group, index=index,
                     count=len(data['games']), kind='AI評価対戦', budget_ms=data['budget_ms'])
 
     def human_game(self, key):
@@ -153,8 +200,16 @@ class Sources:
         r = json.loads(row[0]); players = [r['generation'], r['generation']]
         players[r['human_seat']] = '人間'
         moves = [m['move'] for m in r['moves']]
+        snapshots = frames(moves, r['scores'])
+        evaluations = [recorded_evaluation(item.get('stats'), snapshots[i]['turn'],
+                        players[snapshots[i]['turn']], item['move'],
+                        reason='人間の手：AI評価は未記録' if item.get('actor') == 'human'
+                        else 'Web保存棋譜には選択手の評価値が残っていません')
+                       for i, item in enumerate(r['moves'])]
+        evaluations.append(dict(value=None, reason='終局または保存末尾：探索評価は未記録'))
         return dict(players=players, seed=r.get('model_seed'), prefix_plies=0, moves=moves,
-                    frames=frames(moves, r['scores']), source='人間対AI 保存棋譜', index=0,
+                    evaluations=evaluations,
+                    frames=snapshots, source='人間対AI 保存棋譜', index=0,
                     count=1, kind='人間対AI', budget_ms=r.get('budget_ms'))
 
 
