@@ -1,0 +1,1020 @@
+{
+  "task": {
+    "id": "train-007-1",
+    "split": "train",
+    "group": "train-007",
+    "prefix": [
+      [
+        9,
+        1,
+        3,
+        4
+      ],
+      [
+        12,
+        3,
+        9,
+        9
+      ],
+      [
+        3,
+        0,
+        2,
+        2
+      ],
+      [
+        17,
+        2,
+        6,
+        10
+      ],
+      [
+        15,
+        2,
+        6,
+        5
+      ],
+      [
+        19,
+        1,
+        3,
+        11
+      ],
+      [
+        8,
+        0,
+        1,
+        4
+      ],
+      [
+        5,
+        0,
+        11,
+        11
+      ]
+    ],
+    "seed": 1751402,
+    "seat": 1,
+    "opponent": "ridge",
+    "rng_seed": 4231015
+  },
+  "model_sha256": "4e7e9293c1da332395c384d980503b01ef9cbdb80a45560e5e9d700b2079c21f",
+  "moves": [
+    [
+      9,
+      1,
+      3,
+      4
+    ],
+    [
+      12,
+      3,
+      9,
+      9
+    ],
+    [
+      3,
+      0,
+      2,
+      2
+    ],
+    [
+      17,
+      2,
+      6,
+      10
+    ],
+    [
+      15,
+      2,
+      6,
+      5
+    ],
+    [
+      19,
+      1,
+      3,
+      11
+    ],
+    [
+      8,
+      0,
+      1,
+      4
+    ],
+    [
+      5,
+      0,
+      11,
+      11
+    ],
+    [
+      20,
+      0,
+      8,
+      2
+    ],
+    [
+      20,
+      0,
+      4,
+      8
+    ],
+    [
+      19,
+      0,
+      1,
+      7
+    ],
+    [
+      18,
+      0,
+      0,
+      8
+    ],
+    [
+      16,
+      2,
+      4,
+      1
+    ],
+    [
+      11,
+      4,
+      11,
+      5
+    ],
+    [
+      17,
+      5,
+      11,
+      3
+    ],
+    [
+      16,
+      4,
+      9,
+      4
+    ],
+    [
+      13,
+      1,
+      8,
+      0
+    ],
+    [
+      15,
+      0,
+      0,
+      11
+    ],
+    [
+      12,
+      2,
+      12,
+      0
+    ],
+    [
+      8,
+      1,
+      6,
+      7
+    ],
+    [
+      11,
+      2,
+      0,
+      0
+    ],
+    [
+      13,
+      3,
+      3,
+      5
+    ],
+    [
+      6,
+      3,
+      9,
+      7
+    ],
+    [
+      2,
+      1,
+      7,
+      13
+    ],
+    [
+      10,
+      4,
+      12,
+      9
+    ],
+    [
+      6,
+      1,
+      10,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      2,
+      4
+    ],
+    [
+      0,
+      0,
+      5,
+      7
+    ],
+    [
+      9,
+      1,
+      3,
+      3
+    ],
+    null,
+    [
+      1,
+      0,
+      1,
+      2
+    ],
+    null,
+    null
+  ],
+  "stats": [
+    {
+      "player": 0,
+      "agent": "ridge",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -2.8777815732157013,
+        -4.604505088109728,
+        -4.578467781568631,
+        -4.880083651322769
+      ],
+      "elapsed_ms": 3.122486174106598
+    },
+    {
+      "player": 1,
+      "agent": "nonlinear",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -0.3957914113998413,
+        -2.1969563961029053,
+        -1.347813367843628,
+        -2.821512460708618
+      ],
+      "elapsed_ms": 6.174611859023571
+    },
+    {
+      "player": 0,
+      "agent": "ridge",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -2.499306091478138,
+        -3.530365594263525,
+        -3.373928393383787,
+        -2.427409945088306
+      ],
+      "elapsed_ms": 3.0662459321320057
+    },
+    {
+      "player": 1,
+      "agent": "nonlinear",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -1.621856927871704,
+        2.576878547668457,
+        0.048508286476135254,
+        -0.7578355073928833
+      ],
+      "elapsed_ms": 5.590241169556975
+    },
+    {
+      "player": 0,
+      "agent": "ridge",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -4.180171664376676,
+        -4.169016147709848,
+        -4.505965482481089,
+        -4.074166523805965
+      ],
+      "elapsed_ms": 2.8998758643865585
+    },
+    {
+      "player": 1,
+      "agent": "nonlinear",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        1.0197588205337524,
+        1.582592248916626,
+        -0.09161937236785889,
+        1.0496675968170166
+      ],
+      "elapsed_ms": 5.009640008211136
+    },
+    {
+      "player": 0,
+      "agent": "ridge",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -5.127891826422789,
+        -5.121228882931215,
+        -3.6413225151122126,
+        -3.9190897434777803
+      ],
+      "elapsed_ms": 2.6719640009105206
+    },
+    {
+      "player": 1,
+      "agent": "nonlinear",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        0.24623215198516846,
+        -0.8614155054092407,
+        -2.355674982070923,
+        1.0648964643478394
+      ],
+      "elapsed_ms": 4.838549066334963
+    },
+    {
+      "player": 0,
+      "agent": "ridge",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -3.9170071432715723,
+        -3.888969655427541,
+        -5.49753092197715,
+        -3.8469689867097103
+      ],
+      "elapsed_ms": 2.5189050938934088
+    },
+    {
+      "player": 1,
+      "agent": "nonlinear",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        0.8549477458000183,
+        -1.0511767864227295,
+        1.8003158569335938,
+        -2.9467599391937256
+      ],
+      "elapsed_ms": 4.679769044741988
+    },
+    {
+      "player": 0,
+      "agent": "ridge",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -4.113126271179928,
+        -5.292659995752516,
+        -3.3843500871980354,
+        -5.292659995752516
+      ],
+      "elapsed_ms": 2.40561505779624
+    },
+    {
+      "player": 1,
+      "agent": "nonlinear",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        5.3823933601379395,
+        -3.0900192260742188,
+        -2.8273086547851562,
+        -5.179784774780273
+      ],
+      "elapsed_ms": 4.531698999926448
+    },
+    {
+      "player": 0,
+      "agent": "ridge",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -4.072132751670833,
+        -4.072132751670833,
+        -4.782984088030376,
+        -4.458707348799076
+      ],
+      "elapsed_ms": 2.516724867746234
+    },
+    {
+      "player": 1,
+      "agent": "nonlinear",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        1.3796117305755615,
+        1.4593431949615479,
+        0.9392272233963013,
+        -1.2129567861557007
+      ],
+      "elapsed_ms": 4.387757973745465
+    },
+    {
+      "player": 0,
+      "agent": "ridge",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -6.124970345980537,
+        -4.957744133533359,
+        -6.125784050751543,
+        -6.303696239968527
+      ],
+      "elapsed_ms": 2.222134033218026
+    },
+    {
+      "player": 1,
+      "agent": "nonlinear",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -1.4647022485733032,
+        -1.4111427068710327,
+        -1.1339830160140991,
+        -1.5992249250411987
+      ],
+      "elapsed_ms": 4.329329123720527
+    },
+    {
+      "player": 0,
+      "agent": "ridge",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -3.4119517826139294,
+        -3.246869550379044,
+        -4.856692633841651,
+        -4.131887956050534
+      ],
+      "elapsed_ms": 2.253724029287696
+    },
+    {
+      "player": 1,
+      "agent": "nonlinear",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        0.8921709060668945,
+        0.6909207105636597,
+        0.7432131767272949,
+        0.7603214979171753
+      ],
+      "elapsed_ms": 4.226167919114232
+    },
+    {
+      "player": 0,
+      "agent": "ridge",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -3.350473278652812,
+        -3.3832115539623895,
+        -2.845431915718923,
+        -3.309574190375944
+      ],
+      "elapsed_ms": 2.1829339675605297
+    },
+    {
+      "player": 1,
+      "agent": "nonlinear",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        4.137384414672852,
+        6.725302696228027,
+        0.8768554925918579,
+        0.7811890840530396
+      ],
+      "elapsed_ms": 3.9279269985854626
+    },
+    {
+      "player": 0,
+      "agent": "ridge",
+      "depth": 2,
+      "nodes": 21,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 16,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        -8.795048001515795,
+        -8.827786276825373,
+        -8.819356874911477,
+        -8.754148913238927
+      ],
+      "elapsed_ms": 2.200813964009285
+    },
+    {
+      "player": 1,
+      "agent": "nonlinear",
+      "depth": 2,
+      "nodes": 9,
+      "nn_policy_calls": 5,
+      "nn_value_calls": 4,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        7.589760780334473,
+        5.5648393630981445,
+        4.977110862731934,
+        7.5117902755737305
+      ],
+      "elapsed_ms": 2.105013933032751
+    },
+    {
+      "player": 0,
+      "agent": "ridge",
+      "depth": 0,
+      "nodes": 0,
+      "nn_policy_calls": 0,
+      "nn_value_calls": 0,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [],
+      "fallback": true,
+      "forced_pass": true,
+      "elapsed_ms": 0.4097109194844961
+    },
+    {
+      "player": 1,
+      "agent": "nonlinear",
+      "depth": 2,
+      "nodes": 3,
+      "nn_policy_calls": 2,
+      "nn_value_calls": 1,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [
+        2
+      ],
+      "fallback": false,
+      "forced_pass": false,
+      "root_scores": [
+        8.569551467895508
+      ],
+      "elapsed_ms": 0.9956019930541515
+    },
+    {
+      "player": 0,
+      "agent": "ridge",
+      "depth": 0,
+      "nodes": 0,
+      "nn_policy_calls": 0,
+      "nn_value_calls": 0,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [],
+      "fallback": true,
+      "forced_pass": true,
+      "elapsed_ms": 0.4075411707162857
+    },
+    {
+      "player": 1,
+      "agent": "nonlinear",
+      "depth": 0,
+      "nodes": 0,
+      "nn_policy_calls": 0,
+      "nn_value_calls": 0,
+      "cache_hits": 0,
+      "cutoffs": 0,
+      "stages": [],
+      "fallback": true,
+      "forced_pass": true,
+      "elapsed_ms": 0.39810105226933956
+    }
+  ],
+  "predictions": [
+    {
+      "ply": 8,
+      "player": 0,
+      "adjusted": 6.262732028961182,
+      "ridge": -3.651539509001902,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 9,
+      "player": 1,
+      "adjusted": 0.21624743938446045,
+      "ridge": 1.6470836620425713,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 10,
+      "player": 0,
+      "adjusted": 5.324071407318115,
+      "ridge": -2.8429819981056856,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 11,
+      "player": 1,
+      "adjusted": 1.6669507026672363,
+      "ridge": 1.6274216319654613,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 12,
+      "player": 0,
+      "adjusted": 0.13517284393310547,
+      "ridge": -2.427409945088306,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 13,
+      "player": 1,
+      "adjusted": 5.758173942565918,
+      "ridge": 2.8501680348871408,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 14,
+      "player": 0,
+      "adjusted": -5.349514007568359,
+      "ridge": -3.7450835532072446,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 15,
+      "player": 1,
+      "adjusted": 2.009732723236084,
+      "ridge": 0.5811871547826639,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 16,
+      "player": 0,
+      "adjusted": -2.193866729736328,
+      "ridge": -3.564700976764435,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 17,
+      "player": 1,
+      "adjusted": 1.0648964643478394,
+      "ridge": 1.5408371098952358,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 18,
+      "player": 0,
+      "adjusted": -2.5628011226654053,
+      "ridge": -3.8469689867097103,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 19,
+      "player": 1,
+      "adjusted": 1.8003158569335938,
+      "ridge": 0.8063269388144634,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 20,
+      "player": 0,
+      "adjusted": -2.5617752075195312,
+      "ridge": -2.3070245739580435,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 21,
+      "player": 1,
+      "adjusted": 5.3823933601379395,
+      "ridge": 1.1746924346172767,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 22,
+      "player": 0,
+      "adjusted": -3.7293906211853027,
+      "ridge": -4.072132751670833,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 23,
+      "player": 1,
+      "adjusted": 2.457627296447754,
+      "ridge": 2.350432984766238,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 24,
+      "player": 0,
+      "adjusted": -0.6537046432495117,
+      "ridge": -2.952205118927777,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 25,
+      "player": 1,
+      "adjusted": -0.24052798748016357,
+      "ridge": 0.6395584016119225,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 26,
+      "player": 0,
+      "adjusted": 2.238199472427368,
+      "ridge": -3.246869550379044,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 27,
+      "player": 1,
+      "adjusted": 0.8921709060668945,
+      "ridge": 6.053171366050976,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 28,
+      "player": 0,
+      "adjusted": -5.194211006164551,
+      "ridge": -2.845431915718923,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 29,
+      "player": 1,
+      "adjusted": 7.0002522468566895,
+      "ridge": 4.020258990567945,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 30,
+      "player": 0,
+      "adjusted": -7.551086902618408,
+      "ridge": -8.754148913238927,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 31,
+      "player": 1,
+      "adjusted": 7.589760780334473,
+      "ridge": 8.754148913238927,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 32,
+      "player": 0,
+      "adjusted": -8.624812126159668,
+      "ridge": -8.18043884280511,
+      "generation": 0,
+      "komi": 4
+    },
+    {
+      "ply": 33,
+      "player": 1,
+      "adjusted": 8.569551467895508,
+      "ridge": 8.18043884280511,
+      "generation": 0,
+      "komi": 4
+    }
+  ],
+  "scores": [
+    -25,
+    -21
+  ],
+  "remaining": [
+    25,
+    21
+  ],
+  "adjusted_first_margin": -8,
+  "trace_sha256": "6f3bd2c4538fffad159570b4c82d7562cdb5b730712d89398f467864e0a6498b"
+}

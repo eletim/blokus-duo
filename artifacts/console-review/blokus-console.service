@@ -1,0 +1,15 @@
+[Unit]
+Description=Blokus read-only observation console (VPN)
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/eletim/blokus-console
+ExecStart=/usr/bin/python3 -m blokus.console --host 100.95.30.96 --port 8766 --artifacts /home/eletim/blokus-value-placement/artifacts --archive /home/eletim/.local/share/blokus-web/games.sqlite3
+Environment=PYTHONDONTWRITEBYTECODE=1
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+
+[Install]
+WantedBy=default.target

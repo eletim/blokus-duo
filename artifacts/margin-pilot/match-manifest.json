@@ -1,0 +1,13 @@
+{
+  "model_sha256": "6e67cb818af0118808ecd71c10552443a231b0a65929537130d6a2e43fcce69e",
+  "tasks_sha256": "9e310e63c66c952de4d9188d3ee0c1de18031e99e8cf20e720ef8428be03260a",
+  "budget_ms": 500,
+  "width": 4,
+  "max_depth": 6,
+  "torch": "2.7.1+cu128",
+  "cpu_affinity": [
+    0
+  ],
+  "rules": "no komi, ordinary engine score",
+  "selection": "12 test components by sorted id; 3 frozen seeds for standard initial selfplay"
+}

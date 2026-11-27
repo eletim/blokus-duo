@@ -1,0 +1,44 @@
+{
+  "created_at": 1795787198.3462052,
+  "komi": 4,
+  "generations": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "baseline_generation": 5,
+  "additional_unique_train_target": 22000,
+  "cumulative_unique_train_target": 33000,
+  "model_seeds": [
+    1751401,
+    1751402,
+    1751403
+  ],
+  "workers": 8,
+  "max_wall_seconds": 86400,
+  "max_epochs": 50,
+  "min_epochs": 8,
+  "patience": 6,
+  "batch_size": 512,
+  "learning_rate": 0.0003,
+  "selection": "per seed minimum NEW validation MAE over baseline g5 and g6..g15; ties retain earliest. Benchmark NEVER selects models. Final held-out used once after selection freeze.",
+  "benchmark": "same 128 prefixes x 3 seeds x 2 seats x 2 fixed opponents =1536 games per generation (768/opponent,128 independent opening groups). g5 and g6..15 all identical assignments. Repeated progress benchmark, not unknown test.",
+  "opening": "prefix policy always frozen seed1751401 for ALL model seeds; 25% uniform legal and75% top16-uniform,8/10/12 plies. Exact prefix hashes frozen before training.",
+  "final": "distinct fixed128 prefixes x3seeds x2seats x2opponents=1536 plus12 standard-start games; one evaluation after freeze",
+  "training": "2200 new games/generation:40% current selfplay,20% gen4,20% frozen g5,20% ridge. Current generation half loss mass, previous unique new data half; full shuffled epochs.",
+  "timing": "epoch seconds measure training plus validation wall time, not pure GPU time. Generation/evaluation stage wall seconds separately recorded.",
+  "tasks_sha256": "26fa417ada5515a7762542d8ccddbf97879687f474739d16564d69a677cdda8c",
+  "baseline_models": {
+    "1751401": "2797267fda83127314469fd14296bb3daa1f3158fb0b5c79e0e11bea26487e33",
+    "1751402": "8aa3f66cbc0d2dce9c02973c90c83a4381364e5992d29bf2b6275e59c24e8ff7",
+    "1751403": "d7e96f592ef97c872cba27f2dcbcfb99f8437934d7419f12e8d997907bfa9163"
+  },
+  "stop": "24h, nonfinite or resource anomaly; checkpoint before reporting; never indefinite"
+}

@@ -1,0 +1,50 @@
+Traceback (most recent call last):
+  File "/home/eletim/blokus-console/scripts/run_margin_matches.py", line 25, in <module>
+    if seed not in pairs:pairs[seed]=load(seed,'native')
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-console/blokus/gen4.py", line 38, in load
+    policy = PPOAgent(seed, 'cpu', generation='gen3', backend=backend)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-console/blokus/ppo_policy.py", line 69, in __init__
+    with torch.no_grad():self.model(*collate([self._observation(State())[0]],self.device))
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-console/blokus/ppo_policy.py", line 74, in _observation
+    return native_observe(s,self.channels,self.backend)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eletim/blokus-console/blokus/ppo_native.py", line 53, in observe
+    ids,x=scan(s);qs=[PLACEMENTS[i] for i in ids];mid=time.perf_counter();b,st=encode(s);b=b[:channels].copy()
+          ^^^^^^^
+  File "/home/eletim/blokus-console/blokus/ppo_native.py", line 38, in scan
+    if lib is None:raise RuntimeError('native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: native backend unavailable: run python -m blokus.ppo_native build (cc or optional ziglang required)
+paired-00-0 [-39, -9] 4.0
+paired-00-1 [-26, -20] 8.3
+paired-01-0 [-30, -23] 11.4
+paired-01-1 [-20, -23] 14.7
+paired-02-0 [-14, -26] 17.9
+paired-02-1 [-22, -27] 20.6
+paired-03-0 [-27, -21] 23.3
+paired-03-1 [-14, -37] 25.9
+paired-04-0 [-18, -17] 28.8
+paired-04-1 [-17, -21] 31.7
+paired-05-0 [-12, -22] 35.3
+paired-05-1 [-11, -27] 38.9
+paired-06-0 [-9, -31] 42.3
+paired-06-1 [-17, -27] 46.0
+paired-07-0 [-16, -24] 50.2
+paired-07-1 [-7, -21] 54.8
+paired-08-0 [-6, -47] 58.0
+paired-08-1 [-8, -23] 61.7
+paired-09-0 [-17, -26] 64.8
+paired-09-1 [-13, -37] 68.1
+paired-10-0 [-12, -14] 72.4
+paired-10-1 [-17, -19] 75.8
+paired-11-0 [-15, -31] 79.9
+paired-11-1 [-12, -46] 82.9
+self-1751401-0 [-18, -22] 92.5
+self-1751401-1 [-18, -22] 102.1
+self-1751402-0 [-17, -17] 111.2
+self-1751402-1 [-17, -17] 120.3
+self-1751403-0 [-20, -30] 129.5
+self-1751403-1 [-20, -30] 138.7

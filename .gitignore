@@ -40,3 +40,19 @@ artifacts/value-placement-49152/exclusions.json.gz
 artifacts/value-placement-49152/games/[0-9]*-*.json.gz
 artifacts/value-placement-49152/evaluation-excluded.json.gz
 artifacts/value-placement-49152/**/evaluation-excluded.json.gz
+
+# Rebuildable komi4 feature caches; checkpoints and audit manifest are retained.
+artifacts/komi4-campaign/*.npz
+artifacts/komi4-campaign/*-meta.json
+artifacts/komi4-campaign/.run.lock
+
+# Scale campaign feature caches and streaming games stay local; archived evidence is added at milestones.
+artifacts/komi4-scale/.run.lock
+artifacts/komi4-scale/features/
+artifacts/komi4-scale/games/
+artifacts/komi4-scale/models/
+artifacts/komi4-scale/old-state-hashes.json.gz
+artifacts/komi4-trend/.run.lock
+artifacts/komi4-trend/features/
+artifacts/komi4-trend/games/
+artifacts/komi4-trend/models/

@@ -1,0 +1,42 @@
+{
+  "created_at": 1795781823.8720036,
+  "komi": 4,
+  "generations": 5,
+  "train_unique_target_per_generation": 2200,
+  "minimum_unique_train_total": 10000,
+  "train_reserve_per_generation": 200,
+  "model_seeds": [
+    1751401,
+    1751402,
+    1751403
+  ],
+  "workers": 8,
+  "reserved_cpus": [
+    0,
+    1,
+    2,
+    3,
+    12,
+    13,
+    14,
+    15
+  ],
+  "max_wall_seconds": 86400,
+  "max_epochs": 50,
+  "min_epochs": 8,
+  "patience": 6,
+  "batch_size": 512,
+  "learning_rate": 0.0003,
+  "selection": "per-seed best validation MAE, early stop; final generation per-seed by same validation only; test used once after freeze",
+  "training": "new generations accumulated, full shuffled epochs, each game equal loss mass; old data <=10% examples, unique new games counted separately",
+  "generation_policy": "half-point selfplay plus gen4/prior/ridge, depth4 cap150ms; policy top16/random legal diverse prefixes; same deterministic selfplay seat-swaps not generated",
+  "comparison": "128 fresh prefixes x 2 seats x 3 opponents =768; plus 18 standard games. 500ms width4 depth6 all players; no test-driven retraining",
+  "split": "fixed independent prefix seeds; remove whole validation/test group on overlap; training excludes reserved prefix states and known old validation/test positions; duplicate traces never independently counted",
+  "stop": "24h, nonfinite, resource failure; resume with atomic game/checkpoint identity",
+  "tasks_sha256": "e383971248827a2ca84e7b701ca2ee47cc833c306dbd3d436b5127499279ae27",
+  "prior_models": {
+    "1751401": "e5cf88901b0b3d23b8dd2d9d888bf54374c0c849031ac8c8a9ace25117380163",
+    "1751402": "2232b799d7ba426c6d2b1ae797fab8577d1af40b507c923485ce377cd7dadda5",
+    "1751403": "ae09e5eb6abcf4d0a6fac8d2287c77fbeb25e203a87829b309fbce189edc9d1e"
+  }
+}

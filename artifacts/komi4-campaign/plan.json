@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "created_at": 1795780693.3168576,
+  "komi": 4,
+  "rule": "score0-score1-4; opposite for player1; bonuses included",
+  "source_sha256": "07b085e1d3a6582a69385a7e29344bb85b9535d1db647a204e849ea5d5f72377",
+  "ridge_sha256": "6e67cb818af0118808ecd71c10552443a231b0a65929537130d6a2e43fcce69e",
+  "tasks_sha256": "f3042ba1f8726c19160a133270bdb202537f4c4f68f74233e74e3dbe301a98a4",
+  "seeds": [
+    1751401,
+    1751402,
+    1751403
+  ],
+  "max_games": 188,
+  "max_generations": 1,
+  "epochs_per_stage": 8,
+  "compute_cap_seconds": 3600,
+  "gpu_cap_seconds": 1200,
+  "selection": "minimum fresh validation per-game MAE among gen0 and gen1 epochs, separately per seed; final seed chosen by validation only",
+  "split": "all games with a prefix and seat pair stay together; conflicts with earlier split cause entire later group exclusion from prediction training/testing; final comparison conditions never train",
+  "bootstrap": "old train only; old validation used for gen0; old test seen previously and never presented as unknown",
+  "generation": {
+    "budget_ms": 100,
+    "max_depth": 2,
+    "width": 4
+  },
+  "comparison": {
+    "budget_ms": 500,
+    "max_depth": 6,
+    "width": 4
+  },
+  "randomization": "8 uniformly random legal placements, then deterministic top policy candidates; standard games have no opening randomization",
+  "stop": "fixed 1 update, 188 games, 8 epochs/stage/seed, nonfinite or compute cap; no test-driven tuning",
+  "improvement": "report paired MAE vs ridge and gen0 separately from WDL/margin vs ridge and gen4; no strength claim from MAE alone"
+}
