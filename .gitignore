@@ -40,3 +40,8 @@ artifacts/value-placement-49152/exclusions.json.gz
 artifacts/value-placement-49152/games/[0-9]*-*.json.gz
 artifacts/value-placement-49152/evaluation-excluded.json.gz
 artifacts/value-placement-49152/**/evaluation-excluded.json.gz
+
+# Rebuildable komi4 feature caches; checkpoints and audit manifest are retained.
+artifacts/komi4-campaign/*.npz
+artifacts/komi4-campaign/*-meta.json
+artifacts/komi4-campaign/.run.lock

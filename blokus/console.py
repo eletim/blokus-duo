@@ -75,6 +75,7 @@ def recorded_evaluation(stats, player, model, move, *, trusted=False, reason=Non
 
 
 RESEARCH = Path(__file__).resolve().parents[1]/'artifacts/margin-pilot'
+CAMPAIGN = RESEARCH.parent/'komi4-campaign'
 
 
 def point_predictions(moves, scores, source='', index=0):
@@ -99,6 +100,22 @@ def research_data():
         path=RESEARCH/name
         result[key]=read_json(path) if path.exists() else None
     return result
+
+
+def campaign_data():
+    result={}
+    for name in ('plan','status','selection','results','audit'):
+        path=CAMPAIGN/(name+'.json')
+        result[name]=read_json(path) if path.exists() else None
+    result['games']={split:len(campaign_games(split)) for split in ('train','validation','test','comparison')}
+    result['training']=[read_json(p) for p in sorted(CAMPAIGN.glob('gen*-result.json'))]
+    result['updated']=datetime.now(timezone.utc).isoformat()
+    return result
+
+
+def campaign_games(split):
+    if split not in ('train','validation','test','comparison'):return []
+    return [p for p in sorted((CAMPAIGN/'games').glob('*.json')) if read_json(p)['task']['split']==split]
 
 
 class Sources:
@@ -187,11 +204,17 @@ class Sources:
             groups.append(dict(id='experiment:'+path.stem,stage=0,phase='experiment',seed=t['seed'],count=1,
                 left='gen4同士・初期盤面' if t['kind']=='self' else '点差実験版 vs gen4',
                 right=f"先後条件 {t['seat']} / {path.stem}"))
+        for split in ('train','validation','test','comparison'):
+            files=campaign_games(split)
+            if files:groups.append(dict(id='campaign:'+split,stage=0,phase='komi4',seed='3 seeds',count=len(files),
+                left='非線形点差 / コミ4',right={'train':'追加学習用','validation':'選択用','test':'未知予測評価用','comparison':'最終比較'}[split]))
         return dict(groups=groups, evaluations=evaluations, training=training, progress=progress,
                     archive=archived, errors=errors, pieces=PIECES,
                     updated=datetime.now(timezone.utc).isoformat())
 
     def game(self, group, index):
+        if group.startswith('campaign:'):
+            return self.campaign(group.removeprefix('campaign:'),index)
         if group.startswith('experiment:'):
             return self.experiment(group.removeprefix('experiment:'))
         # Only indexed evaluation shards can be opened; no arbitrary paths.
@@ -265,6 +288,28 @@ class Sources:
                     evaluations=evaluations,predictions=point_predictions(moves,d['scores']),
                     source='追加の独立実験: '+key,index=0,count=1,kind='実験対戦',budget_ms=500)
 
+    def campaign(self,split,index):
+        files=campaign_games(split)
+        if not 0<=index<len(files):raise KeyError('研究対局がありません')
+        path=files[index];d=read_json(path);t=d['task'];moves=d['moves'];snapshots=frames(moves,d['scores']);prefix=len(t['prefix'])
+        generation=1 if split=='comparison' else 0
+        players=['',''];players[t['seat']]=f'非線形点差 / 世代{generation}'
+        players[1-t['seat']]={'self':f'非線形点差 / 世代{generation}','ridge':'旧ridge点差','gen4':'gen4 / 凍結ヒューリスティック'}[t['opponent']]
+        evaluations=[];predictions=[None]*(len(moves)+1)
+        for i,m in enumerate(moves):
+            p=snapshots[i]['turn'];st=d['stats'][i-prefix] if i>=prefix else None
+            e=recorded_evaluation(st,p,players[p],m,trusted=i>=prefix,reason='ランダム開始手順の評価は未記録' if i<prefix else None)
+            if st and st['agent']!='gen4':e['unit']='points'
+            e['komi']=4;evaluations.append(e)
+        evaluations.append(dict(value=None,reason='終局：コミ4での正確な実測点差'))
+        for entry in d['predictions']:
+            p=entry['player'];predictions[entry['ply']]=dict(player=p,adjusted=entry['adjusted'],actual=d['adjusted_first_margin']*(1 if p==0 else -1),exact=False)
+        p=snapshots[-1]['turn'];actual=d['adjusted_first_margin']*(1 if p==0 else -1)
+        predictions[-1]=dict(player=p,adjusted=actual,actual=actual,exact=True)
+        return dict(players=players,seed=t['seed'],prefix_plies=prefix,moves=moves,frames=snapshots,evaluations=evaluations,
+            predictions=dict(values=predictions,model=f'非線形点差 / 世代{generation} / seed {t["seed"]}',split=split,komi=4,recorded=True),
+            komi=4,source='コミ4研究 / '+path.stem,index=index,count=len(files),kind='独立研究・後手+4点',budget_ms=500 if split=='comparison' else 100)
+
 
 def handler(sources):
     class Handler(BaseHTTPRequestHandler):
@@ -283,6 +328,7 @@ def handler(sources):
                 if url.path == '/':
                     self.respond(200, Path(__file__).with_name('console.html').read_bytes(), 'text/html; charset=utf-8')
                 elif url.path == '/api/catalog': self.respond(200, sources.catalog())
+                elif url.path == '/api/campaign': self.respond(200,campaign_data())
                 elif url.path == '/api/research': self.respond(200,research_data())
                 elif url.path == '/api/replay':
                     self.respond(200, sources.game(query['group'][0], int(query.get('index', ['0'])[0])))
