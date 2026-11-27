@@ -1,0 +1,918 @@
+{
+  "generation": 14,
+  "cumulative_unique_train_games": 30800,
+  "opponents": {
+    "gen4": {
+      "overall": {
+        "games": 768,
+        "groups": 128,
+        "unique_trajectories": 768,
+        "wins": 369,
+        "draws": 44,
+        "losses": 355,
+        "win_rate": 0.48046875,
+        "point_rate": 0.5091145833333334,
+        "mean_margin": 1.4127604166666667,
+        "median_margin": 0.0,
+        "quantiles": {
+          "min": -39.0,
+          "p10": -8.0,
+          "p25": -4.0,
+          "p75": 7.0,
+          "p90": 13.0,
+          "max": 39.0
+        },
+        "mean_winning_margin": 8.29539295392954,
+        "mean_unplaced_advantage": 1.4127604166666667,
+        "bonus_difference_games": 0,
+        "ci95": {
+          "margin": [
+            1.08984375,
+            1.7291992187500003
+          ],
+          "win": [
+            0.4544270833333333,
+            0.5052083333333334
+          ],
+          "points": [
+            0.4869791666666667,
+            0.53125
+          ]
+        }
+      },
+      "seats": {
+        "0": {
+          "games": 384,
+          "groups": 128,
+          "unique_trajectories": 384,
+          "wins": 167,
+          "draws": 21,
+          "losses": 196,
+          "win_rate": 0.4348958333333333,
+          "point_rate": 0.4622395833333333,
+          "mean_margin": 0.5572916666666666,
+          "median_margin": -1.0,
+          "quantiles": {
+            "min": -39.0,
+            "p10": -9.0,
+            "p25": -4.0,
+            "p75": 6.0,
+            "p90": 12.0,
+            "max": 30.0
+          },
+          "mean_winning_margin": 8.113772455089821,
+          "mean_unplaced_advantage": 4.557291666666667,
+          "bonus_difference_games": 0,
+          "ci95": {
+            "margin": [
+              -0.6223958333333334,
+              1.7578125
+            ],
+            "win": [
+              0.3723958333333333,
+              0.5
+            ],
+            "points": [
+              0.3997395833333333,
+              0.5234375
+            ]
+          }
+        },
+        "1": {
+          "games": 384,
+          "groups": 128,
+          "unique_trajectories": 384,
+          "wins": 202,
+          "draws": 23,
+          "losses": 159,
+          "win_rate": 0.5260416666666666,
+          "point_rate": 0.5559895833333334,
+          "mean_margin": 2.2682291666666665,
+          "median_margin": 1.0,
+          "quantiles": {
+            "min": -26.0,
+            "p10": -7.0,
+            "p25": -3.0,
+            "p75": 8.0,
+            "p90": 13.0,
+            "max": 39.0
+          },
+          "mean_winning_margin": 8.445544554455445,
+          "mean_unplaced_advantage": -1.7317708333333333,
+          "bonus_difference_games": 0,
+          "ci95": {
+            "margin": [
+              1.0754557291666667,
+              3.518359375
+            ],
+            "win": [
+              0.4609375,
+              0.5885416666666666
+            ],
+            "points": [
+              0.4934895833333333,
+              0.6184895833333334
+            ]
+          }
+        }
+      },
+      "seeds": {
+        "1751401": {
+          "games": 256,
+          "groups": 128,
+          "unique_trajectories": 256,
+          "wins": 128,
+          "draws": 11,
+          "losses": 117,
+          "win_rate": 0.5,
+          "point_rate": 0.521484375,
+          "mean_margin": 1.7890625,
+          "median_margin": 0.5,
+          "quantiles": {
+            "min": -28.0,
+            "p10": -8.0,
+            "p25": -4.0,
+            "p75": 8.0,
+            "p90": 13.0,
+            "max": 37.0
+          },
+          "mean_winning_margin": 8.5625,
+          "mean_unplaced_advantage": 1.7890625,
+          "bonus_difference_games": 0,
+          "ci95": {
+            "margin": [
+              1.23046875,
+              2.34765625
+            ],
+            "win": [
+              0.45703125,
+              0.54296875
+            ],
+            "points": [
+              0.48046875,
+              0.5625
+            ]
+          }
+        },
+        "1751402": {
+          "games": 256,
+          "groups": 128,
+          "unique_trajectories": 256,
+          "wins": 120,
+          "draws": 13,
+          "losses": 123,
+          "win_rate": 0.46875,
+          "point_rate": 0.494140625,
+          "mean_margin": 1.55859375,
+          "median_margin": 0.0,
+          "quantiles": {
+            "min": -24.0,
+            "p10": -8.0,
+            "p25": -4.0,
+            "p75": 7.0,
+            "p90": 13.0,
+            "max": 33.0
+          },
+          "mean_winning_margin": 8.6,
+          "mean_unplaced_advantage": 1.55859375,
+          "bonus_difference_games": 0,
+          "ci95": {
+            "margin": [
+              0.93359375,
+              2.1640625
+            ],
+            "win": [
+              0.42578125,
+              0.51171875
+            ],
+            "points": [
+              0.453125,
+              0.53515625
+            ]
+          }
+        },
+        "1751403": {
+          "games": 256,
+          "groups": 128,
+          "unique_trajectories": 256,
+          "wins": 121,
+          "draws": 20,
+          "losses": 115,
+          "win_rate": 0.47265625,
+          "point_rate": 0.51171875,
+          "mean_margin": 0.890625,
+          "median_margin": 0.0,
+          "quantiles": {
+            "min": -39.0,
+            "p10": -8.0,
+            "p25": -4.0,
+            "p75": 6.0,
+            "p90": 11.0,
+            "max": 39.0
+          },
+          "mean_winning_margin": 7.710743801652892,
+          "mean_unplaced_advantage": 0.890625,
+          "bonus_difference_games": 0,
+          "ci95": {
+            "margin": [
+              0.2734375,
+              1.5078125
+            ],
+            "win": [
+              0.4296875,
+              0.515625
+            ],
+            "points": [
+              0.470703125,
+              0.55078125
+            ]
+          }
+        }
+      },
+      "seed_seats": {
+        "0": {
+          "1751401": {
+            "games": 128,
+            "groups": 128,
+            "unique_trajectories": 128,
+            "wins": 60,
+            "draws": 4,
+            "losses": 64,
+            "win_rate": 0.46875,
+            "point_rate": 0.484375,
+            "mean_margin": 1.109375,
+            "median_margin": -0.5,
+            "quantiles": {
+              "min": -28.0,
+              "p10": -8.299999999999999,
+              "p25": -4.0,
+              "p75": 7.0,
+              "p90": 15.0,
+              "max": 27.0
+            },
+            "mean_winning_margin": 8.433333333333334,
+            "mean_unplaced_advantage": 5.109375,
+            "bonus_difference_games": 0,
+            "ci95": {
+              "margin": [
+                -0.359375,
+                2.625
+              ],
+              "win": [
+                0.3828125,
+                0.5546875
+              ],
+              "points": [
+                0.3984375,
+                0.5703125
+              ]
+            }
+          },
+          "1751402": {
+            "games": 128,
+            "groups": 128,
+            "unique_trajectories": 128,
+            "wins": 52,
+            "draws": 6,
+            "losses": 70,
+            "win_rate": 0.40625,
+            "point_rate": 0.4296875,
+            "mean_margin": 0.390625,
+            "median_margin": -1.0,
+            "quantiles": {
+              "min": -24.0,
+              "p10": -8.0,
+              "p25": -4.0,
+              "p75": 5.0,
+              "p90": 10.299999999999997,
+              "max": 22.0
+            },
+            "mean_winning_margin": 7.653846153846154,
+            "mean_unplaced_advantage": 4.390625,
+            "bonus_difference_games": 0,
+            "ci95": {
+              "margin": [
+                -0.9767578124999999,
+                1.7423828125000007
+              ],
+              "win": [
+                0.3203125,
+                0.4921875
+              ],
+              "points": [
+                0.34375,
+                0.515625
+              ]
+            }
+          },
+          "1751403": {
+            "games": 128,
+            "groups": 128,
+            "unique_trajectories": 128,
+            "wins": 55,
+            "draws": 11,
+            "losses": 62,
+            "win_rate": 0.4296875,
+            "point_rate": 0.47265625,
+            "mean_margin": 0.171875,
+            "median_margin": 0.0,
+            "quantiles": {
+              "min": -39.0,
+              "p10": -10.299999999999999,
+              "p25": -5.25,
+              "p75": 6.0,
+              "p90": 11.0,
+              "max": 30.0
+            },
+            "mean_winning_margin": 8.2,
+            "mean_unplaced_advantage": 4.171875,
+            "bonus_difference_games": 0,
+            "ci95": {
+              "margin": [
+                -1.40625,
+                1.765625
+              ],
+              "win": [
+                0.34375,
+                0.515625
+              ],
+              "points": [
+                0.390625,
+                0.5546875
+              ]
+            }
+          }
+        },
+        "1": {
+          "1751401": {
+            "games": 128,
+            "groups": 128,
+            "unique_trajectories": 128,
+            "wins": 68,
+            "draws": 7,
+            "losses": 53,
+            "win_rate": 0.53125,
+            "point_rate": 0.55859375,
+            "mean_margin": 2.46875,
+            "median_margin": 2.0,
+            "quantiles": {
+              "min": -20.0,
+              "p10": -7.0,
+              "p25": -2.25,
+              "p75": 8.0,
+              "p90": 13.0,
+              "max": 37.0
+            },
+            "mean_winning_margin": 8.676470588235293,
+            "mean_unplaced_advantage": -1.53125,
+            "bonus_difference_games": 0,
+            "ci95": {
+              "margin": [
+                1.0234375,
+                3.9375
+              ],
+              "win": [
+                0.4453125,
+                0.6171875
+              ],
+              "points": [
+                0.4765625,
+                0.640625
+              ]
+            }
+          },
+          "1751402": {
+            "games": 128,
+            "groups": 128,
+            "unique_trajectories": 128,
+            "wins": 68,
+            "draws": 7,
+            "losses": 53,
+            "win_rate": 0.53125,
+            "point_rate": 0.55859375,
+            "mean_margin": 2.7265625,
+            "median_margin": 1.0,
+            "quantiles": {
+              "min": -20.0,
+              "p10": -7.0,
+              "p25": -3.0,
+              "p75": 8.25,
+              "p90": 14.0,
+              "max": 33.0
+            },
+            "mean_winning_margin": 9.323529411764707,
+            "mean_unplaced_advantage": -1.2734375,
+            "bonus_difference_games": 0,
+            "ci95": {
+              "margin": [
+                1.2185546875000002,
+                4.2578125
+              ],
+              "win": [
+                0.4453125,
+                0.6171875
+              ],
+              "points": [
+                0.4765625,
+                0.640625
+              ]
+            }
+          },
+          "1751403": {
+            "games": 128,
+            "groups": 128,
+            "unique_trajectories": 128,
+            "wins": 66,
+            "draws": 9,
+            "losses": 53,
+            "win_rate": 0.515625,
+            "point_rate": 0.55078125,
+            "mean_margin": 1.609375,
+            "median_margin": 1.0,
+            "quantiles": {
+              "min": -26.0,
+              "p10": -6.299999999999999,
+              "p25": -3.0,
+              "p75": 5.0,
+              "p90": 11.0,
+              "max": 39.0
+            },
+            "mean_winning_margin": 7.303030303030303,
+            "mean_unplaced_advantage": -2.390625,
+            "bonus_difference_games": 0,
+            "ci95": {
+              "margin": [
+                0.25,
+                3.0316406250000014
+              ],
+              "win": [
+                0.4296875,
+                0.6015625
+              ],
+              "points": [
+                0.46875,
+                0.6328125
+              ]
+            }
+          }
+        }
+      }
+    },
+    "prior": {
+      "overall": {
+        "games": 768,
+        "groups": 128,
+        "unique_trajectories": 767,
+        "wins": 366,
+        "draws": 41,
+        "losses": 361,
+        "win_rate": 0.4765625,
+        "point_rate": 0.5032552083333334,
+        "mean_margin": 0.2565104166666667,
+        "median_margin": 0.0,
+        "quantiles": {
+          "min": -37.0,
+          "p10": -11.0,
+          "p25": -5.0,
+          "p75": 6.0,
+          "p90": 12.0,
+          "max": 37.0
+        },
+        "mean_winning_margin": 7.603825136612022,
+        "mean_unplaced_advantage": 0.2565104166666667,
+        "bonus_difference_games": 0,
+        "ci95": {
+          "margin": [
+            -0.10159505208333332,
+            0.6002604166666666
+          ],
+          "win": [
+            0.44921875,
+            0.5026041666666666
+          ],
+          "points": [
+            0.4778645833333333,
+            0.5279947916666666
+          ]
+        }
+      },
+      "seats": {
+        "0": {
+          "games": 384,
+          "groups": 128,
+          "unique_trajectories": 384,
+          "wins": 159,
+          "draws": 30,
+          "losses": 195,
+          "win_rate": 0.4140625,
+          "point_rate": 0.453125,
+          "mean_margin": -0.4661458333333333,
+          "median_margin": -1.0,
+          "quantiles": {
+            "min": -37.0,
+            "p10": -11.0,
+            "p25": -6.0,
+            "p75": 4.0,
+            "p90": 11.699999999999989,
+            "max": 26.0
+          },
+          "mean_winning_margin": 7.823899371069182,
+          "mean_unplaced_advantage": 3.5338541666666665,
+          "bonus_difference_games": 0,
+          "ci95": {
+            "margin": [
+              -1.760546875,
+              0.8671875
+            ],
+            "win": [
+              0.3489583333333333,
+              0.4765625
+            ],
+            "points": [
+              0.3905924479166667,
+              0.515625
+            ]
+          }
+        },
+        "1": {
+          "games": 384,
+          "groups": 128,
+          "unique_trajectories": 384,
+          "wins": 207,
+          "draws": 11,
+          "losses": 166,
+          "win_rate": 0.5390625,
+          "point_rate": 0.5533854166666666,
+          "mean_margin": 0.9791666666666666,
+          "median_margin": 2.0,
+          "quantiles": {
+            "min": -25.0,
+            "p10": -11.0,
+            "p25": -5.0,
+            "p75": 7.0,
+            "p90": 12.0,
+            "max": 37.0
+          },
+          "mean_winning_margin": 7.434782608695652,
+          "mean_unplaced_advantage": -3.0208333333333335,
+          "bonus_difference_games": 0,
+          "ci95": {
+            "margin": [
+              -0.3203125,
+              2.2604166666666665
+            ],
+            "win": [
+              0.4791666666666667,
+              0.5989583333333334
+            ],
+            "points": [
+              0.4934895833333333,
+              0.6133138020833334
+            ]
+          }
+        }
+      },
+      "seeds": {
+        "1751401": {
+          "games": 256,
+          "groups": 128,
+          "unique_trajectories": 255,
+          "wins": 124,
+          "draws": 9,
+          "losses": 123,
+          "win_rate": 0.484375,
+          "point_rate": 0.501953125,
+          "mean_margin": 0.375,
+          "median_margin": 0.0,
+          "quantiles": {
+            "min": -37.0,
+            "p10": -11.0,
+            "p25": -5.0,
+            "p75": 6.0,
+            "p90": 12.0,
+            "max": 37.0
+          },
+          "mean_winning_margin": 7.919354838709677,
+          "mean_unplaced_advantage": 0.375,
+          "bonus_difference_games": 0,
+          "ci95": {
+            "margin": [
+              -0.24609375,
+              0.953125
+            ],
+            "win": [
+              0.44140625,
+              0.5234375
+            ],
+            "points": [
+              0.462890625,
+              0.5390625
+            ]
+          }
+        },
+        "1751402": {
+          "games": 256,
+          "groups": 128,
+          "unique_trajectories": 256,
+          "wins": 127,
+          "draws": 16,
+          "losses": 113,
+          "win_rate": 0.49609375,
+          "point_rate": 0.52734375,
+          "mean_margin": 0.40234375,
+          "median_margin": 0.0,
+          "quantiles": {
+            "min": -22.0,
+            "p10": -9.0,
+            "p25": -5.0,
+            "p75": 6.0,
+            "p90": 11.0,
+            "max": 28.0
+          },
+          "mean_winning_margin": 7.094488188976378,
+          "mean_unplaced_advantage": 0.40234375,
+          "bonus_difference_games": 0,
+          "ci95": {
+            "margin": [
+              -0.23828125,
+              1.0234375
+            ],
+            "win": [
+              0.44921875,
+              0.5390625
+            ],
+            "points": [
+              0.486328125,
+              0.568359375
+            ]
+          }
+        },
+        "1751403": {
+          "games": 256,
+          "groups": 128,
+          "unique_trajectories": 256,
+          "wins": 115,
+          "draws": 16,
+          "losses": 125,
+          "win_rate": 0.44921875,
+          "point_rate": 0.48046875,
+          "mean_margin": -0.0078125,
+          "median_margin": 0.0,
+          "quantiles": {
+            "min": -35.0,
+            "p10": -11.0,
+            "p25": -5.0,
+            "p75": 7.0,
+            "p90": 11.5,
+            "max": 32.0
+          },
+          "mean_winning_margin": 7.826086956521739,
+          "mean_unplaced_advantage": -0.0078125,
+          "bonus_difference_games": 0,
+          "ci95": {
+            "margin": [
+              -0.625,
+              0.5978515625000007
+            ],
+            "win": [
+              0.40234375,
+              0.49609375
+            ],
+            "points": [
+              0.435546875,
+              0.525390625
+            ]
+          }
+        }
+      },
+      "seed_seats": {
+        "0": {
+          "1751401": {
+            "games": 128,
+            "groups": 128,
+            "unique_trajectories": 128,
+            "wins": 56,
+            "draws": 7,
+            "losses": 65,
+            "win_rate": 0.4375,
+            "point_rate": 0.46484375,
+            "mean_margin": -0.3515625,
+            "median_margin": -1.0,
+            "quantiles": {
+              "min": -37.0,
+              "p10": -11.299999999999999,
+              "p25": -6.0,
+              "p75": 6.0,
+              "p90": 12.299999999999997,
+              "max": 26.0
+            },
+            "mean_winning_margin": 8.196428571428571,
+            "mean_unplaced_advantage": 3.6484375,
+            "bonus_difference_games": 0,
+            "ci95": {
+              "margin": [
+                -2.046875,
+                1.3048828125000007
+              ],
+              "win": [
+                0.3515625,
+                0.5234375
+              ],
+              "points": [
+                0.37890625,
+                0.55078125
+              ]
+            }
+          },
+          "1751402": {
+            "games": 128,
+            "groups": 128,
+            "unique_trajectories": 128,
+            "wins": 51,
+            "draws": 13,
+            "losses": 64,
+            "win_rate": 0.3984375,
+            "point_rate": 0.44921875,
+            "mean_margin": -0.28125,
+            "median_margin": -0.5,
+            "quantiles": {
+              "min": -18.0,
+              "p10": -9.299999999999999,
+              "p25": -6.0,
+              "p75": 4.0,
+              "p90": 11.299999999999997,
+              "max": 24.0
+            },
+            "mean_winning_margin": 7.7254901960784315,
+            "mean_unplaced_advantage": 3.71875,
+            "bonus_difference_games": 0,
+            "ci95": {
+              "margin": [
+                -1.71875,
+                1.1251953125000007
+              ],
+              "win": [
+                0.3125,
+                0.484375
+              ],
+              "points": [
+                0.3671875,
+                0.53125
+              ]
+            }
+          },
+          "1751403": {
+            "games": 128,
+            "groups": 128,
+            "unique_trajectories": 128,
+            "wins": 52,
+            "draws": 10,
+            "losses": 66,
+            "win_rate": 0.40625,
+            "point_rate": 0.4453125,
+            "mean_margin": -0.765625,
+            "median_margin": -1.0,
+            "quantiles": {
+              "min": -35.0,
+              "p10": -12.0,
+              "p25": -6.0,
+              "p75": 4.0,
+              "p90": 11.0,
+              "max": 21.0
+            },
+            "mean_winning_margin": 7.519230769230769,
+            "mean_unplaced_advantage": 3.234375,
+            "bonus_difference_games": 0,
+            "ci95": {
+              "margin": [
+                -2.3205078125,
+                0.7892578125000007
+              ],
+              "win": [
+                0.3203125,
+                0.484375
+              ],
+              "points": [
+                0.36328125,
+                0.5234375
+              ]
+            }
+          }
+        },
+        "1": {
+          "1751401": {
+            "games": 128,
+            "groups": 128,
+            "unique_trajectories": 128,
+            "wins": 68,
+            "draws": 2,
+            "losses": 58,
+            "win_rate": 0.53125,
+            "point_rate": 0.5390625,
+            "mean_margin": 1.1015625,
+            "median_margin": 2.0,
+            "quantiles": {
+              "min": -23.0,
+              "p10": -11.0,
+              "p25": -3.0,
+              "p75": 7.0,
+              "p90": 12.0,
+              "max": 37.0
+            },
+            "mean_winning_margin": 7.6911764705882355,
+            "mean_unplaced_advantage": -2.8984375,
+            "bonus_difference_games": 0,
+            "ci95": {
+              "margin": [
+                -0.47675781249999993,
+                2.6796875
+              ],
+              "win": [
+                0.4453125,
+                0.6171875
+              ],
+              "points": [
+                0.453125,
+                0.625
+              ]
+            }
+          },
+          "1751402": {
+            "games": 128,
+            "groups": 128,
+            "unique_trajectories": 128,
+            "wins": 76,
+            "draws": 3,
+            "losses": 49,
+            "win_rate": 0.59375,
+            "point_rate": 0.60546875,
+            "mean_margin": 1.0859375,
+            "median_margin": 2.0,
+            "quantiles": {
+              "min": -22.0,
+              "p10": -8.299999999999999,
+              "p25": -5.0,
+              "p75": 7.0,
+              "p90": 10.299999999999997,
+              "max": 28.0
+            },
+            "mean_winning_margin": 6.671052631578948,
+            "mean_unplaced_advantage": -2.9140625,
+            "bonus_difference_games": 0,
+            "ci95": {
+              "margin": [
+                -0.328125,
+                2.5
+              ],
+              "win": [
+                0.5078125,
+                0.6796875
+              ],
+              "points": [
+                0.5234375,
+                0.6875
+              ]
+            }
+          },
+          "1751403": {
+            "games": 128,
+            "groups": 128,
+            "unique_trajectories": 128,
+            "wins": 63,
+            "draws": 6,
+            "losses": 59,
+            "win_rate": 0.4921875,
+            "point_rate": 0.515625,
+            "mean_margin": 0.75,
+            "median_margin": 0.0,
+            "quantiles": {
+              "min": -25.0,
+              "p10": -11.0,
+              "p25": -5.0,
+              "p75": 7.0,
+              "p90": 12.0,
+              "max": 32.0
+            },
+            "mean_winning_margin": 8.079365079365079,
+            "mean_unplaced_advantage": -3.25,
+            "bonus_difference_games": 0,
+            "ci95": {
+              "margin": [
+                -0.8203125,
+                2.296875
+              ],
+              "win": [
+                0.40625,
+                0.578125
+              ],
+              "points": [
+                0.43359375,
+                0.6015625
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
