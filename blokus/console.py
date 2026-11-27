@@ -116,13 +116,14 @@ def campaign_data():
 
 def scale_data():
     result={}
-    for name in ('plan','status','learning-progress','selection','prediction-test','results'):
+    for name in ('plan','status','learning-progress','selection','prediction-test','prediction-intervals','results','audit'):
         path=SCALE/(name+'.json')
         result[name]=read_json(path) if path.exists() else None
     files=list((SCALE/'games').glob('*.json.gz'))
     result['generated']={kind:sum(p.name.startswith(kind+'-') for p in files) for kind in ('train','validation','test','selection','comparison','standard')}
     result['epochs']=[read_json(p) for p in sorted((SCALE/'training').glob('*.json'))]
-    result['elapsed_seconds']=max(0,datetime.now(timezone.utc).timestamp()-result['plan']['created_at']) if result['plan'] else None
+    end=result['status']['at'] if result['status'] and result['status']['stage']=='computation-complete' else datetime.now(timezone.utc).timestamp()
+    result['elapsed_seconds']=max(0,end-result['plan']['created_at']) if result['plan'] else None
     return result
 
 
