@@ -76,6 +76,7 @@ def recorded_evaluation(stats, player, model, move, *, trusted=False, reason=Non
 
 RESEARCH = Path(__file__).resolve().parents[1]/'artifacts/margin-pilot'
 CAMPAIGN = RESEARCH.parent/'komi4-campaign'
+SCALE = RESEARCH.parent/'komi4-scale'
 
 
 def point_predictions(moves, scores, source='', index=0):
@@ -111,6 +112,25 @@ def campaign_data():
     result['training']=[read_json(p) for p in sorted(CAMPAIGN.glob('gen*-result.json'))]
     result['updated']=datetime.now(timezone.utc).isoformat()
     return result
+
+
+def scale_data():
+    result={}
+    for name in ('plan','status','learning-progress','selection','prediction-test','results'):
+        path=SCALE/(name+'.json')
+        result[name]=read_json(path) if path.exists() else None
+    files=list((SCALE/'games').glob('*.json.gz'))
+    result['generated']={kind:sum(p.name.startswith(kind+'-') for p in files) for kind in ('train','validation','test','selection','comparison','standard')}
+    result['epochs']=[read_json(p) for p in sorted((SCALE/'training').glob('*.json'))]
+    result['elapsed_seconds']=max(0,datetime.now(timezone.utc).timestamp()-result['plan']['created_at']) if result['plan'] else None
+    return result
+
+
+def scale_games(group):
+    allowed={f'train-g{g}' for g in range(1,6)}|{'comparison','standard','selection','validation','test'}
+    if group not in allowed:return []
+    if group=='test' and not (SCALE/'selection.json').exists():return []
+    return sorted((SCALE/'games').glob(group+'-*.json.gz'))
 
 
 def campaign_games(split):
@@ -208,11 +228,16 @@ class Sources:
             files=campaign_games(split)
             if files:groups.append(dict(id='campaign:'+split,stage=0,phase='komi4',seed='3 seeds',count=len(files),
                 left='非線形点差 / コミ4',right={'train':'追加学習用','validation':'選択用','test':'未知予測評価用','comparison':'最終比較'}[split]))
+        for group in [f'train-g{g}' for g in range(1,6)]+['comparison','standard','selection','validation','test']:
+            files=scale_games(group)
+            if files:groups.append(dict(id='scale:'+group,stage=0,phase='komi4-scale',seed='3 seeds',count=len(files),left='コミ4拡大学習',right=group))
         return dict(groups=groups, evaluations=evaluations, training=training, progress=progress,
                     archive=archived, errors=errors, pieces=PIECES,
                     updated=datetime.now(timezone.utc).isoformat())
 
     def game(self, group, index):
+        if group.startswith('scale:'):
+            return self.scale_game(group.removeprefix('scale:'),index)
         if group.startswith('campaign:'):
             return self.campaign(group.removeprefix('campaign:'),index)
         if group.startswith('experiment:'):
@@ -310,6 +335,27 @@ class Sources:
             predictions=dict(values=predictions,model=f'非線形点差 / 世代{generation} / seed {t["seed"]}',split=split,komi=4,recorded=True),
             komi=4,source='コミ4研究 / '+path.stem,index=index,count=len(files),kind='独立研究・後手+4点',budget_ms=500 if split=='comparison' else 100)
 
+    def scale_game(self,group,index):
+        files=scale_games(group)
+        if not 0<=index<len(files):raise KeyError('拡大学習棋譜がありません')
+        path=files[index];d=read_json(path);t=d['task'];moves=d['moves'];snapshots=frames(moves,d['scores']);prefix=len(d['prefix'])
+        players=['',''];players[t['seat']]='拡大学習点差 / '+('最終選択モデル' if t['split'] in ('comparison','standard') else f'第{t["generation"]}世代用データ収集')
+        players[1-t['seat']]={'self':'同世代点差','prior':'前回非線形','ridge':'旧ridge','gen4':'gen4凍結評価'}[t['opponent']]
+        evaluations=[];predictions=[None]*(len(moves)+1)
+        for i,m in enumerate(moves):
+            player=snapshots[i]['turn'];st=d['stats'][i-prefix] if i>=prefix else None
+            e=recorded_evaluation(st,player,players[player],m,trusted=i>=prefix,reason='多様化開始手順の評価は未記録' if i<prefix else None)
+            if st and st['agent']!='gen4':e['unit']='points'
+            e['komi']=4;evaluations.append(e)
+        evaluations.append(dict(value=None,reason='終局のコミ4実測値'))
+        for e in d['predictions']:
+            player=e['player'];predictions[e['ply']]=dict(player=player,adjusted=e['adjusted'],actual=d['adjusted_first_margin']*(1 if player==0 else -1),exact=False)
+        player=snapshots[-1]['turn'];v=d['adjusted_first_margin']*(1 if player==0 else -1)
+        predictions[-1]=dict(player=player,adjusted=v,actual=v,exact=True)
+        return dict(players=players,seed=t['seed'],prefix_plies=prefix,moves=moves,frames=snapshots,evaluations=evaluations,
+            predictions=dict(values=predictions,model='拡大学習点差 / '+d['model_sha256'][:12],split=t['split'],komi=4,recorded=True),
+            komi=4,source='拡大学習 / '+path.name,index=index,count=len(files),kind='コミ4拡大研究',budget_ms=t['budget_ms'])
+
 
 def handler(sources):
     class Handler(BaseHTTPRequestHandler):
@@ -328,6 +374,7 @@ def handler(sources):
                 if url.path == '/':
                     self.respond(200, Path(__file__).with_name('console.html').read_bytes(), 'text/html; charset=utf-8')
                 elif url.path == '/api/catalog': self.respond(200, sources.catalog())
+                elif url.path == '/api/scale': self.respond(200,scale_data())
                 elif url.path == '/api/campaign': self.respond(200,campaign_data())
                 elif url.path == '/api/research': self.respond(200,research_data())
                 elif url.path == '/api/replay':

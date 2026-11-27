@@ -14,6 +14,7 @@ def write(path, data):
 def test_missing_data_is_unknown_and_does_not_create_archive(tmp_path, monkeypatch):
     monkeypatch.setattr("blokus.console.RESEARCH", tmp_path/"missing-research")
     monkeypatch.setattr("blokus.console.CAMPAIGN", tmp_path/"missing-campaign")
+    monkeypatch.setattr("blokus.console.SCALE", tmp_path/"missing-scale")
     source = Sources(tmp_path/'artifacts', tmp_path/'missing/games.sqlite3')
     data = source.catalog()
     assert data['groups'] == data['evaluations'] == data['training'] == data['archive'] == []
